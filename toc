@@ -1,0 +1,128 @@
+{:navgroup:.navgroup}
+{:topicgroup:.topicgroup}
+
+{: .toc subcollection="hlf-support" category="blockchain" audience="service" product-page="https://www.ibm.com/cloud/blockchain-platform" href="/docs/hlf-support" path="hlf-support"}
+Blockchain HLF Support
+
+	{: .navgroup id="learn"}
+	index.md
+	console-ocp-about.md
+	[What is blockchain?](https://www.ibm.com/topics/what-is-blockchain)
+	whats_new.md
+	howto/pricing-sw.md
+	blockchain_component_overview.md
+	security.md
+
+	{: .topicgroup}
+	High availability
+		ibp-console-ha.md
+		howto/ibp-console-ic-ha-howto.md
+		howto/ibp-console-ha-os.md
+		howto/ibp-console-ha-ca.md
+
+	data-residency.md
+	howto/ibp-v2-faq.md
+	/blockchain/blockchain-disclaimer
+	{: .navgroup-end}
+
+	{: .navgroup id="tutorial"}
+	{: .topicgroup}
+	Getting started
+		howto/ibp-console-build-network.md
+		howto/ibp-console-join-network.md
+		reference/videos.md
+
+	{: .topicgroup}
+	Deploy a smart contract
+		howto/ibp-console-smart-contracts.md
+		howto/ibp-console-smart-contracts-v2.md
+		howto/ibp-console-smart-contracts-v14.md
+
+	howto/ibp-console-create-app.md
+
+	{: .topicgroup}
+	Certificate Authority (CA) options
+		howto/ibp-console-int-ca.md
+		howto/ibp-v2-tutorial-extca.md
+
+	{: .topicgroup}
+	Hardware Security Module (HSM)
+		reference/hsm-gemalto.md
+
+	{: .topicgroup}
+	Ansible Playbooks
+		howto/ansible.md
+		howto/ansible-install-ibp.md
+		howto/ansible-build-network.md
+	{: .navgroup-end}
+
+	{: .navgroup id="howto"}
+	{: .topicgroup}
+	Install on the OpenShift Container Platform
+
+		{: .topicgroup}
+		Deployment options
+			howto/console-deploy-ocp-getting-started.md
+			howto/console-deploy-ocp-rhm.md
+			howto/console-deploy-ocp-rhm-fw.md
+			howto/console-deploy-ocp.md
+			howto/console-deploy-ocp-firewall.md
+			howto/ansible-install-ibp.md
+
+		howto/console-upgrade-ocp.md
+		howto/console-delete-ocp.md
+
+	{: .topicgroup}
+	Install on Kubernetes
+		howto/console-deploy-k8.md
+		howto/console-deploy-k8-firewall.md
+		howto/console-upgrade-k8.md
+		howto/console-delete-k8.md
+		howto/console-fixpack.md
+
+	internal/blockchain_images.md
+
+	{: .topicgroup}
+	Using the IBM Blockchain Platform console
+		howto/console-ocp-manage.md
+		howto/ibp-console-advanced-deployment.md
+		howto/ibp-console-advanced-channel.md
+		howto/ibp-console-add-remove-raft.md
+		howto/ibp-console-import-nodes.md
+		howto/ibp-console-identities.md
+		howto/ibp-console-organizations.md
+		howto/ibp-console-certificates.md
+		howto/ibp-console-govern-components.md
+		/blockchain/blockchain-operations_service
+
+	{: .topicgroup}
+	Developing smart contracts and applications
+		vscode-extension.md
+		write-powerful-smart-contracts.md
+		best_practices.md
+
+	howto/backup-restore.md
+
+	howto/ibp-v2-apis.md
+	{: .navgroup-end}
+
+	{: .navgroup id="reference"}
+	[API reference](https://cloud.ibm.com/apidocs/blockchain)
+
+
+	/blockchain/blockchain-hyperledger-fabric
+	/blockchain/blockchain-k8s-overview
+	[IBM Developer](https://developer.ibm.com/technologies/blockchain/)
+	reference/metering.md
+	reference/hsm-pkcs11.md
+	reference/hsm-pkcs11-ic.md
+	glossary.md
+	{: .navgroup-end}
+
+	{: .navgroup id="help"}
+	release-notes.md
+	known-issues.md
+	howto/ibp-v2-troubleshooting.md
+	ibmblockchain_support.md
+	sitemap.md
+	{: .navgroup-end}
