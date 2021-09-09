@@ -15,35 +15,35 @@ Blockchain HLF Support
 
 	{: .topicgroup}
 	High availability
-		ibp-console-ha.md
-		howto/ibp-console-ic-ha-howto.md
-		howto/ibp-console-ha-os.md
-		howto/ibp-console-ha-ca.md
+		ibm-hlfsupport-console-ha.md
+		howto/ibm-hlfsupport-console-ic-ha-howto.md
+		howto/ibm-hlfsupport-console-ha-os.md
+		howto/ibm-hlfsupport-console-ha-ca.md
 
 	data-residency.md
-	howto/ibp-v2-faq.md
+	howto/ibm-hlfsupport-v2-faq.md
 	/blockchain/blockchain-disclaimer
 	{: .navgroup-end}
 
 	{: .navgroup id="tutorial"}
 	{: .topicgroup}
 	Getting started
-		howto/ibp-console-build-network.md
-		howto/ibp-console-join-network.md
+		howto/ibm-hlfsupport-console-build-network.md
+		howto/ibm-hlfsupport-console-join-network.md
 		reference/videos.md
 
 	{: .topicgroup}
 	Deploy a smart contract
-		howto/ibp-console-smart-contracts.md
-		howto/ibp-console-smart-contracts-v2.md
-		howto/ibp-console-smart-contracts-v14.md
+		howto/ibm-hlfsupport-console-smart-contracts.md
+		howto/ibm-hlfsupport-console-smart-contracts-v2.md
+		howto/ibm-hlfsupport-console-smart-contracts-v14.md
 
-	howto/ibp-console-create-app.md
+	howto/ibm-hlfsupport-console-create-app.md
 
 	{: .topicgroup}
 	Certificate Authority (CA) options
-		howto/ibp-console-int-ca.md
-		howto/ibp-v2-tutorial-extca.md
+		howto/ibm-hlfsupport-console-int-ca.md
+		howto/ibm-hlfsupport-v2-tutorial-extca.md
 
 	{: .topicgroup}
 	Hardware Security Module (HSM)
@@ -85,14 +85,14 @@ Blockchain HLF Support
 	{: .topicgroup}
 	Using the IBM Blockchain Platform console
 		howto/console-ocp-manage.md
-		howto/ibp-console-advanced-deployment.md
-		howto/ibp-console-advanced-channel.md
-		howto/ibp-console-add-remove-raft.md
-		howto/ibp-console-import-nodes.md
-		howto/ibp-console-identities.md
-		howto/ibp-console-organizations.md
-		howto/ibp-console-certificates.md
-		howto/ibp-console-govern-components.md
+		howto/ibm-hlfsupport-console-advanced-deployment.md
+		howto/ibm-hlfsupport-console-advanced-channel.md
+		howto/ibm-hlfsupport-console-add-remove-raft.md
+		howto/ibm-hlfsupport-console-import-nodes.md
+		howto/ibm-hlfsupport-console-identities.md
+		howto/ibm-hlfsupport-console-organizations.md
+		howto/ibm-hlfsupport-console-certificates.md
+		howto/ibm-hlfsupport-console-govern-components.md
 		/blockchain/blockchain-operations_service
 
 	{: .topicgroup}
@@ -103,7 +103,7 @@ Blockchain HLF Support
 
 	howto/backup-restore.md
 
-	howto/ibp-v2-apis.md
+	howto/ibm-hlfsupport-v2-apis.md
 	{: .navgroup-end}
 
 	{: .navgroup id="reference"}
@@ -122,7 +122,7 @@ Blockchain HLF Support
 	{: .navgroup id="help"}
 	release-notes.md
 	known-issues.md
-	howto/ibp-v2-troubleshooting.md
+	howto/ibm-hlfsupport-v2-troubleshooting.md
 	ibmblockchain_support.md
 	sitemap.md
 	{: .navgroup-end}
