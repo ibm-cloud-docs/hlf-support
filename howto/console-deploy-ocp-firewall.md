@@ -1327,7 +1327,59 @@ You can edit the `ibm-hlfsupport-console.yaml` file to allocate more resources t
 
 
 ```yaml
-{[yaml-operator-ocp-ibm-hlfsupport-console-advanced-ibm-hlfsupport-console-cluster-resource.md]}
+apiVersion: ibp.com/v1beta1
+kind: IBPConsole
+metadata:
+  name: ibm-hlfsupport-console
+spec:
+  arch:
+  - amd64
+  license:
+    accept: false
+  serviceAccountName: default
+  email: "<EMAIL>"
+  password: "<PASSWORD>"
+  registryURL: cp.icr.io/cp
+  imagePullSecrets:
+    - cp-pull-secret
+  networkinfo:
+    domain: <DOMAIN>
+  storage:
+    console:
+      class: ""
+      size: 5Gi
+  clusterdata:
+    zones:
+  resources:
+    console:
+      requests:
+        cpu: 500m
+        memory: 1000Mi
+      limits:
+        cpu: 500m
+        memory: 1000Mi
+    configtxlator:
+      limits:
+        cpu: 25m
+        memory: 50Mi
+      requests:
+        cpu: 25m
+        memory: 50Mi
+    couchdb:
+      limits:
+        cpu: 500m
+        memory: 1000Mi
+      requests:
+        cpu: 500m
+        memory: 1000Mi
+    deployer:
+      limits:
+        cpu: 100m
+        memory: 200Mi
+      requests:
+        cpu: 100m
+        memory: 200Mi
+  version: 1.0.0
 ```
 {: codeblock}
 
