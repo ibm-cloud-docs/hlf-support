@@ -1151,9 +1151,9 @@ metadata:
   name: ibm-hlfsupport-operator
   labels:
     release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
+    helm.sh/chart: "ibm-hlfsupport"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
     app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
 spec:
   replicas: 1
@@ -1167,13 +1167,13 @@ spec:
       labels:
         name: ibm-hlfsupport-operator
         release: "operator"
-        helm.sh/chart: "ibm-ibp"
-        app.kubernetes.io/name: "ibp"
-        app.kubernetes.io/instance: "ibp"
+        helm.sh/chart: "ibm-hlfsupport"
+        app.kubernetes.io/name: "ibm-hlfsupport"
+        app.kubernetes.io/instance: "ibm-hlfsupport"
         app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"  
       annotations:
-        productName: "IBM Blockchain Platform"
-        productID: "54283fa24f1a4e8589964e6e92626ec4"
+        productName: "IBM Support for Hyperledger Fabric"
+        productID: "5d5997a033594f149a534a09802d60f1"
         productVersion: "1.0.0"
         productChargedContainers: ""
         productMetric: "VIRTUAL_PROCESSOR_CORE"
@@ -1201,7 +1201,7 @@ spec:
         - name: ibm-hlfsupport-operator
           image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915-amd64
           command:
-          - ibm-hlfsupport-operator
+          - ibp-operator
           imagePullPolicy: Always
           securityContext:
             privileged: false
