@@ -861,46 +861,33 @@ metadata:
   name: <NAMESPACE>
   labels:
     release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
+    helm.sh/chart: "ibm-hlfsupport"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
     app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
 rules:
 - apiGroups:
   - extensions
   resourceNames:
-  - ibm-blockchain-platform-psp
+  - ibm-hlfsupport-psp
   resources:
   - podsecuritypolicies
   verbs:
   - use
 - apiGroups:
-  - "*"
+  - apiextensions.k8s.io
   resources:
-  - pods
-  - pod/logs
-  - services
-  - endpoints
   - persistentvolumeclaims
   - persistentvolumes
-  - events
-  - configmaps
-  - secrets
-  - ingresses
-  - roles
-  - rolebindings
-  - serviceaccounts
-  - nodes
-  - jobs
   verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  - nodes
-  verbs:
-  - 'get'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
   - apiextensions.k8s.io
   resources:
@@ -908,29 +895,78 @@ rules:
   verbs:
   - get
 - apiGroups:
-  - apiextensions.k8s.io
+  - route.openshift.io
   resources:
+  - routes
+  - routes/custom-host
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - ""
+  resources:
+  - pods
+  - pods/log
   - persistentvolumeclaims
   - persistentvolumes
+  - services
+  - endpoints
+  - events
+  - configmaps
+  - secrets
+  - nodes
+  - serviceaccounts
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "batch"
   resources:
-  - '*'
-  - ibpservices
-  - ibpcas
-  - ibppeers
-  - ibpfabproxies
-  - ibporderers
+  - jobs
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 - apiGroups:
-  - ibp.com
+  - "authorization.openshift.io"
+  - "rbac.authorization.k8s.io"
   resources:
-  - '*'
+  - roles
+  - rolebindings
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+  - bind
+  - escalate
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
 - apiGroups:
   - apps
   resources:
@@ -939,7 +975,73 @@ rules:
   - replicasets
   - statefulsets
   verbs:
-  - '*'
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - monitoring.coreos.com
+  resources:
+  - servicemonitors
+  verbs:
+  - get
+  - create
+- apiGroups:
+  - apps
+  resourceNames:
+  - ibm-hlfsupport-operator
+  resources:
+  - deployments/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - ibp.com
+  resources:
+  - ibpcas.ibp.com
+  - ibppeers.ibp.com
+  - ibporderers.ibp.com
+  - ibpconsoles.ibp.com
+  - ibpcas
+  - ibppeers
+  - ibporderers
+  - ibpconsoles
+  - ibpcas/finalizers
+  - ibppeers/finalizers
+  - ibporderers/finalizers
+  - ibpconsoles/finalizers
+  - ibpcas/status
+  - ibppeers/status
+  - ibporderers/status
+  - ibpconsoles/status
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
+- apiGroups:
+  - extensions
+  - networking.k8s.io
+  - config.openshift.io
+  resources:
+  - ingresses
+  - networkpolicies
+  verbs:
+  - get
+  - list
+  - create
+  - update
+  - patch
+  - watch
+  - delete
+  - deletecollection
 ```
 {: codeblock}
 
