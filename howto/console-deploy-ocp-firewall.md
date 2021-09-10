@@ -1104,9 +1104,9 @@ metadata:
   name: <PROJECT_NAME>
   labels:
     release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
+    helm.sh/chart: "ibm-hlfsupport"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
     app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
 subjects:
 - kind: ServiceAccount
