@@ -1379,7 +1379,28 @@ Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Suppo
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibm-hlfsupport-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
 ```yaml
-{[yaml-operator-k8s-ibm-hlfsupport-console-advanced-ibm-hlfsupport-console-tls.md]}
+apiVersion: ibp.com/v1beta1
+kind: IBPConsole
+metadata:
+  name: ibm-hlfsupport-console
+spec:
+  arch:
+  - amd64
+  license:
+    accept: false
+  serviceAccountName: default
+  email: "<EMAIL>"
+  password: "<PASSWORD>"
+  registryURL: cp.icr.io/cp
+  imagePullSecrets:
+    - cp-pull-secret
+  networkinfo:
+    domain: <DOMAIN>
+  storage:
+    console:
+      class: default
+      size: 10Gi
+  tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
 ```
 {: codeblock}
 
