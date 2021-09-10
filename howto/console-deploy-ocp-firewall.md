@@ -1276,7 +1276,28 @@ When the operator is running on your namespace, you can apply a custom resource 
 Save the custom resource definition below as `ibm-hlfsupport-console.yaml` on your local system. If you changed the name of the entitlement key secret, then you need to edit the field of `name: cp-pull-secret`.
 
 ```yaml
-{[yaml-operator-ocp-ibm-hlfsupport-console-ibm-hlfsupport-console-base.md]}
+apiVersion: ibp.com/v1beta1
+kind: IBPConsole
+metadata:
+  name: ibm-hlfsupport-console
+spec:
+  arch:
+  - amd64
+  license:
+    accept: false
+  serviceAccountName: default
+  email: "<EMAIL>"
+  password: "<PASSWORD>"
+  registryURL: cp.icr.io/cp
+  imagePullSecrets:
+    - cp-pull-secret
+  networkinfo:
+    domain: <DOMAIN>
+  storage:
+    console:
+      class: ""
+      size: 5Gi
+  version: 1.0.0
 ```
 {: codeblock}
 
