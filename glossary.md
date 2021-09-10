@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

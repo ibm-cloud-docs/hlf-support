@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -107,12 +107,8 @@ subcollection: blockchain-sw-252
 {:video: .video}
 
 
-
-
 # Upgrading your console and components
 {: #upgrade-ocp}
-
-
 
 You can upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric without disrupting a running network. Because the platform is deployed by using a Kubernetes operator, you can pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images from the {{site.data.keyword.IBM_notm}} Entitlement registry without having to reinstall the platform. You can use these instructions to upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
 {: shortdesc}
@@ -120,17 +116,12 @@ You can upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabri
 ## {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric overview
 {: #upgrade-ocp-platform-overview}
 
-Use these instructions to upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from versions 2.5.1, 2.5, 2.1.3, 2.1.2, 2.1.1, and 2.1.0. The table provides an overview of the current and past releases.
+The table provides an overview of the current and past releases.
 
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 29 Mar 2021| **Console and tools** <ul><li>1.0.0-20210915-amd64</li><li>1.0.0-20210616-amd64</li><li>1.0.0-20210505-amd64</li><li>1.0.0-20210325-amd64</li></ul> **Fabric nodes** <ul><li>1.4.12-20210616</li><li>1.4.11-20210505</li><li>1.4.11-20210325</li></ul> **CouchDB** <ul> <li>2.3.1-20210505</li><li>2.3.1-20210325</li> <li>3.1.1-20210505</li> <li>3.1.1-20210325</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.12 and 2.2.3</li><li>Fabric version 1.4.11 and 2.2.2</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 2.5.1](/docs/blockchain-sw-251?topic=blockchain-sw-251-release-notes-saas-20#01-12-2021) | 12 Jan 2021| **Console and tools** <ul><li>2.5.1-20210112-amd64</li> <li>2.5.1-20201208-amd64</li> <li>2.5.1-20201119-amd64</li> <li>2.5.1-20201030-amd64</li></ul> **Fabric nodes** <ul><li>1.4.9-20210112-amd64</li><li>1.4.9-20201208-amd64</li> <li>1.4.9-20201119-amd64</li> <li>1.4.9-20201030-amd64</li><li>2.2.1-20210112-amd64</li><li>2.2.1-20201208-amd64</li><li>2.2.1-20201119-amd64</li><li>2.2.1-20201030-amd64</li></ul> **CouchDB** <ul> <li>2.3.1-20210112-amd64</li> <li>2.3.1-20201208-amd64</li>  <li>2.3.1-20201119-amd64</li><li>2.3.1-20201030-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.9 and 2.2.1</ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.x Lifecycle.</li><li>Upgrade CA, peer, and ordering nodes from Fabric v1.4 to Fabric v2.x.</li><li>Certificate renewal enhancements added to the console.</li></ul> |
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 2.5](/docs/blockchain-sw-25?topic=blockchain-sw-25-release-notes-saas-20#08-25-2020){: external} | 9 Sept 2020| **Console and tools** <ul><li>2.5.0-20200825-amd64</li><li>2.5.0-20200714-amd64</li><li>2.5.0-20200618-amd64</li></ul> **Fabric nodes** <ul><li>1.4.7-20200825-amd64</li><li>1.4.7-20200714-amd64</li><li>1.4.7-20200618-amd64</li><li>2.1.1-20200825-amd64</li><li>2.1.1-20200714-amd64</li><li>2.1.1-20200618-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200825-amd64</li><li>2.3.1-20200714-amd64</li><li>2.3.1-20200618-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.7 and 2.1.1</ul> **Improvements to the Console UI** <ul><li>Ability to select Fabric version when you deploy a new peer or ordering node.</li></ul> |
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.3](/docs/blockchain-sw-213?topic=blockchain-sw-213-whats-new#whats-new-03-24-2020){: external} | 24 March 2020| **Console and tools** <ul><li>2.1.3-20200520-amd64</li><li>2.1.3-20200416-amd64</li><li>2.1.3-20200324-amd64</li></ul> **Fabric nodes** <ul><li>1.4.6-20200520-amd64</li><li>1.4.6-20200416-amd64</li><li>1.4.6-20200324-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20200520-amd64</li><li>2.3.1-20200416-amd64</li><li>2.3.1-20200324-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.6</ul> **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 4.2 on LinuxONE (s390x)</ul> **Improvements to the Console UI** <ul><li>Hardware Security Module (HSM) support for node identities</li><li>Ability to override CA, peer, and ordering node configuration</li><li>Ability to add and remove Raft ordering nodes</li><li>Java smart contract instantiation</li><li>Updated create channel and create organization panels</ul> |
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.2](/docs/blockchain-sw?topic=blockchain-sw-whats-new#whats-new-12-17-2019){: external} | 17 December 2019 | **Console and tools** <ul><li>2.1.2-20191217-amd64</li><li>2.1.2-20200213-amd64</li></ul> **Fabric nodes** <ul><li>1.4.4-20191217-amd64</li><li>1.4.4-20200213-amd64</li></ul> **CouchDB** <ul><li>2.3.1-20191217-amd64</li><li>2.3.1-20200213-amd64</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.4</ul> **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 4.1 and 4.2</ul> **Improvements to the Console UI** <ul><li>Simplified component creation flows</li><li>Zone selection for ordering nodes</li><li>Add peer to a channel from Channels tab</li><li>Anchor peer during join</li><li>Export/Import all</ul> |
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.1]( /docs/blockchain-sw?topic=blockchain-sw-whats-new#whats-new-11-08-2019){: external}| 8 November 2019 | **Console and tools** <ul><li>2.1.1-20191108-amd64</ul> **Fabric nodes** <ul><li>1.4.3-20191108-amd64</ul> **CouchDB** <ul><li>2.3.1-20191108-amd64</ul> | **Additional platforms** <ul><li>Platform can be deployed on Kubernetes v1.14 - v1.16</li><li>Platform can be deployed on {{site.data.keyword.cloud_notm}} Private 3.2.1</li></ul> |
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.0](/docs/blockchain-sw?topic=blockchain-sw-whats-new#whats-new-9-24-2019){: external} | 24 September 2019 | **Console and tools** <ul><li>2.1.0-20190918-amd64</ul> **Fabric nodes** <ul><li>1.4.3-20190918-amd64</ul> **CouchDB** <ul><li>2.3.1-20190918-amd64</ul> | **Fabric Version Upgrade** <ul><li>Fabric version 1.4.3</ul> **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 3.11</ul> |
+| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 15 Sep 2021| **Console and tools** <ul><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20210915</li></ul> **CouchDB** <ul> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
+**Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 3.11</ul> |
 {: caption="Table 1. {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric versions" caption-side="bottom"}
 
 ## Before you begin
@@ -177,10 +168,10 @@ You need to repeat steps 3-5 for each network that that runs on a separate proje
 ### Step one: Update the webhook image
 {: #upgrade-ocp-steps-252-webhook}
 
-Log in to your cluster and run the following command to update the webhook image in the `ibpinfra` namespace or project:
+Log in to your cluster and run the following command to update the webhook image in the `ibm-hlfsupport-infra` namespace or project:
 
 ```
-kubectl set image deploy/ibm-hlfsupport-webhook -n ibpinfra ibm-hlfsupport-webhook="cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64"
+kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfsupport-webhook="cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64"
 ```
 {: codeblock}
 
@@ -190,13 +181,13 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
 {: #upgrade-ocp-steps-252-crds}
 **This step is not required when upgrading from 2.5.1.**
 
-1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ```
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 1.0.0, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
+2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -217,7 +208,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -282,7 +273,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -341,7 +332,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -400,7 +391,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -606,8 +597,8 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/hlf-s
 
 You can upgrade an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network by using the following steps:
 
-1. [Create the `ibpinfra` project for the webhook](#deploy-ocp-ibpinfra)
-2. [Create a secret for your entitlement key](#deploy-ocp-secret-ibpinfra)
+1. [Create the `ibm-hlfsupport-infra` project for the webhook](#deploy-ocp-ibm-hlfsupport-infra)
+2. [Create a secret for your entitlement key](#deploy-ocp-secret-ibm-hlfsupport-infra)
 3. [Deploy the webhook and custom resource definitions to your OpenShift cluster](#webhook)
 4. [Update the ClusterRole](#upgrade-ocp-clusterrole)
 5. [Upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](#upgrade-ocp-operator)
@@ -619,16 +610,16 @@ You need to complete steps 4-6 for each network that that runs on a separate pro
 Occasionally, a five node ordering service that was deployed using v2.1.2 will be deleted by the Kubernetes garbage collector because it considers the nodes a resource that needs to be cleaned up. This process is both random and unrecoverable --- if the ordering service is deleted, all of the channels hosted on it are permanently lost. To prevent this, the `ownerReferences` field in the configuration of each ordering node must be removed **before upgrading to 1.0.0**. For the steps about how to pull the configuration file, remove `ordererReferences`, and apply the change, see [Known issues](/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues#sw-known-issues-ordering-service-delete) in the v2.1.2 documentation.
 {:important}
 
-### Step one: Create the `ibpinfra` project for the webhook
-{: #deploy-ocp-ibpinfra}
+### Step one: Create the `ibm-hlfsupport-infra` project for the webhook
+{: #deploy-ocp-ibm-hlfsupport-infra}
 
-Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 1.0.0, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own project, referred to as  `ibpinfra` throughout these instructions.
+Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 1.0.0, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own project, referred to as  `ibm-hlfsupport-infra` throughout these instructions.
 
-After you log in to your cluster, you can create the new `ibpinfra` project for the Kubernetes conversion webhook using the kubectl CLI. The new project needs to be created by a cluster administrator.  
+After you log in to your cluster, you can create the new `ibm-hlfsupport-infra` project for the Kubernetes conversion webhook using the kubectl CLI. The new project needs to be created by a cluster administrator.  
 
 Run the following command to create the project:   
 ```
-oc new-project ibpinfra
+oc new-project ibm-hlfsupport-infra
 ```
 {: codeblock}
 
@@ -636,29 +627,17 @@ When you create a new project, a new namespace is created with the same name as 
 ```
 $ oc get namespace
 NAME                                STATUS    AGE
-ibpinfra                            Active    2m
+ibm-hlfsupport-infra                            Active    2m
 ```
 ### Step two: Create a secret for your entitlement key
-{: #deploy-ocp-secret-ibpinfra}
+{: #deploy-ocp-secret-ibm-hlfsupport-infra}
 
-After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
-
-
-
-Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
-```
-kubectl create secret docker-registry cp-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
-```
-{: codeblock}
-- Replace `<KEY>` with your entitlement key.
-- Replace `<EMAIL>` with your email address.
-
-The name of the secret that you are creating is `cp-pull-secret`. It is required by the webhook that you will deploy later. You can only use the key once per deployment. You can refresh the key before you attempt another deployment and use that value here.
-{: note}
+{[sw-create-secret-ibm-hlfsupport-infra.md]}
 
 ### Step three: Deploy the webhook and custom resource definitions to your OpenShift cluster
 {: #webhook}
-Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibpinfra` throughout these instructions.
+
+Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibm-hlfsupport-infra` throughout these instructions.
 
 The first three steps are for deployment of the webhook. The last step is for creation of the custom resource definitions for the CA, peer, orderer and console components that the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires. You only have to deploy the webhook and custom resource definitions **once per cluster**. If you have already deployed this webhook and custom resource definitions to your cluster, you can skip these four steps below.
 {: important}
@@ -673,7 +652,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -690,11 +669,11 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ibpinfra
+  name: ibm-hlfsupport-infra
 subjects:
 - kind: ServiceAccount
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 roleRef:
   kind: Role
   name: webhook
@@ -705,7 +684,7 @@ roleRef:
 
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -f rbac.yaml -n ibpinfra
+kubectl apply -f rbac.yaml -n ibm-hlfsupport-infra
 ```
 {: codeblock}
 
@@ -713,12 +692,12 @@ When the command completes successfully, you should see something similar to:
 ```
 serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
-rolebinding.rbac.authorization.k8s.io/ibpinfra created
+rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 ```
 #### 2.(OpenShift cluster only) Apply the Security Context Constraint
 {: #upgrade-webhook-scc}
 
-Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibpinfra`.
+Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -762,15 +741,15 @@ volumes:
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
 
 ```
-oc apply -f ibpinfra-scc.yaml -n ibpinfra
-oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
+oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
+oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
 ```
 {: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
-securitycontextconstraints.security.openshift.io/ibpinfra created
-scc "ibpinfra" added to: ["system:serviceaccounts:ibpinfra"]
+securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
+scc "ibm-hlfsupport-infra" added to: ["system:serviceaccounts:ibm-hlfsupport-infra"]
 ```
 
 #### 3. Deploy the webhook
@@ -783,7 +762,9 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
-
+<testonly>TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915-amd64` with test image tag.
+{: note}
+</testonly>
 
 ```yaml
 apiVersion: apps/v1
@@ -873,7 +854,7 @@ spec:
 
 Run the following command to add the configuration to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f deployment.yaml
+kubectl apply -n ibm-hlfsupport-infra -f deployment.yaml
 ```
 {: codeblock}
 
@@ -912,7 +893,7 @@ spec:
 
 Run the following command to add the configuration to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f service.yaml
+kubectl apply -n ibm-hlfsupport-infra -f service.yaml
 ```
 {: codeblock}
 
@@ -924,13 +905,13 @@ service/ibm-hlfsupport-webhook created
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ```
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 1.0.0, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
+2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -951,7 +932,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -1016,7 +997,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -1075,7 +1056,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -1134,7 +1115,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -1375,8 +1356,8 @@ The best practice to add this endorsement policy to the MSP is to delete the MSP
 If you deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall, without access to the external internet, you can upgrade your network by using the following steps:
 
 1. [Pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](#upgrade-ocp-images-firewall)
-2. [Create the `ibpinfra` project for the webhook](#deploy-ocp-ibpinfra-fw)
-3. [Create a secret for your entitlement key](#deploy-ocp-secret-ibpinfra-fw)
+2. [Create the `ibm-hlfsupport-infra` project for the webhook](#deploy-ocp-ibm-hlfsupport-infra-fw)
+3. [Create a secret for your entitlement key](#deploy-ocp-secret-ibm-hlfsupport-infra-fw)
 4. [Deploy the webhook and custom resource definitions to your OpenShift cluster](#webhook-fw)
 5. [Update the ClusterRole](#upgrade-ocp-clusterrole-firewall)
 6. [Upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](#upgrade-ocp-operator-firewall)
@@ -1411,49 +1392,49 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-init:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-init:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-console:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-console:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-deployer:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-deployer:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.1-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.1-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-dind:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-dind:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.3-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.3-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20210915 docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-operator:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-init:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-init:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-console:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-console:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-grpcweb:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-deployer:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-deployer:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-fluentd:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:2.3.1-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-couchdb:2.3.1-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-couchdb:3.1.1-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.0-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ca:1.5.0-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-dind:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-dind:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-utilities:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-chaincode-launcher:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-utilities:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ccenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.3-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:2.2.3-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-crdwebhook:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ccenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:1.4.12-20210713 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:1.4.12-20210713 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20210915 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-enroller:1.0.0-20210915 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
 After you complete these steps, you can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric with the images in your registry.
 
-### Step two: Create the `ibpinfra` project for the webhook
-{: #deploy-ocp-ibpinfra-fw}
+### Step two: Create the `ibm-hlfsupport-infra` project for the webhook
+{: #deploy-ocp-ibm-hlfsupport-infra-fw}
 
-Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 1.0.0, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own project, referred to as  `ibpinfra` throughout these instructions.
+Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1` in 1.0.0, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own project, referred to as  `ibm-hlfsupport-infra` throughout these instructions.
 
-After you log in to your cluster, you can create the new `ibpinfra` project for the Kubernetes conversion webhook using the kubectl CLI. The new project needs to be created by a cluster administrator.  
+After you log in to your cluster, you can create the new `ibm-hlfsupport-infra` project for the Kubernetes conversion webhook using the kubectl CLI. The new project needs to be created by a cluster administrator.  
 
 Run the following command to create the project:   
 
 ```
-oc new-project ibpinfra
+oc new-project ibm-hlfsupport-infra
 ```
 {: codeblock}
 
@@ -1461,30 +1442,17 @@ When you create a new project, a new namespace is created with the same name as 
 ```
 $ oc get namespace
 NAME                                STATUS    AGE
-ibpinfra                            Active    2m
+ibm-hlfsupport-infra                            Active    2m
 ```
 ### Step three: Create a secret for your entitlement key
-{: #deploy-ocp-secret-ibpinfra-fw}
+{: #deploy-ocp-secret-ibm-hlfsupport-infra-fw}
 
-After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
-
-
-
-Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
-```
-kubectl create secret docker-registry cp-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
-```
-{: codeblock}
-- Replace `<KEY>` with your entitlement key.
-- Replace `<EMAIL>` with your email address.
-
-The name of the secret that you are creating is `cp-pull-secret`. It is required by the webhook that you will deploy later. You can only use the key once per deployment. You can refresh the key before you attempt another deployment and use that value here.
-{: note}
+{[sw-create-secret-ibm-hlfsupport-infra.md]}
 
 ### Step four: Deploy the webhook and custom resource definitions to your OpenShift cluster
 {: #webhook-fw}
 
-Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibpinfra` throughout these instructions.
+Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibm-hlfsupport-infra` throughout these instructions.
 
 The first three steps are for deployment of the webhook. The last step is for creation of the custom resource definitions for the CA, peer, orderer and console components that the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires. You only have to deploy the webhook and custom resource definitions **once per cluster**. If you have already deployed this webhook and custom resource definitions to your cluster, you can skip these four steps below.
 {: important}
@@ -1499,7 +1467,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -1516,11 +1484,11 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ibpinfra
+  name: ibm-hlfsupport-infra
 subjects:
 - kind: ServiceAccount
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 roleRef:
   kind: Role
   name: webhook
@@ -1531,7 +1499,7 @@ roleRef:
 
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -f rbac.yaml -n ibpinfra
+kubectl apply -f rbac.yaml -n ibm-hlfsupport-infra
 ```
 {: codeblock}
 
@@ -1539,12 +1507,12 @@ When the command completes successfully, you should see something similar to:
 ```
 serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
-rolebinding.rbac.authorization.k8s.io/ibpinfra created
+rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 ```
 #### 2.(OpenShift cluster only) Apply the Security Context Constraint
 {: #upgrade-webhook-scc}
 
-Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibpinfra`.
+Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -1588,15 +1556,15 @@ volumes:
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
 
 ```
-oc apply -f ibpinfra-scc.yaml -n ibpinfra
-oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
+oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
+oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
 ```
 {: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
-securitycontextconstraints.security.openshift.io/ibpinfra created
-scc "ibpinfra" added to: ["system:serviceaccounts:ibpinfra"]
+securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
+scc "ibm-hlfsupport-infra" added to: ["system:serviceaccounts:ibm-hlfsupport-infra"]
 ```
 
 #### 3. Deploy the webhook
@@ -1609,7 +1577,9 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
-
+<testonly>TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915-amd64` with test image tag.
+{: note}
+</testonly>
 
 ```yaml
 apiVersion: apps/v1
@@ -1699,7 +1669,7 @@ spec:
 
 Run the following command to add the configuration to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f deployment.yaml
+kubectl apply -n ibm-hlfsupport-infra -f deployment.yaml
 ```
 {: codeblock}
 
@@ -1738,7 +1708,7 @@ spec:
 
 Run the following command to add the configuration to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f service.yaml
+kubectl apply -n ibm-hlfsupport-infra -f service.yaml
 ```
 {: codeblock}
 
@@ -1750,13 +1720,13 @@ service/ibm-hlfsupport-webhook created
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ```
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 1.0.0, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
+2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -1777,7 +1747,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -1842,7 +1812,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -1901,7 +1871,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -1960,7 +1930,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"

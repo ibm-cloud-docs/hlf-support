@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-10"
 
 keywords: network components, Kubernetes, channel update, channels, governance, channel configuration, orderer, ordering node, ordering service, raft, tutorial
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

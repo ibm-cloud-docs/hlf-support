@@ -1,13 +1,12 @@
 ---
 
 copyright:
-  years: 2019
-
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

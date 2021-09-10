@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-10"
 
 keywords: network components, IBM Cloud Kubernetes Service, backup, restore, disaster, peer, orderer, ordering node, LevelDB, CouchDB
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -393,12 +393,12 @@ kubectl patch <component> <componentName> --type merge --patch '{"spec":{"replic
 {: codeblock}
 
 
-Where `<component>` is one of: `ibppeer`, `ibporderer`, or `ibpca`.
+Where `<component>` is one of: `ibm-hlfsupportpeer`, `ibm-hlfsupportorderer`, or `ibm-hlfsupportca`.
 
 In this example, scale down `peera`:
 
 ```
-kubectl patch <ibppeer> peera --type merge --patch '{"spec":{"replicas":0}}' -n n3392fd
+kubectl patch <ibm-hlfsupportpeer> peera --type merge --patch '{"spec":{"replicas":0}}' -n n3392fd
 ```
 {: codeblock}
 
@@ -509,12 +509,12 @@ kubectl patch <component> <componentName> --type merge --patch '{"spec":{"replic
 {: codeblock}
 
 
-Where `<component>` is, once again, one of: `ibppeer`, `ibporderer`, or `ibpca`.
+Where `<component>` is, once again, one of: `ibm-hlfsupportpeer`, `ibm-hlfsupportorderer`, or `ibm-hlfsupportca`.
 
 In this example, scale up `peera`:
 
 ```
-kubectl patch <ibppeer> peera --type merge --patch '{"spec":{"replicas":1}}' -n n3392fd
+kubectl patch <ibm-hlfsupportpeer> peera --type merge --patch '{"spec":{"replicas":1}}' -n n3392fd
 ```
 {: codeblock}
 

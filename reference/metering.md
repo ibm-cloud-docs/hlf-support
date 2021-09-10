@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-10"
 
 keywords: metering, licensing service, license consumption, license tracking
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

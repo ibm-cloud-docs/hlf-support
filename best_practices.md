@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: best practices, develop applications, connectivity, availability, mutual TLS, CouchDB
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

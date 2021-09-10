@@ -1,13 +1,13 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

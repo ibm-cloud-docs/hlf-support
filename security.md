@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: security, encryption, storage, tls, iam, roles, keys, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -117,7 +117,7 @@ subcollection: blockchain-sw-252
 {: shortdesc}
 
 ## Security on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
-{: #ibm-hlfsupport-security-ibp}
+{: #ibm-hlfsupport-security-ibm-hlfsupport}
 
 **Audience:** Tasks in this section are typically performed by **blockchain network operators**.  
 

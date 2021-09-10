@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2021, 2021
-lastupdated: "2021-09-09"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: IBM Support for Hyperledger Fabric, deploy, resource requirements, storage, parameters, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -126,14 +126,7 @@ Ensure that your Kubernetes cluster has sufficient resources for the {{site.data
 
 The resources for the CA, peer, and ordering nodes need to be multiplied by the number of these nodes that you require. The operator and console resources are per blockchain deployment. For example, if you deployed development, staging, and test networks in a single cluster, you need to have enough resources for three instances of the operator and console, one for each blockchain deployment. On the other hand, the webhook resources are per Kubernetes cluster, only one instance is required, regardless of the number of blockchain networks in the cluster.
 
-<blockchain>| **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
-|--------------------------------|---------------|-----------------------|------------------------|
-| **Peer (Hyperledger Fabric v1.4)**                       | 1.1           | 2.8                   | 200 (includes 100GB for peer and 100GB for state database)|
-| **Peer (Hyperledger Fabric v2.x)**                       | 0.7           | 2.0                   | 200 (includes 100GB for peer and 100GB for state database)|
-| **CA**                         | 0.1           | 0.2                   | 20                     |
-| **Ordering node**              | 0.35          | 0.7                   | 100                    |
-| **Operator**                   | 0.1           | 0.2                   | 0                      |
-| **Console**                    | 1.2           | 2.4                   | 10                     |</blockchain><blockchain-sw-252>| **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
+| **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
 |--------------------------------|---------------|-----------------------|------------------------|
 | **Peer (Hyperledger Fabric v1.4)**                       | 1.1           | 2.8                   | 200 (includes 100GB for peer and 100GB for state database)|
 | **Peer (Hyperledger Fabric v2.x)**                       | 0.7           | 2.0                   | 200 (includes 100GB for peer and 100GB for state database)|
@@ -141,7 +134,7 @@ The resources for the CA, peer, and ordering nodes need to be multiplied by the 
 | **Ordering node**              | 0.35          | 0.7                   | 100                    |
 | **Operator**                   | 0.1           | 0.2                   | 0                      |
 | **Console**                    | 1.2           | 2.4                   | 10                     |
-| **Webhook**                    | 0.1           | 0.2                   | 0                      |</blockchain-sw-252>
+| **Webhook**                    | 0.1           | 0.2                   | 0                      |
 {: caption="Table 1. Default resource allocations" caption-side="bottom"}
 ** These values can vary slightly. Actual VPC allocations are visible in the blockchain console when a node is deployed.
 
@@ -159,31 +152,31 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console has be
 
 In addition to a small amount of storage (10 GB) required by the {{site.data.keyword.blockchainfull_notm}} console, persistent storage is required for each CA, peer, and ordering node that you deploy. Because blockchain components do not use the Kubernetes node local storage, network-attached remote storage is required so that blockchain nodes can fail over to a different Kubernetes worker node in the event of a node outage.  And because you cannot change your storage type after deploying peer, CA, or ordering nodes, you need to decide the type of persistent storage that you want to use _before_ you deploy any blockchain nodes.
 
-The {{site.data.keyword.blockchainfull_notm}} Platform console uses dynamic provisioning to allocate storage for each blockchain node that you deploy by using a pre-defined storage class. You can choose your persistent storage from the available Kubernetes storage options.
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses dynamic provisioning to allocate storage for each blockchain node that you deploy by using a pre-defined storage class. You can choose your persistent storage from the available Kubernetes storage options.
 
 If the storage includes support for the `volumeBindingMode: WaitForFirstCustomer` setting, you should configure it to delay volume binding until the pod is scheduled. Read more in the [Kubernetes Storage Classes documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external}.
 {: tip}
 
-Before you deploy the {{site.data.keyword.blockchainfull_notm}} Platform, you must create a storage class with enough backing storage for the {{site.data.keyword.blockchainfull_notm}} console and the nodes that you create. You can set this storage class to use the default storage class of your Kubernetes cluster or create a new class that is used by the {{site.data.keyword.blockchainfull_notm}} Platform console. If you are using a multizone cluster in {{site.data.keyword.cloud_notm}} and you change the default storage class definition, then you must configure the default storage class for each zone.  
+Before you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you must create a storage class with enough backing storage for the {{site.data.keyword.blockchainfull_notm}} console and the nodes that you create. You can set this storage class to use the default storage class of your Kubernetes cluster or create a new class that is used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. If you are using a multizone cluster in {{site.data.keyword.cloud_notm}} and you change the default storage class definition, then you must configure the default storage class for each zone.  
 After you create the storage class, run the following command to set the storage class of the multizone region to be the default storage class:
 ```
 kubectl patch storageclass
 ```
 {: codeblock}
 
-<blockchain-sw-252>If you prefer not to choose a persistent storage option, the default storage class of your namespace or OpenShift project is used. `Host-local` volume storage is not supported.
+If you prefer not to choose a persistent storage option, the default storage class of your namespace or OpenShift project is used. `Host-local` volume storage is not supported.
 {: note}
-</blockchain-sw-252>
+
 ### Considerations when choosing your persistent storage
 {: ibm-hlfsupport-storage-considerations}
 
 | **Consideration** | **Recommendations** |
 |---------------|------|
-| **Type** | Fabric supports three types of storage for your nodes: File, Block, and Portworx. <blockchain>The default storage in {{site.data.keyword.cloud_notm}} in File storage.</blockchain> All three types support snapshots, which are important for backups and disaster recovery. Portworx is also useful when you have multiple zones in your cluster. Object storage is not supported by Fabric but can be used for backups. |
-| **Performance**| When you choose your storage, you need to factor in the read/write speed (IOPS/GB). {{site.data.keyword.blockchainfull_notm}} Platform suggests at least 2 IOPS/GB for a development or test environment and 4 IOPS/GB for production networks. Your results may vary depending on your use case and how your client application is written. |
+| **Type** | Fabric supports three types of storage for your nodes: File, Block, and Portworx. All three types support snapshots, which are important for backups and disaster recovery. Portworx is also useful when you have multiple zones in your cluster. Object storage is not supported by Fabric but can be used for backups. |
+| **Performance**| When you choose your storage, you need to factor in the read/write speed (IOPS/GB). {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric suggests at least 2 IOPS/GB for a development or test environment and 4 IOPS/GB for production networks. Your results may vary depending on your use case and how your client application is written. |
 | **Scalability **| When a node runs out of storage, it ceases to operate. Even if Kubernetes attempts to redeploy the node elsewhere, when the storage is full, the node cannot operate. Because the ledger is immutable and can only grow over time, expandable storage is nice to have for blockchain networks whenever available. At some point, you will run out of storage on your peers and ordering nodes and expandable storage helps to avoid this situation. If the storage is not expandable, when a peer or ordering runs out of storage, you need to provision a new node with a larger storage capacity and then delete the old one. When the new node is deployed, it must replicate the ledger, which can take time depending on the depth of the block history. |
 | **Monitoring** | It's critical to monitor the storage consumption by your nodes. Consider the scenario where you deploy five ordering nodes, all with the same amount of storage. They are all replicating the same ledgers so they will all run out of storage at approximately the same time and you will lose consensus, causing the network to stop functioning. Therefore, you might want to consider varying the storage across the nodes and monitoring it as the ledger grows to avoid this situation. Before storage is exhausted on a node, you can expand it or provision a new node. |
-| **Encryption** | Fabric does not require storage to be encrypted but it is a best practice for Security. You need to decide whether encryption is important for your business. If you have the option of encrypting the persistent volume, there may be some performance implications with encryption to consider. <blockchain>Storage in {{site.data.keyword.cloud_notm}} is encrypted by default, but you can disable it if encryption is not required.</blockchain> |
+| **Encryption** | Fabric does not require storage to be encrypted but it is a best practice for Security. You need to decide whether encryption is important for your business. If you have the option of encrypting the persistent volume, there may be some performance implications with encryption to consider.  |
 | **High Availability (HA)** | There should be redundancy in the storage to avoid a single point of failure. |
 | **Multi-zone capable storage** | {{site.data.keyword.cloud_notm}} includes the ability to create a single Kubernetes cluster across multiple data centers or "zones". Portworx offers multi-zone capable storage that can be used to potentially reduce the number of peers required. Consider a scenario where you build two zones with two peers for redundancy, one zone can go down and you still have two peers up in another zone. With multi-zone capable storage, you could instead have two zones with one peer each. If one zone goes down, the peer comes up in the other zone with its storage intact, reducing the overall redundant peer requirements. |
 
@@ -221,45 +214,30 @@ When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 
 Before you can complete the next steps, you need to log in to your cluster by using the kubectl CLI. Follow the instructions for logging in to your cluster.
 
-## Create the `ibpinfra` namespace for the webhook
-{: #deploy-k8-ibpinfra}
+## Create the `ibm-hlfsupport-infra` namespace for the webhook
+{: #deploy-k8-ibm-hlfsupport-infra}
 
-Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1`, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibpinfra` throughout these instructions.
+Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1`, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own namespace, referred to as  `ibm-hlfsupport-infra` throughout these instructions.
 
-After you log in to your cluster, you can create the new `ibpinfra` namespace for the Kubernetes conversion webhook using the kubectl CLI. The new namespace needs to be created by a cluster administrator.
+After you log in to your cluster, you can create the new `ibm-hlfsupport-infra` namespace for the Kubernetes conversion webhook using the kubectl CLI. The new namespace needs to be created by a cluster administrator.
 
 Run the following command to create the namespace.
 ```
-kubectl create namespace ibpinfra
+kubectl create namespace ibm-hlfsupport-infra
 ```
 {: codeblock}
 
 ## Create a secret for your entitlement key
-{: #deploy-k8-secret-ibpinfra}
+{: #deploy-k8-secret-ibm-hlfsupport-infra}
 
-After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
-
-<testonly>TESTER: Contact Mihir or Dhyey for the key that you need to use for pulling images from staging. Also the docker server should be `--docker-server=cp.stg.icr.io`
-{: note}
-</testonly>
-
-Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
-```
-kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
-```
-{: codeblock}
-- Replace `<KEY>` with your entitlement key.
-- Replace `<EMAIL>` with your email address.
-
-The name of the secret that you are creating is `docker-key-secret`. It is required by the webhook that you will deploy later. You can only use the key once per deployment. You can refresh the key before you attempt another deployment and use that value here.
-{: note}
+{[sw-create-secret-ibm-hlfsupport-infra.md]}
 
 ## Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster
 {: #deploy-k8s-webhook-crd}
 
-Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibpinfra` throughout these instructions.
+Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibm-hlfsupport-infra` throughout these instructions.
 
-The first three steps are for deployment of the webhook. The last step is for the custom resource definitions for the CA, peer, orderer, and console components that the {{site.data.keyword.blockchainfull_notm}} Platform requires. You only have to deploy the webhook and custom resource definitions **once per cluster**. If you have already deployed this webhook and custom resource definitions to your cluster, you can skip these four steps below.
+The first three steps are for deployment of the webhook. The last step is for the custom resource definitions for the CA, peer, orderer, and console components that the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires. You only have to deploy the webhook and custom resource definitions **once per cluster**. If you have already deployed this webhook and custom resource definitions to your cluster, you can skip these four steps below.
 {: important}
 
 ### 1. Configure role-based access control (RBAC) for the webhook
@@ -272,7 +250,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -289,11 +267,11 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ibpinfra
+  name: ibm-hlfsupport-infra
 subjects:
 - kind: ServiceAccount
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 roleRef:
   kind: Role
   name: webhook
@@ -304,7 +282,7 @@ roleRef:
 
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -f rbac.yaml -n ibpinfra
+kubectl apply -f rbac.yaml -n ibm-hlfsupport-infra
 ```
 {: codeblock}
 
@@ -312,15 +290,15 @@ When the command completes successfully, you should see something similar to:
 ```
 serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
-rolebinding.rbac.authorization.k8s.io/ibpinfra created
+rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 ```
 {: codeblock}
 
 ### 2. (OpenShift cluster only) Apply the Security Context Constraint
 {: #webhook-scc}
 
-Skip this step if you are not using OpenShift. The {{site.data.keyword.blockchainfull_notm}} Platform requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`.
-Replace `<PROJECT_NAME>` with `ibpinfra`.
+Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`.
+Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -364,15 +342,15 @@ volumes:
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
 
 ```
-oc apply -f ibpinfra-scc.yaml -n ibpinfra
-oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
+oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
+oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
 ```
 {: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
-securitycontextconstraints.security.openshift.io/ibpinfra created
-clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
+securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
+clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibm-hlfsupport-infra added: "system:serviceaccounts:ibm-hlfsupport-infra"
 ```
 
 ### 3. Deploy the webhook
@@ -385,7 +363,7 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
-<testonly>TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibm-hlfsupport-operator:2.5.2-20210810-amd64` with test image tag.
+<testonly>TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915-amd64` with test image tag.
 {: note}
 </testonly>
 ```yaml
@@ -413,11 +391,11 @@ spec:
       annotations:
         productName: "IBM Blockchain Platform"
         productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.2"
+        productVersion: "1.0.0"
     spec:
       serviceAccountName: webhook
       imagePullSecrets:
-        - name: docker-key-secret
+        - name: cp-pull-secret
       hostIPC: false
       hostNetwork: false
       hostPID: false
@@ -427,7 +405,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:2.5.2-20210713-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -475,7 +453,7 @@ spec:
 {: codeblock}
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f deployment.yaml
+kubectl apply -n ibm-hlfsupport-infra -f deployment.yaml
 ```
 {: codeblock}
 
@@ -514,7 +492,7 @@ spec:
 
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f service.yaml
+kubectl apply -n ibm-hlfsupport-infra -f service.yaml
 ```
 {: codeblock}
 
@@ -526,13 +504,13 @@ service/ibm-hlfsupport-webhook created
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ```
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
-2. When you deploy the {{site.data.keyword.blockchainfull_notm}} Platform 2.5.2 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 2.5.2, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
+2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -553,7 +531,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -618,7 +596,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -677,7 +655,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -736,7 +714,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -803,7 +781,7 @@ If you are not using the default storage class, additional configuration is requ
 ## Create a secret for your entitlement key
 {: #deploy-k8-docker-registry-secret}
 
-You've already created a secret for the entitlement key in the `ibpinfra` namespace or project, now you need to create one in your {{site.data.keyword.blockchainfull_notm}} Platform namespace or project. After you purchase the {{site.data.keyword.blockchainfull_notm}} Platform, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
+You've already created a secret for the entitlement key in the `ibm-hlfsupport-infra` namespace or project, now you need to create one in your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric namespace or project. After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
 <testonly>TESTER: Contact Mihir or Dhyey for the key that you need to use for pulling images from staging. Also the docker server should be `--docker-server=cp.stg.icr.io`
 {: note}
@@ -811,14 +789,14 @@ You've already created a secret for the entitlement key in the `ibpinfra` namesp
 
 Run the following command to create the secret and add it to your namespace or project:
 ```
-kubectl create secret docker-registry docker-key-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n <NAMESPACE>
+kubectl create secret docker-registry cp-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n <NAMESPACE>
 ```
 {: codeblock}
 - Replace `<KEY>` with your entitlement key.
 - Replace `<EMAIL>` with your email address.
-- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.blockchainfull_notm}} Platform deployment namespace or OpenShift project.
+- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace or OpenShift project.
 
-The name of the secret that you are creating is `docker-key-secret`. This value is used by the operator to deploy the offering in future steps. If you change the name of any of secrets that you create, you need to change the corresponding name in future steps.
+The name of the secret that you are creating is `cp-pull-secret`. This value is used by the operator to deploy the offering in future steps. If you change the name of any of secrets that you create, you need to change the corresponding name in future steps.
 {: note}
 
 ## Add security and access policies
@@ -1058,7 +1036,7 @@ spec:
       annotations:
         productName: "IBM Blockchain Platform"
         productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "2.5.2"
+        productVersion: "1.0.0"
         productChargedContainers: ""
         productMetric: "VIRTUAL_PROCESSOR_CORE"
     spec:
@@ -1080,10 +1058,10 @@ spec:
         runAsUser: 1001
         fsGroup: 2000
       imagePullSecrets:
-        - name: docker-key-secret
+        - name: cp-pull-secret
       containers:
         - name: ibm-hlfsupport-operator
-          image: cp.icr.io/cp/ibm-hlfsupport-operator:2.5.2-20210505-amd64
+          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915-amd64
           command:
           - ibm-hlfsupport-operator
           imagePullPolicy: Always
@@ -1134,7 +1112,7 @@ spec:
 ```
 {: codeblock}
 
-- If you changed the name of the Docker key secret, then you need to edit the field of `name: docker-key-secret`.
+- If you changed the name of the Docker key secret, then you need to edit the field of `name: cp-pull-secret`.
 
 Then, use the kubectl CLI to add the custom resource to your namespace.
 
@@ -1335,12 +1313,12 @@ When you access your console, you can view the **nodes** tab of your console UI.
 
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage).  
 
-Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
+Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport) that can be used to complete all of the steps  in this topic for you.
 
 ## Considerations when using Kubernetes distributions
 {: #console-deploy-k8-considerations}
 
-Before you attempt to install the {{site.data.keyword.blockchainfull_notm}} Platform on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, you should perform the following steps. Refer to your Kubernetes distribution documentation for more details.
+Before you attempt to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, you should perform the following steps. Refer to your Kubernetes distribution documentation for more details.
 
 1. Ensure that a load balancer with a public IP is configured in front of the Kubernetes cluster.
 2. Create a DNS entry for the IP address of the load balancer.
@@ -1387,16 +1365,16 @@ Before you attempt to install the {{site.data.keyword.blockchainfull_notm}} Plat
     ```
     {: codeblock}
 
-7. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.
+7. Verify that all pods are running before you attempt to [install](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login) the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 You can now [resume your installation](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login).
 
 ## Considerations when using {{site.data.keyword.containerlong_notm}}
 {: #console-deploy-k8-iks-considerations}
 
-If your Kubernetes cluster was deployed on {{site.data.keyword.cloud_notm}}, you can deploy an instance of the [{{site.data.keyword.blockchainfull_notm}} Platform](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks-ic#ibm-hlfsupport-v2-deploy-iks-create-service-instance) and link it to your Kubernetes cluster. However, if you have purchased a software entitlement and want to use it with the {{site.data.keyword.containerlong_notm}}, then additional configuration steps are required before you can deploy the platform.  
+If your Kubernetes cluster was deployed on {{site.data.keyword.cloud_notm}}, you can deploy an instance of the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks-ic#ibm-hlfsupport-v2-deploy-iks-create-service-instance) and link it to your Kubernetes cluster. However, if you have purchased a software entitlement and want to use it with the {{site.data.keyword.containerlong_notm}}, then additional configuration steps are required before you can deploy the platform.  
 
-The {{site.data.keyword.blockchainfull_notm}} Platform service requires that the Kubernetes Ingress image is configured for your cluster and that SSL passthrough is enabled, which allows all data to pass through to a load balancer without decrypting it. If you created your {{site.data.keyword.containerlong_notm}} cluster after 01 December 2020, by default it is configured with the Kubernetes Ingress application load balancers (ALBs). But SSL passthrough is not enabled by default in the configuration, therefore, you need to enable it.
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service requires that the Kubernetes Ingress image is configured for your cluster and that SSL passthrough is enabled, which allows all data to pass through to a load balancer without decrypting it. If you created your {{site.data.keyword.containerlong_notm}} cluster after 01 December 2020, by default it is configured with the Kubernetes Ingress application load balancers (ALBs). But SSL passthrough is not enabled by default in the configuration, therefore, you need to enable it.
 
 If you are planning to run the platform on OpenShift in {{site.data.keyword.cloud_notm}}, then you do not need to perform the steps in this section.
 {: note}
@@ -1494,5 +1472,5 @@ containers:
 
 Confirm that `- --ingress-class=nginx` and `- --enable-ssl-passthrough=true`.
 
-This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/blockchain-sw-252?topic=blockchain-sw-252-deploy-k8#deploy-k8-login) the {{site.data.keyword.blockchainfull_notm}} Platform.
+This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login) the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login) the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.

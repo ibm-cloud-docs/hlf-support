@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: network components, Kubernetes, batch timeout, channel update, channels, governance, channel configuration, access control
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

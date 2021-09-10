@@ -260,7 +260,7 @@
 
 [Security](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security)
 
-* [Security on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibp)
+* [Security on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport)
     * [IAM (Identity and Access Management)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-iam)
     * [Ports](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-ports)
     * [Key management](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-keys)
@@ -637,11 +637,11 @@
 * [Next steps](/docs/hlf-support?topic=hlf-support-ansible#ansible-next-steps)
 * [Where to find support](/docs/hlf-support?topic=hlf-support-ansible#ansible-support)
 
-[Deploy the service from an Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp)
-* [Prerequisites](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-prereqs)
-  * [Gather your Kubernetes cluster details](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-k8s-cluster)
-* [Build the Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-playbook)
-* [Next steps](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-playbook-next)
+[Deploy the service from an Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport)
+* [Prerequisites](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-prereqs)
+  * [Gather your Kubernetes cluster details](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-k8s-cluster)
+* [Build the Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-playbook)
+* [Next steps](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-playbook-next)
 
 [Building an IBM Blockchain Platform network using Ansible playbooks](/docs/hlf-support?topic=hlf-support-ansible-build)
 * [Prerequisites](/docs/hlf-support?topic=hlf-support-ansible-build#ansible-build-prereqs)
@@ -723,8 +723,8 @@
 * [Get your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-entitlement-key)
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-prerequisites)
 * [Log in to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-login)
-* [Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-ibpinfra)
-* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-secret-ibpinfra)
+* [Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-ibm-hlfsupport-infra)
+* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-secret-ibm-hlfsupport-infra)
 * [Deploy the webhook and custom resource definitions (CRDs) to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-webhook-crd)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-ocp#webhook-scc)
@@ -750,8 +750,8 @@
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-prerequisites-firewall)
 * [Pull the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-images-firewall)
 * [Log in to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-login-firewall)
-* [Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-ibpinfra)
-* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-secret-ibpinfra-fw)
+* [Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-ibm-hlfsupport-infra)
+* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-secret-ibm-hlfsupport-infra-fw)
 * [Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-k8s-webhook-crd)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#webhook-scc)
@@ -771,11 +771,11 @@
 * [Log in to the console](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-log-in)
 * [Next steps](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#console-deploy-ocp-next-steps-fw)
 
-[Deploy the service from an Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp)
-* [Prerequisites](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-prereqs)
-  * [Gather your Kubernetes cluster details](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-k8s-cluster)
-* [Build the Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-playbook)
-* [Next steps](/docs/hlf-support?topic=hlf-support-ansible-install-ibp#ansible-install-ibm-hlfsupport-playbook-next)
+[Deploy the service from an Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport)
+* [Prerequisites](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-prereqs)
+  * [Gather your Kubernetes cluster details](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-k8s-cluster)
+* [Build the Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-playbook)
+* [Next steps](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport#ansible-install-ibm-hlfsupport-playbook-next)
 
 
 ## Upgrading your console and components
@@ -799,8 +799,8 @@
     * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-update-consortium)
 
 * [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from 2.1.x](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-steps-21x)
-    * [Step one: Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibpinfra)
-    * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibpinfra)
+    * [Step one: Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibm-hlfsupport-infra)
+    * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibm-hlfsupport-infra)
     * [Step three: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-upgrade-ocp#webhook)
     * [Step four: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-clusterrole)
     * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-operator)
@@ -810,8 +810,8 @@
 * [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from 2.1.x from behind a firewall](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-firewall)
     * [Before you begin](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-begin-firewall)
     * [Step one: Pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-images-firewall)
-    * [Step two: Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibpinfra-fw)
-    * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibpinfra-fw)
+    * [Step two: Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibm-hlfsupport-infra-fw)
+    * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibm-hlfsupport-infra-fw)
     * [Step four: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-upgrade-ocp#webhook-fw)
     * [Step five: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-clusterrole-firewall)
     * [Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-operator-firewall)
@@ -851,8 +851,8 @@
 * [Get your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-entitlement-key)
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-prerequisites)
 * [Log in to your cluster](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login)
-* [Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-ibpinfra)
-* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-secret-ibpinfra)
+* [Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-ibm-hlfsupport-infra)
+* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-secret-ibm-hlfsupport-infra)
 * [Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8s-webhook-crd)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-k8#webhook-scc)
@@ -886,8 +886,8 @@
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-prerequisites-firewall)
 * [Pull the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-images-firewall)
 * [Log in to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8s-login-firewall)
-* [Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-ibpinfra-fw)
-* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-secret-ibpinfra-fw)
+* [Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-ibm-hlfsupport-infra-fw)
+* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-secret-ibm-hlfsupport-infra-fw)
 * [Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8s-webhook-crd-fw)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#webhook-scc)
@@ -924,8 +924,8 @@
   * [Step six: Update MSPs in consortium to add organization-level endorsement policy](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-update-consortium)
 * [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from 2.1.x](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-steps-21x)
   * [Before you begin](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-before-steps-21x)
-  * [Step one: Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibpinfra)
-  * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibpinfra)
+  * [Step one: Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibm-hlfsupport-infra)
+  * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibm-hlfsupport-infra)
   * [Step three: Deploy the webhook and custom resource definitions to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-webhook-crd)
   * [Step four: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-clusterrole)
   * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-operator)
@@ -934,8 +934,8 @@
 * [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from 2.1.x from behind a firewall](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-firewall)
   * [Before you begin](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-begin-firewall)
   * [Step one: Pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-images-firewall)
-  * [Step two: Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibpinfra-fw)
-  * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibpinfra-fw)
+  * [Step two: Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibm-hlfsupport-infra-fw)
+  * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibm-hlfsupport-infra-fw)
   * [Step four: Deploy the webhook and custom resource definitions to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-webhook-fw)
   * [Step five: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-clusterrole-firewall)
   * [Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-operator-firewall)
@@ -1193,7 +1193,7 @@
   * [Interacting with your smart contract](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-submitting-transactions)
   * [Connecting your applications to the preconfigured network](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-exploring-connection-details)
 * [Step five: Test a deployed smart contract](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-testing-instantiated-smart-contract)
-* [Step six: Connect to your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibp)
+* [Step six: Connect to your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibm-hlfsupport)
   * [Invoke a smart contract that has been instantiated or committed on your channels](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibm-hlfsupport-invoke)
   * [Deploy a smart contract from VS Code](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibm-hlfsupport-install-instantiate)
   * [Adding wallets and users](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-add-a-wallet)
@@ -1680,7 +1680,7 @@
 
 [Security](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security)
 
-* [Security on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibp)
+* [Security on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport)
     * [IAM (Identity and Access Management)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-iam)
     * [Ports](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-ports)
     * [Key management](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-keys)
@@ -1704,6 +1704,46 @@
 ## High availability
 {: #sitemap_high_availability}
 
+
+[Setting up multiregion High Availability (HA) deployments for peers](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr)
+* [Overview](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr#ibm-hlfsupport-console-hadr-overview)
+* [Configuration steps](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr#ibm-hlfsupport-console-hadr-config)
+  * [Step one: Create the peer organization's CA and metadata in cluster one](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr#ibm-hlfsupport-console-hadr-peerCA)
+  * [Step two: Export the metadata and identities from cluster one](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr#ibm-hlfsupport-console-hadr-export-meta1)
+  * [Step three: Import the metadata and identities in to cluster two and three](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr#ibm-hlfsupport-console-hadr-import-meta23)
+  * [Step four: Create new peers in cluster two and three and join a channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr#ibm-hlfsupport-console-hadr-create-new-peers)
+
+[Setting up multiregion High Availability (HA) deployments for the ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os)
+* [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-prereq)
+* [Deploy the ordering service in Region 1](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1)
+  * [Create the ordering service CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-ca)
+  * [Associate the CA admin identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-ca-admin)
+  * [Use your CA to register identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-ca-reg)
+  * [Create the ordering service organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-msp)
+  * [Create single node ordering service in Region 1.](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-osn1)
+  * [Add second ordering node in Region 1](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-osn2)
+  * [Add the `OS2-Region1` node to the orderer system channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-osn2-system)
+  * [Export components](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region1-export)
+* [Add a new ordering node in Region 2](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region2)
+  * [Import components](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region2-import)
+  * [Add third ordering node from Region 2](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region2-osn3)
+  * [Add the `OS3-Region2` node to the orderer system channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region2-osn3-system)
+  * [Export the ordering node](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region2-osn3-export)
+* [Add two new ordering nodes in Region 3](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region3)
+  * [Import components](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region3-import)
+  * [Add fourth and fifth ordering nodes from Region 3](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region2-osn3)
+  * [Add the ordering nodes to the orderer system channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region3-system)
+  * [Export the ordering nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-region3-export)
+* [Update the ordering service in Region 1, Region 2, and Region 3.](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-update)
+* [Next steps](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os#ibm-hlfsupport-console-hadr-mr-os-next)
+
+[Building a high availability Certificate Authority (CA)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca)
+* [Configuring CA replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-replica-sets)
+  * [Deploying a PostgreSQL database](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-postgresql)
+* [Considerations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-considerations)
+* [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-before)
+* [ Creating the PostgreSQL connection file](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-connx)
+* [Creating an HA CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create)
 
 
 ## Data residency
@@ -1729,9 +1769,123 @@
 * [Reference material](/docs/hlf-support?topic=hlf-support-console-icp-about-data-residency#console-icp-about-data-residency-reference)
 
 
+## FAQs
+{: #sitemap_faqs}
+
+
+[FAQs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq)
+
+* [What is the value of using {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric over native Hyperledger Fabric?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-7)
+
+* [What version of Hyperledger Fabric is being used with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-v2-Hyperledger-Fabric-3-1)
+
+* [Can {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components interoperate with Hyperledger Fabric components on the same network? And vice versa? And what is the support policy for networks that include both {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components and open source components?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-interoperability)
+
+* [Where can a customer deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and how will {{site.data.keyword.IBM_notm}} support those deployment environments?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-sw-support)
+
+* [Does {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x and 2.5 run on OpenShift on {{site.data.keyword.cloud_notm}}?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-saas-ocp)
+
+* [What ports are used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-ports)
+
+* [How can I estimate the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric sizing requirements for my development, test, and production environments?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-sizing)
+
+* [Is it possible to deploy blockchain nodes to multiple clouds from a single blockchain console?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-multicloud)
+
+* [How can I find what version of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric that I am running?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-version)
+
+* [How do I get the latest Fabric version and Fabric functionalities on my {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-v2-fabric-upgrade)
+
+* [I am currently using Hyperledger Fabric v1.4.x and want to move to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x or 2.5.x. Can I continue to use Raft?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-migrate-raft)
+
+* [What database do the peers use for their ledger?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-3)
+
+* [What types of off-chain databases are supported with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-offchain-db)
+
+* [If service discovery is on, will an endorsement request be routed to any peer on the network?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-service-discovery)
+
+* [Do ordering service Raft nodes use Transport Layer Security (TLS) for communication?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-raft-tls)
+
+* [How can I back up and restore components and networks?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-backup-restore)
+
+* [What benefits are available with the new smart contract lifecycle available on nodes and channels running on Fabric v2.x?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-new-lifecycle)
+
+* [Do you support using certificates from non-IBM Certificate Authorities?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-v2-external-certs)
+
+* [What is the recommended way to manage private keys?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-hsm)
+
+* [Can I integrate my corporate LDAP server with the Certificate Authority (CA) in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-ldap)
+
+* [What is the process for rotating certificates on a periodic basis?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-cert-mgmt)
+
+* [What languages are supported for smart contracts?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-4)
+
+* [What version of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric works with the Ansible collection?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-ansible-version)
+
+* [How do I get support for running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Ansible playbook?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-ansible-support)
+
+* [Do I need OpenShift to run CodeReady Workspace?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-codeready-openshift)
+
+* [How often do updates get rolled out for the CodeReady Workspace extension?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-codeready-updates)
+
+* [How can I test my smart contract that is running in CodeReady workspace?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-test-smart-contracts)
+
+* [How can I find the examples and tutorials within the VSCode extension?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-vscode-tutorials)
+
+* [Can the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric monitor the health of a client application?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-mon-client-app)
+
+* [Where does {{site.data.keyword.IBM_notm}} store the customer's logs and how long does {{site.data.keyword.IBM_notm}} keep the audit logs for the blockchain platform service?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-customer-logs)
+
+* [Do we have access to logging services and what logs are available to me?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-v2-Logging-and-Monitoring-11-6)
+
+* [Is there a best practice for monitoring my blockchain resources?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-mon-res)
+
+
 ## Getting started
 {: #sitemap_getting_started}
 
+
+[Build a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network)
+* [Sample network tutorial series](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-sample-tutorial)
+  * [The structure of this network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-structure)
+* [Step one: Create a peer organization and a peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-peer-org1)
+  * [Creating your peer organization's CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-CA-org1CA)
+  * [Associating the CA admin identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-ca-admin)
+  * [Using your CA to register identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-use-CA-org1)
+  * [Creating the peer organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-peers-org1)
+  * [Creating a peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-peer-create)
+* [Step two: Create the ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-orderer)
+  * [Ordering in the console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-ordering-console)
+  * [Creating your ordering service organization CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-orderer-ca)
+  * [Associating the CA admin identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-orderer-ca-admin)
+  * [Using your CA to register ordering service node and ordering service admin identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-use-CA-orderer)
+  * [Creating the ordering service organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-orderer-org-msp)
+  * [Deploy the ordering nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-an-orderer)
+* [Step three: Join the consortium hosted by the ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-add-org)
+  * [Add the organization to the consortium](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-add-org-consortium)
+* [Step four: Create a channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-channel)
+  * [Creating a channel: `channel1`](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-channel1)
+* [Step five: Join your peer to the channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-join-peer)
+* [Next steps](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-next-steps)
+
+[Join a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network)
+* [Sample network tutorial series](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-structure)
+* [Step one: Create a peer organization and a peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-create-ca-org2)
+  * [Creating your peer organization CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-create-CA-org2CA)
+  * [Associating the CA admin identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-ca-admin)
+  * [Using your CA to register identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-use-CA-org2)
+  * [Creating the peer organization MSP](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-create-peers-org2)
+  * [Creating a peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-peer-create)
+* [Step two: Add Org2 to an existing channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-add-channel)
+  * [Export the ordering service and its MSP](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-export-ordering-service)
+  * [Import the ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-import-remote-orderer)
+* [Step three: Join your peer to the channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-join-peer-org2)
+* [Step four: Creating a channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-create-channel)
+  * [Join the consortium hosted by the ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-add-org2)
+  * [Export your organization information](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-add-org2-remote)
+  * [Import the organization definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-import-remote-msp)
+  * [Add Org2 MSP to the ordering service consortium](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-add-org2-local)
+  * [Creating a channel: `channel2`](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-build-network-create-channel1)
+* [Next steps](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-next-steps)
 
 [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric getting started videos](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-videos)
 * [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-videos#ibm-hlfsupport-videos-ibm-hlfsupport-v2)
@@ -1741,10 +1895,124 @@
 {: #sitemap_deploy_a_smart_contract}
 
 
+[Deploy a smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts)
+* [Sample network tutorial series](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts#ibm-hlfsupport-console-smart-contracts-structure)
+
+[Deploy a smart contract using Fabric v2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2)
+* [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-before)
+  * [Ensure peer is running Fabric v2.x image](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-before-fabimage)
+  * [Update MSPs in consortium to add organization-level endorsement policy](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-update-consortium)
+  * [Create channel and join peers](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-before-peer)
+  * [Export and Import Membership Service Providers (MSPs)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-before-msps)
+  * [Peer admin identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-peer-admin)
+* [Limitations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-limitations)
+  * [Can I continue to use the Fabric SDK to deploy my smart contracts?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-sdk)
+  * [What happens to my existing smart contracts?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-existing-sc)
+* [Step one: Write and package your smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-pkg)
+  * [Vendoring smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-write-package-vendor)
+  * [Versioning smart contract definition and packages](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-pkg-best-practice)
+* [Step two: Install and Propose smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-install-propose)
+* [Step three: Approve smart contract definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-approve)
+* [Step four: Commit smart contract definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-commit)
+* [How do I?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-faq)
+* [Specifying a smart contract endorsement policy](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-endorse)
+  * [What does the user type have to do with the smart contract endorsement policy?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-endorse-user-type)
+* [Versioning a smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-versioning)
+* [Important considerations when you update smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-upgrade-considerations)
+* [Private data](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-private-data)
+* [Implicit data collections](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-implicit-colln)
+
+[Deploy a smart contract using Fabric v1.4 (Legacy)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14)
+* [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-before)
+* [Step one: Write and package your smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-write-package)
+  * [Vendoring smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-write-package-vendor)
+* [Step two: Install a smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-install)
+* [Step three: Instantiate a smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-instantiate)
+* [Step four: Send transactions by using your client applications](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-connect-to-SDK)
+  * [Connect with SDK](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-connect-to-SDK-panel)
+* [Specifying an endorsement policy](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-endorse)
+  * [What does the user type have to do with the smart contract endorsement policy?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-endorse-user-type)
+* [Upgrading a smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-upgrade)
+  * [How to upgrade a smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-upgrade-howto)
+  * [Considerations when you upgrade smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-upgrade-considerations)
+* [Private data](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-private-data)
+
+
+## Creating applications
+{: #sitemap_creating_applications}
+
+
+[Creating applications](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app)
+
+* [Overview](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-learning-resources)
+    * [High-Level Programming Model APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-high-level)
+    * [Low-Level Fabric SDK APIs**](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-low-level)
+
+* [Application connectivity and availability](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-transx)
+
+* [Network considerations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-networking)
+
+* [Application compatibility](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-compat)
+    * [SDKs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-compat-sdk)
+    * [Smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-compat-sc)
+
+* [Registering an application identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-identities)
+
+* [Downloading your connection profile](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-profile)
+
+* [Service discovery](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-sd)
+
+* [Enrolling by using the SDK](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-enroll)
+
+* [Invoking a smart contract by using the SDK](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-invoke)
+
+* [Running the Commercial Paper sample](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper)
+    * [Prerequisites](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper-prereq)
+    * [Step one: Download the sample](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper-step-one-download-sample)
+    * [Step two: Install and Propose smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper-step-two-install-propose)
+    * [Step three: Generate certificates for your wallet](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper-step-three-generate-certificates)
+    * [Step four: Use the connection profile to build a Fabric gateway](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper-step-four-gateway)
+    * [Step five: Invoke the smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper-step-five-invoke)
+    * [Step six: Operate the sample as Digibank](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper-step-six-operate-as-digibank)
+
+* [Connecting to your network by using low-level Fabric SDK APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-low-level-api)
+
+* [Highly available applications](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-ha)
+
+* [Using indexes with CouchDB](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-couchdb)
+
+* [Additional Resources](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-resources)
+
 
 ## Certificate Authority (CA) options
 {: #sitemap_certificate_authority_(ca)_options}
 
+
+[Creating an intermediate Certificate Authority (CA)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica)
+* [Why would I want to use an intermediate CA with my {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-why)
+* [Can I convert an existing CA to be an intermediate CA?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-convert)
+* [Limitations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-limitations)
+* [Process overview](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-overview)
+* [Part One: Actions you perform from the root CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-part-one)
+* [Part Two: Build the intermediate CA JSON override](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-part-two)
+* [Part Three: Actions you perform on the intermediate CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-part-three)
+* [Next steps](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-next-steps)
+  * [Register and enroll identities against the intermediate CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-next-steps-reg-enroll)
+  * [Create organization MSPs using the intermediate CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-next-steps-msp)
+  * [Scale down the root CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-ica#ibm-hlfsupport-ica-next-steps-scale)
+
+[Using certificates from an external Certificate Authority](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca)
+* [Objectives](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-objectives)
+* [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-prereqs)
+* [Gather certificates](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-gather-certs)
+  * [Consideration when using an external CA to generate certificates](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-gather-certs-pkcs1)
+* [Build MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-build-msp)
+* [Import MSP into the console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-import-msp)
+* [Create and import the organization admin identity to the wallet](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-import-admin)
+* [Deploy a blockchain node](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-deploy-node)
+  * [Deploy peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-deploy-peer)
+  * [Deploy ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-deploy-orderer)
+* [Next steps](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-tutorial-extca#ibm-hlfsupport-tutorial-extca-next-steps)
 
 
 ## Hardware Security Module (HSM)
@@ -1862,8 +2130,8 @@
 * [Get your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-entitlement-key)
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-prerequisites)
 * [Log in to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-login)
-* [Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-ibpinfra)
-* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-secret-ibpinfra)
+* [Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-ibm-hlfsupport-infra)
+* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-secret-ibm-hlfsupport-infra)
 * [Deploy the webhook and custom resource definitions (CRDs) to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-webhook-crd)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-ocp#webhook-scc)
@@ -1889,9 +2157,8 @@
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-prerequisites-firewall)
 * [Pull the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-images-firewall)
 * [Log in to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-login-firewall)
-* [Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-ibpinfra)
-* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-secret-ibpinfra-fw)
-* [Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-k8s-webhook-crd)
+* [Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-ibm-hlfsupport-infra)
+* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#deploy-ocp-secret-ibm-hlfsupport-infra-fw)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#webhook-scc)
   * [3. Deploy the webhook](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall#webhook-deploy)
@@ -1938,8 +2205,8 @@
     * [Step seven: Update MSPs in consortium to add organization-level endorsement policy](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-update-consortium)
 
 * [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-steps-21x)
-    * [Step one: Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibpinfra)
-    * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibpinfra)
+    * [Step one: Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibm-hlfsupport-infra)
+    * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibm-hlfsupport-infra)
     * [Step three: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-upgrade-ocp#webhook)
     * [Step four: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-clusterrole)
     * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-operator)
@@ -1949,8 +2216,8 @@
 * [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from behind a firewall](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-firewall)
     * [Before you begin](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-begin-firewall)
     * [Step one: Pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-images-firewall)
-    * [Step two: Create the `ibpinfra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibpinfra-fw)
-    * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibpinfra-fw)
+    * [Step two: Create the `ibm-hlfsupport-infra` project for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-ibm-hlfsupport-infra-fw)
+    * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-ocp#deploy-ocp-secret-ibm-hlfsupport-infra-fw)
     * [Step four: Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-upgrade-ocp#webhook-fw)
     * [Step five: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-clusterrole-firewall)
     * [Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-ocp#upgrade-ocp-operator-firewall)
@@ -1990,8 +2257,8 @@
 * [Get your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-entitlement-key)
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-prerequisites)
 * [Log in to your cluster](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login)
-* [Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-ibpinfra)
-* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-secret-ibpinfra)
+* [Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-ibm-hlfsupport-infra)
+* [Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-secret-ibm-hlfsupport-infra)
 * [Deploy the webhook and custom resource definitions (CRDS) to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8s-webhook-crd)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-k8#webhook-scc)
@@ -2025,8 +2292,8 @@
 * [Before you begin](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-prerequisites-firewall)
 * [Pull the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-images-firewall)
 * [Log in to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8s-login-firewall)
-* [Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-ibpinfra-fw)
-* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-secret-ibpinfra-fw)
+* [Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-ibm-hlfsupport-infra-fw)
+* [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-secret-ibm-hlfsupport-infra-fw)
 * [Deploy the webhook and custom resource definitions to your OpenShift cluster](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8s-webhook-crd-fw)
   * [1. Configure role-based access control (RBAC) for the webhook](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#webhook-rbac)
   * [2. (OpenShift cluster only) Apply the Security Context Constraint](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#webhook-scc)
@@ -2036,20 +2303,6 @@
 * [Set up the entitlement for a local registry](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8s-docker-registry-secret-fw)
 * [Add security and access policies](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-scc-firewall)
   * [Apply the Pod Security Policy](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-scc-apply-fw)
-  * [Apply the ClusterRole](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-clusterrole-fw)
-  * [Apply the ClusterRoleBinding](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-clusterrolebinding-fw)
-  * [Create the role binding](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-createrole-fw)
-* [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-operator-firewall)
-* [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-fw-console)
-  * [Advanced deployment options](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#console-deploy-k8-advanced-firewall)
-  * [Use your own TLS Certificates (Optional)](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-tls-fw)
-  * [Verifying the console installation](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-verify-fw)
-* [Log in to the console](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#deploy-k8-log-in-fw)
-* [Next steps](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#console-deploy-k8-next-steps-fw)
-* [Considerations when using Kubernetes distributions](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#console-deploy-k8-considerations)
-* [Considerations when using {{site.data.keyword.containerlong_notm}}](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#console-deploy-k8-iks-considerations)
-  * [Configure Kubernetes Ingress](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#console-deploy-k8-iks-ingress)
-  * [Enable SSL passthrough](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall#console-deploy-k8-iks-passthru)
 
 [Upgrading your console and components](/docs/hlf-support?topic=hlf-support-upgrade-k8)
 * [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric overview](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-platform-overview)
@@ -2061,10 +2314,10 @@
   * [Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-steps-252-operator)
   * [Step five: Upgrade your nodes](/docs/hlf-support?topic=hlf-support-upgrade-k8#step-five-upgrade-your-nodes)
   * [Step six: Update MSPs in consortium to add organization-level endorsement policy](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-update-consortium)
-* [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from 2.1.x](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-steps-21x)
+* [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-steps-21x)
   * [Before you begin](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-before-steps-21x)
-  * [Step one: Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibpinfra)
-  * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibpinfra)
+  * [Step one: Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibm-hlfsupport-infra)
+  * [Step two: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibm-hlfsupport-infra)
   * [Step three: Deploy the webhook and custom resource definitions to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-webhook-crd)
   * [Step four: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-clusterrole)
   * [Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-operator)
@@ -2073,8 +2326,8 @@
 * [Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from behind a firewall](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-firewall)
   * [Before you begin](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-begin-firewall)
   * [Step one: Pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-images-firewall)
-  * [Step two: Create the `ibpinfra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibpinfra-fw)
-  * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibpinfra-fw)
+  * [Step two: Create the `ibm-hlfsupport-infra` namespace for the webhook](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-ibm-hlfsupport-infra-fw)
+  * [Step three: Create a secret for your entitlement key](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8s-secret-ibm-hlfsupport-infra-fw)
   * [Step four: Deploy the webhook and custom resource definitions to your Kubernetes cluster](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-webhook-fw)
   * [Step five: Update the ClusterRole](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-clusterrole-firewall)
   * [Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator](/docs/hlf-support?topic=hlf-support-upgrade-k8#upgrade-k8-operator-firewall)
@@ -2163,6 +2416,148 @@
   * [Viewing your smart contract container logs](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-container-logs)
 * [Upgrading your nodes](/docs/hlf-support?topic=hlf-support-console-icp-manage#ibm-hlfsupport-console-manage-patch)
 
+[Advanced deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment)
+* [What types of advanced deployment options are available?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-options)
+* [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-before)
+  * [Allocating resources](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
+* [CA deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-CA)
+  * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-CA-replica-sets)
+  * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-ca-k8s-zone)
+  * [Sizing a CA during creation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-CA-sizing-creation)
+  * [Customizing a CA configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-ca-customization)
+* [Peer deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-peer)
+  * [State database](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-level-couch)
+  * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-peer-k8s-zone)
+  * [Sizing a peer during creation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-peers-sizing-creation)
+  * [Customizing a peer configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-peer-create-json)
+* [Ordering node deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-on)
+  * [Number of ordering nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-suggested-ordering-node-configurations)
+  * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-on-k8s-zone)
+  * [Sizing an ordering node during creation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-orderer-sizing-creation)
+  * [Customizing an ordering service configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-orderer-create-json)
+* [Using certificates from an external CA with your peer or ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-third-party-ca)
+  * [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-third-party-ca-prereq)
+  * [Option 1: Create a new peer or single-node ordering service using certificates from an external CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-third-party-ca-create-peer-orderer)
+  * [Option 2: Create a five node ordering service using certificates from an external CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-create-five-node)
+* [Configuring a node to use a Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
+  * [What capability does HSM add to my blockchain node?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-capability)
+  * [Considerations when using HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-considerations)
+  * [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-before)
+  * [(Optional) Configure an HSM daemon](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-daemon)
+  * [Build a Docker image](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-build-docker)
+  * [Configuring a CA, peer, or ordering node to use the HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node)
+
+[Advanced channel deployment and management](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern)
+* [General options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-update-channel-available-parameters-general)
+* [Advanced options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-update-channel-available-parameters-advanced)
+* [Updating a channel configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-update-channel)
+  * [Signature collection flow](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-update-channel-signature-collection)
+  * [Channel configuration parameters you can update](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-update-channel-available-parameters)
+* [Tuning your ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-orderer-tuning)
+  * [Block cutting parameters](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-orderer-tuning-batch-size)
+  * [Batch timeout](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-orderer-tuning-batch-timeout)
+
+[Adding and removing ordering service nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer)
+* [Number of ordering nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-suggested-ordering-node-configurations)
+* [Overview](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-add-orderer)
+  * [Create the CA and organization for the new node](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-add-orderer-create)
+  * [Create the node](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-add-orderer-create-node)
+  * [Console 2: export the `Ordering Service_2` node](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-export-console2)
+  * [Console 1: add the `Ordering Service_2` node to your console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-import-console2)
+  * [Update `channel1` to add the `Ordering Service2 MSP` and the `Ordering Service_2` node](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-update-channel1)
+  * [Add `Ordering Service2 MSP` to `channel1`](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-consenters-org-add)
+  * [Add the node to the application channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-consenters-add)
+* [Removing ordering service nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-consenters-remove)
+  * [Mapping to existing ordering nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-mapping)
+  * [Editing the peer configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-add-remove-orderer#ibm-hlfsupport-console-add-remove-orderer-mapping-code-snippet)
+
+[Importing nodes, MSPs, and identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes)
+* [Why import components?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-nodes-why)
+* [Limitations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-limitations)
+* [Exporting and importing in bulk](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-bulk-export-import)
+* [Gathering certificates or credentials](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-start-here)
+  * [Exporting and importing admin identities into the Wallet](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-nodes-admin-identities)
+* [Importing an organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-msp)
+* [Importing a peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-peer)
+  * [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-peer-before-you-begin)
+  * [How to import a peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-peer-howto)
+* [Importing a CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-ca)
+  * [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-ca-before-you-begin)
+  * [How to import a CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-nodes-howto-ca)
+* [Importing an ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-orderer)
+  * [Before you begin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-orderer-before-you-begin)
+  * [How to import an ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-orderer-process)
+* [Importing nodes from a locally deployed network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-import-nodes#ibm-hlfsupport-console-import-icp)
+
+[Creating and managing identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities)
+* [Managing Certificate Authorities (CAs)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-manage-ca)
+* [Associating the identity of the CA admin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-ca-identity)
+* [Registering identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-register)
+  * [Creating new CA admins](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-ca-admin)
+* [Enrolling an identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-enroll)
+* [Using your TLS CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-tlsca)
+* [Certificate renewal and expiration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-expiration)
+* [Storing identities in your console wallet](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-wallet)
+  * [Adding identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-add)
+  * [Viewing and updating identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-update-identities)
+* [Storing and managing certificates in IBM Cloud Certificate Manager](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager)
+* [Storing identities in a Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-hsm)
+* [Associating identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-associate-admin)
+* [Viewing the contents of a signing certificate](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-sign-cert)
+
+[Managing organizations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations)
+* [Understanding MSPs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-about-msp)
+* [Managing MSPs in the console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#ibm-hlfsupport-console-organizations-manage)
+* [Creating an MSP for your organization](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-create-msp)
+* [Downloading a connection profile](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#ibm-hlfsupport-console-organizations-connx-profile)
+  * [Including a certificate authority in a connection profile](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#ibm-hlfsupport-console-organizations-connx-profile-ca)
+* [Updating an organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#ibm-hlfsupport-console-govern-update-msp)
+* [Manually building an MSP JSON file](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-build-msp)
+* [Importing an MSP](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-import-msp)
+* [Adding an organization to a consortium](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-add-consortium)
+* [Creating and editing a channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-create-channel)
+  * [Updating an MSP in a channel definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-update-channel)
+* [Removing an organization](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#console-organizations-remove)
+
+[Managing certificates](/docs/hlf-support?topic=hlf-support-cert-mgmt)
+* [Certificate Authorities (CAs)](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-network-ca)
+* [Overview](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-overview)
+* [Node OU support](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-nodeou)
+* [Certificate renewal and expiration](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-renew-expiration)
+  * [Automatic certificate renewal](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-auto-renewal)
+  * [Certificate types and actions](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-cert-types)
+* [Manual certificate renewal](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-renewal)
+* [Renew the CA TLS certificate](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-ca-tls)
+* [Renew Peer enrollment and TLS Certificates](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-enroll-tls-peer)
+* [Renew ordering node enrollment and TLS certificates](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-enroll-tls-ordering-node)
+  * [Considerations for a single node ordering service](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-renewal-os1)
+* [Renew MSP Admin certificate](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-renewal-admin)
+  * [Step one: Enroll new identity](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-enroll)
+  * [Step two: Update organization MSP](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-update-msp)
+  * [Step three: Associate new admin identity on peer or ordering service](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-update-node-identity)
+  * [Step four: Update peer organization MSP on application channel](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-update-channel-peer)
+  * [Step five: Update channel member on ordering service system channel](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-update-os-channel-member)
+  * [Step six: Update ordering service admin on ordering service system channel](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-update-os-admin)
+  * [Step seven: Update orderer organization MSP on channel](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-update-channel)
+* [Certificates from an external CA](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-ext-ca)
+  * [Peer and ordering node enrollment and TLS certificates](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-ext-ca-enrollment-tls)
+  * [Peer and ordering node organization admin certificates](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-ext-ca-admin)
+* [Bulk admin certificate renewal with Ansible playbooks](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-bulk-ansible)
+* [Expired certificates](/docs/hlf-support?topic=hlf-support-cert-mgmt#ibm-hlfsupport-console-identities-expired-certs)
+  * [How to fix expired organization admin certificates](/docs/hlf-support?topic=hlf-support-cert-mgmt#ibm-hlfsupport-console-identities-expired-certs-admin)
+* [Using the command line to view certificate expiration](/docs/hlf-support?topic=hlf-support-cert-mgmt#ibm-hlfsupport-console-identities-cli-expiration)
+* [Export an MSP](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-export-msp)
+* [Import an MSP](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-import-msp)
+
+[Upgrading and deleting deployed nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components)
+* [Considerations when reallocating resources](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-reallocate-resources)
+* [Upgrading to a new version of Fabric](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade)
+  * [Step one: Backup your ledger](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade-step-one-ledger)
+  * [Step two: Upgrade your nodes one at a time](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade-step-two-rolling-upgrade)
+  * [Step three: Update SDKs and smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade-step-three)
+  * [Step four: Update capabilities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade-step-four-rolling-upgrade)
+* [Deleting components](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-delete)
+
 
 ## Developing smart contracts and applications
 {: #sitemap_developing_smart_contracts_and_applications}
@@ -2190,7 +2585,7 @@
   * [Interacting with your smart contract](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-submitting-transactions)
   * [Connecting your applications to the preconfigured network](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-exploring-connection-details)
 * [Step five: Test a deployed smart contract](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-testing-instantiated-smart-contract)
-* [Step six: Connect to your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibp)
+* [Step six: Connect to your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibm-hlfsupport)
   * [Invoke a smart contract that has been instantiated or committed on your channels](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibm-hlfsupport-invoke)
   * [Deploy a smart contract from VS Code](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibm-hlfsupport-install-instantiate)
   * [Adding wallets and users](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-add-a-wallet)
@@ -2224,6 +2619,68 @@
     * [Sequencing restorations](/docs/hlf-support?topic=hlf-support-backup-restore#backup-restore-restore-sequence)
     * [Restoring a peer](/docs/hlf-support?topic=hlf-support-backup-restore#backup-restore-restore-peer)
     * [Restoring an ordering node](/docs/hlf-support?topic=hlf-support-backup-restore#backup-restore-restore-orderer)
+
+
+## Using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs
+{: #sitemap_using_the__support_for_hyperledger_fabric_apis}
+
+
+[Using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis)
+
+* [Swagger](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-swagger)
+
+* [Prerequisites](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-prereq)
+
+* [Connect to your console using API keys](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-api-key)
+    * [Create an API key](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-create-api-key)
+    * [Example curl request: Create API key](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-create-api-key-example)
+    * [View API keys](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-view-api-keys)
+    * [Example curl request: view API keys](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-view-api-key-example)
+    * [Delete API keys](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-delete-api-keys)
+    * [Example curl request: delete API key](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-delete-api-keys-example)
+
+* [Managing users using the APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-users-apis)
+    * [List users](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-list-users-api)
+    * [Example curl request: list users](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-list-users-api-example)
+    * [Edit users](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-edit-users-api)
+    * [Example curl request: edit a user](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-edit-users-api-example)
+    * [Add users](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-add-users-api)
+    * [Example curl request: add a user](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-add-users-api-example)
+    * [Remove users](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-remove-users-api)
+    * [Example curl request: remove a user](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-remove-add-users-api-example)
+
+* [Use the APIs to manage your components](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#use-the-apis-to-manage-your-components)
+
+* [Limitations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-limitations)
+
+* [Building a network by using APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-build-with-apis)
+    * [Creating a node within a specific zone](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-zone)
+
+* [Creating a node with a custom configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-custom)
+    * [Example: Creating a custom Certificate Authority](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#example-creating-a-custom-certificate-authority)
+    * [Create a high availability CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#create-a-high-availability-ca)
+    * [Deploy a node that uses an HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#deploy-a-node-that-uses-an-hsm)
+
+* [Import a network by using APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-import-with-apis)
+
+* [Operating your CA with the Fabric CA client](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-fabric-ca-client)
+    * [Set up the Fabric CA client](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-setup-fabric-ca-client)
+    * [Generate certificates with your CA admin](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-enroll-ca-admin)
+    * [Registering the component identity with the CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-register-component)
+    * [Registering your organization administrator](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-register-admin)
+    * [Generating the admin Membership Service Provider (MSP) folder](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-enroll-admin)
+    * [Registering the component identity with the TLS CA](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-register-component-tls)
+    * [Troubleshooting](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-troubleshooting)
+
+* [Creating an organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-msp)
+
+* [Creating a configuration file](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config)
+    * [Retrieve the CA connection information](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-connx-info)
+    * [Provide your component enroll ID and secret](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#provide-your-component-enroll-id-and-secret)
+    * [Provide the signCert of your organization administrator](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#provide-the-signcert-of-your-organization-administrator)
+    * [CSR (Certificate Signing Request) hosts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#csr)
+    * [Completing the configuration file](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-config-file)
+    * [Importing an admin identity into the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-admin-console)
 
 
 ## Tracking license consumption
@@ -2402,6 +2859,79 @@
 
 
 [Known issues](/docs/hlf-support?topic=hlf-support-sw-known-issues)
+
+
+## Troubleshooting
+{: #sitemap_troubleshooting}
+
+
+[Troubleshooting](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting)
+
+* [My deployment fails when I try apply the security and access policies to my namespace](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-policies)
+
+* [My deployment fails when I try apply the custom resource definition of the console or operator](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-cr)
+
+* [Extracting the TLS certificate from the Kubernetes webhook fails](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-wh-extract)
+
+* [Why is my cluster deployed from the Red Hat Marketplace `fail to pull image cp.icr.io/ibm-hlfsupport-init@sha256` during setup?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-pull-image-fails)
+
+* [Why is my console upgrade from 2.5 to 2.5.x failing?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshootingconsole-upgrade-fails)
+
+* [Why is my {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric user interface unable to connect to cluster after deployment (Ingress issue)?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-ingress-issue)
+
+* [Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-chrome-v77)
+
+* [Why am I not able to log in to the console from my Chrome browser on Mac OS Catalina?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-console-catalina)
+
+* [Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-accept-tls)
+
+* [When I hover over my node, the status is `Status unavailable` or `Status unknown`, what does this mean?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-status-unavailable)
+
+* [When I hover over my node, the status is `Status undetectable`, what does this mean?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-status-undetectable)
+
+* [Why did my smart contract installation, instantiation or upgrade fail?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-console-smart-contracts-troubleshoot-entry1)
+
+* [Why is my smart contract fail to install with an error on my peer?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-sc-install)
+
+* [Why is my Node.js smart contract fail to instantiate?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-nodejs-instantiate)
+
+* [Why is my Node.js smart contract fail to endorse?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-nodejs-endorsement)
+
+* [Why is the smart contract that I installed on the peer not listed in the UI?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-console-build-network-troubleshoot-missing-sc)
+
+* [My nodes, channels, smart contracts, and identities have disappeared from the console. How can I get them back?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-browser-storage)
+
+* [Why am I getting the error `Unable to authenticate with the enroll ID and secret you provided` when I create a new organization MSP definition?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-create-msp)
+
+* [Why am I getting the error `An error occurred when updating channel` when I try to add an organization to my channel?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-update-channel)
+
+* [When I log in to my console, why am I getting a 401 Unauthorized error?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-console-401)
+
+* [Why am I getting an error “all SubConns are in TransientFailure” on the console?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-console-transientfailure)
+
+* [Why is my first invoke of a smart contract returns the following error: no suitable peers available to initialize from?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-smart-contract-anchor-peers)
+
+* [Why are my node operations fail to operate after I create my peer or ordering service?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-console-build-network-troubleshoot-entry1)
+
+* [Why does my peer or ordering node fail to start?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-console-build-network-troubleshoot-entry2)
+
+* [What is the proper way to clean up a failed node deployment?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-cleanup)
+
+* [How can I view my smart contract container logs?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-console-smart-contracts-troubleshoot-entry2)
+
+* [Why is my CA, peer, or ordering node that is configured to use HSM not working?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-hsm-proxy)
+
+* [My CA failed to upgrade, how can I fix it?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-ca-upgrade-fails)
+
+* [Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-endorsement-sig-failure)
+
+* [Why are the transactions I submit from VS Code failing with a No endorsement plan available error?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-anchor-peer)
+
+* [Why are the transactions I submit from VS Code failing with an endorsement failure?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-endorsement)
+
+* [How do I delete a peer pod?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-troubleshooting-delete-peer)
+
+* [How can I recover a contract after a failed upgrade of the smart contract container?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-troubleshooting-contract-fail)
 
 
 ## Getting support

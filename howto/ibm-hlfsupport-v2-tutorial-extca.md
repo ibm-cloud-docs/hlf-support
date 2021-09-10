@@ -1,12 +1,12 @@
 ---
 
 copyright:
-   years: 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: external CA, certificate, private key, MSP
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 content-type: tutorial
 services:

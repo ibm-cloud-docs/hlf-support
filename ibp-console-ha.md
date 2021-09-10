@@ -6,7 +6,7 @@ lastupdated: "2021-08-11"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

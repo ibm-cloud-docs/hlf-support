@@ -2,11 +2,11 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-10"
 
 keywords: Kubernetes, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -137,10 +137,10 @@ To upgrade your network, you need to [retrieve your entitlement key](/docs/hlf-s
 ## Step one: Update the webhook
 {: #install-fixpack-webhook}
 
-The process of updating your network begins with updating the webhook that you created when you initially deployed or upgraded to the 1.0.0 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
+The process of updating your network begins with updating the webhook that you created when you initially deployed or upgraded to the 1.0.0 blockchain service. Run the following command to update the webhook in the `ibm-hlfsupport-infra` namespace or project:
 
 ```
-kubectl set image deploy/ibm-hlfsupport-webhook -n ibpinfra ibm-hlfsupport-webhook=cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64
+kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfsupport-webhook=cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64
 ```
 {: codeblock}
 
@@ -152,7 +152,7 @@ deployment.apps/ibm-hlfsupport-webhook image updated
 
 Before you proceed with the next step, wait for the webhook to restart by running the following command:
 ```
-kubectl get po -n ibpinfra -w | grep ibm-hlfsupport-webhook
+kubectl get po -n ibm-hlfsupport-infra -w | grep ibm-hlfsupport-webhook
 ```
 {: codeblock}
 
@@ -319,10 +319,10 @@ After you complete these steps, you can use the following instructions to deploy
 ### Step two: Update the webhook
 {: #install-fixpack-webhook-firewall}
 
-First, you need to update the webhook that you created when you initially deployed or upgraded to the 1.0.0 blockchain service. Run the following command to update the webhook in the `ibpinfra` namespace or project:
+First, you need to update the webhook that you created when you initially deployed or upgraded to the 1.0.0 blockchain service. Run the following command to update the webhook in the `ibm-hlfsupport-infra` namespace or project:
 
 ```
-kubectl set image deploy/ibm-hlfsupport-webhook -n ibpinfra ibm-hlfsupport-webhook=cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64
+kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfsupport-webhook=cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64
 ```
 {: codeblock}
 
@@ -334,7 +334,7 @@ deployment.apps/ibm-hlfsupport-webhook image updated
 
 Before you proceed with the next step, wait for the webhook to restart by running the following command:
 ```
-kubectl get po -n ibpinfra -w | grep ibm-hlfsupport-webhook
+kubectl get po -n ibm-hlfsupport-infra -w | grep ibm-hlfsupport-webhook
 ```
 {: codeblock}
 

@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -176,16 +176,16 @@ kubectl get pods
 ```
 {: codeblock}
 
-## Create the `ibpinfra` project for the webhook
-{: #deploy-ocp-ibpinfra}
+## Create the `ibm-hlfsupport-infra` project for the webhook
+{: #deploy-ocp-ibm-hlfsupport-infra}
 
-Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1`, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own project, referred to as  `ibpinfra` throughout these instructions. **Webhooks are supported in Kubernetes v1.15 and higher. If your cluster is running Kubernetes v1.14 or lower, you need to upgrade it now to take advantage of this release of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.**
+Because the platform has updated the internal apiversion from `v1alpha1` in previous versions to `v1beta1`, a Kubernetes conversion webhook is required to update the CA, peer, operator, and console to the new API version. This webhook will continue to be used in the future, so new deployments of the platform are required to deploy it as well.  The webhook is deployed to its own project, referred to as  `ibm-hlfsupport-infra` throughout these instructions. **Webhooks are supported in Kubernetes v1.15 and higher. If your cluster is running Kubernetes v1.14 or lower, you need to upgrade it now to take advantage of this release of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.**
 
-After you log in to your cluster, you can create the new `ibpinfra` project for the Kubernetes conversion webhook using the kubectl CLI. The new project needs to be created by a cluster administrator.  
+After you log in to your cluster, you can create the new `ibm-hlfsupport-infra` project for the Kubernetes conversion webhook using the kubectl CLI. The new project needs to be created by a cluster administrator.  
 
 Run the following command to create the project:   
 ```
-oc new-project ibpinfra
+oc new-project ibm-hlfsupport-infra
 ```
 {: codeblock}
 
@@ -193,31 +193,18 @@ When you create a new project, a new namespace is created with the same name as 
 ```
 $ oc get namespace
 NAME                                STATUS    AGE
-ibpinfra                            Active    2m
+ibm-hlfsupport-infra                            Active    2m
 ```
 
 ## Create a secret for your entitlement key
-{: #deploy-ocp-secret-ibpinfra}
+{: #deploy-ocp-secret-ibm-hlfsupport-infra}
 
-After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
-
-
-
-Run the following command to create the secret and add it to your `ibpinfra` namespace or project:
-```
-kubectl create secret docker-registry cp-pull-secret --docker-server=cp.icr.io --docker-username=cp --docker-password=<KEY> --docker-email=<EMAIL> -n ibpinfra
-```
-{: codeblock}
-- Replace `<KEY>` with your entitlement key.
-- Replace `<EMAIL>` with your email address.
-
-The name of the secret that you are creating is `cp-pull-secret`. It is required by the webhook that you will deploy later. You can only use the key once per deployment. You can refresh the key before you attempt another deployment and use that value here.
-{: note}
+{[sw-create-secret-ibm-hlfsupport-infra.md]}
 
 ## Deploy the webhook and custom resource definitions (CRDs) to your OpenShift cluster
 {: #deploy-ocp-webhook-crd}
 
-Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibpinfra` throughout these instructions.
+Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibm-hlfsupport-infra` throughout these instructions.
 
 The first three steps are for deployment of the webhook. The last step is for the custom resource definitions for the CA, peer, orderer, and console components that the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires. You only have to deploy the webhook and custom resource definitions **once per cluster**. If you have already deployed this webhook and custom resource definitions to your cluster, you can skip these four steps below.
 {: important}
@@ -232,7 +219,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: Role
@@ -249,11 +236,11 @@ rules:
 kind: RoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ibpinfra
+  name: ibm-hlfsupport-infra
 subjects:
 - kind: ServiceAccount
   name: webhook
-  namespace: ibpinfra
+  namespace: ibm-hlfsupport-infra
 roleRef:
   kind: Role
   name: webhook
@@ -264,7 +251,7 @@ roleRef:
 
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -f rbac.yaml -n ibpinfra
+kubectl apply -f rbac.yaml -n ibm-hlfsupport-infra
 ```
 {: codeblock}
 
@@ -272,15 +259,15 @@ When the command completes successfully, you should see something similar to:
 ```
 serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
-rolebinding.rbac.authorization.k8s.io/ibpinfra created
+rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 ```
 {: codeblock}
 
 ### 2. (OpenShift cluster only) Apply the Security Context Constraint
 {: #webhook-scc}
 
-Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibpinfra` project. Copy the security context constraint object below and save it to your local system as `ibpinfra-scc.yaml`.
-Replace `<PROJECT_NAME>` with `ibpinfra`.
+Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`.
+Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -324,15 +311,15 @@ volumes:
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
 
 ```
-oc apply -f ibpinfra-scc.yaml -n ibpinfra
-oc adm policy add-scc-to-user ibpinfra system:serviceaccounts:ibpinfra
+oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
+oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
 ```
 {: codeblock}
 
 If the commands are successful, you can see a response that is similar to the following example:
 ```
-securitycontextconstraints.security.openshift.io/ibpinfra created
-clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibpinfra added: "system:serviceaccounts:ibpinfra"
+securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
+clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibm-hlfsupport-infra added: "system:serviceaccounts:ibm-hlfsupport-infra"
 ```
 
 ### 3. Deploy the webhook
@@ -345,7 +332,9 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
-
+<testonly>TESTER: Edit the image tag, for example replace `image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210915-amd64` with test image tag.
+{: note}
+</testonly>
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -433,7 +422,7 @@ spec:
 {: codeblock}
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f deployment.yaml
+kubectl apply -n ibm-hlfsupport-infra -f deployment.yaml
 ```
 {: codeblock}
 
@@ -472,7 +461,7 @@ spec:
 
 Run the following command to add the file to your cluster definition:
 ```
-kubectl apply -n ibpinfra -f service.yaml
+kubectl apply -n ibm-hlfsupport-infra -f service.yaml
 ```
 {: codeblock}
 
@@ -484,13 +473,13 @@ service/ibm-hlfsupport-webhook created
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibpinfra` namespace by running the following command:
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ```
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibpinfra -o jsonpath={'.data.cert\.pem'})
+  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 1.0.0, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
+2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -511,7 +500,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -576,7 +565,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -635,7 +624,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -694,7 +683,7 @@ spec:
     strategy: Webhook
     webhookClientConfig:
       service:
-        namespace: ibpinfra
+        namespace: ibm-hlfsupport-infra
         name: ibm-hlfsupport-webhook
         path: /crdconvert
       caBundle: "${TLS_CERT}"
@@ -768,9 +757,11 @@ If you are not using the default storage class, additional configuration is requ
 ## Create a secret for your entitlement key
 {: #deploy-ocp-docker-registry-secret}
 
-You've already created a secret for the entitlement key in the `ibpinfra` namespace or project, now you need to create one in your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric namespace or project. After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
+You've already created a secret for the entitlement key in the `ibm-hlfsupport-infra` namespace or project, now you need to create one in your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric namespace or project. After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
-
+<testonly>TESTER: Contact Mihir or Dhyey for the key that you need to use for pulling images from staging. Also the docker server should be `--docker-server=cp.stg.icr.io`
+{: note}
+</testonly>
 
 Run the following command to create the secret and add it to your namespace or project:
 ```
@@ -794,41 +785,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires speci
 Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-scc.yaml`. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
 ```yaml
-allowHostDirVolumePlugin: false
-allowHostIPC: false
-allowHostNetwork: false
-allowHostPID: false
-allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: true
-allowedCapabilities:
-- NET_BIND_SERVICE
-- CHOWN
-- DAC_OVERRIDE
-- SETGID
-- SETUID
-- FOWNER
-apiVersion: security.openshift.io/v1
-defaultAddCapabilities: []
-fsGroup:
-  type: RunAsAny
-groups:
-- system:serviceaccounts:<PROJECT_NAME>
-kind: SecurityContextConstraints
-metadata:
-  name: <PROJECT_NAME>
-readOnlyRootFilesystem: false
-requiredDropCapabilities: []
-runAsUser:
-  type: RunAsAny
-seLinuxContext:
-  type: RunAsAny
-supplementalGroups:
-  type: RunAsAny
-users:
-- system:serviceaccounts:<PROJECT_NAME>
-volumes:
-- "*"
+{[yaml-operator-ocp-ibp-scc.md]}
 ```
 {: codeblock}
 
@@ -850,95 +807,7 @@ clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project ad
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
 ```yaml
-apiVersion: rbac.authorization.k8s.io/v1
-kind: ClusterRole
-metadata:
-  name: <PROJECT_NAME>
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
-rules:
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - persistentvolumeclaims
-  - persistentvolumes
-  verbs:
-  - '*'
-- apiGroups:
-  - apiextensions.k8s.io
-  resources:
-  - customresourcedefinitions
-  verbs:
-  - 'get'
-- apiGroups:
-  - "*"
-  resources:
-  - pods
-  - pods/log
-  - services
-  - endpoints
-  - persistentvolumeclaims
-  - persistentvolumes
-  - events
-  - configmaps
-  - secrets
-  - ingresses
-  - roles
-  - rolebindings
-  - serviceaccounts
-  - nodes
-  - jobs
-  - routes
-  - routes/custom-host
-  verbs:
-  - '*'
-- apiGroups:
-  - ""
-  resources:
-  - namespaces
-  - nodes
-  verbs:
-  - get
-- apiGroups:
-  - apps
-  resources:
-  - deployments
-  - daemonsets
-  - replicasets
-  - statefulsets
-  verbs:
-  - '*'
-- apiGroups:
-  - monitoring.coreos.com
-  resources:
-  - servicemonitors
-  verbs:
-  - get
-  - create
-- apiGroups:
-  - apps
-  resourceNames:
-  - ibm-hlfsupport-operator
-  resources:
-  - deployments/finalizers
-  verbs:
-  - update
-- apiGroups:
-  - ibp.com
-  resources:
-  - '*'
-  verbs:
-  - '*'
-- apiGroups:
-  - config.openshift.io
-  resources:
-  - '*'
-  verbs:
-  - '*'
+{[yaml-operator-ocp-ibp-clusterrole.md]}
 ```
 {: codeblock}
 
@@ -961,24 +830,7 @@ clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project ad
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.  
 
 ```yaml
-kind: ClusterRoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: <PROJECT_NAME>
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
-subjects:
-- kind: ServiceAccount
-  name: default
-  namespace: <PROJECT_NAME>
-roleRef:
-  kind: ClusterRole
-  name: <PROJECT_NAME>
-  apiGroup: rbac.authorization.k8s.io
+{[yaml-operator-ocp-ibp-clusterrolebinding.md]
 ```
 {: codeblock}
 
@@ -1003,111 +855,8 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operat
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-operator.yaml`.
 
-
-
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: ibm-hlfsupport-operator
-  labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibp"
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
-spec:
-  replicas: 1
-  strategy:
-    type: "Recreate"
-  selector:
-    matchLabels:
-      name: ibm-hlfsupport-operator
-  template:
-    metadata:
-      labels:
-        name: ibm-hlfsupport-operator
-        release: "operator"
-        helm.sh/chart: "ibm-ibp"
-        app.kubernetes.io/name: "ibp"
-        app.kubernetes.io/instance: "ibp"
-        app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"  
-      annotations:
-        productName: "IBM Blockchain Platform"
-        productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "1.0.0"
-        productChargedContainers: ""
-        productMetric: "VIRTUAL_PROCESSOR_CORE"
-    spec:
-      hostIPC: false
-      hostNetwork: false
-      hostPID: false
-      serviceAccountName: default
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - amd64
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1001
-        fsGroup: 2000
-      imagePullSecrets:
-        - name: cp-pull-secret
-      containers:
-        - name: ibm-hlfsupport-operator
-          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20210505-amd64
-          command:
-          - ibm-hlfsupport-operator
-          imagePullPolicy: Always
-          securityContext:
-            privileged: false
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: false
-            runAsNonRoot: false
-            runAsUser: 1001
-            capabilities:
-              drop:
-              - ALL
-              add:
-              - CHOWN
-              - FOWNER
-          livenessProbe:
-            tcpSocket:
-              port: 8383
-            initialDelaySeconds: 10
-            timeoutSeconds: 5
-            failureThreshold: 5
-          readinessProbe:
-            tcpSocket:
-              port: 8383
-            initialDelaySeconds: 10
-            timeoutSeconds: 5
-            periodSeconds: 5
-          env:
-            - name: WATCH_NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-            - name: POD_NAME
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.name
-            - name: OPERATOR_NAME
-              value: "ibm-hlfsupport-operator"
-            - name: CLUSTERTYPE
-              value: OPENSHIFT
-          resources:
-            requests:
-              cpu: 100m
-              memory: 200Mi
-            limits:
-              cpu: 100m
-              memory: 200Mi
+{[yaml-operator-ocp-ibp-operator.md]}
 ```
 {: codeblock}
 
@@ -1164,6 +913,7 @@ spec:
   version: 1.0.0
 ```
 {: codeblock}
+
 Accept the license:  
 
 - Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
@@ -1208,62 +958,8 @@ Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Su
 
 Before you deploy the console, you can edit the `ibm-hlfsupport-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
 
-
-
 ```yaml
-apiVersion: ibp.com/v1beta1
-kind: IBPConsole
-metadata:
-  name: ibpconsole
-spec:
-  arch:
-  - amd64
-  license:
-    accept: false
-  serviceAccountName: default
-  email: "<EMAIL>"
-  password: "<PASSWORD>"
-  registryURL: cp.icr.io/cp
-  imagePullSecrets:
-    - cp-pull-secret
-  networkinfo:
-    domain: <DOMAIN>
-  storage:
-    console:
-      class: ""
-      size: 5Gi
-  clusterdata:
-    zones:
-  resources:
-    console:
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-      limits:
-        cpu: 500m
-        memory: 1000Mi
-    configtxlator:
-      limits:
-        cpu: 25m
-        memory: 50Mi
-      requests:
-        cpu: 25m
-        memory: 50Mi
-    couchdb:
-      limits:
-        cpu: 500m
-        memory: 1000Mi
-      requests:
-        cpu: 500m
-        memory: 1000Mi
-    deployer:
-      limits:
-        cpu: 100m
-        memory: 200Mi
-      requests:
-        cpu: 100m
-        memory: 200Mi
-  version: 1.0.0
+{[yaml-operator-ocp-ibp-console-advanced-ibp-console-cluster-resource.md]}
 ```
 {: codeblock}
 

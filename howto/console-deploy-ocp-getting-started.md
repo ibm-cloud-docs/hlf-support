@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

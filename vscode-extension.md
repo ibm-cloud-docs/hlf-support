@@ -1,13 +1,13 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -127,7 +127,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tool
 <area href="/docs/hlf-support?topic=hlf-support-develop-vscode#packaging-a-smart-contract" alt="Package the smart contract" title="Package the smart contract" shape="rect" coords="305, 49, 433, 102" />
 <area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-deploy" alt="Deploy locally to test and debug" title="Deploy locally to test and debug" shape="rect" coords="303, 119, 429, 170"/>
 <area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-exporting-deleting-smart-contract-package" alt="Export the package" title="Export the package" shape="rect" coords="449, 49, 572, 100" />
-<area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibp" alt="Deploy to {{site.data.keyword.cloud_notm}}" title="Deploy to {{site.data.keyword.cloud_notm}}" shape="rect" coords="605, 45, 740, 105" /></map>  
+<area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibm-hlfsupport" alt="Deploy to {{site.data.keyword.cloud_notm}}" title="Deploy to {{site.data.keyword.cloud_notm}}" shape="rect" coords="605, 45, 740, 105" /></map>  
 
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric extension works seamlessly with any instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric that uses Hyperledger Fabric versions 2.2.3. This tutorial is oriented toward users of the high-level Fabric smart contract programming model. If you are using low-level smart contract APIs, you can find additional instructions in the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric extension documentation](https://github.com/IBM-Blockchain/blockchain-vscode-extension/blob/master/README.md). For more information, see the [Writing Your First Chaincode](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode4ade.html) tutorial in the Fabric documentation.
@@ -412,7 +412,7 @@ You can also click **Delete Package** to remove the smart contract package from 
 
 You can use the VS Code extension to deploy your smart contract to a preconfigured Hyperledger Fabric network that the extension creates on your local machine. If you are deploying to a V1 capability enabled channel, you need to install and instantiate your smart contract. If you are deploying to a V2 capability enabled channel that uses the new Fabric 2.x lifecycle process, you need to install then "approve" and "commit" a smart contract, as opposed to instantiating it.
 
-This option to deploy a smart contract to a preconfigured network is currently not available if you are running your developer environment from Red Hat CodeReady Workspaces. Instead, you can use an existing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. See the instructions in [Step six](#develop-vscode-connecting-ibp) to connect to that network.
+This option to deploy a smart contract to a preconfigured network is currently not available if you are running your developer environment from Red Hat CodeReady Workspaces. Instead, you can use an existing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. See the instructions in [Step six](#develop-vscode-connecting-ibm-hlfsupport) to connect to that network.
 
 ### Deploying a preconfigured Hyperledger Fabric network
 {: #develop-vscode-connecting-and-disconnecting}
@@ -556,7 +556,7 @@ You can generate tests for smart contracts that are instantiated or committed on
 After the test file is built, the tests can be run by clicking the **Run Tests** button in the file.
 
 ## Step six: Connect to your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network
-{: #develop-vscode-connecting-ibp}
+{: #develop-vscode-connecting-ibm-hlfsupport}
 
 You can also use the extension to interact with your network on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 

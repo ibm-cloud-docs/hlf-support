@@ -1,12 +1,12 @@
 ---
 
-copyright:
+ copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-10"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

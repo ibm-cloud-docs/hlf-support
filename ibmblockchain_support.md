@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2017, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
-keywords: IBM Blockchain Platform, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers, multicloud
+keywords: IBM Support for Hyperledger Fabric, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

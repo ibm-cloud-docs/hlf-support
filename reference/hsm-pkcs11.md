@@ -2,10 +2,10 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-10"
 
 keywords: HSM, PKCS11 proxy
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

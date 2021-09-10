@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
-keywords: IBM Blockchain Platform, administrate, add user, remove user, password, APIs, authentication, view logs
+keywords: IBM Support for Hyperledger Fabric, administrate, add user, remove user, password, APIs, authentication, view logs
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

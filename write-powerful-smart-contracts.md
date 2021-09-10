@@ -6,7 +6,7 @@ lastupdated: "2021-08-11"
 
 keywords: smart contract, lifecycle, package, definition
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

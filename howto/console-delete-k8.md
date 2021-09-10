@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
-keywords: IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, delete, remove
+keywords: IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, delete, remove
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -134,7 +134,7 @@ Because smart contracts installed on a 2.x peer are deployed into their own pods
 If you are using OpenShift, you have the option to use either the kubectl CLI (which is native to Kubernetes), or the OpenShift cluster (oc) CLI. The commands should be largely the same, except that OpenShift uses "projects" instead of "namespaces". If you are running any cluster type other than OpenShift, you will have to use the kubectl CLI.
 {: tip}
 
-Because deployments are organized in Kubernetes by their "namespace", you need to know your Kubernetes cluster namespace before you can delete components using the kubectl CLI. From the console, open any CA node and click the **Info and Usage** icon. View the value of the API URL. For example: `https://nf85a2a-soorg10524.ibpv2-cluster.us-south.containers.appdomain.cloud:7054`. The namespace is the first part of the URL beginning with the letter `n` and followed by a random string of six alphanumeric characters. So in the example above the value of the namespace is `nf85a2a`.
+Because deployments are organized in Kubernetes by their "namespace", you need to know your Kubernetes cluster namespace before you can delete components using the kubectl CLI. From the console, open any CA node and click the **Info and Usage** icon. View the value of the API URL. For example: `https://nf85a2a-soorg10524.ibm-hlfsupportv2-cluster.us-south.containers.appdomain.cloud:7054`. The namespace is the first part of the URL beginning with the letter `n` and followed by a random string of six alphanumeric characters. So in the example above the value of the namespace is `nf85a2a`.
 
 If you want to delete all of your smart contract pods, you can issue this command:
 
@@ -180,13 +180,13 @@ kubectl config set-context --current --namespace=<NAMESPACE>
 Then run the following commands to delete all of your blockchain nodes.
 
 ```
-kubectl delete ibpca --all
-kubectl delete ibppeer --all
-kubectl delete ibporderer --all
+kubectl delete ibm-hlfsupportca --all
+kubectl delete ibm-hlfsupportpeer --all
+kubectl delete ibm-hlfsupportorderer --all
 ```
 {: codeblock}
 
-You may also choose to only delete all of a single type of node within a namespace, for example, by only issuing `kubectl delete ibppeer --all`.
+You may also choose to only delete all of a single type of node within a namespace, for example, by only issuing `kubectl delete ibm-hlfsupportpeer --all`.
 {: tip}
 
 ## Step two: Delete the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator

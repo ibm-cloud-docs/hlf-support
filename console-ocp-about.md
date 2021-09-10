@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
-keywords: IBM Blockchain Platform, system requirements, Kubernetes, behind a firewall, azure, multicloud
+keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

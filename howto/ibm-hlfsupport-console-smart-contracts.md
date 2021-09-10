@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

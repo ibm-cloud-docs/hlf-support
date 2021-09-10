@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2018, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: blockchain components, ca, certificate authorities, peer, ordering service, orderer, channel, smart contract, applications, multicloud
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 

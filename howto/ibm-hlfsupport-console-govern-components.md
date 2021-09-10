@@ -1,12 +1,12 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years: 2021
+lastupdated: "2021-09-10"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -187,7 +187,7 @@ However, if you are not taking regular backups, it is recommended that you minim
 If you are upgrading both peer and ordering node binaries, it is a best practice to upgrade the ordering nodes first, as ensuring that the ordering nodes (and by extension, the ordering service) is functioning correctly is more important to the health of your network as a whole than the functioning of any particular peer.
 {: tip}
 
-The process for upgrading a node is relatively straightforward. First, make sure you are using the console where the node was created. You cannot use the console to update imported nodes. When a node upgrade is available, **Upgrade available** is visible on the node tile. <blockchain-sw-25>If **Upgrade available** does not appear on the tile when it should be there, make sure you have upgraded to the latest version of the console.</blockchain-sw-25>
+The process for upgrading a node is relatively straightforward. First, make sure you are using the console where the node was created. You cannot use the console to update imported nodes. When a node upgrade is available, **Upgrade available** is visible on the node tile. 
 
 You can then update the node:
 

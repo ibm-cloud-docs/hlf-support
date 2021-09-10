@@ -1,12 +1,12 @@
 ---
 
-copyright:
+ copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-10"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy,
 
-subcollection: blockchain-sw-252
+subcollection: hlf-support
 
 ---
 
@@ -151,7 +151,7 @@ It also includes an entire set of playbooks that can be used to deploy your peer
 
 There are two main scenarios that the playbooks address:
 
-- **Deploying the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on a Kubernetes cluster**.  If you are using your own Kubernetes distribution, you can purchase an [{{site.data.keyword.blockchainfull_notm}} 1.0.0 license](/docs/hlf-support?topic=hlf-support-get-started-console-ocp) and then use the `install-ibp.yml` playbook to deploy the platform onto your Kubernetes cluster. The alternative is to install the service manually by following instructions for [OpenShift Container Platform](/docs/hlf-support?topic=hlf-support-deploy-ocp) or [Kubernetes](/docs/hlf-support?topic=hlf-support-deploy-ocp).
+- **Deploying the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on a Kubernetes cluster**.  If you are using your own Kubernetes distribution, you can purchase an [{{site.data.keyword.blockchainfull_notm}} 1.0.0 license](/docs/hlf-support?topic=hlf-support-get-started-console-ocp) and then use the `install-ibm-hlfsupport.yml` playbook to deploy the platform onto your Kubernetes cluster. The alternative is to install the service manually by following instructions for [OpenShift Container Platform](/docs/hlf-support?topic=hlf-support-deploy-ocp) or [Kubernetes](/docs/hlf-support?topic=hlf-support-deploy-ocp).
 
   This option is not applicable if you are planning to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service from the {{site.data.keyword.cloud_notm}} catalog because the Cloud catalog installs it for you.
   {: note}
@@ -196,7 +196,7 @@ Advanced users can review the [Ansible collection documentation](https://ibm-blo
 
  To get started with the playbooks see:
 
-- [Installing the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric using an Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp), if you want to use the Ansible playbook to install an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service to your Kubernetes cluster.
+- [Installing the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric using an Ansible playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport), if you want to use the Ansible playbook to install an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service to your Kubernetes cluster.
 -  [Building an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network using Ansible playbooks](/docs/hlf-support?topic=hlf-support-ansible-build) if you already have an existing instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployed and want to use the Ansible playbooks to deploy your network components.
 
 ## Where to find support
