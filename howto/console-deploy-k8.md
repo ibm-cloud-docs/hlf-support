@@ -813,7 +813,7 @@ Copy the PodSecurityPolicy object below and save it to your local system as `ibm
 apiVersion: policy/v1beta1
 kind: PodSecurityPolicy
 metadata:
-  name: ibm-blockchain-platform-psp
+  name: ibm-hlfsupport-psp
 spec:
   hostIPC: false
   hostNetwork: false
