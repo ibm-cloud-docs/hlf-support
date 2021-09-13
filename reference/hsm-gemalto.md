@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -116,7 +116,7 @@ subcollection: hlf-support
 {: help}
 {: support}
 
-{{site.data.keyword.cloud_notm}} includes an [HSM](#x6704988){: term}
+{{site.data.keyword.cloud_notm}} includes an [HSM]{: term}
 service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 {: shortdesc}
 

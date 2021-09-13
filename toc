@@ -30,13 +30,11 @@ Blockchain HLF Support
 	Getting started
 		howto/ibm-hlfsupport-console-build-network.md
 		howto/ibm-hlfsupport-console-join-network.md
-		reference/videos.md
 
 	{: .topicgroup}
 	Deploy a smart contract
 		howto/ibm-hlfsupport-console-smart-contracts.md
 		howto/ibm-hlfsupport-console-smart-contracts-v2.md
-		howto/ibm-hlfsupport-console-smart-contracts-v14.md
 
 	howto/ibm-hlfsupport-console-create-app.md
 
@@ -52,7 +50,7 @@ Blockchain HLF Support
 	{: .topicgroup}
 	Ansible Playbooks
 		howto/ansible.md
-		howto/ansible-install-ibp.md
+		howto/ansible-install-ibm-hlfsupport.md
 		howto/ansible-build-network.md
 	{: .navgroup-end}
 
@@ -67,23 +65,20 @@ Blockchain HLF Support
 			howto/console-deploy-ocp-rhm-fw.md
 			howto/console-deploy-ocp.md
 			howto/console-deploy-ocp-firewall.md
-			howto/ansible-install-ibp.md
+			howto/ansible-install-ibm-hlfsupport.md
 
-		howto/console-upgrade-ocp.md
 		howto/console-delete-ocp.md
 
 	{: .topicgroup}
 	Install on Kubernetes
 		howto/console-deploy-k8.md
 		howto/console-deploy-k8-firewall.md
-		howto/console-upgrade-k8.md
 		howto/console-delete-k8.md
-		howto/console-fixpack.md
 
-	internal/blockchain_images.md
+	/internal/blockchain_images.md
 
 	{: .topicgroup}
-	Using the IBM Blockchain Platform console
+	Using the IBM Support for Hyperledger Fabric
 		howto/console-ocp-manage.md
 		howto/ibm-hlfsupport-console-advanced-deployment.md
 		howto/ibm-hlfsupport-console-advanced-channel.md

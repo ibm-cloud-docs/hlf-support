@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -191,7 +191,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
 
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
-- **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
+- **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)]{: term} to generate and store the private key of your nodes.
 - **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, it is possible to run your components on any Kubernetes v1.17 - v1.20 container platform on x86_64 or s390x.
 - **Unified operation**. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
@@ -221,15 +221,14 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 can be d
 | OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.5, 4.6, 4.7 | x86_64 | 4.5, 4.6, 4.7 |
 | OpenShift Container Platform on LinuxONE | 4.5, 4.6, 4.7 | s390x |4.5, 4.6, 4.7 |
 | Kubernetes ***   | v1.17 - v1.20 | x86_64 | v1.17 - v1.20 |
+
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
-*** If you want to use {{site.data.keyword.IBM_notm}} Kubernetes Service, we recommend that you check out the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for IBM Cloud](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks){: external} offering unless you specifically require this offering. See [Is IBM Blockchain Platform 1.0.0 suitable for you](/docs/hlf-support?topic=hlf-support-get-started-console-ocp#get-started-console-ocp-suitable).    
 
 {{site.data.keyword.blockchainfull_notm}}Platform does not support IBM Cloud Virtual Server for VPC and Virtual Private Cloud (VPC).
 {: note}
 
 If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/hlf-support?topic=hlf-support-deploy-k8#console-deploy-k8-considerations).
 {: important}
-
 
 
 ## License and pricing

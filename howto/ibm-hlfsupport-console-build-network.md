@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, ordering service, blockchain network, multicloud
 
@@ -110,8 +110,6 @@ subcollection: hlf-support
 
 # Build a network
 {: #ibm-hlfsupport-console-build-network}
-
-
 
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is a blockchain-as-a-service offering that enables you to develop, deploy, and operate blockchain applications and networks. You can learn more about blockchain components and how they work together by visiting the [Blockchain component overview](/docs/hlf-support?topic=hlf-support-blockchain-component-overview#blockchain-component-overview). This tutorial is the first part in the [sample network tutorial series](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-sample-tutorial) and describes how to use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to build a fully functional network on Kubernetes cluster deployed into the cloud infrastructure of your choice.
 {: shortdesc}

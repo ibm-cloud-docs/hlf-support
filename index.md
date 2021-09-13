@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, IBM Blockchain Platform, multicloud
 
@@ -128,15 +128,6 @@ With this offering, you are responsible for purchasing and provisioning your own
 {: #get-started-console-ocp-rhm}
 
 Already using Red Hat Marketplace and ready to try out blockchain? Check out these [instructions](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm) to get started.
-
-## Already have an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x network and want to upgrade?
-{: #get-started-console-ocp-upgrade}
-
-Check out the following topics for instructions on how to upgrade:
-- [Upgrading your console and components on the OpenShift Container Platform](/docs/hlf-support?topic=hlf-support-upgrade-ocp)
-- [Upgrading your console and components on Kubernetes](/docs/hlf-support?topic=hlf-support-upgrade-k8)
-- [Upgrading the {{site.data.keyword.blockchainfull_notm}} images](/docs/hlf-support?topic=hlf-support-blockchain-images#blockchain-images-upgrade)
-
 
 ## Is {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 suitable for you?
 {: #get-started-console-ocp-suitable}

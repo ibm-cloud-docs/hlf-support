@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2019, 2021
-lastupdated: "2021-08-11"
+  years:  2021
+lastupdated: "2021-09-13"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
@@ -108,20 +108,28 @@ subcollection: hlf-support
 
 
 
+
 # High availability (HA)
 {: #ibm-hlfsupport-console-ha}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+  <p style="line-height: 15px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibm-hlfsupport-console-ha">2.1.2</a>,
+    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibm-hlfsupport-console-ha">2.1.3</a>,
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibm-hlfsupport-console-ha">2.5</a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibm-hlfsupport-console-ha">2.5.1</a>, 2.52
+    </p>
+</div>
 
-Use the built-in Kubernetes features along with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric component deployment strategies to make your blockchain networks more highly available and protect your network from downtime when a failure occurs in your cluster.
+Use the built-in Kubernetes features along with {{site.data.keyword.blockchainfull}} Platform component deployment strategies to make your blockchain networks more highly available and protect your network from downtime when a failure occurs in your cluster.
 {: shortdesc}
 
-**Target audience:** This topic is designed for architects and system administrators who are responsible for planning and configuring {{site.data.keyword.blockchainfull_notm}}  1.0.0 on a Kubernetes cluster.
+**Target audience:** This topic is designed for architects and system administrators who are responsible for planning and configuring {{site.data.keyword.blockchainfull_notm}} 1.0.0 on a Kubernetes cluster.
 
 High availability is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
 
 You can achieve high availability on different levels in your IT infrastructure and within different layers of your cluster. The level of availability that is right for you depends on several factors, such as your business requirements, the Service Level Agreements that you have with your organizations, and the cost of redundancy.
-
-
 
 
 Before proceeding, we recommend that you review the platform-specific guidance for HA:
@@ -141,18 +149,18 @@ To achieve maximum high availability, it is recommended that you build redundanc
 ### Peer considerations
 {: #ibm-hlfsupport-console-ha-peers}
 
-HA for peers means always having redundant peers, that is at least two peers available for each organization on the same channel to process requests from client applications. Multiple peers can be deployed to a single worker node, or spread across worker nodes, zones , or even regions. Whenever you deploy multiple peers and join them to the same channel, the peers act as HA pairs because the channel and the data are automatically synchronized across all peers in the channel.  By design, a blockchain network is meant to have multiple organizations that transact on the same channels.  Therefore, the common deployment model is that for any given channel, there are redundant peers for each organization spread across several organization account clusters that are all synchronizing data between each other.  Each organization can have a peer in their own cluster in any region. 
+HA for peers means always having redundant peers, that is at least two peers available for each organization on the same channel to process requests from client applications. Multiple peers can be deployed to a single worker node, or spread across worker nodes, zones, or even regions. Whenever you deploy multiple peers and join them to the same channel, the peers act as HA pairs because the channel and the data are automatically synchronized across all peers in the channel.  By design, a blockchain network is meant to have multiple organizations that transact on the same channels.  Therefore, the common deployment model is that for any given channel, there are redundant peers for each organization spread across several organization account clusters that are all synchronizing data between each other.  Each organization can have a peer in their own cluster in any region. 
 
 For even more robust HA coverage, you can stand up multiple clusters in multiple regions and deploy peers in all of them. However, if high performance is desired, care must be taken when distributing peers to ensure the latency and bandwidth between them is sufficient to achieve your performance targets.
 
-**Anchor peers** on a channel facilitate cross-organization communication that is required for private data, [gossip](#x9829550){: term}, and service discovery to work. If only one anchor peer exists on a channel, and that peer becomes unavailable, the organizations are no longer connected and the cross-organization gossip is no longer possible. Therefore, when you create redundant peers for an organization, be sure to add redundant [anchor peers on the channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-channels-anchor-peers) as well.
+**Anchor peers** on a channel facilitate cross-organization communication that is required for private data, [gossip](#x9829550){: term}, and service discovery to work. If only one anchor peer exists on a channel, and that peer becomes unavailable, the organizations are no longer connected and the cross-organization gossip is no longer possible. Therefore, when you create redundant peers for an organization, be sure to add redundant [anchor peers on the channel](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-channels-anchor-peers) as well.
 
 Finally, your peer redundancy strategy needs to take into account your smart contract endorsement policies to ensure that you always have enough peers available to satisfy the [endorsement policy](#x8911635){: term} requirements. For example, if an endorsement policy requires a specific number of endorsements, your peer HA strategy needs to ensure that there are always that number of peers available. Alternatively, if the endorsement policy requires a `MAJORITY` of peers to endorse the transactions, then you need to ensure that a majority of the peers are always available in order for transactions to continue to be processed.
 
 ### Ordering service considerations
 {: #ibm-hlfsupport-console-ha-ordering-service}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 is built upon Hyperledger Fabric  v2.2.3 that includes the Raft [ordering service](#x9826021){: term}. Raft is a crash fault tolerant (CFT) ordering service based on an implementation of [Raft protocol](https://raft.github.io/raft.pdf){: external}. By design, Raft ordering nodes automatically synchronize data between them using Raft-based consensus. In {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, an organization network operator can choose to stand up either a single node Raft-based orderer, with no HA, or five orderers in a single region or across multiple regions that are automatically configured for HA via Raft.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 is built upon Hyperledger Fabric <blockchain-sw-252 hlf>v2.2.3</blockchain-sw-252 hlf> that includes the Raft [ordering service](#x9826021){: term}. Raft is a crash fault tolerant (CFT) ordering service based on an implementation of [Raft protocol](https://raft.github.io/raft.pdf){: external}. By design, Raft ordering nodes automatically synchronize data between them using Raft-based consensus. In {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, an organization network operator can choose to stand up either a single node Raft-based orderer, with no HA, or five orderers in a single region or across multiple regions that are automatically configured for HA via Raft.
 
 
 ### Certificate Authority (CA) considerations
@@ -208,7 +216,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployer attem
 
    **Ordering service** As mentioned above, the HA ordering service is based on Raft, and contains five ordering nodes by default. Because the system can sustain the loss of nodes, including leader nodes, as long as there is a majority of ordering nodes (what’s known as a “quorum”) remaining, Raft is said to be “crash fault tolerant” (CFT). In other words, if you have five nodes in a channel, you can lose two nodes (leaving three remaining nodes). When you deploy an ordering service from the console, choose the five node service for HA.
 
-   **CA** You can configure replica sets, which are represented as shaded CA boxes in the diagram above, for your CA. Replica sets guarantee that if the CA node goes down, the CA replica immediately begins processing requests. You must provision an instance of a PostgreSQL database if you plan to use CA replica sets. See these instructions for more information about [how to configure CA replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca).
+   **CA** You can configure replica sets, which are represented as shaded CA boxes in the diagram above, for your CA. Replica sets guarantee that if the CA node goes down, the CA replica immediately begins processing requests. You must provision an instance of a PostgreSQL database if you plan to use CA replica sets. See these instructions for more information about [how to configure CA replica sets](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-build-ha-ca).
 
    This scenario uses redundant peers, ordering nodes, and CAs on a single worker node, which protects against component failure, but cannot protect from node failure. Therefore, it is only suitable for development and testing purposes.
 
@@ -241,7 +249,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployer attem
 
    You can use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to specify the zone where a CA, peer, or ordering node is created. When you deploy a CA, peer, or ordering service (or a single ordering node), check the Advanced deployment option that is labeled **Deployment zone selection** to see the list of zones that is currently configured for your Kubernetes cluster.
 
-   If you're deploying a CA, peer, or ordering service, you have the option to select the zone from the list of zones available to your cluster or to let your Kubernetes cluster decide for you by leaving the default selected. For a five node ordering service, these nodes will be distributed into multiple zones by default, depending on the relative space available in each zone. You also have the ability to distribute a five node ordering service yourself by unselecting the default option to have the zones chosen for you and distributing these nodes into the zones you have available. If you are deploying a redundant node (that is, another peer when you already have one), it is a best practice to deploy this node into a different zone. You can check which zone the other node was deployed to by opening the tile of the node and looking under the **Node location**. Alternatively, you can use the APIs to deploy a peer or orderer to a specific zone. For more information on how to do this with the APIs, see [Creating a node within a specific zone](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-zone).
+   If you're deploying a CA, peer, or ordering service, you have the option to select the zone from the list of zones available to your cluster or to let your Kubernetes cluster decide for you by leaving the default selected. For a five node ordering service, these nodes will be distributed into multiple zones by default, depending on the relative space available in each zone. You also have the ability to distribute a five node ordering service yourself by unselecting the default option to have the zones chosen for you and distributing these nodes into the zones you have available. If you are deploying a redundant node (that is, another peer when you already have one), it is a best practice to deploy this node into a different zone. You can check which zone the other node was deployed to by opening the tile of the node and looking under the **Node location**. Alternatively, you can use the APIs to deploy a peer or orderer to a specific zone. For more information on how to do this with the APIs, see [Creating a node within a specific zone](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-zone).
 
    The CA zone selection is only available when the default database type SQLite is used and your cluster is configured with multiple zones.
    {: note}
@@ -274,7 +282,7 @@ This scenario offers the highest level of HA possible.
 
    This scenario uses redundant peers and ordering nodes across multiple worker nodes in multiple regions, which provide the highest degree of HA. This approach is also a recommended scenario for a production network when your resiliency requirements merit the investment. The five ordering nodes are spread across three clusters in a 2-1-2 pattern, meaning two nodes in Region 1, one node in Region 2, and two nodes in Region 3. This configuration allows any single region, or all of the ordering nodes in a region to go down, while still maintaining a quorum of nodes in the Raft cluster.
 
-   See the topics on setting up multi-region HA deployments for steps to configure your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric [peers](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr) and [ordering nodes](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os) across multiple regions.
+   See the topics on setting up multi-region HA deployments for steps to configure your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric [peers](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-hadr-mr) and [ordering nodes](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-hadr-mr-os) across multiple regions.
 
 ## Disaster recovery (DR)
 {: #ibm-hlfsupport-console-ha-dr}
@@ -285,8 +293,6 @@ It is recommended that you regularly back up the storage associated with every d
 
 All nodes must be [stopped](#ibm-hlfsupport-console-ha-stop-nodes) in order to ensure a reliable backup.
 {: important}
-
-
 
 
 | Storage solution provider | Guidance |
@@ -303,4 +309,4 @@ If you are using CA replica sets and your PostgreSQL database resides in {{site.
 ### Backup and recovery
 {: #ibm-hlfsupport-console-ha-stop-nodes}
 
-For information about backing up your components and how to recover corrupted components or networks, see [Backing up and restoring components and networks](/docs/hlf-support?topic=hlf-support-backup-restore).
+For information about backing up your components and how to recover corrupted components or networks, see [Backing up and restoring components and networks](/docs/blockchain?topic=blockchain-backup-restore).

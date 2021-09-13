@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: blockchain components, ca, certificate authorities, peer, ordering service, orderer, channel, smart contract, applications, multicloud
 
@@ -108,15 +108,25 @@ subcollection: hlf-support
 
 
 
+
 # Blockchain component overview
 {: #blockchain-component-overview}
 
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+  <p style="line-height: 15px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="/docs/blockchain-sw?topic=blockchain-sw-blockchain-component-overview">2.1.2</a>,
+    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-blockchain-component-overview">2.1.3</a>,
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-blockchain-component-overview">2.5</a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-blockchain-component-overview">2.5.1</a>, 2.52
+    </p>
+</div>
 
-The components and structure of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric are based on the underlying infrastructure and tools of [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external}, an open source permissioned blockchain solution to which {{site.data.keyword.IBM_notm}} is a major contributor. Networks based on Fabric include several standard components that can be deployed in a number of configurations to support a wide variety of use cases.
+The components and structure of the {{site.data.keyword.blockchainfull}} Platform are based on the underlying infrastructure and tools of [Hyperledger Fabric](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external}, an open source permissioned blockchain solution to which {{site.data.keyword.IBM_notm}} is a major contributor. Networks based on Fabric include several standard components that can be deployed in a number of configurations to support a wide variety of use cases.
 
 For a more comprehensive overview of Fabric networks and the interrelation of the components that comprise it, see [this document on the structure of a blockchain network](https://hyperledger-fabric.readthedocs.io/en/release-2.2/network/network.html) from the Fabric community documentation, which shows how a network can be started and matured.
 
-For the purposes of this overview, we focus just on certificate authorities (CAs), orderers, peers, smart contracts, and applications. As you can see from the [Build a network tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network), this sequence is not arbitrary; it reflects the proper order in which components in a network based on Fabric are deployed.
+For the purposes of this overview, we focus just on certificate authorities (CAs), orderers, peers, smart contracts, and applications. As you can see from the [Build a network tutorial](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network), this sequence is not arbitrary; it reflects the proper order in which components in a network based on Fabric are deployed.
 
 ## Peers
 {: #blockchain-component-overview-peer}
@@ -138,7 +148,7 @@ In Hyperledger Fabric, as well as the {{site.data.keyword.IBM_notm}} Support for
 
 An organization MSP, for example, has an MSP subfolder called **admins**. Any user whose certificate is inside that admin folder is an admin of the organization. Because this MSP defines the organization, it is listed in the configuration on every channel of which the organization is a member. As a result, whenever an admin of the organization tries to perform an action, the signing certificate of the admin (which is attached to all of its interactions) is checked against the certificates listed in the MSP. Does the certificate match the one listed in the channel configuration? If it does, the other organizations will validate it and the action can be performed. If not, the request to execute the transaction is rejected.
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric CAs are based on the [Hyperledger Fabric CA](https://github.com/hyperledger/fabric/releases/tag/v2.2.3/){: external}, though it is possible to use another CA if it uses a PKI based on x.509 certificates. Because non-Fabric CAs are not configured to create properly formatted MSPs, users who want to use this kind of CA must create the MSP for themselves.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric CAs are based on the [Hyperledger Fabric CA](https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/){: external}, though it is possible to use another CA if it uses a PKI based on x.509 certificates. Because non-Fabric CAs are not configured to create properly formatted MSPs, users who want to use this kind of CA must create the MSP for themselves.
 
 For more information about how certificate authorities are used to establish identity and membership, see [Hyperledger Fabric documentation on identity](https://hyperledger-fabric.readthedocs.io/en/release-2.2/identity/identity.html){: external} and on [membership](https://hyperledger-fabric.readthedocs.io/en/release-2.2/membership/membership.html){: external}.
 
@@ -184,7 +194,7 @@ For more information about smart contracts, see [Smart contracts](https://hyperl
 
 Client applications in a Fabric-based network like {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric leverage underlying infrastructures such as APIs, SDKs, and smart contracts to allow client interactions (invokes and queries) at a higher level of abstraction.
 
-For a look at how applications interact with a network based on Fabric, check out the [Developing Applications](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html){: external} topic in the Hyperledger Fabric documentation. You can also view the [creating applications](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app) topic to learn how to connect your applications to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+For a look at how applications interact with a network based on Fabric, check out the [Developing Applications](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html){: external} topic in the Hyperledger Fabric documentation. You can also view the [creating applications](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app) topic to learn how to connect your applications to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 ## An example network
 {: #blockchain-component-overview-example-network}

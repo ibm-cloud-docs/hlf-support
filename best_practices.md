@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: best practices, develop applications, connectivity, availability, mutual TLS, CouchDB
 
@@ -108,9 +108,20 @@ subcollection: hlf-support
 
 
 
+
 # Best practices for application development
 {: #best-practices-app}
 {: help}
 {: support}
 
-Information previously contained on this page has been refreshed and merged into the [Creating Applications tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app). For the most up to date recommendations, refer to that tutorial.
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+  <p style="line-height: 15px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="/docs/blockchain-sw?topic=blockchain-sw-best-practices-app">2.1.2</a>,
+    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-best-practices-app">2.1.3</a>,
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-best-practices-app">2.5</a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-best-practices-app">2.5.1</a>, 2.52
+    </p>
+</div>
+
+Information previously contained on this page has been refreshed and merged into the [Creating Applications tutorial](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-app). For the most up to date recommendations, refer to that tutorial.

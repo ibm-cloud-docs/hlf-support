@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: pricing model, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -120,7 +120,7 @@ This guide helps you understand the pricing model for {{site.data.keyword.IBM_no
 ## License
 {: #ibm-hlfsupport-software-pricing-license}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 delivers the components that are needed to run a blockchain network on your own infrastructure using Kubernetes. You can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering which is required in order to deploy the release. With this offering, you are responsible for procuring and provisioning your own Kubernetes cluster on one of the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). Technical support from IBM Blockchain is included in the offering.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 delivers the components that are needed to run a blockchain network on your own infrastructure using Kubernetes. It also provides support for Hyperledger Fabric images and the entitlement to a certified image of the Fabric Operations Console and IBM Operator to make deploying and managing Hyperledger Fabric easier. You can access your [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering which is required in order to deploy the release. With this offering, you are responsible for procuring and provisioning your own Kubernetes cluster on one of the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). 
 
 ## Pricing
 {: #ibm-hlfsupport-software-pricing-pricing}

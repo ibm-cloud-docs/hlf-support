@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-13"
 
 keywords: IBM Support for Hyperledger Fabric, Data residency, world state, channels, multicloud
 
@@ -108,8 +108,19 @@ subcollection: hlf-support
 
 
 
+
 # Data residency
 {: #console-icp-about-data-residency}
+
+<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
+  <p style="line-height: 15px;">
+    <strong>Running a different version of IBM Blockchain Platform?</strong> Switch to version
+    <a href="/docs/blockchain-sw?topic=blockchain-sw-console-icp-about-data-residency">2.1.2</a>,
+    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-about-data-residency">2.1.3</a>,
+    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-console-icp-about-data-residency">2.5</a>,
+    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-about-data-residency">2.5.1</a>, 2.52
+    </p>
+</div>
 
 Because blockchain networks are oblivious to the type of data that is processed, extra steps must sometimes be taken to keep certain kinds of data secure. The most common requirement on data residency is associated with laws within certain countries, which mandate that all data that is processed and stored in an IT system must remain within a specific country’s borders. Similarly, some companies in highly regulated industries, such as government, healthcare, and financial services, require that data must be stored entirely behind their firewall.
 {: shortdesc}
@@ -136,7 +147,6 @@ The architecture of Hyperledger Fabric that underlies the {{site.data.keyword.IB
 Peers maintain a separate ledger for each channel that they join. Only organizations that are members of the channel can join their peers to the channel and receive ledger updates from the ordering service. As a result, each channel is bound to an ordering service, which stores the blockchain portion of every channel ledger that it maintains. Client applications submit transactions to the peers and ordering service of a given channel. These transactions are added to the transaction log within the blockchain and include a [read-write set](https://hyperledger-fabric.readthedocs.io/en/release-2.2/readwrite.html){: external} that is used to update the key-value pairs in the world state.
 
 If in-country data residency is a requirement, you need to consider the location of your peers and the ordering service, as well as your client applications. You also need to know the location of the peers that belong to other organizations on your channels.
-
 If you are using an OpenShift cluster that was deployed with the {{site.data.keyword.IBM_notm}} Kubernetes Service, you can find the list of [OpenShift regions and locations on {{site.data.keyword.cloud_notm}}](/docs/openshift?topic=openshift-regions-and-zones) where you and the members of your consortium can deploy your components.
 
 ## A use case for data residency
@@ -204,17 +214,15 @@ When you initially deploy an ordering service, you create a set of ordering node
 
 In **Figure 6**, the ordering nodes that participate in the Raft ordering service are spread across the two countries. Two ordering nodes are located in the United States, and three ordering nodes are in Germany for a total of five ordering nodes. When **Channel X** is created, all five ordering nodes are included in the consenter set, which would _not_ meet a data residency requirement as the ledger data is spread across both countries. **Channel Y** however only includes the three ordering nodes that reside in Germany, which guarantees that all ledger data for this channel stays in country. A minimum of three ordering nodes is recommended because this configuration allows for one node to go down and two nodes to be available to maintain "quorum", the minimum number of nodes that must be available (out of the total number) for the ordering service to process transactions. A more robust configuration would be to include five ordering nodes in Germany for **Channel Y**, which means that two nodes could go down without losing quorum.
 
-The easiest way to achieve this configuration is to spread the ordering nodes across Kubernetes clusters in different regions, a process that is described in the [Setting up multiregion High Availability (HA) deployments for the ordering service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os) tutorial.
+The easiest way to achieve this configuration is to spread the ordering nodes across Kubernetes clusters in different regions, a process that is described in the [Setting up multiregion High Availability (HA) deployments for the ordering service](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-hadr-mr-os) tutorial.
 
 ## Considerations around using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #console-icp-about-data-residency-considerations}
 
 
-
 When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console is installed on your OpenShift cluster.
 
 When you use your console to view the channel details, ledger data is visible in your browser. The ledger data is transmitted directly from the Kubernetes cluster to your browser.
-
 Therefore, to preserve data residency, the end user's browser and the Kubernetes cluster must reside in the same country.
 
 ## Reference material
