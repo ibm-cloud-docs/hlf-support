@@ -116,12 +116,10 @@ content-type: faq
 **Hyperledger Fabric**
 - [What is the value of using {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric over native Hyperledger Fabric?](#ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-7)
 - [What version of Hyperledger Fabric is being used with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?](#ibm-hlfsupport-v2-faq-v2-Hyperledger-Fabric-3-1)
-- [Can {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components interoperate with Hyperledger Fabric components on the same network? And vice versa? And what is the support policy for networks that include both {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components and open source components?](#ibm-hlfsupport-v2-faq-interoperability)
 
 **Planning for your network**
 
 - [Where can a customer deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and how will {{site.data.keyword.IBM_notm}} support those deployment environments?](#ibm-hlfsupport-v2-faq-sw-support)
-- [Does {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x and 2.5 run on OpenShift on {{site.data.keyword.cloud_notm}}?](#ibm-hlfsupport-v2-faq-saas-ocp)
 - [What ports are used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?](#ibm-hlfsupport-v2-ports)
 - [How can I estimate the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric sizing requirements for my development, test, and production environments?](#ibm-hlfsupport-v2-faq-sizing)
 
@@ -129,7 +127,6 @@ content-type: faq
 - [Is it possible to deploy blockchain nodes to multiple clouds from a single blockchain console?](#ibm-hlfsupport-v2-faq-multicloud)
 - [How can I find what version of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric that I am running?](#ibm-hlfsupport-v2-faq-version)
 - [How do I get the latest Fabric version and Fabric functionalities on my {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network?](#ibm-hlfsupport-v2-faq-v2-fabric-upgrade)
-- [I am currently using Hyperledger Fabric v1.4 and want to move to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}} or Multicloud. Can I continue to use Raft?](#ibm-hlfsupport-v2-faq-migrate-raft)
 
 **Blockchain components**
 - [What database do the peers use for their ledger?](#ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-3)
@@ -181,42 +178,14 @@ Refer to the following table for information on which version of Fabric is used 
 |----------------------------------------------------| -------------------|
 | 1.0.0 | v2.2.3 |
 
-
-## Can {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components interoperate with Hyperledger Fabric components on the same network? And vice versa? And what is the support policy for networks that include both {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components and open source components?
-{: #ibm-hlfsupport-v2-faq-interoperability}
-{: faq}
-
-Yes. Hyperledger Fabric networks consist of many distributed members owning one or more nodes. There are multiple deployment options:
-
-* {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for IBM Cloud with console
-* {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.x (Full Platform)
-* {{site.data.keyword.blockchainfull_notm}} Images
-* Open source Hyperledger Fabric images or a non-IBM product
-
-Containers deployed from any of the above sources can be connected on a single channel and transact. You can join {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric peers to any network running Hyperledger Fabric components. Similarly, you can invite Fabric peers to join channels hosted on an ordering service deployed on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. Note that you will need to use Hyperledger Fabric APIs or the CLI. For more information about what is supported, see [Support for {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](https://www.ibm.com/support/pages/node/1072956){: external}. For instructions on how to configure interoperability see [Connect the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to Hyperledger Fabric components](https://developer.ibm.com/tutorials/hyperledger-fabric-and-ibm-blockchain-peer-interoperability/){: external}.
-
-
 ## Where can a customer deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and how will {{site.data.keyword.IBM_notm}} support those deployment environments?
 {: #ibm-hlfsupport-v2-faq-sw-support}
 
 For an updated list of all the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment options check out the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites).
 
-It is important to note that the {{site.data.keyword.blockchainfull_notm}} support only spans across Hyperledger Fabric based component issues for customers who have purchased the Blockchain Platform. Some examples include assistance in Fabric upgrades, smart contract deployment, adding peers to channels, etc.
+It is important to note that the {{site.data.keyword.blockchainfull_notm}} support only spans across Hyperledger Fabric based component issues for customers who have purchased the offering. Some examples include assistance in Fabric upgrades, smart contract deployment, adding peers to channels, etc.
 
-On the other hand, {{site.data.keyword.blockchainfull_notm}} will not provide deployment support for environments outside of the supported platform. This means the customer is free to deploy into an environment of their choice from the list above, and should have the same {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric experience as they would when they deploy into the {{site.data.keyword.cloud_notm}}. But it will be up to the customer to configure the network and address their own infrastructure related issues. Examples of these types of issues include failed deployment to a Kubernetes service, infrastructure capacity, custom firewall settings, etc.
-
-
-## Does {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x and 2.5 run on OpenShift on {{site.data.keyword.cloud_notm}}?
-{: #ibm-hlfsupport-v2-faq-saas-ocp}
-{: faq}
-
-Yes. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be purchased and deployed in four ways on OpenShift:
-- [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/services/blockchain-platform){: external} is deployed and runs on [IBM Cloud](https://cloud.ibm.com/kubernetes/catalog/about?platformType=openshift){: external}.
-- {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is also available as a software offering that can be deployed on Red Hat OpenShift and can run in all environments where OpenShift Container Platform (OCP) is supported. Read more about running OpenShift Container Platform [here](/docs/hlf-support?topic=hlf-support-console-ocp-about).
-- {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is available to be deployed to your OpenShift cluster directly from the [Red Hat Marketplace](https://marketplace.redhat.com/en-us/products/ibm-blockchain){: external}.
-- Finally, experienced Hyperledger Fabric customers also have the option to download and use the peer, CA, orderer, and smart contract container [images](/docs/hlf-support?topic=hlf-support-blockchain-images).
-
-
+On the other hand, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric will not provide deployment support for environments outside of the supported platform. Also it will be up to the customer to configure the network and address their own infrastructure related issues. Examples of these types of issues include failed deployment to a Kubernetes service, infrastructure capacity, custom firewall settings, etc.
 
 ## What ports are used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?
 {: #ibm-hlfsupport-v2-ports}
@@ -228,7 +197,7 @@ See the port information in the [Security topic](/docs/hlf-support?topic=hlf-sup
 {: #ibm-hlfsupport-v2-faq-sizing}
 {: faq}
 
-After you understand how many CAs, peers, and ordering nodes are required, you can examine the default resource allocations table for  [OpenShift](/docs/hlf-support?topic=hlf-support-deploy-ocp-getting-started#deploy-ocp-resources-required) or [Kubernetes](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-resources-required) to get an approximate estimate of the CPUs (VPCs) required for your network.  If you plan to deploy the platform outside of {{site.data.keyword.cloud_notm}}, you will need to buy licenses per VPC (CPU) based on expected usage. As a reminder, these are only sold per VPC so you should always round up the number of VPCs if you plan to use fractional parts. For example, if you estimate that you will need 11.2 VPCs then you should license 12 VPCs.
+After you understand how many CAs, peers, and ordering nodes are required, you can examine the default resource allocations table for  [OpenShift](/docs/hlf-support?topic=hlf-support-deploy-ocp-getting-started#deploy-ocp-resources-required) or [Kubernetes](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-resources-required) to get an approximate estimate of the CPUs (VPCs) required for your network.  You will need to buy licenses per VPC (CPU) based on expected usage. As a reminder, these are only sold per VPC so you should always round up the number of VPCs if you plan to use fractional parts. For example, if you estimate that you will need 11.2 VPCs then you should license 12 VPCs.
 
 
 
@@ -265,15 +234,6 @@ Depending on the contents of a Fabric release and {{site.data.keyword.IBM_notm}}
 
 If you are moving from v1.4.x to v2.x, you may have to update your smart contracts to conform to new smart contract lifecycle. For more information, see [Upgrading to a new version of Fabric](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2).
 {: tip}
-
-## I am currently using Hyperledger Fabric v1.4.x and want to move to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x or 2.5.x. Can I continue to use Raft?
-{: #ibm-hlfsupport-v2-faq-migrate-raft}
-{: faq}
-
-Yes. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x or 2.5 uses Raft consensus. All of the applications and smart contracts that you are using on Fabric v1.4.x are able to work on your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. However, no mechanism exists to migrate your ledger data from one network to another. Instead, you can reinstall your smart contract packages on your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. See also [Can {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components interoperate with Hyperledger Fabric components on the same network?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-interoperability).
-
-
-
 
 ## What database do the peers use for their ledger?
 {: #ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-3}
@@ -364,7 +324,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric supports smart
 {: #ibm-hlfsupport-v2-faq-ansible-version}
 {: faq}
 
-Versions 2.1.3 and 2.5.x of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be used with the Ansible collection to deploy a Hyperledger Fabric network.
+Versions 1.0.0 of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be used with the Ansible collection to deploy a Hyperledger Fabric network.
 
 ## How do I get support for running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Ansible playbook?
 {: #ibm-hlfsupport-v2-faq-ansible-support}
@@ -402,8 +362,6 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric extension prov
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console does not monitor the health of blockchain client applications, but {{site.data.keyword.cloud_notm}} does offer tooling such as [{{site.data.keyword.la_full_notm}}](/catalog/services/ibm-log-analysis){: external} and [{{site.data.keyword.mon_full_notm}}](/catalog/services/ibm-cloud-monitoring){: external} that can be used for their health monitoring.
 
-
-
 ## Where does {{site.data.keyword.IBM_notm}} store the customer's logs and how long does {{site.data.keyword.IBM_notm}} keep the audit logs for the blockchain platform service?
 {: #ibm-hlfsupport-v2-faq-customer-logs}
 {: faq}
@@ -415,8 +373,6 @@ The logs are stored in the customer's Kubernetes cluster. {{site.data.keyword.IB
 {: faq}
 
 With {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can now directly access logs from your Kubernetes dashboard. It is recommend that you take advantage of the {{site.data.keyword.la_full_notm}} service that allows you to easily parse the logs in real time.
-
-
 
 ## Is there a best practice for monitoring my blockchain resources?
 {: #ibm-hlfsupport-v2-faq-mon-res}
