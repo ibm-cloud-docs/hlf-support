@@ -658,3 +658,4 @@ You can also add new users to the wallets that have already been created:
   - If you use a certificate and private key, browse to the certificate and private key.
   - If you use an enrollment ID and secret, choose the gateway to enroll with and enter the enrollment ID and secret.
 
+

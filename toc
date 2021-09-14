@@ -118,5 +118,4 @@ Blockchain HLF Support
 	release-notes.md
 	known-issues.md
 	ibmblockchain_support.md
-	sitemap.md
 	{: .navgroup-end}
