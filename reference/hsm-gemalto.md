@@ -116,8 +116,7 @@ subcollection: hlf-support
 {: help}
 {: support}
 
-{{site.data.keyword.cloud_notm}} includes an [HSM]{: term}
-service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+{{site.data.keyword.cloud_notm}} includes an [HSM]{: term} service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 {: shortdesc}
 
 While this tutorial focuses specifically on using {{site.data.keyword.cloud_notm}} HSM, you can learn more about the overall configuration process for using any HSM that supports PCKS #11 with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, see
@@ -499,6 +498,7 @@ metadata:
 
 
 <staging-zHSM>
+
 Because the console needs to know the configuration settings to use for your HSM, you need to create a Kubernetes [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/){:external} to store these values. The configMap settings depend on whether you configured a daemon for your HSM or not. In that case, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator uses the HSM configuration passed in this configmap to get the details about the HSM client image, such as what image pull secret to use, and the folder mounts that are required. Based on the information provided, when a CA, peer, or ordering node is deployed with HSM enabled, the operator mounts required the files for the HSM client image. If you are using a daemon with your HSM, skip ahead to [Configure the operator to work with an HSM daemon](#daemon-configmap).
 
 **Configure the operator to work with an HSM that does not use a daemon**
@@ -649,13 +649,13 @@ version: v1
 ```
 {: codeblock}
 
-- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well. **Important:** If an image pull secret is not required, set this value to `""`. If you would like to override the default values for the daemon container's `securityContext`, specify the desired values in the config. If you would like to override the default values for the daemon container's `resources`, you can include the following in the `daemon:` section:
-```
+- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well. **Important:** If an image pull secret is not required, set this value to `""`. If you would like to override the default values for the daemon container's `securityContext`, specify the desired values in the config. If you would like to override the default values for the daemon container's `resources`, you can include the following in the `daemon:` section and specify the desired value:
+```yaml
 resources:
     limits:
       cex.s390.ibm.com/ibp: 1
 ```
-and specify the desired value.
+{: codeblock}
 
 - In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto#ibm-hlfsupport-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
 
