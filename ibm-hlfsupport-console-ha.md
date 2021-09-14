@@ -112,15 +112,7 @@ subcollection: hlf-support
 # High availability (HA)
 {: #ibm-hlfsupport-console-ha}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-ibm-hlfsupport-console-ha">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-ibm-hlfsupport-console-ha">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-ibm-hlfsupport-console-ha">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-ibm-hlfsupport-console-ha">2.5.1</a>, 2.52
-    </p>
-</div>
+
 
 Use the built-in Kubernetes features along with {{site.data.keyword.blockchainfull}} Platform component deployment strategies to make your blockchain networks more highly available and protect your network from downtime when a failure occurs in your cluster.
 {: shortdesc}

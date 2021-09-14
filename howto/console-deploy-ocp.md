@@ -289,7 +289,6 @@ volumes:
 {: codeblock}
 
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
-
 ```
 oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
 oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
@@ -301,6 +300,7 @@ If the commands are successful, you can see a response that is similar to the fo
 securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibm-hlfsupport-infra added: "system:serviceaccounts:ibm-hlfsupport-infra"
 ```
+{: codeblock}
 
 ### 3. Deploy the webhook
 {: #webhook-deploy}
@@ -311,11 +311,11 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 {: #webhook-deployment-yaml}
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
-
 ```yaml
 {[yaml-crd-converison-webhook-deployment.md]}
 ```
 {: codeblock}
+
 Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -n ibm-hlfsupport-infra -f deployment.yaml
@@ -326,6 +326,7 @@ When the command completes successfully, you should see something similar to:
 ```
 deployment.apps/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 #### service.yaml
 {: #webhook-service-yaml}
@@ -347,6 +348,7 @@ When the command completes successfully, you should see something similar to:
 ```
 service/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
@@ -1375,8 +1377,29 @@ Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Su
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibm-hlfsupport-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
 
 ```yaml
-{[yaml-operator-ocp-ibm-hlfsupport-console-advanced-ibm-hlfsupport-console-tls.md]
-  }
+apiVersion: ibp.com/v1beta1
+kind: IBPConsole
+metadata:
+  name: ibm-hlfsupport-console
+spec:
+  arch:
+  - amd64
+  license:
+    accept: false
+  serviceAccountName: default
+  email: "<EMAIL>"
+  password: "<PASSWORD>"
+  registryURL: cp.icr.io/cp
+  imagePullSecrets:
+    - cp-pull-secret
+  networkinfo:
+    domain: <DOMAIN>
+  storage:
+    console:
+      class: default
+      size: 10Gi
+  tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
+  
 ```
 {: codeblock}
 

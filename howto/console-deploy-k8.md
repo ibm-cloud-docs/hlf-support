@@ -321,7 +321,6 @@ volumes:
 {: codeblock}
 
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
-
 ```
 oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
 oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
@@ -333,6 +332,7 @@ If the commands are successful, you can see a response that is similar to the fo
 securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:ibm-hlfsupport-infra added: "system:serviceaccounts:ibm-hlfsupport-infra"
 ```
+{: codeblock}
 
 ### 3. Deploy the webhook
 {: #webhook-deploy}
@@ -343,11 +343,11 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 {: #webhook-deployment-yaml}
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
-
 ```yaml
 {[yaml-crd-converison-webhook-deployment.md]}
 ```
 {: codeblock}
+
 Run the following command to add the file to your cluster definition:
 ```
 kubectl apply -n ibm-hlfsupport-infra -f deployment.yaml
@@ -358,6 +358,7 @@ When the command completes successfully, you should see something similar to:
 ```
 deployment.apps/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 #### service.yaml
 {: #webhook-service-yaml}
@@ -379,6 +380,7 @@ When the command completes successfully, you should see something similar to:
 ```
 service/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}

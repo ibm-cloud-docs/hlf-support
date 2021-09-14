@@ -112,15 +112,7 @@ subcollection: hlf-support
 # Data residency
 {: #console-icp-about-data-residency}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-console-icp-about-data-residency">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-console-icp-about-data-residency">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-console-icp-about-data-residency">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-console-icp-about-data-residency">2.5.1</a>, 2.52
-    </p>
-</div>
+
 
 Because blockchain networks are oblivious to the type of data that is processed, extra steps must sometimes be taken to keep certain kinds of data secure. The most common requirement on data residency is associated with laws within certain countries, which mandate that all data that is processed and stored in an IT system must remain within a specific country’s borders. Similarly, some companies in highly regulated industries, such as government, healthcare, and financial services, require that data must be stored entirely behind their firewall.
 {: shortdesc}
