@@ -179,11 +179,7 @@ Refer to the following table for information on which version of Fabric is used 
 
 | {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric | Hyperledger Fabric |
 |----------------------------------------------------| -------------------|
-| 1.0.0 | v1.4.12 and v2.2.3 |
-| 2.5.1 | 1.4.9 and 2.2.1 |
-| 2.5 | 1.4.7 and 2.1.1 |
-| 2.1.3 | v1.4.6|
-| 2.1.2 | v1.4.4|
+| 1.0.0 | v2.2.3 |
 
 
 ## Can {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components interoperate with Hyperledger Fabric components on the same network? And vice versa? And what is the support policy for networks that include both {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components and open source components?

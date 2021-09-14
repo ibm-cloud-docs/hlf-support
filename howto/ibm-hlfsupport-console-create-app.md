@@ -480,7 +480,7 @@ After you download the Fabric Samples, run the following commands to ensure that
 
 ```
 cd fabric-samples
-git checkout v1.4.9
+git checkout v1.4.12
 ```
 {: codeblock}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -602,6 +602,11 @@ daemon:
   image: us.icr.io/ibm-hlfsupport-temp/ibm-hlfsupport-zdaemon:zhsm-s390x
   auth:
     imagePullSecret: regcred
+  securityContext:
+    privileged: false
+    allowPrivilegedEscalation: false
+    runAsNonRoot: false
+    runAsUser: 0
 library:
   filepath: /hsm/opencryptoki/libopencryptoki.so.0.0.0
   image: us.icr.io/ibm-hlfsupport-temp/ibm-hlfsupport-zdaemon:zhsm-s390x
@@ -644,7 +649,13 @@ version: v1
 ```
 {: codeblock}
 
-- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well.
+- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well. **Important:** If an image pull secret is not required, set this value to `""`. If you would like to override the default values for the daemon container's `securityContext`, specify the desired values in the config. If you would like to override the default values for the daemon container's `resources`, you can include the following in the `daemon:` section:
+```
+resources:
+    limits:
+      cex.s390.ibm.com/ibp: 1
+```
+and specify the desired value.
 
 - In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto#ibm-hlfsupport-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
 

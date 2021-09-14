@@ -196,7 +196,6 @@ ibm-hlfsupport-infra           Active    2m
 ## Create a secret for your entitlement key
 {: #deploy-ocp-secret-ibm-hlfsupport-infra}
 
-
 After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You need to store the entitlement key on your cluster by creating a [Kubernetes Secret](https://kubernetes.io/docs/concepts/configuration/secret/){: external}. Kubernetes secrets are used to securely store the key on your cluster and pass it to the operator and the console deployments.
 
 Run the following command to create the secret and add it to your `ibm-hlfsupport-infra` namespace or project:
@@ -793,6 +792,17 @@ volumes:
 - "*"
 ```
 {: codeblock}
+
+If you are creating an **HSM-enabled** operator deployment, you need to replace:
+```
+allowPrivilegeEscalation: false
+allowPrivilegedContainer: false
+```
+with:
+```
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: true
+```
 
 After you save and edit the file, run the following commands to add the file to your cluster and add the policy to your project.
 ```

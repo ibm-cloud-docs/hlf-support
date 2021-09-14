@@ -114,7 +114,7 @@ subcollection: hlf-support
 
 
 
-This guide helps you understand the pricing model for {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, and how much you will pay when you develop and grow your blockchain network of Certificate Authorities, peers, and ordering service components, that are based on Hyperledger Fabric v1.4.12 and v2.2.3.
+This guide helps you understand the pricing model for {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, and how much you will pay when you develop and grow your blockchain network of Certificate Authorities, peers, and ordering service components, that are based on Hyperledger Fabric v2.2.3.
 {: shortdesc}
 
 ## License

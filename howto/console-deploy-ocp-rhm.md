@@ -488,7 +488,7 @@ If your console deployment is successful, you can see `ibm-hlfsupport-console` a
 ```
 NAME                           READY   STATUS    RESTARTS   AGE
 ibm-hlfsupport-operator-f58cc8585-hvsw7   1/1     Running   0          15m
-ibm-hlfsupportconsole-6f69477796-sxzm9    4/4     Running   0          4m
+ibm-hlfsupport-console-6f69477796-sxzm9    4/4     Running   0          4m
 ```
 
 The console consists of four containers that are deployed inside a single pod:

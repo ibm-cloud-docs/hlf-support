@@ -849,6 +849,17 @@ volumes:
 ```
 {: codeblock}
 
+If you are creating an **HSM-enabled** operator deployment, you need to replace:
+```
+allowPrivilegeEscalation: false
+allowPrivilegedContainer: false
+```
+with:
+```
+allowPrivilegeEscalation: true
+allowPrivilegedContainer: true
+```
+
 After you save and edit the file, run the following commands to add the file to your cluster and add the policy to your project. Replace `<PROJECT_NAME>` with your project.
 ```
 oc apply -f ibm-hlfsupport-scc.yaml -n <PROJECT_NAME>
