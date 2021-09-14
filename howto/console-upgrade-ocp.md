@@ -178,11 +178,10 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
 
 ### Step two: Update the CRDs 
 {: #upgrade-ocp-steps-100-crds}
-**This step is not required when upgrading from 2.5.1.**
 
 1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
-  ```
+  ``` 
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
@@ -190,8 +189,8 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
 2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpcas.ibp.com
@@ -269,27 +268,26 @@ status:
     singular: ibpca
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the peer CRD:
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -352,27 +350,26 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
-EOF
-```
-{: codeblock}
+ EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the console CRD:
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -434,27 +431,26 @@ status:
     singular: ibpconsole
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the orderer CRD:  
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -516,27 +512,25 @@ status:
     singular: ibporderer
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
+  ```
+  {: codeblock}
 
 ### Step three: Update the ClusterRole 
 {: #upgrade-ocp-steps-100-clusterrole} 
-**This step is not required when upgrading from 2.5.1.**
 
 You need to update the ClusterRole that is applied to your project. Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrole.yaml`. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
@@ -798,10 +792,8 @@ You can upgrade an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 6. [Use your console to upgrade your running blockchain nodes](#upgrade-ocp-nodes)
 7. [Update MSPs in consortium to add organization-level endorsement policy](#upgrade-ocp-update-nodes-consortium)
 
-You need to complete steps 4-6 for each network that that runs on a separate project. If you experience any problems, see the instructions for [rolling back an upgrade](#upgrade-ocp-rollback). If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Upgrading the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall](#upgrade-ocp-firewall).
+You need to complete steps 4-6 for each network that that runs on a separate project. If you experience any problems, see the instructions for [rolling back an upgrade](#upgrade-ocp-rollback). If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Upgrading the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall](#upgrade-ocp-firewall)
 
-Occasionally, a five node ordering service that was deployed using v2.1.2 will be deleted by the Kubernetes garbage collector because it considers the nodes a resource that needs to be cleaned up. This process is both random and unrecoverable --- if the ordering service is deleted, all of the channels hosted on it are permanently lost. To prevent this, the `ownerReferences` field in the configuration of each ordering node must be removed **before upgrading to 1.0.0**. For the steps about how to pull the configuration file, remove `ordererReferences`, and apply the change, see [Known issues](/docs/blockchain-sw?topic=blockchain-sw-sw-known-issues#sw-known-issues-ordering-service-delete) in the v2.1.2 documentation.
-{:important}
 
 ### Step one: Create the `ibm-hlfsupport-infra` project for the webhook
 {: #deploy-ocp-ibm-hlfsupport-infra}
@@ -819,9 +811,11 @@ oc new-project ibm-hlfsupport-infra
 When you create a new project, a new namespace is created with the same name as your project. You can verify that the existence of the new namespace by using the `oc get namespace` command:
 ```
 $ oc get namespace
-NAME                                STATUS    AGE
-ibm-hlfsupport-infra                            Active    2m
+NAME                                          STATUS    AGE
+ibm-hlfsupport-infra             Active    2m
 ```
+{: codeblock}
+
 ### Step two: Create a secret for your entitlement key
 {: #deploy-ocp-secret-ibm-hlfsupport-infra}
 
@@ -854,7 +848,37 @@ The first three steps are for deployment of the webhook. The last step is for cr
 Copy the following text to a file on your local system and save the file as `rbac.yaml`. This step allows the webhook to read and create a TLS secret in its own project.
 
 ```yaml
-{[yaml-crd-converison-webhook-rbac.md]}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: webhook
+  namespace: ibm-hlfsupport-infra
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: webhook
+rules:
+- apiGroups:
+  - "*"
+  resources:
+  - secrets
+  verbs:
+  - "*"
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: ibm-hlfsupport-infra
+subjects:
+- kind: ServiceAccount
+  name: webhook
+  namespace: ibm-hlfsupport-infra
+roleRef:
+  kind: Role
+  name: webhook
+  apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -870,11 +894,12 @@ serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
 rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 ```
+{: codeblock}
+
 #### 2.(OpenShift cluster only) Apply the Security Context Constraint
 {: #upgrade-webhook-scc}
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
-
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -916,7 +941,6 @@ volumes:
 {: codeblock}
 
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
-
 ```
 oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
 oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
@@ -928,6 +952,7 @@ If the commands are successful, you can see a response that is similar to the fo
 securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
 scc "ibm-hlfsupport-infra" added to: ["system:serviceaccounts:ibm-hlfsupport-infra"]
 ```
+{: codeblock}
 
 #### 3. Deploy the webhook
 {: #upgrade-webhook-deploy}
@@ -942,7 +967,90 @@ Copy the following text to a file on your local system and save the file as `dep
 If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
 ```yaml
-{[yaml-crd-converison-webhook-deployment.md]}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "ibm-hlfsupport-webhook"
+  labels:
+    helm.sh/chart: "ibm-hlfsupport"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: "ibm-hlfsupport"
+        app.kubernetes.io/name: "ibm-hlfsupport"
+        app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+      annotations:
+        productName: "IBM Support for Hyperledger Fabric"
+        productID: "5d5997a033594f149a534a09802d60f1"
+        productVersion: "1.0.0"
+        productChargedContainers: ""
+        productMetric: "VIRTUAL_PROCESSOR_CORE"
+    spec:
+      serviceAccountName: webhook
+      imagePullSecrets:
+        - name: cp-pull-secret
+      hostIPC: false
+      hostNetwork: false
+      hostPID: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 2000
+      containers:
+        - name: "ibm-hlfsupport-webhook"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64"
+          imagePullPolicy: Always
+          securityContext:
+            privileged: false
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+            capabilities:
+              drop:
+              - ALL
+              add:
+              - NET_BIND_SERVICE
+          env:
+            - name: "LICENSE"
+              value: "accept"
+            - name: NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          ports:
+            - name: server
+              containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: server
+              scheme: HTTPS
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 6
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: server
+              scheme: HTTPS
+            initialDelaySeconds: 26
+            timeoutSeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 0.1
+              memory: "100Mi"
+
 ```
 {: codeblock}
 
@@ -956,6 +1064,7 @@ When the command completes successfully you should see something similar to:
 ```
 deployment.apps/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 ##### service.yaml
 {: #upgrade-webhook-service-yaml}
@@ -963,7 +1072,25 @@ deployment.apps/ibm-hlfsupport-webhook created
 Secondly, copy the following text to a file on your local system and save the file as `service.yaml`.
 
 ```yaml
-{[yaml-crd-converison-webhook-service.md]}
+apiVersion: v1
+kind: Service
+metadata:
+  name: "ibm-hlfsupport-webhook"
+  labels:
+    type: "webhook"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+    helm.sh/chart: "ibm-hlfsupport"
+spec:
+  type: ClusterIP
+  ports:
+    - name: server
+      port: 443
+      targetPort: server
+      protocol: TCP
+  selector:
+    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+
 ```
 {: codeblock}
 
@@ -977,13 +1104,14 @@ When the command completes successfully you should see something similar to:
 ```
 service/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
-  ```
+  ``` 
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
@@ -991,8 +1119,8 @@ service/ibm-hlfsupport-webhook created
 2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpcas.ibp.com
@@ -1070,27 +1198,26 @@ status:
     singular: ibpca
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the peer CRD:
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -1153,27 +1280,26 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
-EOF
-```
-{: codeblock}
+ EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the console CRD:
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -1235,27 +1361,26 @@ status:
     singular: ibpconsole
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the orderer CRD:  
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -1317,23 +1442,22 @@ status:
     singular: ibporderer
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
+  ```
+  {: codeblock}
 
 ### Step four: Update the ClusterRole
 {: #upgrade-ocp-clusterrole}
@@ -1604,6 +1728,7 @@ NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1       1            1           1m
 ibm-hlfsupport-console     1/1       1            1           4m
 ```
+{: codeblock}
 
 If you experience a problem while you are upgrading the operator, go to this [troubleshooting topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems. You can run the command to apply the original operator file, `kubectl apply -f operator.yaml` to restore your original operator deployment.
 
@@ -1711,9 +1836,11 @@ oc new-project ibm-hlfsupport-infra
 When you create a new project, a new namespace is created with the same name as your project. You can verify that the existence of the new namespace by using the `oc get namespace` command:
 ```
 $ oc get namespace
-NAME                                STATUS    AGE
-ibm-hlfsupport-infra                            Active    2m
+NAME                                          STATUS    AGE
+ibm-hlfsupport-infra              Active    2m
 ```
+{: codeblock}
+
 ### Step three: Create a secret for your entitlement key
 {: #deploy-ocp-secret-ibm-hlfsupport-infra-fw}
 
@@ -1746,7 +1873,37 @@ The first three steps are for deployment of the webhook. The last step is for cr
 Copy the following text to a file on your local system and save the file as `rbac.yaml`. This step allows the webhook to read and create a TLS secret in its own project.
 
 ```yaml
-{[yaml-crd-converison-webhook-rbac.md]}
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: webhook
+  namespace: ibm-hlfsupport-infra
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: webhook
+rules:
+- apiGroups:
+  - "*"
+  resources:
+  - secrets
+  verbs:
+  - "*"
+---
+kind: RoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: ibm-hlfsupport-infra
+subjects:
+- kind: ServiceAccount
+  name: webhook
+  namespace: ibm-hlfsupport-infra
+roleRef:
+  kind: Role
+  name: webhook
+  apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1762,11 +1919,12 @@ serviceaccount/webhook created
 role.rbac.authorization.k8s.io/webhook created
 rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 ```
+{: codeblock}
+
 #### 2.(OpenShift cluster only) Apply the Security Context Constraint
 {: #upgrade-webhook-scc}
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
-
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -1808,7 +1966,6 @@ volumes:
 {: codeblock}
 
 After you save the file, run the following commands to add the file to your cluster and add the policy to your project.
-
 ```
 oc apply -f ibm-hlfsupport-infra-scc.yaml -n ibm-hlfsupport-infra
 oc adm policy add-scc-to-user ibm-hlfsupport-infra system:serviceaccounts:ibm-hlfsupport-infra
@@ -1820,6 +1977,7 @@ If the commands are successful, you can see a response that is similar to the fo
 securitycontextconstraints.security.openshift.io/ibm-hlfsupport-infra created
 scc "ibm-hlfsupport-infra" added to: ["system:serviceaccounts:ibm-hlfsupport-infra"]
 ```
+{: codeblock}
 
 #### 3. Deploy the webhook
 {: #upgrade-webhook-deploy}
@@ -1834,7 +1992,90 @@ Copy the following text to a file on your local system and save the file as `dep
 If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
 ```yaml
-{[yaml-crd-converison-webhook-deployment.md]}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "ibm-hlfsupport-webhook"
+  labels:
+    helm.sh/chart: "ibm-hlfsupport"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        helm.sh/chart: "ibm-hlfsupport"
+        app.kubernetes.io/name: "ibm-hlfsupport"
+        app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+      annotations:
+        productName: "IBM Support for Hyperledger Fabric"
+        productID: "5d5997a033594f149a534a09802d60f1"
+        productVersion: "1.0.0"
+        productChargedContainers: ""
+        productMetric: "VIRTUAL_PROCESSOR_CORE"
+    spec:
+      serviceAccountName: webhook
+      imagePullSecrets:
+        - name: cp-pull-secret
+      hostIPC: false
+      hostNetwork: false
+      hostPID: false
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        fsGroup: 2000
+      containers:
+        - name: "ibm-hlfsupport-webhook"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64"
+          imagePullPolicy: Always
+          securityContext:
+            privileged: false
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            runAsNonRoot: true
+            runAsUser: 1000
+            capabilities:
+              drop:
+              - ALL
+              add:
+              - NET_BIND_SERVICE
+          env:
+            - name: "LICENSE"
+              value: "accept"
+            - name: NAMESPACE
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+          ports:
+            - name: server
+              containerPort: 3000
+          livenessProbe:
+            httpGet:
+              path: /healthz
+              port: server
+              scheme: HTTPS
+            initialDelaySeconds: 30
+            timeoutSeconds: 5
+            failureThreshold: 6
+          readinessProbe:
+            httpGet:
+              path: /healthz
+              port: server
+              scheme: HTTPS
+            initialDelaySeconds: 26
+            timeoutSeconds: 5
+            periodSeconds: 5
+          resources:
+            requests:
+              cpu: 0.1
+              memory: "100Mi"
+
 ```
 {: codeblock}
 
@@ -1848,6 +2089,7 @@ When the command completes successfully you should see something similar to:
 ```
 deployment.apps/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 ##### service.yaml
 {: #upgrade-webhook-service-yaml}
@@ -1855,7 +2097,25 @@ deployment.apps/ibm-hlfsupport-webhook created
 Secondly, copy the following text to a file on your local system and save the file as `service.yaml`.
 
 ```yaml
-{[yaml-crd-converison-webhook-service.md]}
+apiVersion: v1
+kind: Service
+metadata:
+  name: "ibm-hlfsupport-webhook"
+  labels:
+    type: "webhook"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+    helm.sh/chart: "ibm-hlfsupport"
+spec:
+  type: ClusterIP
+  ports:
+    - name: server
+      port: 443
+      targetPort: server
+      protocol: TCP
+  selector:
+    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
+
 ```
 {: codeblock}
 
@@ -1869,13 +2129,14 @@ When the command completes successfully you should see something similar to:
 ```
 service/ibm-hlfsupport-webhook created
 ```
+{: codeblock}
 
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
 1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
-  ```
+  ``` 
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
@@ -1883,8 +2144,8 @@ service/ibm-hlfsupport-webhook created
 2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpcas.ibp.com
@@ -1962,27 +2223,26 @@ status:
     singular: ibpca
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the peer CRD:
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -2045,27 +2305,26 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
-EOF
-```
-{: codeblock}
+ EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the console CRD:
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -2127,27 +2386,26 @@ status:
     singular: ibpconsole
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
+  ```
+  {: codeblock}
 
 Run this command to update the orderer CRD:  
-```yaml
-cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+  ```yaml
+  cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -2209,23 +2467,22 @@ status:
     singular: ibporderer
   conditions: []
   storedVersions:
-  - v1beta1
-EOF
-```
-{: codeblock}
+  - v1beta1 EOF
+  ```
+  {: codeblock}
 
 When successful, you should see:
-```
-customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
+  ```
+  {: codeblock}
 
 or
 
-```
-customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
-```
-{: codeblock}
+  ```
+  customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
+  ```
+  {: codeblock}
 
 ### Step five: Update the ClusterRole
 {: #upgrade-ocp-clusterrole-firewall}
@@ -2420,6 +2677,7 @@ After you save and edit the file, run the following commands. Replace `<PROJECT_
 oc apply -f ibm-hlfsupport-clusterrole.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
+{: codeblock}
 
 ### Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
 {: #upgrade-ocp-operator-firewall}
@@ -2456,6 +2714,7 @@ Replace the values above with the following lines at the same indentation:
 - name: CLUSTERTYPE
   value: OPENSHIFT
 ```
+{: codeblock}
 
 When you are finished editing the file, the `env:` section would look similar to the following:
 ```
@@ -2493,6 +2752,7 @@ NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1       1            1           1m
 ibm-hlfsupport-console     1/1       1            1           4m
 ```
+{: codeblock}
 
 If you experience a problem while you are upgrading the operator, go to this [troubleshooting topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems.
 
@@ -2502,6 +2762,8 @@ NAME                          READY     STATUS              RESTARTS   AGE
 ibm-hlfsupport-operator-b9446759-6tmls   1/1       Running             0          1m
 ibm-hlfsupport-console-57ff4bcbb7-79dhn   0/4       Init:ErrImagePull   0          1m
 ```
+{: codeblock}
+
 This can happen if you have changed your registry URL between deployments. Run the following command to download the CR spec of the console:
 ```
 kubectl get ibpconsole ibm-hlfsupport-console -o yaml > console.yaml
