@@ -1761,10 +1761,10 @@ metadata:
   name: hsmcrypto
   namespace: <NAMESPACE>
 ```
+{: codeblock}
 
 #### Step five: Create the HSM configmap
 {: #ibm-hlfsupport-console-adv-deployment-hsm-configmap}
-
 
 
 <staging-zHSM>

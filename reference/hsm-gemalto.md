@@ -108,9 +108,6 @@ subcollection: hlf-support
 
 
 
-
-
-
 # IBM Cloud Hardware Security Module (HSM)
 {: #ibm-hlfsupport-hsm-gemalto}
 {: help}
@@ -157,7 +154,6 @@ Because only the private keys of node identities are secured in the HSM, when yo
   - **(Deprecated)** Build a PKCS #11 proxy image and deploy it to your Kubernetes cluster
 
 This process requires [Docker](https://docs.docker.com/install/){: external} to be installed on the machine where the HSM client is running and that you are familiar with the process for building Docker images. It also presumes you are comfortable with using the Kubernetes CLI to administer your Kubernetes cluster.
-
 
 
 When the entire HSM configuration is complete, it resembles the following diagram:
@@ -227,6 +223,7 @@ In this section you will get the HSM server certificate and create the HSM clien
   Private Key created and written to: /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>Key.pem
   Certificate created and written to: /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem
   ```
+  {: codeblock}
 
 4. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Copy the client certificate and private key to the HSM server by running the command:
 
@@ -299,6 +296,7 @@ In this section you will get the HSM server certificate and create the HSM clien
 
   Command Result : 0 (Success)
   ```
+  {: codeblock}
 
 4. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Verify the client can connect to HSM server by running the command:
 
@@ -315,6 +313,7 @@ In this section you will get the HSM server certificate and create the HSM clien
   ====	================	=====
   0	    500752010 	      partition1
   ```
+  {: codeblock}
 
 5. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/>  Create a `configs` folder on the client and then copy the `server.pem` certificate from [Part two](#ibm-hlfsupport-hsm-gemalto-part-two), step 1 and the `<CLIENT_ADDRESS>Key.pem` and `<CLIENT_ADDRESS>.pem` files from [Part two](#ibm-hlfsupport-hsm-gemalto-part-two), step 3 into the folder:
 
@@ -471,6 +470,7 @@ When successful, the output looks similar to:
 ```
 secret/hsmcrypto created
 ```
+{: codeblock}
 
 To verify the contents of the secret, run the command:
 ```
@@ -491,11 +491,10 @@ metadata:
   name: hsmcrypto
   namespace: <NAMESPACE>
 ```
+{: codeblock}
 
 #### Step five: Create the HSM configmap
 {: #ibm-hlfsupport-console-adv-deployment-hsm-configmap}
-
-
 
 <staging-zHSM>
 
@@ -657,6 +656,9 @@ resources:
 ```
 {: codeblock}
 
+and specify the desired value.
+
+
 - In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto#ibm-hlfsupport-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
 
 - In the `envs:` section, provide the list of environment variables that are required to configure the HSM.
@@ -674,6 +676,7 @@ The output looks similar to:
 ```
 configmap/ibm-hlfsupport-hsm-config created
 ```
+{: codeblock}
 
 ### What's next
 {: #ibm-hlfsupport-hsm-gemalto-next-steps}
