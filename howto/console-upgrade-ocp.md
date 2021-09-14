@@ -186,12 +186,12 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
+
 2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpcas.ibp.com
@@ -278,15 +278,18 @@ Depending on whether you are creating or updating the CRD, when successful, you 
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the peer CRD:
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -358,15 +361,18 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the console CRD:
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -437,15 +443,18 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the orderer CRD:  
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -516,10 +525,14 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
+{: codeblock}
 
 ### Step three: Update the ClusterRole 
 {: #upgrade-ocp-steps-100-clusterrole} 
@@ -861,6 +874,7 @@ rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 {: #upgrade-webhook-scc}
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
+
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -923,8 +937,9 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 ##### deployment.yaml
 {: #upgrade-webhook-deployment-yaml}
 
-Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
+Copy the following text to a file on your local system and save the file as `deployment.yaml`. 
 
+If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
 ```yaml
 {[yaml-crd-converison-webhook-deployment.md]}
@@ -972,12 +987,12 @@ service/ibm-hlfsupport-webhook created
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
+
 2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpcas.ibp.com
@@ -1064,15 +1079,18 @@ Depending on whether you are creating or updating the CRD, when successful, you 
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the peer CRD:
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -1144,15 +1162,18 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the console CRD:
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -1223,15 +1244,18 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the orderer CRD:  
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -1302,10 +1326,14 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
+{: codeblock}
 
 ### Step four: Update the ClusterRole
 {: #upgrade-ocp-clusterrole}
@@ -1738,6 +1766,7 @@ rolebinding.rbac.authorization.k8s.io/ibm-hlfsupport-infra created
 {: #upgrade-webhook-scc}
 
 Skip this step if you are not using OpenShift. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to the `ibm-hlfsupport-infra` project. Copy the security context constraint object below and save it to your local system as `ibm-hlfsupport-infra-scc.yaml`. Replace `<PROJECT_NAME>` with `ibm-hlfsupport-infra`.
+
 ```yaml
 allowHostDirVolumePlugin: false
 allowHostIPC: false
@@ -1800,8 +1829,9 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 ##### deployment.yaml
 {: #upgrade-webhook-deployment-yaml}
 
-Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
+Copy the following text to a file on your local system and save the file as `deployment.yaml`. 
 
+If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
 ```yaml
 {[yaml-crd-converison-webhook-deployment.md]}
@@ -1849,12 +1879,12 @@ service/ibm-hlfsupport-webhook created
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
+
 2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpcas.ibp.com
@@ -1941,15 +1971,18 @@ Depending on whether you are creating or updating the CRD, when successful, you 
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the peer CRD:
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -2021,15 +2054,18 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the console CRD:
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -2100,15 +2136,18 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
+{: codeblock}
 
 Run this command to update the orderer CRD:  
 ```yaml
-cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1
+cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -2179,10 +2218,14 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
+
 or
+
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
+{: codeblock}
 
 ### Step five: Update the ClusterRole
 {: #upgrade-ocp-clusterrole-firewall}

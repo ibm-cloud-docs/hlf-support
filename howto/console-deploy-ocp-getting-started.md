@@ -295,6 +295,24 @@ If you prefer not to choose a persistent storage option, the default storage cla
 | **High Availability (HA)** | There should be redundancy in the storage to avoid a single point of failure. |
 | **Multi-zone capable storage** | {{site.data.keyword.cloud_notm}} includes the ability to create a single Kubernetes cluster across multiple data centers or "zones". Portworx offers multi-zone capable storage that can be used to potentially reduce the number of peers required. Consider a scenario where you build two zones with two peers for redundancy, one zone can go down and you still have two peers up in another zone. With multi-zone capable storage, you could instead have two zones with one peer each. If one zone goes down, the peer comes up in the other zone with its storage intact, reducing the overall redundant peer requirements. |
 
+### Supported and tested storages
+{: ibm-hlfsupport-storage-supported-tested}
+
+The following dynamic storage options for OpenShift clusters are now tested and supported by {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
+* ibmc-block-bronze
+* ibmc-block-custom
+* ibmc-block-gold
+* ibmc-block-silver
+* ibmc-file-bronze
+* ibmc-file-custom
+* ibmc-file-gold
+* ibmc-file-silver
+* [portworx](https://portworx.com/)
+* [rook-cephfs](https://github.com/rook/rook)
+
+The storages listed above are maintained by respective providers and it is not recommend to use one over the other. It is the user's responsibility to manage its own storages.
+{: note}
+
 ## Filesystem permissions
 {: #deploy-ocp-fs-perm}
 

@@ -114,14 +114,5 @@ subcollection: hlf-support
 {: help}
 {: support}
 
-<div style="background-color: #f4f4f4; padding-left: 20px; border-bottom: 2px solid #0f62fe; padding-top: 12px; padding-bottom: 4px; margin-bottom: 16px;">
-  <p style="line-height: 15px;">
-    <strong>Running a different version of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric?</strong> Switch to version
-    <a href="/docs/blockchain-sw?topic=blockchain-sw-best-practices-app">2.1.2</a>,
-    <a href="/docs/blockchain-sw-213?topic=blockchain-sw-213-best-practices-app">2.1.3</a>,
-    <a href="/docs/blockchain-sw-25?topic=blockchain-sw-25-best-practices-app">2.5</a>,
-    <a href="/docs/blockchain-sw-251?topic=blockchain-sw-251-best-practices-app">2.5.1</a>, 2.52
-    </p>
-</div>
 
 Information previously contained on this page has been refreshed and merged into the [Creating Applications tutorial](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-app). For the most up to date recommendations, refer to that tutorial.
