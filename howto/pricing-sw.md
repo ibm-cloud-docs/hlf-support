@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
 keywords: pricing model, CPU, vCPU, virtual core, cost, scalability, estimation, optimize your cost
 
@@ -132,7 +132,7 @@ Note that 1 `core` in OpenShift is equivalent to 1 vCPU in {{site.data.keyword.I
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 offering also includes the ability to download and run just the peer, orderer, CA, and smart contract container images without the console. This is an advanced option for customers who are experienced with the Hyperledger Fabric processes for deploying and running the nodes and includes limited support for those images.
 
-Various licensing options are available. For more information, please [Contact us](https://www.ibm.com/account/reg/us-en/signup?formid=urx-37672){: external}.
+Various licensing options are available. For more information, please [Contact us](https://www.ibm.com/account/reg/us-en/signup?formid=MAIL-blockchain ){: external}.
 
 ## Free trial
 {: #ibm-hlfsupport-software-pricing-free}

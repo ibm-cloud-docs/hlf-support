@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
-keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters, multicloud
+keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
 
 subcollection: hlf-support
 
@@ -241,7 +241,6 @@ The resources for the CA, peer, and ordering nodes need to be multiplied by the 
 
 | **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
 |--------------------------------|---------------|-----------------------|------------------------|
-| **Peer (Hyperledger Fabric v1.4)**                       | 1.1           | 2.8                   | 200 (includes 100GB for peer and 100GB for state database)|
 | **Peer (Hyperledger Fabric v2.x)**                       | 0.7           | 2.0                   | 200 (includes 100GB for peer and 100GB for state database)|
 | **CA**                         | 0.1           | 0.2                   | 20                     |
 | **Ordering node**              | 0.35          | 0.7                   | 100                    |
@@ -330,7 +329,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be deploye
       <div>
         <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
         <p><strong>OpenShift</strong></p>
-        <p class="bx--type-caption"> Manually deploy the IBM Blockchain  Platform service to your OpenShift cluster in your cloud.</p>
+        <p class="bx--type-caption"> Manually deploy the IBM Support for Hyperledger Fabric service to your OpenShift cluster in your cloud.</p>
       </div>
     </a>
   </div>
@@ -339,7 +338,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be deploye
         <div>
           <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
           <p><strong>OpenShift on-prem</strong></p>
-          <p class="bx--type-caption"> Manually deploy the IBM Blockchain Platform to your OpenShift cluster on-prem behind a firewall.</p>
+          <p class="bx--type-caption"> Manually deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your OpenShift cluster on-prem behind a firewall.</p>
         </div>
       </a>
   </div>    
@@ -348,7 +347,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be deploye
           <div>
             <img src="../images/ansible.png" alt="Ansible icon" width="25" style="width:25px; border-style: none"/>
             <p><strong>Ansible</strong></p>
-            <p class="bx--type-caption"> Automate the deployment of the IBM Blockchain Platform to your OpenShift cluster using an Ansible playbook.</p>
+            <p class="bx--type-caption"> Automate the deployment of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your OpenShift cluster using an Ansible playbook.</p>
           </div>
         </a>
   </div>

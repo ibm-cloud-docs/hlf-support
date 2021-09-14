@@ -6,7 +6,7 @@
   </defs>
   <polyline points="36.05 72.14 756.98 72.14 756.98 36.07 36.05 36.07" style="stroke-miterlimit:10;stroke:#000;stroke-width:0.35px;fill:#fff"/>
   <text class="cls-2" transform="translate(35.47 30.13)">
-    IBM Blockchain Platform
+    {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
   </text>
   <text class="cls-2" transform="translate(425.8 30.13)">
     Legend
@@ -29,7 +29,7 @@
   <line x1="414.54" y1="72.14" x2="414.54" y2="36.07" style="fill:none;stroke-miterlimit:10;stroke:#000;stroke-width:0.35px"/>
   <rect x="181.13" y="102.5" width="430.76" height="175" style="fill:#f0f0f0"/>
   <text transform="translate(192.46 119.18)" style="font-size:7.2px;font-family:IBMPlexSans-SemiBold, IBM Plex Sans;font-weight:600">
-    IBM Blockchain Platform
+    {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
   </text>
   <text class="cls-10" transform="translate(554.44 263.45)">
     User

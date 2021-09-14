@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -128,7 +128,7 @@ After you review the instructions in this topic on how to use the APIs, you can 
 ## Prerequisites
 {: #ibm-hlfsupport-v2-apis-prereq}
 
-The APIs target your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to authenticate calls and communicate with your nodes. Therefore you must deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console before you can start using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console APIs. If you have not yet deployed the console on your cluster, see [Getting started with IBM Blockchain Platform 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
+The APIs target your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to authenticate calls and communicate with your nodes. Therefore you must deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console before you can start using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console APIs. If you have not yet deployed the console on your cluster, see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
 
 To use the APIs, you will need to gather the following information:
 
@@ -382,7 +382,7 @@ You can also use the APIs to import and then operate nodes that reside in other 
 ## Limitations
 {: #ibm-hlfsupport-v2-apis-limitations}
 
-You can only import CA, peer, and ordering nodes that are exported from other {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric consoles running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.17 - v1.20 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
+You can only import CA, peer, and ordering nodes that are exported from other {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric consoles running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.18 - v1.21 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
 
 ## Building a network by using APIs
 {: #ibm-hlfsupport-v2-apis-build-with-apis}

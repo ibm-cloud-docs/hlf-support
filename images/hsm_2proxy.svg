@@ -17,7 +17,7 @@
   <polygon class="cls-3" points="481.59 160.32 486 158 481.78 155.34 481.59 160.32"/>
   <polyline points="36.05 72.14 756.98 72.14 756.98 36.07 36.05 36.07" style="stroke-miterlimit:10;stroke:#000;stroke-width:0.35px;fill:#fff"/>
   <text class="cls-5" transform="translate(35.47 30.13)">
-    IBM Blockchain Platform
+    {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
   </text>
   <text class="cls-5" transform="translate(425.8 30.13)">
     Legend

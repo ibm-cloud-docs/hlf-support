@@ -2,7 +2,7 @@
 
  copyright:
   years: 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
 keywords: IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -115,7 +115,7 @@ subcollection: hlf-support
 You can use these instructions to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-deploy-k8).
 {: shortdesc}
 
-You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on any x86_64 Kubernetes cluster running at v1.17 - v1.20. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on any x86_64 Kubernetes cluster running at v1.18 - v1.21. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 
 ## Need to Know
 
@@ -176,13 +176,13 @@ When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 
 1. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be installed only on the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites){: external}.
 
-2. You cannot deploy both an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x and 2.5.x instance to the same cluster. If you need to run both instances of the product, then they must be running in separate clusters.
 
-3. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform.
 
-4. If you are not running the platform on Red Hat OpenShift Container Platform or Red Hat Open Kubernetes Distribution then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](#console-deploy-k8-considerations).
+2. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform.
 
-5. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-build-docker) topic to build the image.
+3. If you are not running the platform on Red Hat OpenShift Container Platform or Red Hat Open Kubernetes Distribution then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](#console-deploy-k8-considerations).
+
+4. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-build-docker) topic to build the image.
 
 ## Pull the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images
 {: #deploy-k8-images-firewall}
@@ -191,7 +191,7 @@ You can download the complete set of {{site.data.keyword.IBM_notm}} Support for 
 
 The platform recommends that you use the `skopeo` utility to download and copy your images to your local container registry. [skopeo](https://www.redhat.com/en/blog/skopeo-10-released){: external} is a tool for moving container images between different types of container storages. In order to download the platform images and copy them to your container registry behind a firewall, you first need to [install skopeo](https://github.com/containers/skopeo/blob/master/install.md){: external}.
 
-Before attempting these instructions, you need to have your IBM Blockchain Platform entitlement key and container registry user id and password available. After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You can then use this key to access the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images.
+Before attempting these instructions, you need to have your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric entitlement key and container registry user id and password available. After you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can access the [My IBM dashboard](https://myibm.ibm.com/dashboard/){: external} to obtain your entitlement key for the offering. You can then use this key to access the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images.
 
 Run the following set of commands to download the images and push them to your registry.  
 
@@ -291,7 +291,7 @@ The name of the secret that you are creating is `cp-pull-secret`. It is required
 ## Deploy the webhook and custom resource definitions to your OpenShift cluster
 {: #deploy-k8s-webhook-crd-fw}
 
-Before you can upgrade an existing 2.1.x network to 2.5.x, or deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibm-hlfsupport-infra` throughout these instructions.
+Before you can deploy a new instance of the platform to your Kubernetes cluster, you need to create the conversion webhook by completing the steps in this section. The webhook is deployed to its own namespace or project, referred to `ibm-hlfsupport-infra` throughout these instructions.
 
 The first three steps are for deployment of the webhook. The last step is for the custom resource definitions for the CA, peer, orderer, and console components that the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires. You only have to deploy the webhook and custom resource definitions **once per cluster**. If you have already deployed this webhook and custom resource definitions to your cluster, you can skip these four steps below.
 {: important}
@@ -302,37 +302,7 @@ The first three steps are for deployment of the webhook. The last step is for th
 First, copy the following text to a file on your local system and save the file as `rbac.yaml`. This step allows the webhook to read and create a TLS secret in its own project.
 
 ```yaml
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: webhook
-  namespace: ibm-hlfsupport-infra
----
-apiVersion: rbac.authorization.k8s.io/v1
-kind: Role
-metadata:
-  name: webhook
-rules:
-- apiGroups:
-  - "*"
-  resources:
-  - secrets
-  verbs:
-  - "*"
----
-kind: RoleBinding
-apiVersion: rbac.authorization.k8s.io/v1
-metadata:
-  name: ibm-hlfsupport-infra
-subjects:
-- kind: ServiceAccount
-  name: webhook
-  namespace: ibm-hlfsupport-infra
-roleRef:
-  kind: Role
-  name: webhook
-  apiGroup: rbac.authorization.k8s.io
-
+{[yaml-crd-converison-webhook-rbac.md]}
 ```
 {: codeblock}
 
@@ -361,8 +331,8 @@ allowHostIPC: false
 allowHostNetwork: false
 allowHostPID: false
 allowHostPorts: false
-allowPrivilegeEscalation: true
-allowPrivilegedContainer: true
+allowPrivilegeEscalation: false
+allowPrivilegedContainer: false
 allowedCapabilities:
 - NET_BIND_SERVICE
 - CHOWN
@@ -419,90 +389,8 @@ In order to deploy the webhook, you need to create two `.yaml` files and apply t
 
 Copy the following text to a file on your local system and save the file as `deployment.yaml`. If you are deploying on OpenShift Container Platform on LinuxONE, you need to replace `amd64` with `s390x`.
 
-
 ```yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: "ibm-hlfsupport-webhook"
-  labels:
-    helm.sh/chart: "ibm-ibm-hlfsupport"
-    app.kubernetes.io/name: "ibm-hlfsupport"
-    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-  strategy:
-    type: Recreate
-  template:
-    metadata:
-      labels:
-        helm.sh/chart: "ibm-ibm-hlfsupport"
-        app.kubernetes.io/name: "ibm-hlfsupport"
-        app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-      annotations:
-        productName: "IBM Support "
-        productID: "54283fa24f1a4e8589964e6e92626ec4"
-        productVersion: "1.0.0"
-    spec:
-      serviceAccountName: webhook
-      imagePullSecrets:
-        - name: cp-pull-secret
-      hostIPC: false
-      hostNetwork: false
-      hostPID: false
-      securityContext:
-        runAsNonRoot: true
-        runAsUser: 1000
-        fsGroup: 2000
-      containers:
-        - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20210915-amd64"
-          imagePullPolicy: Always
-          securityContext:
-            privileged: false
-            allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
-            runAsNonRoot: true
-            runAsUser: 1000
-            capabilities:
-              drop:
-              - ALL
-              add:
-              - NET_BIND_SERVICE
-          env:
-            - name: "LICENSE"
-              value: "accept"
-            - name: NAMESPACE
-              valueFrom:
-                fieldRef:
-                  fieldPath: metadata.namespace
-          ports:
-            - name: server
-              containerPort: 3000
-          livenessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 30
-            timeoutSeconds: 5
-            failureThreshold: 6
-          readinessProbe:
-            httpGet:
-              path: /healthz
-              port: server
-              scheme: HTTPS
-            initialDelaySeconds: 26
-            timeoutSeconds: 5
-            periodSeconds: 5
-          resources:
-            requests:
-              cpu: 0.1
-              memory: "100Mi"
-
+{[yaml-crd-converison-webhook-deployment.md]}
 ```
 {: codeblock}
 Run the following command to add the file to your cluster definition:
@@ -522,25 +410,7 @@ deployment.apps/ibm-hlfsupport-webhook created
 Second, copy the following text to a file on your local system and save the file as `service.yaml`.
 
 ```yaml
-apiVersion: v1
-kind: Service
-metadata:
-  name: "ibm-hlfsupport-webhook"
-  labels:
-    type: "webhook"
-    app.kubernetes.io/name: "ibm-hlfsupport"
-    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-    helm.sh/chart: "ibm-ibm-hlfsupport"
-spec:
-  type: ClusterIP
-  ports:
-    - name: server
-      port: 443
-      targetPort: server
-      protocol: TCP
-  selector:
-    app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-
+{[yaml-crd-converison-webhook-service.md]}
 ```
 {: codeblock}
 
@@ -564,248 +434,339 @@ service/ibm-hlfsupport-webhook created
   TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. If you are upgrading to 1.0.0, before you can update the operator, you need to update the CRDs to include a new `v1beta1` section as well as the webhook TLS certificate that you just stored in the `TLS_CERT` environment variable. In either case, run the following four commands to apply or update each CRD.
+2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  name: ibpcas.ibp.com
   labels:
-    app.kubernetes.io/instance: ibm-hlfsupportca
-    app.kubernetes.io/managed-by: ibm-hlfsupport-operator
-    app.kubernetes.io/name: ibm-hlfsupport
-    helm.sh/chart: ibm-ibm-hlfsupport
-    release: operator
-  name: ibm-hlfsupportcas.ibm-hlfsupport.com
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibm-hlfsupport-infra
-        name: ibm-hlfsupport-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
-  group: ibm-hlfsupport.com
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibm-hlfsupport-webhook
+          namespace: ibm-hlfsupport-infra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
+  group: ibp.com
   names:
-    kind: ibm-hlfsupportCA
-    listKind: ibm-hlfsupportCAList
-    plural: ibm-hlfsupportcas
-    singular: ibm-hlfsupportca
+    kind: IBPCA
+    listKind: IBPCAList
+    plural: ibpcas
+    singular: ibpca
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v210
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v212
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPCA
+    listKind: IBPCAList
+    plural: ibpcas
+    singular: ibpca
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
 ```
-customresourcedefinition.apiextensions.k8s.io/ibm-hlfsupportcas.ibm-hlfsupport.com created
+customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com created
 ```
 or
 ```
-customresourcedefinition.apiextensions.k8s.io/ibm-hlfsupportcas.ibm-hlfsupport.com configured
+customresourcedefinition.apiextensions.k8s.io/ibpcas.ibp.com configured
 ```
 
 Run this command to update the peer CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: ibm-hlfsupportpeers.ibm-hlfsupport.com
+  name: ibppeers.ibp.com
   labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibm-hlfsupport"
     app.kubernetes.io/name: "ibm-hlfsupport"
-    app.kubernetes.io/instance: "ibm-hlfsupportpeer"
-    app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibm-hlfsupport-infra
-        name: ibm-hlfsupport-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
-  group: ibm-hlfsupport.com
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibm-hlfsupport-webhook
+          namespace: ibm-hlfsupport-infra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
+  group: ibp.com
   names:
-    kind: ibm-hlfsupportPeer
-    listKind: ibm-hlfsupportPeerList
-    plural: ibm-hlfsupportpeers
-    singular: ibm-hlfsupportpeer
+    kind: IBPPeer
+    listKind: IBPPeerList
+    plural: ibppeers
+    singular: ibppeer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPPeer
+    listKind: IBPPeerList
+    plural: ibppeers
+    singular: ibppeer
+  conditions: []
+  storedVersions:
+  - v1beta1
+
 EOF
 ```
 {: codeblock}
 
 When successful, you should see:
 ```
-customresourcedefinition.apiextensions.k8s.io/ibm-hlfsupportpeers.ibm-hlfsupport.com created
+customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com created
 ```
 or
 ```
-customresourcedefinition.apiextensions.k8s.io/ibm-hlfsupportpeers.ibm-hlfsupport.com configured
+customresourcedefinition.apiextensions.k8s.io/ibppeers.ibp.com configured
 ```
 
 Run this command to update the console CRD:
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: ibpconsoles.ibm-hlfsupport.com
+  name: ibpconsoles.ibp.com
   labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibm-hlfsupport"
     app.kubernetes.io/name: "ibm-hlfsupport"
-    app.kubernetes.io/instance: "ibpconsole"
-    app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibm-hlfsupport-infra
-        name: ibm-hlfsupport-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true
-  group: ibm-hlfsupport.com
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibm-hlfsupport-webhook
+          namespace: ibm-hlfsupport-infra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
+  group: ibp.com
   names:
-    kind: ibpconsole
-    listKind: ibpconsoleList
+    kind: IBPConsole
+    listKind: IBPConsoleList
     plural: ibpconsoles
     singular: ibpconsole
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPConsole
+    listKind: IBPConsoleList
+    plural: ibpconsoles
+    singular: ibpconsole
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
 
 When successful, you should see:
 ```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibm-hlfsupport.com created
+customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com created
 ```
 or
 ```
-customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibm-hlfsupport.com configured
+customresourcedefinition.apiextensions.k8s.io/ibpconsoles.ibp.com configured
 ```
 
 Run this command to update the orderer CRD:  
 ```yaml
 cat <<EOF | kubectl apply  -f -
-apiVersion: apiextensions.k8s.io/v1beta1
+apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-  name: ibm-hlfsupportorderers.ibm-hlfsupport.com
+  name: ibporderers.ibp.com
   labels:
-    release: "operator"
-    helm.sh/chart: "ibm-ibm-hlfsupport"
     app.kubernetes.io/name: "ibm-hlfsupport"
-    app.kubernetes.io/instance: "ibm-hlfsupportorderer"
-    app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
-  preserveUnknownFields: false
   conversion:
     strategy: Webhook
-    webhookClientConfig:
-      service:
-        namespace: ibm-hlfsupport-infra
-        name: ibm-hlfsupport-webhook
-        path: /crdconvert
-      caBundle: "${TLS_CERT}"
-  validation:
-    openAPIV3Schema:
-      x-kubernetes-preserve-unknown-fields: true    
-  group: ibm-hlfsupport.com
+    webhook:
+      clientConfig:
+        caBundle: "${TLS_CERT}"
+        service:
+          name: ibm-hlfsupport-webhook
+          namespace: ibm-hlfsupport-infra
+          path: /crdconvert
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
+  group: ibp.com
   names:
-    kind: ibm-hlfsupportOrderer
-    listKind: ibm-hlfsupportOrdererList
-    plural: ibm-hlfsupportorderers
-    singular: ibm-hlfsupportorderer
+    kind: IBPOrderer
+    listKind: IBPOrdererList
+    plural: ibporderers
+    singular: ibporderer
   scope: Namespaced
-  subresources:
-    status: {}
-  version: v1beta1
   versions:
   - name: v1beta1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
+    subresources:
+      status: {}
   - name: v1alpha2
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
   - name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: IBPOrderer
+    listKind: IBPOrdererList
+    plural: ibporderers
+    singular: ibporderer
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
 
 When successful, you should see:
 ```
-customresourcedefinition.apiextensions.k8s.io/ibm-hlfsupportorderers.ibm-hlfsupport.com created
+customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
 or
 ```
-customresourcedefinition.apiextensions.k8s.io/ibm-hlfsupportorderers.ibm-hlfsupport.com configured
+customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
 
 ## Create a new namespace for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment
@@ -1288,7 +1249,7 @@ spec:
 
 Accept the license:  
 
-- Accept the [IBM Blockchain Platform license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
+- Accept the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
 
 Specify the external endpoint information of the console in the `ibm-hlfsupport-console.yaml` file:
 - Replace `registryURL: cp.icr.io/cp` with the URL of your local registry.
@@ -1455,11 +1416,11 @@ kubectl apply -f ibm-hlfsupport-console.yaml -n <NAMESPACE>
 ### Verifying the console installation
 {: #deploy-k8-verify-fw}
 
-You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your console deployment is successful, you can see `ibpconsole` added to the deployment table, with four ones displayed. The console takes a few minutes to deploy. You might need to click refresh and wait for the table to be updated.
+You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your console deployment is successful, you can see `ibm-hlfsupport-console` added to the deployment table, with four ones displayed. The console takes a few minutes to deploy. You might need to click refresh and wait for the table to be updated.
 ```
 NAME           READY   UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1     1            1           10m
-ibpconsole     1/1     1            1           4m
+ibm-hlfsupport-console     1/1     1            1           4m
 ```
 
 The console consists of four containers that are deployed inside a single pod:
@@ -1481,7 +1442,7 @@ kubectl logs -f <pod_name> <container_name> -n <NAMESPACE>
 {: codeblock}
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
-kubectl logs -f ibpconsole-55cf9db6cc-856nz console -n blockchain-project
+kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz console -n blockchain-project
 ```
 {: codeblock}
 
@@ -1551,7 +1512,7 @@ Before you attempt to install the {{site.data.keyword.IBM_notm}} Support for Hyp
     ```
 
 
-4. The DNS entry for the load balancer should then be used as the **Domain name** during the installation of IBM Blockchain Platform.
+4. The DNS entry for the load balancer should then be used as the **Domain name** during the installation of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 5. The NGINX ingress controller must be used. See the [ingress controller installation guide](https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md){: external} that can be used for most Kubernetes distributions. If you are using {{site.data.keyword.containerlong_notm}}, then refer to these [instructions](#console-deploy-k8-iks-considerations) for specific configuration information.
 

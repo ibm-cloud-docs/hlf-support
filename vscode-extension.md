@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
@@ -657,3 +657,4 @@ You can also add new users to the wallets that have already been created:
   - If you are connecting to a network on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can download an identity from your {{site.data.keyword.blockchainfull_notm}} console, either by exporting an identity from your wallet or by enrolling and then exporting an identity using your Certificate Authority. You can then upload the JSON file directly to VS Code.
   - If you use a certificate and private key, browse to the certificate and private key.
   - If you use an enrollment ID and secret, choose the gateway to enroll with and enter the enrollment ID and secret.
+

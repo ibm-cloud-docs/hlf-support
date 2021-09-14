@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -121,7 +121,7 @@ After a node has been created, there are three main ways to update it.
 
 1. **Update its configuration**. Just as it is possible to override configuration parameters when deploying a node, it is possible to edit many parameters and redeploy the node. For more information, see our topic on [Advanced deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment).
 2. **Increase the resources allocated to it**. If you notice that the performance of a node is beginning to lag or that its storage is beginning to run out, you can choose whether to deploy a larger node and join it to channels or whether to increase the resources allocated to your existing node.
-3. **Upgrade its Fabric version**. Every node is deployed using a release version of Hyperledger Fabric. When new versions of Fabric become available on the IBM Blockchain Platform, **Upgrade available** is visible on the tile representing the node. While upgrading to a new version of Fabric is always recommended, unless is rendered necessary by the capabilities of channels you want to join, it is typically optional. For more information, check out [Upgrading to a new version of Fabric](#ibm-hlfsupport-console-govern-components-upgrade).
+3. **Upgrade its Fabric version**. Every node is deployed using a release version of Hyperledger Fabric. When new versions of Fabric become available on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, **Upgrade available** is visible on the tile representing the node. While upgrading to a new version of Fabric is always recommended, unless is rendered necessary by the capabilities of channels you want to join, it is typically optional. For more information, check out [Upgrading to a new version of Fabric](#ibm-hlfsupport-console-govern-components-upgrade).
 
 In this topic, we'll cover the process for [reallocating resources](#ibm-hlfsupport-console-govern-components-reallocate-resources), upgrading to a new version of Fabric, and [deleting nodes](#ibm-hlfsupport-console-govern-components-delete).
 

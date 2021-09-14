@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
-keywords: IBM Support for Hyperledger Fabric, support case, Hyperledger Fabric Community, Cloud tickets, Rocket Chat, dWAnswers, multicloud
+keywords: IBM Support for Hyperledger Fabric, support case, Hyperledger Fabric Community, Cloud tickets, dWAnswers, multicloud
 
 subcollection: hlf-support
 
@@ -126,11 +126,11 @@ It is recommended to start with [free digital support resources](/docs/hlf-suppo
   You can find blockchain tutorials and code patterns on [{{site.data.keyword.IBM_notm}} Developer](https://developer.ibm.com/technologies/blockchain/){: external} that provide guidance for building your own smart contracts and applications.
 
 **Hyperledger Fabric resources**  
-  [Hyperledger Fabric documentation](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external}, the [Fabric community wiki](https://wiki.hyperledger.org/display/fabric){: external}, and the [Fabric Jira dashboard](https://jira.hyperledger.org/secure/Dashboard.jspa?selectPageId=10104){: external} provide more details about the Fabric stack.
+  [Hyperledger Fabric documentation](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external} provide more details about the Fabric stack.
 
-  You can also talk to a Fabric expert in [Rocket.Chat](https://chat.hyperledger.org/channel/fabric){: external} to get answers to questions about Fabric.
+  You can also subscribe to a Fabric [mailing list](fabric@lists.hyperledger.org){: external} to get answers to questions about Fabric.
 
-  You can also post questions or check if your question has been answered in [Stack Overflow](https://stackoverflow.com/questions/tagged/hyperledger-fabric){: external}.
+  You can also post questions or check if your question has been answered in [Stack Overflow](https://stackoverflow.com/questions/tagged/hyperledger-fabric){: external} or in [GitHub](https://github.com/hyperledger/fabric/issues){: external}.
 
 **Developer resources**  
   [IBM Developer](https://developer.ibm.com/technologies/blockchain/) provides tutorials, code patterns, and videos for blockchain developers. Application developers can use the [Blockchain Design patterns](https://developer.ibm.com/technologies/blockchain/articles/getting-started-with-blockchain-design-patterns) to learn about common patterns and best practices for building applications that communicate with blockchain networks.

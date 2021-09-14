@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
-keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, IBM Blockchain Platform, multicloud
+keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, multicloud
 
 subcollection: hlf-support
 
@@ -146,7 +146,7 @@ Already using Red Hat Marketplace and ready to try out blockchain? Check out the
 | Does the product integrate with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VSCode extension to develop and test my smart contracts?| Yes | Yes |
 | I am an experienced Fabric customer. Are peer, CA, orderer, and smart contract images available and supported? | Yes | No |
 | Where can I learn more? |See [About {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-offers) | See [About {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-overview#ibm-hlfsupport-console-overview-capabilities) |
-| Ready to get started? | See [Step one: Install the IBM Blockchain Platform](/docs/hlf-support?topic=hlf-support-get-started-console-ocp#get-started-console-ocp-step-two-deploy-console) | See [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks) |
+| Ready to get started? | See [Step one: Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-get-started-console-ocp#get-started-console-ocp-step-two-deploy-console) | See [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks) |
 {: caption="Table 1. Which offering is right for your business?" caption-side="bottom"}
 ** {{site.data.keyword.blockchainfull_notm}} images - Your purchase of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 includes an entitlement to images for peer, CA, ordering service, and smart contract containers that are signed by IBM. The images are based on the open source Hyperledger Fabric code base and contain a number of enhancements for stability and serviceability. The images are bundled with support from IBM. The {{site.data.keyword.blockchainfull_notm}} images do not include the {{site.data.keyword.blockchainfull_notm}} management console or operator. This offering is intended for experienced Fabric users with existing Fabric deployments. For more information, see [Using the IBM Blockchain images](/docs/hlf-support?topic=hlf-support-blockchain-images).  
 

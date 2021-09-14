@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: IBM Support for Hyperledger Fabric, release, new features, multicloud
 
@@ -111,15 +111,10 @@ subcollection: hlf-support
 # What's new
 {: #whats-new}
 
+## September 15, 2021
+{: #whats-new-09-15-2021}
 
-
-
-## March 29, 2021
-{: #whats-new-03-29-2021}
-
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 is now available with support for:
-
-- For customers who want to use openCryptoki Hardware Security Module (HSM) on s390x, the platform now supports configuration of HSM with a daemon. For more information, see [Configure an HSM daemon](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-daemon).
+Initial release of IBM Support for Hyperledger Fabric 1.0.0.
 
 
 

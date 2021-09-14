@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
-keywords: IBM Blockchain, IBM Blockchain Platform, terms, Fabric, Raft, CouchDB, consortium
+keywords: {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, terms, Fabric, Raft, CouchDB, consortium
 
 subcollection: hlf-support
 

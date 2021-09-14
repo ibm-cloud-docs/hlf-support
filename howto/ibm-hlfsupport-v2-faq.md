@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -147,8 +147,8 @@ content-type: faq
 
 **Developing applications and smart contracts**
 - [What languages are supported for smart contracts?](#ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-4)
-- [What version of the IBM Blockchain Platform works with the Ansible collection?](#ibm-hlfsupport-v2-faq-ansible-version)
-- [How do I get support for running the IBM Blockchain Platform Ansible playbook?](#ibm-hlfsupport-v2-faq-ansible-support)
+- [What version of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric works with the Ansible collection?](#ibm-hlfsupport-v2-faq-ansible-version)
+- [How do I get support for running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Ansible playbook?](#ibm-hlfsupport-v2-faq-ansible-support)
 - [Do I need OpenShift to run CodeReady Workspace?](#ibm-hlfsupport-v2-faq-codeready-openshift)
 - [How often do updates get rolled out for the CodeReady Workspace extension?](#ibm-hlfsupport-v2-faq-codeready-updates)
 - [How can I test my smart contract that is running in CodeReady workspace?](#ibm-hlfsupport-v2-faq-test-smart-contracts)
@@ -197,7 +197,7 @@ Yes. Hyperledger Fabric networks consist of many distributed members owning one 
 * {{site.data.keyword.blockchainfull_notm}} Images
 * Open source Hyperledger Fabric images or a non-IBM product
 
-Containers deployed from any of the above sources can be connected on a single channel and transact. You can join IBM Blockchain Platform peers to any network running Hyperledger Fabric components. Similarly, you can invite Fabric peers to join channels hosted on an ordering service deployed on the IBM Blockchain Platform. Note that you will need to use Hyperledger Fabric APIs or the CLI. For more information about what is supported, see [Support for IBM Blockchain Platform](https://www.ibm.com/support/pages/node/1072956){: external}. For instructions on how to configure interoperability see [Connect the IBM Blockchain Platform to Hyperledger Fabric components](https://developer.ibm.com/tutorials/hyperledger-fabric-and-ibm-blockchain-peer-interoperability/){: external}.
+Containers deployed from any of the above sources can be connected on a single channel and transact. You can join {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric peers to any network running Hyperledger Fabric components. Similarly, you can invite Fabric peers to join channels hosted on an ordering service deployed on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. Note that you will need to use Hyperledger Fabric APIs or the CLI. For more information about what is supported, see [Support for {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](https://www.ibm.com/support/pages/node/1072956){: external}. For instructions on how to configure interoperability see [Connect the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to Hyperledger Fabric components](https://developer.ibm.com/tutorials/hyperledger-fabric-and-ibm-blockchain-peer-interoperability/){: external}.
 
 
 ## Where can a customer deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and how will {{site.data.keyword.IBM_notm}} support those deployment environments?
@@ -274,7 +274,7 @@ If you are moving from v1.4.x to v2.x, you may have to update your smart contrac
 {: #ibm-hlfsupport-v2-faq-migrate-raft}
 {: faq}
 
-Yes. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x or 2.5 uses Raft consensus. All of the applications and smart contracts that you are using on Fabric v1.4.x are able to work on your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. However, no mechanism exists to migrate your ledger data from one network to another. Instead, you can reinstall your smart contract packages on your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. See also [Can IBM Blockchain Platform components interoperate with Hyperledger Fabric components on the same network?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-interoperability).
+Yes. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.x or 2.5 uses Raft consensus. All of the applications and smart contracts that you are using on Fabric v1.4.x are able to work on your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. However, no mechanism exists to migrate your ledger data from one network to another. Instead, you can reinstall your smart contract packages on your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. See also [Can {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components interoperate with Hyperledger Fabric components on the same network?](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-faq#ibm-hlfsupport-v2-faq-interoperability).
 
 
 

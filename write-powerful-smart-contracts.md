@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-08-11"
+lastupdated: "2021-09-14"
 
 keywords: smart contract, lifecycle, package, definition
 
@@ -114,7 +114,7 @@ subcollection: hlf-support
 # Writing powerful smart contracts
 {: #write-powerful-smart-contracts}
 
-As Hyperledger Fabric and the IBM Blockchain platform have evolved, their processes have been made more decentralized and collaborative. This is why, for example, the old “Kafka” ordering service, in which a single organization owned and managed the ordering service, was replaced with a “Raft” ordering service in which multiple organizations can administer the ordering service and contribute nodes.
+As Hyperledger Fabric and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric have evolved, their processes have been made more decentralized and collaborative. This is why, for example, the old “Kafka” ordering service, in which a single organization owned and managed the ordering service, was replaced with a “Raft” ordering service in which multiple organizations can administer the ordering service and contribute nodes.
 
 This same spirit of decentralization and collaboration also drove the development of a new series of processes around installing, managing, and using smart contracts (these processes are known as the “lifecycle” of a smart contract).
 
@@ -191,7 +191,7 @@ Smart contracts can be updated for a variety of reasons. As part of onboarding a
 
 In the onboarding example, it is likely that only the smart contract definition will need to be updated to reflect the new organization’s ability to endorse transactions (if that will indeed be their role). If the underlying business logic contained in the package changes, on the other hand, then both the package and the definition will have to change (the latter to reflect a new version).
 
-While updating the version in the definition is enforced by Fabric and the IBM Blockchain Platform whenever a new package is installed, the standards adopted by a channel for how those versions are organized are up to the members of the channel. However, it is recommended to use a consistent semantic versioning pattern.
+While updating the version in the definition is enforced by Fabric and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric whenever a new package is installed, the standards adopted by a channel for how those versions are organized are up to the members of the channel. However, it is recommended to use a consistent semantic versioning pattern.
 
 In production scenarios, new business logic might be agreed to by the channel members collectively (out of band) and then be written by a single channel member and passed to the others. If this code will replace custom code you have in your own smart contract package, make sure you do not overwrite custom variables you already have by replacing the section of your smart contract without analysis.
 {: tip}

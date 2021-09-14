@@ -2,9 +2,9 @@
 
  copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
-keywords: OpenShift, IBM Blockchain Platform console, deploy, resource requirements, storage, parameters
+keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters
 
 subcollection: hlf-support
 
@@ -111,7 +111,6 @@ subcollection: hlf-support
 
 # Removing your deployment
 {: #Removing-ocp}
-
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator automatically restarts your blockchain nodes or your console if they stop or crash. As a result, you cannot manually remove your blockchain components by manually deleting their pods. Use the following steps to remove the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric from your OpenShift cluster. You must follow these steps for each OpenShift project that you create.
 

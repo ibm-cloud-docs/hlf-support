@@ -2,9 +2,9 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
-keywords: OpenShift, IBM Blockchain Platform console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
+keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
 subcollection: hlf-support
 
@@ -113,7 +113,7 @@ subcollection: hlf-support
 # Deploy from Red Hat Marketplace (airgap installation)
 {: #deploy-ocp-rhm-fw}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto an OpenShift Container Platform 4.4+ cluster behind a firewall. This operator can then be used to deploy an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric in an airgap environment.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto an OpenShift Container Platform 4.6+ cluster behind a firewall. This operator can then be used to deploy an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric in an airgap environment.
 {: shortdesc}
 
 There are three ways to deploy the platform in an airgap environment:
@@ -132,7 +132,7 @@ This process is only available for x86_64 infrastructure.
 ## Before you begin
 {: #deploy-ocp-rhm-fw-before}
 
-- **OpenShift cluster** - These instructions assume you already have a Kubernetes cluster available in OpenShift Container Platform v4.4+ and that you have created a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment. Unsure how to create a project? See [Create a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment](#deploy-ocp-rhm-fw-project).
+- **OpenShift cluster** - These instructions assume you already have a Kubernetes cluster available in OpenShift Container Platform v4.6+ and that you have created a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment. Unsure how to create a project? See [Create a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment](#deploy-ocp-rhm-fw-project).
 
 - **Obtain your entitlement key** - Browse to the [Red Hat Marketplace](https://marketplace.redhat.com/en-us){: external} and log in or create a new account. Click your account then **Pull secrets**. Click **Create pull secret** and give it a name. Copy the pull secret, secure it, and then click **Save** to be used in a later step.
 
@@ -174,14 +174,14 @@ Review the following parameters for your environment and then run the following 
 
 ```sh
 export NS=cp # Namespace of target installation on OpenShift cluster
-export ITEM=ibmBlockchainPlatformOperatorSetup
-export CASE_NAME=ibm-blockchain
-export CASE_VERSION=2.4.0
+export ITEM=ibmHLFSupportOperatorSetup
+export CASE_NAME=ibm-hlfsupport
+export CASE_VERSION=1.0.0
 export CASE_ARCHIVE=${CASE_NAME}-${CASE_VERSION}.tgz
 export CASEPATH="https://github.com/IBM/cloud-pak/raw/master/repo/case/${CASE_ARCHIVE}"
 
 export OFFLINEDIR=${HOME}/offline         # Where you want to store the images if not using Bastion server
-export OFFLINECASE=${OFFLINEDIR}/ibm-blockchain
+export OFFLINECASE=${OFFLINEDIR}/ibm-hlfsupport
 
 # Details of the source registry to copy from
 export EXTERNAL_REGISTRY=cp.icr.io        # Source registry url
@@ -317,11 +317,11 @@ You can expect this last step to take a few minutes while it downloads the image
   --args "--registry ${INTERNAL_REGISTRY}"
   ```
   {: codeblock}  
-2. Verify that the IBM Blockchain catalog is installed successfully in the cluster by running the following commands:
+2. Verify that the IBM Support for Hyperledger Fabric catalog is installed successfully in the cluster by running the following commands:
   ```sh
-  # Following command should show ibm-blockchain catalog pod
+  # Following command should show ibm-hlfsupport catalog pod
   oc get pods -n openshift-marketplace
-  # Following command should show the ibm-blockchain catalog source installed
+  # Following command should show the ibm-hlfsupport catalog source installed
   oc get catalogsource -n openshift-marketplace
   ```
   {: codeblock}  
@@ -332,13 +332,13 @@ You can expect this last step to take a few minutes while it downloads the image
   certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
   community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
   eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
-  ibm-blockchain-catalog-gkdsc                                      1/1     Running     0          90s
+  ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
   marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
   redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
   redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
   ```
-  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-blockchain-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
-3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the IBM Blockchain Platform console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
+  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
+3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
 ## Deploy using a portable compute device
 {: #deploy-ocp-rhm-fw-portable}
@@ -363,14 +363,14 @@ Review the following parameters for your environment and then run the following 
 
 ```sh
 export NS=cp # Namespace of target installation on OpenShift cluster
-export ITEM=ibmBlockchainPlatformOperatorSetup
-export CASE_NAME=ibm-blockchain
-export CASE_VERSION=2.4.0
+export ITEM=ibmHLFSupportOperatorSetup
+export CASE_NAME=ibm-hlfsupport
+export CASE_VERSION=1.0.0
 export CASE_ARCHIVE=${CASE_NAME}-${CASE_VERSION}.tgz
 export CASEPATH="https://github.com/IBM/cloud-pak/raw/master/repo/case/${CASE_ARCHIVE}"
 
 export OFFLINEDIR=${HOME}/offline         # Where you want to store the images if not using Bastion server
-export OFFLINECASE=${OFFLINEDIR}/ibm-blockchain
+export OFFLINECASE=${OFFLINEDIR}/ibm-hlfsupport
 
 # Details of the source registry to copy from
 export EXTERNAL_REGISTRY=cp.icr.io        # Source registry url
@@ -509,14 +509,14 @@ Review the following parameters for your environment and then run the following 
 
 ```sh
 export NS=cp # Namespace of target installation on OpenShift cluster
-export ITEM=ibmBlockchainPlatformOperatorSetup
-export CASE_NAME=ibm-blockchain
-export CASE_VERSION=2.4.0
+export ITEM=ibmHLFSupportOperatorSetup
+export CASE_NAME=ibm-hlfsupport
+export CASE_VERSION=1.0.0
 export CASE_ARCHIVE=${CASE_NAME}-${CASE_VERSION}.tgz
 export CASEPATH="https://github.com/IBM/cloud-pak/raw/master/repo/case/${CASE_ARCHIVE}"
 
 export OFFLINEDIR=${HOME}/offline         # Where you want to store the images if not using Bastion server
-export OFFLINECASE=${OFFLINEDIR}/ibm-blockchain
+export OFFLINECASE=${OFFLINEDIR}/ibm-hlfsupport
 
 # Details of the source registry to copy from
 export EXTERNAL_REGISTRY=cp.icr.io        # Source registry url
@@ -662,11 +662,11 @@ You can expect this last step to take a few minutes while it downloads the image
   --args "--registry ${INTERNAL_REGISTRY}"
   ```
   {: codeblock}  
-2. Verify that the IBM Blockchain catalog is installed successfully in the cluster by running the following commands:
+2. Verify that the IBM Support for Hyperledger Fabric catalog is installed successfully in the cluster by running the following commands:
   ```sh
-  # Following command should show ibm-blockchain catalog pod
+  # Following command should show ibm-hlfsupport catalog pod
   oc get pods -n openshift-marketplace
-  # Following command should show the ibm-blockchain catalog source installed
+  # Following command should show the ibm-hlfsupport catalog source installed
   oc get catalogsource -n openshift-marketplace
   ```
   {: codeblock}  
@@ -677,13 +677,13 @@ You can expect this last step to take a few minutes while it downloads the image
   certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
   community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
   eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
-  ibm-blockchain-catalog-gkdsc                                      1/1     Running     0          90s
+  ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
   marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
   redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
   redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
   ```
-  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-blockchain-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
-3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the IBM Blockchain Platform console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
+  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
+3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
 ## Deploy using a portable storage device
 {: #deploy-ocp-rhm-fw-storage}
@@ -710,14 +710,14 @@ Review the following parameters for your environment and then run the following 
 
 ```sh
 export NS=cp # Namespace of target installation on OpenShift cluster
-export ITEM=ibmBlockchainPlatformOperatorSetup
-export CASE_NAME=ibm-blockchain
-export CASE_VERSION=2.4.0
+export ITEM=ibmHLFSupportOperatorSetup
+export CASE_NAME=ibm-hlfsupport
+export CASE_VERSION=1.0.0
 export CASE_ARCHIVE=${CASE_NAME}-${CASE_VERSION}.tgz
 export CASEPATH="https://github.com/IBM/cloud-pak/raw/master/repo/case/${CASE_ARCHIVE}"
 
 export OFFLINEDIR=${HOME}/offline         # Where you want to store the images if not using Bastion server
-export OFFLINECASE=${OFFLINEDIR}/ibm-blockchain
+export OFFLINECASE=${OFFLINEDIR}/ibm-hlfsupport
 
 # Details of the source registry to copy from
 export EXTERNAL_REGISTRY=cp.icr.io        # Source registry url
@@ -866,14 +866,14 @@ Review the following parameters for your environment and then run the following 
 
 ```sh
 export NS=cp # Namespace of target installation on OpenShift cluster
-export ITEM=ibmBlockchainPlatformOperatorSetup
-export CASE_NAME=ibm-blockchain
-export CASE_VERSION=2.4.0
+export ITEM=ibmHLFSupportOperatorSetup
+export CASE_NAME=ibm-hlfsupport
+export CASE_VERSION=1.0.0
 export CASE_ARCHIVE=${CASE_NAME}-${CASE_VERSION}.tgz
 export CASEPATH="https://github.com/IBM/cloud-pak/raw/master/repo/case/${CASE_ARCHIVE}"
 
 export OFFLINEDIR=${HOME}/offline         # Where you want to store the images if not using Bastion server
-export OFFLINECASE=${OFFLINEDIR}/ibm-blockchain
+export OFFLINECASE=${OFFLINEDIR}/ibm-hlfsupport
 
 # Details of the source registry to copy from
 export EXTERNAL_REGISTRY=cp.icr.io        # Source registry url
@@ -1032,11 +1032,11 @@ You can expect this last step to take a few minutes while it downloads the image
   --args "--registry ${INTERNAL_REGISTRY}"
   ```
   {: codeblock}  
-2. Verify that the IBM Blockchain catalog is installed successfully in the cluster by running the following commands:
+2. Verify that the IBM Support for Hyperledger Fabric catalog is installed successfully in the cluster by running the following commands:
   ```sh
-  # Following command should show ibm-blockchain catalog pod
+  # Following command should show ibm-hlfsupport catalog pod
   oc get pods -n openshift-marketplace
-  # Following command should show the ibm-blockchain catalog source installed
+  # Following command should show the ibm-hlfsupport catalog source installed
   oc get catalogsource -n openshift-marketplace
   ```
   {: codeblock}  
@@ -1047,18 +1047,18 @@ You can expect this last step to take a few minutes while it downloads the image
   certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
   community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
   eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
-  ibm-blockchain-catalog-gkdsc                                      1/1     Running     0          90s
+  ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
   marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
   redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
   redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
   ```
-  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-blockchain-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
-3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the IBM Blockchain Platform console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
+  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
+3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
-## Deploy the IBM Blockchain Platform console
+## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #console-deploy-ocp-rhm-fw-console}
 
-Congratulations! You have deployed the IBM Blockchain Platform operator. The only thing left to do is to deploy the console user interface (UI).
+Congratulations! You have deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. The only thing left to do is to deploy the console user interface (UI).
 
 1. Log in to your OpenShift dashboard.
 2. Click on **Installed Operators** and under **Provider Type** select **{{site.data.keyword.blockchainfull_notm}} Operator Catalog**.
@@ -1068,25 +1068,20 @@ Congratulations! You have deployed the IBM Blockchain Platform operator. The onl
 
 When it is finished, you are ready to install the **IBPConsole**.
 
-There are four instances available listed under "Provided APIs":
+There is one instance available listed under "Provided APIs":
 
 
-![Blockchain instances available in Red Hat Marketplace](../images/rhm-operators.png "Blockchain instances available in Red Hat Marketplace"){: caption="Figure 1. Blockchain instances available in Red Hat Marketplace" caption-side="bottom"}
+![IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace](../images/rhm-console.png "IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace"){: caption="Figure 1. IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace" caption-side="bottom"}
 
-- **IBP CA** - (Advanced users) Deploys an instance of an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric CA.
-- **IBP Console** - The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console UI, or "console", is an award-winning user interface for building your blockchain network.
-- **IBP Orderer** - (Advanced users) Deploys an instance of an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric ordering service.
-- **IBP Peer** - (Advanced users) Deploys an instance of an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric peer.
+- **IBM Support for Hyperledger Fabric Console** - The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console UI, or "console", is an award-winning user interface for building your blockchain network.
 
-**Which instance should I choose?**
+All customers need to deploy an instance of the **IBM Support for Hyperledger Fabric Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
 
-All customers need to deploy an instance of the **IBP Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
-
-Note that this tutorial only includes instructions for deploying an instance of the **IBP Console**. Currently, you cannot deploy Certificate Authorities (CAs), peers, and ordering nodes directly, you should use the console to deploy those nodes instead.
+You should use the console to deploy Certificate Authorities (CAs), peers, and ordering nodes.
 {: important}
 
-Click **Create Instance** on the **IBPConsole** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/IBPConsole.png "Create instance on the IBPConsole tile"){: caption="Figure 2. Click Create Instance on the IBP Console tile" caption-side="bottom"}
+Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
+![Blockchain instances available in Red Hat Marketplace](../images/IBPConsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}
@@ -1096,12 +1091,12 @@ The YAML view shows a sample **console** specification of parameters that you ne
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
 metadata:
-  name: ibpconsole
+  name: ibm-hlfsupport-console
   namespace: example
   labels:
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibm-ibp"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
   email: <EMAIL>
   password: <PASSWORD>
@@ -1116,15 +1111,15 @@ spec:
     console:
       class: ''
       size: 5Gi
-  serviceAccountName: ibm-blockchain
+  serviceAccountName: ibm-hlfsupport
   version: 1.0.0
 ```
 {: codeblock}
 
-- Accept the IBM Blockchain Platform license by replacing `<ACCEPT>` with the text `true`.
+- Accept the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric license by replacing `<ACCEPT>` with the text `true`.
 - Replace `<EMAIL>` with the email address that you want to use for the console administrator.
 - Replace `<PASSWORD>` with the password of your choice. This password becomes the default password for the console administrator but they are required to change it the first time they log in.
-- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value from your OpenShift web console URL. Examine the URL for the current page. It is similar to: `https://console-openshift-console.pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v1.0.0/ibp.com~v1beta1~IBPConsole/~new`. The value of the domain then would be `pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud`, after you remove `console-openshift-console` and `/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v1.0.0/ibp.com~v1beta1~IBPConsole/~new`.  
+- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value from your OpenShift web console URL. Examine the URL for the current page. It is similar to: `https://console-openshift-console.pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud/k8s/ns/pa0804/clusterserviceversions/ibm-hlfsupport.v1.0.0/ibp.com~v1beta1~IBPConsole/~new`. The value of the domain then would be `pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud`, after you remove `console-openshift-console` and `/k8s/ns/pa0804/clusterserviceversions/ibm-hlfsupport.v1.0.0/ibp.com~v1beta1~IBPConsole/~new`.  
 
 
 You also need to make additional edits to the file depending on your choices in the deployment process. For example, if you created a new storage class for your network, provide the storage class that you created to the `class:` field.
@@ -1149,12 +1144,12 @@ Before you deploy the console, you can edit console specification to allocate mo
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
 metadata:
-  name: ibpconsole
+  name: ibm-hlfsupport-console
   namespace: your-project
   labels:
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibm-ibp"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
   email: <EMAIL>
   password: <PASSWORD>
@@ -1169,7 +1164,7 @@ spec:
     console:
       class: default
       size: 5Gi
-  serviceAccountName: ibm-blockchain
+  serviceAccountName: ibm-hlfsupport
   version: 1.0.0
   clusterdata:
     zones:
@@ -1237,7 +1232,7 @@ You can use a Certificate Authority or tool to create the TLS certificates for t
 **Proxy hostname:** ``<PROJECT_NAME>-ibpconsole-proxy.<DOMAIN>``  
 
 - Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
-- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value from your OpenShift web console URL. Examine the URL for the current page. It is similar to: `https://console-openshift-console.pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v2.5.0/ibp.com~v1alpha2~IBPConsole/~new`. The value of the domain then would be `pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud`, after you remove `console-openshift-console` and `/k8s/ns/pa0804/clusterserviceversions/ibm-blockchain.v2.5.0/ibp.com~v1alpha2~IBPConsole/~new`.
+- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value from your OpenShift web console URL. Examine the URL for the current page. It is similar to: `https://console-openshift-console.pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud/k8s/ns/pa0804/clusterserviceversions/ibm-hlfsupport.v1.0.0/ibp.com~v1alpha2~IBPConsole/~new`. The value of the domain then would be `pa-0803-ocp43-0defdaa0c51bd4a2dcb024eab4bf04a1-0000.us-south.containers.appdomain.cloud`, after you remove `console-openshift-console` and `/k8s/ns/pa0804/clusterserviceversions/ibm-hlfsupport.v1.0.0/ibp.com~v1alpha2~IBPConsole/~new`.
 
 Navigate to the TLS certificates that you plan to use on your local system. Name the TLS certificate `tlscert.pem` and the corresponding private key `tlskey.pem`. Run the following command to create the Kubernetes secret and add it to your OpenShift project. The TLS certificate and key need to be in PEM format.
 ```
@@ -1252,12 +1247,12 @@ After you create the secret, add the `tlsSecretName` field to the `spec:` sectio
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
 metadata:
-  name: ibpconsole
+  name: ibm-hlfsupport-console
   namespace: your-project
   labels:
-    app.kubernetes.io/name: "ibp"
-    app.kubernetes.io/instance: "ibp"
-    app.kubernetes.io/managed-by: "ibm-ibp"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
   email: <EMAIL>
   password: <PASSWORD>
@@ -1272,7 +1267,7 @@ spec:
     console:
       class: default
       size: 5Gi
-  serviceAccountName: ibm-blockchain
+  serviceAccountName: ibm-hlfsupport
   version: 1.0.0
   tlsSecretName: "console-tls-secret"
   clusterdata:
@@ -1293,7 +1288,7 @@ You can find the URL of your blockchain console from the OpenShift cluster dashb
 
 1. Click **Workloads** in the left navigation.
 2. Click **Config Maps**.
-3. You see several config maps, including `<CONSOLE_NAME>`, `<CONSOLE_NAME>-console`, and a `<CONSOLE_NAME>-deployer`. Click the one that's just the `<CONSOLE_NAME>`, for example, `ibpconsole`.
+3. You see several config maps, including `<CONSOLE_NAME>`, `<CONSOLE_NAME>-console`, and a `<CONSOLE_NAME>-deployer`. Click the one that's just the `<CONSOLE_NAME>`, for example, `ibm-hlfsupport-console`.
 4. In the **Data** section, you see the **HOST_URL** field. This is the URL of your console that you can now use to log in. It looks similar to the following example:
 
   ```
@@ -1322,14 +1317,14 @@ To learn how to manage the users that can access the console, view the logs of y
 ## Remove your deployment
 {: #console-deploy-ocp-rhm-fw-remove-deployment}
 
-If you want to delete the IBM Blockchain Platform operator or any instances you have deployed, the simplest way is through the OpenShift UI.
+If you want to delete the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator or any instances you have deployed, the simplest way is through the OpenShift UI.
 
 If you want to delete the operator, make sure to delete any instances associated with it first.
 {: important}
 
-To delete an instance, navigate to the **Operators** tab and then click  **Installed Operators**. From here, click **IBM Blockchain** and then the **All instances** tab. Find the instance you that want to delete and click the settings button to the right of the instance. Then, click **Delete** (the name of your instance).
+To delete an instance, navigate to the **Operators** tab and then click  **Installed Operators**. From here, click **IBM Support for Hyperledger Fabric** and then the **All instances** tab. Find the instance you that want to delete and click the settings button to the right of the instance. Then, click **Delete** (the name of your instance).
 
-To delete the operator, navigate back to the **Installed Operators** page and click the settings button to the right of the IBM Blockchain Platform operator. Then, click **Uninstall Operator**.
+To delete the operator, navigate back to the **Installed Operators** page and click the settings button to the right of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. Then, click **Uninstall Operator**.
 
 Alternatively, you can use the CLI to switch to the OpenShift project that you created for your blockchain network:
 
@@ -1338,7 +1333,7 @@ Alternatively, you can use the CLI to switch to the OpenShift project that you c
   ```
   {: codeblock}
 
-And then remove any instances or the IBM Blockchain operator by using the OpenShift CLI. For example, this command would delete the operator:
+And then remove any instances of the IBM Support for Hyperledger Fabric operator by using the OpenShift CLI. For example, this command would delete the operator:
 
   ```
   kubectl delete deployment ibm-hlfsupport-operator

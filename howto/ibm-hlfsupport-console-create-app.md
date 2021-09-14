@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -396,7 +396,7 @@ After you generate the application signing certificate and private key and store
       try {
 
         // Parse the connection profile. This would be the path to the file downloaded
-        // from the IBM Blockchain Platform operational console.
+        // from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operational console.
         const ccpPath = path.resolve(__dirname, 'connection.json');
         const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
 

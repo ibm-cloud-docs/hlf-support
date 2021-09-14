@@ -2,7 +2,7 @@
 
  copyright:
   years: 2021
-lastupdated: "2021-09-13"
+lastupdated: "2021-09-14"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -140,7 +140,7 @@ Before using the playbook, you must have completed the following steps:
 Before you can deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your Kubernetes cluster, you need to gather the following information:
 
 - The name of your Kubernetes `namespace`, or `project`, if you are using OpenShift Container Platform.
-- The domain name of your Kubernetes cluster. This domain name is used as the base domain name for all ingress or routes that are created by the IBM Blockchain Platform.
+- The domain name of your Kubernetes cluster. This domain name is used as the base domain name for all ingress or routes that are created by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
   - If you are running OpenShift Container Platform, you can find this value by using the OpenShift web console. After logging in to the console, use the drop-down menu next to **OpenShift Container Platform** at the upper left of the page to switch from Service Catalog to Cluster Console. Examine the URL for that page. It will be similar to `console.xyz.abc.com/k8s/cluster/projects`. The value of the domain then would be `xyz.abc.com`, after you remove `console` and `/k8s/cluster/projects`.
   - If you are running any other supported Kubernetes distribution, follow instructions from the distribution documentation to retrieve the domain name after configuring the NGINX Ingress controller.
 
@@ -153,7 +153,7 @@ When the installation completes successfully you see the message:
 ```
 TASK [console : Print console URL] *************************************************************************************************************************************
 ok: [localhost] => {
-    "msg": "IBM Blockchain Platform console available at https://xm0507-ibm-hlfsupport-console-console.ibp20openshifttestcluster-0defdaa0c51bd4a2dcb024eab4bf04a1-0001.us-south.containers.appdomain.cloud"
+    "msg": "{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console available at https://xm0507-ibm-hlfsupport-console-console.ibp20openshifttestcluster-0defdaa0c51bd4a2dcb024eab4bf04a1-0001.us-south.containers.appdomain.cloud"
 }
 ```
 

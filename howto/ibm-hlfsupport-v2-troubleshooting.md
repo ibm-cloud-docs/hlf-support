@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
@@ -261,17 +261,17 @@ This command deletes the console replicas and the operator then starts only one 
 {: #ibm-hlfsupport-v2-troubleshooting-ingress-issue}
 {: troubleshoot}
 
-When deploying a new IBM Cloud Kubernetes Service cluster and a new IBM Blockchain Platform environment, the IBM Blockchain Platform user interface is unable to connect to the provision components. The component status does not turn green even when the pod shows it is running fine from the IBM Cloud Kubernetes Service user interface or the command line interface (CLI).
+When deploying a new IBM Cloud Kubernetes Service cluster and a new {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric environment, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric user interface is unable to connect to the provision components. The component status does not turn green even when the pod shows it is running fine from the IBM Cloud Kubernetes Service user interface or the command line interface (CLI).
 {: tsSymptoms}
 
-You may also see errors connecting to the proxy URL such as the following reported by the IBM Blockchain Platform console:
+You may also see errors connecting to the proxy URL such as the following reported by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console:
 
 ```
 "stitch_msg": "unable to get block: grpc web proxy's message: "Response closed without headers". This can happen when encountering CORS or untrusted TLS issues with the grpc web proxy.",
 ```
 {: codeblock}
 
-This problem can occur when the cluster is created after 01 December 2020 with version 1.18 or higher. Or, after you finish deploying the IBM Blockchain Platform while the Kubernetes user interface or CLI still displays the pod as running, but the orderer or the peer user interface does not appear online. 
+This problem can occur when the cluster is created after 01 December 2020 with version 1.18 or higher. Or, after you finish deploying the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric while the Kubernetes user interface or CLI still displays the pod as running, but the orderer or the peer user interface does not appear online. 
 {: tsCauses}
 
 Before resolving this problem, you can check the application load balancer (ALB) replica set by running `kubectl get replicasets -n kube-system` and look for result similar to `public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57    2         2         2       24h`. 
@@ -592,7 +592,7 @@ One of the features of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fa
 This problem can also occur when the console has lost contact with your Kubernetes cluster on {{site.data.keyword.cloud_notm}}. This can happen if your console has not recently communicated with your cluster, or if you have made changes to your cluster that have overridden the settings used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 {: tsCauses}
 
-You can renew the communication between your console and the {{site.data.keyword.IBM_notm}} Kubernetes service cluster on {{site.data.keyword.cloud_notm}} by clicking on the service instance of your console in your **Resource list** and clicking the **Refresh cluster** button. When the link between your cluster and your console has been refreshed, click the **Launch the IBM Blockchain Platform** button.
+You can renew the communication between your console and the {{site.data.keyword.IBM_notm}} Kubernetes service cluster on {{site.data.keyword.cloud_notm}} by clicking on the service instance of your console in your **Resource list** and clicking the **Refresh cluster** button. When the link between your cluster and your console has been refreshed, click the **Launch the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** button.
 {: tsResolve}
 
 ## Why am I getting the error `Unable to authenticate with the enroll ID and secret you provided` when I create a new organization MSP definition?

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -116,13 +116,10 @@ Use these release notes that are grouped by date to learn about the latest chang
 {: shortdesc}
 
 
-## 10 Aug 2021
-{: #10-08-2021}
+## 15 Sep 2021
+{: #15-09-2021}
 
-Miscellaneous bug fixes and security patches.
-
-Export certificates in .pem format for easy management and maintenance in {{site.data.keyword.cloud_notm}} Certificate Manager. See [viewing and updating identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-update-identities) to learn more details.
-
+Initial release for {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
 
 
 

@@ -2,7 +2,7 @@
 
  copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -111,7 +111,7 @@ subcollection: hlf-support
 
 
 
-# Building an IBM Blockchain Platform network using Ansible playbooks
+# Building an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network using Ansible playbooks
 {: #ansible-build}
 
 Customers can use Ansible playbooks to automate the setup and tear down of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network components.

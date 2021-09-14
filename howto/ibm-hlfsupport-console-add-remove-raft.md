@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-14"
 
 keywords: network components, Kubernetes, channel update, channels, governance, channel configuration, orderer, ordering node, ordering service, raft, tutorial
 
@@ -310,7 +310,7 @@ Because you are editing a part of the channel configuration that is governed by 
 
 To add an ordering service organization to an application channel, navigate to the channel and click the **Settings** button. First, specify which peer organization and which peer organization admin is making the update request. If the application channel was created before the ordering organization was added to the system channel, click **Ordering service administrator** and add `Ordering Service2 MSP` as an administrator.
 
-If your console is at a build before `2.1.3-104`, you will not see this option. To see the version of your build, click on the support icon in the upper right hand corner (it resembles a question mark). The version will be listed below **IBM Blockchain Platform version** on the upper left.
+If your console is at a build before `2.1.3-104`, you will not see this option. To see the version of your build, click on the support icon in the upper right hand corner (it resembles a question mark). The version will be listed below **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric version** on the upper left.
 {: important}
 
 After the organization has been added, we can add the consenter.
