@@ -213,7 +213,7 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 ## Supported Platforms
 {: #console-ocp-about-prerequisites}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 can be deployed with the Kubernetes distributions on the following platforms:
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 supports Fabric 2.2.3 or higher. It can be deployed with the Kubernetes distributions on the following platforms:
 
 | Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|

@@ -88,7 +88,7 @@ Blockchain HLF Support
 		howto/ibm-hlfsupport-console-organizations.md
 		howto/ibm-hlfsupport-console-certificates.md
 		howto/ibm-hlfsupport-console-govern-components.md
-		/blockchain/blockchain-operations_service
+		blockchain/blockchain-operations_service
 
 	{: .topicgroup}
 	Developing smart contracts and applications
