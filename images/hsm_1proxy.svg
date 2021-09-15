@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 6117.5 7016.5" style="enable-background:new 0 0 6117.5 7016.5;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#F0F0F0;}
+	.st1{fill:none;stroke:#A0A0A0;stroke-linejoin:round;}
+	.st2{fill:#A0A0A0;}
+	.st3{fill:#FFFFFF;stroke:#000000;stroke-width:0.35;stroke-miterlimit:10;}
+	.st4{fill:#A11950;}
+	.st5{fill:#EB4B86;}
+	.st6{fill:#757575;}
+	.st7{fill:#0DB5B3;}
+	.st8{fill:#0F6DFF;}
+	.st9{fill:none;stroke:#000000;stroke-width:0.35;stroke-miterlimit:10;}
+	.st10{fill:none;stroke:#FFFFFF;stroke-width:0.72;stroke-linecap:round;stroke-linejoin:round;}
+	.st11{fill:none;stroke:#FFFFFF;stroke-width:0.72;stroke-miterlimit:10;}
+	.st12{fill:none;stroke:#FFFFFF;stroke-width:0.75;stroke-linecap:round;stroke-miterlimit:10;}
+	.st13{fill:none;stroke:#FFFFFF;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;}
+	.st14{fill:#0DB5B3;stroke:#FFFFFF;stroke-width:0.75;stroke-linecap:round;stroke-linejoin:round;}
+	.st15{fill:none;stroke:#FFFFFF;stroke-width:0.72;stroke-linejoin:round;}
+	.st16{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.72;stroke-miterlimit:10;}
+	.st17{fill:none;stroke:#A0A0A0;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:0,4,0,4,0,4;}
+</style>
+<rect x="105.4" y="84.6" class="st0" width="126.1" height="61.6"/>
+<rect x="320.3" y="85.7" class="st0" width="126.1" height="69.6"/>
+<rect x="522.1" y="99.5" class="st0" width="60" height="91.3"/>
+<rect x="105.4" y="155.6" class="st0" width="126.1" height="61.6"/>
+<rect x="105.4" y="233.6" class="st0" width="126.1" height="61.6"/>
+<rect x="105.4" y="305.5" class="st0" width="126.1" height="61.6"/>
+<path class="st1" d="M234.5,174.1h25.8c7.9,0,14.3-10.8,14.3-24.2V135c0-13.4,6.4-24.2,14.3-24.2h22.9"/>
+<polygon class="st2" points="311.2,113.3 315.5,110.8 311.2,108.3 "/>
+<path class="st1" d="M449.5,118.1h22c6.8,0,12.2,5.8,12.2,12.9v7.9c0,7.1,5.5,12.9,12.2,12.9h19"/>
+<polygon class="st2" points="514.2,154.3 518.5,151.8 514.2,149.3 "/>
+<path class="st1" d="M236,266.3h21c15.6-1.8,27.7-14.4,29-30c0.7-34,1.3-68,2-102c-0.1-2.1,0.2-4.1,1-6c2.8-6.7,11.6-10.9,22.4-11.1
+	"/>
+<polygon class="st2" points="310.7,119.7 315,117.3 310.7,114.7 "/>
+<path class="st1" d="M236.1,342.3c4.6-0.3,22.7-1.9,37.6-16c8.7-8.2,14.4-19.1,16.1-31c1.1-46.7,2.1-93.3,3.2-140
+	c0.1-3.9,1.2-7.7,3.2-11c1.5-2.9,3.7-5.3,6.4-7c2.8-1.7,6-2.6,9.3-2.7"/>
+<polygon class="st2" points="311.1,137.1 315.5,134.8 311.3,132.2 "/>
+<polyline class="st3" points="0.6,48.9 721.5,48.9 721.5,12.8 0.6,12.8 "/>
+<text transform="matrix(1 0 0 1 0 6.9023)" style="font-family:'IBMPlexSans'; font-size:8.13px;">IBM Support for Hyperledger Fabric</text>
+<text transform="matrix(1 0 0 1 390.3296 6.9023)" style="font-family:'IBMPlexSans'; font-size:8.13px;">Legend</text>
+<text transform="matrix(1 0 0 1 0 37.3623)" style="font-family:'IBMPlexSans-Bold'; font-size:18.1px;">HSM</text>
+<text transform="matrix(1 0 0 1 405.1797 25.4727)" style="font-family:'IBMPlexSans'; font-size:6.39px;">Infrastructure</text>
+<ellipse transform="matrix(0.2298 -0.9732 0.9732 0.2298 341.3986 478.4606)" class="st4" cx="473" cy="23.5" rx="5.3" ry="5.3"/>
+<ellipse transform="matrix(0.2298 -0.9732 0.9732 0.2298 326.8582 489.9681)" class="st5" cx="473" cy="38.5" rx="5.3" ry="5.3"/>
+<text transform="matrix(1 0 0 1 484.2495 41.1523)" style="font-family:'IBMPlexSans'; font-size:6.39px;">HSM</text>
+<text transform="matrix(1 0 0 1 405.2197 41.1523)" style="font-family:'IBMPlexSans'; font-size:6.39px;">HSM Client</text>
+<circle class="st6" cx="393.9" cy="38.5" r="5.4"/>
+<circle class="st7" cx="394" cy="23.5" r="5.4"/>
+<text transform="matrix(1 0 0 1 584.1797 25.4727)" style="font-family:'IBMPlexSans'; font-size:6.39px;">Partition</text>
+<circle class="st8" cx="573" cy="23.5" r="5.3"/>
+<text transform="matrix(1 0 0 1 484.0698 25.6523)" style="font-family:'IBMPlexSans'; font-size:7px;">PKCS #11 Proxy Client</text>
+<line class="st9" x1="379.1" y1="48.9" x2="379.1" y2="12.8"/>
+<circle class="st7" cx="144.7" cy="176.4" r="18"/>
+<line class="st10" x1="148.1" y1="182.7" x2="151.5" y2="188.4"/>
+<path class="st10" d="M148.7,180.6c2.1-2.2,2-5.6-0.1-7.7c-2.2-2.1-5.6-2-7.7,0.1c-2,2.1-2,5.5,0,7.6l1.2,1l-4,6.8"/>
+<path class="st10" d="M149.4,162.6c-7.9-2.6-16.3,1.7-18.9,9.6c-2,6.2,0.2,12.9,5.4,16.8"/>
+<path class="st10" d="M153.6,188.9c6.7-4.9,8.1-14.3,3.2-21c-1.3-1.7-2.9-3.1-4.7-4.2"/>
+<circle class="st11" cx="147.5" cy="181.5" r="1.4"/>
+<circle class="st11" cx="152.3" cy="189.8" r="1.4"/>
+<circle class="st11" cx="150.8" cy="163.1" r="1.4"/>
+<path class="st11" d="M136.1,189.1c0.1-0.1,0.1-0.2,0.2-0.3c0.5-0.5,1.4-0.5,1.9,0c0.5,0.5,0.5,1.4,0,1.9c0,0,0,0,0,0
+	c-0.5,0.5-1.4,0.6-1.9,0C135.8,190.3,135.7,189.6,136.1,189.1"/>
+<circle class="st7" cx="144.7" cy="326.3" r="18"/>
+<line class="st10" x1="148.1" y1="332.4" x2="151.5" y2="338.1"/>
+<path class="st10" d="M148.7,330.3c2.1-2.2,2-5.6-0.2-7.7c-2.2-2.1-5.6-2-7.7,0.2c-2,2.1-2,5.4,0,7.5l1.2,1l-4,6.8"/>
+<path class="st10" d="M149.4,312.3c-7.9-2.6-16.3,1.7-18.9,9.6c-2,6.2,0.2,12.9,5.4,16.8"/>
+<path class="st10" d="M153.6,338.6c6.7-4.9,8.1-14.3,3.2-21c-1.3-1.7-2.9-3.1-4.7-4.2"/>
+<circle class="st11" cx="147.5" cy="331.2" r="1.4"/>
+<circle class="st11" cx="152.4" cy="339.5" r="1.4"/>
+<circle class="st11" cx="150.8" cy="312.8" r="1.4"/>
+<path class="st11" d="M136.1,338.8c0.1-0.1,0.1-0.2,0.2-0.3c0.5-0.5,1.4-0.5,1.9,0c0.5,0.5,0.5,1.4,0,1.9c-0.5,0.5-1.4,0.5-1.9,0
+	C135.8,340,135.7,339.3,136.1,338.8"/>
+<circle class="st7" cx="144.7" cy="254.5" r="18"/>
+<line class="st10" x1="148.1" y1="260.8" x2="151.5" y2="266.5"/>
+<path class="st10" d="M148.7,258.8c2.1-2.2,2-5.6-0.2-7.7c-2.2-2.1-5.6-2-7.7,0.2c-2,2.1-2,5.4,0,7.5l1.2,1l-4,6.8"/>
+<path class="st10" d="M149.4,240.7c-7.9-2.6-16.3,1.7-18.9,9.6c-2,6.2,0.2,13,5.4,16.8"/>
+<path class="st10" d="M153.6,267c6.7-4.9,8.1-14.3,3.2-21c-1.3-1.7-2.9-3.1-4.7-4.2"/>
+<circle class="st11" cx="147.5" cy="259.6" r="1.4"/>
+<circle class="st11" cx="152.4" cy="267.9" r="1.4"/>
+<circle class="st11" cx="150.8" cy="241.2" r="1.4"/>
+<path class="st11" d="M136.1,267.2c0.1-0.1,0.1-0.2,0.2-0.3c0.5-0.5,1.4-0.5,1.9,0c0.5,0.5,0.5,1.4,0,1.9c-0.5,0.5-1.4,0.5-1.9,0
+	C135.8,268.4,135.7,267.7,136.1,267.2"/>
+<g>
+	<line class="st1" x1="312.9" y1="103.6" x2="234.6" y2="103.6"/>
+	<polygon class="st2" points="312.2,101.1 316.5,103.6 312.2,106.1 	"/>
+</g>
+<circle class="st6" cx="413.8" cy="114.7" r="11.3"/>
+<text transform="matrix(1 0 0 1 395.9399 135.8423)" style="font-family:'IBMPlexSans'; font-size:7px;">HSM Client</text>
+<text transform="matrix(1 0 0 1 130.6797 137.3823)" style="font-family:'IBMPlexSans'; font-size:7px;">Operator</text>
+<path class="st12" d="M149.8,103.6c0,2.7-2.2,4.8-4.9,4.8c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8S149.8,101,149.8,103.6
+	C149.8,103.6,149.8,103.6,149.8,103.6"/>
+<g>
+	<circle class="st7" cx="144.7" cy="109.2" r="18"/>
+	<line class="st13" x1="144.6" y1="111.4" x2="144.6" y2="95.9"/>
+	<line class="st13" x1="149.4" y1="109" x2="149.4" y2="95.9"/>
+	<line class="st13" x1="139.8" y1="109" x2="139.8" y2="95.9"/>
+	<polyline class="st13" points="156,110 144.7,103.4 133.3,110 133.3,115.6 144.7,122.1 156,115.6 156,110 	"/>
+	<polyline class="st13" points="133.3,110 144.7,116.6 156,110 	"/>
+	<circle class="st14" cx="144.6" cy="111.4" r="1.2"/>
+	<circle class="st14" cx="139.8" cy="109" r="1.2"/>
+	<circle class="st14" cx="149.4" cy="109" r="1.2"/>
+</g>
+<text transform="matrix(1 0 0 1 535.77 171.2524)" style="font-family:'IBMPlexSans'; font-size:7px;">Partition 1</text>
+<circle class="st8" cx="552.1" cy="152.1" r="9.3"/>
+<text transform="matrix(1 0 0 1 186.6899 126.2822)" style="font-family:'IBMPlexSans'; font-size:7px;">PKCS #11 </text>
+<text transform="matrix(1 0 0 1 184.73 134.6826)" style="font-family:'IBMPlexSans'; font-size:7px;">Proxy Client</text>
+<circle class="st4" cx="203.5" cy="105.3" r="11"/>
+<text transform="matrix(1 0 0 1 185.9399 197.3022)" style="font-family:'IBMPlexSans'; font-size:7px;">PKCS #11 </text>
+<text transform="matrix(1 0 0 1 183.98 205.7026)" style="font-family:'IBMPlexSans'; font-size:7px;">Proxy Client</text>
+<text transform="matrix(1 0 0 1 113.8198 204.3022)" style="font-family:'IBMPlexSans'; font-size:7px;">Hyperledger Fabric</text>
+<text transform="matrix(1 0 0 1 136.5898 212.7026)" style="font-family:'IBMPlexSans'; font-size:7px;">Peer</text>
+<text transform="matrix(1 0 0 1 113.8198 283.3022)" style="font-family:'IBMPlexSans'; font-size:7px;">Hyperledger Fabric</text>
+<text transform="matrix(1 0 0 1 139.4199 291.7026)" style="font-family:'IBMPlexSans'; font-size:7px;">CA</text>
+<text transform="matrix(1 0 0 1 113.8198 354.3022)" style="font-family:'IBMPlexSans'; font-size:7px;">Hyperledger Fabric</text>
+<text transform="matrix(1 0 0 1 131.6299 362.7026)" style="font-family:'IBMPlexSans'; font-size:7px;">Orderer</text>
+<circle class="st4" cx="202.8" cy="176.3" r="11"/>
+<text transform="matrix(1 0 0 1 185.9399 275.3525)" style="font-family:'IBMPlexSans'; font-size:7px;">PKCS #11 </text>
+<text transform="matrix(1 0 0 1 183.98 283.7524)" style="font-family:'IBMPlexSans'; font-size:7px;">Proxy Client</text>
+<circle class="st4" cx="202.8" cy="254.4" r="11"/>
+<text transform="matrix(1 0 0 1 185.9399 347.1924)" style="font-family:'IBMPlexSans'; font-size:7px;">PKCS #11 </text>
+<text transform="matrix(1 0 0 1 183.98 355.5923)" style="font-family:'IBMPlexSans'; font-size:7px;">Proxy Client</text>
+<circle class="st4" cx="202.8" cy="326.2" r="11"/>
+<text transform="matrix(1 0 0 1 333.1099 142.5825)" style="font-family:'IBMPlexSans'; font-size:7px;">PKCS #11 Proxy</text>
+<circle class="st4" cx="358.8" cy="114.6" r="18"/>
+<g>
+	<rect x="361" y="123.9" class="st15" width="8.5" height="2.9"/>
+	<rect x="361" y="113.3" class="st15" width="8.5" height="2.9"/>
+	<rect x="361" y="102.8" class="st15" width="8.5" height="2.9"/>
+	<line class="st15" x1="355.8" y1="114.8" x2="361" y2="114.8"/>
+	<polyline class="st15" points="361,104.2 350.6,104.2 350.6,108.8 	"/>
+	<polyline class="st15" points="361,125.3 350.6,125.3 350.6,120.8 	"/>
+	<rect x="345.5" y="108.8" class="st10" width="10.2" height="12"/>
+</g>
+<text transform="matrix(1 0 0 1 531.73 129.8022)" style="font-family:'IBMPlexSans-SemiBold'; font-size:8.05px;">Cloud HSM</text>
+<circle class="st5" cx="552.1" cy="97.9" r="20.7"/>
+<g>
+	<circle class="st16" cx="556.4" cy="88.2" r="0.8"/>
+	<circle class="st16" cx="556.4" cy="108.6" r="0.8"/>
+	<circle class="st16" cx="556.4" cy="98.4" r="0.8"/>
+	<rect x="540.2" y="105.2" class="st10" width="19.4" height="6.8"/>
+	<rect x="540.2" y="95" class="st10" width="19.4" height="6.8"/>
+	<rect x="540.2" y="84.8" class="st10" width="19.4" height="6.8"/>
+	<path class="st10" d="M561.8,108.6h2.6c0.6,0,1.1-0.5,1.1-1.1V89.3c0-0.6-0.5-1.1-1.1-1.1h-2.6"/>
+	<line class="st10" x1="565.5" y1="98.4" x2="561.8" y2="98.4"/>
+</g>
+<line class="st17" x1="377.5" y1="115.9" x2="404.5" y2="115.9"/>
+</svg>
