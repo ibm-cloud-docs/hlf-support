@@ -127,9 +127,7 @@ When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 {: #deploy-ocp-prerequisites}
 
 1. See [Supported platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites) for a list of supported versions.
-
 2. You need to install and connect to your cluster by using the [OpenShift Container Platform CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} to deploy the platform. If you are using an OpenShift cluster that was deployed with the {{site.data.keyword.IBM_notm}} Kubernetes Service, use these instructions to [Install the OpenShift Origin CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
-
 3. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-build-docker) topic to build the image.
 
 **Looking for a way to script the deployment of the service?** Check out the [Ansible playbooks](/docs/hlf-support?topic=hlf-support-ansible), a powerful tool for scripting the deployment of components in your blockchain network. If you prefer a manual installation, proceed to the next section.
@@ -187,8 +185,8 @@ oc new-project ibm-hlfsupport-infra
 When you create a new project, a new namespace is created with the same name as your project. You can verify that the existence of the new namespace by using the `oc get namespace` command:
 ```
 $ oc get namespace
-NAME                                         STATUS   AGE
-ibm-hlfsupport-infra           Active    2m
+NAME                                          STATUS   AGE
+ibm-hlfsupport-infra            Active    2m
 ```
 
 ## Create a secret for your entitlement key
@@ -485,8 +483,7 @@ service/ibm-hlfsupport-webhook created
 ### 4. Extract the certificate and create the custom resource definitions
 {: #webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
-
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
   ``` 
   export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -578,6 +575,7 @@ status:
   - v1beta1
 EOF
 ```
+{: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
 ```
@@ -823,6 +821,7 @@ When successful, you should see:
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
 {: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured

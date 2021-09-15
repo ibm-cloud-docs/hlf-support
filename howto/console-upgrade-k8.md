@@ -173,8 +173,7 @@ kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfs
 ### Step two: Update the CRDs
 {: #upgrade-k8-steps-100-crds}
 
-1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
-
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
   ``` 
   export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -266,6 +265,7 @@ status:
   - v1beta1
 EOF
 ```
+{: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
 ```
@@ -511,6 +511,7 @@ When successful, you should see:
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
 {: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
@@ -1103,8 +1104,7 @@ service/ibm-hlfsupport-webhook created
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
-
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
   ``` 
   export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -1196,6 +1196,7 @@ status:
   - v1beta1
 EOF
 ```
+{: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
 ```
@@ -1441,6 +1442,7 @@ When successful, you should see:
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
 {: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
@@ -2126,8 +2128,7 @@ service/ibm-hlfsupport-webhook created
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
-
+1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
   ``` 
   export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
@@ -2219,6 +2220,7 @@ status:
   - v1beta1
 EOF
 ```
+{: codeblock}
 
 Depending on whether you are creating or updating the CRD, when successful, you should see:
 ```
@@ -2464,6 +2466,7 @@ When successful, you should see:
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
 {: codeblock}
+
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
