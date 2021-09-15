@@ -1170,7 +1170,7 @@ clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project ad
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.  
 ```yaml
-{[yaml-operator-ocp-ibm-hlfsupport-bp-clusterrolebinding.md]
+{[yaml-operator-ocp-ibm-hlfsupport-clusterrolebinding.md]
 ```
 {: codeblock}
 
