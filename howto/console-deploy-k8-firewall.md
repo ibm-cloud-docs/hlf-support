@@ -901,11 +901,12 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
-
+{: codeblock}
 
 
 ## Create a new namespace for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment

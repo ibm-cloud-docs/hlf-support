@@ -510,11 +510,12 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
-
+{: codeblock}
 
 
 ### Step three: Update the ClusterRole
@@ -1439,11 +1440,12 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
-
+{: codeblock}
 
 
 ### Step four: Update the ClusterRole
@@ -2461,11 +2463,12 @@ When successful, you should see:
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com created
 ```
+{: codeblock}
 or
 ```
 customresourcedefinition.apiextensions.k8s.io/ibporderers.ibp.com configured
 ```
-
+{: codeblock}
 
 
 ### Step five: Update the ClusterRole
