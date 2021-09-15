@@ -160,13 +160,13 @@ When the entire HSM configuration is complete, it resembles the following diagra
 
 **HSM configured with an HSM client image**  
 
-![HSM configured with an HSM client image](../images/hsm_2proxy.svg "HSM configured with an HSM client image"){: caption="Figure 1. An example configuration of an HSM configured with an HSM client image." caption-side="bottom"}
+![HSM configured with an HSM client image](../images/hsm_2proxy.png "HSM configured with an HSM client image"){: caption="Figure 1. An example configuration of an HSM configured with an HSM client image." caption-side="bottom"}
 
 The steps in this topic focus specifically on the creation of the Cloud HSM and the HSM Client in the diagram.  When you deploy a CA, peer, or ordering node to use the HSM, you need to provide the label and PIN of the HSM partition. This configuration assumes you enabled HSM on your Kubernetes cluster when you deployed the service.  
 
 **(Deprecated) HSM configured with a PKCS #11 proxy**  
 
-![HSM configured with a PKCS #11 proxy](../images/hsm_1proxy.svg "HSM configured with a PKCS #11 proxy"){: caption="Figure 2. An example configuration of an HSM configured with a PKCS #11 proxy." caption-side="bottom"}  
+![HSM configured with a PKCS #11 proxy](../images/hsm_1proxy.png "HSM configured with a PKCS #11 proxy"){: caption="Figure 2. An example configuration of an HSM configured with a PKCS #11 proxy." caption-side="bottom"}  
 
 When you choose to deploy the PKCS #11 proxy and configure a node with HSM, you need to provide the PKCS #11 proxy endpoint URL, along with the label and PIN of the HSM partition. It is the combination of the PKCS #11 proxy and the HSM client that allows the node to store and retrieve the node private key from the HSM.
 
