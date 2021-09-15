@@ -182,7 +182,7 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
 1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ``` 
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
+  export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
 
@@ -1044,7 +1044,7 @@ service/ibm-hlfsupport-webhook created
 1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ``` 
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
+  export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
 
@@ -2001,7 +2001,7 @@ service/ibm-hlfsupport-webhook created
 1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command:
 
   ``` 
-  TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
+  export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
 
