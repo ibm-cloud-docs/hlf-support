@@ -138,8 +138,6 @@ When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 
 1. See [Supported platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites) for a list of supported versions.
 
-
-
 2. You need to install and connect to your cluster by using [OpenShift Container Platform CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} to deploy the platform.
 
 3. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-build-docker) topic to build the image.
@@ -210,6 +208,8 @@ The command looks similar to the following example:
 ```
 oc login https://c100-e.us-south.containers.cloud.ibm.com:31394 --token=<TOKEN>
 ```
+{: codeblock}
+
 If the command is successful, you can see the list of pods in your cluster in your terminal by running the following command:
 ```
 oc get pods
@@ -240,7 +240,6 @@ Because the platform has updated the internal apiversion from `v1alpha1` in prev
 After you log in to your cluster, you can create the new `ibm-hlfsupport-infra` project for the Kubernetes conversion webhook using the kubectl CLI. The new project needs to be created by a cluster administrator.  
 
 Run the following command to create the project.
-
 ```
 oc new-project ibm-hlfsupport-infra
 ```
@@ -252,6 +251,7 @@ $ oc get namespace
 NAME                                STATUS    AGE
 ibm-hlfsupport-infra                            Active    2m
 ```
+{: codeblock}
 
 ## Set up the entitlement for a local registry
 {: #deploy-ocp-secret-ibm-hlfsupport-infra-fw}
@@ -912,6 +912,7 @@ $ oc get namespace
 NAME                                STATUS    AGE
 blockchain-project                  Active    2m
 ```
+{: codeblock}
 
 You can also use the CLI to find the available storage classes for your namespace. If you created a new storage class for your deployment, that storage class must be visible in the output in the following command:
 ```
@@ -995,11 +996,14 @@ If you are creating an **HSM-enabled** operator deployment, you need to replace:
 allowPrivilegeEscalation: false
 allowPrivilegedContainer: false
 ```
+{: codeblock}
+
 with:
 ```
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: true
 ```
+{: codeblock}
 
 After you save and edit the file, run the following commands to add the file to your cluster and add the policy to your project. Replace `<PROJECT_NAME>` with your project.
 ```
@@ -1007,6 +1011,7 @@ oc apply -f ibm-hlfsupport-scc.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 If the command is successful, you can see a response that is similar to the following example:
@@ -1014,7 +1019,7 @@ If the command is successful, you can see a response that is similar to the foll
 securitycontextconstraints.security.openshift.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project added: "system:serviceaccounts:blockchain-project"
 ```
-
+{: codeblock}
 
 ### Apply the ClusterRole
 {: #deploy-ocp-clusterrole-firewall}
@@ -1210,6 +1215,7 @@ oc apply -f ibm-hlfsupport-clusterrole.yaml -n <PROJECT_NAME>
 oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1217,6 +1223,7 @@ If successful, you can see a response that is similar to the following example:
 clusterrole.rbac.authorization.k8s.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project added: "system:blockchain-project"
 ```
+{: codeblock}
 
 ### Apply the ClusterRoleBinding
 {: #deploy-ocp-clusterrolebinding-firewall}
@@ -1251,6 +1258,7 @@ oc apply -f ibm-hlfsupport-clusterrolebinding.yaml -n <PROJECT_NAME>
 oc adm policy add-cluster-role-to-user <PROJECT_NAME> system:serviceaccounts:<PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 If successful, you can see a response that is similar to the following example:
@@ -1258,6 +1266,7 @@ If successful, you can see a response that is similar to the following example:
 clusterrolebinding.rbac.authorization.k8s.io/blockchain-project created
 clusterrole.rbac.authorization.k8s.io/blockchain-project added: "system:serviceaccounts:blockchain-project"
 ```
+{: codeblock}
 
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #deploy-ocp-operator-fw}
@@ -1265,8 +1274,6 @@ clusterrole.rbac.authorization.k8s.io/blockchain-project added: "system:servicea
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. You can deploy the operator on your cluster by adding a custom resource to your project by using the OpenShift CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.  
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-operator.yaml`. If you changed the name of the Docker key secret, then you need to edit the field of `name: cp-pull-secret`.
-
-
 
 Replace `image: cp.icr.io/cp/` with `image: <LOCAL_REGISTRY>/`, insert the URL of your local registry.
 {: important}
@@ -1375,6 +1382,7 @@ spec:
               memory: 200Mi
 ```
 {: codeblock}
+
 - If you changed the name of the Docker key secret, then you need to edit the field of `name: cp-pull-secret`.
 - If you are using OpenShift Container Platform on LinuxONE, you need to make the following additional customizations:
    1. In the `spec.affinity` section, change `amd64` to `s390x`.
@@ -1386,6 +1394,7 @@ Then, use the `kubectl` CLI to add the custom resource to your project.
 kubectl apply -f ibm-hlfsupport-operator.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <PROJECT_NAME>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1393,6 +1402,7 @@ You can confirm that the operator deployed by running the command `kubectl get d
 NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1       1            1           46s
 ```
+{: codeblock}
 
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #deploy-ocp-console-fw}
@@ -1462,17 +1472,15 @@ After you update the file, you can use the CLI to install the console.
 kubectl apply -f ibm-hlfsupport-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 Replace `<PROJECT_NAME>` with the name of your project. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
-
 
 ### Advanced deployment options
 {: #console-deploy-ocp-advanced-firewall}
 
 You can edit the `ibm-hlfsupport-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
-
-
 ```yaml
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
@@ -1546,6 +1554,7 @@ When you finish editing the file, apply it to your cluster.
 kubectl apply -f ibm-hlfsupport-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 Unlike the resource allocation, you cannot add zones to a running network. If you have already deployed a console and used it to create nodes on your cluster, you will lose your previous work. After the console restarts, you need to deploy new nodes.    
@@ -1610,6 +1619,7 @@ When you finish editing the file, you can apply it to your cluster in order to s
 kubectl apply -f ibm-hlfsupport-console.yaml -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 ### Verifying the console installation
@@ -1620,6 +1630,7 @@ NAME           READY     UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1       1            1           10m
 ibm-hlfsupport-console     1/1       1            1           4m
 ```
+{: codeblock}
 
 The console consists of four containers that are deployed inside a single pod:
 - `optools`: The console UI.
@@ -1638,6 +1649,7 @@ Then, use the following command to get the logs from one of the four containers 
 kubectl logs -f <pod_name> <container_name> -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz console -n blockchain-project
@@ -1648,10 +1660,10 @@ kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz console -n blockchain-pr
 {: #deploy-ocp-log-in}
 
 You can use your browser to access the console by browsing to the console URL:
-
 ```
 https://<PROJECT_NAME>-ibpconsole-console.<DOMAIN>
 ```
+{: codeblock}
 
 - Replace `<PROJECT_NAME>` with the name of the OpenShift project that you created.
 - Replace `<DOMAIN>` with the name of your cluster domain. You passed this value to the `DOMAIN:` field of the `ibm-hlfsupport-console.yaml` file.
@@ -1660,11 +1672,14 @@ Your console URL looks similar to the following example:
 ```
 https://blockchain-project-ibpconsole-console.xyz.abc.com
 ```
+{: codeblock}
 
 You can also find your console URL by logging in to your OpenShift cluster and running the following command. Replace `<PROJECT_NAME>` with the name of your project:
 ```
 oc get routes -n <PROJECT_NAME>
 ```
+{: codeblock}
+
 In the output of the command, you can see the URLs for the proxy and the console. You need to add `https://` to the beginning console URL to access the console. You do not need to add a port to the URL.
 
 In your browser, you can see the console log in screen:

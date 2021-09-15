@@ -108,7 +108,6 @@ subcollection: hlf-support
 
 
 
-
 # Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 behind a firewall
 {: #deploy-k8-firewall}
 
@@ -139,6 +138,7 @@ Ensure that your Kubernetes cluster has sufficient resources for the {{site.data
 | **Operator**                   | 0.1           | 0.2                   | 0                      |
 | **Console**                    | 1.2           | 2.4                   | 10                     |
 | **Webhook**                    | 0.1           | 0.2                   | 0                      |
+
 {: caption="Table 1. Default resource allocations" caption-side="bottom"}
 ** These values can vary slightly. Actual VPC allocations are visible in the blockchain console when a node is deployed.  
 
@@ -174,9 +174,7 @@ When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 ## Before you begin
 {: #deploy-k8-prerequisites-firewall}
 
-1. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be installed only on the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites){: external}.
-
-
+1. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be installed only on the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites){: external}
 
 2. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform.
 
@@ -254,6 +252,7 @@ registry-console-6c74fc45f9-nl5nw   1/1       Running   0          7d
 router-6cc88df47c-hqjmk             1/1       Running   0          7d
 router-6cc88df47c-mwzbq             1/1       Running   0          7d
 ```
+{: codeblock}
 
 ## Create the `ibm-hlfsupport-infra` namespace for the webhook
 {: #deploy-k8-ibm-hlfsupport-infra-fw}
@@ -963,7 +962,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires speci
 {: #deploy-k8-scc-apply-fw}
 
 Copy the PodSecurityPolicy object below and save it to your local system as `ibm-hlfsupport-psp.yaml`.
-
+```yaml
 [{yaml-operator-k8s-ibm-hlfsupport-psp.md}]
 ```
 {: codeblock}
@@ -974,7 +973,7 @@ kubectl apply -f ibm-hlfsupport-psp.yaml
 ```
 {: codeblock}
 
-### Apply the ClusterRole
+### Apply the ClusterRole  
 {: #deploy-k8-clusterrole-fw}
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrole.yaml`. This file defines the required ClusterRole for the PodSecurityPolicy. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
@@ -1175,13 +1174,13 @@ After you save and edit the file, run the following commands.
 kubectl apply -f ibm-hlfsupport-clusterrole.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 ### Apply the ClusterRoleBinding
 {: #deploy-k8-clusterrolebinding-fw}
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.  
-
 
 ```yaml
 kind: ClusterRoleBinding
@@ -1210,6 +1209,7 @@ After you save and edit the file, run the following commands.
 kubectl apply -f ibm-hlfsupport-clusterrolebinding.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 ### Create the role binding
@@ -1221,15 +1221,12 @@ kubectl -n <NAMESPACE> create rolebinding ibm-hlfsupport-operator-rolebinding --
 ```
 {: codeblock}
 
-
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #deploy-k8-operator-firewall}
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. You can deploy the operator on your cluster by adding a custom resource to your namespace by using the kubectl CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.  
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-operator.yaml`.
-
-
 
 Replace `image: cp.icr.io/cp/` with `image: <LOCAL_REGISTRY>/`, insert the URL of your local registry.
 {: important}
@@ -1348,6 +1345,7 @@ Then, use the kubectl CLI to add the custom resource to your namespace.
 kubectl apply -f ibm-hlfsupport-operator.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1355,6 +1353,7 @@ You can confirm that the operator deployed by running the command `kubectl get d
 NAME           READY   UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1     1            1           1m
 ```
+{: codeblock}
 
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #deploy-k8-fw-console}
@@ -1412,13 +1411,13 @@ After you update the file, you can use the CLI to install the console.
 kubectl apply -f ibm-hlfsupport-console.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace. Before you install the console, you might want to review the advanced deployment options in the next section. The console can take a few minutes to deploy.
 
 ### Advanced deployment options
 {: #console-deploy-k8-advanced-firewall}
 
 You can edit the `ibm-hlfsupport-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
-
 ```yaml
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
@@ -1581,6 +1580,7 @@ Then, use the following command to get the logs from one of the four containers 
 kubectl logs -f <pod_name> <container_name> -n <NAMESPACE>
 ```
 {: codeblock}
+
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz console -n blockchain-project
@@ -1603,6 +1603,7 @@ Your console URL looks similar to the following example:
 ```
 https://blockchain-project-ibpconsole-console.xyz.abc.com:443
 ```
+{: codeblock}
 
 If you navigate to the console URL in your browser, you can see the console log in screen:
 - For the **User ID**, use the value you provided for the `email:` field in the `ibm-hlfsupport-console.yaml` file.

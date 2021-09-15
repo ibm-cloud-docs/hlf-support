@@ -195,9 +195,7 @@ When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 ## Before you begin
 {: #deploy-k8-prerequisites}
 
-1. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be installed only on the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites){: external}.
-
-
+1. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be installed only on the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites){: external}
 
 2. You need to install and connect to your cluster by using the [kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl){: external} to deploy the platform.
 
@@ -1160,6 +1158,7 @@ After you save and edit the file, run the following commands.
 kubectl apply -f ibm-hlfsupport-clusterrole.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 
@@ -1195,6 +1194,7 @@ After you save and edit the file, run the following commands.
 kubectl apply -f ibm-hlfsupport-clusterrolebinding.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 ### Create the role binding
@@ -1205,6 +1205,7 @@ After applying the policies, you must grant your service account the required le
 kubectl -n <NAMESPACE> create rolebinding ibm-hlfsupport-operator-rolebinding --clusterrole=<NAMESPACE> --group=system:serviceaccounts:<NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
@@ -1213,7 +1214,6 @@ Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Suppo
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. You can deploy the operator on your cluster by adding a custom resource to your namespace by using the kubectl CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.  
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-operator.yaml`.
-
 
 ```yaml
 apiVersion: apps/v1
@@ -1329,6 +1329,7 @@ Then, use the kubectl CLI to add the custom resource to your namespace.
 kubectl apply -f ibm-hlfsupport-operator.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 You can confirm that the operator deployed by running the command `kubectl get deployment -n <NAMESPACE>`. If your operator deployment is successful, then you can see the following tables with four ones displayed. The operator takes about a minute to deploy.
@@ -1336,6 +1337,7 @@ You can confirm that the operator deployed by running the command `kubectl get d
 NAME           READY   UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1     1            1           1m
 ```
+{: codeblock}
 
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #deploy-k8-console}
@@ -1373,6 +1375,7 @@ spec:
 Accept the license:  
 
 - Accept the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric license](https://www-03.ibm.com/software/sla/sladb.nsf/lilookup/6CE1C5684689691C852586000043982B?OpenDocument){: external} by replacing the `license` parameter `accept: false` with the text `accept: true`.
+
 Specify the external endpoint information of the console in the `ibm-hlfsupport-console.yaml` file:
 - Replace `<DOMAIN>` with the name of your cluster domain. You need to make sure that this domain is pointed to the load balancer of your cluster.  
 
@@ -1476,6 +1479,7 @@ When you finish editing the file, apply it to your cluster.
 kubectl apply -f ibm-hlfsupport-console.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 
@@ -1503,6 +1507,7 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibm-hlfsupport-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
@@ -1541,6 +1546,7 @@ When you finish editing the file, you can apply it to your cluster in order to s
 kubectl apply -f ibm-hlfsupport-console.yaml -n <NAMESPACE>
 ```
 {: codeblock}
+
 Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 ### Verifying the console installation
@@ -1552,6 +1558,7 @@ NAME           READY   UP-TO-DATE   AVAILABLE   AGE
 ibm-hlfsupport-operator   1/1     1            1           10m
 ibm-hlfsupport-console     1/1     1            1           4m
 ```
+{: codeblock}
 
 The console consists of four containers that are deployed inside a single pod:
 - `optools`: The console UI.
@@ -1564,23 +1571,22 @@ If there is an issue with your deployment, you can view the logs from one of the
 kubectl get pods -n <NAMESPACE>
 ```
 {: codeblock}
-Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
+Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 Then, use the following command to get the logs from one of the four containers listed above:
 ```
 kubectl logs -f <pod_name> <container_name> -n <NAMESPACE>
 ```
 {: codeblock}
-Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
+Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace.
 
 As an example, a command to get the logs from the UI container would look like the following example:
 ```
 kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz optools -n blockchain-project
 ```
 {: codeblock}
-
 
 ## Log in to the console
 {: #deploy-k8-log-in}
@@ -1598,6 +1604,7 @@ Your console URL looks similar to the following example:
 ```
 https://blockchain-project-ibm-hlfsupport-console-console.xyz.abc.com:443
 ```
+{: codeblock}
 
 If you navigate to the console URL in your browser, you can see the console login screen:
 - For the **User ID**, use the value you provided for the `email:` field in the `ibm-hlfsupport-console.yaml` file.

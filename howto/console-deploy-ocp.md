@@ -185,9 +185,10 @@ oc new-project ibm-hlfsupport-infra
 When you create a new project, a new namespace is created with the same name as your project. You can verify that the existence of the new namespace by using the `oc get namespace` command:
 ```
 $ oc get namespace
-NAME                                          STATUS   AGE
-ibm-hlfsupport-infra            Active    2m
+NAME                                    STATUS   AGE
+ibm-hlfsupport-infra      Active    2m
 ```
+{: codeblock}
 
 ## Create a secret for your entitlement key
 {: #deploy-ocp-secret-ibm-hlfsupport-infra}
@@ -1168,7 +1169,6 @@ clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project ad
 {: #deploy-ocp-scc-apply-clusterrolebinding}
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.  
-
 ```yaml
 {[yaml-operator-ocp-ibm-hlfsupport-bp-clusterrolebinding.md]
 ```
@@ -1196,7 +1196,6 @@ clusterrole.rbac.authorization.k8s.io/blockchain-project added: "system:servicea
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. You can deploy the operator on your cluster by adding a custom resource to your project by using the OpenShift CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.   
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-operator.yaml`.
-
 ```yaml
 apiVersion: apps/v1
 kind: Deployment
@@ -1309,7 +1308,6 @@ spec:
    2. In the `spec.containers` section, replace `amd64` in the operator `images` tag with `s390x`.
 
 Then, use the `kubectl` CLI to add the custom resource to your project.
-
 ```
 kubectl apply -f ibm-hlfsupport-operator.yaml -n <PROJECT_NAME>
 ```
@@ -1330,7 +1328,6 @@ ibm-hlfsupport-operator   1/1       1            1           46s
 When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster. You can then access the console from your browser. Note that you can deploy only one console per OpenShift project.
 
 Save the custom resource definition below as `ibm-hlfsupport-console.yaml` on your local system. If you changed the name of the entitlement key secret, then you need to edit the field of `name: cp-pull-secret`.
-
 ```yaml
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
@@ -1404,7 +1401,6 @@ Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Su
 {: #console-deploy-ocp-advanced}
 
 Before you deploy the console, you can edit the `ibm-hlfsupport-console.yaml` file to allocate more resources to your console or use zones for high availability in a multizone cluster. To take advantage of these deployment options, you can use the console resource definition with the `resources:` and `clusterdata:` sections added:
-
 ```yaml
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
@@ -1513,7 +1509,6 @@ kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.p
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section of `ibm-hlfsupport-console.yaml` with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key stored in a secret named `"console-tls-secret"`. Replace `"<CONSOLE_TLS_SECRET_NAME>"` with `"console-tls-secret"` unless you used a different name for the secret.
-
 ```yaml
 apiVersion: ibp.com/v1beta1
 kind: IBPConsole
@@ -1596,7 +1591,6 @@ kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz optools -n blockchain-pr
 {: #deploy-ocp-log-in}
 
 You can use your browser to access the console by browsing to the console URL:
-
 ```
 https://<PROJECT_NAME>-ibm-hlfsupport-console-console.<DOMAIN>
 ```
