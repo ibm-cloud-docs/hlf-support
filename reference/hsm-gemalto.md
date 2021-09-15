@@ -113,11 +113,7 @@ subcollection: hlf-support
 {: help}
 {: support}
 
-<<<<<<< HEAD
 {{site.data.keyword.cloud_notm}} includes an [HSM](#x6704988){: term} service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
-=======
-{{site.data.keyword.cloud_notm}} includes an [HSM]{: term} service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
->>>>>>> 6c4fda8f269e56051b0ddc254183e647138d1092
 {: shortdesc}
 
 While this tutorial focuses specifically on using {{site.data.keyword.cloud_notm}} HSM, you can learn more about the overall configuration process for using any HSM that supports PCKS #11 with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, see
