@@ -190,30 +190,30 @@ In this section you will get the HSM server certificate and create the HSM clien
 
 1. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Run the following command using the HSM client to get the server certificate. This certificate enables the client to communicate with the server.
 
-  ```bash
-  scp hsm_admin@<HSM_ADDRESS>:server.pem server.pem
-  ```
-  {: codeblock}
+    ```bash
+    scp hsm_admin@<HSM_ADDRESS>:server.pem server.pem
+    ```
+    {: codeblock}
 
   Replace
   - `<HSM_ADDRESS>` with the IP address of the HSM.
 
 2. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Now, add the HSM server to the client configuration by running the following command:
 
-  ```bash
-  vtl addServer -n <HSM_ADDRESS> -c server.pem
-  ```
-  {: codeblock}
+    ```bash
+    vtl addServer -n <HSM_ADDRESS> -c server.pem
+    ```
+    {: codeblock}
 
   Replace
   - `<HSM_ADDRESS>` with the IP address of the HSM.
 
 3. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Create the certificate and private key for the client by running the command:
 
-  ```bash
-  vtl createcert -n <CLIENT_ADDRESS>
-  ```
-  {: codeblock}
+    ```bash
+    vtl createcert -n <CLIENT_ADDRESS>
+    ```
+    {: codeblock}
 
   Replace
   - `<CLIENT_ADDRESS>` with the IP address or fully qualified host name of the client.
@@ -227,10 +227,10 @@ In this section you will get the HSM server certificate and create the HSM clien
 
 4. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Copy the client certificate and private key to the HSM server by running the command:
 
-  ```bash
-  scp /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem hsm_admin@<HSM_ADDRESS>:.
-  ```
-  {: codeblock}
+    ```bash
+    scp /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem hsm_admin@<HSM_ADDRESS>:.
+    ```
+    {: codeblock}
 
   Replace
   - `<CLIENT_ADDRESS>` with the IP address or fully qualified host name of the client.
@@ -243,17 +243,17 @@ In this section you will get the HSM server certificate and create the HSM clien
 
   If the `<CLIENT_ADDRESS>` is the IP address of the client:
 
-  ```bash
-  client register -client ${CLIENT_NAME} -ip <CLIENT_ADDRESS>
-  ```
-  {: codeblock}
+    ```bash
+    client register -client ${CLIENT_NAME} -ip  <CLIENT_ADDRESS>
+    ```
+    {: codeblock}
 
   If the `<CLIENT_ADDRESS>` is the fully qualified host name of the client:
 
-  ```bash
-  client register -client ${CLIENT_NAME} -hostname <CLIENT_ADDRESS>
-  ```
-  {: codeblock}
+    ```bash
+    client register -client ${CLIENT_NAME} -hostname <CLIENT_ADDRESS>
+    ```
+    {: codeblock}
 
   Replace
   - `{CLIENT_NAME}` with the name of the client. This value can be anything meaningful to you.
@@ -261,18 +261,18 @@ In this section you will get the HSM server certificate and create the HSM clien
 
 2. <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> Because network address translation (NAT) exists between the client and the HSM, we need to disable client source IP address validation by the Network Trust Link Server (NTLS) upon Network Trust Link Agent (NTLA) client connection.  Disable ip check on the HSM server and then restart the NTLS service on the HSM server by running the following commands:
 
-  ```bash
-  ntls ipcheck disable
-  service restart ntls
-  ```
-  {: codeblock}
+    ```bash
+    ntls ipcheck disable
+    service restart ntls
+    ```
+    {: codeblock}
 
 3. <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> Assign a partition to the newly created client on the HSM server by running the following command:
 
-  ```bash
-  client assignpartition -client ${CLIENT_NAME} -partition ${PARTITION_NAME}
-  ```
-  {: codeblock}
+    ```bash
+    client assignpartition -client ${CLIENT_NAME} -partition ${PARTITION_NAME}
+    ```
+    {: codeblock}
 
   Replace
   - `{CLIENT_NAME}` with the name that you gave to your HSM client.
@@ -280,23 +280,23 @@ In this section you will get the HSM server certificate and create the HSM clien
 
   You can verify the command worked by running the following command:
 
-  ```bash
-  client show -client ${CLIENT_NAME}
-  ```
-  {: codeblock}
+    ```bash
+    client show -client ${CLIENT_NAME}
+    ```
+    {: codeblock}
 
   The output will look similar to:
 
-  ```
-  ClientID:     hsmclient
-  IPAddress:    10.220.203.73
-  HTL Required: no
-  OTT Expiry:   n/a
-  Partitions:   "partition1"
+    ```
+    ClientID:     hsmclient
+    IPAddress:    10.220.203.73
+    HTL Required: no
+    OTT Expiry:   n/a
+    Partitions:   "partition1"
 
-  Command Result : 0 (Success)
-  ```
-  {: codeblock}
+    Command Result : 0 (Success)
+    ```
+    {: codeblock}
 
 4. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/> Verify the client can connect to HSM server by running the command:
 
