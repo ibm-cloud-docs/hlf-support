@@ -173,13 +173,13 @@ kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfs
 ### Step two: Update the CRDs
 {: #upgrade-k8-steps-100-crds}
 
-1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
+* Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
   ``` 
   export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
 
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -1104,13 +1104,13 @@ service/ibm-hlfsupport-webhook created
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
+* Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
   ``` 
   export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
 
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -2128,13 +2128,13 @@ service/ibm-hlfsupport-webhook created
 #### 4. Extract the certificate and create the custom resource definitions
 {: #upgrade-webhook-extract-cert}
 
-1. Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
+* Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
   ``` 
   export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
   ```
   {: codeblock}
 
-2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
