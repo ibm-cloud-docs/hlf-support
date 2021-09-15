@@ -108,7 +108,6 @@ subcollection: hlf-support
 
 
 
-<<<<<<< HEAD
 # IBM Cloud Hardware Security Module (HSM)
 {: #ibm-hlfsupport-hsm-gemalto}
 {: help}
@@ -1254,12 +1253,6 @@ resources:
       cex.s390.ibm.com/ibp: 1
 ```
 {: codeblock}
-<<<<<<< HEAD
-=======
-
-and specify the desired value.
->>>>>>> 6c4fda8f269e56051b0ddc254183e647138d1092
-
 
 - In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto#ibm-hlfsupport-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
 
