@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
@@ -662,6 +662,7 @@ You can expect this last step to take a few minutes while it downloads the image
   --args "--registry ${INTERNAL_REGISTRY}"
   ```
   {: codeblock}  
+
 2. Verify that the IBM Support for Hyperledger Fabric catalog is installed successfully in the cluster by running the following commands:
   ```sh
   # Following command should show ibm-hlfsupport catalog pod
@@ -669,7 +670,8 @@ You can expect this last step to take a few minutes while it downloads the image
   # Following command should show the ibm-hlfsupport catalog source installed
   oc get catalogsource -n openshift-marketplace
   ```
-  {: codeblock}  
+  {: codeblock}
+
   The output of this command looks similar to:
   ```
   # oc get pods -n openshift-marketplace
@@ -682,6 +684,8 @@ You can expect this last step to take a few minutes while it downloads the image
   redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
   redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
   ```
+  {: codeblock}
+
   It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
 3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 

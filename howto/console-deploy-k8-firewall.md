@@ -123,7 +123,7 @@ You can use the following instructions to deploy the {{site.data.keyword.IBM_not
 
 - After you deploy your peer and ordering nodes, you need to expose the ports of your nodes for your network to be able to respond to requests from applications or nodes outside your firewall. For more information about the ports that you need to expose, see [Internet Ports](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-ports) in the security guide.
 
-Kubernetes cluster does not download and update the latest version of {site.data.keyword.blockchainfull_notm}} Platform automatically. To get the latest update, you need to create a new cluster and a new service instance.
+Kubernetes cluster does not download and update the latest version of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric automatically. To get the latest update, you need to create a new cluster and a new service instance.
 {: note} 
 
 ## Resources required
@@ -571,7 +571,7 @@ service/ibm-hlfsupport-webhook created
   ```
   {: codeblock}
 
-2. When you deploy the {site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+2. When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
