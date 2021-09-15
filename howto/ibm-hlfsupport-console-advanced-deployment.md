@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -1256,7 +1256,7 @@ Now that you have gathered all the necessary certificates, you are ready to crea
 8. In the **Certificate** field, upload the file that contains the **Peer or ordering service admin identity certificate**.
 9. In the **Private key** field, upload the file that contains the **Peer or ordering service admin identity private key**.
 10. Review the information on the Summary page and click **Add peer** or **Add ordering service**.
-11. After you have created the peer or ordering node, you can upload the orderer admin identity to the {{site.data.keyword.blockchainfull_notm}} console. On the **Wallet** tab, click **Add identity**:
+11. After you have created the peer or ordering node, you can upload the orderer admin identity to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. On the **Wallet** tab, click **Add identity**:
  - In the **Name** field, enter an identity name that is used for your reference only.
  - In the **Certificate** field, upload a file that contains the admin identity's signing certificate (in base64 or PEM format).
  - In the **Private Key** field, upload a file that contains the admin identity's private key (in base64 or PEM format).  
@@ -1395,7 +1395,7 @@ After you create the `JSON` file with all of the certificates for the ordering n
 6. Select the **Organization MSP** definition that you imported.
 7.  On the next panel, you have the opportunity to configure resource allocation for the nodes. The selections that you make here are applied to all five ordering nodes. If you want to learn more about how to allocate resources to your node, see this topic on [Allocating resources](#ibm-hlfsupport-console-adv-deployment-allocate-resources).
 8. Review the summary and click **Add ordering service**.
-9. After you have created the ordering service, you can upload the orderer admin identity to the {{site.data.keyword.blockchainfull_notm}} console. On the **Wallet** tab, click **Add identity**:
+9. After you have created the ordering service, you can upload the orderer admin identity to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. On the **Wallet** tab, click **Add identity**:
   - In the **Name** field, enter an identity name that is used for your reference only.
   - In the **Certificate** field, upload a file that contains the admin identity's signing certificate (in base64 or PEM format).
   - In the **Private Key** field, upload a file that contains the admin identity's private key (in base64 or PEM format).  

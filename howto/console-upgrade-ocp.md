@@ -720,7 +720,7 @@ oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NA
 ```
 {: codeblock}
 
-### Step four: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
+### Step four: Upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #upgrade-ocp-steps-100-operator}
 
 Before updating the operator image, you need to stop the ibm-hlfsupport-console by running the following command. Replace <PROJECT_NAME> with the name of your project:
@@ -1647,12 +1647,12 @@ oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NA
 {: codeblock}
 
 
-### Step five: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
+### Step five: Upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #upgrade-ocp-operator}
 
-You can upgrade the {{site.data.keyword.blockchainfull_notm}} operator by fetching the operator deployment spec from your OpenShift project. When the operator upgrade is complete, the operator will upgrade your console and download the latest images for your blockchain nodes.
+You can upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator by fetching the operator deployment spec from your OpenShift project. When the operator upgrade is complete, the operator will upgrade your console and download the latest images for your blockchain nodes.
 
-Log in to your cluster by using the OpenShift CLI. Because each {{site.data.keyword.blockchainfull_notm}} network runs in a different project, you must switch to each OpenShift project and upgrade each network separately. Go to the OpenShift project of the network that you want to upgrade. Replace `<PROJECT_NAME>` with the name of your project.
+Log in to your cluster by using the OpenShift CLI. Because each {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network runs in a different project, you must switch to each OpenShift project and upgrade each network separately. Go to the OpenShift project of the network that you want to upgrade. Replace `<PROJECT_NAME>` with the name of your project.
 ```
 oc project <PROJECT_NAME>
 ```
@@ -2667,12 +2667,12 @@ oc adm policy add-scc-to-group <PROJECT_NAME> system:serviceaccounts:<PROJECT_NA
 ```
 {: codeblock}
 
-### Step six: Upgrade the {{site.data.keyword.blockchainfull_notm}} operator
+### Step six: Upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #upgrade-ocp-operator-firewall}
 
-You can upgrade the {{site.data.keyword.blockchainfull_notm}} operator by fetching the operator deployment spec from your OpenShift project. You can then update the spec with the latest operator image that you pushed to your local registry. When the operator upgrade is complete, the operator will download the images that you pushed to your local registry and upgrade your console.
+You can upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator by fetching the operator deployment spec from your OpenShift project. You can then update the spec with the latest operator image that you pushed to your local registry. When the operator upgrade is complete, the operator will download the images that you pushed to your local registry and upgrade your console.
 
-Log in to your cluster by using the OpenShift CLI. Because each {{site.data.keyword.blockchainfull_notm}} network runs in a different project, you must switch to each OpenShift project and upgrade each network separately. Go to the OpenShift project of the network that you want to upgrade. Replace `<PROJECT_NAME>` with the name of your project.
+Log in to your cluster by using the OpenShift CLI. Because each {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network runs in a different project, you must switch to each OpenShift project and upgrade each network separately. Go to the OpenShift project of the network that you want to upgrade. Replace `<PROJECT_NAME>` with the name of your project.
 ```
 oc project <PROJECT_NAME>
 ```

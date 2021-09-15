@@ -165,7 +165,7 @@ Use these steps when you have configured a Bastion server between the public int
 - [Download the case image inventory](#deploy-ocp-rhm-fw-bastion-case)
 - [Mirror the images](#deploy-ocp-rhm-fw-bastion-mirror)
 - [Configure global pull secret and insecure registry on the cluster](#deploy-ocp-rhm-fw-bastion-global)
-- [Install {{site.data.keyword.blockchainfull_notm}} operator catalog](#deploy-ocp-rhm-fw-bastion-operator)
+- [Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog](#deploy-ocp-rhm-fw-bastion-operator)
 
 ### Set up environment variables
 {: #deploy-ocp-rhm-fw-bastion-env}
@@ -304,7 +304,7 @@ You can expect this last step to take a few minutes while it downloads the image
     {: codeblock}
 3. Wait until all the nodes of your cluster are restarted before you proceed with the next step.
 
-### Install {{site.data.keyword.blockchainfull_notm}} operator catalog
+### Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog
 {: #deploy-ocp-rhm-fw-bastion-operator}
 
 1. Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric catalog to your cluster by running the following command:
@@ -351,7 +351,7 @@ Use these steps if you plan to download the images to a portable compute device 
 - [Copy the images to the local container registry on portable compute device](#deploy-ocp-rhm-fw-portable-compute)
 - [Copy the images to the container registry behind the firewall](#deploy-ocp-rhm-fw-portable-compute)
 - [Configure global pull secret and insecure registry on the cluster](#deploy-ocp-rhm-fw-portable-global)
-- [Install {{site.data.keyword.blockchainfull_notm}} operator catalog](#deploy-ocp-rhm-fw-portable-operator)
+- [Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog](#deploy-ocp-rhm-fw-portable-operator)
 
 ### Copy the images to the local container registry on portable compute device
 {: #deploy-ocp-rhm-fw-portable-compute}
@@ -649,7 +649,7 @@ You can expect this last step to take a few minutes while it downloads the image
     {: codeblock}
 3. Wait until all the nodes of your cluster are restarted before you proceed with the next step.
 
-### Install {{site.data.keyword.blockchainfull_notm}} operator catalog
+### Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog
 {: #deploy-ocp-rhm-fw-portable-operator}
 
 1. Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric catalog to your cluster by running the following command:
@@ -700,7 +700,7 @@ Use these steps when you want to download the images to portable storage device 
 - [Copy the images to the local container registry on the external compute](#deploy-ocp-rhm-fw-storage-compute)
 - [Copy the images to the container registry behind the firewall](#deploy-ocp-rhm-fw-storage-fw)
 - [Configure global pull secret and insecure registry on the cluster](#deploy-ocp-rhm-fw-storage-global)
-- [Install {{site.data.keyword.blockchainfull_notm}} operator catalog](#deploy-ocp-rhm-fw-storage-operator)
+- [Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog](#deploy-ocp-rhm-fw-storage-operator)
 
 ### Copy the images to the local container registry on the external compute
 {: #deploy-ocp-rhm-fw-storage-compute}
@@ -1023,7 +1023,7 @@ You can expect this last step to take a few minutes while it downloads the image
     {: codeblock}
 3. Wait until all the nodes of your cluster are restarted before you proceed with the next step.
 
-### Install {{site.data.keyword.blockchainfull_notm}} operator catalog
+### Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog
 {: #deploy-ocp-rhm-fw-storage-operator}
 
 1. Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric catalog to your cluster by running the following command:
@@ -1065,7 +1065,7 @@ You can expect this last step to take a few minutes while it downloads the image
 Congratulations! You have deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. The only thing left to do is to deploy the console user interface (UI).
 
 1. Log in to your OpenShift dashboard.
-2. Click on **Installed Operators** and under **Provider Type** select **{{site.data.keyword.blockchainfull_notm}} Operator Catalog**.
+2. Click on **Installed Operators** and under **Provider Type** select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Operator Catalog**.
 3. Click the **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** tile.
 4. Click **Install**.
 5. Be sure to select the correct namespace to install the operator in.

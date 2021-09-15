@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
@@ -281,9 +281,9 @@ If you are using Windows, you also must ensure the following:
 3. Click **Install**.
 4. If you are upgrading the extension, you will need to restart VS Code to complete installation of the extension.  
 
-After the installation, you can use the {{site.data.keyword.blockchainfull_notm}} icon on the left side of VS Code to open the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric panel.
+After the installation, you can use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon on the left side of VS Code to open the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric panel.
 
-![{{site.data.keyword.blockchainfull_notm}} icon](images/vscode-blockchain.png "{{site.data.keyword.blockchainfull_notm}} icon"){: caption="Figure 3. {{site.data.keyword.blockchainfull_notm}} icon in VS Code" caption-side="bottom"}
+![{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon](images/vscode-blockchain.png "{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon"){: caption="Figure 3. {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon in VS Code" caption-side="bottom"}
 
 The extension also adds new commands to the Visual Studio Code command palette. You can use the command palette to complete many of the operations that are explained in details in this guide.
 
@@ -294,7 +294,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tool
 
 To navigate to the tutorials from within VS Code, click the blockchain icon in the left navigation and then click the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon at the upper right corner to view the extension homepage. On the homepage, you can find a link to the tutorials gallery and the sample smart contracts.
 
-![{{site.data.keyword.blockchainfull_notm}} icon](images/vscode-tutorials.png "{{site.data.keyword.blockchainfull_notm}} icon"){: caption="Figure 4. Click on the {{site.data.keyword.blockchainfull_notm}} icon in the upper right corner to navigate to the tutorials and sample code" caption-side="bottom"}
+![{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon](images/vscode-tutorials.png "{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon"){: caption="Figure 4. Click on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric icon in the upper right corner to navigate to the tutorials and sample code" caption-side="bottom"}
 
 
 ## Step two: Create a smart contract project
@@ -302,7 +302,7 @@ To navigate to the tutorials from within VS Code, click the blockchain icon in t
 
 You can use the extension to create a new smart contract project in Visual Studio Code. The extension creates a basic smart contract that manages an example asset in the language of your choice. You can use the structure of the example as a starting point for developing your own business logic. The extension provides all the dependencies that are required to deploy your smart contract to an instance of Hyperledger Fabric.
 
-1. Click the **{{site.data.keyword.blockchainfull_notm}}** icon to open the **{{site.data.keyword.blockchainfull_notm}}** tab. Click the overflow menu in the smart contracts pane and click **Create New Project**.
+1. Click the **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** icon to open the **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** tab. Click the overflow menu in the smart contracts pane and click **Create New Project**.
 2. Select the smart contract type to generate. The **Default Contract** example is recommended for first-time users and demonstrates how to perform create, read, update, and delete operations to the public ledger that's shared by all network members.
 The **Private Data Contract** example demonstrates how to perform create, read, update, delete, and verify operations to a collection, that is private to a single network member.
 3. Select the language that you want to create a smart contract in. The current options are JavaScript, TypeScript, Go, and Java. **Note:** If you are deploying the smart contracts to a production network, JavaScript and TypeScript smart contracts require more resources than contracts written in Go.
@@ -372,7 +372,7 @@ After you have updated your smart contract, use [v2](/docs/hlf-support?topic=hlf
 You need to package a smart contract before you can install it on your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network or the preconfigured Hyperledger Fabric network. **Fabric V1 channels require smart contract packages to be in the `.cds` format, and V2 require the `.tar.gz` format.** Complete the following steps to package your smart contract:
 
 1. Open your smart contract project in VS Code by clicking **File** and then click **Open ...**. You can also click **Open Workspace** if you saved your project as a workspace. Ensure that you have the smart contract project open in the file viewer.
-2. Click the **{{site.data.keyword.blockchainfull_notm}}** icon to open the **{{site.data.keyword.blockchainfull_notm}}** tab.
+2. Click the **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** icon to open the **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** tab.
 3. In the **Smart Contracts** pane, click the overflow menu and select **Package Open Project**. You are asked for the name of the package and the version. You will also need to select whether you want to package it as a `.tar.gz` (for deploying to a channel with V2 application capability) or `.cds` (for deploying to a channel with V1 application capability). To find out the channel capabibilities/version, hover your mouse over the channel in the **Fabric Environments** panel that you wish to deploy to. This will display a tooltip containing the channel capabilities.
   - If you have one smart contract project, it is packaged automatically and be displayed in the **Smart Contracts** pane.
   - If you have multiple smart contract folders open, you are asked which one to package.
@@ -654,7 +654,7 @@ You can also add new users to the wallets that have already been created:
 1. In the **Fabric Wallets** pane, right-click a wallet and select **Add Identity**.
 2. Provide a name for the identity and an MSP ID.
 3. You can upload a JSON file, provide a certificate and private key, or provide an enrollment ID and secret.
-  - If you are connecting to a network on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can download an identity from your {{site.data.keyword.blockchainfull_notm}} console, either by exporting an identity from your wallet or by enrolling and then exporting an identity using your Certificate Authority. You can then upload the JSON file directly to VS Code.
+  - If you are connecting to a network on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can download an identity from your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, either by exporting an identity from your wallet or by enrolling and then exporting an identity using your Certificate Authority. You can then upload the JSON file directly to VS Code.
   - If you use a certificate and private key, browse to the certificate and private key.
   - If you use an enrollment ID and secret, choose the gateway to enroll with and enter the enrollment ID and secret.
 

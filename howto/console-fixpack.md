@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: Kubernetes, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -119,7 +119,7 @@ You can install the fix pack by updating the {{site.data.keyword.IBM_notm}} Supp
 
 1. [Update the webhook](#install-fixpack-webhook)
 1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](#install-fixpack-operator)
-1. [Update the {{site.data.keyword.blockchainfull_notm}} console](#install-fixpack-console)
+1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#install-fixpack-console)
 1. [Update your blockchain nodes](#install-fixpack-nodes)
 
 You can use these steps if you deployed the platform on the OpenShift Container Platform, open source Kubernetes, or distributions such as Rancher.  If you have multiple networks deployed on your cluster, you will need to repeat steps 2-4 to update each 1.0.0 network because they run on separate namespaces. If you experience any problems, see the instructions for [rolling back the fix pack installation](#install-fixpack-rollback).  If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Installing the 1.0.0 fix pack behind a firewall](#install-fixpack-firewall). You can install the fix pack without disrupting a running network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the process.
@@ -164,10 +164,10 @@ ibm-hlfsupport-webhook-5fd96f6c7d-gpwhr      1/1     Running   0          1m
 ```
 {: codeblock}
 
-## Step two: Update the {{site.data.keyword.blockchainfull_notm}} operator
+## Step two: Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #install-fixpack-operator}
 
-You can start applying the fix pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the oc CLI. You can find the name of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
+You can start applying the fix pack to your network by updating the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. If you deployed your network on Kubernetes, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the oc CLI. You can find the name of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
 
 Run the following command to download the operator deployment spec to your local file system. The default name of the operator deployment is `ibm-hlfsupport-operator`. If you changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
@@ -194,10 +194,10 @@ ibm-hlfsupport-operator   1/1       1            1           1m
 
 If you experience a problem while you are updating the operator, go to this [troubleshooting topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems.
 
-## Step three: Update the {{site.data.keyword.blockchainfull_notm}} console
+## Step three: Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #install-fixpack-console}
 
-After you update to the {{site.data.keyword.blockchainfull_notm}} operator, you need to apply the fix pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
+After you update to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator, you need to apply the fix pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
 
 You can start by running the following command to delete the ConfigMap used by the console deployer. The default name of the ConfigMap is `ibpconsole-deployer`. If you changed the name of the console during the deployment process, you can use the `kubectl get configmap -n <namespace>` command to get the list of ConfigMaps on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
@@ -255,7 +255,7 @@ If you deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabri
 1. [Pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](#install-fixpack-images-firewall)
 1. [Update the webhook](#install-fixpack-webhook-firewall)
 1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](#install-fixpack-operator-firewall)
-1. [Update the {{site.data.keyword.blockchainfull_notm}} console](#install-fixpack-console-firewall)
+1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#install-fixpack-console-firewall)
 1. [Update your blockchain nodes](#install-fixpack-nodes-firewall)
 
 You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the upgrade process. If you have multiple networks deployed on your cluster, you will need to repeat steps 3-5 to update each 1.0.0 network because they run on separate namespaces.
@@ -346,10 +346,10 @@ ibm-hlfsupport-webhook-5fd96f6c7d-gpwhr      1/1     Running   0          1m
 ```
 {: codeblock}
 
-### Step three: Update the {{site.data.keyword.blockchainfull_notm}} operator
+### Step three: Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #install-fixpack-operator-firewall}
 
-You can start applying the fix pack to your network by updating the {{site.data.keyword.blockchainfull_notm}} operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.blockchainfull_notm}} network. If you deployed your network on Kubernetes, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the `oc` Cli. You can find the name of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
+You can start applying the fix pack to your network by updating the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. Log in to your cluster by using the kubectl CLI. You will need to provide the name of the Kubernetes namespace that you created to deploy your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. If you deployed your network on Kubernetes, you can use the `kubectl get namespace` command to find the name of your namespace. If you deployed the platform on the OpenShift Container Platform, log in to your cluster using the `oc` Cli. You can find the name of your OpenShift project using the `oc get project` command. Use the project name as the value for `<namespace>`.
 
 Run the following command to download the operator deployment spec to your local file system. The default name of the operator deployment is `ibm-hlfsupport-operator`. If you changed the name during the deployment process, you can use the `kubectl get deployment -n <namespace>` command to get the name of the deployments on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```
@@ -376,10 +376,10 @@ ibm-hlfsupport-operator   1/1       1            1           1m
 
 If you experience a problem while you are updating the operator, go to this [troubleshooting topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems.
 
-### Step four: Update the {{site.data.keyword.blockchainfull_notm}} console
+### Step four: Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #install-fixpack-console-firewall}
 
-After you update to the {{site.data.keyword.blockchainfull_notm}} operator, you need to apply the fix pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
+After you update to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator, you need to apply the fix pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
 
 You can start by running the following command to delete the ConfigMap used by the console deployer. The default name of the deployer ConfigMap is `ibpconsole-deployer`. If you changed the name of the console during the deployment process, you can use the `kubectl get configmap -n <namespace>` command to get the list of ConfigMaps on your namespace. Replace `<namespace>` with the name of your namespace or OpenShift project:
 ```

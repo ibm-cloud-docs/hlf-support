@@ -171,9 +171,9 @@ This offering includes two deployment options:
 
 Includes the operator, management console, peer, CA, ordering node, and smart contract container images. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric management console can be used to create all of the fundamental components of a Hyperledger Fabric network: a Certificate Authority (CA), an ordering service, and peers, on your local cluster. You can also use your console to operate a distributed multicloud network by importing nodes that were deployed by using other consoles. For more information about the building blocks of Hyperledger Fabric networks, see the [blockchain component overview](/docs/hlf-support?topic=hlf-support-blockchain-component-overview).
 
-**{{site.data.keyword.blockchainfull_notm}} images**  
+**{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images**  
 
-For experienced Hyperledger Fabric customers, a purchase of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 includes an entitlement to the peer, CA, ordering node, and smart contract container images that are signed and supported by {{site.data.keyword.IBM_notm}}. These images are based on the open source Hyperledger Fabric code base and contain a number of enhancements for stability and serviceability. The images are bundled with support from {{site.data.keyword.IBM_notm}}. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric management console and operator are not among the images that are included in this entitlement. For more information, see [{{site.data.keyword.blockchainfull_notm}} images for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-blockchain-images#blockchain-images).
+For experienced Hyperledger Fabric customers, a purchase of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 includes an entitlement to the peer, CA, ordering node, and smart contract container images that are signed and supported by {{site.data.keyword.IBM_notm}}. These images are based on the open source Hyperledger Fabric code base and contain a number of enhancements for stability and serviceability. The images are bundled with support from {{site.data.keyword.IBM_notm}}. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric management console and operator are not among the images that are included in this entitlement. For more information, see [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-blockchain-images#blockchain-images).
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the following key features:
 
@@ -232,7 +232,7 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 ## License and pricing
 {: #console-ocp-about-license}
 
-Your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 entitlement includes both the full platform and the {{site.data.keyword.blockchainfull_notm}} images.
+Your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 entitlement includes both the full platform and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images.
 
 The entitlement does not include a Kubernetes distribution. You must procure that separately.
 {: note}

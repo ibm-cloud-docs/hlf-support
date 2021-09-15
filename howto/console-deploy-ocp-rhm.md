@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -150,7 +150,7 @@ To learn more about the Marketplace see the [Red Hat documentation](https://mark
 You must have the cluster administrator role to install the operators from the Red Hat Marketplace.
 {: note}
 
-1. These instructions assume you already have a Kubernetes cluster available in OpenShift Container Platform v4.6+ and that you created a project for your {{site.data.keyword.blockchainfull_notm}} deployment. Unsure how to create a project? See [Create a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment](#deploy-ocp-rhm-project).
+1. These instructions assume you already have a Kubernetes cluster available in OpenShift Container Platform v4.6+ and that you created a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment. Unsure how to create a project? See [Create a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment](#deploy-ocp-rhm-project).
 2. Browse to the [Red Hat Marketplace](https://marketplace.redhat.com/en-us){: external} and log in or create a new account.
 3. Follow the [instructions](https://marketplace.redhat.com/en-us/documentation/clusters#register-openshift-cluster-with-red-hat-marketplace) to register your OpenShift cluster with the Red Hat Marketplace.
 4. When prompted `Would you like to go back to the Red Hat Marketplace now? [Y/n]`, type `Y` to retrieve the <wintitle>Red Hat Marketplace</wintitle> page in your browser.

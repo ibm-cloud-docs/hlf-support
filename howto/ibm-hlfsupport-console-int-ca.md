@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: intermediate CA, root CA, parent server, Certificate Authority, multicloud
 
@@ -175,7 +175,7 @@ This process can be performed using the console or the APIs, if you are an exper
 ## Part One: Actions you perform from the root CA
 {: #ibm-hlfsupport-ica-part-one}
 
-1. **Deploy a root CA.** Before you can deploy an intermediate CA, a root CA must already exist in your {{site.data.keyword.blockchainfull_notm}} instance. See the [Build a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-CA-org1CA) tutorial for instructions on how to create a CA.
+1. **Deploy a root CA.** Before you can deploy an intermediate CA, a root CA must already exist in your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric instance. See the [Build a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-CA-org1CA) tutorial for instructions on how to create a CA.
 
 2. **Register the intermediate CA admin identity with the root CA.** In order for an intermediate CA to be able to register and enroll identities, the intermediate CA admin identity must be registered with the root CA.
   - Click the root CA tile to open it and click **Register user**.

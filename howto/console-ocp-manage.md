@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-15"
 
 keywords: IBM Support for Hyperledger Fabric, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -158,7 +158,7 @@ A user with a manager role can update the roles of other console users and provi
 
 If you are a user with a manager role, you can remove a user's access to the console. In the **Users** tab of the console, click the checkbox at the beginning of the specific user row. Then, click the **Trash** can icon at the top of the table, next to the **Add new users** button. After you remove the user from the table, the user cannot log in to the console again.
 
-## Using the {{site.data.keyword.blockchainfull_notm}} APIs
+## Using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs
 {: #console-icp-manage-apis}
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric exposes RESTful APIs that allow you to import, edit, and remove blockchain nodes from your console. You can also use APIs to manage the settings, logging, and notifications of your console.

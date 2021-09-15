@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -258,7 +258,7 @@ For more details on smart contract-API compatibility, see:
 ## Registering an application identity
 {: #ibm-hlfsupport-console-app-identities}
 
-Applications need to sign the transactions they submit to {{site.data.keyword.blockchainfull_notm}} nodes, and attach a signing certificate that is used by nodes to verify that the transactions are being sent by the proper party. This ensures that transactions are submitted by the organizations that have permission to participate.
+Applications need to sign the transactions they submit to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric nodes, and attach a signing certificate that is used by nodes to verify that the transactions are being sent by the proper party. This ensures that transactions are submitted by the organizations that have permission to participate.
 
 The network operator needs to use the organization's CA to [register an application identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-register), which can then be used by the application developer to generate a certificate and private key. The operator can provide the enroll ID and secret of the identity, along the CA endpoint information, to be used by the SDK to generate certificates. By enrolling on the client side, the application developer ensures that no other party has access to the private key of the application. During registration, the network operator can set an enrollment limit of one for additional security. After the application developer enrolls, the enroll ID and secret cannot be used to generate another private key.
 
@@ -524,7 +524,7 @@ Smart contracts running on peers using the Fabric v1.4.x image must be packaged 
 
 Smart contracts running on peers using a Fabric v2.x image must be packed using the [.tar.gz format](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode_lifecycle.html#step-one-packaging-the-smart-contract){: external}. These smart contracts must be installed and proposed by you, then approved by other channel members before being committed on the channel. For information on using smart contracts with Fabric v2.x peers, check out [Deploying a smart contract using Fabric 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2).
 
-You can use the [{{site.data.keyword.blockchainfull_notm}} VS code extension](/docs/hlf-support?topic=hlf-support-develop-vscode) to package the smart contract. After you install the extension, use Visual Studio Code to open the `contracts` folder in your workspace. Open the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ tab. In the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ pane, go to the smart contract packages section and click **Package Open Project**. The VS code extension uses the files in the `contracts` folder to create a new package named `papernet-js@.0.0.1.cds`. Right-click this package to export it to your local file system. You can then use your console to install your smart contract and either instantiate or propose it.
+You can use the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS code extension](/docs/hlf-support?topic=hlf-support-develop-vscode) to package the smart contract. After you install the extension, use Visual Studio Code to open the `contracts` folder in your workspace. Open the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ tab. In the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ pane, go to the smart contract packages section and click **Package Open Project**. The VS code extension uses the files in the `contracts` folder to create a new package named `papernet-js@.0.0.1.cds`. Right-click this package to export it to your local file system. You can then use your console to install your smart contract and either instantiate or propose it.
 
 ### Step three: Generate certificates for your wallet
 {: #ibm-hlfsupport-console-app-commercial-paper-step-three-generate-certificates}

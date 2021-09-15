@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -375,7 +375,7 @@ https://openshiftcluster.us-south.containers.appdomain.cloud:443/ak/api/v2/compo
 ```
 {: codeblock}
 
-In order to create nodes using the {{site.data.keyword.blockchainfull_notm}} APIs, you need to use the APIs in a certain sequence in conjunction with Fabric CA client. To learn how to create nodes, see [Build a network by using APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-build-with-apis).
+In order to create nodes using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs, you need to use the APIs in a certain sequence in conjunction with Fabric CA client. To learn how to create nodes, see [Build a network by using APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-build-with-apis).
 
 You can also use the APIs to import and then operate nodes that reside in other clusters. For more information, see [Import a network by using APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-import-with-apis).
 
@@ -387,7 +387,7 @@ You can only import CA, peer, and ordering nodes that are exported from other {{
 ## Building a network by using APIs
 {: #ibm-hlfsupport-v2-apis-build-with-apis}
 
-You can use APIs to create blockchain components in your instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. Use the following steps to build a blockchain network by using the {{site.data.keyword.blockchainfull_notm}} APIs.
+You can use APIs to create blockchain components in your instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. Use the following steps to build a blockchain network by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs.
 
 1. Create a Certificate Authority (CA) by calling [`POST /ak/api/v2/kubernetes/components/ca`](/apidocs/blockchain#create-a-ca).
 
@@ -443,7 +443,7 @@ If you are using a multizone cluster, you can use the APIs to deploy a blockchai
 ## Creating a node with a custom configuration
 {: #ibm-hlfsupport-v2-apis-custom}
 
-If you are using the {{site.data.keyword.blockchainfull_notm}} APIs to deploy a CA, peer, or ordering node, you have the option of customizing the node configuration by using a configuration override JSON string. The nodes that are deployed by the {{site.data.keyword.blockchainfull_notm}} Console and APIs are configured with the default Fabric values that are provided in the  `fabric-ca-server-config.yaml`, `orderer.yaml`, and `core.yaml` files. You can customize your node settings by providing a configuration override JSON to the APIs that create or update your nodes. You can use the configuration override to deploy a High Availability CA or use a Hardware Security Module (HSM) while using the {{site.data.keyword.blockchainfull_notm}} APIs. For more information about the configuration override, High Availability CAs, or HSMs, see [Advanced deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment).
+If you are using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs to deploy a CA, peer, or ordering node, you have the option of customizing the node configuration by using a configuration override JSON string. The nodes that are deployed by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Console and APIs are configured with the default Fabric values that are provided in the  `fabric-ca-server-config.yaml`, `orderer.yaml`, and `core.yaml` files. You can customize your node settings by providing a configuration override JSON to the APIs that create or update your nodes. You can use the configuration override to deploy a High Availability CA or use a Hardware Security Module (HSM) while using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs. For more information about the configuration override, High Availability CAs, or HSMs, see [Advanced deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment).
 
 ### Example: Creating a custom Certificate Authority
 
@@ -651,7 +651,7 @@ curl -X POST "https://{API-Endpoint}/ak/api/v2/kubernetes/components/fabric-peer
 ## Import a network by using APIs
 {: #ibm-hlfsupport-v2-apis-import-with-apis}
 
-You can also use the APIs to import {{site.data.keyword.blockchainfull_notm}} components that are created by using the APIs or the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console into another service instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+You can also use the APIs to import {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components that are created by using the APIs or the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console into another service instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 1. Import a CA by calling [`POST /ak/api/v2/components/ca`](/apidocs/blockchain#import-a-ca).
 
@@ -838,7 +838,7 @@ First, you need to register a component identity with your CA. Your component us
 
   Make a note of the second **affiliation** value, for example, `org1.department1`. You need to use this value in the command below.
 
-  If you created the CA with the {{site.data.keyword.blockchainfull_notm}} APIs instead of the console, your CA is deployed without affiliations, unless you created affiliations by using the Fabric CA Client. If your CA does not have affiliations, you can skip this step and leave the `--id.affiliation` off future commands.
+  If you created the CA with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs instead of the console, your CA is deployed without affiliations, unless you created affiliations by using the Fabric CA Client. If your CA does not have affiliations, you can skip this step and leave the `--id.affiliation` off future commands.
 
 3. Run the following command to register the ordering node or peer.
 

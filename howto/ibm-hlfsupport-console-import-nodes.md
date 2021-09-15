@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: import nodes, another console, import a CA, import a peer, import admin identities, import an ordering service node
 
@@ -141,7 +141,7 @@ As you will see below, there are two ways to export and import components and id
 
 While importing nodes provides the ability to perform many of the actions that can be performed on the console where a node or identity was created, there are a few limitations on the ability to administer imported components:
 
-- All nodes to be imported must have been deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console or [{{site.data.keyword.blockchainfull_notm}} APIs](https://cloud.ibm.com/apidocs/blockchain){: external}.
+- All nodes to be imported must have been deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console or [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs](https://cloud.ibm.com/apidocs/blockchain){: external}.
 - You cannot patch nodes that have been imported into the console.
 - You cannot delete nodes that you imported into the console from the cluster where they were deployed. You can only remove the node from the console it was imported to.
 - You cannot override the settings of an imported node by using the **Edit configuration** button to update the `JSON`.

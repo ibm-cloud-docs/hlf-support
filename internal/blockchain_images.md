@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: IBM Support for Hyperledger Fabric, images, multicloud
 
@@ -108,7 +108,7 @@ subcollection: hlf-support
 
 
 
-# Using the {{site.data.keyword.blockchainfull_notm}} images
+# Using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images
 {: #blockchain-images}
 
 
@@ -117,20 +117,20 @@ For experienced Hyperledger Fabric customers, the {{site.data.keyword.IBM_notm}}
 
 A key benefit of using these images over the open source community version is that {{site.data.keyword.IBM_notm}} scans the open source code for security vulnerabilities daily as well as keeps the images up to date with operating system and vulnerability patches. Additionally, {{site.data.keyword.IBM_notm}} provides 24x7x365 support with SLAs appropriate for production environments.  The images are based on [Red Hat Universal Base Image (UBI)](https://www.redhat.com/en/blog/introducing-red-hat-universal-base-image){: external} and the blockchain components are enabled for HSM support.   
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images can be purchased through an entitlement to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0. The images are bundled with support from {{site.data.keyword.IBM_notm}}. While it is possible to configure mixed networks that include components (CAs, peers, and ordering nodes) from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and Hyperledger Fabric community version, {{site.data.keyword.IBM_notm}} support is limited to {{site.data.keyword.blockchainfull_notm}} components.  {{site.data.keyword.IBM_notm}} does not support blockchain components that are deployed using the open source Hyperledger Fabric Docker images.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images can be purchased through an entitlement to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0. The images are bundled with support from {{site.data.keyword.IBM_notm}}. While it is possible to configure mixed networks that include components (CAs, peers, and ordering nodes) from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and Hyperledger Fabric community version, {{site.data.keyword.IBM_notm}} support is limited to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components.  {{site.data.keyword.IBM_notm}} does not support blockchain components that are deployed using the open source Hyperledger Fabric Docker images.
 
 ## Supported Platforms
 {: #blockchain-images-supported-platforms}
 
-The {{site.data.keyword.blockchainfull_notm}} images must be deployed using a container environment on x86_64 or s390x hardware. Refer to the list of [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites).
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images must be deployed using a container environment on x86_64 or s390x hardware. Refer to the list of [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites).
 
-Although you can deploy the {{site.data.keyword.blockchainfull_notm}} images on Mac OS for testing purposes, the permissions on Mac OS might prevent you from instantiating a smart contract.
+Although you can deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images on Mac OS for testing purposes, the permissions on Mac OS might prevent you from instantiating a smart contract.
 {: note}
 
 ## Supported Fabric versions
 {: #blockchain-images-supported-fabric}
 
-The {{site.data.keyword.blockchainfull_notm}} Docker images are based on Hyperledger Fabric v2.2.3. You can use this documentation to install and deploy the latest version of Fabric used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Docker images are based on Hyperledger Fabric v2.2.3. You can use this documentation to install and deploy the latest version of Fabric used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
 
 See the [My Support](https://www.ibm.com/support/pages/node/1072956){: external} page for details on what is supported.
 
@@ -140,8 +140,8 @@ See the [My Support](https://www.ibm.com/support/pages/node/1072956){: external}
 The images do not include the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console or operator. This offering is meant for experienced Fabric users with existing deployments. If you are still exploring Hyperledger Fabric, you can get started with [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks#ibm-hlfsupport-v2-deploy-iks).
 {:important}
 
-- {{site.data.keyword.blockchainfull_notm}} provides support for Hyperledger Fabric only if you purchase {{site.data.keyword.blockchainfull_notm}} 1.0.0 and deploy the commercial distribution of Hyperledger Fabric images that comes with it. You cannot purchase support for the Hyperledger Fabric Docker images that are provided by the Hyperledger community.
-- {{site.data.keyword.blockchainfull_notm}} does not support images that have been altered.
+- {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric provides support for Hyperledger Fabric only if you purchase {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and deploy the commercial distribution of Hyperledger Fabric images that comes with it. You cannot purchase support for the Hyperledger Fabric Docker images that are provided by the Hyperledger community.
+- {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric does not support images that have been altered.
 - You cannot use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to deploy or operate these images. But, if you download the image for the gRPC web proxy and connect the proxy to node that you deploy, you can import the node into an existing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. After you import a node into the console, you can operate that node alongside nodes that were deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 ## License and pricing
@@ -212,20 +212,20 @@ skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20210915 docker:
 ## Getting started
 {: #getting-started}
 
-To deploy and operate the {{site.data.keyword.blockchainfull_notm}} images, you can download the open source tools that are provided by the Hyperledger community. Follow the steps to [Install the prerequisites](https://hyperledger-fabric.readthedocs.io/en/release-2.2/prereqs.html) and [Download the Fabric Samples, Binaries, and configuration files](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html){: external} in the Hyperledger Fabric documentation. These steps might download the open source Fabric images as well.
+To deploy and operate the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images, you can download the open source tools that are provided by the Hyperledger community. Follow the steps to [Install the prerequisites](https://hyperledger-fabric.readthedocs.io/en/release-2.2/prereqs.html) and [Download the Fabric Samples, Binaries, and configuration files](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html){: external} in the Hyperledger Fabric documentation. These steps might download the open source Fabric images as well.
 
 After you download the Fabric samples and binaries, you can find the configuration files and binaries that you need to set up a network in the `fabric-samples\config` and `fabric-samples\bin` folders. You can also find example artifacts and scripts for how to set up a network by using Docker Compose in the `fabric-samples\first-network` directory. You learn more about these artifacts and the steps that are involved by reading the accompanying [Build Your First Network](http://hyperledger-fabric.readthedocs.io/en/release-2.2/build_network.html){: external} tutorial.
 
-If you are using the open source configuration files, you need to make the following changes to deploy the {{site.data.keyword.blockchainfull_notm}} images:
+If you are using the open source configuration files, you need to make the following changes to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images:
 
-1. For each component, you need to alter the `image` field to use the {{site.data.keyword.blockchainfull_notm}} image instead of the open source image.
+1. For each component, you need to alter the `image` field to use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric image instead of the open source image.
 
 2. You need add the `LICENSE` field to accept the {{site.data.keyword.IBM_notm}} license:
   ```
   LICENSE=accept
   ```
 
-3. If you are deploying a peer node, you need to use the core chaincode variables to instruct the peer to build chaincode using the {{site.data.keyword.blockchainfull_notm}} certified images. For example, if you are using Go chaincode, you need to set the following variables:
+3. If you are deploying a peer node, you need to use the core chaincode variables to instruct the peer to build chaincode using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric certified images. For example, if you are using Go chaincode, you need to set the following variables:
   ```
   CORE_CHAINCODE_NODE_RUNTIME=cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.3-20210915-amd64
   CORE_CHAINCODE_GOLANG_DYNAMICLINK=true
@@ -249,7 +249,7 @@ If you are using the open source configuration files, you need to make the follo
           KeyStore:
   ```
 
-5. For security reasons, the {{site.data.keyword.blockchainfull_notm}} images require a different level of permission to access data than the open source images. You need to change the access of the folder that you mount to store your organization MSP and TLS certificates and the folder that is mounted to store your ledger data. You can use the following command to change access to the folders before they are mounted inside the container:
+5. For security reasons, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images require a different level of permission to access data than the open source images. You need to change the access of the folder that you mount to store your organization MSP and TLS certificates and the folder that is mounted to store your ledger data. You can use the following command to change access to the folders before they are mounted inside the container:
   ```
   chmod -R 777 <folder_name>
   ```
@@ -259,7 +259,7 @@ In addition to using the Fabric tools, you can also use the tools that are provi
 ### Configuring the gRPC web proxy (optional)
 {: #getting-started-proxy}
 
-If you want to manage your nodes using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, you can deploy an instance of the gRPC web proxy and then connect it to a node that you deployed with the {{site.data.keyword.blockchainfull_notm}} images. You can then import the node into a console that was deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 or {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. You need to deploy a separate web proxy for each node.
+If you want to manage your nodes using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, you can deploy an instance of the gRPC web proxy and then connect it to a node that you deployed with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images. You can then import the node into a console that was deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 or {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. You need to deploy a separate web proxy for each node.
 
 To deploy the proxy, you need to set the following environment variables inside the container.
 ```
@@ -294,7 +294,7 @@ We deploy an [example web proxy](#example-proxy) using Docker Compose as part of
 ## Example
 {: #blockchain-images-example}
 
-We can provide an example of the changes you need to make by updating the `first-network` sample to run the {{site.data.keyword.blockchainfull_notm}} images instead of the community Docker images. The example is provided for context, and is not a template for deploying a production network.
+We can provide an example of the changes you need to make by updating the `first-network` sample to run the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images instead of the community Docker images. The example is provided for context, and is not a template for deploying a production network.
 
 You need to update the `peer-base.yaml` and `docker-compose-base.yaml` that are in the `fabric-samples/first-network/base` folder. You can find the orderer section of the `peer-base.yaml` below:
 
@@ -323,7 +323,7 @@ orderer-base:
 ```
 {: codeblock}
 
-To deploy an ordering node by using the {{site.data.keyword.blockchainfull_notm}} image, change the `image` field to the tag of the {{site.data.keyword.blockchainfull_notm}} image, `cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20210915-amd64`. Accept the license by adding the field of `LICENSE=accept`. You then need to add the `FABRIC_CFG_PATH` environment variable and set the path to the folder where you mount the configuration files. Set the `working_dir` variable to the same path. After your changes, the orderer section would look like the example below:
+To deploy an ordering node by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric image, change the `image` field to the tag of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric image, `cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20210915-amd64`. Accept the license by adding the field of `LICENSE=accept`. You then need to add the `FABRIC_CFG_PATH` environment variable and set the path to the folder where you mount the configuration files. Set the `working_dir` variable to the same path. After your changes, the orderer section would look like the example below:
 
 ```yaml
 orderer-base:
@@ -442,12 +442,12 @@ sudo ./byfn.sh up -i 1.4.12
 ```
 {: codeblock}
 
-You can use the updates that are provided in this example to deploy the {{site.data.keyword.blockchainfull_notm}} images in the environment of your choice. The Fabric samples that are published by the Hyperledger community are intended to be used only as examples. Do not use the samples as templates for deploying production networks.
+You can use the updates that are provided in this example to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images in the environment of your choice. The Fabric samples that are published by the Hyperledger community are intended to be used only as examples. Do not use the samples as templates for deploying production networks.
 
-### Deploying an {{site.data.keyword.blockchainfull_notm}} Certificate Authority
+### Deploying an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Certificate Authority
 {: #blockchain-images-example-ca}
 
-The `first-network` sample does not use Certificate Authorities to deploy the network. However, you can find a file below that you can use to deploy an {{site.data.keyword.blockchainfull_notm}} Certificate Authority using Docker Compose. If you want to deploy a CA as part of the example, you should use this file instead of editing the `docker-compose-ca.yaml` file in the `first-network` directory, which deploys a CA using existing crypto material. Save the following file as ``docker-compose-ibm-ca.yaml``:
+The `first-network` sample does not use Certificate Authorities to deploy the network. However, you can find a file below that you can use to deploy an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Certificate Authority using Docker Compose. If you want to deploy a CA as part of the example, you should use this file instead of editing the `docker-compose-ca.yaml` file in the `first-network` directory, which deploys a CA using existing crypto material. Save the following file as ``docker-compose-ibm-ca.yaml``:
 
 ```yaml
 version: '2'
@@ -680,12 +680,12 @@ You need to complete these steps for each node that you want to import into an i
 ## Interoperability
 {: #blockchain-images-interop}
 
-Nodes that are deployed by using the {{site.data.keyword.blockchainfull_notm}} images can join the channels of other {{site.data.keyword.blockchainfull_notm}} offerings, such as {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. Unless you connected an instance of the gRPC web proxy to the node, you cannot use the console to operate the images. You need to use Fabric tools to join existing channels that were created with a console or create new channels.
+Nodes that are deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images can join the channels of other {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric offerings, such as {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. Unless you connected an instance of the gRPC web proxy to the node, you cannot use the console to operate the images. You need to use Fabric tools to join existing channels that were created with a console or create new channels.
 
 ## Upgrading to new versions
 {: #blockchain-images-upgrade}
 
-You can upgrade your deployment to the latest version of the {{site.data.keyword.blockchainfull_notm}} images. The latest images normally contain security or stability improvements, or use a higher version Hyperledger Fabric, allowing you to take advantage of the latest Fabric features. To upgrade your network, you need to back up the ledger and MSP data for each node and then manually upgrade the node binaries. For more information about upgrading a network that you deployed using the {{site.data.keyword.blockchainfull_notm}} images, see [Upgrading Your Network Components](https://hyperledger-fabric.readthedocs.io/en/release-2.2/upgrade.html){: external} in the Hyperledger Fabric documentation.
+You can upgrade your deployment to the latest version of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images. The latest images normally contain security or stability improvements, or use a higher version Hyperledger Fabric, allowing you to take advantage of the latest Fabric features. To upgrade your network, you need to back up the ledger and MSP data for each node and then manually upgrade the node binaries. For more information about upgrading a network that you deployed using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images, see [Upgrading Your Network Components](https://hyperledger-fabric.readthedocs.io/en/release-2.2/upgrade.html){: external} in the Hyperledger Fabric documentation.
 
 ## Getting support
 {: #blockchain-images-support}

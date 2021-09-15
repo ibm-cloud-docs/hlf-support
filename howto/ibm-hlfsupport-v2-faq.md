@@ -184,7 +184,7 @@ Refer to the following table for information on which version of Fabric is used 
 
 For an updated list of all the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment options check out the [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites).
 
-It is important to note that the {{site.data.keyword.blockchainfull_notm}} support only spans across Hyperledger Fabric based component issues for customers who have purchased the offering. Some examples include assistance in Fabric upgrades, smart contract deployment, adding peers to channels, etc.
+It is important to note that the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric support only spans across Hyperledger Fabric based component issues for customers who have purchased the offering. Some examples include assistance in Fabric upgrades, smart contract deployment, adding peers to channels, etc.
 
 On the other hand, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric will not provide deployment support for environments outside of the supported platform. Also it will be up to the customer to configure the network and address their own infrastructure related issues. Examples of these types of issues include failed deployment to a Kubernetes service, infrastructure capacity, custom firewall settings, etc.
 
@@ -361,7 +361,7 @@ Versions 1.0.0 of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 {: #ibm-hlfsupport-v2-faq-ansible-support}
 {: faq}
 
-Ansible is an open source technology and this product is not officially supported by {{site.data.keyword.IBM_notm}}. For support related to the usage of the {{site.data.keyword.blockchainfull_notm}}  Platform and Ansible playbooks use the [GitHub repository](https://github.com/IBM-Blockchain/ansible-collection/issues){: external}.
+Ansible is an open source technology and this product is not officially supported by {{site.data.keyword.IBM_notm}}. For support related to the usage of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and Ansible playbooks use the [GitHub repository](https://github.com/IBM-Blockchain/ansible-collection/issues){: external}.
 
 ## Do I need OpenShift to run CodeReady Workspace?
 {: #ibm-hlfsupport-v2-faq-codeready-openshift}

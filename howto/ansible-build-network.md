@@ -134,7 +134,7 @@ Before using the playbook, you need to complete the following steps:
 
 After you deploy an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service instance, you need to gather the connection information for the console.If your cluster is running in a Red Hat OpenShift or Kubernetes cluster that is not in {{site.data.keyword.cloud_notm}}, you need to perform the following steps:
 
-1. **Determine the URL of your {{site.data.keyword.blockchainfull_notm}}  Platform console.**
+1. **Determine the URL of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.**
    The URL is of the format `https://<NAMESPACE>-ibpconsole-console.<DOMAIN>` where:
 
     - `<NAMESPACE>` is the name of the namespace that you created for your cluster. If you are running OpenShift Container Platform, it is the name of your project.
