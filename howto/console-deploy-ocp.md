@@ -128,8 +128,6 @@ When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 
 1. See [Supported platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites) for a list of supported versions.
 
-
-
 2. You need to install and connect to your cluster by using the [OpenShift Container Platform CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} to deploy the platform. If you are using an OpenShift cluster that was deployed with the {{site.data.keyword.IBM_notm}} Kubernetes Service, use these instructions to [Install the OpenShift Origin CLI](/docs/openshift?topic=openshift-openshift-cli#cli_oc).
 
 3. If you have a Hardware Security Module (HSM) that you plan to use to generate and store the private key for your CA, peer, or ordering nodes, you need to create an HSM client image and push it to your container registry. Follow instructions in the [advanced deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-hsm-build-docker) topic to build the image.
@@ -943,11 +941,14 @@ If you are creating an **HSM-enabled** operator deployment, you need to replace:
 allowPrivilegeEscalation: false
 allowPrivilegedContainer: false
 ```
+{: codeblock}
+
 with:
 ```
 allowPrivilegeEscalation: true
 allowPrivilegedContainer: true
 ```
+{: codeblock}
 
 After you save and edit the file, run the following commands to add the file to your cluster and add the policy to your project.
 ```
