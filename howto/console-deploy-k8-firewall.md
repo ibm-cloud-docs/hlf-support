@@ -575,7 +575,8 @@ service/ibm-hlfsupport-webhook created
 
 Run this command to update the CA CRD:   
     ```yaml
-    cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+    cat <<EOF | kubectl apply  -f - 
+    apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpcas.ibp.com
@@ -653,7 +654,8 @@ status:
     singular: ibpca
   conditions: []
   storedVersions:
-  - v1beta1 EOF
+  - v1beta1 
+    EOF
     ```
     {: codeblock}
 
@@ -672,7 +674,8 @@ or
 
 Run this command to update the peer CRD:
     ```yaml
-    cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+    cat <<EOF | kubectl apply  -f - 
+    apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibppeers.ibp.com
@@ -735,7 +738,8 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
- EOF
+
+    EOF
     ```
     {: codeblock}
 
@@ -754,7 +758,8 @@ or
 
 Run this command to update the console CRD:
     ```yaml
-    cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+    cat <<EOF | kubectl apply  -f - 
+    apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibpconsoles.ibp.com
@@ -816,7 +821,8 @@ status:
     singular: ibpconsole
   conditions: []
   storedVersions:
-  - v1beta1 EOF
+  - v1beta1 
+    EOF
     ```
     {: codeblock}
 
@@ -835,7 +841,8 @@ or
 
 Run this command to update the orderer CRD:  
     ```yaml
-    cat <<EOF | kubectl apply  -f - apiVersion: apiextensions.k8s.io/v1
+    cat <<EOF | kubectl apply  -f - 
+    apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
   name: ibporderers.ibp.com
@@ -897,7 +904,8 @@ status:
     singular: ibporderer
   conditions: []
   storedVersions:
-  - v1beta1 EOF
+  - v1beta1 
+    EOF
     ```
     {: codeblock}
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -113,7 +113,11 @@ subcollection: hlf-support
 {: help}
 {: support}
 
+<<<<<<< HEAD
+{{site.data.keyword.cloud_notm}} includes an [HSM](#x6704988){: term} service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+=======
 {{site.data.keyword.cloud_notm}} includes an [HSM]{: term} service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+>>>>>>> 6c4fda8f269e56051b0ddc254183e647138d1092
 {: shortdesc}
 
 While this tutorial focuses specifically on using {{site.data.keyword.cloud_notm}} HSM, you can learn more about the overall configuration process for using any HSM that supports PCKS #11 with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, see
@@ -655,8 +659,11 @@ resources:
       cex.s390.ibm.com/ibp: 1
 ```
 {: codeblock}
+<<<<<<< HEAD
+=======
 
 and specify the desired value.
+>>>>>>> 6c4fda8f269e56051b0ddc254183e647138d1092
 
 
 - In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto#ibm-hlfsupport-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.

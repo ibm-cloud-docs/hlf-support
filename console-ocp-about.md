@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -191,7 +191,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
 
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
-- **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)]{: term} to generate and store the private key of your nodes.
+- **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
 - **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, it is possible to run your components on any Kubernetes v1.18 - v1.21 container platform on x86_64 or s390x.
 - **Unified operation**. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.

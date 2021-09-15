@@ -2,7 +2,7 @@
 
  copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy,
 
@@ -105,8 +105,6 @@ subcollection: hlf-support
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
-
-
 
 
 # Getting started with Ansible playbooks on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric

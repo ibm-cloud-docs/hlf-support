@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-15"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -135,6 +135,7 @@ content-type: faq
 - [Do ordering service Raft nodes use Transport Layer Security (TLS) for communication?](#ibm-hlfsupport-v2-faq-raft-tls)
 - [How can I back up and restore components and networks?](#ibm-hlfsupport-v2-faq-backup-restore)
 - [What benefits are available with the new smart contract lifecycle available on nodes and channels running on Fabric v2.x?](#ibm-hlfsupport-v2-faq-new-lifecycle)
+- [How can I check and interpret the status of my components through the Kubernetes command line?](#ibm-hlfsupport-v2-faq-cr-status)
 
 **Certificates**
 - [Do you support using certificates from non-IBM Certificate Authorities (CAs)?](#ibm-hlfsupport-v2-faq-v2-external-certs)
@@ -283,6 +284,36 @@ This separation of concerns opens exciting new opportunities for collaborating o
 For a tutorial on how this process is handled by the console, check out [Deploy a smart contract using Fabric v2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2).
 
 For information about to take advantage of the new lifecycle when writing a smart contract, check out [Writing powerful smart contracts](/docs/hlf-support?topic=hlf-support-write-powerful-smart-contracts).
+
+## How can I check and interpret the status of my components through the Kubernetes command line?
+{: #ibm-hlfsupport-v2-faq-cr-status}
+{: faq}
+
+To check the status of your component, run the following command:
+```
+kubectl get <CUSTOM_RESOURCE_TYPE> <CUSTOM_RESOURCE_NAME> -n <NAMESPACE> -o yaml
+```
+{: codeblock}
+
+- Replace `<CUSTOM_RESOURCE_TYPE>` with the custom resource type of your component (`ibpca`, `ibppeer`, `ibporderer`, or `ibpconsole`).
+- Replace `<CUSTOM_RESOURCE_NAME>` with the name of your component.
+- Replace `<NAMESPACE>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment namespace or OpenShift project.
+
+The `spec.status` field will contain details of your component's status:
+- `errorCode`
+- `lastHeartbeatTime`: when the controller last reconciled the component
+- `message`: long explanation of the status type
+- `reason`: short explanation of the status
+- `status`: "true" or "false" bsed on if status is valid
+- `version`: the product (IBP) version of the component
+- `versions`: the operand version of the component
+- `type`: describes the current status of the component
+  - **Deploying**: component pod(s) spinning up but not yet running and ready
+  - **Deployed**: component pod(s) are running
+  - **Precreated**: (specific to the Orderer) Orderer is waiting for the genesis block to be created
+  - **Error**: component hit an error during reconcile, or a certificate has expired
+  - **Warning**: one or more of the component's certificate will be expiring within 30 days (by default)
+  - **Initializing**: component is being reconciled again due to spec updates in the pre-reconcile checks
 
 ## Do you support using certificates from non-IBM Certificate Authorities?
 {: #ibm-hlfsupport-v2-faq-v2-external-certs}
