@@ -219,6 +219,7 @@ In this section you will get the HSM server certificate and create the HSM clien
   - `<CLIENT_ADDRESS>` with the IP address or fully qualified host name of the client.
 
   The name of the generated certificates includes the `<CLIENT_ADDRESS>`. The output of this command looks similar to:
+  
     ```
     Private Key created and written to: /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>Key.pem
     Certificate created and written to: /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem
