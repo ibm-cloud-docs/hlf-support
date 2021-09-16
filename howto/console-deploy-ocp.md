@@ -1515,7 +1515,7 @@ You can use a Certificate Authority or tool to create the TLS certificates for t
 **Proxy hostname:** ``<PROJECT_NAME>ibm-hlfsupport-console-proxy.<DOMAIN>``  
 
 - Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
-- - Replace `<DOMAIN>` with the name of your cluster domain. You can find this value by using the OpenShift web console. Examine the URL for that page. It will be similar to `console.xyz.abc.com/dashboards`. The value of the domain then would be `xyz.abc.com`, after removing `console` and `/dashboards`.
+- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value by using the OpenShift web console. Examine the URL for that page. It will be similar to `console.xyz.abc.com/dashboards`. The value of the domain then would be `xyz.abc.com`, after removing `console` and `/dashboards`.
 
 Navigate to the TLS certificates that you plan to use on your local system. Name the TLS certificate `tlscert.pem` and the corresponding private key `tlskey.pem`. Run the following command to create the Kubernetes secret and add it to your OpenShift project. The TLS certificate and key need to be in PEM format.
 ```

@@ -219,7 +219,7 @@ In this section you will get the HSM server certificate and create the HSM clien
   - `<CLIENT_ADDRESS>` with the IP address or fully qualified host name of the client.
 
   The name of the generated certificates includes the `<CLIENT_ADDRESS>`. The output of this command looks similar to:
-  
+
     ```
     Private Key created and written to: /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>Key.pem
     Certificate created and written to: /usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem
@@ -242,23 +242,23 @@ In this section you will get the HSM server certificate and create the HSM clien
 
 1. <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> SSH into the HSM as the admin the HSM server and register the client by running **one** of the following commands.
 
-  If the `<CLIENT_ADDRESS>` is the IP address of the client:
+If the `<CLIENT_ADDRESS>` is the IP address of the client:
 
     ```bash
     client register -client ${CLIENT_NAME} -ip  <CLIENT_ADDRESS>
     ```
     {: codeblock}
 
-  If the `<CLIENT_ADDRESS>` is the fully qualified host name of the client:
+If the `<CLIENT_ADDRESS>` is the fully qualified host name of the client:
 
     ```bash
     client register -client ${CLIENT_NAME} -hostname <CLIENT_ADDRESS>
     ```
     {: codeblock}
 
-  Replace
-  - `{CLIENT_NAME}` with the name of the client. This value can be anything meaningful to you.
-  - `<CLIENT_ADDRESS>` with either the IP address or fully qualified host name of the client.
+Replace
+- `{CLIENT_NAME}` with the name of the client. This value can be anything meaningful to you.
+- `<CLIENT_ADDRESS>` with either the IP address or fully qualified host name of the client.
 
 2. <img src="../images/icon-hsm-2.png" alt="HSM server" width="30" style="width:30px; border-style: none"/> Because network address translation (NAT) exists between the client and the HSM, we need to disable client source IP address validation by the Network Trust Link Server (NTLS) upon Network Trust Link Agent (NTLA) client connection.  Disable ip check on the HSM server and then restart the NTLS service on the HSM server by running the following commands:
 
@@ -275,18 +275,18 @@ In this section you will get the HSM server certificate and create the HSM clien
     ```
     {: codeblock}
 
-  Replace
-  - `{CLIENT_NAME}` with the name that you gave to your HSM client.
-  - `{PARTITION_NAME}` with the name of the HSM partition you created in [Part one](#ibm-hlfsupport-hsm-gemalto-part-one), step 1.
+Replace
+- `{CLIENT_NAME}` with the name that you gave to your HSM client.
+- `{PARTITION_NAME}` with the name of the HSM partition you created in [Part one](#ibm-hlfsupport-hsm-gemalto-part-one), step 1.
 
-  You can verify the command worked by running the following command:
+You can verify the command worked by running the following command:
 
     ```bash
     client show -client ${CLIENT_NAME}
     ```
     {: codeblock}
 
-  The output will look similar to:
+The output will look similar to:
 
     ```
     ClientID:     hsmclient
@@ -306,7 +306,7 @@ In this section you will get the HSM server certificate and create the HSM clien
   ```
   {: codeblock}
 
-  The output will look similar to:
+The output will look similar to:
 
   ```
   The following Luna SA Slots/Partitions were found:
@@ -318,9 +318,9 @@ In this section you will get the HSM server certificate and create the HSM clien
   
 5. <img src="../images/icon-hsm-client.png" alt="HSM client" width="30" style="width:30px; border-style: none"/>  Create a `configs` folder on the client and then copy the `server.pem` certificate from [Part two](#ibm-hlfsupport-hsm-gemalto-part-two), step 1 and the `<CLIENT_ADDRESS>Key.pem` and `<CLIENT_ADDRESS>.pem` files from [Part two](#ibm-hlfsupport-hsm-gemalto-part-two), step 3 into the folder:
 
-   - Copy `server.pem` to `configs/server.pem`  
-   - Copy `/usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>Key.pem` to `configs/key.pem`  
-   - Copy `/usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem` to `configs/cert.pem`  
+- Copy `server.pem` to `configs/server.pem`  
+- Copy `/usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>Key.pem` to `configs/key.pem`  
+- Copy `/usr/safenet/lunaclient/cert/client/<CLIENT_ADDRESS>.pem` to `configs/cert.pem`  
 
 ### Part Four: Build a Docker image
 {: #ibm-hlfsupport-hsm-gemalto-part-four}
