@@ -170,7 +170,7 @@ If you want to take advantage of the High-Level Fabric contract-APIs, you can al
 - [Invoke a smart contract from the SDK](#ibm-hlfsupport-console-app-invoke).
 - Learn about application development by deploying the [commercial paper tutorial](#ibm-hlfsupport-console-app-commercial-paper) to the nodes managed from your console.
 
-### Low-Level Fabric SDK APIs**
+### Low-Level Fabric SDK APIs
 {: #ibm-hlfsupport-console-app-low-level}
 
 If you want to continue to use your existing smart contract and application code, or use the other Fabric SDK languages that are provided by the Hyperledger community, you can use the [low-level Fabric SDK APIs](#ibm-hlfsupport-console-app-low-level-api) to connect to your network.

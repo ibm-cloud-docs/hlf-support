@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -165,15 +165,11 @@ The world is moving too fast to keep doing things the old way. Go to cloud dot I
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric provides a flexible management platform that runs on Kubernetes. The offering includes an award-winning management console that allows you to easily deploy blockchain components, build a multicloud blockchain network, and perform network management and maintenance.
 
-This offering includes two deployment options:  
+This offering includes one deployment option:  
 
 **Full platform**
 
 Includes the operator, management console, peer, CA, ordering node, and smart contract container images. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric management console can be used to create all of the fundamental components of a Hyperledger Fabric network: a Certificate Authority (CA), an ordering service, and peers, on your local cluster. You can also use your console to operate a distributed multicloud network by importing nodes that were deployed by using other consoles. For more information about the building blocks of Hyperledger Fabric networks, see the [blockchain component overview](/docs/hlf-support?topic=hlf-support-blockchain-component-overview).
-
-**{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images**  
-
-For experienced Hyperledger Fabric customers, a purchase of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 includes an entitlement to the peer, CA, ordering node, and smart contract container images that are signed and supported by {{site.data.keyword.IBM_notm}}. These images are based on the open source Hyperledger Fabric code base and contain a number of enhancements for stability and serviceability. The images are bundled with support from {{site.data.keyword.IBM_notm}}. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric management console and operator are not among the images that are included in this entitlement. For more information, see [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-blockchain-images#blockchain-images).
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the following key features:
 
