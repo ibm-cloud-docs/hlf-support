@@ -109,8 +109,6 @@ Blockchain HLF Support
 	/blockchain/blockchain-k8s-overview
 	[IBM Developer](https://developer.ibm.com/technologies/blockchain/)
 	reference/metering.md
-	reference/hsm-pkcs11.md
-	reference/hsm-pkcs11-ic.md
 	glossary.md
 	{: .navgroup-end}
 
