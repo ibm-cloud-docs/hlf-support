@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -657,6 +657,7 @@ version: v1
 {: codeblock}
 
 - In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well. **Important:** If an image pull secret is not required, set this value to `""`. If you would like to override the default values for the daemon container's `securityContext`, specify the desired values in the config. If you would like to override the default values for the daemon container's `resources`, you can include the following in the `daemon:` section and specify the desired value:
+
 ```yaml
 resources:
     limits:
