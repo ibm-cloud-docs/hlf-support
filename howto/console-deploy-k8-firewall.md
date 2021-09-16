@@ -2,7 +2,7 @@
 
  copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -733,7 +733,6 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
 EOF
 ```
 {: codeblock}

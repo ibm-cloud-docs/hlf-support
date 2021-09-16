@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: IBM Support for Hyperledger Fabric, support case, Hyperledger Fabric Community, Cloud tickets, dWAnswers, multicloud
 
@@ -128,7 +128,8 @@ You can find blockchain tutorials and code patterns on [{{site.data.keyword.IBM_
 **Hyperledger Fabric resources**  
 [Hyperledger Fabric documentation](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external} provide more details about the Fabric stack.
 
-You can also subscribe to a Fabric [mailing list](fabric@lists.hyperledger.org){: external} to get answers to questions about Fabric.
+  You can also subscribe to a Fabric [mailing list](mailto:fabric@lists.hyperledger.org){: external} to get answers to questions about Fabric.
+
 
 You can also post questions or check if your question has been answered in [Stack Overflow](https://stackoverflow.com/questions/tagged/hyperledger-fabric){: external} or in [GitHub](https://github.com/hyperledger/fabric/issues){: external}.
 

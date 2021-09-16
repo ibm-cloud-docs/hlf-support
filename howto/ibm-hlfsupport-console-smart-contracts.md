@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-09-16"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
@@ -132,5 +132,5 @@ Select the tutorial that corresponds to your channel configuration:
 - <img src="../images/2-x_Pill.png" alt="version 2.x" width="30" style="width:30px; border-style: none"/>*** [Channel application capabilities and peer Fabric images are 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2)
 - <img src="../images/1-4_Pill.png" alt="version 1.4" width="30" style="width:30px; border-style: none"/> [Channel application capabilities are 1.4 and peer Fabric images are 1.4 or 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14)
 
-*** Fabric v2.0 introduced a new distributed process to manage the lifecycle of a smart contract that allows for decentralizing the governance of smart contracts on a channel. Whenever possible, it is recommended that customers should move to using the new smart contract lifecycle to avoid any interruption of service in later upgrades when Fabric no longer supports the v1.4 process for installing and instantiating smart contracts.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 only supports v2.2.3 Fabric images.
 {: important}

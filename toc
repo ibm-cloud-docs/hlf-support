@@ -75,8 +75,6 @@ Blockchain HLF Support
 		howto/console-deploy-k8-firewall.md
 		howto/console-delete-k8.md
 
-	internal/blockchain_images.md
-
 	{: .topicgroup}
 	Using the IBM Support for Hyperledger Fabric
 		howto/console-ocp-manage.md
@@ -109,8 +107,6 @@ Blockchain HLF Support
 	/blockchain/blockchain-k8s-overview
 	[IBM Developer](https://developer.ibm.com/technologies/blockchain/)
 	reference/metering.md
-	reference/hsm-pkcs11.md
-	reference/hsm-pkcs11-ic.md
 	glossary.md
 	{: .navgroup-end}
 

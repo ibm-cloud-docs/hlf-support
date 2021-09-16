@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: OpenShift, IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -654,7 +654,6 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
 EOF
 ```
 {: codeblock}
@@ -1168,9 +1167,27 @@ clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project ad
 ### Apply the ClusterRoleBinding
 {: #deploy-ocp-scc-apply-clusterrolebinding}
 
-Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.  
+Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
+
 ```yaml
-{[yaml-operator-ocp-ibm-hlfsupport-clusterrolebinding.md]
+kind: ClusterRoleBinding
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: <PROJECT_NAME>
+  labels:
+    release: "operator"
+    helm.sh/chart: "ibm-hlfsupport"
+    app.kubernetes.io/name: "ibm-hlfsupport"
+    app.kubernetes.io/instance: "ibm-hlfsupport"
+    app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
+subjects:
+- kind: ServiceAccount
+  name: default
+  namespace: <PROJECT_NAME>
+roleRef:
+  kind: ClusterRole
+  name: <PROJECT_NAME>
+  apiGroup: rbac.authorization.k8s.io
 ```
 {: codeblock}
 
@@ -1498,7 +1515,7 @@ You can use a Certificate Authority or tool to create the TLS certificates for t
 **Proxy hostname:** ``<PROJECT_NAME>ibm-hlfsupport-console-proxy.<DOMAIN>``  
 
 - Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
-- - Replace `<DOMAIN>` with the name of your cluster domain. You can find this value by using the OpenShift web console. Examine the URL for that page. It will be similar to `console.xyz.abc.com/dashboards`. The value of the domain then would be `xyz.abc.com`, after removing `console` and `/dashboards`.
+- Replace `<DOMAIN>` with the name of your cluster domain. You can find this value by using the OpenShift web console. Examine the URL for that page. It will be similar to `console.xyz.abc.com/dashboards`. The value of the domain then would be `xyz.abc.com`, after removing `console` and `/dashboards`.
 
 Navigate to the TLS certificates that you plan to use on your local system. Name the TLS certificate `tlscert.pem` and the corresponding private key `tlskey.pem`. Run the following command to create the Kubernetes secret and add it to your OpenShift project. The TLS certificate and key need to be in PEM format.
 ```

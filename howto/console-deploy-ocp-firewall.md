@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: OpenShift, IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -714,7 +714,6 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
 EOF
 ```
 {: codeblock}
@@ -1229,7 +1228,6 @@ clusterrole.rbac.authorization.k8s.io/system:openshift:scc:blockchain-project ad
 {: #deploy-ocp-clusterrolebinding-firewall}
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-clusterrolebinding.yaml`. This file defines the ClusterRoleBinding. Edit the file and replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.  
-
 ```yaml
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1

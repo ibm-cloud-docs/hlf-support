@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -146,7 +146,7 @@ The application developer can use two programming models to interact with the ne
 ### High-Level Programming Model APIs
 {: #ibm-hlfsupport-console-app-high-level}
 
-Starting with Fabric v1.4, a simplified _application_ and _smart contract_ programming model, known as the `fabric-network` API, was introduced, and is now the recommended way to develop applications. The new model reduces the number of steps and amount of code that is required to submit a transaction and is supported for applications that are written in **Node.js**, **Java**, and **Go**. The Fabric High-Level Programming Model APIs include the **High-level Fabric Gateway SDKs** for writing client applications and the **High-Level Fabric contract APIs** for writing smart contracts. This tutorial focuses on using the **High-level Fabric Gateway SDKs**.  
+A simplified _application_ and _smart contract_ programming model, known as the `fabric-network` API, was introduced, and is now the recommended way to develop applications. The new model reduces the number of steps and amount of code that is required to submit a transaction and is supported for applications that are written in **Node.js**, **Java**, and **Go**. The Fabric High-Level Programming Model APIs include the **High-level Fabric Gateway SDKs** for writing client applications and the **High-Level Fabric contract APIs** for writing smart contracts. This tutorial focuses on using the **High-level Fabric Gateway SDKs**.  
 
 {{site.data.keyword.IBM_notm}} recommends and supports the High-level Fabric Gateway SDKs that allow client applications to interact with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric networks. These SDKs, available for Node, Java, and Go, allow a client application to invoke smart contracts for the purpose of submitting transactions and evaluating queries. It is recommended that administrative tasks, such as creating channels, deploying smart contracts, are done by using the console, APIs, or Ansible scripts.  
 
@@ -159,9 +159,7 @@ Refer to the SDK documentation for each language for details:
 - [Node](https://hyperledger.github.io/fabric-sdk-node/release-2.2/){: external}
 - [Go](https://pkg.go.dev/github.com/hyperledger/fabric-sdk-go/pkg/gateway){: external}
 
-For best practices and examples of how to use the SDKs see the Fabric [Asset Transfer Sample](https://github.com/hyperledger/fabric-samples/tree/master/asset-transfer-basic){: external}  
-
-For information about migrating your applications created using the v1.4 SDK to the 2.x SDK, check out [Migrating client applications from v1.4 to v2.0](https://hyperledger.github.io/fabric-sdk-node/release-2.2/tutorial-migration.html){: external}.    
+For best practices and examples of how to use the SDKs see the Fabric [Asset Transfer Sample](https://github.com/hyperledger/fabric-samples/tree/master/asset-transfer-basic){: external}     
 
 Client applications can leverage the capabilities of the Go SDK, but currently only the high-level programming model in the [gateway package](https://pkg.go.dev/github.com/hyperledger/fabric-sdk-go/pkg/gateway){: external} is supported. Direct usage of the rest of the Go SDK is not yet supported.
 {: note}
@@ -172,7 +170,7 @@ If you want to take advantage of the High-Level Fabric contract-APIs, you can al
 - [Invoke a smart contract from the SDK](#ibm-hlfsupport-console-app-invoke).
 - Learn about application development by deploying the [commercial paper tutorial](#ibm-hlfsupport-console-app-commercial-paper) to the nodes managed from your console.
 
-### Low-Level Fabric SDK APIs**
+### Low-Level Fabric SDK APIs
 {: #ibm-hlfsupport-console-app-low-level}
 
 If you want to continue to use your existing smart contract and application code, or use the other Fabric SDK languages that are provided by the Hyperledger community, you can use the [low-level Fabric SDK APIs](#ibm-hlfsupport-console-app-low-level-api) to connect to your network.
@@ -206,7 +204,6 @@ Click the **Java SDK** or **Node SDK** tab for details.
 | Version |Peer Fabric image  | Java |
 |:--------|:------------------|:-----|
 |[Java SDK Version 2.2](https://github.com/hyperledger/fabric-gateway-java/tree/release-2.2){: external} | 2.2 | Java 8<br><br>Java 11|
-|[Java SDK Version 1.4](https://github.com/hyperledger/fabric-gateway-java/tree/release-2.2){: external} | 1.4 | Java 8<br><br>Java 11|
 {: caption="Table 1. Java SDK" caption-side="top"}
 {: #simpletabtable1}
 {: tab-title="Java SDK"}
@@ -216,7 +213,6 @@ Click the **Java SDK** or **Node SDK** tab for details.
 | Version |Peer Fabric image  | Node |
 |:--------|:------------------|:-----|
 |[Node SDK Version 2.2](https://github.com/hyperledger/fabric-sdk-node/tree/release-2.2){: external} | 2.2 | Node 10 LTS<br><br> Node 12 LTS|
-|[Node SDK Version 1.4](https://github.com/hyperledger/fabric-sdk-node/tree/release-1.4){: external} | 2.2, 1.4  | Node 10 LTS<br><br> Node 12 LTS|
 {: caption="Table 1. Node SDK" caption-side="top"}
 {: #simpletabtable1}
 {: tab-title="Node SDK"}
@@ -230,8 +226,7 @@ Click the **Java Smart contract** or **Node Smart contract** tab for details.
 
 |Contract API | Peer Fabric image  | Java runtime   |
 |:-------------------|:---------------|:-------------|
-|[v1.4](https://github.com/hyperledger/fabric-chaincode-java/tree/release-1.4){: external}, [v2.2](https://github.com/hyperledger/fabric-chaincode-java/tree/release-2.2){: external} |v2.2 | Java 11 runtime |
-|[v1.4](https://github.com/hyperledger/fabric-chaincode-java/tree/release-1.4){: external}, [v2.2](https://github.com/hyperledger/fabric-chaincode-java/tree/release-2.2){: external} |v1.4 | Java 11 runtime |
+|[v2.2](https://github.com/hyperledger/fabric-chaincode-java/tree/release-2.2){: external} |v2.2 | Java 11 runtime |
 {: caption="Table 2. Java Smart contract" caption-side="top"}
 {: #simpletabtable2}
 {: tab-title="Java Smart contract"}
@@ -240,8 +235,7 @@ Click the **Java Smart contract** or **Node Smart contract** tab for details.
 
 | Contract API       | Peer Fabric image  | Node runtime    |
 |:-------------------|:---------------|:--------------------|
-| [v1.4](https://github.com/hyperledger/fabric-chaincode-node/tree/release-1.4){: external}, [v2.2](https://github.com/hyperledger/fabric-chaincode-node/tree/release-2.2){: external} |v2.2  | Node 12 runtime|
-| [v1.4](https://github.com/hyperledger/fabric-chaincode-node/tree/release-1.4){: external} |v1.4| Node 8 runtime |
+| [v2.2](https://github.com/hyperledger/fabric-chaincode-node/tree/release-2.2){: external} |v2.2  | Node 12 runtime|
 {: caption="Table 2. Node Smart contract" caption-side="top"}
 {: #simpletabtable2}
 {: tab-title="Node Smart contract"}
@@ -435,7 +429,7 @@ After you generate the application signing certificate and private key and store
 2. Edit `invoke.js` to replace the following values:
   - Replace  `<channel_name>` with the name of the channel the smart contract was deployed on. You can find your CA name under the "Certificate Authorities" section of your connection profile.
   - Replace `<smart_contract_name>` with the name of the installed smart contract. You can get this value from your network operator.
-  - Edit the contents of `submitTransaction` to invoke a function inside your smart contract. The `invoke.js` file is written to invoke the [FabCar smart contract](https://github.com/hyperledger/fabric-samples/tree/release-1.4/chaincode/fabcar){: external}. If you want to run the following file to submit a transaction, install FabCar and instantiate the smart contract on one of your channels.
+  - Edit the contents of `submitTransaction` to invoke a function inside your smart contract. The `invoke.js` file is written to invoke the [FabCar smart contract](https://github.com/hyperledger/fabric-samples/tree/release-2.2/chaincode/fabcar){: external}. If you want to run the following file to submit a transaction, install FabCar and instantiate the smart contract on one of your channels.
 
 3. Navigate to `invoke.js` using a terminal and run `node invoke.js`. If the command runs successfully, you should see the following output:
 
@@ -476,11 +470,11 @@ git clone https://github.com/hyperledger/fabric-samples.git
 ```
 {: codeblock}
 
-After you download the Fabric Samples, run the following commands to ensure that you are using the version of the samples compatible with Fabric v1.4.12 and v2.2.3.
+After you download the Fabric Samples, run the following commands to ensure that you are using the version of the samples compatible with Fabric v2.2.3.
 
 ```
 cd fabric-samples
-git checkout v1.4.12
+git checkout v2.2.3
 ```
 {: codeblock}
 
@@ -519,8 +513,6 @@ npm install
 {: #ibm-hlfsupport-console-app-commercial-paper-step-two-install-propose}
 
 You can find the commercial paper smart contract inside the `contract` folder of the `digibank` and `magnetocorp` directory. You need to install this smart contract on all the peers of the organizations that use the tutorial.
-
-Smart contracts running on peers using the Fabric v1.4.x image must be packaged in [.cds format](https://hyperledger-fabric.readthedocs.io/en/release-1.4/chaincode4noah.html#packaging){: external}. These smart contracts are installed and then instantiated on a channel. For information on using smart contracts with Fabric v1.4.x peers, check out [Deploy a smart contract using Fabric v1.4.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14).
 
 Smart contracts running on peers using a Fabric v2.x image must be packed using the [.tar.gz format](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode_lifecycle.html#step-one-packaging-the-smart-contract){: external}. These smart contracts must be installed and proposed by you, then approved by other channel members before being committed on the channel. For information on using smart contracts with Fabric v2.x peers, check out [Deploying a smart contract using Fabric 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2).
 
@@ -809,7 +801,7 @@ Peers on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric have 
 Do not query the entire database for the purpose of aggregation or reporting. If you want to build a dashboard or collect large amounts of data as part of your application, you can query an off chain database that replicates the data from your blockchain network. This allows you to understand the data on the blockchain without degrading the performance of your network or disrupting transactions.
 
 You can use block or chaincode events from your application to write transaction data to an off-chain database or analytics engine. For each block received, the block listener application would iterate through the block transactions and build a data store by using the key/value writes from each valid transaction's `rwset`. The [Peer channel-based event services](https://hyperledger-fabric.readthedocs.io/en/release-2.2/peer_event_services.html) provide replayable events to ensure the integrity of downstream data stores. For an example of how you can use an event listener to write
-data to an external database, see the [Off chain data sample](https://github.com/hyperledger/fabric-samples/tree/release-1.4/off_chain_data) in the Fabric Samples.
+data to an external database, see the [Off chain data sample](https://github.com/hyperledger/fabric-samples/tree/release-2.2/off_chain_data) in the Fabric Samples.
 
 
 

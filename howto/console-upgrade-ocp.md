@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters
 
@@ -349,7 +349,6 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
 EOF
 ```
 {: codeblock}
@@ -1275,7 +1274,6 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
 EOF
 ```
 {: codeblock}
@@ -2296,7 +2294,6 @@ status:
   conditions: []
   storedVersions:
   - v1beta1
-
 EOF
 ```
 {: codeblock}

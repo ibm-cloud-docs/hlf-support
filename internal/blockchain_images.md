@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-16"
 
 keywords: IBM Support for Hyperledger Fabric, images, multicloud
 
@@ -105,6 +105,7 @@ subcollection: hlf-support
 {:user_ID: data-hd-keyref="user_ID"}
 {:vbnet: .ph data-hd-programlang='vb.net'}
 {:video: .video}
+
 
 
 
@@ -214,7 +215,7 @@ skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20210915 docker:
 
 To deploy and operate the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images, you can download the open source tools that are provided by the Hyperledger community. Follow the steps to [Install the prerequisites](https://hyperledger-fabric.readthedocs.io/en/release-2.2/prereqs.html) and [Download the Fabric Samples, Binaries, and configuration files](https://hyperledger-fabric.readthedocs.io/en/release-2.2/install.html){: external} in the Hyperledger Fabric documentation. These steps might download the open source Fabric images as well.
 
-After you download the Fabric samples and binaries, you can find the configuration files and binaries that you need to set up a network in the `fabric-samples\config` and `fabric-samples\bin` folders. You can also find example artifacts and scripts for how to set up a network by using Docker Compose in the `fabric-samples\first-network` directory. You learn more about these artifacts and the steps that are involved by reading the accompanying [Build Your First Network](http://hyperledger-fabric.readthedocs.io/en/release-2.2/build_network.html){: external} tutorial.
+After you download the Fabric samples and binaries, you can find the configuration files and binaries that you need to set up a network in the `fabric-samples\config` and `fabric-samples\bin` folders. You can also find example artifacts and scripts for how to set up a network by using Docker Compose in the `fabric-samples\test-network` directory. You learn more about these artifacts and the steps that are involved by reading the accompanying [Build Your First Network](http://hyperledger-fabric.readthedocs.io/en/release-2.2/build_network.html){: external} tutorial.
 
 If you are using the open source configuration files, you need to make the following changes to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images:
 
@@ -438,7 +439,7 @@ If you want to deploy a raft ordering service, you need to make the same edits t
 
 After you update the relevant files, you can test that you can deploy your images by running the following command:
 ```
-sudo ./byfn.sh up -i 1.4.12
+sudo ./byfn.sh up -i 2.2.3
 ```
 {: codeblock}
 
