@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-20"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -261,7 +261,18 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
   
 10. Click **Create** to finish your setup.
 
-## Step three: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Step three: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
+{: #deploy-ocp-rhm-operator}
+
+To install the operator, go to the **OpenShift Container Platform**.
+
+1. In the left navigation, click **Operators** > **OperatorHub**.
+
+2. Search for **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** and click on the tile to install.
+
+![{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator available in Red Hat Marketplace](../images/rhm-operator.png "IBM Support for Hyperledger Fabric operator available in Red Hat Marketplace"){: caption="Figure 1. IBM Support for Hyperledger Fabric operator available in Red Hat Marketplace" caption-side="bottom"}
+
+## Step four: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #deploy-ocp-rhm-console}
 
 There is one instance available listed under "Provided APIs":
@@ -277,7 +288,7 @@ You should use the console to deploy Certificate Authorities (CAs), peers, and o
 {: important}
 
 Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/IBPConsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
+![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}
@@ -329,7 +340,7 @@ When you are satisfied with your edits to the specification, click **Create**.
 The console can take a few minutes to deploy.
 {: note}
 
-After you create the console, you can verify that the console deployment is succeeded. See [Step four: Verify the console installation](#console-deploy-ocp-verify-install) for instructions on verifying and accessing the console.
+After you create the console, you can verify that the console deployment is succeeded. See [Step five: Verify the console installation](#console-deploy-ocp-verify-install) for instructions on verifying and accessing the console.
 
 ### Advanced deployment options
 {: #console-deploy-ocp-rhm-advanced}
@@ -474,7 +485,7 @@ spec:
 ```
 {: codeblock}
 
-## Step four: Verify the console installation
+## Step five: Verify the console installation
 {: #console-deploy-ocp-verify-install}
 
 You can confirm that the console is up by running the following command, replacing `<PROJECT_NAME>` with the name of your project:
@@ -517,7 +528,7 @@ kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz optools -n blockchain-pr
 ```
 {: codeblock}
 
-## Step five: Log in to the console
+## Step six: Log in to the console
 {: #deploy-ocp-rhm-log-in}
 
 Congratulations! You have deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. The only thing left to do is to deploy the console user interface (UI). First, click **IBM Blockchain** in the **Installed Operators** page.
