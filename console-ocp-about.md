@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-20"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -216,7 +216,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 supports
 | OpenShift Container Platform | 4.6, 4.7, 4.8 |  x86_64 | 4.6, 4.7, 4.8 |
 | OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.6, 4.7 | x86_64 | 4.6, 4.7 |
 | OpenShift Container Platform on LinuxONE | 4.6, 4.7, 4.8 | s390x |4.6, 4.7, 4.8 |
-| Kubernetes ***   | v1.18 - v1.21 | x86_64 | v1.18 - v1.21 |
+| Kubernetes | v1.18 - v1.21 | x86_64 | v1.18 - v1.21 |
 
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
