@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-20"
+lastupdated: "2021-09-21"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -155,7 +155,7 @@ You must have the cluster administrator role to install the operators from the R
 3. Follow the [instructions](https://marketplace.redhat.com/en-us/documentation/clusters#register-openshift-cluster-with-red-hat-marketplace) to register your OpenShift cluster with the Red Hat Marketplace.
 4. When prompted `Would you like to go back to the Red Hat Marketplace now? [Y/n]`, type `Y` to retrieve the <wintitle>Red Hat Marketplace</wintitle> page in your browser.
 5. Click **My software** > **Visit the Marketplace**.
-6. In the search bar, type **blockchain** to load the blockchain tile.
+6. In the search bar, type **blockchain** to load the blockchain tile. Select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric**.
 7. Click **Purchase** or **Free trial** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with the Red Hat Marketplace.
 8. If your OpenShift cluster is behind a firewall, see [Deploy from Red Hat Marketplace (airgap installation)](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm-fw).
 9. Continue to [Step one: Apply the Security Context Constraint](#deploy-ocp-rhm-scc).
@@ -261,18 +261,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
   
 10. Click **Create** to finish your setup.
 
-## Step three: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
-{: #deploy-ocp-rhm-operator}
-
-To install the operator, go to the **OpenShift Container Platform**.
-
-1. In the left navigation, click **Operators** > **OperatorHub**.
-
-2. Search for **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** and click on the tile to install.
-
-![{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator available in Red Hat Marketplace](../images/rhm-operator.png "IBM Support for Hyperledger Fabric operator available in Red Hat Marketplace"){: caption="Figure 1. IBM Support for Hyperledger Fabric operator available in Red Hat Marketplace" caption-side="bottom"}
-
-## Step four: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Step three: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
 {: #deploy-ocp-rhm-console}
 
 There is one instance available listed under "Provided APIs":
@@ -340,7 +329,7 @@ When you are satisfied with your edits to the specification, click **Create**.
 The console can take a few minutes to deploy.
 {: note}
 
-After you create the console, you can verify that the console deployment is succeeded. See [Step five: Verify the console installation](#console-deploy-ocp-verify-install) for instructions on verifying and accessing the console.
+After you create the console, you can verify that the console deployment is succeeded. See [Step four: Verify the console installation](#console-deploy-ocp-verify-install) for instructions on verifying and accessing the console.
 
 ### Advanced deployment options
 {: #console-deploy-ocp-rhm-advanced}
@@ -485,7 +474,7 @@ spec:
 ```
 {: codeblock}
 
-## Step five: Verify the console installation
+## Step four: Verify the console installation
 {: #console-deploy-ocp-verify-install}
 
 You can confirm that the console is up by running the following command, replacing `<PROJECT_NAME>` with the name of your project:
@@ -528,7 +517,7 @@ kubectl logs -f ibm-hlfsupport-console-55cf9db6cc-856nz optools -n blockchain-pr
 ```
 {: codeblock}
 
-## Step six: Log in to the console
+## Step five: Log in to the console
 {: #deploy-ocp-rhm-log-in}
 
 Congratulations! You have deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. The only thing left to do is to deploy the console user interface (UI). First, click **IBM Blockchain** in the **Installed Operators** page.
