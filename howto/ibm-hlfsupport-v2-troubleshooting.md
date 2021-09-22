@@ -128,6 +128,7 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Why is my channel fail to create or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibm-hlfsupport-v2-troubleshooting-accept-tls)
 - [When I hover over my node, the status is `Status unavailable`, what does this mean?](#ibm-hlfsupport-v2-troubleshooting-status-unavailable)
 - [When I hover over my node, the status is `Status undetectable`, what does this mean?](#ibm-hlfsupport-v2-troubleshooting-status-undetectable)
+- [When I hover over my node, the status is red, what does this mean?](#ibm-hlfsupport-troubleshooting-status-error)
 - [Why did my smart contract installation, instantiation or upgrade fail?](#ibm-hlfsupport-console-smart-contracts-troubleshoot-entry1)
 - [Why is my smart contract fail to install with an error on my peer?](#ibm-hlfsupport-v2-troubleshooting-sc-install)
 - [Why is my Node.js smart contract fail to instantiate?](#ibm-hlfsupport-v2-troubleshooting-nodejs-instantiate)
@@ -150,7 +151,6 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Why are the transactions I submit from VS Code failing with a No endorsement plan available error?](#ibm-hlfsupport-v2-troubleshooting-anchor-peer)
 - [Why are the transactions I submit from VS Code failing with an endorsement failure?](#ibm-hlfsupport-v2-troubleshooting-endorsement)
 - [Why is my peer unable to communicate with my ordering node?](#ibm-hlfsupport-troubleshooting-peer-bad-connection)
-- [When I hover over my node, the status is red, what does this mean?](#ibm-hlfsupport-troubleshooting-status-error)
 - [How do I disable the network policies in my namespace?](#ibm-hlfsupport-troubleshooting-disable-network-policies)
 
 
@@ -739,13 +739,12 @@ kubectl get netpol -n <NAMESPACE>
 
 If the command returns a list of one or more network policies that you did not apply and/or you want to disable, complete the following steps:
 1. Disable the operator creation of network policies. Get the operator deployment spec in your namespace and check for environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`. If it is present, remove the environment variable:
-```
-kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
-```
-{: codeblock}
-
+  ```
+  kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
+  ```
+  {: codeblock}
 2. Once the operator creation of the network policy is disabled, delete the network policies from the namespace:
-```
-kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
-```
-{: codeblock}
+  ```
+  kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
+  ```
+  {: codeblock}
