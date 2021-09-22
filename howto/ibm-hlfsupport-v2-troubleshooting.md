@@ -738,13 +738,13 @@ kubectl get netpol -n <NAMESPACE>
 {: codeblock}
 
 If the command returns a list of one or more network policies that you did not apply and/or you want to disable, complete the following steps:
-1. Disable the operator creation of network policies. Get the operator deployment spec in your namespace and check for environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`. If it is present, remove the environment variable:
+- Disable the operator creation of network policies. Get the operator deployment spec in your namespace and check for environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`. If it is present, remove the environment variable:
   ```
   kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
   ```
   {: codeblock}
 
-2. Once the operator creation of the network policy is disabled, delete the network policies from the namespace:
+- Once the operator creation of the network policy is disabled, delete the network policies from the namespace:
   ```
   kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
   ```
