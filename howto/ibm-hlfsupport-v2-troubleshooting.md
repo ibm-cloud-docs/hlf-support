@@ -730,23 +730,27 @@ This problem can occur due to the network policies applied by the operator, whic
 You may need to disable the network policies in your namespace to address connectivity issues in your network.
 {: tsSymptoms}
 
-Use the following CLI command to check if network policies have been applied in your namespace:
+Check if network policies have been applied in your namespace by running the following CLI command:
 {: tsResolve}
 ```
 kubectl get netpol -n <NAMESPACE>
 ```
 {: codeblock}
 
-If the command returns a list of one or more network policies that you did not apply and/or you want to disable, complete the following steps:
+If the command returns a list of one or more network policies that you did not apply and/or you want to disable, first disable the operator creation of network policies. Get the operator deployment spec in your namespace and check for environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`:
+```
+kubectl get deploy ibm-hlfsupport-operator -n <NAMESPACE>
+```
+{: codeblock}
 
-- Disable the operator creation of network policies. Get the operator deployment spec in your namespace and check for environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`. If it is present, remove the environment variable:
-  ```
-  kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
-  ```
-  {: codeblock}
+If it is present, remove the environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`:
+```
+kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
+```
+{: codeblock}
 
-- Once the operator creation of the network policy is disabled, delete the network policies from the namespace:
-  ```
-  kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
-  ```
-  {: codeblock}
+Once the operator creation of the network policy has been disabled, delete the network policies from the namespace:
+```
+kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
+```
+{: codeblock}
