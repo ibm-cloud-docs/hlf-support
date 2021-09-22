@@ -743,6 +743,7 @@ If the command returns a list of one or more network policies that you did not a
   kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
   ```
   {: codeblock}
+
 2. Once the operator creation of the network policy is disabled, delete the network policies from the namespace:
   ```
   kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
