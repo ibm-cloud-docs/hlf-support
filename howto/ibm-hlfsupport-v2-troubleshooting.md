@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-22"
+lastupdated: "2021-09-23"
 
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
@@ -362,8 +362,8 @@ You may receive this error if this version of the smart contract already exists 
 {: troubleshoot}
 {: support}
 
-{: tsSymptoms}
 Installing a smart contract on a peer fails with an error similar to the following:
+{: tsSymptoms}
 
 ```
 An error occurred when installing smart contract on peer.
@@ -371,8 +371,8 @@ error in simulation: failed to execute transaction
 421fac...2fda: error sending: timeout expired while executing transaction.
 ```
 
-{: tsCauses}
 When running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on s390x architecture, or in an environment with constrained resources, it is possible that smart contract installation can fail on a peer if the default timeout is too short on the peer that is running the Fabric v2x image.
+{: tsCauses}
 
 In some cases, if you simply wait several minutes and then refresh the **Smart contracts** tab in the console, you can see that the smart contract was successfully installed. You can customize how long the console waits for the installation to complete by changing the console settings with the [APIs](/apidocs/blockchain#edit-settings). See the `fabric_lc_install_cc_timeout_ms` setting. In some cases, it is the peer itself that is timing out and you need to override the peer configuration to extend its time out.
 {: tsResolve}
@@ -397,36 +397,38 @@ The peer restarts and then you can retry the smart contract installation. Becaus
 {: #ibm-hlfsupport-v2-troubleshooting-nodejs-instantiate}
 {: troubleshoot}
 
-{: tsSymptoms}
 Instantiating a Node.js smart contract fails with the timeout error:
+{: tsSymptoms}
 ```
 [endorser] SimulateProposal -> ERRO 0ba [channel2][37876c5f] failed to invoke chaincode name:"lscc" , error: timeout expired while starting chaincode myassetc:0.0.1 for transaction
 github.com/hyperledger/fabric/core/chaincode.(*RuntimeLauncher).Launch
 	/go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:75
 ```
 
-{: tsCauses}
 When running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on s390x architecture, it is possible that Node.js smart contract instantiation can fail if the default timeout is too short.
+{: tsCauses}
 
-{: tsResolve}
 Customers should wait for five minutes after the failure occurs and then retry the instantiation again. It will then work successfully on the subsequent attempt.
+{: tsResolve}
 
 ## Why is my Node.js smart contract fail to endorse?
 {: #ibm-hlfsupport-v2-troubleshooting-nodejs-endorsement}
 {: troubleshoot}
 {: support}
 
-{: tsSymptoms}
 My Node.js smart contract endorsement fails with the error:
+{: tsSymptoms}
+
 ```
 Error: endorsement failure during query. response: status:500 message:"error in simulation: failed to execute transaction 6cbcf9f94bdef3fc68abba5604e46293ae: could not launch chaincode nodecc:1.1: error building chaincode: error building image: external builder failed: external builder failed to build: external builder 'ibm-hlfsupport-builder' failed: exit status 3"
 ```
 
-{: tsCauses}
 By default, a Fabric v2.x peer creates a Node v12 runtime. In order for the smart contract to work with Node 12 runtime, the `fabric-contract-api` and `fabric-shim` node modules must be at v1.4.5 or greater.
+{: tsCauses}
 
-{: tsResolve}
 If you are using a smart contract that was originally written to work with Fabric 1.4, update the Node modules by running the following command before deploying the smart contract on a Fabric v2.x peer.  See [Support and compatibility for fabric-chaincode-node](https://github.com/hyperledger/fabric-chaincode-node/blob/main/COMPATIBILITY.md) for more information.
+{: tsResolve}
+
 ```
 npm install --save fabric-contract-api@latest-1.4 fabric-shim@latest-1.4
 ```
@@ -732,6 +734,7 @@ You may need to disable the network policies in your namespace to address connec
 
 Check if network policies have been applied in your namespace by running the following CLI command:
 {: tsResolve}
+
 ```
 kubectl get netpol -n <NAMESPACE>
 ```
