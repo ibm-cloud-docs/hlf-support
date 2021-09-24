@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-23"
+lastupdated: "2021-09-24"
 
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
@@ -324,8 +324,9 @@ The node status in the tile for the peer or ordering node is yellow, meaning the
 This condition can occur on peer and ordering nodes that were *imported* to the console and the health checker cannot run against the node. This status happens because an `operations_url` was not specified when the node was imported. An operations URL is required for the node health checker to run. The node itself is likely `Running`, but because the operations URL was not specified, its status cannot be determined.
 {: tsCauses}
 
+**If you imported the node:**
 {: tsResolve}
-**If you imported the node:**  
+
 You can resolve this problem by performing the following steps:
  1. Click the node tile to open it.
  2. Click the **Settings** icon.
