@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-09-24"
 
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
@@ -118,19 +118,17 @@ General problems can occur when you use the console to manage nodes, channels, o
 This topic describes common issues that can occur when you use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.  
 
 **Issues during Deployment**
-- [My deployment fails when I try apply the security and access policies to my namespace](#ibm-hlfsupport-v2-troubleshooting-deployment-policies)
-- [My deployment fails when I try apply the custom resource definition of the console or operator](#ibm-hlfsupport-v2-troubleshooting-deployment-cr)
+- [My deployment fails when I to try to apply the security and access policies to my namespace](#ibm-hlfsupport-v2-troubleshooting-deployment-policies)
+- [My deployment fails when I try to apply the custom resource definition of the console or operator](#ibm-hlfsupport-v2-troubleshooting-deployment-cr)
 - [Extracting the TLS certificate from the Kubernetes webhook fails](#ibm-hlfsupport-v2-troubleshooting-wh-extract)
 
 **Issues with the Console**
 - [Why is my cluster deployed from the Red Hat Marketplace `fail to pull image cp.icr.io/ibm-hlfsupport-init@sha256` during setup?](#ibm-hlfsupport-v2-troubleshooting-pull-image-fails)
-- [Why is my console upgrade from 2.5 to 2.5.x failing?](#ibm-hlfsupport-v2-troubleshootingconsole-upgrade-fails)
-- [Why is my {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric user interface unable to connect to cluster after deployment? (Ingress issue)](#ibm-hlfsupport-v2-troubleshooting-ingress-issue)
-- [Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?](#ibm-hlfsupport-v2-troubleshooting-chrome-v77)
 - [Why am I not able to log in to the console from my Chrome browser on Mac OS Catalina?](#ibm-hlfsupport-v2-troubleshooting-console-catalina)
 - [Why is my channel fail to create or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibm-hlfsupport-v2-troubleshooting-accept-tls)
 - [When I hover over my node, the status is `Status unavailable`, what does this mean?](#ibm-hlfsupport-v2-troubleshooting-status-unavailable)
 - [When I hover over my node, the status is `Status undetectable`, what does this mean?](#ibm-hlfsupport-v2-troubleshooting-status-undetectable)
+- [When I hover over my node, the status is red, what does this mean?](#ibm-hlfsupport-troubleshooting-status-error)
 - [Why did my smart contract installation, instantiation or upgrade fail?](#ibm-hlfsupport-console-smart-contracts-troubleshoot-entry1)
 - [Why is my smart contract fail to install with an error on my peer?](#ibm-hlfsupport-v2-troubleshooting-sc-install)
 - [Why is my Node.js smart contract fail to instantiate?](#ibm-hlfsupport-v2-troubleshooting-nodejs-instantiate)
@@ -149,18 +147,18 @@ This topic describes common issues that can occur when you use the {{site.data.k
 - [Why does my peer or ordering node fail to start?](#ibm-hlfsupport-console-build-network-troubleshoot-entry2)
 - [What is the proper way to clean up a failed node deployment?](#ibm-hlfsupport-v2-troubleshooting-cleanup)
 - [How can I view my smart contract container logs?](#ibm-hlfsupport-console-smart-contracts-troubleshoot-entry2)
-- [Why is my CA, peer, or ordering node that is configured to use HSM not working?](#ibm-hlfsupport-v2-troubleshooting-hsm-proxy)
-- [My CA failed to upgrade, how can I fix it?](#ibm-hlfsupport-v2-troubleshooting-ca-upgrade-fails)
 - [Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?](#ibm-hlfsupport-v2-troubleshooting-endorsement-sig-failure)
 - [Why are the transactions I submit from VS Code failing with a No endorsement plan available error?](#ibm-hlfsupport-v2-troubleshooting-anchor-peer)
 - [Why are the transactions I submit from VS Code failing with an endorsement failure?](#ibm-hlfsupport-v2-troubleshooting-endorsement)
+- [Why is my peer unable to communicate with my ordering node?](#ibm-hlfsupport-troubleshooting-peer-bad-connection)
+- [How do I disable the network policies in my namespace?](#ibm-hlfsupport-troubleshooting-disable-network-policies)
 
 
-## My deployment fails when I try apply the security and access policies to my namespace
+## My deployment fails when I try to apply the security and access policies to my namespace
 {: #ibm-hlfsupport-v2-troubleshooting-deployment-policies}
 {: troubleshoot}
 
-When I try to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the Security Context Constraint, clusterRole, or ClusterRoleBinding to my namespace, I encounter one of the following errors.
+When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the Security Context Constraint, ClusterRole, or ClusterRoleBinding to my namespace, I encounter one of the following errors.
 
 When I apply the file, I receive a user forbidden error:
 {: tsSymptoms}
@@ -183,11 +181,11 @@ This error happens when a problem exists with the indents in your YAML file. Ref
 {: tsCauses}
 
 
-## My deployment fails when I try apply the custom resource definition of the console or operator
+## My deployment fails when I try to apply the custom resource definition of the console or operator
 {: #ibm-hlfsupport-v2-troubleshooting-deployment-cr}
 {: troubleshoot}
 
-When I try to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the custom resource definition of the operator or the console, I encounter one of the following errors:
+When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the custom resource definition of the operator or the console, I encounter one of the following errors:
 
 When I apply the custom resource file, I receive an image pull or image pull back-off error:
 {: tsSymptoms}
@@ -220,11 +218,12 @@ kubectl get secret webhook-tls-cert -n ibm-hlfsupport-infra -o json | jq -r .dat
 ```
 {: tsSymptoms}
 
-This problem can be occur when the entitlement `key`, that you specified in the `cp-pull-secret` for the `ibm-hlfsupport-infra` namespace or project, is invalid. Because only one entitlement key can be used per deployment, you  need to refresh the key if it was already used for a different deployment.
+This problem can be occur when the entitlement `key`, that you specified in the `cp-pull-secret` for the `ibm-hlfsupport-infra` namespace or project, is invalid. Because only one entitlement key can be used per deployment, you need to refresh the key if it was already used for a different deployment.
 {: tsCauses}
 
 To resolve this problem, repeat the steps you followed to [Get your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-entitlement-key) and then delete the kubernetes `cp-pull-secret` in the `ibm-hlfsupport-infra` namespace or project and recreate it using the refreshed key value. Then rerun the command to extract the TLS certificate that was generated by the webhook deployment.
 {: tsResolve}
+
 
 ## Why is my cluster deployed from the Red Hat Marketplace `fail to pull image cp.icr.io/ibm-hlfsupport-init@sha256` during setup?
 {: #ibm-hlfsupport-v2-troubleshooting-pull-image-fails}
@@ -234,125 +233,6 @@ I am deploying my trial cluster from the Red Hat Marketplace but I am receiving 
 {: tsSymptoms}
 
 To resolve this problem, you need to get the pull secret from the Red Hat Marketplace to update your global cluster pull secret. See [Get pull secret](https://marketplace.redhat.com/en-us/documentation/clusters#get-pull-secret) for the setup procedures.
-{: tsResolve}
-
-## Why is my console upgrade from 2.5 to 2.5.x failing?
-{: #ibm-hlfsupport-v2-troubleshootingconsole-upgrade-fails}
-{: troubleshoot}
-
-The console upgrade fails with
-`Unable to attach or mount volumes: unmounted volumes=[couchdb], unattached volumes` and the console pod is stuck in the `init` state.
-{: tsSymptoms}
-
-This problem can occur when there is more than one console pod running in your cluster.
-{: tsCauses}
-
-{: tsResolve}
-To resolve this problem, delete the console deployment by running the command:
-```
-kubectl delete deploy ibpconsole
-```
-{: codeblock}
-
-This command deletes the console replicas and the operator then starts only one console replica which starts successfully.
-
-
-## Why is my {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric user interface unable to connect to cluster after deployment (Ingress issue)?
-{: #ibm-hlfsupport-v2-troubleshooting-ingress-issue}
-{: troubleshoot}
-
-When deploying a new IBM Cloud Kubernetes Service cluster and a new {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric environment, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric user interface is unable to connect to the provision components. The component status does not turn green even when the pod shows it is running fine from the IBM Cloud Kubernetes Service user interface or the command line interface (CLI).
-{: tsSymptoms}
-
-You may also see errors connecting to the proxy URL such as the following reported by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console:
-
-```
-"stitch_msg": "unable to get block: grpc web proxy's message: "Response closed without headers". This can happen when encountering CORS or untrusted TLS issues with the grpc web proxy.",
-```
-{: codeblock}
-
-This problem can occur when the cluster is created after 01 December 2020 with version 1.18 or higher. Or, after you finish deploying the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric while the Kubernetes user interface or CLI still displays the pod as running, but the orderer or the peer user interface does not appear online. 
-{: tsCauses}
-
-Before resolving this problem, you can check the application load balancer (ALB) replica set by running `kubectl get replicasets -n kube-system` and look for result similar to `public-crbpt86avw0kfob73dpb3g-alb1-875bc4d57    2         2         2       24h`. 
-
-For clusters created after 01 December 2020 with version 1.18 or higher, you can check that the ingress configuration as follows:
-
-1. Run `kubectl get ingress --all-namespaces` to find out which are the ingress matching nodes that are having issues.
-
-2. Run `kubectl get ingress <componentname> -n <namespace> -o yaml` to clear the current ingress configuration.
-
-3. Verify if the following configuration is missing:
-    ```
-    annotations:
-        nginx.ingress.kubernetes.io/backend-protocol: HTTPS
-        nginx.ingress.kubernetes.io/proxy-ssl-verify: "false" 
-    ```
-    {: codeblock}
-
-To resolve this problem, you can execute the following steps:
-{: tsResolve}
-
-**Get the list of ALB replica set.** 
-If your cluster has only one ALB, you can get the replica set as follows:
-  ```
-  kubectl get replicaset -n kube-system | grep <ALB-name>
-  ```
-  {: codeblock}
-
-If you have multiple ALBs, execute the following steps for each ALB as follows:
-  1. Get the list of all replica sets. 
-      ```
-      kubectl get replicaset -n kube-system | grep alb
-      ```
-      {: codeblock}
-
-     For example, you will see multiple replica sets listed as follows:
-      ```
-      $ kubectl get rs -n kube-system | grep alb
-      NAME  DESIRED   CURRENT   READY   AGE
-      public-x-alb1-59db7dbfb4   2         0         0       6d4h
-      public-x-alb1-6486c45c96   2         2         0       3d17h
-      public-x-alb1-d856b94c4    0         0         0       17d
-      ```
-      {: codeblock}
-
-  2. Delete all the replica sets except for the latest one.
-      ```
-      kubectl delete replicaset -n kube-system <replicaset-name>
-      ```
-      {: codeblock}
-
-    Based on the example shown, you need to delete the extra replica sets as follows:
-      ```
-      kubectl delete replicaset -n kube-system public-x-alb1-59db7dbfb4  
-      kubectl delete replicaset -n kube-system public-x-alb1-d856b94c4
-      ```
-      {: codeblock}
-
-  3. Get the list of replica set again to ensure that there is only one remaining.
-      ```
-      kubectl get replicaset -n kube-system | grep <ALB-name>
-      ```
-      {: codeblock}
- 
-    Referring to the example, the result will display as follows:
-      ```
-      public-x-alb1-6486c45c96   2         2         2       3d17h
-      ```
-      {: codeblock}
-
-## Why are my console actions failing in my Chrome browser Version 77.0.3865.90 (Official Build) (64-bit)?
-{: #ibm-hlfsupport-v2-troubleshooting-chrome-v77}
-{: troubleshoot}
-
-The console has been working successfully, but requests have started to fail. For example, after I create an ordering service and open it I see the error: `Unable to get system channel. If you associated an identity without administrative privilege on the ordering service node, you will not be able to view or manage ordering service details.`
-{: tsSymptoms}
-
-This problem can be caused by a [bug](https://bugs.chromium.org/p/chromium/issues/detail?id=1006243){: external} introduced by the Chrome browser `Version 77.0.3865.90 (Official Build) (64-bit)` that causes actions from the browser to fail.
-{: tsCauses}
-
-To resolve this problem, open the console in a new browser tab in Chrome. Any identities that you saved in your console wallet will persist in the new browser tab. To avoid this problem you can upgrade your Chrome browser version. Ensure you have downloaded all of your wallet identities to your local machine before closing your browser. If this solution does not resolve your problem see [Why is my channel fail to create or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?](#ibm-hlfsupport-v2-troubleshooting-accept-tls).
 {: tsResolve}
 
 
@@ -444,8 +324,9 @@ The node status in the tile for the peer or ordering node is yellow, meaning the
 This condition can occur on peer and ordering nodes that were *imported* to the console and the health checker cannot run against the node. This status happens because an `operations_url` was not specified when the node was imported. An operations URL is required for the node health checker to run. The node itself is likely `Running`, but because the operations URL was not specified, its status cannot be determined.
 {: tsCauses}
 
+**If you imported the node:**
 {: tsResolve}
-**If you imported the node:**  
+
 You can resolve this problem by performing the following steps:
  1. Click the node tile to open it.
  2. Click the **Settings** icon.
@@ -482,8 +363,8 @@ You may receive this error if this version of the smart contract already exists 
 {: troubleshoot}
 {: support}
 
-{: tsSymptoms}
 Installing a smart contract on a peer fails with an error similar to the following:
+{: tsSymptoms}
 
 ```
 An error occurred when installing smart contract on peer.
@@ -491,8 +372,8 @@ error in simulation: failed to execute transaction
 421fac...2fda: error sending: timeout expired while executing transaction.
 ```
 
-{: tsCauses}
 When running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on s390x architecture, or in an environment with constrained resources, it is possible that smart contract installation can fail on a peer if the default timeout is too short on the peer that is running the Fabric v2x image.
+{: tsCauses}
 
 In some cases, if you simply wait several minutes and then refresh the **Smart contracts** tab in the console, you can see that the smart contract was successfully installed. You can customize how long the console waits for the installation to complete by changing the console settings with the [APIs](/apidocs/blockchain#edit-settings). See the `fabric_lc_install_cc_timeout_ms` setting. In some cases, it is the peer itself that is timing out and you need to override the peer configuration to extend its time out.
 {: tsResolve}
@@ -517,36 +398,38 @@ The peer restarts and then you can retry the smart contract installation. Becaus
 {: #ibm-hlfsupport-v2-troubleshooting-nodejs-instantiate}
 {: troubleshoot}
 
-{: tsSymptoms}
 Instantiating a Node.js smart contract fails with the timeout error:
+{: tsSymptoms}
 ```
 [endorser] SimulateProposal -> ERRO 0ba [channel2][37876c5f] failed to invoke chaincode name:"lscc" , error: timeout expired while starting chaincode myassetc:0.0.1 for transaction
 github.com/hyperledger/fabric/core/chaincode.(*RuntimeLauncher).Launch
 	/go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:75
 ```
 
-{: tsCauses}
 When running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on s390x architecture, it is possible that Node.js smart contract instantiation can fail if the default timeout is too short.
+{: tsCauses}
 
-{: tsResolve}
 Customers should wait for five minutes after the failure occurs and then retry the instantiation again. It will then work successfully on the subsequent attempt.
+{: tsResolve}
 
 ## Why is my Node.js smart contract fail to endorse?
 {: #ibm-hlfsupport-v2-troubleshooting-nodejs-endorsement}
 {: troubleshoot}
 {: support}
 
-{: tsSymptoms}
 My Node.js smart contract endorsement fails with the error:
+{: tsSymptoms}
+
 ```
 Error: endorsement failure during query. response: status:500 message:"error in simulation: failed to execute transaction 6cbcf9f94bdef3fc68abba5604e46293ae: could not launch chaincode nodecc:1.1: error building chaincode: error building image: external builder failed: external builder failed to build: external builder 'ibm-hlfsupport-builder' failed: exit status 3"
 ```
 
+By default, a Fabric v2.x peer creates a Node v12 runtime. In order for the smart contract to work with Node 12 runtime, the `fabric-contract-api` and `fabric-shim` node modules must be at v1.4.5 or greater.
 {: tsCauses}
-By default, a Fabric v1.4 peer creates a Node v8 runtime, and a Fabric v2.x peer creates a Node v12 runtime. In order for the smart contract to work with Node 12 runtime, the `fabric-contract-api` and `fabric-shim` node modules must be at v1.4.5 or greater.
 
-{: tsResolve}
 If you are using a smart contract that was originally written to work with Fabric 1.4, update the Node modules by running the following command before deploying the smart contract on a Fabric v2.x peer.  See [Support and compatibility for fabric-chaincode-node](https://github.com/hyperledger/fabric-chaincode-node/blob/main/COMPATIBILITY.md) for more information.
+{: tsResolve}
+
 ```
 npm install --save fabric-contract-api@latest-1.4 fabric-shim@latest-1.4
 ```
@@ -589,10 +472,10 @@ One of the features of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fa
 - Repeat this process for each identity that was in the wallet of the original browser.
 {: tsResolve}
 
-This problem can also occur when the console has lost contact with your Kubernetes cluster on {{site.data.keyword.cloud_notm}}. This can happen if your console has not recently communicated with your cluster, or if you have made changes to your cluster that have overridden the settings used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+This problem can also occur when the console has lost contact with your cluster. This can happen if your console has not recently communicated with your cluster, or if you have made changes to your cluster that have overridden the settings used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 {: tsCauses}
 
-You can renew the communication between your console and the {{site.data.keyword.IBM_notm}} Kubernetes service cluster on {{site.data.keyword.cloud_notm}} by clicking on the service instance of your console in your **Resource list** and clicking the **Refresh cluster** button. When the link between your cluster and your console has been refreshed, click the **Launch the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** button.
+You can renew the communication between your console and the {{site.data.keyword.IBM_notm}} Kubernetes service cluster by clicking on the service instance of your console in your **Resource list** and clicking the **Refresh cluster** button. When the link between your cluster and your console has been refreshed, click the **Launch the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric** button.
 {: tsResolve}
 
 ## Why am I getting the error `Unable to authenticate with the enroll ID and secret you provided` when I create a new organization MSP definition?
@@ -740,67 +623,6 @@ Follow these [instructions](/docs/hlf-support?topic=hlf-support-console-icp-mana
 {: tsResolve}
 
 
-
-
-## Why is my CA, peer, or ordering node that is configured to use HSM not working?
-{: #ibm-hlfsupport-v2-troubleshooting-hsm-proxy}
-{: troubleshoot}
-
-This problem can happen when you try to deploy a CA, peer, or ordering node that is configured with HSM and the deployment fails. Or it can surface when a node that is configured for HSM stops working. The node, client, or SDK logs contain the following error:
-{: tsSymptoms}
-```
-{"code":1000,"message":"Private key not found [pkcs11: 0x30: CKR_DEVICE_ERROR]"}"
-```
-{: codeblock}
-
-or
-```
-{"code":1000,"message":"Private key not found [pkcs11: 0xB3: CKR_SESSION_HANDLE_INVALID]"}"
-```
-{: codeblock}
-
-This problem happens when the PKCS #11 proxy that is associated with the HSM is unreachable due to a network problem or if the proxy restarts after the node has connected to it.
-{: tsCauses}
-
-To re-establish communications between the node and the proxy, restart the failing node by deleting the pod associated with the node. A new pod will be created and the connection with the PKCS #11 proxy is restored. Use the following steps to restart the failing node:
-{: tsResolve}
-- List the pods: `kubectl get pods -n <NAMESPACE>`
-- Delete the pod: `kubectl delete pod -n <NAMESPACE> <PODNAME>`  
-
-Replace:
-- `<NAMESPACE>` with the namespace or project, if using OpenShift Container Platform, where the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric was deployed in your Kubernetes cluster.
-- `<PODNAME>` with the **Name** of the failing pod that is visible in the list of pods returned by the previous command.
-
-## My CA failed to upgrade, how can I fix it?
-{: #ibm-hlfsupport-v2-troubleshooting-ca-upgrade-fails}
-{: troubleshoot}
-
-After upgrading from {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric v2.1.2 to v2.1.3, when I try to update my CA by clicking **Update version**, it fails with the error `ECONNRESET`. The CA logs include an error similar to the following text `"error":"CA instance 'org1ca' encountered error: Code: 23 - failed to migrate ca: no matches for kind \"IBPCA\" in version \"ibp.com/v212\`.
-{: tsSymptoms}
-
-To resolve this problem, you need to restart the Operator pod in your cluster.
-{: tsResolve}
-  - Run the following command to get the name of the pod that corresponds to the operator:
-
-    ```
-    kubectl get po | grep ibm-hlfsupport-operator
-    ```
-    {: codeblock}
-
-    The output would look similar to:
-
-     ```
-     ibm-hlfsupport-operator-5794799cff-pbm2h   1/1     Running   0          21d
-     ```
-     {: codeblock}
-
-  - In the following command, replace `<OPERATOR-POD>` with the name of the operator pod from the previous command, for example `ibm-hlfsupport-operator-5794799cff-pbm2h`.
-    ```
-    kubectl delete po <CONSOLE-POD>
-    ```
-    {: codeblock}
-After the operator pod restarts, the CA node is successfully upgraded.
-
 ## Why are my transactions returning an endorsement policy error: signature set did not satisfy policy?
 {: #ibm-hlfsupport-v2-troubleshooting-endorsement-sig-failure}
 {: troubleshoot}
@@ -877,5 +699,62 @@ All contracts were lost after the procedure to upgrade the smart contract contai
 [Delete all the peer pods](#ibm-hlfsupport-troubleshooting-delete-peer). This deletion triggers the peer to be created again and restarts the proxy.
 {: tsResolve}
 
+## Why is my peer unable to communicate with my ordering node?
+{: #ibm-hlfsupport-troubleshooting-peer-bad-connection}
+{: troubleshoot}
+
+A peer node has a timeout or connection refused error when trying to communicate with the orderer.
+{: tsSymptoms}
+
+This problem can occur due to the network policies applied by the operator, which occurs when the environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY` is set to `"true"`.
+{: tsCauses}
+
+[Disable the network policies in your namespace](#ibm-hlfsupport-troubleshooting-disable-network-policies). This should resolve connectivity issues with your nodes.
+{: tsResolve}
 
 
+## When I hover over my node, the status is red, what does this mean?
+{: #ibm-hlfsupport-troubleshooting-status-error}
+{: troubleshoot}
+
+A CA, peer, or ordering node has a red status box, meaning there may be connectivity issues with the node. Ideally, when you hover over any node, the node status should be `Running`.
+{: tsSymptoms}
+
+This problem can occur due to the network policies applied by the operator, which occurs when the environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY` is set to `"true"`.
+{: tsCauses}
+
+[Disable the network policies in your namespace](#ibm-hlfsupport-troubleshooting-disable-network-policies). This should resolve connectivity issues with your nodes.
+{: tsResolve}
+
+## How do I disable the network policies in my namespace?
+{: #ibm-hlfsupport-troubleshooting-disable-network-policies}
+{: troubleshoot}
+
+You may need to disable the network policies in your namespace to address connectivity issues in your network.
+{: tsSymptoms}
+
+Check if network policies have been applied in your namespace by running the following CLI command:
+{: tsResolve}
+
+```
+kubectl get netpol -n <NAMESPACE>
+```
+{: codeblock}
+
+If the command returns a list of one or more network policies that you did not apply and/or you want to disable, first disable the operator creation of network policies. Get the operator deployment spec in your namespace and check for environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`:
+```
+kubectl get deploy ibm-hlfsupport-operator -n <NAMESPACE>
+```
+{: codeblock}
+
+If it is present, remove the environment variable `IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY`:
+```
+kubectl edit deploy ibm-hlfsupport-operator -n <NAMESPACE>
+```
+{: codeblock}
+
+Once the operator creation of the network policy has been disabled, delete the network policies from the namespace:
+```
+kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
+```
+{: codeblock}

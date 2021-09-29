@@ -113,5 +113,6 @@ Blockchain HLF Support
 	{: .navgroup id="help"}
 	release-notes.md
 	known-issues.md
+	howto/ibm-hlfsupport-v2-troubleshooting.md
 	ibmblockchain_support.md
 	{: .navgroup-end}

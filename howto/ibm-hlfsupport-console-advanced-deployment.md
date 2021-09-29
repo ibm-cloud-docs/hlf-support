@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-24"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -1430,11 +1430,11 @@ When a CA, peer, or ordering node is configured to use an HSM, their private key
 * The use of an HSM introduces an increase in transaction processing, therefore you can expect a performance hit when using an HSM to manage the private keys for your nodes.
 * An HSM can be configured for a node only when the node is initially deployed. You cannot add HSM capability to existing nodes at this time.
 
-Configuring a node to use HSM is a three-part process:
-1. **Deploy an HSM**. Utilize the HSM appliance that is available in [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/infrastructure/hardware-security-module){: external} or configure your own HSM. Record the value of the HSM `partition` and `PIN` to be used in the subsequent steps.
-	- If you plan to use {{site.data.keyword.cloud_notm}} HSM see this [tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto) for an example of how to configure {{site.data.keyword.cloud_notm}} HSM 6.0 with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. After that is completed you can skip to Part 3 **Configure the node to use HSM**. 
-2. **Configure an HSM client image** or **Set up a PKCS #11 proxy (Deprecated)** [See Build a Docker image](#ibm-hlfsupport-console-adv-deployment-hsm-build-docker).
-3. **Configure the node to use HSM**.  From the APIs or the console, when you deploy a peer, CA, or ordering node, you can select the advanced option to use an HSM. See [Configure the node to use the HSM](#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node).
+Configuring a node to use HSM is a two-part process:
+1. **Configure an HSM**. There are two options to configure an HSM. For either option, record the value of the HSM `partition` and `PIN` to be used in the subsequent steps.
+	- Utilize the HSM appliance that is available in [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/infrastructure/hardware-security-module){: external}
+	- Configure your own HSM by building an HSM  client image. 
+2. **Configure the node to use HSM**. From the APIs or the console, when you deploy a peer, CA, or ordering node, you can select the advanced option to use an HSM.
 
 ### Before you begin
 {: #ibm-hlfsupport-console-adv-deployment-hsm-before}
@@ -1442,13 +1442,29 @@ Configuring a node to use HSM is a three-part process:
 - The Kubernetes CLI is required to configure the HSM.  See [Install and Set Up kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} or if your cluster is running on OpenShift see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} for instructions. 
 - You need access to a container registry, such as Docker or the [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).
 <staging-zHSM>
-### (Optional) Configure an HSM daemon
+
+### Part one: Configure an HSM
+{: #ibm-hlfsupport-console-adv-deployment-configure-hsm}
+
+- **Option 1: Use {{site.data.keyword.cloud_notm}} HSM**. If you plan to use {{site.data.keyword.cloud_notm}} HSM, see this [tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto) for an example of how to configure {{site.data.keyword.cloud_notm}} HSM 6.0 with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. After that is completed you can move on to [Part two: Configure the node to use HSM](#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node).
+- **Option 2: Configure your own HSM by building an HSM client image**. Use these steps to generate an image that is consumable by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator.
+	- Step one: (Optional) Build an HSM daemon image
+	- Step two: Modify the HSM client configuration
+	- Step three: Build the HSM client image
+	- Step four: Push the Docker image to your container registry
+	- Step five: Create a Kubernetes secret `hsmcrypto`
+	- Step six: Create the HSM configmap `ibm-hlfsupport-hsm-config`
+
+The use of a PKCS #11 proxy has been deprecated in favor of building an HSM client image which is simpler to configure and provides better overall performance. The following steps outline how to build and publish an HSM client image.
+{: note}
+
+It is not possible to migrate an existing node, that uses HSM with a PKCS #11 proxy, to use the HSM client image. To take advantage of the HSM client image, you need to deploy a new CA, peer, or ordering node.
+{: note}
+
+#### Step one: (Optional) Build an HSM daemon image
 {: #ibm-hlfsupport-console-adv-deployment-hsm-daemon}
 
-If a daemon is used to communicate with your HSM, for example if you are using openCryptoki on Z, follow these instructions to configure the daemon to work with the peer, CA, and ordering nodes. Then, when a node is deployed, it is configured with an HSM client (configured in a later step) that communicates with its own instance of the daemon that submits the requests to read and write the encrypted keys to the HSM device. If you plan to use this approach, you need to build the daemon image.
-
-#### Build the daemon image
-{: #ibm-hlfsupport-console-adv-deployment-hsm-daemon-build}
+If a daemon is used to communicate with your HSM, for example if you are using openCryptoki on Z, follow these instructions to configure the daemon to work with the peer, CA, and ordering nodes. Then, when a node is deployed, it is configured with an HSM client (configured in the following steps) that communicates with its own instance of the daemon that submits the requests to read and write the encrypted keys to the HSM device. If you plan to use this approach, you need to build the daemon image.
 
 An example of a Docker file image for an openCryptoki daemon would be:
 
@@ -1585,30 +1601,10 @@ The entrypoint script performs multiple functions:
 
 - **Start the daemon:** The daemon needs to be started from a location that is not a mountpath (see section 2). In the preceding example, the zHSM is launched from location `/hsm/usr.sbin.pkcsslotd`, which is not a defined mountpath.
 
-You are now ready to build the [HSM Client image](#ibm-hlfsupport-console-adv-deployment-hsm-client) as described in the next section.
+You are now ready to build the HSM Client image as described in the next steps.
 </staging-zHSM>
 
-### Build a Docker image
-{: #ibm-hlfsupport-console-adv-deployment-hsm-build-docker}
-
-There are two ways to configure HSM on your blockchain network: by **publishing an HSM client image to a container registry**, or by **configuring a PKCS #11 proxy**. The use of a PKCS #11 proxy has been deprecated in favor of building an HSM client image which is simpler to configure and provides better overall performance. Both processes are supported, however if you are configuring a new HSM device, it is recommended that you build and publish the HSM client image. Both sets of instructions are provided, starting with **Build an HSM client image**. If you still prefer to use a PKCS #11 proxy, you can refer to those [instructions](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-build-pkcs11-proxy) instead.  
-
-It is not possible to migrate an existing node, that uses HSM with a PKCS #11 proxy, to use the HSM client image. To take advantage of the HSM client image, you need to deploy a new CA, peer, or ordering node.
-{: note}
-
-
-**Build an HSM client image**
-{: #ibm-hlfsupport-console-adv-deployment-hsm-client}
-
-Next we build a Docker file that contains the HSM client image. These instructions assume that you have successfully configured your HSM appliance and HSM client. Use these steps to generate an image that is consumable by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator.
-
-- Step one: Modify the HSM client configuration.
-- Step two: Build the HSM client image.
-- Step three: Push the Docker image to your container registry.
-- Step four: Create a Kubernetes secret `hsmcrypto`.
-- Step five: Create the HSM configmap.
-
-#### Step one: Modify the HSM client configuration
+#### Step two: Modify the HSM client configuration
 {: #ibm-hlfsupport-console-adv-deployment-hsm-client-cfg}
 
 Each HSM has its own configuration file that is typically named `Chrystoki.conf`.  This is the main configuration file for the HSM integration and controls many aspects of the HSM client operation. After you install the HSM client, you need to modify the `etc/Chrystoki.conf` file to point to the `hsm` folder that contains the  HSM shared object library and cryptographic material. The paths specified in `Chrystoki.conf` represent the location where the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator mounts these files on the containers. You need to modify parameters inside the `Chrystoki2` and `LunaSA Client` sections as follows:
@@ -1640,7 +1636,7 @@ LunaSA Client = {
 ```
 {: codeblock}
 
-#### Step two: Build the HSM client image
+#### Step three: Build the HSM client image
 {: #ibm-hlfsupport-console-adv-deployment-hsm-client-docker} 
 
 The HSM client image can be built with a Docker file similar to the following:
@@ -1684,7 +1680,7 @@ docker build -t hsm-client:v1 -f Dockerfile .
 ```
 {: codeblock}
 
-#### Step three: Push the Docker image to your container registry
+#### Step four: Push the Docker image to your container registry
 {: #ibm-hlfsupport-console-adv-deployment-hsm-client-push}
 
 After the image is built, the next step is to push the image to your Docker registry (for example, Docker Hub). The commands look similar to:
@@ -1722,7 +1718,7 @@ Replace:
     - [Copying an existing image pull secret](/docs/containers?topic=containers-registry#copy_imagePullSecret)
     - [Referring to the image pull secret in your pod deployment](/docs/containers?topic=containers-images#pod_imagePullSecret)
 
-#### Step four: Create a Kubernetes secret `hsmcrypto`
+#### Step five: Create a Kubernetes secret `hsmcrypto`
 {: #ibm-hlfsupport-console-adv-deployment-hsm-client-crypto}
 
 In order for a CA, peer, or ordering node to be able to communicate with the HSM client image you need to
@@ -1763,16 +1759,20 @@ metadata:
 ```
 {: codeblock}
 
-#### Step five: Create the HSM configmap
+#### Step six: Create the HSM configmap `ibm-hlfsupport-hsm-config`
 {: #ibm-hlfsupport-console-adv-deployment-hsm-configmap}
 
 
 <staging-zHSM>
 
-Because the console needs to know the configuration settings to use for your HSM, you need to create a Kubernetes [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/){:external} to store these values. The configMap settings depend on whether you configured a daemon for your HSM or not. In that case, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator uses the HSM configuration passed in this configmap to get the details about the HSM client image, such as what image pull secret to use, and the folder mounts that are required. Based on the information provided, when a CA, peer, or ordering node is deployed with HSM enabled, the operator mounts required the files for the HSM client image. If you are using a daemon with your HSM, skip ahead to [Configure the operator to work with an HSM daemon](#daemon-configmap).
+Because the console needs to know the configuration settings to use for your HSM, you need to create a Kubernetes [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/){: external} to store these values. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator uses the HSM configuration passed in this configmap to get the details about the HSM client image, such as what image pull secret to use, and the folder mounts that are required. Based on the information provided, when a CA, peer, or ordering node is deployed with HSM enabled, the operator mounts required the files for the HSM client image.
 
-**Configure the operator to work with an HSM that does not use a daemon**
-{: #x86-configmap}
+There are two options for creating the HSM configmap:
+- Option 1: If you are **not** using a daemon with your HSM, follow [Configure the operator to work with an HSM that does not use a daemon](#no-daemon-configmap).
+- Option 2: If you are using a deamon with your HSM, follow [Configure the operator to work with an HSM daemon](#daemon-configmap).
+
+**Option 1: Configure the operator to work with an HSM that does not use a daemon**
+{: #no-daemon-configmap}
 
 </staging-zHSM>
 
@@ -1858,9 +1858,9 @@ In this example, the first `mountpath` contains four configuration files (cafile
 A second mountpath is included for the HSM `/etc/Chrystoki.conf` file. Because the HSM requires its config file in the `/etc` folder, which is a system directory, we need to use the `subpath` parameter to avoid replacing the entire `/etc` directory. If the subpath is not used, the entire `/etc` directory is replaced with the volume being mounted.  
 <staging-zHSM>
 
-You have completed the HSM configuration for your blockchain network. Now when you deploy a new CA, peer, or ordering node, you can configure it to use the HSM that you have configured here. See [Configuring a CA, peer, or ordering node to use the HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node) for details.
+You have completed the HSM configuration for your blockchain network. Now when you deploy a new CA, peer, or ordering node, you can configure it to use the HSM that you have configured here. See [Part two: Configuring a CA, peer, or ordering node to use the HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node) for details.
 
-**Configure the operator to work with an HSM daemon**  
+**Option 2: Configure the operator to work with an HSM daemon**  
 {: #daemon-configmap}
 
 If you configured an HSM daemon, the following sample configuration shows how to configure the openCryptoki zHSM on the operator. You need to customize the settings according to your daemon.   
@@ -1945,7 +1945,7 @@ The output looks similar to:
 configmap/ibm-hlfsupport-hsm-config created
 ```
 
-### Configuring a CA, peer, or ordering node to use the HSM
+### Part two: Configuring a CA, peer, or ordering node to use the HSM
 {: #ibm-hlfsupport-console-adv-deployment-cfg-hsm-node}
 
 Before attempting these steps you should have:

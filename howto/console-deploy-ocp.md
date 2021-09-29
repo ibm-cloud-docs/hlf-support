@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-21"
 
 keywords: OpenShift, IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -402,6 +402,8 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
+            - name: SERVICE_NAME
+              value: ibm-hflsupport-webhook
           ports:
             - name: server
               containerPort: 3000

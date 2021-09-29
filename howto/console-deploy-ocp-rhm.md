@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-21"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -155,7 +155,7 @@ You must have the cluster administrator role to install the operators from the R
 3. Follow the [instructions](https://marketplace.redhat.com/en-us/documentation/clusters#register-openshift-cluster-with-red-hat-marketplace) to register your OpenShift cluster with the Red Hat Marketplace.
 4. When prompted `Would you like to go back to the Red Hat Marketplace now? [Y/n]`, type `Y` to retrieve the <wintitle>Red Hat Marketplace</wintitle> page in your browser.
 5. Click **My software** > **Visit the Marketplace**.
-6. In the search bar, type **blockchain** to load the blockchain tile.
+6. In the search bar, type **blockchain** to load the blockchain tile. Select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric**.
 7. Click **Purchase** or **Free trial** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with the Red Hat Marketplace.
 8. If your OpenShift cluster is behind a firewall, see [Deploy from Red Hat Marketplace (airgap installation)](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm-fw).
 9. Continue to [Step one: Apply the Security Context Constraint](#deploy-ocp-rhm-scc).
@@ -277,7 +277,7 @@ You should use the console to deploy Certificate Authorities (CAs), peers, and o
 {: important}
 
 Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/IBPConsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
+![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}

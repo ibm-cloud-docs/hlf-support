@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-09-20"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
@@ -128,9 +128,8 @@ You are currently on the third part of our three-part tutorial series. This tuto
 
 You can use the steps in these tutorials to build a network with multiple organizations in one cluster for the purposes of development and testing. Use the **Build a network** tutorial if you want to form a blockchain consortium by creating an orderer node and adding organizations. Use the **Join a network** tutorial to connect a peer to the network. Following the tutorials with different consortium members helps you create a truly **distributed** blockchain network.
 
-Select the tutorial that corresponds to your channel configuration:
-- <img src="../images/2-x_Pill.png" alt="version 2.x" width="30" style="width:30px; border-style: none"/>*** [Channel application capabilities and peer Fabric images are 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2)
-- <img src="../images/1-4_Pill.png" alt="version 1.4" width="30" style="width:30px; border-style: none"/> [Channel application capabilities are 1.4 and peer Fabric images are 1.4 or 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14)
+Tutorial for a v2.x configured channel:
+- <img src="../images/2-x_Pill.png" alt="version 2.x" width="30" style="width:30px; border-style: none"/> [Channel application capabilities and peer Fabric images are 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2)
 
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 only supports v2.2.3 Fabric images.
 {: important}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-09-21"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
@@ -1085,7 +1085,7 @@ You should use the console to deploy Certificate Authorities (CAs), peers, and o
 {: important}
 
 Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/IBPConsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
+![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}
