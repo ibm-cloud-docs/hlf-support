@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-10-04"
 
 keywords: security, encryption, storage, tls, iam, roles, keys, multicloud
 
@@ -10,108 +10,12 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
 # Security
 {: #ibm-hlfsupport-security}
-
-
 
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric provides a scalable, highly reliable platform that helps customers deploy applications and data quickly and securely. This document provides information about securing your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service instance, where the blockchain console runs, and best practices for securing the  Kubernetes cluster where the blockchain nodes are deployed.
 {: shortdesc}
@@ -216,23 +120,14 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console allows
 The best place to start is to learn about the security features of the underlying Kubernetes infrastructure. The open source documentation provides a review of recommended practices for [securing a Kubernetes cluster](https://Kubernetes.io/docs/tasks/administer-cluster/securing-a-cluster/){: external}.
 
 
-
-
 For OpenShift Container Platform security considerations, you should review the [Red Hat Container Security Guide Service](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/container_security_guide/index){: external}. You will need to use [security context constraints](https://access.redhat.com/documentation/en-us/openshift_container_platform/3.11/html-single/architecture/index#security-context-constraints){: external} (SCCs) to define a set of conditions that a pod must run with in order to be accepted into the system. Details are included in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment instructions.  
 
 If you are running on Azure Kubernetes Service, Amazon Elastic Kubernetes Service, or IBM Kubernetes Service, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}
 
-
 ### Network security
 {: #ibm-hlfsupport-security-Kubernetes-network}
 
-
-
-
 The Kubernetes Container Platform provides the underlying network, including the networks and routers, over which the customer's VLAN resides. The customer needs to configure their servers and use gateways and firewalls to route traffic between servers to protect workloads from network threats. Protecting your cloud network by using firewalls and intrusion prevention system devices is imperative for protecting your cloud-based workloads.
-
-
-
 
 ### Cluster and Operating System security
 {: #ibm-hlfsupport-security-Kubernetes-container-os}
@@ -249,6 +144,7 @@ The Kubernetes Container Platform provides the underlying network, including the
 | Type | Description |Storage | Access |
 |------|-------------|--------|--------|
 |**Customer Kubernetes cluster access information**| In order for the service components to access and manage the components that are deployed into this cluster, the service components generate a Kubernetes secret for **cluster** access. Each Kubernetes secret is tied to that specific customer cluster. | After generation, these secrets never leave the IBM Kubernetes cluster where the service components are running and are deleted whenever a customer deletes the associated cluster. | Accessed only by the service component code and only in response to customer requests to deploy or manage components via the blockchain console. Developers of the service do not have access to the information in the secrets. |
+
 {: caption="Table 2. Types of keys and information used to access the customer Kubernetes cluster" caption-side="top"}
 
 ### Membership Service Providers (MSPs)
@@ -296,3 +192,119 @@ Because {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is based o
 - **Smart contracts:** All smart contracts should be reviewed by channel members before they are installed and executed on peers in their organization. Likewise, all updates to smart contract should be reviewed before the updates are applied to a peer. See this topic on [Upgrading a smart contract](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14#ibm-hlfsupport-console-smart-contracts-upgrade) for the steps that are required.
 
 - **HSM integration:** After you have configured an HSM for your environment, you have the option of configuring your nodes to use the HSM to generate and store private keys. See [Configuring a CA, peer, or ordering node to use the HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm) for more information.
+
+## Enable network policy
+{: #ibm-hlfsupport-security-enable-network-policy}
+
+Enable network policy will automatically install when the console is created. In the operator deployment specification, the operator needs to add an environment variable IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY and set its value to "true".
+```
+kubectl edit deploy ibm-hlfsupport-operator -n <offering-namespace>
+```
+{: codeblock}
+
+In the environment section under `spec.containers`, add the following:
+```
+- name: IBPOPERATOR_CONSOLE_APPLYNETWORKPOLICY
+   value:"true"
+   ```
+   {: codeblock}
+
+   When the above option is enabled, the operator will install 2 network policies during the console installation. These network policies are meant to give basic defensive security mechanism, and opens only the ports that the offering uses. This by no means is a policy that can replace a firewall. The policies applied provide ingress security, as blockchain network may require to call npm, gradle, maven servers to get chaincode modules as well as to communicate with the orderers/peers/applications running outside the cluster on internet we do not provide egress policies.
+
+Following are the two policies that we apply:
+1. Deny-all-ingress.
+    This policy denies all ingress (`ingress: []`) network traffic to the pods (`podSelector: {}`) in the namespace it applies to. This ensure only the needed traffics go through.
+    ```
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: networkpolicy-denyall
+      namespace: <>
+      labels:
+        type: "ibm-hlfsupport-console"
+        app.kubernetes.io/name: "ibm-hlfsupport"
+        app.kubernetes.io/instance: "ibm-hlfsupport-console"
+        app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
+        release: "operator"
+        helm.sh/chart: "ibm-hlfsupport"
+    spec:
+      podSelector: {}
+      ingress: []
+    ```
+    {: codeblock}
+
+
+2. Ingress
+    This ingress network policy applies to network traffic coming from anywhere (`from: [])`. It applies to all pods that labels `app.kubernetes.io/name: "ibm-hlfsupport"` which are all the offering related pods. This policy only opens the ports that are required for the blockchain components and the available management console from outside for them to connect to each other.
+    ```
+    kind: NetworkPolicy
+    apiVersion: networking.k8s.io/v1
+    metadata:
+      name: networkpolicy-ingress
+      labels:
+        type: "ibm-hlfsupport-console"
+        app.kubernetes.io/name: "ibm-hlfsupport"
+        app.kubernetes.io/instance: "ibm-hlfsupport-console"
+        app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
+        release: "operator"
+        helm.sh/chart: "ibm-hlfsupport"
+    spec:
+      ingress:
+      - from: [] # everywhere
+        ports:
+        - port: 7051 # peer-api
+          protocol: TCP
+        - port: 9443 # peer-operations / ca-operations
+          protocol: TCP
+        - port: 7443 # peer-grpcweb / orderer-grpcweb
+          protocol: TCP
+        - port: 7052
+          protocol: TCP # peer-chaincode
+        - port: 3000 # optools
+          protocol: TCP
+        - port: 7050 # orderer-grpc
+          protocol: TCP
+        - port: 8443 # orderer-operations
+          protocol: TCP
+          - port: 22222 # fileserver #check install/invoke chaincode
+          protocol: TCP
+        - port: 11111 # grpc #check install/invoke chaincode
+          protocol: TCP
+        - port: 7054 # ca
+          protocol: TCP
+      podSelector:
+        matchLabels:
+          app.kubernetes.io/name: "ibm-hlfsupport"
+      policyTypes:
+        - Ingress
+    ```
+    {: codeblock}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
