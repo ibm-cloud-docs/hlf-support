@@ -283,7 +283,7 @@ This separation of concerns opens exciting new opportunities for collaborating o
 
 For a tutorial on how this process is handled by the console, check out [Deploy a smart contract using Fabric v2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2).
 
-For information about to take advantage of the new lifecycle when writing a smart contract, check out [Writing powerful smart contracts](/docs/hlf-support?topic=hlf-support-write-powerful-smart-contracts).
+For information about how to take advantage of the new lifecycle when writing a smart contract, check out [Writing powerful smart contracts](/docs/hlf-support?topic=hlf-support-write-powerful-smart-contracts).
 
 ## How can I check and interpret the status of my components through the Kubernetes command line?
 {: #ibm-hlfsupport-v2-faq-cr-status}
@@ -304,7 +304,7 @@ The `spec.status` field will contain details of your component's status:
 - `lastHeartbeatTime`: when the controller last reconciled the component
 - `message`: long explanation of the status type
 - `reason`: short explanation of the status
-- `status`: "true" or "false" bsed on if status is valid
+- `status`: "true" or "false" based on if status is valid
 - `version`: the product (IBP) version of the component
 - `versions`: the operand version of the component
 - `type`: describes the current status of the component
@@ -312,7 +312,7 @@ The `spec.status` field will contain details of your component's status:
   - **Deployed**: component pod(s) are running
   - **Precreated**: (specific to the Orderer) Orderer is waiting for the genesis block to be created
   - **Error**: component hit an error during reconcile, or a certificate has expired
-  - **Warning**: one or more of the component's certificate will be expiring within 30 days (by default)
+  - **Warning**: one or more of the component's certificates will be expiring within 30 days (by default)
   - **Initializing**: component is being reconciled again due to spec updates in the pre-reconcile checks
 
 ## Do you support using certificates from non-IBM Certificate Authorities?
