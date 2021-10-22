@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-15"
+lastupdated: "2021-10-22"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -115,9 +115,10 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 ## Supported Environments and Components
 {: #console-ocp-about-prerequisites}
 
-The following Kubernetes environments and Fabric components are supported with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, for Fabric 2.2.3 or higher, covers the following   [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
 
 ### Kubernetes Support
+{: #kubernetes-support-shfv1}
 
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 supports Fabric 2.2.3 or higher. It can be deployed with the Kubernetes distributions on the following platforms:
 
@@ -130,13 +131,13 @@ The following Kubernetes environments and Fabric components are supported with {
 
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
-
 If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/hlf-support?topic=hlf-support-deploy-k8#console-deploy-k8-considerations).
 {: important}
 
 ### Fabric Component Support
+{: #fabric-component-support-shfv1}
 
-The following {{site.data.keyword.IBM_notm}} Fabric component support levels are provided for Hyperledger Fabric 1.0.0:
+The following {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 support levels are provided for Hyperledger  Fabric 2.2.3 or higher:
 
 Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console provide Hyperledger Fabric 1.0.0 clients with a verified production setup, simplified management and support, and verified security patches.
 {: important}
@@ -145,17 +146,17 @@ Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Ope
 |----|----|
 | IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images including IBM fix support for [supported Hyperledger Fabric versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). |
 | Supported Environments | Recent [Kubernetes and OpenShift versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites) on IBM Cloud, third-party Cloud or local installations. |
-| Hyperledger Fabric without IBMs Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in the 1.0.0 support offering - [community support only](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources) |
+| Hyperledger Fabric without IBMs Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in the 1.0.0 support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources) |
 | Hyperledger Fabric Labs Support | Fabric Operations Console via Certified Image and deployed by Kubernetes Operator is  supported. |
-| Hyperledger Fabric Open Source Projects - [IBM Blockchain GitHub](https://github.com/ibm-blockchain) | Not included in the 1.0.0 support offering - [community support only](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). | 
-| Hyperledger Fabric SDK and CLI | Basic connectivity diagnostics is supported. Code support and SDK API usage and tuning are not included in the 1.0.0 support offering - [community support only](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). |
-| Hyperledger Fabric Chaincode | Basic chaincode diagnostics is supported. Code support and tuning are not included in the 1.0.0 support offering - [community support only](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). |
-| Deployment Architecture and Design. | Basic deployment and management of highly available [peer](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr), [orderer](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os), and [Certificate Authority](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os) nodes via the Console are supported. Detailed Deployment Architecture and Design are not included in the 1.0.0 support offering - see [deployment options](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha) for more information. |
-| Solution Architecture and Design | [Deploying and managing smart contracts](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts) via the Console are supported. Solution Architecture and Design are not included in the 1.0.0 support offering. |
-| Performance Tuning | [Resource allocation](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources) via the Console is supported. Detailed performance analysis and tuning of the environment or application code are not included in the 1.0.0 support offering - see the documentation on creating [highly available applications and using indexes with CouchDB](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-ha). |
-| Certificate Renewal | [Auto and Manual Certificate renewal(https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-renew-expiration) via the Certified Console image are supported. Fixing environments for lost or expired identities is not included in the 1.0.0 support offering. The client installation is required to manage its own identities and renew its user certificates - a [Certificate Management Solution](https://cloud.ibm.com/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is available. |
+| Hyperledger Fabric Open Source Projects - [IBM Blockchain GitHub](https://github.com/ibm-blockchain) | Not included in the 1.0.0 support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). | 
+| Hyperledger Fabric SDK and CLI | Basic connectivity diagnostics is supported. Code support and SDK API usage and tuning are not included in the 1.0.0 support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). |
+| Hyperledger Fabric Chaincode | Basic chaincode diagnostics is supported. Code support and tuning are not included in the 1.0.0 support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). |
+| Deployment Architecture and Design. | Basic deployment and management of highly available [peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr), [orderer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os), and [Certificate Authority](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os) nodes via the Console are supported. Detailed Deployment Architecture and Design are not included in the 1.0.0 support offering - see [deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha) for more information. |
+| Solution Architecture and Design | [Deploying and managing smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts) via the Console are supported. Solution Architecture and Design are not included in the 1.0.0 support offering. |
+| Performance Tuning | [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources) via the Console is supported. Detailed performance analysis and tuning of the environment or application code are not included in the 1.0.0 support offering - see the documentation on creating [highly available applications and using indexes with CouchDB](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-ha). |
+| Certificate Renewal | [Auto and Manual Certificate renewal](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-renew-expiration) via the Certified Console image is supported. Fixing environments in which identities were lost or allowed to expire is not included in the 1.0.0 support offering. The user of the support offering is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
 
-{: caption="Table 2. Component support" caption-side="bottom"}
+{: caption="Table 2. Fabric component support" caption-side="bottom"}
 
 
 ## License and pricing
