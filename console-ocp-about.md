@@ -115,7 +115,7 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 ## Supported Environments and Components
 {: #console-ocp-about-prerequisites}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, for Fabric 2.2.3 or higher, covers the following   [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, for Fabric 2.2.3 or higher, covers the following [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
 
 ### Kubernetes Support
 {: #kubernetes-support-shfv1}
@@ -128,7 +128,6 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 | OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.6, 4.7 | x86_64 | 4.6, 4.7 |
 | OpenShift Container Platform on LinuxONE | 4.6, 4.7, 4.8 | s390x |4.6, 4.7, 4.8 |
 | Kubernetes | v1.18 - v1.21 | x86_64 | v1.18 - v1.21 |
-
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
 If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/hlf-support?topic=hlf-support-deploy-k8#console-deploy-k8-considerations).
@@ -155,7 +154,6 @@ Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Ope
 | Solution Architecture and Design | [Deploying and managing smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts) via the Console are supported. Solution Architecture and Design are not included in the 1.0.0 support offering. |
 | Performance Tuning | [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources) via the Console is supported. Detailed performance analysis and tuning of the environment or application code are not included in the 1.0.0 support offering - see the documentation on creating [highly available applications and using indexes with CouchDB](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-ha). |
 | Certificate Renewal | [Automatic](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-auto-renewal) and [Manual](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-renewal) Certificate renewal via the Certified Console image is supported. Fixing environments in which identities were lost or allowed to expire is not included in the 1.0.0 support offering. The user of the support offering is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
-
 {: caption="Table 2. Fabric component support" caption-side="bottom"}
 
 
