@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-22"
+lastupdated: "2021-10-26"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -154,7 +154,7 @@ Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Ope
 | Deployment Architecture and Design. | Basic deployment and management of highly available [peer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr), [orderer](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os), and [Certificate Authority](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-hadr-mr-os) nodes via the Console are supported. Detailed Deployment Architecture and Design are not included in the 1.0.0 support offering - see [deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha) for more information. |
 | Solution Architecture and Design | [Deploying and managing smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts) via the Console are supported. Solution Architecture and Design are not included in the 1.0.0 support offering. |
 | Performance Tuning | [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources) via the Console is supported. Detailed performance analysis and tuning of the environment or application code are not included in the 1.0.0 support offering - see the documentation on creating [highly available applications and using indexes with CouchDB](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-ha). |
-| Certificate Renewal | [Auto and Manual Certificate renewal](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-renew-expiration) via the Certified Console image is supported. Fixing environments in which identities were lost or allowed to expire is not included in the 1.0.0 support offering. The user of the support offering is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
+| Certificate Renewal | [Automatic](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-auto-renewal) and [Manual](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-renewal) Certificate renewal via the Certified Console image is supported. Fixing environments in which identities were lost or allowed to expire is not included in the 1.0.0 support offering. The user of the support offering is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
 
 {: caption="Table 2. Fabric component support" caption-side="bottom"}
 
