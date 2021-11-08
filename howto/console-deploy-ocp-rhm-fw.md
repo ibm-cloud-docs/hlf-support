@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-11-08"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -213,7 +119,7 @@ You need to customize the following variables:
 - `EXTERNAL_REGISTRY_PASSWORD` - Generate and paste your Red Hat Marketplace account pull secret.
 - `PORTABLE_REGISTRY_HOST` - (Optional) Provide the hostname of your intermediate server, if using.
 - `PORTABLE_REGISTRY_USER` - (Optional) Provide the name of the user with access to the portable registry, if using an intermediate server.
-- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server. 
+- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server.
 - `INTERNAL_REGISTRY_HOST` - Provide the hostname of the internal registry in the airgap environment.
 - `INTERNAL_REGISTRY_PORT` - Provide the port of the internal registry in the airgap environment .
 - `INTERNAL_REGISTRY_USER` - Provide the name of the user with access to the internal registry in the airgap environment.
@@ -248,29 +154,32 @@ cloudctl case save \
 --outputdir ${OFFLINEDIR}
 
 tar -xvf ${OFFLINEDIR}/${CASE_ARCHIVE} --directory ${OFFLINEDIR}
+
 ```
 {: codeblock}
+
 
 ### Mirror the images
 {: #deploy-ocp-rhm-fw-bastion-mirror}
 
 1. Set up the source registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
-  ```
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
+    ```
   {: codeblock}
+
 2. Set up the target registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
-  ```
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
+    ```
   {: codeblock}
 3. Mirror the images by running the following command:
   ```sh
@@ -288,15 +197,17 @@ You can expect this last step to take a few minutes while it downloads the image
 {: #deploy-ocp-rhm-fw-bastion-global}
 
 1. Set up a global image pull secret by running the following command:
-    ```sh
-    cloudctl case launch \
-    --case ${OFFLINECASE} \
-    --inventory ${ITEM} \
-    --action configure-cluster-airgap \
-    --namespace ${NS} \
-    --args "--registry ${INTERNAL_REGISTRY} --user ${INTERNAL_REGISTRY_USER} --pass ${INTERNAL_REGISTRY_PASSWORD} --inputDir ${OFFLINEDIR}"
-    ```
+
+        ```sh
+        cloudctl case launch \
+        --case ${OFFLINECASE} \
+        --inventory ${ITEM} \
+        --action configure-cluster-airgap \
+        --namespace ${NS} \
+        --args "--registry ${INTERNAL_REGISTRY} --user ${INTERNAL_REGISTRY_USER} --pass ${INTERNAL_REGISTRY_PASSWORD} --inputDir ${OFFLINEDIR}"
+       ```
     {: codeblock}
+
 2. (Optional) Add the local registry to cluster insecureRegistries list if your local registry is not secured by a certificate. All the nodes will restart one at a time after the following command:
     ```sh
     oc patch image.config.openshift.io/cluster --type=merge -p "{\"spec\":{\"registrySources\":{\"insecureRegistries\":[\"${INTERNAL_REGISTRY_HOST}:${INTERNAL_REGISTRY_PORT}\", \"${INTERNAL_REGISTRY_HOST}\"]}}}"
@@ -402,7 +313,7 @@ You need to customize the following variables:
 - `EXTERNAL_REGISTRY_PASSWORD` - Generate and paste your Red Hat Marketplace account pull secret.
 - `PORTABLE_REGISTRY_HOST` - (Optional) Provide the hostname of your intermediate server, if using.
 - `PORTABLE_REGISTRY_USER` - (Optional) Provide the name of the user with access to the portable registry, if using an intermediate server.
-- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server. 
+- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server.
 - `INTERNAL_REGISTRY_HOST` - Provide the hostname of the internal registry in the airgap environment.
 - `INTERNAL_REGISTRY_PORT` - Provide the port of the internal registry in the airgap environment .
 - `INTERNAL_REGISTRY_USER` - Provide the name of the user with access to the internal registry in the airgap environment.
@@ -548,7 +459,7 @@ You need to customize the following variables:
 - `EXTERNAL_REGISTRY_PASSWORD` - Generate and paste your Red Hat Marketplace account pull secret.
 - `PORTABLE_REGISTRY_HOST` - (Optional) Provide the hostname of your intermediate server, if using.
 - `PORTABLE_REGISTRY_USER` - (Optional) Provide the name of the user with access to the portable registry, if using an intermediate server.
-- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server. 
+- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server.
 - `INTERNAL_REGISTRY_HOST` - Provide the hostname of the internal registry in the airgap environment.
 - `INTERNAL_REGISTRY_PORT` - Provide the port of the internal registry in the airgap environment .
 - `INTERNAL_REGISTRY_USER` - Provide the name of the user with access to the internal registry in the airgap environment.
@@ -753,7 +664,7 @@ You need to customize the following variables:
 - `EXTERNAL_REGISTRY_PASSWORD` - Generate and paste your Red Hat Marketplace account pull secret.
 - `PORTABLE_REGISTRY_HOST` - (Optional) Provide the hostname of your intermediate server, if using.
 - `PORTABLE_REGISTRY_USER` - (Optional) Provide the name of the user with access to the portable registry, if using an intermediate server.
-- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server. 
+- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server.
 - `INTERNAL_REGISTRY_HOST` - Provide the hostname of the internal registry in the airgap environment.
 - `INTERNAL_REGISTRY_PORT` - Provide the port of the internal registry in the airgap environment .
 - `INTERNAL_REGISTRY_USER` - Provide the name of the user with access to the internal registry in the airgap environment.
@@ -909,7 +820,7 @@ You need to customize the following variables:
 - `EXTERNAL_REGISTRY_PASSWORD` - Generate and paste your Red Hat Marketplace account pull secret.
 - `PORTABLE_REGISTRY_HOST` - (Optional) Provide the hostname of your intermediate server, if using.
 - `PORTABLE_REGISTRY_USER` - (Optional) Provide the name of the user with access to the portable registry, if using an intermediate server.
-- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server. 
+- `PORTABLE_REGISTRY_PASSWORD` - (Optional) Provide the password for the portable registry, if using an intermediate server.
 - `INTERNAL_REGISTRY_HOST` - Provide the hostname of the internal registry in the airgap environment.
 - `INTERNAL_REGISTRY_PORT` - Provide the port of the internal registry in the airgap environment .
 - `INTERNAL_REGISTRY_USER` - Provide the name of the user with access to the internal registry in the airgap environment.
