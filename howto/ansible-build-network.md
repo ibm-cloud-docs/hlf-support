@@ -1,8 +1,8 @@
 ---
 
- copyright:
+    copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-11-11"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Building an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network using Ansible playbooks
@@ -135,19 +41,19 @@ Before using the playbook, you need to complete the following steps:
 After you deploy an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service instance, you need to gather the connection information for the console.If your cluster is running in a Red Hat OpenShift or Kubernetes cluster that is not in {{site.data.keyword.cloud_notm}}, you need to perform the following steps:
 
 1. **Determine the URL of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.**
-   The URL is of the format `https://<NAMESPACE>-ibpconsole-console.<DOMAIN>` where:
+    The URL is of the format `https://<NAMESPACE>-ibpconsole-console.<DOMAIN>` where:
 
     - `<NAMESPACE>` is the name of the namespace that you created for your cluster. If you are running OpenShift Container Platform, it is the name of your project.
     - `<DOMAIN>` is the name of your cluster domain that you specified in the `DOMAIN:` field of your `ibm-hlfsupport-console.yaml` file when you deployed the service. If you deployed an instance of the service by using the Ansible playbook, it is the value of `<console_domain>` that you specified in the `install-ibp.yml` file.
 
-   Your console URL looks similar to the following example:
-   ```
-   https://blockchain-project-ibpconsole-console.xyz.abc.com
+    Your console URL looks similar to the following example:
+    ```
+    https://blockchain-project-ibpconsole-console.xyz.abc.com
 
-   ```
+    ```
 2. (Optional) Get an [API key](#x8051010){: term} and `secret` that you can use to access your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. If you want to skip getting an API key and secret, you can also use your console **username** and **password** instead of an API key and secret, although that would not be recommended in a production setting.
 
- If you prefer to use an API `key` and `secret`, then you need to use the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric REST APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-api-key) to generate them. Save the value of the `"api_key"` and `"api_secret"` to be used in step three.
+    If you prefer to use an API `key` and `secret`, then you need to use the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric REST APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-api-key) to generate them. Save the value of the `"api_key"` and `"api_secret"` to be used in step three.
 
 ## Step two: Clone the Ansible collection
 {: #ansible-build-clone}
@@ -165,10 +71,10 @@ We'll explore the contents of this collection in the next section.
 
 After you clone the Ansible collection to your local system, open the `ansible-collection` directory and navigate to the `tutorial` folder and take a moment to review the contents.
 
-  ```bash
-  cd ansible-collection/tutorial
-  ```
-  {: codeblock}
+    ```bash
+    cd ansible-collection/tutorial
+    ```
+    {: codeblock}
 
 The first thing that you notice is that the playbook `.yml` files are numbered. Because the playbooks build on each other, the numbers help you understand the order that they should be run. When you want to change some of the configuration properties, you can edit the `.yml` files and insert your own custom values, for example, if you want to customize a node name or use a different enrollment ID. Each playbook includes either a **role** or a **task**. A role includes a set of tasks that in turn call the associated [modules](https://ibm-blockchain.github.io/ansible-collection/modules.html) that submit the requests to your cluster.
 
@@ -203,46 +109,46 @@ These instructions assume that you have installed [Docker](https://docs.docker.c
 
 1. We use a Docker command to run the first playbook that creates an ordering organization that is named **Ordering Org**, with a certificate authority named **Ordering Org CA**, and finally a single node ordering service named **Ordering Service**. If you have not already, go ahead and modify the console connection variables inside the `ordering-org-vars.yml` by using the instructions from the previous section. You are now ready to run an Ansible playbook from Docker.
 
-  The following command invokes the `01-create-ordering-organization-components.yml` playbook.
+    The following command invokes the `01-create-ordering-organization-components.yml` playbook.
 
-  ```
-  docker run --rm -v <FULLY-QUALIFIED-PATH-TO-PLAYBOOKS>:/playbooks ibmcom/ibm-hlfsupport-ansible ansible-playbook /playbooks/<PLAYBOOK>.yml
-  ```
-  {: codeblock}
+    ```
+    docker run --rm -v <FULLY-QUALIFIED-PATH-TO-PLAYBOOKS>:/playbooks ibmcom/ibm-hlfsupport-ansible ansible-playbook /playbooks/<PLAYBOOK>.yml
+    ```
+    {: codeblock}
 
-  where:
-  - `--rm` tells Docker to remove the container when the command completes.
-  - `-v <FULLY-QUALIFIED-PATH-TO-PLAYBOOKS>` is used to mount the `tutorial` folder into the Docker container. Replace `<FULLY-QUALIFIED-PATH-TO-PLAYBOOKS>` with the fully qualified path to where the `tutorial` folder resides on your local system. When you run the command from the `tutorial` folder you can replace this value with `$PWD`.
-  - `ibmcom/ibm-hlfsupport-ansible` represents the tag of the Docker image that is published by {{site.data.keyword.IBM_notm}}.
-  - `<PLAYBOOK>` is used to designate which playbook to run.
+    where:
+    - `--rm` tells Docker to remove the container when the command completes.
+    - `-v <FULLY-QUALIFIED-PATH-TO-PLAYBOOKS>` is used to mount the `tutorial` folder into the Docker container. Replace `<FULLY-QUALIFIED-PATH-TO-PLAYBOOKS>` with the fully qualified path to where the `tutorial` folder resides on your local system. When you run the command from the `tutorial` folder you can replace this value with `$PWD`.
+    - `ibmcom/ibm-hlfsupport-ansible` represents the tag of the Docker image that is published by {{site.data.keyword.IBM_notm}}.
+    - `<PLAYBOOK>` is used to designate which playbook to run.
 
-  For example:
-  ```
-  cd tutorial
-  docker run --rm -v $PWD:/playbooks ibmcom/ibm-hlfsupport-ansible ansible-playbook /playbooks/01-create-ordering-organization-components.yml
-  ```
-  {: codeblock}
+    For example:
+    ```
+    cd tutorial
+    docker run --rm -v $PWD:/playbooks ibmcom/ibm-hlfsupport-ansible ansible-playbook /playbooks/01-create-ordering-organization-components.yml
+    ```
+    {: codeblock}
 
-  While the command is running, you see output from each task. You can safely ignore the following warning:
-  ```
-  [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'`.
-  ```
+    While the command is running, you see output from each task. You can safely ignore the following warning:
+    ```
+    [WARNING]: provided hosts list is empty, only localhost is available. Note that the implicit localhost does not match 'all'`.
+    ```
 
-  When the playbook is finished, in the `PLAY RECAP` section, you see output similar to:
-  ```
-  PLAY RECAP *********************************************************************
-  localhost                  : ok=7    changed=5    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0    
-  ```
+    When the playbook is finished, in the `PLAY RECAP` section, you see output similar to:
+    ```
+    PLAY RECAP *********************************************************************
+    localhost                  : ok=7    changed=5    unreachable=0    failed=0    skipped=1    rescued=0    ignored=0    
+    ```
 
-  If the playbook completes successfully, you should see `failed=0`. Go ahead now and log in to your console to confirm that **Ordering Org** CA, **Ordering Org** organization, and **Ordering Service** was created.
+    If the playbook completes successfully, you should see `failed=0`. Go ahead now and log in to your console to confirm that **Ordering Org** CA, **Ordering Org** organization, and **Ordering Service** was created.
 
 2. The same instructions can be repeated for the next playbook, `02-create-endorsing-organization-components.yml`. This playbook creates an endorsing organization named **Org1**, with a certificate authority named **Org1 CA**, and then a peer named **Org1 Peer**. When you open the playbook, notice in the comments that this playbook uses a different variables file `org1-vars.yml`. Edit that file with your console connection information. And then run that playbook:
-  ```
-  docker run --rm -v $PWD:/playbooks ibmcom/ibm-hlfsupport-ansible ansible-playbook /playbooks/02-create-endorsing-organization-components.yml"
-  ```
-  {: codeblock}
+    ```
+    docker run --rm -v $PWD:/playbooks ibmcom/ibm-hlfsupport-ansible ansible-playbook /playbooks/02-create-endorsing-organization-components.yml"
+    ```
+    {: codeblock}
 
-  Again, if you check your console, you can see that the **Org1 CA**, **Org1** organization, and **Org1 Peer** was created.
+    Again, if you check your console, you can see that the **Org1 CA**, **Org1** organization, and **Org1 Peer** was created.
 
 3. You can continue running each playbook individually in the list to stand up a basic network that contains an ordering service, two peer organizations, two peers, and a channel. The playbooks also install smart contracts on the peers and instantiate them on the channel.
 
@@ -285,7 +191,7 @@ docker run --rm -v "$PWD:/tutorials" ibmcom/ibm-hlfsupport-ansible /tutorials/bu
 | **Customizing the name of the ordering service** | The default ordering service name is defined in the `common-vars.yml` file in the `ordering_service_name` parameter. Edit this value to specify the preferred name of the ordering service. |
 | **Adjusting how many ordering nodes are created for an ordering service** |By default, the `01-create-ordering-organization-components.yml` playbook is configured to create a single node ordering service. If your cluster has the resources to support additional ordering nodes in the ordering service, you can modify how many ordering nodes are created when the ordering service is deployed by editing the `01-create-ordering-organization-components.yml` playbook and specifying the number of ordering nodes that you want to deploy in the `ordering_service_nodes:` parameter. |
 | **Adjusting node resources** | You can customize the resources that are allocated to a node by editing the `resources` block of its associated module. For example, to modify the CPU and memory that is allocated to a CA node, navigate to your clone of the  [certificate_authority](https://github.com/IBM-Blockchain/ansible-collection/blob/main/plugins/modules/certificate_authority.py) module on your local system. Scroll down to the `resources` section and modify the values that are assigned to `cpu` and `memory`. Likewise, you can modify peer resources in your clone of the [peer](https://github.com/IBM-Blockchain/ansible-collection/blob/main/plugins/modules/peer.py) module or the ordering service resources in the [ordering service](https://github.com/IBM-Blockchain/ansible-collection/blob/main/plugins/modules/ordering_service.py) module. |
-| **Using your own smart contract** | By default, the `19-install-chaincode.yml` and `20-instantiate-chaincode.yml` playbooks use the Fabric 2.0 smart contract lifecycle with the `FabCar` sample smart contract. When you are ready to deploy your own smart contract, you need to: <br><ol><li>Include the smart contract package in the `tutorial` directory and name it using the format `<SMART-CONTRACT-NAME>@<VERSION>.tar.gz`.</li><li> Refer to your smart contract by replacing the value of the  `smart_contract_base_name:` and `smart_contract_version:` parameters in the `common-vars.yml` file.</li></ol> |
+| **Using your own smart contract** | By default, the `19-install-chaincode.yml` and `20-instantiate-chaincode.yml` playbooks use the Fabric 2.0 smart contract lifecycle with the `FabCar` sample smart contract. When you are ready to deploy your own smart contract, you need to: <br><ol><li>Include the smart contract package in the <code>tutorial</code> directory and name it using the format <code><SMART-CONTRACT-NAME>@<VERSION>.tar.gz</code>.</li><li> Refer to your smart contract by replacing the value of the  <code>smart_contract_base_name:</code> and <code>smart_contract_version:</code> parameters in the <code>common-vars.yml</code> file.</li></ol> |
 | **Using your own enroll ID and secrets** | When the playbooks deploy a node, it uses the enroll IDs specified in the [01-create-ordering-organization-components.yml](https://github.com/IBM-Blockchain/ansible-collection/blob/main/tutorial/01-create-ordering-organization-components.yml) and  [02-create-endorsing-organization-components.yml](https://github.com/IBM-Blockchain/ansible-collection/blob/main/tutorial/02-create-endorsing-organization-components.yml) files. The associated enroll secrets are provided in the corresponding variable files [ordering-org-vars.yml](https://github.com/IBM-Blockchain/ansible-collection/blob/main/tutorial/ordering-org-vars.yml), [org1-vars.yml](https://github.com/IBM-Blockchain/ansible-collection/blob/main/tutorial/org1-vars.yml), and [org2-vars.yml](https://github.com/IBM-Blockchain/ansible-collection/blob/main/tutorial/org2-vars.yml). You can customize the values of the enroll ID and secrets in these files according to your needs. |
 {: caption="Table 1. Hints and tips for using the Ansible collection" caption-side="bottom"}
 
@@ -315,7 +221,7 @@ Using the wallet identities from the preceding table, you can now follow the ste
 
 | Associate an identity with CAs |
 |:-------------------------------|
-| <ul><li>Navigate to the **Nodes** tab.</li><li>Open the **Ordering Org CA** and click **Associate identity**.</li><li>Click the **Existing CA** tab and select the **Ordering Org CA Admin**.</li><li>If you created the endorsing organizations for the peers, repeat these steps for the **Org1 CA** and **Org2 CA** nodes, associating the **Org1 CA Admin** and **Org2 CA Admin** identities respectively.</li></ul> |
+| <ul><li>Navigate to the <strong>Nodes</strong> tab.</li><li>Open the <strong>Ordering Org CA</strong> and click <strong>Associate identity</strong>.</li><li>Click the <strong>Existing CA</strong> tab and select the <strong>Ordering Org CA Admin</strong>.</li><li>If you created the endorsing organizations for the peers, repeat these steps for the <strong>Org1 CA</strong> and <strong>Org2 CA</strong> nodes, associating the <strong>Org1 CA Admin</strong> and <strong>Org2 CA Admin</strong> identities respectively.</li></ul> |
 {: class="simple-tab-table"}
 {: caption="Table 2. CA identities" caption-side="top"}
 {: #simpletabtable1}
@@ -324,7 +230,7 @@ Using the wallet identities from the preceding table, you can now follow the ste
 
 | Associate an identity with peers |
 |----------------------------------|
-| <ul><li>Navigate to the **Nodes** tab.</li><li>Open the **Org1 Peer** and click **Associate identity**.</li><li>Select the **Org1 Admin** from the drop-down list and click **Associate identity**.</li><li>If you created the second endorsing organization (Org2) for the peers, repeat these steps for the **Org2 Peer** by associating the **Org2 Admin** identity.</li></ul>  |
+| <ul><li>Navigate to the <strong>Nodes</strong> tab.</li><li>Open the <strong>Org1 Peer</strong> and click <strong>Associate identity</strong>.</li><li>Select the <strong>Org1 Admin</strong> from the drop-down list and click <strong>Associate identity</strong>.</li><li>If you created the second endorsing organization (Org2) for the peers, repeat these steps for the <strong>Org2 Peer</strong> by associating the <strong>Org2 Admin</strong> identity.</li></ul>  |
 {: caption="Table 2. Peer identities" caption-side="top"}
 {: #simpletabtable2}
 {: tab-title="Peer nodes"}
@@ -333,7 +239,7 @@ Using the wallet identities from the preceding table, you can now follow the ste
 
 | Associate an identity with the ordering service |
 |-------------------------------------------------|
-| <ul><li>Navigate to the **Nodes** tab.</li><li>Open the **Ordering Service** and click **Associate identity**.</li><li>Select the **Ordering Org Admin** from the drop-down list and click **Associate identity**.</li></ul> |
+| <ul><li>Navigate to the <strong>Nodes</strong> tab.</li><li>Open the <strong>Ordering Service</strong> and click <strong>Associate identity</strong>.</li><li>Select the <strong>Ordering Org Admin</strong> from the drop-down list and click <strong>Associate identity</strong>.</li></ul> |
 {: caption="Table 2. Ordering service identities" caption-side="top"}
 {: #simpletabtable3}
 {: tab-title="Ordering service"}
@@ -344,3 +250,5 @@ Using the wallet identities from the preceding table, you can now follow the ste
 {: #ansible-build-summary}
 
 Congratulations. You have used the Ansible playbooks to configure {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components on your cluster. You know how to run a playbook individually and have some sample shell scripts that show how to run the playbooks together to build a reproducible network and tear it back down. You can explore further by building your own playbooks that call the Ansible [modules](https://ibm-blockchain.github.io/ansible-collection/modules.html){: external} or build your own custom scripts according to your network use case.
+
+

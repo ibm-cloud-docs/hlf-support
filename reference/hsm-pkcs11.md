@@ -2,108 +2,14 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-11"
 
 keywords: HSM, PKCS11 proxy
 subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -156,23 +62,23 @@ ARG ARCH=amd64
 ARG VERSION=2032875
 
 RUN microdnf install -y \
-	git \
-	make \
-	cmake \
-	openssl-devel \
-	gcc;
+    git \
+    make \
+    cmake \
+    openssl-devel \
+    gcc;
 
 RUN if [ "${ARCH}" == "amd64" ]; then ARCH="x86_64"; fi && \
-	rpm -ivh https://kojipkgs.fedoraproject.org/packages/libseccomp/2.4.2/2.fc30/${ARCH}/libseccomp-2.4.2-2.fc30.${ARCH}.rpm && \
-	rpm -ivh https://kojipkgs.fedoraproject.org/packages/libseccomp/2.4.2/2.fc30/${ARCH}/libseccomp-devel-2.4.2-2.fc30.${ARCH}.rpm
+    rpm -ivh https://kojipkgs.fedoraproject.org/packages/libseccomp/2.4.2/2.fc30/${ARCH}/libseccomp-2.4.2-2.fc30.${ARCH}.rpm && \
+    rpm -ivh https://kojipkgs.fedoraproject.org/packages/libseccomp/2.4.2/2.fc30/${ARCH}/libseccomp-devel-2.4.2-2.fc30.${ARCH}.rpm
 
 
 RUN git clone https://github.com/SUNET/pkcs11-proxy && \
-	cd pkcs11-proxy && \
-	git checkout ${VERSION} && \
-	cmake . && \
-	make && \
-	make install
+    cd pkcs11-proxy && \
+    git checkout ${VERSION} && \
+    cmake . && \
+    make && \
+    make install
 
 ########## FINAL image - Build softhsm client ##########
 
@@ -180,15 +86,15 @@ FROM registry.access.redhat.com/ubi8/ubi-minimal
 ARG ARCH=amd64
 
 RUN microdnf install -y \
-	shadow-utils \
-	&& microdnf clean all \
-	&& groupadd -g 7051 ibm-hlfsupport-user \
-	&& useradd -u 7051 -g ibm-hlfsupport-user -s /bin/bash ibm-hlfsupport-user \
-	&& mkdir /licenses \
-	&& if [ "${ARCH}" == "amd64" ]; then ARCH="x86_64"; fi \
-	&& rpm -ivh https://kojipkgs.fedoraproject.org/packages/libseccomp/2.4.2/2.fc30/${ARCH}/libseccomp-2.4.2-2.fc30.${ARCH}.rpm \
-	&& microdnf remove shadow-utils \
-	&& microdnf clean all;
+    shadow-utils \
+    && microdnf clean all \
+    && groupadd -g 7051 ibm-hlfsupport-user \
+    && useradd -u 7051 -g ibm-hlfsupport-user -s /bin/bash ibm-hlfsupport-user \
+    && mkdir /licenses \
+    && if [ "${ARCH}" == "amd64" ]; then ARCH="x86_64"; fi \
+    && rpm -ivh https://kojipkgs.fedoraproject.org/packages/libseccomp/2.4.2/2.fc30/${ARCH}/libseccomp-2.4.2-2.fc30.${ARCH}.rpm \
+    && microdnf remove shadow-utils \
+    && microdnf clean all;
 
 COPY --from=builder /usr/local/bin/pkcs11-daemon /usr/local/bin/pkcs11-daemon
 COPY --from=builder /usr/local/lib/libpkcs11-proxy.so.0.1 /usr/local/lib/libpkcs11-proxy.so.0.1
@@ -234,6 +140,7 @@ Run the following command to build the image:
 docker build -t pkcs11-proxy:v1 -f Dockerfile .
 ```
 {: codeblock}
+
 After the image is built, the next step is to push the image to your Docker registry (for example, Docker Hub). This command will look similar to:
 
 ```
@@ -345,12 +252,12 @@ If the pod starts successfully you will see something similar to:
 
 ```
 Type    Reason     Age   From                  Message
-  ----    ------     ----  ----                  -------
-  Normal  Scheduled  19s   default-scheduler     Successfully assigned hsm/pkcs11-proxy to 10.95.42.51
-  Normal  Pulling    18s   kubelet, 10.95.42.51  pulling image "pamaibm/pkcs11-proxy:v1"
-  Normal  Pulled     7s    kubelet, 10.95.42.51  Successfully pulled image "pamaibm/pkcs11-proxy:v1"
-  Normal  Created    7s    kubelet, 10.95.42.51  Created container
-  Normal  Started    7s    kubelet, 10.95.42.51  Started container
+----    ------     ----  ----                  -------
+Normal  Scheduled  19s   default-scheduler     Successfully assigned hsm/pkcs11-proxy to 10.95.42.51
+Normal  Pulling    18s   kubelet, 10.95.42.51  pulling image "pamaibm/pkcs11-proxy:v1"
+Normal  Pulled     7s    kubelet, 10.95.42.51  Successfully pulled image "pamaibm/pkcs11-proxy:v1"
+Normal  Created    7s    kubelet, 10.95.42.51  Created container
+Normal  Started    7s    kubelet, 10.95.42.51  Started container
 ```
 {: codeblock}
 
@@ -425,3 +332,5 @@ Because the HSM implementation currently only supports HSMs that implement the P
 {: note}
 
 When the node is deployed, a private key for the specified node enroll ID and secret is generated by the HSM and stored securely in the appliance.
+
+

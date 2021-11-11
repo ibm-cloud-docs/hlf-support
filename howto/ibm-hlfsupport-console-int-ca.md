@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-11-11"
 
 keywords: intermediate CA, root CA, parent server, Certificate Authority, multicloud
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -152,20 +58,20 @@ The configuration process begins with the root CA. If one does not already exist
 
 - [Part One: Actions you perform from the root CA](#ibm-hlfsupport-ica-part-one)
 
-  1. Deploy a root CA if one does not already exist.
-  2. Register the intermediate CA admin identity with the root CA.
-  3. Register the intermediate TLS CA admin identity with the root CA.
-  4. Export the root CA to a JSON file.
+    1. Deploy a root CA if one does not already exist.
+    2. Register the intermediate CA admin identity with the root CA.
+    3. Register the intermediate TLS CA admin identity with the root CA.
+    4. Export the root CA to a JSON file.
 
 - [Part Two: Build the intermediate CA JSON override](#ibm-hlfsupport-ica-part-two)
 
-  Edit the example JSON override file by providing the root CA TLS signing cert and the intermediate CA identity enroll id and secrets to the JSON override file.
+    Edit the example JSON override file by providing the root CA TLS signing cert and the intermediate CA identity enroll id and secrets to the JSON override file.
 
 - [Part Three: Actions you perform on the intermediate CA](#ibm-hlfsupport-ica-part-three)
 
-  1. Create a new CA which will serve as the intermediate CA.
-  2. Provide the intermediate CA admin enroll ID and secret that you registered with the root CA.
-  3. Provide the CA JSON override file.
+    1. Create a new CA which will serve as the intermediate CA.
+    2. Provide the intermediate CA admin enroll ID and secret that you registered with the root CA.
+    3. Provide the CA JSON override file.
 
 After completing these steps, when you create organization MSPs for your peers or orderers, you can point to the intermediate CA instead of the root CA.
 
@@ -178,24 +84,24 @@ This process can be performed using the console or the APIs, if you are an exper
 1. **Deploy a root CA.** Before you can deploy an intermediate CA, a root CA must already exist in your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric instance. See the [Build a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-CA-org1CA) tutorial for instructions on how to create a CA.
 
 2. **Register the intermediate CA admin identity with the root CA.** In order for an intermediate CA to be able to register and enroll identities, the intermediate CA admin identity must be registered with the root CA.
-  - Click the root CA tile to open it and click **Register user**.
-  - Enter the enroll ID and secret that you will use for the intermediate CA admin identity. For purposes of this tutorial we will use `icaadmin` and `icaadminpw`, but you can use any values suitable for your use case.
-  - Leave the identity type as `client` and optionally specify a value for **maximum enrollments** if you want to limit the number of times you can generate certificates for this admin identity. Otherwise, you can leave it blank.
-  - On the next panel, because this identity will be for the intermediate CA admin, you need to add the attribute `hf.IntermediateCA` and set its value to `true`. Don't forget to click **Add**.
-  - Click **Register user** when you are finished.
+    - Click the root CA tile to open it and click **Register user**.
+    - Enter the enroll ID and secret that you will use for the intermediate CA admin identity. For purposes of this tutorial we will use `icaadmin` and `icaadminpw`, but you can use any values suitable for your use case.
+    - Leave the identity type as `client` and optionally specify a value for **maximum enrollments** if you want to limit the number of times you can generate certificates for this admin identity. Otherwise, you can leave it blank.
+    - On the next panel, because this identity will be for the intermediate CA admin, you need to add the attribute `hf.IntermediateCA` and set its value to `true`. Don't forget to click **Add**.
+    - Click **Register user** when you are finished.
 
 3. **Register the intermediate TLS CA admin identity with the root CA.** Because TLS communications are enabled on the network, whenever you deploy a CA, a TLS CA is automatically deployed along side the CA, and uses the same endpoint address. Therefore, you also need to register an identity that will serve as the intermediate TLS CA admin. Repeat the actions that you performed in the previous step to register the admin identity, but this time specify a different enroll ID and secret. For purposes of the tutorial, we use `itlscaadmin` and `itlscaadminpw`.
 
 4. **Export the root CA to a JSON file.** Now that you have the intermediate CA admins registered with the root CA, there is one last piece of information we need: the root CA TLS signed certificate. This certificate is shared with each node in the organization and is used to secure the communications between the nodes. Therefore, in order for the intermediate CA to communicate with the root CA, it has to be included in the intermediate CA configuration. To get the root CA TLS signed certificate, simply export the root CA to a JSON file. Open the root CA and click the **Export** icon.
-  ![Export root CA](../images/export-root-ca.png "Export root CA"){: caption="Figure 2. Export root CA" caption-side="bottom"}
+    ![Export root CA](../images/export-root-ca.png "Export root CA"){: caption="Figure 2. Export root CA" caption-side="bottom"}
 
-  - Open the downloaded JSON file and locate the value corresponding to the `tls_cert` element. You will need to copy and paste the certificate in a later step. It will resemble:
+    - Open the downloaded JSON file and locate the value corresponding to the `tls_cert` element. You will need to copy and paste the certificate in a later step. It will resemble:
 
     ```
     "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNvRENDQWtXZ0F3SUJBZ0lRWXZYRUgzUktMUVNiUnZTdnRLWUJDVEFLQmdncWhrak9QUVFEQWpDQnB6RUwKTUFrR0ExVUVCaE1DVlZNeEZ6QVZCZ05WQkFnVERrNXZjblJvSUVOaGNtOXNhVzVoTVE4d0RRWURWUVFIRXdaRQpkWEpvWVcweEREQUtCZ05WQkFvVEEwbENUVEVUTUJFR0ExVUJVaHAKVkM1VE5OVzNqRzJkVVZwUUlkSmEvMWtDSVFEMGE0QWRzazJ0RlhDRFp1RFB0VG5lTkNZWnBDSzMxL2MrUTFLTQozLzVGdEE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCga1",
     ```
 
-  - Also make note of the value of the `api_url` in the JSON file. You will use the value of this URL to build the parent server URL for the intermediate CA. It will resemble:
+    - Also make note of the value of the `api_url` in the JSON file. You will use the value of this URL to build the parent server URL for the intermediate CA. It will resemble:
 
     ```
     "api_url": "https://nb535a5-rootca.org1Cluster.us-south.containers.appdomain.cloud:7054",
@@ -220,67 +126,67 @@ Anytime that you deploy a CA, you can override the default CA settings by pastin
 
 ```json
 {
- 	"ca": {
- 		"debug": true,
- 		"registry": {
- 			"maxenrollments": -1,
- 			"identities": [{
- 				"name": "<INTERMEDIATE-CA-ADMIN>",
- 				"pass": "<INTERMEDIATE-CA-ADMIN-PW>",
- 				"type": "client",
- 				"attrs": {
- 					"hf.Registrar.Roles": "*",
- 					"hf.Registrar.DelegateRoles": "*",
- 					"hf.Revoker": true,
- 					"hf.IntermediateCA": true,
- 					"hf.GenCRL": true,
- 					"hf.Registrar.Attributes": "*",
- 					"hf.AffiliationMgr": true
- 				}
- 			}]
- 		},
- 		"intermediate": {
- 			"parentserver": {
- 				"url": "<PARENT-CA-SERVER-URL>",
- 				"caname": "ca"
- 			},
- 			"tls": {
- 				"enabled": true,
- 				"certfiles": ["<TLS-CERT-FILE>"]
- 			}
- 		}
- 	},
- 	"tlsca": {
- 		"debug": true,
- 		"registry": {
- 			"maxenrollments": -1,
- 			"identities": [{
- 				"name": "<INTERMEDIATE-TLS-CA-ADMIN>",
- 				"pass": "<INTERMEDIATE-TLS-CA-ADMIN-PW>",
- 				"type": "client",
- 				"attrs": {
- 					"hf.Registrar.Roles": "*",
- 					"hf.Registrar.DelegateRoles": "*",
- 					"hf.Revoker": true,
- 					"hf.IntermediateCA": true,
- 					"hf.GenCRL": true,
- 					"hf.Registrar.Attributes": "*",
- 					"hf.AffiliationMgr": true
- 				}
- 			}]
- 		},
- 		"intermediate": {
- 			"parentserver": {
- 				"url": "<PARENT-TLS-CA-SERVER-URL>",
- 				"caname": "tlsca"
- 			},
- 			"tls": {
- 				"enabled": true,
- 				"certfiles": ["<TLS-CERT-FILE>"]
- 			}
- 		}
- 	}
- }
+        "ca": {
+            "debug": true,
+            "registry": {
+                "maxenrollments": -1,
+                "identities": [{
+                    "name": "<INTERMEDIATE-CA-ADMIN>",
+                    "pass": "<INTERMEDIATE-CA-ADMIN-PW>",
+                    "type": "client",
+                    "attrs": {
+                        "hf.Registrar.Roles": "*",
+                        "hf.Registrar.DelegateRoles": "*",
+                        "hf.Revoker": true,
+                        "hf.IntermediateCA": true,
+                        "hf.GenCRL": true,
+                        "hf.Registrar.Attributes": "*",
+                        "hf.AffiliationMgr": true
+                    }
+                }]
+            },
+            "intermediate": {
+                "parentserver": {
+                    "url": "<PARENT-CA-SERVER-URL>",
+                    "caname": "ca"
+                },
+                "tls": {
+                    "enabled": true,
+                    "certfiles": ["<TLS-CERT-FILE>"]
+                }
+            }
+        },
+        "tlsca": {
+            "debug": true,
+            "registry": {
+                "maxenrollments": -1,
+                "identities": [{
+                    "name": "<INTERMEDIATE-TLS-CA-ADMIN>",
+                    "pass": "<INTERMEDIATE-TLS-CA-ADMIN-PW>",
+                    "type": "client",
+                    "attrs": {
+                        "hf.Registrar.Roles": "*",
+                        "hf.Registrar.DelegateRoles": "*",
+                        "hf.Revoker": true,
+                        "hf.IntermediateCA": true,
+                        "hf.GenCRL": true,
+                        "hf.Registrar.Attributes": "*",
+                        "hf.AffiliationMgr": true
+                        }
+                }]
+            },
+            "intermediate": {
+                "parentserver": {
+                    "url": "<PARENT-TLS-CA-SERVER-URL>",
+                    "caname": "tlsca"
+                },
+                "tls": {
+                    "enabled": true,
+                    "certfiles": ["<TLS-CERT-FILE>"]
+                }
+            }
+        }
+    }
 ```
 {: codeblock}
 
@@ -298,67 +204,67 @@ Your completed JSON looks similar to:
 
 ```json
 {
- 	"ca": {
- 		"debug": true,
- 		"registry": {
- 			"maxenrollments": -1,
- 			"identities": [{
- 				"name": "icaadmin",
- 				"pass": "icaadminpw",
- 				"type": "client",
- 				"attrs": {
- 					"hf.Registrar.Roles": "*",
- 					"hf.Registrar.DelegateRoles": "*",
- 					"hf.Revoker": true,
- 					"hf.IntermediateCA": true,
- 					"hf.GenCRL": true,
- 					"hf.Registrar.Attributes": "*",
- 					"hf.AffiliationMgr": true
- 				}
- 			}]
- 		},
- 		"intermediate": {
- 			"parentserver": {
- 				"url": "https://icaadmin:icaadminpw@nb535a5-rootca.org1Cluster.us-south.containers.appdomain.cloud:7054",
- 				"caname": "ca"
- 			},
- 			"tls": {
- 				"enabled": true,
- 				"certfiles": ["LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNvRENDQWtXZ0F3SUJBZ0lRWXZYRUgzUktMUVNiUnZTdnRLWUJDVEFLQmdncWhrak9QUVFEQWpDQnB6RUwKTUFrR0ExVUVCaE1DVlZNeEZ6QVZCZ05WQkFnVERrNXZjblJvSUVOaGNtOXNhVzVoTVE4d0RRWURWUVFIRXdaRQpkWEpvWVcweEREQUtCZ05WQkFvVEEwbENUVEVUTUJFR0ExVUJVaHAKVkM1VE5OVzNqRzJkVVZwUUlkSmEvMWtDSVFEMGE0QWRzazJ0RlhDRFp1RFB0VG5lTkNZWnBDSzMxL2MrUTFLTQozLzVGdEE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCga1"]
- 			}
- 		}
- 	},
- 	"tlsca": {
- 		"debug": true,
- 		"registry": {
- 			"maxenrollments": -1,
- 			"identities": [{
- 				"name": "itlscaadmin",
- 				"pass": "itlscaadminpw",
- 				"type": "client",
- 				"attrs": {
- 					"hf.Registrar.Roles": "*",
- 					"hf.Registrar.DelegateRoles": "*",
- 					"hf.Revoker": true,
- 					"hf.IntermediateCA": true,
- 					"hf.GenCRL": true,
- 					"hf.Registrar.Attributes": "*",
- 					"hf.AffiliationMgr": true
- 				}
- 			}]
- 		},
- 		"intermediate": {
- 			"parentserver": {
- 				"url": "https://itlscaadmin:itlscaadminpw@nb535a5-rootca.org1Cluster.us-south.containers.appdomain.cloud:7054",
- 				"caname": "tlsca"
- 			},
- 			"tls": {
- 				"enabled": true,
- 				"certfiles": ["LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNvRENDQWtXZ0F3SUJBZ0lRWXZYRUgzUktMUVNiUnZTdnRLWUJDVEFLQmdncWhrak9QUVFEQWpDQnB6RUwKTUFrR0ExVUVCaE1DVlZNeEZ6QVZCZ05WQkFnVERrNXZjblJvSUVOaGNtOXNhVzVoTVE4d0RRWURWUVFIRXdaRQpkWEpvWVcweEREQUtCZ05WQkFvVEEwbENUVEVUTUJFR0ExVUJVaHAKVkM1VE5OVzNqRzJkVVZwUUlkSmEvMWtDSVFEMGE0QWRzazJ0RlhDRFp1RFB0VG5lTkNZWnBDSzMxL2MrUTFLTQozLzVGdEE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCga1"]
- 			}
- 		}
- 	}
- }
+        "ca": {
+            "debug": true,
+            "registry": {
+                "maxenrollments": -1,
+                "identities": [{
+                    "name": "icaadmin",
+                    "pass": "icaadminpw",
+                    "type": "client",
+                    "attrs": {
+                        "hf.Registrar.Roles": "*",
+                        "hf.Registrar.DelegateRoles": "*",
+                        "hf.Revoker": true,
+                        "hf.IntermediateCA": true,
+                        "hf.GenCRL": true,
+                        "hf.Registrar.Attributes": "*",
+                        "hf.AffiliationMgr": true
+                        }
+                }]
+            },
+            "intermediate": {
+                "parentserver": {
+                    "url": "https://icaadmin:icaadminpw@nb535a5-rootca.org1Cluster.us-south.containers.appdomain.cloud:7054",
+                    "caname": "ca"
+                },
+                "tls": {
+                    "enabled": true,
+                    "certfiles": ["LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNvRENDQWtXZ0F3SUJBZ0lRWXZYRUgzUktMUVNiUnZTdnRLWUJDVEFLQmdncWhrak9QUVFEQWpDQnB6RUwKTUFrR0ExVUVCaE1DVlZNeEZ6QVZCZ05WQkFnVERrNXZjblJvSUVOaGNtOXNhVzVoTVE4d0RRWURWUVFIRXdaRQpkWEpvWVcweEREQUtCZ05WQkFvVEEwbENUVEVUTUJFR0ExVUJVaHAKVkM1VE5OVzNqRzJkVVZwUUlkSmEvMWtDSVFEMGE0QWRzazJ0RlhDRFp1RFB0VG5lTkNZWnBDSzMxL2MrUTFLTQozLzVGdEE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCga1"]
+                }
+            }
+        },
+        "tlsca": {
+            "debug": true,
+            "registry": {
+                "maxenrollments": -1,
+                "identities": [{
+                    "name": "itlscaadmin",
+                    "pass": "itlscaadminpw",
+                    "type": "client",
+                    "attrs": {
+                        "hf.Registrar.Roles": "*",
+                        "hf.Registrar.DelegateRoles": "*",
+                        "hf.Revoker": true,
+                        "hf.IntermediateCA": true,
+                        "hf.GenCRL": true,
+                        "hf.Registrar.Attributes": "*",
+                        "hf.AffiliationMgr": true
+                        }
+                }]
+            },
+            "intermediate": {
+                "parentserver": {
+                    "url": "https://itlscaadmin:itlscaadminpw@nb535a5-rootca.org1Cluster.us-south.containers.appdomain.cloud:7054",
+                    "caname": "tlsca"
+                },
+                "tls": {
+                    "enabled": true,
+                    "certfiles": ["LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNvRENDQWtXZ0F3SUJBZ0lRWXZYRUgzUktMUVNiUnZTdnRLWUJDVEFLQmdncWhrak9QUVFEQWpDQnB6RUwKTUFrR0ExVUVCaE1DVlZNeEZ6QVZCZ05WQkFnVERrNXZjblJvSUVOaGNtOXNhVzVoTVE4d0RRWURWUVFIRXdaRQpkWEpvWVcweEREQUtCZ05WQkFvVEEwbENUVEVUTUJFR0ExVUJVaHAKVkM1VE5OVzNqRzJkVVZwUUlkSmEvMWtDSVFEMGE0QWRzazJ0RlhDRFp1RFB0VG5lTkNZWnBDSzMxL2MrUTFLTQozLzVGdEE9PQotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCga1"]
+                }
+            }
+        }
+    }
 ```
 
 ## Part Three: Actions you perform on the intermediate CA
@@ -395,3 +301,5 @@ If you want to learn more about creating MSPs, see [Managing organizations](/doc
 Because the intermediate CA can process all requests that the root CA handles, you can effectively turn off your root CA by scaling down the root CA CPU to 0.001 CPU. Taking this action renders the root CA non-functional while in this state. As long as you don't need the root CA to issue identities or enroll other intermediate CAs, it can be safely scaled down. See the topic on [Reallocating resources](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components) for the steps to scale down the CPU. If the root CA is needed later, for example to enroll another intermediate CA, you can always repeat the steps to scale back up the CPU. The minimum CPU required for a CA to be operational is `0.1 CPU`.
 
 By default, certificates generated by {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric CAs expire after one year and peer and ordering node TLS certificates expire after 15 years. Exactly thirty days before **peer** and **ordering node** certificates are due to expire, the platform automatically attempts to contact the CA and renew the certificates. If the CA is not online, the automatic renewal fails and enrollment to generate a new certificate needs to be performed manually. If automatic renewal of these certificates is important for your business, careful consideration should be given to scaling down a root CA or intermediate CA. See the topic on [Certificate expiration and renewal](/docs/hlf-support?topic=hlf-support-cert-mgmt) to learn more about the process.
+
+

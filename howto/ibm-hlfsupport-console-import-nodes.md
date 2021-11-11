@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-11-11"
 
 keywords: import nodes, another console, import a CA, import a peer, import admin identities, import an ordering service node
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -127,8 +33,8 @@ While it is no longer necessary to associate an admin identity when importing a 
 
 There are two main reasons to import components:
 
-  1. A node will be deployed in one console and operated from another. In these cases, the relevant admin identity must be exported and imported, or a new admin identity for the node must be created. With the exception of upgrading the version of a node, it is possible to perform many of the same administrative actions on an imported node as on a node that was created within a console.
-  2. A node or MSP simply has to be known by a console so that it can be selected from a drop down list. For example, when creating a channel, it is necessary to choose which ordering service the channel will be hosted on. Similarly, when performing many channel actions, it can be necessary to specify one or more MSPs. In neither case is the person selecting the MSP an admin of the node or the organization. However, they do require the tile representing the node or MSP in their console so it can be selected from the drop down list.
+1. A node will be deployed in one console and operated from another. In these cases, the relevant admin identity must be exported and imported, or a new admin identity for the node must be created. With the exception of upgrading the version of a node, it is possible to perform many of the same administrative actions on an imported node as on a node that was created within a console.
+2. A node or MSP simply has to be known by a console so that it can be selected from a drop down list. For example, when creating a channel, it is necessary to choose which ordering service the channel will be hosted on. Similarly, when performing many channel actions, it can be necessary to specify one or more MSPs. In neither case is the person selecting the MSP an admin of the node or the organization. However, they do require the tile representing the node or MSP in their console so it can be selected from the drop down list.
 
 Note that when you import a component, you do not actually import the physical component into your cloud provider. Instead, the console uses the information in the JSON to build a representation of the component that can be operated from the console. Likewise, when you delete an imported node from the console, the node itself, which is still running at the location where it was deployed, is not deleted. It is simply removed from the console where it was imported.
 
@@ -179,13 +85,13 @@ If you intend to operate an imported node, you have two options:
 
 1. Import the admin identity into your Wallet before importing the node itself (the administrator of the console where the node was created will need to export the node and the admin identity).
 2. If the admin of the node does not want to share their admin identity, there are two other ways to become an admin of the node:
-     * The administrator of the console where the node was created can create a new admin identity, associate it with the node as an additional admin identity, and export that identity to your console along with the node.
-     * The other option has five steps:
-       1. The admin of the CA that was used to create the relevant identities for the peer and peer organization can register a new identity.
-       2. Then, they can send the enroll ID and secret of that identity to the importing console, as well as exporting the CA.
-       3. The importing console can then take the imported CA and use the enroll ID and secret to create a new identity.
-       4. This new identity would be sent back to the console where the peer was created and added as an admin of the peer.
-       5. Then the peer could be exported to the console where the new identity was created, allowing the new identity to operate the imported peer.
+    * The administrator of the console where the node was created can create a new admin identity, associate it with the node as an additional admin identity, and export that identity to your console along with the node.
+    * The other option has five steps:
+        1. The admin of the CA that was used to create the relevant identities for the peer and peer organization can register a new identity.
+        2. Then, they can send the enroll ID and secret of that identity to the importing console, as well as exporting the CA.
+        3. The importing console can then take the imported CA and use the enroll ID and secret to create a new identity.
+        4. This new identity would be sent back to the console where the peer was created and added as an admin of the peer.
+        5. Then the peer could be exported to the console where the new identity was created, allowing the new identity to operate the imported peer.
 
 In either case, because this new admin identity would only be an admin of the peer and not the organization that owns the peer, it preserves a separation of roles between the organization admin (the sign cert listed in the MSP, which might also be the peer admin in the console where the peer was created), and the new admin of the peer which was just created and associated. This peer admin would not be an organization admin by default. However, if it fits a use case to make an identity the admin of both the organization and an imported peer, this is achievable, see [Updating an organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#ibm-hlfsupport-console-govern-update-msp).
 
@@ -213,18 +119,18 @@ The exports and imports of MSPs are performed in the **Organizations** tab.
 
 **To export your MSP:**  
 
- 1. Navigate to the **Organizations** tab and click your organization MSP tile.
- 2. In the tile that opens, click the **Export** icon.
+1. Navigate to the **Organizations** tab and click your organization MSP tile.
+2. In the tile that opens, click the **Export** icon.
 
-   ![Export MSP button](../images/export-msp.png "Export MSP button"){: caption="Figure 1. Export MSP button" caption-side="bottom"}
- 3. A JSON file is generated and downloaded to your local system.
- 4. Share this file with the other organization admins of your channel.
+    ![Export MSP button](../images/export-msp.png "Export MSP button"){: caption="Figure 1. Export MSP button" caption-side="bottom"}
+3. A JSON file is generated and downloaded to your local system.
+4. Share this file with the other organization admins of your channel.
 
 **To import an MSP from another organization:**  
 
- 1. Navigate to the **Organizations** tab and click **Import MSP**.
- 2. Browse to the MSP JSON file and click **Add file**.
- 3. Click **Import MSP**.  
+1. Navigate to the **Organizations** tab and click **Import MSP**.
+2. Browse to the MSP JSON file and click **Add file**.
+3. Click **Import MSP**.  
 
 **Note:** Under some circumstances, it is possible that the Node OU checkbox may be visible and checked when you import an MSP into your console. If that occurs, it is recommended that you leave it checked so that it enables Fabric Node OU support for the MSP, which simplifies the certificate renewal process for you in the future.
 
@@ -295,7 +201,7 @@ An ordering service is the blockchain component that collects transactions from 
 Importing an ordering service into the console allows you to create new channels for peers to transact privately.
 
 If you are having trouble with an ordering service you imported, it might be because it was exported too long ago for the JSON representing it to have all of the latest necessary fields in it that allow certain features to work. Reach out to the administrator of the console where the ordering service was created and ask them to re-export the ordering service.
-{:tip}
+{: tip}
 
 ### Before you begin
 {: #ibm-hlfsupport-console-import-orderer-before-you-begin}
@@ -341,3 +247,5 @@ As an example, you can find the JSON file of a peer below. To communicate with t
 }
 ```
 {: codeblock}
+
+

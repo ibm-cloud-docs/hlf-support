@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-08"
+lastupdated: "2021-11-11"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
@@ -24,13 +24,13 @@ The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}}
 
 There are three ways to deploy the platform in an airgap environment:
 1. **[Preferred] Deploy using Bastion server**  
-  A Bastion server is a device that has access to both the public internet and an internal registry on an OpenShift Container Platform cluster that resides behind a firewall. Using the Bastion server, the blockchain images can be replicated through the Bastion server directly to the internal registry behind the firewall.
+    A Bastion server is a device that has access to both the public internet and an internal registry on an OpenShift Container Platform cluster that resides behind a firewall. Using the Bastion server, the blockchain images can be replicated through the Bastion server directly to the internal registry behind the firewall.
 
 2. **Install using portable compute device** (an intermediate server)  
-  A portable compute device, such as a laptop, can be used to download the blockchain images from the entitled registry to a local container registry on the device. Then, the device can be brought behind the firewall and the images can be copied from the local registry on the device to the internal registry behind the firewall.
+    A portable compute device, such as a laptop, can be used to download the blockchain images from the entitled registry to a local container registry on the device. Then, the device can be brought behind the firewall and the images can be copied from the local registry on the device to the internal registry behind the firewall.
 
 3. **Install using portable storage device**  
-  A portable storage device, such as a hard drive, can be connected to a compute device external to firewall to download the images. This portable storage can then be connected to a device behind the firewall so that the images can be loaded to the internal registry.
+    A portable storage device, such as a hard drive, can be connected to a compute device external to firewall to download the images. This portable storage can then be connected to a device behind the firewall so that the images can be loaded to the internal registry.
 
 This process is only available for x86_64 infrastructure.
 {: note}
@@ -170,7 +170,7 @@ tar -xvf ${OFFLINEDIR}/${CASE_ARCHIVE} --directory ${OFFLINEDIR}
     --action configure-creds-airgap \
     --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
     ```
-  {: codeblock}
+    {: codeblock}
 
 2. Set up the target registry credentials by running the following command:
     ```sh
@@ -180,16 +180,17 @@ tar -xvf ${OFFLINEDIR}/${CASE_ARCHIVE} --directory ${OFFLINEDIR}
     --action configure-creds-airgap \
     --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
     ```
-  {: codeblock}
+    {: codeblock}
+
 3. Mirror the images by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action mirror-images \
-  --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action mirror-images \
+    --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
+    ```
+    {: codeblock}
 
 You can expect this last step to take a few minutes while it downloads the images.
 
@@ -205,7 +206,7 @@ You can expect this last step to take a few minutes while it downloads the image
         --action configure-cluster-airgap \
         --namespace ${NS} \
         --args "--registry ${INTERNAL_REGISTRY} --user ${INTERNAL_REGISTRY_USER} --pass ${INTERNAL_REGISTRY_PASSWORD} --inputDir ${OFFLINEDIR}"
-       ```
+        ```
     {: codeblock}
 
 2. (Optional) Add the local registry to cluster insecureRegistries list if your local registry is not secured by a certificate. All the nodes will restart one at a time after the following command:
@@ -213,42 +214,45 @@ You can expect this last step to take a few minutes while it downloads the image
     oc patch image.config.openshift.io/cluster --type=merge -p "{\"spec\":{\"registrySources\":{\"insecureRegistries\":[\"${INTERNAL_REGISTRY_HOST}:${INTERNAL_REGISTRY_PORT}\", \"${INTERNAL_REGISTRY_HOST}\"]}}}"
     ```
     {: codeblock}
+
 3. Wait until all the nodes of your cluster are restarted before you proceed with the next step.
 
 ### Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog
 {: #deploy-ocp-rhm-fw-bastion-operator}
 
 1. Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric catalog to your cluster by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action install-catalog \
-  --namespace ${NS} \
-  --args "--registry ${INTERNAL_REGISTRY}"
-  ```
-  {: codeblock}  
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action install-catalog \
+    --namespace ${NS} \
+    --args "--registry ${INTERNAL_REGISTRY}"
+    ```
+    {: codeblock}  
+
 2. Verify that the IBM Support for Hyperledger Fabric catalog is installed successfully in the cluster by running the following commands:
-  ```sh
-  # Following command should show ibm-hlfsupport catalog pod
-  oc get pods -n openshift-marketplace
-  # Following command should show the ibm-hlfsupport catalog source installed
-  oc get catalogsource -n openshift-marketplace
-  ```
-  {: codeblock}  
-  The output of this command looks similar to:
-  ```
-  # oc get pods -n openshift-marketplace
-  NAME                                                              READY   STATUS      RESTARTS   AGE
-  certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
-  community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
-  eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
-  ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
-  marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
-  redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
-  redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
-  ```
-  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
+    ```sh
+    # Following command should show ibm-hlfsupport catalog pod
+    oc get pods -n openshift-marketplace
+    # Following command should show the ibm-hlfsupport catalog source installed
+    oc get catalogsource -n openshift-marketplace
+    ```
+    {: codeblock}  
+
+    The output of this command looks similar to:
+    ```
+    # oc get pods -n openshift-marketplace
+    NAME                                                              READY   STATUS      RESTARTS   AGE
+    certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
+    community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
+    eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
+    ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
+    marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
+    redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
+    redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
+    ```
+    It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
 3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
 ## Deploy using a portable compute device
@@ -356,55 +360,58 @@ tar -xvf ${OFFLINEDIR}/${CASE_ARCHIVE} --directory ${OFFLINEDIR}
 
 1. Initialize the prerequisites to run the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action init-registry \
-   --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action init-registry \
+    --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
+
 2. Start the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action start-registry \
-   --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action start-registry \
+    --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
 
 #### Mirror the images
 {: #deploy-ocp-rhm-fw-portable-mirror}
 
 1. Set up the source registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 2. Set up the target registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 3. Mirror the images by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action mirror-images \
-  --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action mirror-images \
+    --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
+    ```
+    {: codeblock}
 
 You can expect this last step to take a few minutes while it downloads the images.
 
@@ -488,55 +495,58 @@ export TARGET_REGISTRY_PASS=${INTERNAL_REGISTRY_PASSWORD}
 
 1. Initialize the prerequisites to run the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action init-registry \
-   --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action init-registry \
+    --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
+
 2. Start the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action start-registry \
-   --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action start-registry \
+    --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
 
 #### Mirror the images
 {: #deploy-ocp-rhm-fw-portable-mirror2}
 
 1. Set up the source registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 2. Set up the target registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 3. Mirror the images by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action mirror-images \
-  --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action mirror-images \
+    --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
+    ```
+    {: codeblock}
 
 You can expect this last step to take a few minutes while it downloads the images.
 
@@ -553,51 +563,53 @@ You can expect this last step to take a few minutes while it downloads the image
     --args "--registry ${INTERNAL_REGISTRY} --user ${INTERNAL_REGISTRY_USER} --pass ${INTERNAL_REGISTRY_PASSWORD} --inputDir ${OFFLINEDIR}"
     ```
     {: codeblock}
+
 2. (Optional) Add the local registry to cluster insecureRegistries list if your local registry is not secured by a certificate. All the nodes will restart one at a time after the following command:
     ```sh
     oc patch image.config.openshift.io/cluster --type=merge -p "{\"spec\":{\"registrySources\":{\"insecureRegistries\":[\"${INTERNAL_REGISTRY_HOST}:${INTERNAL_REGISTRY_PORT}\", \"${INTERNAL_REGISTRY_HOST}\"]}}}"
     ```
     {: codeblock}
+
 3. Wait until all the nodes of your cluster are restarted before you proceed with the next step.
 
 ### Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog
 {: #deploy-ocp-rhm-fw-portable-operator}
 
 1. Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric catalog to your cluster by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action install-catalog \
-  --namespace ${NS} \
-  --args "--registry ${INTERNAL_REGISTRY}"
-  ```
-  {: codeblock}  
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action install-catalog \
+    --namespace ${NS} \
+    --args "--registry ${INTERNAL_REGISTRY}"
+    ```
+    {: codeblock}  
 
 2. Verify that the IBM Support for Hyperledger Fabric catalog is installed successfully in the cluster by running the following commands:
-  ```sh
-  # Following command should show ibm-hlfsupport catalog pod
-  oc get pods -n openshift-marketplace
-  # Following command should show the ibm-hlfsupport catalog source installed
-  oc get catalogsource -n openshift-marketplace
-  ```
-  {: codeblock}
+    ```sh
+    # Following command should show ibm-hlfsupport catalog pod
+    oc get pods -n openshift-marketplace
+    # Following command should show the ibm-hlfsupport catalog source installed
+    oc get catalogsource -n openshift-marketplace
+    ```
+    {: codeblock}
 
-  The output of this command looks similar to:
-  ```
-  # oc get pods -n openshift-marketplace
-  NAME                                                              READY   STATUS      RESTARTS   AGE
-  certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
-  community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
-  eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
-  ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
-  marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
-  redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
-  redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
-  ```
-  {: codeblock}
+    The output of this command looks similar to:
+    ```
+    # oc get pods -n openshift-marketplace
+    NAME                                                              READY   STATUS      RESTARTS   AGE
+    certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
+    community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
+    eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
+    ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
+    marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
+    redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
+    redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
+    ```
+    {: codeblock}
 
-  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
+    It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
 3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
 ## Deploy using a portable storage device
@@ -707,55 +719,58 @@ tar -xvf ${OFFLINEDIR}/${CASE_ARCHIVE} --directory ${OFFLINEDIR}
 
 1. Initialize the prerequisites to run the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action init-registry \
-   --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action init-registry \
+    --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
+
 2. Start the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action start-registry \
-   --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action start-registry \
+    --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
 
 #### Mirror the images
 {: #deploy-ocp-rhm-fw-storage-mirror}
 
 1. Set up the source registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 2. Set up the target registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 3. Mirror the images by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action mirror-images \
-  --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action mirror-images \
+    --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
+    ```
+    {: codeblock}
 
 You can expect this last step to take a few minutes while it downloads the images.
 
@@ -862,55 +877,58 @@ cp -r ${PORTABLE_STORAGE_LOCATION} ${OFFLINEDIR}
 
 1. Initialize the prerequisites to run the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action init-registry \
-   --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action init-registry \
+    --args "--registry $PORTABLE_REGISTRY_HOST --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
+
 2. Start the Docker registry by running the following command:
 
-   ```sh
-   cloudctl case launch \
-   --case ${OFFLINECASE} \
-   --inventory ${ITEM} \
-   --action start-registry \
-   --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
-   ```
-   {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action start-registry \
+    --args "--registry $PORTABLE_REGISTRY --user $PORTABLE_REGISTRY_USER --pass $PORTABLE_REGISTRY_PASSWORD --dir $PORTABLE_REGISTRY_PATH"
+    ```
+    {: codeblock}
 
 #### Mirror the images
 {: #deploy-ocp-rhm-fw-storage-mirror2}
 
 1. Set up the source registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${SOURCE_REGISTRY} --user ${SOURCE_REGISTRY_USER} --pass ${SOURCE_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 2. Set up the target registry credentials by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action configure-creds-airgap \
-  --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action configure-creds-airgap \
+    --args "--registry ${TARGET_REGISTRY} --user ${TARGET_REGISTRY_USER} --pass ${TARGET_REGISTRY_PASS}"
+    ```
+    {: codeblock}
+
 3. Mirror the images by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action mirror-images \
-  --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
-  ```
-  {: codeblock}
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action mirror-images \
+    --args "--registry ${TARGET_REGISTRY} --inputDir ${OFFLINEDIR}"
+    ```
+    {: codeblock}
 
 You can expect this last step to take a few minutes while it downloads the images.
 
@@ -927,47 +945,51 @@ You can expect this last step to take a few minutes while it downloads the image
     --args "--registry ${INTERNAL_REGISTRY} --user ${INTERNAL_REGISTRY_USER} --pass ${INTERNAL_REGISTRY_PASSWORD} --inputDir ${OFFLINEDIR}"
     ```
     {: codeblock}
+
 2. (Optional) Add the local registry to cluster insecureRegistries list if your local registry is not secured by a certificate. All the nodes will restart one at a time after the following command:
     ```sh
     oc patch image.config.openshift.io/cluster --type=merge -p "{\"spec\":{\"registrySources\":{\"insecureRegistries\":[\"${INTERNAL_REGISTRY_HOST}:${INTERNAL_REGISTRY_PORT}\", \"${INTERNAL_REGISTRY_HOST}\"]}}}"
     ```
     {: codeblock}
+
 3. Wait until all the nodes of your cluster are restarted before you proceed with the next step.
 
 ### Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator catalog
 {: #deploy-ocp-rhm-fw-storage-operator}
 
 1. Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric catalog to your cluster by running the following command:
-  ```sh
-  cloudctl case launch \
-  --case ${OFFLINECASE} \
-  --inventory ${ITEM} \
-  --action install-catalog \
-  --namespace ${NS} \
-  --args "--registry ${INTERNAL_REGISTRY}"
-  ```
-  {: codeblock}  
+    ```sh
+    cloudctl case launch \
+    --case ${OFFLINECASE} \
+    --inventory ${ITEM} \
+    --action install-catalog \
+    --namespace ${NS} \
+    --args "--registry ${INTERNAL_REGISTRY}"
+    ```
+    {: codeblock}  
+
 2. Verify that the IBM Support for Hyperledger Fabric catalog is installed successfully in the cluster by running the following commands:
-  ```sh
-  # Following command should show ibm-hlfsupport catalog pod
-  oc get pods -n openshift-marketplace
-  # Following command should show the ibm-hlfsupport catalog source installed
-  oc get catalogsource -n openshift-marketplace
-  ```
-  {: codeblock}  
-  The output of this command looks similar to:
-  ```
-  # oc get pods -n openshift-marketplace
-  NAME                                                              READY   STATUS      RESTARTS   AGE
-  certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
-  community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
-  eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
-  ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
-  marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
-  redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
-  redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
-  ```
-  It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
+    ```sh
+    # Following command should show ibm-hlfsupport catalog pod
+    oc get pods -n openshift-marketplace
+    # Following command should show the ibm-hlfsupport catalog source installed
+    oc get catalogsource -n openshift-marketplace
+    ```
+    {: codeblock}  
+
+    The output of this command looks similar to:
+    ```
+    # oc get pods -n openshift-marketplace
+    NAME                                                              READY   STATUS      RESTARTS   AGE
+    certified-operators-868d6dbfcf-66kvc                              1/1     Running     0          95m
+    community-operators-94bf6c85b-48mjv                               1/1     Running     0          5h35m
+    eed49b0f70894a9e070ba29eb2604d8030764df3298f45f2d484f1311cxlvxq   0/1     Completed   0          42s
+    ibm-hlfsupport-catalog-gkdsc                                      1/1     Running     0          90s
+    marketplace-operator-78f6f57c5b-cvf78                             1/1     Running     0          16h
+    redhat-marketplace-64ff89cf7d-g5bnh                               1/1     Running     0          16h
+    redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
+    ```
+    It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
 3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
@@ -1119,14 +1141,14 @@ spec:
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels.
 
 - If you plan to use the console with a multizone Kubernetes cluster, you need to add the zones to the `clusterdata.zones:` section of the file. When zones are provided to the deployment, you can select the zone that a node is deployed to using the console or the APIs. As an example, if you are deploying to a cluster across the zones of dal10, dal12, and dal13, you would add the zones to the file by using the format below.
-  ```yaml
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
-  ```
-  {: codeblock}
+    ```yaml
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
+    ```
+    {: codeblock}
 
 When you finish editing the file, click **Create**.
 
@@ -1154,6 +1176,7 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key that is stored in a secret named `"console-tls-secret"`:
@@ -1206,9 +1229,11 @@ You can find the URL of your blockchain console from the OpenShift cluster dashb
 3. You see several config maps, including `<CONSOLE_NAME>`, `<CONSOLE_NAME>-console`, and a `<CONSOLE_NAME>-deployer`. Click the one that's just the `<CONSOLE_NAME>`, for example, `ibm-hlfsupport-console`.
 4. In the **Data** section, you see the **HOST_URL** field. This is the URL of your console that you can now use to log in. It looks similar to the following example:
 
-  ```
-  https://blockchain-project-ibpconsole-console.xyz.abc.com
-  ```
+    ```
+    https://blockchain-project-ibpconsole-console.xyz.abc.com
+    ```
+    {: codeblock}
+    
 5. Paste your URL in your browser and login to the console.
 
 In your browser, you can see the console login screen:
@@ -1243,17 +1268,17 @@ To delete the operator, navigate back to the **Installed Operators** page and cl
 
 Alternatively, you can use the CLI to switch to the OpenShift project that you created for your blockchain network:
 
-  ```
-  oc project <PROJECT_NAME>
-  ```
-  {: codeblock}
+    ```
+    oc project <PROJECT_NAME>
+    ```
+    {: codeblock}
 
 And then remove any instances of the IBM Support for Hyperledger Fabric operator by using the OpenShift CLI. For example, this command would delete the operator:
 
-  ```
-  kubectl delete deployment ibm-hlfsupport-operator
-  ```
-  {: codeblock}
+    ```
+    kubectl delete deployment ibm-hlfsupport-operator
+    ```
+    {: codeblock}
 
 ## Create a project for your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment
 {: #deploy-ocp-rhm-fw-project}
@@ -1283,3 +1308,5 @@ You can also use the CLI to find the available storage classes for your namespac
 kubectl get storageclasses
 ```
 {: codeblock}
+
+

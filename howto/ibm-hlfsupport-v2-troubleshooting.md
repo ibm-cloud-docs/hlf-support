@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-24"
+lastupdated: "2021-11-11"
 
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
@@ -11,101 +11,7 @@ content-type: troubleshoot
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 # Troubleshooting
@@ -245,38 +151,38 @@ The console has been working successfully, but after I upgraded my Mac OS to Cat
 
 There are three ways to resolve this problem:
 {: tsResolve}
-1.  Use a different [supported browser](/docs/hlf-support?topic=hlf-support-deploy-ocp-getting-started#deploy-ocp-browsers) with Catalina.
+1. Use a different [supported browser](/docs/hlf-support?topic=hlf-support-deploy-ocp-getting-started#deploy-ocp-browsers) with Catalina.
 2. Use your own [TLS certificates when deploying on OpenShift Contain Platform](/docs/hlf-support?topic=hlf-support-deploy-ocp#console-deploy-ocp-use-your-own-tls-certificates-optional) or [TLS certificates when deploying on Kubernetes](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-tls).
 3. Run the following commands to generate a new key and certificate pair for the console that will fix the problem.
-      - Run the following command to get the pod that corresponds to the console:
+    - Run the following command to get the pod that corresponds to the console:
 
         ```
         kubectl get po
         ```
         {: codeblock}
 
-      - Exec into the pod by running the command:
+    - Exec into the pod by running the command:
 
         ```
         kubectl get po <pod-name> -c optools bash
         ```
         {: codeblock}
 
-      - Delete the console key and certificate by running the command:
-        
+    - Delete the console key and certificate by running the command:
+
         ```
         rm -f /certs/tls.key rm -f /certs/tls.crt
         ```
         {: codeblock}
 
-      - Delete the console pod which causes it to restart by running the command:
+    - Delete the console pod which causes it to restart by running the command:
 
         ```
         kubectl delete po <pod-name>
         ```
         {: codeblock}
 
-   When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
+    When the pod restart completes, you should now be able to log in to your console URL from a Chrome Browser.
 
 ## Why is my channel creation failing or I am unable to add a new organization to my ordering service with the error "Unable to get system channel"?
 {: #ibm-hlfsupport-v2-troubleshooting-accept-tls}
@@ -309,8 +215,7 @@ A CA, peer, or ordering node has a gray status box, meaning the status of the no
 This problem can occur if the node is newly created and the deployment process has not completed. If the node is a CA and the status has been gray for more than a few minutes, then it is likely that the deployment process has failed. Peers and ordering nodes take longer to deploy, but this condition can also occur when the health checker that runs against the peer or ordering nodes cannot contact the node. The request for status can fail with a timeout error because the node did not respond within a specific time period, the node could be down, or network connectivity is down.
 {: tsCauses}
 
-If this is a new node, wait a few more minutes for the deployment to complete. You can try reloading the page in your browser to refresh the status. If the node is not new,
- [examine the associated node logs](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-console-logs) for errors to determine the cause.
+If this is a new node, wait a few more minutes for the deployment to complete. You can try reloading the page in your browser to refresh the status. If the node is not new, [examine the associated node logs](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-console-logs) for errors to determine the cause.
 {: tsResolve}
 
 ## When I hover over my node, the status is `Status undetectable`, what does this mean?
@@ -328,16 +233,16 @@ This condition can occur on peer and ordering nodes that were *imported* to the 
 {: tsResolve}
 
 You can resolve this problem by performing the following steps:
- 1. Click the node tile to open it.
- 2. Click the **Settings** icon.
- 3. Click **Associate identity**, view and make note of the identity that is associated with this node. Click **Cancel** to close this panel.
- 4. Click **Export** to generate a `JSON` file for the node.
- 5. Edit the generated `JSON` file and enter the `operations_url` for the node. The value of the `operations_url` depends on how it was configured as well as various network settings. This value needs to be provided by the network administrator who deployed the node.
- 6. Click **Delete**. This step removes the imported node from the console, but does not delete the actual node.
- 7. From the **Nodes** tab, click **Add Peer** or **Add ordering service** followed by **Import an existing peer** or **Import an existing Ordering service**.
- 8. Click **Upload JSON** and browse to the JSON file you just edited. Click **Next**.
- 9. Associate the same identity you noted in step three.
- 10. Click **Add peer** or **Add ordering service**.
+1. Click the node tile to open it.
+2. Click the **Settings** icon.
+3. Click **Associate identity**, view and make note of the identity that is associated with this node. Click **Cancel** to close this panel.
+4. Click **Export** to generate a `JSON` file for the node.
+5. Edit the generated `JSON` file and enter the `operations_url` for the node. The value of the `operations_url` depends on how it was configured as well as various network settings. This value needs to be provided by the network administrator who deployed the node.
+6. Click **Delete**. This step removes the imported node from the console, but does not delete the actual node.
+7. From the **Nodes** tab, click **Add Peer** or **Add ordering service** followed by **Import an existing peer** or **Import an existing Ordering service**.
+8. Click **Upload JSON** and browse to the JSON file you just edited. Click **Next**.
+9. Associate the same identity you noted in step three.
+10. Click **Add peer** or **Add ordering service**.
 The health checker can now run against the node and report the status of the node.
 
 
@@ -381,16 +286,16 @@ In some cases, if you simply wait several minutes and then refresh the **Smart c
 1. From the console, open the peer tile and click the **Settings** icon.
 2. Click **Edit configuration JSON (Advanced)**.
 3. In the **Configuration updates** box paste the following text and click **Update peer**.
-  ```
-  {
-   "chaincode":{
-      "startuptimeout":"300s",
-      "installTimeout":"600s",
-      "executetimeout":"30s"
+    ```
+    {
+    "chaincode":{
+        "startuptimeout":"300s",
+        "installTimeout":"600s",
+        "executetimeout":"30s"
     }
-  }
-  ```
-  {: codeblock}
+    }
+    ```
+    {: codeblock}
 
 The peer restarts and then you can retry the smart contract installation. Because the original installation failed you need to specify a new smart contract name and version. 
 
@@ -403,7 +308,7 @@ Instantiating a Node.js smart contract fails with the timeout error:
 ```
 [endorser] SimulateProposal -> ERRO 0ba [channel2][37876c5f] failed to invoke chaincode name:"lscc" , error: timeout expired while starting chaincode myassetc:0.0.1 for transaction
 github.com/hyperledger/fabric/core/chaincode.(*RuntimeLauncher).Launch
-	/go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:75
+    /go/src/github.com/hyperledger/fabric/core/chaincode/runtime_launcher.go:75
 ```
 
 When running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on s390x architecture, it is possible that Node.js smart contract instantiation can fail if the default timeout is too short.
@@ -462,13 +367,13 @@ One of the features of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fa
 
 - Whenever you create a new organization MSP definition, you generate keys for an identity that is allowed to administer the organization. Therefore, during that process you must click the **Generate** and then **Export** buttons to store the generated identity in your wallet and then save it to your file system as a JSON file.
 - To resolve this problem in your browser, you need to import those identities and associate them with the corresponding node:
-  - In the browser where you are experiencing the problem, click the **Wallet** tab followed by **Add identity** to import the JSON file into your wallet.
-  - Click **Upload JSON** and browse to the JSON file you exported using the **Add files** button.
-  - Click **Submit**.
-  - Now open the peer or ordering service node that this identity was originally associated to, and click on the **Settings** icon.
-  - Click the **Associate identity** button.
-  - Select the identity you just imported to your console wallet from the drop-down list.
-  - Click **Associate**.
+    - In the browser where you are experiencing the problem, click the **Wallet** tab followed by **Add identity** to import the JSON file into your wallet.
+    - Click **Upload JSON** and browse to the JSON file you exported using the **Add files** button.
+    - Click **Submit**.
+    - Now open the peer or ordering service node that this identity was originally associated to, and click on the **Settings** icon.
+    - Click the **Associate identity** button.
+    - Select the identity you just imported to your console wallet from the drop-down list.
+    - Click **Associate**.
 - Repeat this process for each identity that was in the wallet of the original browser.
 {: tsResolve}
 
@@ -591,10 +496,10 @@ Failed to initialize local MSP: admin 0 is invalid [The identity does not contai
 ```
 
 - This error can occur under the following conditions:
-  - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that corresponds to an identity of type `peer` and not `client` or `admin`. It must be of type `client` or `admin`.
-  - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that does not match the enroll ID or secret of the corresponding organization admin identity.
-  - When you created the peer or ordering service, you specified the enroll ID and secret of an identity that is not type 'peer' or 'orderer'.
-  - When you created the peer or ordering service, you associated an identity that does not have the `admin` role.
+    - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that corresponds to an identity of type `peer` and not `client` or `admin`. It must be of type `client` or `admin`.
+    - When you created the peer or ordering service organization MSP definition, you specified an enroll ID and secret that does not match the enroll ID or secret of the corresponding organization admin identity.
+    - When you created the peer or ordering service, you specified the enroll ID and secret of an identity that is not type 'peer' or 'orderer'.
+    - When you created the peer or ordering service, you associated an identity that does not have the `admin` role.
 
 {: tsResolve}
 - Open your peer or ordering service CA node and view the registered identities listed in the **Registered Users** table.
@@ -758,3 +663,5 @@ Once the operator creation of the network policy has been disabled, delete the n
 kubectl delete netpol -n <NAMESPACE> <NETWORKPOLICYNAME>
 ```
 {: codeblock}
+
+

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-11"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel, multicloud
 
@@ -49,16 +49,16 @@ This tutorial is meant to show how to join a peer to an **existing** network. It
 Perform the steps in the **Join a network** tutorial to create the following components and complete the following actions:
 
 * **One peer organization** `Org2`  
-  Create the Org2 Membership Services Provider (MSP) definition which defines the organization `Org2`.
+    Create the Org2 Membership Services Provider (MSP) definition which defines the organization `Org2`.
 * **One peer** `Peer Org2`   
-  The ledger, `Ledger x` in the illustration above, is maintained by distributed peers. The peer is deployed with [Couch DB](https://hyperledger-fabric.readthedocs.io/en/release-2.2/couchdb_as_state_database.html){: external} as the state database.
+    The ledger, `Ledger x` in the illustration above, is maintained by distributed peers. The peer is deployed with [Couch DB](https://hyperledger-fabric.readthedocs.io/en/release-2.2/couchdb_as_state_database.html){: external} as the state database.
 * **One Certificate Authority (CA)** `Org2 CA`
-  A CA is the node that issues certificates to all organization admins as well as to nodes associated with an organization. We will create one CA for the peer organization `Org2`.
+    A CA is the node that issues certificates to all organization admins as well as to nodes associated with an organization. We will create one CA for the peer organization `Org2`.
 * **Joining one channel**
-  The tutorial describes how to join the channel that was created by the [Build a network tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network).
+    The tutorial describes how to join the channel that was created by the [Build a network tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network).
 
 Throughout this tutorial we supply **recommended values** for some of the fields in the console. This allows the names and identities to be easier to recognize in the tabs and drop-down lists. These values are not mandatory, but you will find them helpful, especially since you will have to remember certain values, especially the IDs and secrets of registered users, you input at a previous step. If you forget these values, you will have to register additional users for your admins and components. We provide a table of the recommended values after each task and recommend that if you do not use sample values that you record the values you do use somewhere as you proceed through the tutorial.
-{:tip}
+{: tip}
 
 ## Step one: Create a peer organization and a peer
 {: #ibm-hlfsupport-console-join-network-create-ca-org2}
@@ -71,7 +71,7 @@ In this tutorial, we will create one organization. Therefore, we will need to cr
 {: #ibm-hlfsupport-console-join-network-create-CA-org2CA}
 
 Your CA issues the certificates and private keys for your organization's admins, client applications, and nodes. These identities are not managed by {{site.data.keyword.IBM_notm}} and the keys are not stored in the console. They are only stored in your browser local storage. Therefore, make sure to export your identities and the MSP of your organization. If you attempt to access the console from a different machine or a different browser, you will need to import these identities and organization definitions.
-{:important}
+{: important}
 
 Perform the following steps from your console:  
 
@@ -79,18 +79,18 @@ Perform the following steps from your console:
 2. In this tutorial, we're creating nodes, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**.
 3. Use the side panel to give your CA a **display name**. Our recommended value for this CA is `Org2 CA`. Then give your CA admin credentials by specifying a **CA administrator enroll ID** of `admin` and a secret of `adminpw`.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-   * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA) 
-   * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
-   * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
-   * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
+    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA) 
+    * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
+    * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
+    * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
 5. Review the Summary page, then click **Add Certificate Authority**. The **Edit configuration JSON** button allows you to override configuration settings for the CA. For this tutorial, the default settings are sufficient. See [Customizing a CA configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-ca-customization) to learn more about the options that are available.
 
 **Task: Creating the peer organization CA**
 
-  | **Field** | **Display name** | **Enroll ID** | **Secret** |
-  | ------------------------- |-----------|-----------|-----------|
-  | **Create CA** | Org2 CA  | admin | adminpw |
-  {: caption="Table 1. Creating the peer organization CA" caption-side="bottom"}
+| **Field** | **Display name** | **Enroll ID** | **Secret** |
+| ------------------------- |-----------|-----------|-----------|
+| **Create CA** | Org2 CA  | admin | adminpw |
+{: caption="Table 1. Creating the peer organization CA" caption-side="bottom"}
 
 After you deploy the CA, you will use it when you create your organization MSP, register users, and to create your entry point to a network, the **peer**.
 
@@ -103,7 +103,7 @@ Advanced users may already have their own CA, and not want to create a new CA in
 Each CA is created with a CA admin identity. You can use the admin to register new users with your CA and generate certificates. Before you can use the console to operate your CA, you need to associate the CA admin identity with the CA node itself.
 
 Depending on your cluster type, deployment of the CA can take up to ten minutes. When the CA is first deployed (or when the CA is otherwise unavailable), the box in the tile for the CA will be gray box. When the CA has successfully deployed and is running, this box will be green, indicating that it is "Running" and can be operated from the console. Before proceeding with the steps below, you must wait until the CA status is "Running". If the gray box stops blinking, you can try reloading the page in your browser to refresh the status.
-{:important}
+{: important}
 
 Once the CA is running, as indicated by the green box in the tile, complete the following steps:
 
@@ -115,19 +115,19 @@ After setting the CA admin identity, you will be able to see the table of regist
 
 **Task: Associate identity**
 
-  |  **Field** | **Display name** | **Enroll ID** | **Secret** |
-  | ------------------------- |-----------|-----------|-----------|-----------|
-  | **Enroll ID** |  Org2 CA Admin  | admin | adminpw |
-  {: caption="Table 2. Associate the CA admin identity" caption-side="bottom"}
+|  **Field** | **Display name** | **Enroll ID** | **Secret** |
+| ------------------------- |-----------|-----------|-----------|-----------|
+| **Enroll ID** |  Org2 CA Admin  | admin | adminpw |
+{: caption="Table 2. Associate the CA admin identity" caption-side="bottom"}
 
 You can view the CA admin identity in your console wallet by clicking on the **Wallet** in the left navigation. Click the identity to view the certificate and private key of the CA admin. The identity is not stored in your console or managed by {{site.data.keyword.IBM_notm}}. It is only stored in local browser storage. If you change browsers, you will need to import this identity into your Wallet to be able to operate the CA. Click **Export identity** to download the certificate and private key.
 
 **Task: Check your Wallet**
 
-  | **Field** |  **Display name** | **Description** |
-  | ------------------------- |-----------|----------|
-  | **Identity** | Org2 CA Admin | Org2 CA admin identity |
-  {: caption="Table 3. Check your Wallet" caption-side="bottom"}
+| **Field** |  **Display name** | **Description** |
+| ------------------------- |-----------|----------|
+| **Identity** | Org2 CA Admin | Org2 CA admin identity |
+{: caption="Table 3. Check your Wallet" caption-side="bottom"}
 
 ### Using your CA to register identities
 {: #ibm-hlfsupport-console-join-network-use-CA-org2}
@@ -145,16 +145,16 @@ Once you have associated the CA admin, you can use the CA tile to create these i
 4. After the organization admin has been registered, repeat this same process for the identity of the peer (also using the `Org2 CA`). For the peer identity, give an enroll ID of `peer2` and a secret of `peer2pw`. This is a node identity, so select `peer` as the **Type**. You can ignore the **Maximum enrollments** field and, on the next panel, do not assign any **Attributes**, as before.
 
 Registering these identities with the CA is only the first step in **creating** an identity. You will not be able to use these identities until they have been **enrolled**. For the `org2admin` identity, this will happen during the creation of the MSP, which we will see in the next step. In the case of the peer2 identity, it happens during the creation of the peer.
-{:note}
+{: note}
 
 **Task: Register users**
 
-  |  **Field** | **Description** | **Enroll ID** | **Secret** | **Type**
-  | ------------------------- |-----------|-----------|-----------|-----------|
-  | **Create CA**  | CA admin | admin | adminpw | client |
-  | **Register users** |  Org2 MSP Admin  | org2admin | org2adminpw | admin |
-  | | Peer identity |  peer2 | peer2pw | peer|
-  {: caption="Table 4. Using your CA to register user" caption-side="bottom"}
+|  **Field** | **Description** | **Enroll ID** | **Secret** | **Type**
+| ------------------------- |-----------|-----------|-----------|-----------|
+| **Create CA**  | CA admin | admin | adminpw | client |
+| **Register users** |  Org2 MSP Admin  | org2admin | org2adminpw | admin |
+| | Peer identity |  peer2 | peer2pw | peer|
+{: caption="Table 4. Using your CA to register user" caption-side="bottom"}
 
 ### Creating the peer organization MSP
 {: #ibm-hlfsupport-console-join-network-create-peers-org2}
@@ -167,8 +167,9 @@ Now that we have created the peer's CA and used it to **register** our organizat
 4. On the **Admin certificates panel**, select the enroll ID you created for your organization admin from the drop-down list, `org2admin`, and enter its associated secret, `org2adminpw`. Then, give this identity a display name, `Org2 MSP Admin`. Note: the default display name for this identity is the name of your MSP and the word "Admin". If you select a different name for your MSP, that will be reflected in the default.
 5. Click the **Generate** button to enroll this identity as the admin of your organization and export the identity to the Wallet, where it will be used when creating the peer and creating channels.
 6. Click **Export** to export the admin certificates to your file system. As we said above, this identity is not stored in your console or managed by {{site.data.keyword.IBM_notm}}. It is only stored in local browser storage. If you change browsers, you will need to import this identity into your Wallet to be able to administer the peer. Click **Next**.  
-  Exporting your organization admin identity is important because you are responsible for managing and securing these certificates. If you switch browsers, you will need to import this admin identity otherwise you will not be able to operate Org2.
-  {:important}
+    Exporting your organization admin identity is important because you are responsible for managing and securing these certificates. If you switch browsers, you will need to import this admin identity otherwise you will not be able to operate Org2.
+    {: important}
+
 7. On the **Review MSP information** panel, make sure you have entered the correct information. When you are satisfied, click **Create MSP definition**.
 8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations the channels you join.
 
@@ -176,22 +177,22 @@ Now that we have created the peer's CA and used it to **register** our organizat
 
 **Task: Create the peer organization MSP definition**
 
-  |  | **Display name** | **MSP ID** | **Enroll ID**  | **Secret** |
-  | ------------------------- |-----------|-----------|-----------|-----------|
-  | **Create Organization** | Org2 MSP | org2msp |||
-  | **Root CA** | Org2 CA ||||
-  | **Org Admin Cert** | |  | org2admin | org2adminpw |
-  | **Identity** | Org2 MSP Admin |||||
-  {: caption="Table 5. Create the peer organization MSP definition" caption-side="bottom"}
+|  | **Display name** | **MSP ID** | **Enroll ID**  | **Secret** |
+| ------------------------- |-----------|-----------|-----------|-----------|
+| **Create Organization** | Org2 MSP | org2msp |||
+| **Root CA** | Org2 CA ||||
+| **Org Admin Cert** | |  | org2admin | org2adminpw |
+| **Identity** | Org2 MSP Admin |||||
+{: caption="Table 5. Create the peer organization MSP definition" caption-side="bottom"}
 
 After you have created the MSP, you should be able to see the peer organization admin in your **Wallet**, which can be accessed by clicking on the **Wallet** in the left navigation.
 
 **Task: Check your Wallet**
 
-  | **Field** |  **Display name** | **Description** |
-  | ------------------------- |-----------|----------|
-  | **Identity** | Org2 MSP Admin  | Org2 identity |
-  {: caption="Table 6. Check your Wallet" caption-side="bottom"}
+| **Field** |  **Display name** | **Description** |
+| ------------------------- |-----------|----------|
+| **Identity** | Org2 MSP Admin  | Org2 identity |
+{: caption="Table 6. Check your Wallet" caption-side="bottom"}
 
 For more information about MSPs, see [managing organizations](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#ibm-hlfsupport-console-organizations).
 
@@ -216,19 +217,19 @@ Use your console to perform the following steps:
 2. Make sure the option to **Create a peer** is selected. Then click **Next**.
 3. Give your peer a **Display name** of `Peer Org2`.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-   * [State database](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-level-couch)
-   * [Multizone Kubernetes cluster](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured for multizone support.
-   * [Use your own CA certificate and private key](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-third-party-ca)
-   * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
-   * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
+    * [State database](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-level-couch)
+    * [Multizone Kubernetes cluster](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured for multizone support.
+    * [Use your own CA certificate and private key](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-third-party-ca)
+    * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
+    * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
 5. Click **Next**.
-6.  On the **Enter peer information** page:
-   * Select `Org2 CA`, as this is the CA you used to register the peer identity.
-   * Select the **Enroll ID** for the peer identity that you created for your peer from the drop-down list, `peer2`, and enter its associated **secret**, `peer2pw`.
-   * Then, select `Org2 MSP` from the drop-down list
-   * The **TLS Certificate Signing Request (CSR) hostname** is an option available to advanced users who want to specify a custom domain name that can be used to address the peer endpoint. Custom domain names are not a part of this tutorial, so leave the **TLS CSR hostname** blank for now.
-   * In the **Fabric version** drop down list, the best practice is to select the **latest available version**, as it will contain the latest bug fixes. It might also be necessary to select the latest version in order to have access to the latest features. Note that if you select any version higher than v2.0, no smart contract container will be deployed along with your peer. Instead, each smart contract will be deployed into its own pod when it is deployed on the channel or invoked for the first time. Golang smart contracts that are currently running on a Fabric v1.4 peer need to be upgraded if you plan to run them on a Fabric v2.x peer. See this [topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-write-package-vendor) on vendoring the shim for more information.
-   * Click **Next**.
+6. On the **Enter peer information** page:
+    * Select `Org2 CA`, as this is the CA you used to register the peer identity.
+    * Select the **Enroll ID** for the peer identity that you created for your peer from the drop-down list, `peer2`, and enter its associated **secret**, `peer2pw`.
+    * Then, select `Org2 MSP` from the drop-down list
+    * The **TLS Certificate Signing Request (CSR) hostname** is an option available to advanced users who want to specify a custom domain name that can be used to address the peer endpoint. Custom domain names are not a part of this tutorial, so leave the **TLS CSR hostname** blank for now.
+    * In the **Fabric version** drop down list, the best practice is to select the **latest available version**, as it will contain the latest bug fixes. It might also be necessary to select the latest version in order to have access to the latest features. Note that if you select any version higher than v2.0, no smart contract container will be deployed along with your peer. Instead, each smart contract will be deployed into its own pod when it is deployed on the channel or invoked for the first time. Golang smart contracts that are currently running on a Fabric v1.4 peer need to be upgraded if you plan to run them on a Fabric v2.x peer. See this [topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-write-package-vendor) on vendoring the shim for more information.
+    * Click **Next**.
 7. The last side panel asks you to **Associate an identity** to make it the admin of your peer. For the purpose of this tutorial, make your organization admin, `Org2 MSP Admin`, the admin of your peer as well. It is possible to register and enroll a different identity with the `Org2 CA` and make that identity the admin of your peer, but this tutorial uses the `Org2 MSP Admin` identity.
 8. Review the summary and click **Add peer**.  The **Edit configuration JSON** button allows you to override configuration settings for the peer. For this tutorial, the default settings are sufficient. If you are deploying a peer on s390x, you may need to increase the timeout on your peer. See this [troubleshooting topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-sc-install) for details. See [Customizing a peer configuration](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-peer-create-json) to learn more about the options that are available.
 
@@ -244,7 +245,7 @@ Use your console to perform the following steps:
 {: caption="Table 7. Deploying a peer" caption-side="bottom"}
 
 In a production scenario, it is recommended to deploy three peers to each channel. This is to allow one peer to go down (for example, during a maintenance cycle) and still maintain highly available peers. To deploy more than one peer for an organization, use the same CA you used to register your first peer identity. In this tutorial, that would be `Org2 CA`. Then, register a new peer identity using a distinct enroll ID and secret. For example, `org2secondpeer` and `org2secondpeerpw`. Then, when creating the peer, give this enroll ID and secret. As this peer is still associated with Org2, choose `Org2 CA`, `Org2 MSP`, and `Org2 MSP Admin ` from the drop-down lists. You may choose to give this new peer a different admin, which can be registered and enrolled with `Org2 CA`, but this optional. This tutorial series will only show the process for creating a single peer for each peer organization.
-{:tip}
+{: tip}
 
 ## Step two: Add Org2 to an existing channel
 {: #ibm-hlfsupport-console-join-network-add-channel}
@@ -266,7 +267,7 @@ Then Org1 must complete the following steps in its own console:
 At this point no further changes are required on the channel. In the left navigation, click **Review channel information**. On the **Review channel information** panel, you can see that there are now two organization members on the channel, `org1msp` and `org2msp`. In addition the channel update policy has been changed to `2 out of 2`. When you are ready, click **Update channel** to submit your changes.
 
 Org1 must also export its own MSP, `Org1 MSP`, and send it to Org2 in an out of band operation. **All members of a channel should have the MSPs of the other channel members**.
-{:important}
+{: important}
 
 At this point, Org2 is listed in the channel configuration and therefore technically part of the channel. However, more steps must still be completed.
 
@@ -274,7 +275,7 @@ At this point, Org2 is listed in the channel configuration and therefore technic
 {: #ibm-hlfsupport-console-join-network-export-ordering-service}
 
 This step can be performed either by Org1 or the ordering service admin.
-{:tip}
+{: tip}
 
 If the ordering service and its MSP are not yet present on the file system of either Org1 or the ordering service, complete the following steps to **Export** the ordering service before it can be imported by the peer organization:
 
@@ -282,7 +283,7 @@ If the ordering service and its MSP are not yet present on the file system of ei
 2. Send this file to Org2 in an out of band operation. The peer organization administrator can then use the configuration file to add the ordering service to the console.
 
 The rest of the actions in this section and **Step three** need to be performed from the console where the `Org2 MSP` was created.
-{:tip}
+{: tip}
 
 ### Import the ordering service
 {: #ibm-hlfsupport-console-join-network-import-remote-orderer}
@@ -310,7 +311,7 @@ Your peer can now be joined to `channel1`.
 6. Click **Join channel**.
 
 In these tutorials, we create all of our peers using default options, which means that every peer uses CouchDB. As a result, you don't have to worry about a conflict between the database type used by your peer and any other peers on the channel. However, in a production scenario, a best practice will be to ensure that the peer you are joining to this channel uses the same database type as other peers on the channel. For more information, see [LevelDB vs CouchDB](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-level-couch).
-{:important}
+{: important}
 
 ## Step four: Creating a channel
 {: #ibm-hlfsupport-console-join-network-create-channel}
@@ -341,7 +342,7 @@ If the ordering service admin does not already have your MSP, export it and send
 {: #ibm-hlfsupport-console-join-network-import-remote-msp}
 
 This step needs to be completed by an ordering service admin.
-{:tip}
+{: tip}
 
 Once the MSP representing Org2 has been received, an administrator of the ordering service must import the JSON file by navigated to the **Organizations** tab, clicking the **Import MSP definition** button, and selecting the JSON file that represents the `Org2 MSP` peer organization MSP definition.
 
@@ -349,7 +350,7 @@ Once the MSP representing Org2 has been received, an administrator of the orderi
 {: #ibm-hlfsupport-console-join-network-add-org2-local}
 
 This step needs to be completed by an ordering service admin.
-{:tip}
+{: tip}
 
 After the MSP representing Org2 has been imported, use these steps to add the peer organization to the consortium hosted by the ordering service. Only ordering service admins, those who are listed under **Ordering service administrators** in the **Details** tab of the ordering service, can add peer organizations to the consortium. You must have the ordering service organization admin identity in your Wallet to perform this task.
 
@@ -388,16 +389,16 @@ When you are ready, click **Create channel**. You will be taken back to the **Ch
 
 **Task: Create a channel**
 
-  |  **Field** | **Name** |
-  | ------------------------- |-----------|
-  | **Channel name** | channel2 |
-  | **Ordering Service** | Ordering Service |
-  | **Organizations** | Org2 MSP |
-  | **Channel update policy** | 2 out of 2 |
-  | **Access control list** | None |
-  | **Channel creator MSP** | Org2 MSP |
-  | **Identity** | Org2 MSP Admin  |
-  {: caption="Table 8. Create a channel" caption-side="bottom"}
+|  **Field** | **Name** |
+| ------------------------- |-----------|
+| **Channel name** | channel2 |
+| **Ordering Service** | Ordering Service |
+| **Organizations** | Org2 MSP |
+| **Channel update policy** | 2 out of 2 |
+| **Access control list** | None |
+| **Channel creator MSP** | Org2 MSP |
+| **Identity** | Org2 MSP Admin  |
+{: caption="Table 8. Create a channel" caption-side="bottom"}
 
 The next step is to join a peer to this channel. Click the pending tile and select the organization peers to be added to the channel.
 
@@ -408,3 +409,5 @@ After you have joined your peer to a channel, use the following steps to deploy 
 
 - [Deploy a smart contract on your network using Fabric v2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2) using the console.
 - After you have installed and instantiated your smart contract, you can [submit transactions using your client application](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app). The [commercial paper sample](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper) can be used to deploy an example smart contract and submit transactions from sample application code.
+
+

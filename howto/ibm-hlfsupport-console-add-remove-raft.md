@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-14"
+lastupdated: "2021-11-11"
 
 keywords: network components, Kubernetes, channel update, channels, governance, channel configuration, orderer, ordering node, ordering service, raft, tutorial
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -117,7 +23,7 @@ subcollection: hlf-support
 In this tutorial, we'll talk about the process for creating ordering nodes to add to an existing ordering service and to existing channels. This will cover the instructions for adding nodes using the same organization that created the ordering service as well as the steps when using a separate ordering organization that is added as an ordering service admin.
 
 Because ordering nodes can only belong to a single ordering service, if you create an ordering service node from the main **Nodes** panel, you will not be able to add it to an existing ordering service. If you want to add a node to an existing ordering service, the node must be created specifically for that purpose using the process described below. Also, be aware that **adding nodes to an ordering service does not automatically add them to any existing channel**. That is a separate process that must take place after the node has been added to the ordering service. For more information, see [Adding and removing ordering service consenters](#ibm-hlfsupport-console-add-remove-orderer-consenters-add).
-{:important}
+{: important}
 
 ## Number of ordering nodes
 {: #ibm-hlfsupport-console-add-remove-orderer-suggested-ordering-node-configurations}
@@ -133,7 +39,7 @@ This is why, by default, the console offers two options: one node or five nodes.
 For this reason, it is considered a best practice to have an odd number of nodes in an ordering service. There is nothing wrong with an even number of nodes, but they add costs without making the ordering service more highly available.
 
 Because the number of nodes needed for a quorum is updated automatically when nodes are added to the consenter set, it is a best practice to make sure that all of the nodes in the consenter set are servicing the channel before attempting to add a new node. This is because the consenter set is updated before the node has finished provisioning. For example, if you have three nodes servicing a channel, you will have a quorum as long as two nodes are up. When attempting to add a new node, the consenter set will index to three nodes being needed (out of four). In a case where only two nodes are up out of three when a new node is added, and the new node fails to provision for any reason, you will only have two nodes available out of the three that are needed.
-{:tip}
+{: tip}
 
 ## Overview
 {: #ibm-hlfsupport-console-add-remove-orderer-add-orderer}
@@ -160,27 +66,27 @@ The process of creating a CA, registering identities, and creating an MSP is ide
 
 **Task: Create a CA and register users**
 
-  | **Field** | **Description** | **Enroll ID** | **Secret** | **Type** |
-  | ------------------------- |-----------|-----------|-----------|-----------|-----------|
-  | **Create CA** | Ordering Service2 CA | admin | adminpw ||
-  | **Register users** | Ordering Service2 admin | OS2admin | OS2adminpw | admin |
-  |  | Ordering Service node identity |  OS2 | OS2pw | orderer |
-  {: caption="Table 1. Create a CA and register users" caption-side="bottom"}
+| **Field** | **Description** | **Enroll ID** | **Secret** | **Type** |
+| ------------------------- |-----------|-----------|-----------|-----------|-----------|
+| **Create CA** | Ordering Service2 CA | admin | adminpw ||
+| **Register users** | Ordering Service2 admin | OS2admin | OS2adminpw | admin |
+|  | Ordering Service node identity |  OS2 | OS2pw | orderer |
+{: caption="Table 1. Create a CA and register users" caption-side="bottom"}
 
 If you are using a separate console, it is possible to specify exactly the same values for these fields as was specified in the Build a network tutorial. Only the `mspid` from the fields below must be different than `osmsp`, as two different MSPs cannot have the same ID in the same console (the MSP you create here will be exported to the other console in a future step). However, we have given different values in this tutorial in case users are running this tutorial inside the same console.
-{:tip}
+{: tip}
 
 After your CA has been created and your identities have been registered, create the MSP representing your organization and an admin representing that organization using the following values:
 
 **Task: Create the ordering service organization MSP definition**
 
-  |  | **Display name** | **MSP ID** | **Enroll ID**  | **Secret** |
-  | ------------------------- |-----------|-----------|-----------|-----------|
-  | **Create Organization** | Ordering Service2 MSP | os2msp |||
-  | **Root CA** | Ordering Service2 CA ||||
-  | **Org Admin Cert** | |  | OS2admin | OS2adminpw |
-  | **Identity** | Ordering Service2 MSP Admin |||||
-  {: caption="Table 11. Create the ordering service organization MSP definition" caption-side="bottom"}
+|  | **Display name** | **MSP ID** | **Enroll ID**  | **Secret** |
+| ------------------------- |-----------|-----------|-----------|-----------|
+| **Create Organization** | Ordering Service2 MSP | os2msp |||
+| **Root CA** | Ordering Service2 CA ||||
+| **Org Admin Cert** | |  | OS2admin | OS2adminpw |
+| **Identity** | Ordering Service2 MSP Admin |||||
+{: caption="Table 11. Create the ordering service organization MSP definition" caption-side="bottom"}
 
 #### Console 2: export the `Ordering Service2 MSP`
 {: #ibm-hlfsupport-console-add-remove-orderer-add-orderer-export-MSP}
@@ -220,7 +126,7 @@ After Console 2 has imported the `Ordering Service`, they will be able to create
 {: #ibm-hlfsupport-console-add-remove-orderer-add-orderer-create-node}
 
 While it is not possible to ensure that the ordering service is available (that is, that a quorum of nodes are up and that a leader has been elected) without [Viewing your node logs](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-manage-console#ibm-hlfsupport-console-manage-console-node-logs), it is a best practice to minimally ensure the likelihood that a quorum exists by verifying that the pods where the nodes have been deployed are available. This can be done by checking to make sure the relevant pods are active in the Kubernetes dashboard or by issuing `kubectl get pods -n <namespace>` and checking on the pods. If you do not have access to the cluster where all of the ordering nodes were created, contact the administrator of the relevant clusters. **If a quorum of nodes is not available, it will not be possible to add another node to the ordering service**.
-{:tip}
+{: tip}
 
 To add a node, click on the tile representing the ordering service in the **Nodes** panel. Then click on the **Ordering nodes** panel and the **Add another node** tile. Then click **Create an ordering node**. This will open a series of panels similar to the process for creating an ordering service.
 
@@ -236,20 +142,20 @@ You will need to:
 * **Associate identity**. You will only have to associate an identity if you are using a different MSP from the MSP that was originally used when creating the ordering service.
 
 The **TLS Certificate Signing Request (CSR) hostname** is an option available to advanced users who to want specify a custom domain name that can be used to address the ordering service endpoint. Custom domain names are not a part of this tutorial, so leave the **TLS CSR hostname** blank for now.
-{:tip}
+{: tip}
 
 **Task: Create an ordering service**
 
-  |  | **Display name** | **MSP ID** | **Enroll ID** | **Secret** | **Version**
-  | ------------------------- |-----------|-----------|-----------|-----------|
-  | **Add another node** | Ordering Service_2 |||||
-  | **CA** | Ordering Service2 CA |||||
-  | **Ordering Service Identity** | |  | OS2 | OS2pw ||
-  | **Organization MSP** | Ordering Service2 MSP | os2msp ||||
-  | **Fabric version** ||||| Version of nodes in existing ordering service |
-  | **Administrator certificate** | Ordering Service2 MSP |||||
-  | **Associate identity** | Ordering Service2 MSP Admin   ||||||
-  {: caption="Table 2. Create an ordering service" caption-side="bottom"}
+|  | **Display name** | **MSP ID** | **Enroll ID** | **Secret** | **Version**
+| ------------------------- |-----------|-----------|-----------|-----------|
+| **Add another node** | Ordering Service_2 |||||
+| **CA** | Ordering Service2 CA |||||
+| **Ordering Service Identity** | |  | OS2 | OS2pw ||
+| **Organization MSP** | Ordering Service2 MSP | os2msp ||||
+| **Fabric version** ||||| Version of nodes in existing ordering service |
+| **Administrator certificate** | Ordering Service2 MSP |||||
+| **Associate identity** | Ordering Service2 MSP Admin   ||||||
+{: caption="Table 2. Create an ordering service" caption-side="bottom"}
 
 After reviewing the **Summary** page, click **Add another node**. This will submit the creation request.
 
@@ -264,7 +170,7 @@ This step must be completed in the console that created the new node. If you fol
 After the ordering node has been successfully added, a new tile with the name of the node will appear on the **Ordering nodes** page. It will say it "Requires attention". This state reflects the fact that, while the node creation process has been successful, the node is not yet part of the consenter set of the system channel. The node must be added to the system channel before it can be added to any of the application channels.
 
 Recall that the "consenter set" refers to the ordering service nodes actively participating in the ordering process on a channel, while the "system channel", which is managed by the ordering service, forms the template for application channels.
-{:tip}
+{: tip}
 
 To add the node you created to the system channel, click on the node. You will see a **Add node to ordering service** button. Click this button. After the node has been added to the ordering service, the node should now be part of the system channel.
 
@@ -372,3 +278,5 @@ Note that you may have to edit the configuration of a peer multiple times, depen
 
 Don't copy the configuration snippet used as an override for one peer and use it on any other peers. Similarly, don't open the configuration of the peer and copy the section from that peer into another peer. **Use the code snippet provided on the Join a peer to a channel screen and paste it into the peer configuration** for each peer. This will ensure that the orderer override will work properly.
 {: important}
+
+
