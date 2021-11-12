@@ -2,7 +2,7 @@
 
     copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-11-12"
 
 keywords: IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -486,82 +486,82 @@ cat <<EOF | kubectl apply  -f -
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
-    name: ibpcas.ibp.com
-    labels:
-        app.kubernetes.io/name: "ibm-hlfsupport"
+  name: ibpcas.ibp.com
+  labels:
+    app.kubernetes.io/name: "ibm-hlfsupport"
     app.kubernetes.io/instance: "ibm-hlfsupport"
     app.kubernetes.io/managed-by: "ibm-hlfsupport"
 spec:
-    conversion:
-        strategy: Webhook
+  conversion:
+    strategy: Webhook
     webhook:
-        clientConfig:
+      clientConfig:
         caBundle: "${TLS_CERT}"
         service:
           name: ibm-hlfsupport-webhook
           namespace: ibm-hlfsupport-infra
           path: /crdconvert
-        conversionReviewVersions:
-        - v1beta1
-        - v1alpha2
-        - v1alpha1
-    group: ibp.com
-    names:
-        kind: IBPCA
+      conversionReviewVersions:
+      - v1beta1
+      - v1alpha2
+      - v1alpha1
+  group: ibp.com
+  names:
+    kind: IBPCA
     listKind: IBPCAList
     plural: ibpcas
     singular: ibpca
-    scope: Namespaced
-    versions:
-    - name: v1beta1
-        schema:
-        openAPIV3Schema:
+  scope: Namespaced
+  versions:
+  - name: v1beta1
+    schema:
+      openAPIV3Schema:
         x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: true
     subresources:
-        status: {}
-    - name: v1alpha2
-        schema:
-        openAPIV3Schema:
+      status: {}
+  - name: v1alpha2
+    schema:
+      openAPIV3Schema:
         x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
     subresources:
-        status: {}
-    - name: v210
-        schema:
-        openAPIV3Schema:
+      status: {}
+  - name: v210
+    schema:
+      openAPIV3Schema:
         x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
     subresources:
-        status: {}
-    - name: v212
-        schema:
-        openAPIV3Schema:
+      status: {}
+  - name: v212
+    schema:
+      openAPIV3Schema:
         x-kubernetes-preserve-unknown-fields: true
     served: false
     storage: false
     subresources:
-        status: {}
-    - name: v1alpha1
-        schema:
-        openAPIV3Schema:
+      status: {}
+  - name: v1alpha1
+    schema:
+      openAPIV3Schema:
         x-kubernetes-preserve-unknown-fields: true
     served: true
     storage: false
     subresources:
-        status: {}
+      status: {}
 status:
-    acceptedNames:
-        kind: IBPCA
+  acceptedNames:
+    kind: IBPCA
     listKind: IBPCAList
     plural: ibpcas
     singular: ibpca
-    conditions: []
-    storedVersions:
-    - v1beta1
+  conditions: []
+  storedVersions:
+  - v1beta1
 EOF
 ```
 {: codeblock}
