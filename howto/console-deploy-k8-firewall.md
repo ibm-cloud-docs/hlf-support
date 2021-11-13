@@ -1165,7 +1165,7 @@ spec:
         helm.sh/chart: "ibm-hlfsupport"
         app.kubernetes.io/name: "ibm-hlfsupport"
         app.kubernetes.io/instance: "ibm-hlfsupport"
-        app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"  
+        app.kubernetes.io/managed-by: "ibm-hlfsupport-operator"
       annotations:
         productName: "IBM Support for Hyperledger Fabric"
         productID: "5d5997a033594f149a534a09802d60f1"
@@ -1181,11 +1181,11 @@ spec:
         nodeAffinity:
           requiredDuringSchedulingIgnoredDuringExecution:
             nodeSelectorTerms:
-            - matchExpressions:
-              - key: beta.kubernetes.io/arch
-                operator: In
-                values:
-                - amd64
+              - matchExpressions:
+                  - key: beta.kubernetes.io/arch
+                    operator: In
+                    values:
+                      - amd64
       securityContext:
         runAsNonRoot: true
         runAsUser: 1001
@@ -1196,7 +1196,7 @@ spec:
         - name: ibm-hlfsupport-operator
           image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211116-amd64
           command:
-          - ibp-operator
+            - ibp-operator
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1206,10 +1206,10 @@ spec:
             runAsUser: 1001
             capabilities:
               drop:
-              - ALL
+                - ALL
               add:
-              - CHOWN
-              - FOWNER
+                - CHOWN
+                - FOWNER
           livenessProbe:
             tcpSocket:
               port: 8383
