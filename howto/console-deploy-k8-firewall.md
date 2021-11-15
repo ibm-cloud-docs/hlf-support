@@ -2,7 +2,7 @@
 
     copyright:
   years: 2021
-lastupdated: "2021-11-13"
+lastupdated: "2021-11-15"
 
 keywords: IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -29,7 +29,7 @@ You can use the following instructions to deploy the {{site.data.keyword.IBM_not
 - After you deploy your peer and ordering nodes, you need to expose the ports of your nodes for your network to be able to respond to requests from applications or nodes outside your firewall. For more information about the ports that you need to expose, see [Internet Ports](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-security#ibm-hlfsupport-security-ibm-hlfsupport-ports) in the security guide.
 
 Kubernetes cluster does not download and update the latest version of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric automatically. To get the latest update, you need to create a new cluster and a new service instance.
-{: note} 
+{: note}
 
 ## Resources required
 {: #deploy-k8-resources-required-firewall}
@@ -120,7 +120,7 @@ skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:2.2.3-20211116 docker:/
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.3-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.1-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.1-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.2-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.2-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-dind:2.2.3-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-dind:2.2.3-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.3-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.3-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20211116 docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.3-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
@@ -1690,6 +1690,4 @@ containers:
 Confirm that `- --ingress-class=nginx` and `- --enable-ssl-passthrough=true`.
 
 This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login) the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
-
-
 
