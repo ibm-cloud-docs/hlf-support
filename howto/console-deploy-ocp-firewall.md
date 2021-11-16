@@ -1331,6 +1331,7 @@ spec:
     console:
       class: ""
       size: 5Gi
+  usetags: true
   version: 1.0.0
 ```
 {: codeblock}
