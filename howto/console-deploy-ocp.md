@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-13"
+lastupdated: "2021-11-16"
 
 keywords: OpenShift, IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -1379,6 +1379,7 @@ spec:
       requests:
         cpu: 100m
         memory: 200Mi
+  usetags: true
   version: 1.0.0
 ```
 {: codeblock}
