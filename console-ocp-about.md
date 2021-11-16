@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-11"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -84,12 +84,12 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
 - **Easily code** your [smart contracts](#x8888420){: term} in Node.js, Golang, Java, or JavaScript. Use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tools to easily develop smart contracts locally or use Red Hat CodeReady Workspaces to develop them in the cloud. Leverage **SDK integration** with the console, and learn from our rich tutorials and samples.
 - **Simplified DevOps** allows you to move from development to test to production in a single environment by scaling up your Kubernetes resources to add more components.
 - **Up-to-date Fabric key features**. Choose which version of Hyperledger Fabric you want to use when deploying peers or ordering nodes. Leverage the latest features of Hyperledger Fabric v2.2.3:
-  - [Smart contract lifecycle](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode_lifecycle.html){: external}
-  - [Raft ordering service](https://hyperledger-fabric.readthedocs.io/en/release-2.2/orderer/ordering_service.html#raft){: external}
-  - [Private data collections](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-private-data) that provide increased data privacy by ensuring that ledger data is shared to only authorized peers via the gossip protocol.
-  - [Fabric Node OUs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/membership/membership.html#node-ou-roles-and-msps){: external}
-  - [Service discovery](https://hyperledger-fabric.readthedocs.io/en/release-2.2/discovery-overview.html){: external}, allowing you to dynamically discover and update how your application interacts with your network.
-  - [Channel access control lists](https://hyperledger-fabric.readthedocs.io/en/release-2.2/access_control.html){: external} that allow you additional control of the governance of your channels and smart contracts.
+    - [Smart contract lifecycle](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode_lifecycle.html){: external}
+    - [Raft ordering service](https://hyperledger-fabric.readthedocs.io/en/release-2.2/orderer/ordering_service.html#raft){: external}
+    - [Private data collections](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-private-data) that provide increased data privacy by ensuring that ledger data is shared to only authorized peers via the gossip protocol.
+    - [Fabric Node OUs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/membership/membership.html#node-ou-roles-and-msps){: external}
+    - [Service discovery](https://hyperledger-fabric.readthedocs.io/en/release-2.2/discovery-overview.html){: external}, allowing you to dynamically discover and update how your application interacts with your network.
+    - [Channel access control lists](https://hyperledger-fabric.readthedocs.io/en/release-2.2/access_control.html){: external} that allow you additional control of the governance of your channels and smart contracts.
 
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
@@ -115,7 +115,7 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 ## Supported Environments and Components
 {: #console-ocp-about-prerequisites}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, for Fabric 2.2.3 or higher, covers the following   [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, for Fabric 2.2.3 or higher, covers the following [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
 
 ### Kubernetes Support
 {: #kubernetes-support-shfv1}
@@ -128,7 +128,6 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 | OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.6, 4.7 | x86_64 | 4.6, 4.7 |
 | OpenShift Container Platform on LinuxONE | 4.6, 4.7, 4.8 | s390x |4.6, 4.7, 4.8 |
 | Kubernetes | v1.18 - v1.21 | x86_64 | v1.18 - v1.21 |
-
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
 If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/hlf-support?topic=hlf-support-deploy-k8#console-deploy-k8-considerations).
@@ -155,7 +154,6 @@ Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Ope
 | Solution Architecture and Design | [Deploying and managing smart contracts](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts) via the Console are supported. Solution Architecture and Design are not included in the 1.0.0 support offering. |
 | Performance Tuning | [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources) via the Console is supported. Detailed performance analysis and tuning of the environment or application code are not included in the 1.0.0 support offering - see the documentation on creating [highly available applications and using indexes with CouchDB](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#console-app-ha). |
 | Certificate Renewal | [Automatic](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-auto-renewal) and [Manual](/docs/hlf-support?topic=hlf-support-cert-mgmt#cert-mgmt-manual-renewal) Certificate renewal via the Certified Console image is supported. Fixing environments in which identities were lost or allowed to expire is not included in the 1.0.0 support offering. The user of the support offering is responsible for keeping track of identities and performing manual certificate renewal. Using a [Certificate Management Solution](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#storing-and-managing-certificates-in-ibm-cloud-certificate-manager) is recommended for keeping track of identities and certificates. |
-
 {: caption="Table 2. Fabric component support" caption-side="bottom"}
 
 
@@ -208,3 +206,5 @@ For more information about how to get support on {{site.data.keyword.IBM_notm}} 
 {: #console-ocp-about-next-steps}
 
 When you are ready to learn how to deploy an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your Kubernetes cluster see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
+
+

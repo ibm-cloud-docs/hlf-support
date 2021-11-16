@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-21"
+lastupdated: "2021-11-11"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -205,6 +111,7 @@ volumes:
 - "*"
 ```
 {: codeblock}
+
 Run the following commands to add the file to your cluster and add the constraint to your project.
 
 ```
@@ -233,7 +140,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 4. Click the **YAML** tab.
 5. In the YAML tab, you see the YAML code as follows. Right-click to **copy only** the last two sets of codes. Those are the secret data and the secret data handling type.
 
-     ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
+    ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
 
 6. After you copied the two sets of codes, go to the left navigation, click **Secrets**. Then, use the **Create** drop down from the upper right of the page to switch to **From YAML**.
 7. Paste your two sets of codes under the existing YAML code.
@@ -258,7 +165,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
     type: kubernetes.io/dockerconfigjson
     ```
     {: codeblock}
-  
+
 10. Click **Create** to finish your setup.
 
 ## Step three: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
@@ -400,14 +307,14 @@ spec:
 - You can use the `resources:` section to allocate more resources to your console. The values in the example file are the default values allocated to each container. Allocating more resources to your console allows you to operate a larger number of nodes or channels.
 
 - If you plan to use the console with a multizone Kubernetes cluster, you need to add the zones to the `clusterdata.zones:` section of the file. When zones are provided to the deployment, you can select the zone that a node is deployed to using the console or the APIs. As an example, if you are deploying to a cluster across the zones of dal10, dal12, and dal13, you would add the zones to the file by using the format below.
-  ```yaml
-  clusterdata:
-    zones:
-      - dal10
-      - dal12
-      - dal13
-  ```
-  {: codeblock}
+    ```yaml
+    clusterdata:
+      zones:
+        - dal10
+        - dal12
+        - dal13
+    ```
+    {: codeblock}
 
 When you finish editing the file, click **Create**.
 
@@ -435,6 +342,7 @@ Navigate to the TLS certificates that you plan to use on your local system. Name
 kubectl create secret generic console-tls-secret --from-file=tls.crt=./tlscert.pem --from-file=tls.key=./tlskey.pem -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 After you create the secret, add the `tlsSecretName` field to the `spec:` section with one indent added, at the same level as the `resources:` and `clusterdata:` sections of the advanced deployment options. You must provide the name of the TLS secret that you created to the field. The following example deploys a console with the TLS certificate and key that is stored in a secret named `"console-tls-secret"`:
@@ -502,6 +410,7 @@ If there is an issue with your deployment, you can view the logs from one of the
 kubectl get pods -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 Then, use the following command to get the logs from one of the four containers:
@@ -509,6 +418,7 @@ Then, use the following command to get the logs from one of the four containers:
 kubectl logs -f <pod_name> <container_name> -n <PROJECT_NAME>
 ```
 {: codeblock}
+
 Replace `<PROJECT_NAME>` with the name of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment project.
 
 As an example, a command to get the logs from the UI container would look like the following example:
@@ -529,9 +439,11 @@ You can find the URL of your blockchain console from the OpenShift cluster dashb
 3. You see several config maps, including `<CONSOLE_NAME>`, `<CONSOLE_NAME>-console`, and a `<CONSOLE_NAME>-deployer`. Click the one that's just the `<CONSOLE_NAME>`, for example, `ibm-hlfsupport-console`.
 4. In the **Data** section, you see the **HOST_URL** field. This is the URL of your console that you can now use to log in. It looks similar to the following example:
 
-  ```
-  https://blockchain-project-ibpconsole-console.xyz.abc.com
-  ```
+    ```
+    https://blockchain-project-ibpconsole-console.xyz.abc.com
+    ```
+    {: codeblock}
+
 5. Paste your URL in your browser and login to the console.
 
 In your browser, you can see the console login screen:
@@ -557,17 +469,17 @@ To delete the operator, navigate back to the **Installed Operators** page and cl
 
 Alternatively, you can use the CLI to switch to the OpenShift project that you created for your blockchain network:
 
-  ```
-  oc project <PROJECT_NAME>
-  ```
-  {: codeblock}
+```
+oc project <PROJECT_NAME>
+```
+{: codeblock}
 
 And then remove any instances or the IBM Support for Hyperledger Fabric operator by using the OpenShift CLI. For example, this command would delete the operator:
 
-  ```
-  kubectl delete deployment ibm-hlfsupport-operator
-  ```
-  {: codeblock}
+```
+kubectl delete deployment ibm-hlfsupport-operator
+```
+{: codeblock}
 
 ## Next steps
 {: #console-deploy-ocp-rhm-next-steps}
@@ -611,4 +523,6 @@ You can also use the CLI to find the available storage classes for your namespac
 kubectl get storageclasses
 ```
 {: codeblock}
+
+
 

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-16"
+lastupdated: "2021-11-11"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -128,10 +34,10 @@ If you are the **network operator**, you will need to complete the following ste
 1. Use your organization CA to [register an application identity](#ibm-hlfsupport-console-app-identities).
 2. [Download the connection profile](#ibm-hlfsupport-console-app-profile) from the organizations panel.
 3. Send the application developer the following objects and information:
-  - The enroll ID and secret of the application identity.
-  - The connection profile.
-  - The smart contract name.
-  - The name of the channel the smart contract was deployed on.  
+    - The enroll ID and secret of the application identity.
+    - The connection profile.
+    - The smart contract name.
+    - The name of the channel the smart contract was deployed on.  
 
 If you are the **application developer**, use the information that is provided by the network operator to complete following steps:
 1. Generate a certificate and private key by using the enroll ID and secret of the application identity, along with CA endpoint information inside your connection profile.
@@ -273,7 +179,7 @@ The Hyperledger Fabric [Transaction Flow](https://hyperledger-fabric.readthedocs
 
 Click the **Organization MSP** tile for the organization that your client application interacts with. Click **Create connection profile** to open a side panel where you can build and download your connection profile.
 
-  ![Create connection profile panel](../images/create-connx-profile.png "Create connection profile panel")
+![Create connection profile panel](../images/create-connx-profile.png "Create connection profile panel")
 
 If you plan to use the client application to register and enroll users with the organization CA, you need to include the Certificate Authority in the connection profile definition.
 
@@ -324,27 +230,27 @@ Once the network operator provides the enroll ID and secret of the application i
     async function main() {
       try {
 
-      // Create a new CA client for interacting with the CA.
-      const caURL = ccp.certificateAuthorities['<CA_Name>'].url;
-      const ca = new FabricCAServices(caURL);
+        // Create a new CA client for interacting with the CA.
+        const caURL = ccp.certificateAuthorities['<CA_Name>'].url;
+        const ca = new FabricCAServices(caURL);
 
-      // Create a new file system based wallet for managing identities.
-      const walletPath = path.join(process.cwd(), 'wallet');
-      const wallet = new FileSystemWallet(walletPath);
-      console.log(`Wallet path: ${walletPath}`);
+        // Create a new file system based wallet for managing identities.
+        const walletPath = path.join(process.cwd(), 'wallet');
+        const wallet = new FileSystemWallet(walletPath);
+        console.log(`Wallet path: ${walletPath}`);
 
-      // Check to see if we've already enrolled the admin user.
-      const userExists = await wallet.exists('user1');
-      if (userExists) {
+        // Check to see if we've already enrolled the admin user.
+        const userExists = await wallet.exists('user1');
+        if (userExists) {
         console.log('An identity for "user1" already exists in the wallet');
         return;
       }
 
-      // Enroll the admin user, and import the new identity into the wallet.
-      const enrollment = await ca.enroll({ enrollmentID: '<app_enroll_id>', enrollmentSecret: '<app_enroll_secret>' });
-      const identity = X509WalletMixin.createIdentity('<msp_id>', enrollment.certificate, enrollment.key.toBytes());
-      await wallet.import('user1', identity);
-      console.log('Successfully enrolled client "user1" and imported it into the wallet');
+        // Enroll the admin user, and import the new identity into the wallet.
+        const enrollment = await ca.enroll({ enrollmentID: '<app_enroll_id>', enrollmentSecret: '<app_enroll_secret>' });
+        const identity = X509WalletMixin.createIdentity('<msp_id>', enrollment.certificate, enrollment.key.toBytes());
+        await wallet.import('user1', identity);
+        console.log('Successfully enrolled client "user1" and imported it into the wallet');
 
       } catch (error) {
         console.error(`Failed to enroll "user1": ${error}`);
@@ -357,16 +263,18 @@ Once the network operator provides the enroll ID and secret of the application i
     {: codeblock}
 
 3. Edit `enrollUser.js` to replace the following values:
-  - Replace  ``<CA_Name>`` with the name of your organizations CA. You can find your CA name in the "organizations" section of your connection profile under "Certificate Authorities". Do not use the "caName" in the "Certificate Authorities" section.
-  - Replace ``<app_enroll_id>`` with the application enroll ID provided by your network operator.
-  - Replace ``<app_enroll_secret>`` with the application enroll secret provided by your network operator.
-  - Replace ``<msp_id>`` with the MSP ID of your organization. You can find your MSP ID under the "organizations" section of your connection profile.
+    - Replace  ``<CA_Name>`` with the name of your organizations CA. You can find your CA name in the "organizations" section of your connection profile under "Certificate Authorities". Do not use the "caName" in the "Certificate Authorities" section.
+    - Replace ``<app_enroll_id>`` with the application enroll ID provided by your network operator.
+    - Replace ``<app_enroll_secret>`` with the application enroll secret provided by your network operator.
+    - Replace ``<msp_id>`` with the MSP ID of your organization. You can find your MSP ID under the "organizations" section of your connection profile.
 4. Navigate to `enrollUser.js` using a terminal and run `node enrollUser.js`. If the command runs successfully, you should see the following output:
 
-  ```
-  Successfully enrolled client "user1" and imported it into the wallet
-  ```
-  The SDK will create and store your certificates inside the `wallet/user1/` directory that is created by the command. This directory is the file system wallet that is used submit future transactions.
+    ```
+    Successfully enrolled client "user1" and imported it into the wallet
+    ```
+    {: screen}
+
+    The SDK will create and store your certificates inside the `wallet/user1/` directory that is created by the command. This directory is the file system wallet that is used submit future transactions.
 
 The wallets that are used by the Fabric SDKs are different from the wallet in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. The identities that are stored in your console wallet cannot be directly used by the SDK.
 {: note}
@@ -427,17 +335,18 @@ After you generate the application signing certificate and private key and store
     {: codeblock}
 
 2. Edit `invoke.js` to replace the following values:
-  - Replace  `<channel_name>` with the name of the channel the smart contract was deployed on. You can find your CA name under the "Certificate Authorities" section of your connection profile.
-  - Replace `<smart_contract_name>` with the name of the installed smart contract. You can get this value from your network operator.
-  - Edit the contents of `submitTransaction` to invoke a function inside your smart contract. The `invoke.js` file is written to invoke the [FabCar smart contract](https://github.com/hyperledger/fabric-samples/tree/release-2.2/chaincode/fabcar){: external}. If you want to run the following file to submit a transaction, install FabCar and instantiate the smart contract on one of your channels.
+    - Replace  `<channel_name>` with the name of the channel the smart contract was deployed on. You can find your CA name under the "Certificate Authorities" section of your connection profile.
+    - Replace `<smart_contract_name>` with the name of the installed smart contract. You can get this value from your network operator.
+    - Edit the contents of `submitTransaction` to invoke a function inside your smart contract. The `invoke.js` file is written to invoke the [FabCar smart contract](https://github.com/hyperledger/fabric-samples/tree/release-2.2/chaincode/fabcar){: external}. If you want to run the following file to submit a transaction, install FabCar and instantiate the smart contract on one of your channels.
 
 3. Navigate to `invoke.js` using a terminal and run `node invoke.js`. If the command runs successfully, you should see the following output:
 
-  ```
-  Transaction has been submitted
-  ```
+    ```
+    Transaction has been submitted
+    ```
+    {: screen}
 
-  If you navigate to your channel by using the console, you are able to see that another block was added by the transaction.
+    If you navigate to your channel by using the console, you are able to see that another block was added by the transaction.
 
 Your transaction might fail if you did not configure an anchor peer on your channel. Unless you manually updated your connection profile, your application needs to use the [Service Discovery](https://hyperledger-fabric.readthedocs.io/en/release-2.2/discovery-overview.html){: external} feature to learn about the peers it needs to submit the transaction to. For more information, see [Configuring anchor peers](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-channels-anchor-peers).
 {: note}
@@ -455,8 +364,8 @@ Use the following steps to deploy the sample on your network. You can review the
 {: #ibm-hlfsupport-console-app-commercial-paper-prereq}
 
 Before you can deploy the commercial paper sample, you need to install required tools on your local machine:
-  * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){: external}
-  * [Node.js](https://hyperledger-fabric.readthedocs.io/en/release-2.2/prereqs.html#node-js-runtime-and-npm){: external}
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){: external}
+* [Node.js](https://hyperledger-fabric.readthedocs.io/en/release-2.2/prereqs.html#node-js-runtime-and-npm){: external}
 
 You will also need a use text editor to edit and save files in the sample. You can use many of the high-quality editors that are available for free, such as [Visual Studio Code](https://code.visualstudio.com/){: external}, [Atom](https://atom.io/){: external}, [Sublime text](http://www.sublimetext.com/){: external}, or [Brackets](http://brackets.io/){: external}.
 
@@ -489,7 +398,7 @@ The tutorial contains two sample organizations, **magnetocorp** and **digibank**
 
 ```
 ls organization
-digibank	magnetocorp
+digibank    magnetocorp
 ```
 {: codeblock}
 
@@ -529,47 +438,47 @@ Choose the CA of the organization you want to use to operate the tutorial as mag
 
 Use your console to [download your connection profile](#ibm-hlfsupport-console-app-profile). Save the connection profile to your local file system and rename it `connection.json`. Then, issue the following command from the `magnetocorp/application` directory to move the connection profile to a directory where it will be referenced by future commands.
 
-  ```
-  mv $HOME/<path_to_creds>/connection.json ../gateway/connection.json
-  ```
-  {: codeblock}
+```
+mv $HOME/<path_to_creds>/connection.json ../gateway/connection.json
+```
+{: codeblock}
 
 Save the following code block as `enrollUser.js` in the ``/magnetocorp/application`` directory:
 
-  ```javascript
-  'use strict';
+    ```javascript
+    'use strict';
 
-  const FabricCAServices = require('fabric-ca-client');
-  const { FileSystemWallet, X509WalletMixin } = require('fabric-network');
-  const fs = require('fs');
-  const path = require('path');
+    const FabricCAServices = require('fabric-ca-client');
+    const { FileSystemWallet, X509WalletMixin } = require('fabric-network');
+    const fs = require('fs');
+    const path = require('path');
 
-  const ccpPath = path.resolve(__dirname, '../gateway/connection.json');
-  const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
-  const ccp = JSON.parse(ccpJSON);
+    const ccpPath = path.resolve(__dirname, '../gateway/connection.json');
+    const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
+    const ccp = JSON.parse(ccpJSON);
 
   async function main() {
     try {
 
-      // Create a new CA client for interacting with the CA.
-      const caURL = ccp.certificateAuthorities['<CA_Name>'].url;
-      const ca = new FabricCAServices(caURL);
+        // Create a new CA client for interacting with the CA.
+        const caURL = ccp.certificateAuthorities['<CA_Name>'].url;
+        const ca = new FabricCAServices(caURL);
 
-      // Create a new file system based wallet for managing identities.
-      const wallet = new FileSystemWallet('../identity/user/isabella/wallet');
+        // Create a new file system based wallet for managing identities.
+        const wallet = new FileSystemWallet('../identity/user/isabella/wallet');
 
-      // Check to see if we've already enrolled the admin user.
-      const userExists = await wallet.exists('user1');
-      if (userExists) {
+        // Check to see if we've already enrolled the admin user.
+        const userExists = await wallet.exists('user1');
+        if (userExists) {
         console.log('An identity for "user1" already exists in the wallet');
         return;
       }
 
-      // Enroll the admin user, and import the new identity into the wallet.
-      const enrollment = await ca.enroll({ enrollmentID: '<app_enroll_id>', enrollmentSecret: '<app_enroll_secret>' });
-      const identity = X509WalletMixin.createIdentity('<msp_id>', enrollment.certificate, enrollment.key.toBytes());
-      await wallet.import('user1', identity);
-      console.log('Successfully enrolled client "user1" and imported it into the wallet');
+        // Enroll the admin user, and import the new identity into the wallet.
+        const enrollment = await ca.enroll({ enrollmentID: '<app_enroll_id>', enrollmentSecret: '<app_enroll_secret>' });
+        const identity = X509WalletMixin.createIdentity('<msp_id>', enrollment.certificate, enrollment.key.toBytes());
+        await wallet.import('user1', identity);
+        console.log('Successfully enrolled client "user1" and imported it into the wallet');
 
       } catch (error) {
         console.error(`Failed to enroll "user1": ${error}`);
@@ -577,8 +486,8 @@ Save the following code block as `enrollUser.js` in the ``/magnetocorp/applicati
       }
   }
   main();
-  ```
-  {: codeblock}
+    ```
+    {: codeblock}
 
 Take a moment to study how this file works before we edit it. First, `enrollUser.js` imports the `FileSystemWallet` and `X509WalletMixin` classes from the `fabric-network` library.
 
@@ -765,12 +674,12 @@ The [Fabric Node SDK](https://hyperledger.github.io/fabric-sdk-node/release-2.2/
 
 ```javascript
 fabric_client.createUser({
-		username: 'admin',
-		mspid:  'org1',
-		cryptoContent: {
-			privateKeyPEM: fs.readFileSync(path.join(__dirname,'./privateKey.pem')),
-			signedCertPEM: fs.readFileSync(path.join(__dirname,'./certificate.pem'))
-		}});
+    username: 'admin',
+    mspid:  'org1',
+    cryptoContent: {
+        privateKeyPEM: fs.readFileSync(path.join(__dirname,'./privateKey.pem')),
+        signedCertPEM: fs.readFileSync(path.join(__dirname,'./certificate.pem'))
+    }});
 ```
 {: codeblock}
 
@@ -813,3 +722,5 @@ For tutorials, code patterns, and videos that help developers get started and le
 
 [Blockchain Design Patterns](https://developer.ibm.com/technologies/blockchain/articles/getting-started-with-blockchain-design-patterns)    
 For application developers who want to learn about common patterns for interacting with blockchain networks.
+
+

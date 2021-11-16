@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-04"
+lastupdated: "2021-11-11"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -17,117 +17,7 @@ subcollection: hlf-support
 
 
 
-<style>
-<!--
-    #tutorials { /* hide the page header */
-        display: none !important;
-    }
-    .allCategories {
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-    }
-    .categoryBox {
-        flex-grow: 1 !important;
-        width: calc(33% - 20px) !important;
-        text-decoration: none !important;
-        margin: 0 10px 20px 0 !important;
-        padding: 16px !important;
-        border: 1px #dfe6eb solid !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-        text-align: center !important;
-        text-overflow: ellipsis !important;
-        overflow: hidden !important;
-    }
-    .solutionBoxContainer {}
-    .solutionBoxContainer a {
-        text-decoration: none !important;
-        border: none !important;
-    }
-    .solutionBox {
-        display: inline-block !important;
-        width: 100% !important;
-        margin: 0 10px 20px 0 !important;
-        padding: 16px !important;
-        background-color: #f4f4f4 !important;
-    }
-    @media screen and (min-width: 960px) {
-        .solutionBox {
-        width: calc(50% - 3%) !important;
-        }
-        .solutionBox.solutionBoxFeatured {
-        width: calc(50% - 3%) !important;
-        }
-        .solutionBoxContent {
-        height: 350px !important;
-        }
-    }
-    @media screen and (min-width: 1298px) {
-        .solutionBox {
-        width: calc(33% - 2%) !important;
-        }
-        .solutionBoxContent {
-        min-height: 350px !important;
-        }
-    }
-    .solutionBox:hover {
-        border: 1px rgb(136, 151, 162)solid !important;
-        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2) !important;
-    }
-    .solutionBoxContent {
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .solutionBoxTitle {
-        margin: 0rem !important;
-        margin-bottom: 5px !important;
-        font-size: 14px !important;
-        font-weight: 900 !important;
-        line-height: 16px !important;
-        height: 37px !important;
-        text-overflow: ellipsis !important;
-        overflow: hidden !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 2 !important;
-        -webkit-box-orient: vertical !important;
-        -webkit-box-align: inherit !important;
-    }
-    .solutionBoxDescription {
-        flex-grow: 1 !important;
-        display: flex !important;
-        flex-direction: column !important;
-    }
-    .descriptionContainer {
-    }
-    .descriptionContainer p {
-        margin: 0 !important;
-        overflow: hidden !important;
-        display: -webkit-box !important;
-        -webkit-line-clamp: 4 !important;
-        -webkit-box-orient: vertical !important;
-        font-size: 14px !important;
-        font-weight: 400 !important;
-        line-height: 1.5 !important;
-        letter-spacing: 0 !important;
-        max-height: 70px !important;
-    }
-    .architectureDiagramContainer {
-        flex-grow: 1 !important;
-        min-width: calc(33% - 2%) !important;
-        padding: 0 16px !important;
-        text-align: center !important;
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: center !important;
-        background-color: #f4f4f4;
-    }
-    .architectureDiagram {
-        max-height: 175px !important;
-        padding: 5px !important;
-        margin: 0 auto !important;
-    }
--->
-</style>
+
 
 # Getting started
 {: #deploy-ocp-getting-started}
@@ -231,50 +121,5 @@ The storages listed above are maintained by respective providers and it is not r
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be deployed in four different ways depending on your business goals. Red Hat customers may prefer to deploy the service directly from the Red Hat Marketplace to their OpenShift cluster in the cloud or on-prem. If you prefer to step through the process manually, you can deploy it to your cloud or on-prem  behind a firewall. Finally, an Ansible playbook is available to automate the deployment of the service to your OpenShift cluster.
 
-<div class=solutionBoxContainer>
-  <div class="solutionBox">
-    <a href = "/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm">
-      <div>
-        <img src="../images/logo_redhat.png" alt="Red Hat icon" width="50" style="width:50px; border-style: none"/>
-        <p><strong> Red Hat Marketplace</strong></p>
-        <p class="bx--type-caption">Use the Red Hat Marketplace to deploy the service to your OpenShift cluster in the cloud.</p>
-      </div>
-    </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm-fw">
-      <div>
-        <img src="../images/logo_redhat.png" alt="Red Hat icon" width="50" style="width:50px; border-style: none"/>
-        <p><strong> Red Hat Marketplace</strong></p>
-        <p class="bx--type-caption">(Airgap install) Use the Red Hat Marketplace to deploy the service to your OpenShift cluster behind a firewall.</p>
-      </div>
-    </a>
-  </div>
-  <div class="solutionBox">
-    <a href = "/docs/hlf-support?topic=hlf-support-deploy-ocp">
-      <div>
-        <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
-        <p><strong>OpenShift</strong></p>
-        <p class="bx--type-caption"> Manually deploy the IBM Support for Hyperledger Fabric service to your OpenShift cluster in your cloud.</p>
-      </div>
-    </a>
-  </div>
-  <div class="solutionBox">
-      <a href = "/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall">
-        <div>
-          <img src="../images/logo_openshift.svg" alt="OpenShift icon" width="25" style="width:25px; border-style: none"/>
-          <p><strong>OpenShift on-prem</strong></p>
-          <p class="bx--type-caption"> Manually deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your OpenShift cluster on-prem behind a firewall.</p>
-        </div>
-      </a>
-  </div>    
-  <div class="solutionBox">
-        <a href = "/docs/hlf-support?topic=hlf-support-ansible-install-ibp">
-          <div>
-            <img src="../images/ansible.png" alt="Ansible icon" width="25" style="width:25px; border-style: none"/>
-            <p><strong>Ansible</strong></p>
-            <p class="bx--type-caption"> Automate the deployment of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your OpenShift cluster using an Ansible playbook.</p>
-          </div>
-        </a>
-  </div>
-</div>
+
+

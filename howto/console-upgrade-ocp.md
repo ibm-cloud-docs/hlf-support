@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-10-26"
+lastupdated: "2021-11-13"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters
 
@@ -26,7 +26,7 @@ The table provides an overview of the current and past releases.
 
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 15 Sep 2021| **Console and tools** <ul><li>1.0.0-20211026</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20211026</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20211026</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
+| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 15 Sep 2021| **Console and tools** <ul><li>1.0.0-20211116</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20211116</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20211116</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
 
 **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 3.11</ul> |
 {: caption="Table 1. {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric versions" caption-side="bottom"}
@@ -36,7 +36,7 @@ The table provides an overview of the current and past releases.
 
 The upgrade process that you follow depends on the version of the platform that you are upgrading from v1.0.0
 - [Upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](#upgrade-ocp-steps-100)
- 
+
 
 Or, if you are upgrading from behind a firewall
 - [Upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](#upgrade-ocp-firewall)
@@ -77,7 +77,7 @@ You need to repeat steps 3-5 for each network that that runs on a separate proje
 Log in to your cluster and run the following command to update the webhook image in the `ibm-hlfsupport-infra` namespace or project:
 
 ```
-kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfsupport-webhook="cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211026-amd64"
+kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfsupport-webhook="cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211116-amd64"
 ```
 {: codeblock}
 
@@ -87,10 +87,10 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
 {: #upgrade-ocp-steps-100-crds}
 
 * Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
-  ``` 
-  export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
-  ```
-  {: codeblock}
+    ``` 
+    export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
+    ```
+    {: codeblock}
 
 * When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
@@ -643,7 +643,7 @@ While the console is stopped you are unable to deploy or manage your blockchain 
 Run the following command to upgrade the operator. Replace <PROJECT_NAME> with the name of your project:
 
 ```
-kubectl set image deploy/ibm-hlfsupport-operator -n <PROJECT_NAME> ibm-hlfsupport-operator="cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211026-amd64"
+kubectl set image deploy/ibm-hlfsupport-operator -n <PROJECT_NAME> ibm-hlfsupport-operator="cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211116-amd64"
 ```
 {: codeblock}
 
@@ -909,7 +909,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211026-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211116-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -919,9 +919,9 @@ spec:
             runAsUser: 1000
             capabilities:
               drop:
-              - ALL
+                - ALL
               add:
-              - NET_BIND_SERVICE
+                - NET_BIND_SERVICE
           env:
             - name: "LICENSE"
               value: "accept"
@@ -1014,10 +1014,10 @@ service/ibm-hlfsupport-webhook created
 {: #upgrade-webhook-extract-cert}
 
 * Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
-  ``` 
-  export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
-  ```
-  {: codeblock}
+    ``` 
+    export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
+    ```
+    {: codeblock}
 
 * When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
@@ -1573,7 +1573,7 @@ kubectl get deployment ibm-hlfsupport-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. Open `operator-upgrade.yaml` in a text editor. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```yaml
-cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211026-amd64
+cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211116-amd64
 ```
 {: codeblock}
 
@@ -1686,24 +1686,24 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-operator:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-init:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-init:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-console:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-console:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-grpcweb:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-deployer:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-deployer:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-fluentd:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-couchdb:3.1.1-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.2-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ca:1.5.2-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-chaincode-launcher:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-utilities:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ccenv:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.4-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:2.2.4-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-crdwebhook:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20211026 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-enroller:1.0.0-20211026 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-operator:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-init:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-init:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-console:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-console:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-grpcweb:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-deployer:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-deployer:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-fluentd:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-couchdb:3.1.1-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.2-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ca:1.5.2-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-chaincode-launcher:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-utilities:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ccenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-crdwebhook:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-enroller:1.0.0-20211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
@@ -1922,7 +1922,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211026-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211116-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1932,9 +1932,9 @@ spec:
             runAsUser: 1000
             capabilities:
               drop:
-              - ALL
+                - ALL
               add:
-              - NET_BIND_SERVICE
+                - NET_BIND_SERVICE
           env:
             - name: "LICENSE"
               value: "accept"
@@ -2027,10 +2027,10 @@ service/ibm-hlfsupport-webhook created
 {: #upgrade-webhook-extract-cert}
 
 * Extract the webhook TLS certificate from the `ibm-hlfsupport-infra` namespace by running the following command: 
-  ``` 
-  export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
-  ```
-  {: codeblock}
+    ``` 
+    export TLS_CERT=$(kubectl get secret/webhook-tls-cert -n ibm-hlfsupport-infra -o jsonpath={'.data.cert\.pem'})
+    ```
+    {: codeblock}
 
 * When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
@@ -2585,7 +2585,7 @@ kubectl get deployment ibm-hlfsupport-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. Open `operator-upgrade.yaml` a text editor. You need to update the `image:` field with the updated version of the operator image:
 ```
-cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211026-amd64
+cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20211116-amd64
 ```
 {: codeblock}
 
@@ -2688,7 +2688,7 @@ The best practice to add this endorsement policy to the MSP is to delete the MSP
 After you upgrade your console, you can use the console UI to upgrade the nodes of your blockchain network. Browse to the console UI and open the nodes overview tab. You can find the **Upgrade available** text on a node tile if there is an update available for the component. You can install this upgrade whenever you are ready. These upgrades are optional, but they are recommended. You cannot upgrade nodes that were imported into the console.
 
 Apply upgrades to nodes one at a time. Your nodes are unavailable to process requests or transactions while the patch is being applied. Therefore, to avoid any disruption of service, you need to ensure that another node of the same type is available to process requests whenever possible. Installing upgrades on a node takes about a minute to complete and when it is complete, the node is ready to process requests.
-{:important}
+{: important}
 
 To upgrade a node, open the node tile and click the **Upgrade available** button. You cannot upgrade nodes that you imported to the console. Learn more about considerations when [Upgrading to a new version of Fabric](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade).
 
@@ -2698,3 +2698,5 @@ To upgrade a node, open the node tile and click the **Upgrade available** button
 When you upgrade your operator, the operator saves the secrets, deployment spec, and network information of your console before attempting to upgrade the console. If your upgrade fails for any reason, the {{site.data.keyword.IBM_notm}} Support can roll back your upgrade and restore your previous deployment by using the information on your cluster. If you need to roll back your upgrade, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/1072956){: external} page.
 
 You can roll back an upgrade after you use the console to operate your network. However, after you use the console to upgrade your blockchain nodes, you can no longer roll back your console to a previous version of the platform.
+
+

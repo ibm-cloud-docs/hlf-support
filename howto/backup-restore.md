@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-10"
+lastupdated: "2021-11-11"
 
 keywords: network components, IBM Cloud Kubernetes Service, backup, restore, disaster, peer, orderer, ordering node, LevelDB, CouchDB
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -175,7 +81,7 @@ Consult the following chart to help you plan your strategy for taking backups:
 It is a best practice to create a regular schedule for the snapshotting of your components. If possible, try to coordinate these snapshots with the other members of your network to ensure that the most recent snapshots can be used if necessary. Because no peer snapshots can be used that are more recent than ordering service snapshots, you are bound by your snapshots of the ordering service when attempting to restore.
 
 Even though snapshots do not disrupt the functionality of your nodes, try to schedule snapshots during a time when the fewest transactions are being made. This ensures that differences in ledger heights between peers are kept to a minimum. In widely distributed networks, scheduling such a time might be difficult. Prioritize the proper ordering of snapshots over relative lulls in network activity.
-{:tip}
+{: tip}
 
 For this example, we assume one back up every 24 hours and retain seven backups.
 
@@ -248,28 +154,28 @@ Which produces a list of details similar to this example:
 
 ```
 Name:            pvc-494ba122-3501-4413-b719-cbb4b3a8f91b
-Labels:          CapacityGb=100
-                 Datacenter=dal10
-                 Iops=2
-                 StorageType=ENDURANCE
-                 Username=IBM02SEV2046428_106
-                 billingType=hourly
-                 failure-domain.beta.kubernetes.io/region=us-south
-                 failure-domain.beta.kubernetes.io/zone=dal10
-                 path=IBM02SEV2046428_106data01
-                 server=fsf-dal1002h-fz.adn.networklayer.com
-                 volumeId=155617812
-Annotations:     ibmFileProvisionerIdentity: 44cc1a5f-b755-11ea-bfae-3692beefed97
-                 pv.kubernetes.io/provisioned-by: ibm.io/ibmc-file
-Finalizers:      [kubernetes.io/pv-protection]
-StorageClass:    ibmc-file-bronze
-Status:          Bound
-Claim:           n3392fd/peera-statedb-pvc
-Reclaim Policy:  Delete
-Access Modes:    RWO
-VolumeMode:      Filesystem
-Capacity:        100Gi
-Node Affinity:   <none>
+Labels:         CapacityGb=100
+                Datacenter=dal10
+                Iops=2
+                StorageType=ENDURANCE
+                Username=IBM02SEV2046428_106
+                billingType=hourly
+                failure-domain.beta.kubernetes.io/region=us-south
+                failure-domain.beta.kubernetes.io/zone=dal10
+                path=IBM02SEV2046428_106data01
+                server=fsf-dal1002h-fz.adn.networklayer.com
+                volumeId=155617812
+Annotations:    ibmFileProvisionerIdentity: 44cc1a5f-b755-11ea-bfae-3692beefed97
+pv.kubernetes.io/provisioned-by: ibm.io/ibmc-file
+Finalizers:     [kubernetes.io/pv-protection]
+StorageClass:   ibmc-file-bronze
+Status:         Bound
+Claim:          n3392fd/peera-statedb-pvc
+Reclaim Policy: Delete
+Access Modes:   RWO
+VolumeMode:     Filesystem
+Capacity:       100Gi
+Node Affinity:  <none>
 Message:
 Source:
     Type:      NFS (an NFS mount that lasts the lifetime of a pod)
@@ -531,8 +437,10 @@ The process for restoring an ordering node is largely similar to the process for
 
 In our example, the flow you would take is:
 
-1.  Scale down all five ordering nodes and peer deployments to zero to stop all traffic on the network.
-2.  Restore the peer nodes to the 3:00 a.m. CouchDB snapshot and the 3:05 a.m. peer pod snapshot.
-3.  Restore each ordering node to its 5:00 a.m. snapshot taken the same day as the peer snapshots you restored.
-4.  Scale all five ordering service deployments up to `1` and wait for five minutes after they have started to sync up.
-5.  Scale all peer deployments up to `1`.
+1. Scale down all five ordering nodes and peer deployments to zero to stop all traffic on the network.
+2. Restore the peer nodes to the 3:00 a.m. CouchDB snapshot and the 3:05 a.m. peer pod snapshot.
+3. Restore each ordering node to its 5:00 a.m. snapshot taken the same day as the peer snapshots you restored.
+4. Scale all five ordering service deployments up to `1` and wait for five minutes after they have started to sync up.
+5. Scale all peer deployments up to `1`.
+
+

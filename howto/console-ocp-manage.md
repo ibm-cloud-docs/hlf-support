@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-09-15"
+lastupdated: "2021-11-11"
 
 keywords: IBM Support for Hyperledger Fabric, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -10,101 +10,7 @@ subcollection: hlf-support
 
 ---
 
-{:DomainName: data-hd-keyref="APPDomain"}
-{:DomainName: data-hd-keyref="DomainName"}
-{:android: data-hd-operatingsystem="android"}
-{:api: .ph data-hd-interface='api'}
-{:apikey: data-credential-placeholder='apikey'}
-{:app_key: data-hd-keyref="app_key"}
-{:app_name: data-hd-keyref="app_name"}
-{:app_secret: data-hd-keyref="app_secret"}
-{:app_url: data-hd-keyref="app_url"}
-{:audio: .audio}
-{:authenticated-content: .authenticated-content}
-{:beta: .beta}
-{:c#: .ph data-hd-programlang='c#'}
-{:c#: data-hd-programlang="c#"}
-{:cli: .ph data-hd-interface='cli'}
-{:codeblock: .codeblock}
-{:curl: #curl .ph data-hd-programlang='curl'}
-{:curl: .ph data-hd-programlang='curl'}
-{:deprecated: .deprecated}
-{:dotnet-standard: .ph data-hd-programlang='dotnet-standard'}
-{:download: .download}
-{:external: .external target="_blank"}
-{:external: target="_blank" .external}
-{:faq: data-hd-content-type='faq'}
-{:fuzzybunny: .ph data-hd-programlang='fuzzybunny'}
-{:generic: data-hd-operatingsystem="generic"}
-{:generic: data-hd-programlang="generic"}
-{:gif: data-image-type='gif'}
-{:go: .ph data-hd-programlang='go'}
-{:help: data-hd-content-type='help'}
-{:hide-dashboard: .hide-dashboard}
-{:hide-in-docs: .hide-in-docs}
-{:important: .important}
-{:ios: data-hd-operatingsystem="ios"}
-{:java: #java .ph data-hd-programlang='java'}
-{:java: .ph data-hd-programlang='java'}
-{:java: data-hd-programlang="java"}
-{:javascript: .ph data-hd-programlang='javascript'}
-{:javascript: data-hd-programlang="javascript"}
-{:middle: .ph data-hd-position='middle'}
-{:navgroup: .navgroup}
-{:new_window: target="_blank"}
-{:node: .ph data-hd-programlang='node'}
-{:note: .note}
-{:objectc: .ph data-hd-programlang='Objective C'}
-{:objectc: data-hd-programlang="objectc"}
-{:org_name: data-hd-keyref="org_name"}
-{:php: .ph data-hd-programlang='PHP'}
-{:php: data-hd-programlang="php"}
-{:pre: .pre}
-{:preview: .preview}
-{:python: .ph data-hd-programlang='python'}
-{:python: data-hd-programlang="python"}
-{:release-note: data-hd-content-type='release-note'}
-{:right: .ph data-hd-position='right'}
-{:route: data-hd-keyref="route"}
-{:row-headers: .row-headers}
-{:ruby: .ph data-hd-programlang='ruby'}
-{:ruby: data-hd-programlang="ruby"}
-{:runtime: architecture="runtime"}
-{:runtimeIcon: .runtimeIcon}
-{:runtimeIconList: .runtimeIconList}
-{:runtimeLink: .runtimeLink}
-{:runtimeTitle: .runtimeTitle}
-{:screen: .screen}
-{:script: data-hd-video='script'}
-{:service: architecture="service"}
-{:service_instance_name: data-hd-keyref="service_instance_name"}
-{:service_name: data-hd-keyref="service_name"}
-{:shortdesc: .shortdesc}
-{:space_name: data-hd-keyref="space_name"}
-{:step: data-tutorial-type='step'}
-{:step: data-tutorial-type='step'} 
-{:subsection: outputclass="subsection"}
-{:support: data-reuse='support'}
-{:swift: #swift .ph data-hd-programlang='swift'}
-{:swift: .ph data-hd-programlang='swift'}
-{:swift: data-hd-programlang="swift"}
-{:table: .aria-labeledby="caption"}
-{:term: .term}
-{:terraform: .ph data-hd-interface='terraform'}
-{:tip: .tip}
-{:tooling-url: data-tooling-url-placeholder='tooling-url'}
-{:topicgroup: .topicgroup}
-{:troubleshoot: data-hd-content-type='troubleshoot'}
-{:tsCauses: .tsCauses}
-{:tsResolve: .tsResolve}
-{:tsSymptoms: .tsSymptoms}
-{:tutorial: data-hd-content-type='tutorial'}
-{:ui: .ph data-hd-interface='ui'}
-{:unity: .ph data-hd-programlang='unity'}
-{:url: data-credential-placeholder='url'}
-{:user_ID: data-hd-keyref="user_ID"}
-{:vbnet: .ph data-hd-programlang='vb.net'}
-{:video: .video}
+{{site.data.keyword.attribute-definition-list}}
 
 
 
@@ -194,23 +100,23 @@ For all of APIs provided by the console, you need to add a `-k` or ``--insecure`
 |-------------|-----------|
 | PATH | POST `<API_endpoint>`/ak/api/v2/permissions/keys |
 | **Request body fields** | |
-| <ul><li>`roles`</li><li>`description`</li></ul>| <ul><li>`["reader", "writer", "manager"]` At least one value is required </li><li>`string` optional</li></ul>|
+| <ul><li><code>roles</code></li><li><code>description</code></li></ul>| <ul><li><code>["reader", "writer", "manager"]</code> At least one value is required </li><li><code>string</code> optional</li></ul>|
 | **Response body fields** | |
-| <ul><li>`api_key`</li><li>`description`</li><li>`roles`</li></ul>| <ul><li>`string`</li><li>`string` Save: the key is not stored</li><li>`["<role>"]`</li></ul>|
+| <ul><li><code>api_key</code></li><li><code>description</code></li><li><code>roles</code></li></ul>| <ul><li><code>string</code></li><li><code>string</code> Save: the key is not stored</li><li><code>["<role>"]</code></li></ul>|
 | Authorization required | manager |
 
 #### Example curl request: Create API key
 {: #console-icp-manage-create-api-key-example}
 ```
 curl -X POST \
-  https://9.30.252.107:31212/ak/api/v2/permissions/keys \
-  -u user@email.com:password \
-  -H 'Content-Type: application/json' \
-  -k \
-  -d '{
-     "roles": ["writer", "manager"],
-     "description": "newkey"
-     }'
+    https://9.30.252.107:31212/ak/api/v2/permissions/keys \
+    -u user@email.com:password \
+    -H 'Content-Type: application/json' \
+    -k \
+    -d '{
+        "roles": ["writer", "manager"],
+        "description": "newkey"
+        }'
 ```
 
 ### Manage your console API keys
@@ -225,16 +131,16 @@ Once you have created an API key and secret, you can use the APIs to view or rem
 |-------------|-----------|
 | Path | GET `<API_endpoint>`/ak/api/v2/permissions/keys |
 | **Response body fields** | |
-| <ul><li>`api_key`</li><li>`roles`</li><li>`ts_created`</li><li>`description`</li></ul>| <ul><li>`string`</li><li>`["<role>"]`</li><li>`number` UNIX time stamp in milliseconds</li><li>`string`</li></ul>|
+| <ul><li><code>api_key</code></li><li><code>roles</code></li><li><code>ts_created</code></li><li><code>description</code></li></ul>| <ul><li><code>string</code></li><li><code>["<role>"]</code></li><li><code>number</code> UNIX time stamp in milliseconds</li><li><code>string</code></li></ul>|
 | Authorization required | reader |
 
 #### Example curl request: view API keys
 {: #console-icp-manage-view-api-key-example}
 ```
 curl -X GET \
-  https://9.30.252.107:31212/ak/api/v2/permissions/keys \
-  -u <api_key>:<api_secret> \
-  -k
+    https://9.30.252.107:31212/ak/api/v2/permissions/keys \
+    -u <api_key>:<api_secret> \
+    -k
 ```
 
 #### Delete API keys
@@ -251,9 +157,9 @@ curl -X GET \
 
 ```
 curl -X DELETE \
-  https://9.30.252.107:31212/ak/api/v2/permissions/keys/<api_key> \
-  -u <api_key>:<api_secret> \
-  -k
+    https://9.30.252.107:31212/ak/api/v2/permissions/keys/<api_key> \
+    -u <api_key>:<api_secret> \
+    -k
 ```
 
 ### Managing users using the APIs
@@ -275,7 +181,7 @@ You can also use the APIs to list, add, or remove users who can log in to the co
 |-------------|-----------|
 | Path | GET `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Response body fields** | |
-| <ul><li>`uuids`</li><li>`email`</li><li>`roles`</li><li>`created`</li></ul>| <ul><li>`string` user ID</li><li>`string` email address</li><li>`["<role>"]`</li><li>`number` UNIX time stamp in milliseconds</li></ul>|
+| <ul><li><code>uuids</code></li><li><code>email</code></li><li><code>roles</code></li><li><code>created</code></li></ul>| <ul><li><code>string</code> user ID</li><li><code>string</code> email address</li><li><code>["<role>"]</code></li><li><code>number</code> UNIX time stamp in milliseconds</li></ul>|
 | Authorization required | reader |
 
 #### Example curl request: list users
@@ -283,9 +189,9 @@ You can also use the APIs to list, add, or remove users who can log in to the co
 
 ```
 curl -X GET \
-  https://9.30.252.107:31212/ak/api/v2/permissions/users \
-  -u <api_key>:<api_secret> \
-  -k
+    https://9.30.252.107:31212/ak/api/v2/permissions/users \
+    -u <api_key>:<api_secret> \
+    -k
 ```
 
 #### Edit users
@@ -295,9 +201,9 @@ curl -X GET \
 |-------------|-----------|
 | Path | PUT `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Request body fields** | |
-| <ul><li>`uuids`</li><li>`roles`</li></ul> | <ul><li>`array of strings` user IDs </li><li>`["reader", "writer", "manager"]` At least one value is required</li></ul> |
+| <ul><li><code>uuids</code></li><li><code>roles</code></li></ul> | <ul><li><code>array of strings</code> user IDs </li><li><code>["reader", "writer", "manager"]</code> At least one value is required</li></ul> |
 | **Response body fields** | |
-| <ul><li>`uuids`</li></ul>| <ul><li>`array of strings` user IDs </li></ul>|
+| <ul><li><code>uuids</code></li></ul>| <ul><li><code>array of strings</code> user IDs </li></ul>|
 | Authorization| manager |
 
 #### Example curl request: edit a user
@@ -305,12 +211,12 @@ curl -X GET \
 
 ```
 curl -X PUT \
-  https://9.30.252.107:31212/ak/api/v2/permissions/users \
-  -u <api_key>:<api_secret> \
-  -k \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "users": {
+    https://9.30.252.107:31212/ak/api/v2/permissions/users \
+    -u <api_key>:<api_secret> \
+    -k \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "users": {
           "b26e67a3-8f4c-40e4-b5e2-6303ad2979fc": {
           "roles": ["reader", "writer", "manager"],
             }
@@ -325,7 +231,7 @@ curl -X PUT \
 |-------------|-----------|
 | Path | POST `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Request body fields** | |
-| <ul><li>`roles`</li><li>`description`</li></ul>| <ul><li>`["reader", "writer", "manager"]` At least one value is required </li><li>`string` optional</li></ul>|
+| <ul><li><code>roles</code></li><li><code>description</code></li></ul>| <ul><li><code>["reader", "writer", "manager"]</code> At least one value is required </li><li><code>string</code> optional</li></ul>|
 | Authorization | manager |
 
 #### Example curl request: add a user
@@ -333,12 +239,12 @@ curl -X PUT \
 
 ```
 curl -X POST \
-  https://9.30.252.107:31212/ak/api/v2/permissions/users \
-  -u <api_key>:<api_secret> \
-  -k \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "users": {
+    https://9.30.252.107:31212/ak/api/v2/permissions/users \
+    -u <api_key>:<api_secret> \
+    -k \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "users": {
           "someone@mail.com": {
           "roles": ["reader", "writer", "manager"]
             }
@@ -353,9 +259,9 @@ curl -X POST \
 |-------------|-----------|
 | Path | DELETE `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Request body fields** | |
-| <ul><li>`users`</li></ul>| <ul><li>`string` user ID</li></ul>|
+| <ul><li><code>users</code></li></ul>| <ul><li><code>string</code> user ID</li></ul>|
 | **Response body fields** | |
-| <ul><li>`uuids`</li></ul>| <ul><li>`string` user ID</li></ul>|
+| <ul><li><code>uuids</code></li></ul>| <ul><li><code>string</code> user ID</li></ul>|
 | Authorization | manager |
 
 #### Example curl request: remove a user
@@ -363,12 +269,12 @@ curl -X POST \
 
 ```
 curl -X DELETE \
-  https://9.30.252.107:31212/ak/api/v2/permissions/users \
-  -u <api_key>:<api_secret> \
-  -k \
-  -H 'Content-Type: application/json' \
-  -d '{
-  "uuids": [
+    https://9.30.252.107:31212/ak/api/v2/permissions/users \
+    -u <api_key>:<api_secret> \
+    -k \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "uuids": [
         "b26e67a3-8f4c-40e4-b5e2-6303ad2979fc",
         "19bd26a0-6053-491d-ada3-ad5bb741f034"
           ]
@@ -384,9 +290,9 @@ Because you are using the APIs to communicate with your console on your own clus
 As an example, the API call below returns information about all of your components running on a service instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}.
 ```
 curl -X GET \
-  https://d456fcd8ee0e4ddfb1ad9bf45986e546-optools.bp01.blockchain.cloud.ibm.com/ak/api/v2/components \
-  -H 'Content-Type: application/json' \
-  -H 'Authorization: Bearer eyJraWQ.....zJPsw
+    https://d456fcd8ee0e4ddfb1ad9bf45986e546-optools.bp01.blockchain.cloud.ibm.com/ak/api/v2/components \
+    -H 'Content-Type: application/json' \
+    -H 'Authorization: Bearer eyJraWQ.....zJPsw
 ```
 
 You can use the APIs to create nodes on the cluster where your console is deployed, and to import nodes from other clusters or {{site.data.keyword.cloud_notm}}. For more information, see [Build a network by using APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-build-with-apis) and [Import a network by using APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-import-with-apis).
@@ -436,7 +342,7 @@ Note that smart contract logging is the responsibility of the developer who defi
 When you need to reset the logging for the node back to the Fabric default, delete any custom logger settings on the **Simple** and **Advanced** tabs and set the **Default log level** to `Information`.
 {: tip}
 
-See the Fabric topic on [Logging Control](https://hyperledger-fabric.readthedocs.io/en/release-2.2/logging-control.html){:external} for more information. Read on for more information on how to view the node and smart contract logs.
+See the Fabric topic on [Logging Control](https://hyperledger-fabric.readthedocs.io/en/release-2.2/logging-control.html){: external} for more information. Read on for more information on how to view the node and smart contract logs.
 
 ## Viewing your logs
 {: #icp-console-manage-logs}
@@ -450,8 +356,8 @@ You can easily access the console logs if you need to debug problems that you en
 
 Navigate to the **Settings** tab in the console browser to change the logging settings. The console logs are collected from two separate sources:
 
-  * **Client logging:** These logs are collected when commands are sent from your browser to the console.
-  * **Server logging:** These logs are collected when the console sends commands to your nodes and from the console deployment. These logs include the Hyperledger Fabric logging output.
+* **Client logging:** These logs are collected when commands are sent from your browser to the console.
+* **Server logging:** These logs are collected when the console sends commands to your nodes and from the console deployment. These logs include the Hyperledger Fabric logging output.
 
 Set the number of collected logs by using the drop-down list under each log type. For example, **Error** and **Warning** collect the least amount of logs, while **Debug** and **All** collect the most.
 
@@ -464,32 +370,32 @@ Component logs can be viewed from the command line by using the [kubectl CLI com
 
 - Use the `kubectl logs` command to view the container logs inside the pod. Follow the instructions to [Install the kubectl cli](https://www.ibm.com/docs/en/cloud-private/3.2.0?topic=guide-installing-kubernetes-cli-kubectl){: external} if you have not already done so. If you are unsure of your pod name, run the following command to view your list of pods.
 
-  ```
-  kubectl get pods
-  ```
-  {: codeblock}
+    ```
+    kubectl get pods
+    ```
+    {: codeblock}
 
-  Then, run the following command to retrieve the logs for the node container that resides inside the pod:
+    Then, run the following command to retrieve the logs for the node container that resides inside the pod:
 
-  ```
-  kubectl logs -f <pod_name> -c <node>
-  ```
-  {: codeblock}
+    ```
+    kubectl logs -f <pod_name> -c <node>
+    ```
+    {: codeblock}
 
-  Replace `<pod_name>` with the name of your pod from the command output above.  
-  Replace `<node>` with `ca`, `peer`, or `orderer` to view the logs for your node.  
-  Replace `<node>` with `chaincode-logs`to view the logs for your smart contracts.
+    Replace `<pod_name>` with the name of your pod from the command output above.  
+    Replace `<node>` with `ca`, `peer`, or `orderer` to view the logs for your node.  
+    Replace `<node>` with `chaincode-logs`to view the logs for your smart contracts.
 
-  You can also run the command `kubectl logs -f <pod_name>` to get a list of all of the containers that are running inside a pod. The response to the command is an error message similar to the following:
-  ```
-  Error from server (BadRequest): a container name must be specified for pod peer1org1-7b4b6687dc-7n4fz, choose one of: [dind peer proxy chaincode-logs couchdb] or one of the init containers: [init]
-  ```
+    You can also run the command `kubectl logs -f <pod_name>` to get a list of all of the containers that are running inside a pod. The response to the command is an error message similar to the following:
+    ```
+    Error from server (BadRequest): a container name must be specified for pod peer1org1-7b4b6687dc-7n4fz, choose one of: [dind peer proxy chaincode-logs couchdb] or one of the init containers: [init]
+    ```
 
-  For more information about the `kubectl logs` command, see [Kubernetes documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: external}.
+    For more information about the `kubectl logs` command, see [Kubernetes documentation](https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#logs){: external}.
 
 - Alternatively, if you are running on OpenShift Container Platform, you can access the logs from the OpenShift Web Browser.
 
-  **Note:** When you view your logs in Kibana, you might receive the response `No results found`. This condition can occur if your cluster uses your worker node IP address as its hostname. To resolve this problem, remove the filter that begins with `node.hostname.keyword` at the top of the panel and the logs will become visible.
+    **Note:** When you view your logs in Kibana, you might receive the response `No results found`. This condition can occur if your cluster uses your worker node IP address as its hostname. To resolve this problem, remove the filter that begins with `node.hostname.keyword` at the top of the panel and the logs will become visible.
 
 ### Viewing your smart contract container logs
 {: #console-icp-manage-container-logs}
@@ -506,6 +412,7 @@ First get a list of all of the chaincode pods running in your cluster:
 kubectl get po -n <NAMESPACE> | grep chaincode-execution | cut -d" " -f1 | xargs -I {} kubectl get po {} -n <NAMESPACE> --show-labels
 ```
 {: codeblock}
+
 Replacing `<NAMESPACE>` with the name of your cluster namespace or OpenShift project.  
 
 You should see results similar to:
@@ -558,3 +465,5 @@ The best practice is to apply upgrades to one node at a time. While the upgrade 
 {: note}
 
 For information about how to upgrade a node, check out [Upgrading to the latest version of Fabric](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade).
+
+
