@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-06"
 
 keywords: admin certificate, Node OU, admin identity, expiration
 
@@ -592,5 +592,3 @@ If you previously imported the MSP into your console, you need to update the def
 1. On the **Organizations** tab and click the MSP tile.
 2. Click the **Settings** icon and then **Add file** to browse to the new JSON file.
 3. Click **Update MSP**.  If you created any nodes in your console that use this MSP, they are updated with the new MSP and restarted.
-
-
