@@ -49,7 +49,7 @@ Before you can deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger
 ## Build the Ansible playbook
 {: #ansible-install-ibm-hlfsupport-playbook}
 
-You are now ready to complete instructions in the [Ansible Collection]( https://ibm-blockchain.github.io/ansible-collection/tutorials/hlfsupport-installing.html){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+You are now ready to complete instructions in the [Ansible Collection](https://ibm-blockchain.github.io/ansible-collection/tutorials/installing.html#installing-the-ibm-blockchain-platform){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 When the installation completes successfully you see the message:
 ```
