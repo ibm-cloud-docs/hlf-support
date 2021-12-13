@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-13"
 
 keywords: smart contract, private data, private data collection, anchor peer, instantiation, install smart contract
 
@@ -59,7 +59,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console manage
 
 - To learn how smart contracts can be used to conduct transactions among multiple parties, see the [Developing applications topic](https://hyperledger-fabric.readthedocs.io/en/release-1.4/developapps/developing_applications.html){: external} in the Hyperledger Fabric documentation.
 - When you are ready to start building smart contracts, you can use the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Visual Studio code extension](/docs/hlf-support?topic=hlf-support-develop-vscode) to start building your own smart contract project. You can also use that extension to [connect directly to your network from Visual Studio Code](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibp) and explore the inline tutorials.
-- For a quick tutorial on developing smart contracts, see [Develop a smart contract with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension](https://developer.ibm.com/tutorials/ibm-blockchain-platform-vscode-smart-contract/){: external}.
+- For a quick tutorial on developing smart contracts, see [Develop a smart contract with the {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension](https://developer.ibm.com/tutorials/ibm-blockchain-platform-vscode-smart-contract/){: external}.
 - For a more in-depth end-to-end tutorial about using an application to interact with smart contracts, see [Hyperledger Fabric Commercial Paper tutorial](https://hyperledger-fabric.readthedocs.io/en/release-1.4/tutorial/commercial_paper.html){: external}.
 - To learn about how to incorporate access control mechanisms into your smart contract, see [Chaincode for Developers](https://hyperledger-fabric.readthedocs.io/en/release-1.4/chaincode4ade.html#chaincode-access-control){: external}.
 
@@ -353,5 +353,3 @@ In order to use private data with {{site.data.keyword.IBM_notm}} Support for Hyp
 3. **Configure anchor peers.** Because cross organizational [gossip](https://hyperledger-fabric.readthedocs.io/en/release-2.2/gossip.html){: external} must be enabled for private data to work, an anchor peer must exist for each organization in the collection definition. Refer to this information for [how to configure anchor peers](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-channels-anchor-peers) on your network.
 
 Your channel is now configured to use private data.
-
-

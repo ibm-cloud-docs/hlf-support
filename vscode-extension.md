@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-13"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
@@ -80,14 +80,14 @@ While the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Develope
 ### Choose your Developer Tooling environment
 {: #develop-vscode-crw-choose}
 
-<img usemap="#home_map" border="0" class="image" id="image_ztx_crb_f1b" src="images/rh-crw.png" width="188" h alt="Install Developer Tooling into Red Hat CodeReady Workspaces in the cloud." style="width:188px;" /><map name="home_map" id="home_map"><area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-crw" alt="Install Developer Tooling into Red Hat CodeReady Workspaces in the cloud" title="Install Developer Tooling into Red Hat CodeReady Workspaces in the cloud" shape="rect" coords="1,-4,187,71" /></map>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img usemap="#home_map2" border="0" class="image" id="image_ztx_crb_f1b" src="images/visual-studio.png" width="188" alt="Install the  {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension into Visual Studio on your local system." style="width:188px;" /><map name="home_map2" id="home_map"><area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-install" alt="Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension into Visual Studio on your local system" title="Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension into Visual Studio on your local system" shape="rect" coords="-2, 0, 192, 68" /></map>
+<img usemap="#home_map" border="0" class="image" id="image_ztx_crb_f1b" src="images/rh-crw.png" width="188" h alt="Install Developer Tooling into Red Hat CodeReady Workspaces in the cloud." style="width:188px;" /><map name="home_map" id="home_map"><area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-crw" alt="Install Developer Tooling into Red Hat CodeReady Workspaces in the cloud" title="Install Developer Tooling into Red Hat CodeReady Workspaces in the cloud" shape="rect" coords="1,-4,187,71" /></map>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<img usemap="#home_map2" border="0" class="image" id="image_ztx_crb_f1b" src="images/visual-studio.png" width="188" alt="Install the  {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension into Visual Studio on your local system." style="width:188px;" /><map name="home_map2" id="home_map"><area href="/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-install" alt="Install the {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension into Visual Studio on your local system" title="Install the {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension into Visual Studio on your local system" shape="rect" coords="-2, 0, 192, 68" /></map>
 
 Both development environments include the same rich functionality of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tooling. The **Red Hat CodeReady Workspaces** include the pre-installed stack of prerequisites to get up and running quickly in an IDE that is accessible from your web browser. Choose **VS Code extension from the VisualStudio Marketplace** if you prefer to develop smart contracts and applications locally. You will need to download, install, and configure everything on your local system.
 
 ## Install Developer Tooling into Red Hat CodeReady Workspaces
 {: #develop-vscode-crw}
 
-The following set of steps can be used to install the CodeReady Workspaces and configure it with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tooling on an OpenShift 4.3+ cluster. If you prefer to install the tooling on your local system, see [Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension](#develop-vscode-install).
+The following set of steps can be used to install the CodeReady Workspaces and configure it with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tooling on an OpenShift 4.3+ cluster. If you prefer to install the tooling on your local system, see [Install {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension](#develop-vscode-install).
 
 1. Log in as the administrator of your OpenShift 4.3 cluster.
 2. In the navigation bar, click **Operators** > **Operator Hub**. Ensure you have selected the project from the twistie at the top of the page, where you want the operator to be installed.
@@ -124,7 +124,7 @@ The following set of steps can be used to install the CodeReady Workspaces and c
     Where:  
     - **metadata:** is the name that is given to the workspace. In this example, it is `ibm-hlfsupport-sample-devfile`. Users should specify their own value for this property.
     - **components: - type: cheEditor** is the default **Eclipse Theia editor** that is automatically included in the CodeReady Workspaces and is not a required component in a Devfile. However, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric extension requires a higher memory limit than the default, so it must be included along with the `memoryLimit` property to override the defaults.
-    - **components: - type: chePlugin** is the reference to the **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension**. The sample includes a reference to the latest version of our extension by using a URL from GitHub: `https://github.com/IBM-Blockchain/blockchain-vscode-extension/releases/latest/download/ibm-blockchain-platform-che.yaml`. This means that whenever the workspace starts or restarts, the latest version of our extension is installed. It is expected that updates are published to the extension every two weeks.
+    - **components: - type: chePlugin** is the reference to the **{{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension**. The sample includes a reference to the latest version of our extension by using a URL from GitHub: `https://github.com/IBM-Blockchain/blockchain-vscode-extension/releases/latest/download/ibm-blockchain-platform-che.yaml`. This means that whenever the workspace starts or restarts, the latest version of our extension is installed. It is expected that updates are published to the extension every two weeks.
 
     If you prefer to pin your workspace to a specific version of the VS Code extension, go to the [GitHub Releases page](https://github.com/IBM-Blockchain/blockchain-vscode-extension/releases) and navigate to the URL for the version you prefer. Scroll down to the Assets twistie for that release to locate a set of files. Copy the URL for the file named `ibm-blockchain-platform-che-x.y.z.yaml`, for example `ibm-blockchain-platform-che-1.0.31.yaml`. The URL should look similar to: `https://github.com/IBM-Blockchain/blockchain-vscode-extension/releases/download/v1.0.31/ibm-blockchain-platform-che-1.0.31.yaml`. Paste this URL into the `reference` field, replacing the URL provided in the sample.
     {: tip}
@@ -147,10 +147,10 @@ Proceed to [Step one](#develop-vscode-guided-tutorials) to learn how to access t
 - [CodeReady Workspaces 2.1 Administration Guide](https://access.redhat.com/documentation/en-us/red_hat_codeready_workspaces/2.1/html/administration_guide/index){: external}
 - [CodeReady Workspaces 2.1 End-user Guide](https://access.redhat.com/documentation/en-us/red_hat_codeready_workspaces/2.1/html/end-user_guide/index){: external}
 
-## Install {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension for free
+## Install {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension for free
 {: #develop-vscode-install}
 
-Before you install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension on your local system, you must complete the prerequisites. If you have already configured the [Red Hat CodeReady Workspaces](#develop-vscode-crw) for your developer environment, you can skip ahead to [Step one](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-guided-tutorials) to get started with the tooling.
+Before you install the {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension on your local system, you must complete the prerequisites. If you have already configured the [Red Hat CodeReady Workspaces](#develop-vscode-crw) for your developer environment, you can skip ahead to [Step one](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-guided-tutorials) to get started with the tooling.
 
 ### Prerequisites
 {: #develop-vscode-prerequisites}
@@ -565,7 +565,3 @@ You can also add new users to the wallets that have already been created:
     - If you are connecting to a network on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can download an identity from your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, either by exporting an identity from your wallet or by enrolling and then exporting an identity using your Certificate Authority. You can then upload the JSON file directly to VS Code.
     - If you use a certificate and private key, browse to the certificate and private key.
     - If you use an enrollment ID and secret, choose the gateway to enroll with and enter the enrollment ID and secret.
-
-
-
-
