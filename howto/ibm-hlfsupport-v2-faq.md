@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-13"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -53,9 +53,6 @@ content-type: faq
 - [What languages are supported for smart contracts?](#ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-4)
 - [What version of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric works with the Ansible collection?](#ibm-hlfsupport-v2-faq-ansible-version)
 - [How do I get support for running the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Ansible playbook?](#ibm-hlfsupport-v2-faq-ansible-support)
-- [Do I need OpenShift to run CodeReady Workspace?](#ibm-hlfsupport-v2-faq-codeready-openshift)
-- [How often do updates get rolled out for the CodeReady Workspace extension?](#ibm-hlfsupport-v2-faq-codeready-updates)
-- [How can I test my smart contract that is running in CodeReady workspace?](#ibm-hlfsupport-v2-faq-test-smart-contracts)
 - [How can I find the examples and tutorials within the VSCode extension?](#ibm-hlfsupport-v2-faq-vscode-tutorials)
 - [Can the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric monitor the health of a client application?](#ibm-hlfsupport-v2-faq-mon-client-app)
 
@@ -269,23 +266,7 @@ Versions 1.0.0 of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fab
 
 Ansible is an open source technology and this product is not officially supported by {{site.data.keyword.IBM_notm}}. For support related to the usage of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and Ansible playbooks use the [GitHub repository](https://github.com/IBM-Blockchain/ansible-collection/issues){: external}.
 
-## Do I need OpenShift to run CodeReady Workspace?
-{: #ibm-hlfsupport-v2-faq-codeready-openshift}
-{: faq}
-
-Yes, OpenShift is a prerequisite to running CodeReady because you have to deploy your workspace into an OpenShift cluster.
-
-## How often do updates get rolled out for the CodeReady Workspace extension?
-{: #ibm-hlfsupport-v2-faq-codeready-updates}
-{: faq}
-
 Updates are scheduled to coincide with the VS Code extension and should be available every two weeks.
-
-## How can I test my smart contract that is running in CodeReady workspace?
-{: #ibm-hlfsupport-v2-faq-test-smart-contracts}
-{: faq}
-
-Currently this can be achieved by connecting to a Fabric network running outside of the CodeReady Workspaces extension. In a subsequent release we plan to introduce a simple way to deploy a Fabric network from within the extension.
 
 ## How can I find the examples and tutorials within the VSCode extension?
 {: #ibm-hlfsupport-v2-faq-vscode-tutorials}
@@ -320,10 +301,3 @@ You are responsible for the health monitoring and resource allocation of the blo
 
 You should be aware that JavaScript and TypeScript smart contracts require more resources than contracts written in Golang. Therefore, when you are allocating resources to your cluster, it is important to ensure adequate resources are available to your smart contract pods when they are deployed on a channel and during transaction processing. The pods containing the smart contracts will consume as much resources as they need to function.
 {: tip}
-
-
-
-
-
-
-

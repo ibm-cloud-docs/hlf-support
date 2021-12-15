@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-13"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -425,7 +425,7 @@ You can find the commercial paper smart contract inside the `contract` folder of
 
 Smart contracts running on peers using a Fabric v2.x image must be packed using the [.tar.gz format](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode_lifecycle.html#step-one-packaging-the-smart-contract){: external}. These smart contracts must be installed and proposed by you, then approved by other channel members before being committed on the channel. For information on using smart contracts with Fabric v2.x peers, check out [Deploying a smart contract using Fabric 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2).
 
-You can use the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS code extension](/docs/hlf-support?topic=hlf-support-develop-vscode) to package the smart contract. After you install the extension, use Visual Studio Code to open the `contracts` folder in your workspace. Open the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ tab. In the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ pane, go to the smart contract packages section and click **Package Open Project**. The VS code extension uses the files in the `contracts` folder to create a new package named `papernet-js@.0.0.1.cds`. Right-click this package to export it to your local file system. You can then use your console to install your smart contract and either instantiate or propose it.
+You can use the [{{site.data.keyword.IBM_notm}} Blockchain Platform VS code extension](/docs/hlf-support?topic=hlf-support-develop-vscode) to package the smart contract. After you install the extension, use Visual Studio Code to open the `contracts` folder in your workspace. Open the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ tab. In the _{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric_ pane, go to the smart contract packages section and click **Package Open Project**. The VS code extension uses the files in the `contracts` folder to create a new package named `papernet-js@.0.0.1.cds`. Right-click this package to export it to your local file system. You can then use your console to install your smart contract and either instantiate or propose it.
 
 ### Step three: Generate certificates for your wallet
 {: #ibm-hlfsupport-console-app-commercial-paper-step-three-generate-certificates}
@@ -683,7 +683,7 @@ fabric_client.createUser({
 ```
 {: codeblock}
 
-If you are using low-level SDK APIs to connect to your network, there are additional steps that you can take to manage the performance and availability of your application. 
+If you are using low-level SDK APIs to connect to your network, there are additional steps that you can take to manage the performance and availability of your application.
 
 ## Highly available applications
 {: #console-app-ha}
@@ -722,5 +722,3 @@ For tutorials, code patterns, and videos that help developers get started and le
 
 [Blockchain Design Patterns](https://developer.ibm.com/technologies/blockchain/articles/getting-started-with-blockchain-design-patterns)    
 For application developers who want to learn about common patterns for interacting with blockchain networks.
-
-

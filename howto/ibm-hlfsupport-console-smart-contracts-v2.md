@@ -2,7 +2,7 @@
 
 copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-13"
 
 keywords: smart contract, private data, private data collection, anchor peer, implicit collections
 
@@ -145,7 +145,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console manage
 
 - To learn how smart contracts can be used to conduct transactions among multiple parties, see the [Developing applications topic](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html){: external} in the Hyperledger Fabric documentation.
 - When you are ready to start building smart contracts, use the IBM Developer Tooling, by downloading the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) locally, or use [Red Hat CodeReady Workspaces](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-crw) in the cloud to package your smart contract.  New to the VS Code extension? Check out [Developing smart contracts with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tools](/docs/hlf-support?topic=hlf-support-develop-vscode) to get started using the extension to create smart contracts that run on the network and clients applications to send transactions.
-- For a quick tutorial on developing smart contracts, see [Develop a smart contract with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric VS Code extension](https://developer.ibm.com/tutorials/ibm-blockchain-platform-vscode-smart-contract/){: external}.
+- For a quick tutorial on developing smart contracts, see [Develop a smart contract with the {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension](https://developer.ibm.com/tutorials/ibm-blockchain-platform-vscode-smart-contract/){: external}.
 - For guidance on how to leverage the smart contract lifecycle to satisfy a wider set of business use cases, see [Writing powerful smart contracts](/docs/hlf-support?topic=hlf-support-write-powerful-smart-contracts).
 - For a more in-depth end-to-end tutorial about using an application to interact with smart contracts, see [Hyperledger Fabric Commercial Paper tutorial](https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html){: external}.
 - To learn about how to incorporate access control mechanisms into your smart contract, see [Writing Your First Chaincode](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode4ade.html#chaincode-access-control){: external}.
@@ -492,5 +492,3 @@ Your channel is now configured to use private data.
 {: #ibm-hlfsupport-console-smart-contracts-v2-implicit-colln}
 
 Along with the new chaincode lifecycle, Fabric v2.0 introduced the support for "implicit data collections".  Whereas private data collections keep ledger data private among selected organization members, implicit data collections eliminate the need to define a collection when only a per-organization collection is required. Each organization on the channel has a private data collection that their own organization peers can use. This collection is implicit, because unlike private data collections, it does not need to be explicitly defined when a smart contract is deployed. To take advantage of this capability, the channel must be configured with application capability v2.x and the peers on the channel must be deployed with a Fabric v2.x image.  To learn more about the capability, see [Referencing implicit collections from chaincode](https://hyperledger-fabric.readthedocs.io/en/v2.2.0/private-data-arch.html#referencing-implicit-collections-from-chaincode){: external}. To learn how to implement this capability in a smart contract, see the [Secured asset transfer](https://github.com/hyperledger/fabric-samples/tree/master/asset-transfer-secured-agreement){: external} sample.
-
-

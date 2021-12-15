@@ -1,8 +1,8 @@
 ---
 
-    copyright:
+copyright:
   years: 2021
-lastupdated: "2021-11-11"
+lastupdated: "2021-12-13"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -70,7 +70,3 @@ The first time you log in, you are required to change your password, and then lo
 If you are simply interested in automating the process of installing the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you are done. You can use the console UI or APIs to create your blockchain components. If you are not familiar with the process to build a network by using the console, check out the [tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network) that walks you through the steps of building a sample network.
 
 Already familiar with how to build a network and want to continue to learn more about the available Ansible playbooks? Then check out the tutorial on [Building an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network using Ansible playbooks](/docs/hlf-support?topic=hlf-support-ansible-build).
-
-
-
-
