@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-13"
+  years: 2022
+lastupdated: "2022-01-06"
 
 keywords: OpenShift, IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -288,7 +288,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20211214-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220111-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
