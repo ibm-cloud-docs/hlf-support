@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-18"
 
 keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -62,7 +62,7 @@ You must have the cluster administrator role to install the operators from the R
 4. When prompted `Would you like to go back to the Red Hat Marketplace now? [Y/n]`, type `Y` to retrieve the <wintitle>Red Hat Marketplace</wintitle> page in your browser.
 5. Click **My software** > **Visit the Marketplace**.
 6. In the search bar, type **blockchain** to load the blockchain tile. Select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric**.
-7. Click **Purchase** or **Free trial** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with the Red Hat Marketplace.
+7. Click **Purchase** or **Free trial** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with Red Hat Marketplace. When selecting a namespace for operator installation, **All namespaces on the cluster** is selected by default&mdash;you must change this default selection to **openshift-operators**, because the operator runs in this namespace (due to Security Context Constraint also running in this namespace). ![Install the operator in the openshift-operators namespace](../images/allnamespace-install-operator.png "Install the operator in the openshift-operators namespace"){: caption="Figure 1. Install the operator in the openshift-operators namespace" caption-side="bottom"} The Console and Fabric components can be installed in any namespace. ![Console and Fabric components can be installed in any namespace](../images/allnamespace-installed-operators.png "Console and Fabric components can be installed in any namespace"){: caption="Figure 2. Console and Fabric components can be installed in any namespace" caption-side="bottom"} Next, update the Security Context Constraint command settings to use the Fabric and Console namespaces. ![Update Security Context Constraint command settings to use the Fabric and Console namespaces.](../images/allnamespace-ibp-consoles.png "Update Security Context Constraint command settings to use the Fabric and Console namespaces."){: caption="Figure 3. Update Security Context Constraint command settings to use the Fabric and Console namespaces." caption-side="bottom"}
 8. If your OpenShift cluster is behind a firewall, see [Deploy from Red Hat Marketplace (airgap installation)](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm-fw).
 9. Continue to [Step one: Apply the Security Context Constraint](#deploy-ocp-rhm-scc).
 
@@ -140,7 +140,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 4. Click the **YAML** tab.
 5. In the YAML tab, you see the YAML code as follows. Right-click to **copy only** the last two sets of codes. Those are the secret data and the secret data handling type.
 
-    ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
+    ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 4. Pull-secret YAML Sample" caption-side="bottom"}
 
 6. After you copied the two sets of codes, go to the left navigation, click **Secrets**. Then, use the **Create** drop down from the upper right of the page to switch to **From YAML**.
 7. Paste your two sets of codes under the existing YAML code.
@@ -174,7 +174,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 There is one instance available listed under "Provided APIs":
 
 
-![IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace](../images/rhm-console.png "IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace"){: caption="Figure 1. IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace" caption-side="bottom"}
+![IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace](../images/rhm-console.png "IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace"){: caption="Figure 5. IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace" caption-side="bottom"}
 
 - **IBM Support for Hyperledger Fabric Console** - The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console UI, or "console", is an award-winning user interface for building your blockchain network.
 
@@ -184,7 +184,7 @@ You should use the console to deploy Certificate Authorities (CAs), peers, and o
 {: important}
 
 Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
+![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 6. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}
@@ -523,6 +523,3 @@ You can also use the CLI to find the available storage classes for your namespac
 kubectl get storageclasses
 ```
 {: codeblock}
-
-
-
