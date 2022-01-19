@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-19"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -59,9 +59,6 @@ Note that you do not need to adjust the CPU, memory, or storage for your smart c
 ## Upgrading to a new version of Fabric
 {: #ibm-hlfsupport-console-govern-components-upgrade}
 
-When updating {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric nodes from 1.4.x to 2.x.x, select 2.2.x or the latest version available. Do not select any version prior to 2.2.x. See the [Fabric documentation on upgrading](https://hyperledger-fabric.readthedocs.io/en/release-2.2/upgrade_to_newest_version.html#upgrading-to-2-2-from-the-1-4-x-long-term-support-release){: external} for more information.
-{: important}
-
 While some new versions of Fabric are released where only the Fabric version of nodes must be upgraded in order to get the latest Fabric features, some new Fabric versions contain new channel capabilities that must also be updated.
 
 In these cases, the process of "updating to the latest" release is, at a high level, a two step process:
@@ -80,7 +77,7 @@ At a high level, the process of upgrading a node involves two main steps:
 It may also be necessary to update SDKs and smart contracts before you can take advantage of the latest Fabric features. For more information, check out [Step three: Update SDKs and smart contracts](#ibm-hlfsupport-console-govern-components-upgrade-step-three).
 {: tip}
 
-### Step one: Backup your ledger
+### Step one: Back up your ledger (optional)
 {: #ibm-hlfsupport-console-govern-components-upgrade-step-one-ledger}
 
 It is recommended to take regular backups of the persistent volumes of your nodes as part of the normal process of network administration. For example, in our topic on backing up and restoring components and networks, an [example schedule](/docs/hlf-support?topic=hlf-support-backup-restore#backup-restore-schedule-snapshot) is provided which recommends that backups be taken of the ordering nodes and the peers (including the state database of the peer, if using CouchDB) each night.
@@ -93,7 +90,10 @@ However, if you are not taking regular backups, it is recommended that you minim
 If you are upgrading both peer and ordering node binaries, it is a best practice to upgrade the ordering nodes first, as ensuring that the ordering nodes (and by extension, the ordering service) is functioning correctly is more important to the health of your network as a whole than the functioning of any particular peer.
 {: tip}
 
-The process for upgrading a node is relatively straightforward. First, make sure you are using the console where the node was created. You cannot use the console to update imported nodes. When a node upgrade is available, **Upgrade available** is visible on the node tile. 
+Do not attempt to upgrade {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric nodes directly from Hyperledger Fabric 1.4.x to the latest version. Instead, add a new peer with the latest version of Fabric (2.2.x) installed. This Fabric installation is done by {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, but can take hours or days depending on the size of the database to be built. The new Fabric Gateway transaction lifecycle is available in 2.2.4, but a node upgrade from 1.4.x is not required&mdash;the legacy 1.4.x  transaction lifecycle remains supported. See the [Fabric documentation on upgrading](https://hyperledger-fabric.readthedocs.io/en/release-2.2/upgrade_to_newest_version.html#upgrading-to-2-2-from-the-1-4-x-long-term-support-release){: external} for more information.
+{: important}
+
+The process for upgrading a node is relatively straightforward. First, make sure you are using the console where the node was created. You cannot use the console to update imported nodes. When a node upgrade is available, **Upgrade available** is visible on the node tile.
 
 You can then update the node:
 
@@ -104,10 +104,7 @@ You can then update the node:
 
 The node will be unavailable during the upgrade. The status was turn grey and will read **Status unknown** or **Unavailable**. When the upgrade has completed, the status will turn green and be **Ready**. If the upgrade fails and the node lapses into an unrecoverable state, follow the instructions for [Restoring nodes](/docs/hlf-support?topic=hlf-support-backup-restore#backup-restore-restore) from a snapshot.
 
-To upgrade from a v1.4.x peer to a 2.x peer, the databases of all peers (which include not just the state database but the history database and other internal databases for the peer) must be rebuilt using the v2.x data format. Depending on the size of your ledgers and the number of channels your peer is joined to, the process of rebuilding your state databases can take quite a bit of time (several hours, in some cases), and is a mandatory part of the upgrade process. The time it takes to upgrade varies not just on the number of blocks, but on your network speed and the average size of the blocks in your channels. Note that the node is down during upgrade as the pods are rebuilt. When the upgrade has completed, access to the node is restored.
-{: tip}
-
-**It is a best practice to only upgrade one node of each type at a time**. In other words, if you need to upgrade both peers and ordering node, it is alright if you start a peer upgrade and an ordering node upgrade at the same time. However, do not attempt to upgrade multiple peers or multiple ordering nodes at the same time, as this threatens the availability of your components.
+**It is a best practice to only upgrade one node of each type at a time**. In other words, if you need to upgrade both peers and ordering nodes, you can start a single peer upgrade and a single ordering node upgrade at the same time. However, do not attempt to upgrade multiple peers or multiple ordering nodes at the same time, as this threatens the availability of your components.
 
 It is not possible to upgrade an ordering node if any node in your ordering service is down for any reason. Coordinate with all of the administrators of your ordering service before attempting to upgrade.
 
@@ -264,5 +261,3 @@ You may also choose to only delete all of a single type of node within a namespa
 
 Note that if you delete your entire project, your smart contract pods will also be deleted.
 {: tip}
-
-
