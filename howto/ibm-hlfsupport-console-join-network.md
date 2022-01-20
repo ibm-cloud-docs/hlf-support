@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-20"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel, multicloud
 
@@ -32,7 +32,7 @@ You need to pay close attention to the resources at your disposal when you choos
 ## Sample network tutorial series
 {: #ibm-hlfsupport-console-join-network-structure}
 
-You are currently on the second part of our three-part tutorial series. This tutorial guides you through the process of using the console to create and join a peer node to an existing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network. 
+You are currently on the second part of our three-part tutorial series. This tutorial guides you through the process of using the console to create and join a peer node to an existing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network.
 
 * [Build a network tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network) guides you through the process of hosting a network by creating an ordering service and a peer.
 * **Join a network tutorial** (Current tutorial) Guides you through the process of joining an existing network by creating a peer and joining it to a channel.
@@ -79,7 +79,7 @@ Perform the following steps from your console:
 2. In this tutorial, we're creating nodes, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**.
 3. Use the side panel to give your CA a **display name**. Our recommended value for this CA is `Org2 CA`. Then give your CA admin credentials by specifying a **CA administrator enroll ID** of `admin` and a secret of `adminpw`.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA) 
+    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA)
     * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
     * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
     * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
@@ -171,7 +171,7 @@ Now that we have created the peer's CA and used it to **register** our organizat
     {: important}
 
 7. On the **Review MSP information** panel, make sure you have entered the correct information. When you are satisfied, click **Create MSP definition**.
-8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations the channels you join.
+8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations in the channels you join.
 
 
 
@@ -409,5 +409,3 @@ After you have joined your peer to a channel, use the following steps to deploy 
 
 - [Deploy a smart contract on your network using Fabric v2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2) using the console.
 - After you have installed and instantiated your smart contract, you can [submit transactions using your client application](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app). The [commercial paper sample](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-commercial-paper) can be used to deploy an example smart contract and submit transactions from sample application code.
-
-

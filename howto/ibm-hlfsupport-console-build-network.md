@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-20"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, ordering service, blockchain network, multicloud
 
@@ -138,7 +138,7 @@ To create the CA that will issue certificates for your first organization, perfo
 2. In this tutorial, we're creating nodes, as opposed to importing them, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**.
 3. Use the side panel to give your CA a **display name**. Our recommended value for this CA is `Org1 CA`. Then give your CA admin credentials by specifying a **CA administrator enroll ID** of `admin` and a secret of `adminpw`. Again, these are **recommended values**.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA) 
+    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA)
     * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
     * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
     * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
@@ -233,7 +233,7 @@ Now that we have created the peer's CA and used it to **register** identities fo
     {: important}
 
 7. On the **Review MSP information** panel, make sure you have entered the correct information. When you are satisfied, click **Create MSP definition**.
-8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations the channels you join.
+8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations in the channels you join.
 
 **Task: Create the peer organization MSP**
 
@@ -380,7 +380,7 @@ The process for creating a CA for an ordering service is identical to creating i
 2. In this tutorial, we're creating nodes, as opposed to importing them, so make sure the option to **Create a Certificate Authority**  is selected. Then click **Next**
 3. Give this CA a unique display name, `Ordering Service CA`. You're free to reuse the **CA administrator enroll ID** of `admin` and a secret of `adminpw`. As this is a different CA, this identity is distinct from the CA admin identity for created for the `Org1 CA`, even though the ID and secret are identical.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA) 
+    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA)
     * [Multizone Kubernetes cluster](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
     * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
     * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
@@ -458,7 +458,7 @@ Create your ordering service organization MSP definition and specify the admin i
     {: important}
 
 7. Click **Create MSP definition**.
-8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations the channels you join.
+8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations in the channels you join.
 
 **Task: Create the ordering service organization MSP definition**
 
@@ -657,5 +657,3 @@ After you have created and joined your peer to a channel, you have a basic, thou
 - After your smart contract has been installed, proposed, approved, and then committed, you can [submit transactions using your client application](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app).
 
 You can also create another peer organization by using the [Join a network tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-structure). You can add the second organization to your channel to simulate a distributed network, with two peers that share a single channel ledger.
-
-
