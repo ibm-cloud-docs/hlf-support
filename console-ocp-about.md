@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-20"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -180,7 +180,6 @@ For more information, see [Pricing](/docs/hlf-support?topic=hlf-support-ibm-hlfs
 - The console creates nodes based on the Hyperledger Fabric v2.2.3 node images.
 - You can deploy only one {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console per Kubernetes namespace or OpenShift project. If you plan to create multiple blockchain networks, for example to create different environments for development, staging, and production, you should create a unique project or namespace for each environment.
 - {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is not supported on OpenShift Online.
-- OpenShift customers can preview the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric at no charge for 30 days when you select the free trial version available from the Red Hat Marketplace.
 
 ## Installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0
 {: #console-ocp-about-install}
@@ -206,5 +205,3 @@ For more information about how to get support on {{site.data.keyword.IBM_notm}} 
 {: #console-ocp-about-next-steps}
 
 When you are ready to learn how to deploy an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your Kubernetes cluster see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
-
-
