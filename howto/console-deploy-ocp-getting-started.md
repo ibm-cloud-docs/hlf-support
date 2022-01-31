@@ -22,7 +22,7 @@ subcollection: hlf-support
 # Getting started
 {: #deploy-ocp-getting-started}
 
-Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. After the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. After the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
 If you prefer to automate the installation of the service, check out the [Ansible Playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp) that can be used to complete all of these steps for you.
@@ -96,7 +96,7 @@ If you prefer not to choose a persistent storage option, the default storage cla
 ### Supported and tested storages
 {: ibm-hlfsupport-storage-supported-tested}
 
-The following dynamic storage options for OpenShift clusters are now tested and supported by {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
+The following dynamic storage options for OpenShift clusters are now tested and supported by {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 * ibmc-block-bronze
 * ibmc-block-custom
 * ibmc-block-gold

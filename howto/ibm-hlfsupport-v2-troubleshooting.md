@@ -64,7 +64,7 @@ This topic describes common issues that can occur when you use the Fabric Operat
 {: #ibm-hlfsupport-v2-troubleshooting-deployment-policies}
 {: troubleshoot}
 
-When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the Security Context Constraint, ClusterRole, or ClusterRoleBinding to my namespace, I encounter one of the following errors.
+When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and apply the Security Context Constraint, ClusterRole, or ClusterRoleBinding to my namespace, I encounter one of the following errors.
 
 When I apply the file, I receive a user forbidden error:
 {: tsSymptoms}
@@ -91,7 +91,7 @@ This error happens when a problem exists with the indents in your YAML file. Ref
 {: #ibm-hlfsupport-v2-troubleshooting-deployment-cr}
 {: troubleshoot}
 
-When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the custom resource definition of the operator or the console, I encounter one of the following errors:
+When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and apply the custom resource definition of the operator or the console, I encounter one of the following errors:
 
 When I apply the custom resource file, I receive an image pull or image pull back-off error:
 {: tsSymptoms}

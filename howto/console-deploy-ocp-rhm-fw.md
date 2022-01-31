@@ -19,7 +19,7 @@ subcollection: hlf-support
 # Deploy from Red Hat Marketplace (airgap installation)
 {: #deploy-ocp-rhm-fw}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto an OpenShift Container Platform 4.6+ cluster behind a firewall. This operator can then be used to deploy an instance of the Fabric Operations Console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric in an airgap environment.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator onto an OpenShift Container Platform 4.6+ cluster behind a firewall. This operator can then be used to deploy an instance of the Fabric Operations Console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric in an airgap environment.
 {: shortdesc}
 
 There are three ways to deploy the platform in an airgap environment:
@@ -1243,7 +1243,7 @@ In your browser, you can see the console login screen:
 Ensure that you are not using the ESR version of Firefox. If you are, switch to another browser such as Chrome and log in.
 {: important}
 
-The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 documentation.
+The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation.
 
 ## Next steps
 {: #console-deploy-ocp-rhm-fw-next}

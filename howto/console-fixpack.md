@@ -18,7 +18,7 @@ subcollection: hlf-support
 # Installing the 1.0.0 fix pack
 {: #install-fixpack}
 
-Use these instructions if you have already installed or upgraded to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 before June 17, 2021 and want to apply the latest 1.0.0 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 1.0.0 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.  If you install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 after June 17, 2021, the platform will contain all the bug fixes and improvements included in this fix pack, and you do not need to apply it.
+Use these instructions if you have already installed or upgraded to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric before June 17, 2021 and want to apply the latest 1.0.0 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 1.0.0 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.  If you install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric after June 17, 2021, the platform will contain all the bug fixes and improvements included in this fix pack, and you do not need to apply it.
 {: shortdesc}
 
 You can install the fix pack by updating the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} entitlement registry. You can apply the fix pack by using the following steps:

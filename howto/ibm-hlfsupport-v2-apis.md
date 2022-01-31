@@ -34,7 +34,7 @@ After you review the instructions in this topic on how to use the APIs, you can 
 ## Prerequisites
 {: #ibm-hlfsupport-v2-apis-prereq}
 
-The APIs target your Fabric Operations Console to authenticate calls and communicate with your nodes. Therefore you must deploy the Fabric Operations Console before you can start using the Fabric Operations Console APIs. If you have not yet deployed the console on your cluster, see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
+The APIs target your Fabric Operations Console to authenticate calls and communicate with your nodes. Therefore you must deploy the Fabric Operations Console before you can start using the Fabric Operations Console APIs. If you have not yet deployed the console on your cluster, see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
 
 To use the APIs, you will need to gather the following information:
 
@@ -270,7 +270,7 @@ curl -X GET \
 ```
 {: codeblock}
 
-The same API call would resemble the request below for a console deployed with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
+The same API call would resemble the request below for a console deployed with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 ```
 curl -X GET \

@@ -14,13 +14,13 @@ subcollection: hlf-support
 
 
 
-# Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 behind a firewall
+# Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall
 {: #deploy-k8-firewall}
 
-You can use these instructions to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-deploy-k8).
+You can use these instructions to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-deploy-k8).
 {: shortdesc}
 
-You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on any x86_64 Kubernetes cluster running at v1.18 - v1.21. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on any x86_64 Kubernetes cluster running at v1.18 - v1.21. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 
 ## Need to Know
 
@@ -478,7 +478,7 @@ service/ibm-hlfsupport-webhook created
     ```
     {: codeblock}
 
-* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml

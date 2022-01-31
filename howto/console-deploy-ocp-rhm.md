@@ -21,7 +21,7 @@ subcollection: hlf-support
 # Deploy from Red Hat Marketplace
 {: #deploy-ocp-rhm}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto a Kubernetes cluster on OpenShift Container Platform 4.6+. This operator deploys instances of the certificate authority (CA), peer, ordering nodes and the Fabric Operations Console that uses to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator onto a Kubernetes cluster on OpenShift Container Platform 4.6+. This operator deploys instances of the certificate authority (CA), peer, ordering nodes and the Fabric Operations Console that uses to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
 {: shortdesc}
 
 ## What is the Red Hat Marketplace?
@@ -43,7 +43,7 @@ To learn more about the Marketplace see the [Red Hat documentation](https://mark
 
 - This deployment option is not available on OpenShift Container Platform on LinuxONE.
 
-- IBM Support for Hyperledger Fabric 1.0.0 is supported on Red Hat OpenShift 4.6+.
+- IBM Support for Hyperledger Fabric is supported on Red Hat OpenShift 4.6+.
 - You are responsible for the management of health monitoring, logging, and resource usage of your blockchain components.
 - IBM Support for Hyperledger Fabric is not supported on OpenShift Online.
 - Mutual TLS is not supported between your applications and your blockchain nodes.
@@ -452,7 +452,7 @@ In your browser, you can see the console login screen:
 Ensure that you are not using the ESR version of Firefox. If you are, switch to another browser such as Chrome and log in.
 {: important}
 
-The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 documentation.
+The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation.
 
 ## Removing your deployment
 {: #console-deploy-ocp-rhm-remove-deployment}

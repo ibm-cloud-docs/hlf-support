@@ -18,7 +18,7 @@ subcollection: hlf-support
 {: #blockchain-support}
 
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 provides several avenues for troubleshooting problems and getting support.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric provides several avenues for troubleshooting problems and getting support.
 {: shortdesc}
 
 It is recommended to start with [free digital support resources](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources) to troubleshoot problems and get help from {{site.data.keyword.IBM_notm}} and the Hyperledger Fabric Community. If your problem cannot be solved by using those resources, submit a support case through the [mysupport](https://www.ibm.com/mysupport/s/?language=en_US){: external} page. For more information, see [Submitting support cases](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-cases).
@@ -45,7 +45,7 @@ You can also post questions or check if your question has been answered in [Stac
 ## Submitting support cases
 {: #blockchain-support-cases}
 
-For issues that are related to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/6487427){: external} page.   
+For issues that are related to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/6487427){: external} page.   
 
 For issues that are related to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric acquired through the Red Hat Marketplace, it is recommended that you submit a support ticket through the Red Hat Marketplace [support portal](https://marketplace.redhat.com/en-us/support){: external}.
 

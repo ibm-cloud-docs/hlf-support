@@ -14,10 +14,10 @@ subcollection: hlf-support
 
 
 
-# Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0
+# Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #deploy-k8}
 
-You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on any x86_64 Kubernetes cluster running at v1.18 - v1.21 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on any x86_64 Kubernetes cluster running at v1.18 - v1.21 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
 Kubernetes cluster does not download and update the latest version of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric automatically. To get the latest update, you need to create a new cluster and a new service instance.
@@ -432,7 +432,7 @@ service/ibm-hlfsupport-webhook created
     ```
     {: codeblock}
 
-* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
