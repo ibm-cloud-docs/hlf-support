@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-10-28"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: IBM Support for Hyperledger Fabric, support case, Hyperledger Fabric Community, Cloud tickets, dWAnswers, multicloud
 
@@ -45,7 +45,7 @@ You can also post questions or check if your question has been answered in [Stac
 ## Submitting support cases
 {: #blockchain-support-cases}
 
-For issues that are related to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/1072956){: external} page.   
+For issues that are related to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, you can submit a support case from the [mysupport](https://www.ibm.com/support/pages/node/6487427){: external} page.   
 
 For issues that are related to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric acquired through the Red Hat Marketplace, it is recommended that you submit a support ticket through the Red Hat Marketplace [support portal](https://marketplace.redhat.com/en-us/support){: external}.
 
