@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
+keywords: OpenShift, Fabric Operations Console, deploy, Red Hat Marketplace, subscription, operators, on-prem, firewall, airgap environment, container registry, portable storage, Bastion server
 
 subcollection: hlf-support
 
@@ -19,7 +19,7 @@ subcollection: hlf-support
 # Deploy from Red Hat Marketplace (airgap installation)
 {: #deploy-ocp-rhm-fw}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto an OpenShift Container Platform 4.6+ cluster behind a firewall. This operator can then be used to deploy an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric in an airgap environment.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto an OpenShift Container Platform 4.6+ cluster behind a firewall. This operator can then be used to deploy an instance of the Fabric Operations Console that can be used to deploy and manage the blockchain components on your network. These deployment instructions are only for installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric in an airgap environment.
 {: shortdesc}
 
 There are three ways to deploy the platform in an airgap environment:
@@ -253,7 +253,7 @@ You can expect this last step to take a few minutes while it downloads the image
     redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
     ```
     It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
-3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
+3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the Fabric Operations Console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
 ## Deploy using a portable compute device
 {: #deploy-ocp-rhm-fw-portable}
@@ -610,7 +610,7 @@ You can expect this last step to take a few minutes while it downloads the image
     {: codeblock}
 
     It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
-3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
+3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the Fabric Operations Console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
 ## Deploy using a portable storage device
 {: #deploy-ocp-rhm-fw-storage}
@@ -990,9 +990,9 @@ You can expect this last step to take a few minutes while it downloads the image
     redhat-operators-f8bd8d49-99h64                                   1/1     Running     0          3h35m
     ```
     It can take a few minutes for the catalog to load. When the command is successful, you should see `ibm-hlfsupport-catalog-nnnnn` with a **STATUS** of **Running**. The catalog should now be available under the **Operators** tab of your OpenShift dashboard.
-3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
+3. You are now ready to deploy the blockchain console from the OpenShift dashboard. Skip to [Deploy the Fabric Operations Console](#console-deploy-ocp-rhm-fw-console) to continue the deployment in your airgap environment.
 
-## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Deploy the Fabric Operations Console
 {: #console-deploy-ocp-rhm-fw-console}
 
 Congratulations! You have deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator. The only thing left to do is to deploy the console user interface (UI).
@@ -1010,15 +1010,15 @@ There is one instance available listed under "Provided APIs":
 
 ![IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace](../images/rhm-console.png "IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace"){: caption="Figure 1. IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace" caption-side="bottom"}
 
-- **IBM Support for Hyperledger Fabric Console** - The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console UI, or "console", is an award-winning user interface for building your blockchain network.
+- **Fabric Operations Console** - The Fabric Operations Console UI, or "console", is an award-winning user interface for building your blockchain network.
 
-All customers need to deploy an instance of the **IBM Support for Hyperledger Fabric Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
+All customers need to deploy an instance of the **Fabric Operations Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
 
 You should use the console to deploy Certificate Authorities (CAs), peers, and ordering nodes.
 {: important}
 
-Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
+Click **Create Instance** on the **Fabric Operations Console** tile.
+![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the Fabric Operations Console tile"){: caption="Figure 2. Click Create Instance on the Fabric Operations Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}
@@ -1158,7 +1158,7 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 ### Use your own TLS Certificates (Optional)
 {: #console-deploy-ocp-rhm-fw-tls}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
+The Fabric Operations Console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
 This step needs to be performed before the console is deployed.
 {: important}

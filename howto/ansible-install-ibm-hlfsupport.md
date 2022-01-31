@@ -1,8 +1,8 @@
 ---
 
     copyright:
-  years: 2021
-lastupdated: "2021-12-13"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -54,7 +54,7 @@ When the installation completes successfully you see the message:
 ```
 TASK [console : Print console URL] *************************************************************************************************************************************
 ok: [localhost] => {
-    "msg": "{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console available at https://xm0507-ibm-hlfsupport-console-console.ibp20openshifttestcluster-0defdaa0c51bd4a2dcb024eab4bf04a1-0001.us-south.containers.appdomain.cloud"
+    "msg": "Fabric Operations Console available at https://xm0507-ibm-hlfsupport-console-console.ibp20openshifttestcluster-0defdaa0c51bd4a2dcb024eab4bf04a1-0001.us-south.containers.appdomain.cloud"
 }
 ```
 

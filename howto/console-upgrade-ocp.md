@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters
+keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
 subcollection: hlf-support
 

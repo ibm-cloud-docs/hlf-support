@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
-keywords: Kubernetes, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, fix pack, multicloud
+keywords: Kubernetes, Fabric Operations Console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
 subcollection: hlf-support
 
@@ -25,7 +25,7 @@ You can install the fix pack by updating the {{site.data.keyword.IBM_notm}} Supp
 
 1. [Update the webhook](#install-fixpack-webhook)
 1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](#install-fixpack-operator)
-1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#install-fixpack-console)
+1. [Update the Fabric Operations Console](#install-fixpack-console)
 1. [Update your blockchain nodes](#install-fixpack-nodes)
 
 You can use these steps if you deployed the platform on the OpenShift Container Platform, open source Kubernetes, or distributions such as Rancher.  If you have multiple networks deployed on your cluster, you will need to repeat steps 2-4 to update each 1.0.0 network because they run on separate namespaces. If you experience any problems, see the instructions for [rolling back the fix pack installation](#install-fixpack-rollback).  If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Installing the 1.0.0 fix pack behind a firewall](#install-fixpack-firewall). You can install the fix pack without disrupting a running network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the process.
@@ -100,7 +100,7 @@ ibm-hlfsupport-operator   1/1       1            1           1m
 
 If you experience a problem while you are updating the operator, go to this [troubleshooting topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems.
 
-## Step three: Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Step three: Update the Fabric Operations Console
 {: #install-fixpack-console}
 
 After you update to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator, you need to apply the fix pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.
@@ -161,7 +161,7 @@ If you deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabri
 1. [Pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images](#install-fixpack-images-firewall)
 1. [Update the webhook](#install-fixpack-webhook-firewall)
 1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](#install-fixpack-operator-firewall)
-1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#install-fixpack-console-firewall)
+1. [Update the Fabric Operations Console](#install-fixpack-console-firewall)
 1. [Update your blockchain nodes](#install-fixpack-nodes-firewall)
 
 You can continue to submit transactions to your network while you are upgrading your network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the upgrade process. If you have multiple networks deployed on your cluster, you will need to repeat steps 3-5 to update each 1.0.0 network because they run on separate namespaces.
@@ -282,7 +282,7 @@ ibm-hlfsupport-operator   1/1       1            1           1m
 
 If you experience a problem while you are updating the operator, go to this [troubleshooting topic](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-troubleshooting#ibm-hlfsupport-v2-troubleshooting-deployment-cr) for a list of commonly encountered problems.
 
-### Step four: Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+### Step four: Update the Fabric Operations Console
 {: #install-fixpack-console-firewall}
 
 After you update to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator, you need to apply the fix pack to your console. You can update your console by removing the original ConfigMap and deployment spec that was created when the console was deployed. Removing these artifacts will allow your console to pull the latest configuration and images from the updated operator.

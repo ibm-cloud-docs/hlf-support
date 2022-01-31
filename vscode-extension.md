@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-15"
+  years: 2022
+lastupdated: "2022-01-31"
 
 
 keywords: vs code extension, Visual Studio Code extension, smart contract, development tools, multicloud
@@ -346,9 +346,9 @@ You can also use the extension to interact with your network on {{site.data.keyw
 ### Invoke a smart contract that has been instantiated or committed on your channels
 {: #develop-vscode-connecting-ibm-hlfsupport-invoke}
 
-You can download your connection profile from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to build a gateway in the **Fabric Gateways** pane. You can then use the gateway to invoke the smart contracts that were deployed on your channel.
+You can download your connection profile from the Fabric Operations Console to build a gateway in the **Fabric Gateways** pane. You can then use the gateway to invoke the smart contracts that were deployed on your channel.
 
-Open the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console that is associated with your instance of  {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. Navigate to the **Organizations** tab and click the **Organization MSP** tile for the organization that your client application will interact with. Click **Create connection profile** to open a side panel that allows you to [build and download your connection profile](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-profile) to your local file system. Then, [create an application identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-identities) by using your CA and save the enrollID and secret.
+Open the Fabric Operations Console that is associated with your instance of  {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. Navigate to the **Organizations** tab and click the **Organization MSP** tile for the organization that your client application will interact with. Click **Create connection profile** to open a side panel that allows you to [build and download your connection profile](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-profile) to your local file system. Then, [create an application identity](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app-identities) by using your CA and save the enrollID and secret.
 
 Use the following steps to connect to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric from VS Code:
 
@@ -428,6 +428,6 @@ You can also add new users to the wallets that have already been created:
 1. In the **Fabric Wallets** pane, right-click a wallet and select **Add Identity**.
 2. Provide a name for the identity and an MSP ID.
 3. You can upload a JSON file, provide a certificate and private key, or provide an enrollment ID and secret.
-    - If you are connecting to a network on {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can download an identity from your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, either by exporting an identity from your wallet or by enrolling and then exporting an identity using your Certificate Authority. You can then upload the JSON file directly to VS Code.
+    - If you are connecting to a network on {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you can download an identity from your Fabric Operations Console, either by exporting an identity from your wallet or by enrolling and then exporting an identity using your Certificate Authority. You can then upload the JSON file directly to VS Code.
     - If you use a certificate and private key, browse to the certificate and private key.
     - If you use an enrollment ID and secret, choose the gateway to enroll with and enter the enrollment ID and secret.

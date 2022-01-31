@@ -2,9 +2,9 @@
 
     copyright:
   years: 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
-keywords: IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
+keywords: Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
 subcollection: hlf-support
 
@@ -20,7 +20,7 @@ subcollection: hlf-support
 You can use these instructions to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-deploy-k8).
 {: shortdesc}
 
-You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on any x86_64 Kubernetes cluster running at v1.18 - v1.21. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster and manage the deployment and your blockchain nodes. When the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on any x86_64 Kubernetes cluster running at v1.18 - v1.21. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 
 ## Need to Know
 
@@ -34,7 +34,7 @@ Kubernetes cluster does not download and update the latest version of {{site.dat
 ## Resources required
 {: #deploy-k8-resources-required-firewall}
 
-Ensure that your Kubernetes cluster has sufficient resources for the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
+Ensure that your Kubernetes cluster has sufficient resources for the Fabric Operations Console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
 
 | **Component** (all containers) | CPU**  | Memory (GB) | Storage (GB) |
 |--------------------------------|---------------|-----------------------|------------------------|
@@ -53,7 +53,7 @@ Note that when smart contracts are installed on peers that run a Fabric v2.x ima
 
 ## Browsers
 {: #deploy-k8-browsers-firewall}
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console has been successfully tested on the following browsers:
+The Fabric Operations Console has been successfully tested on the following browsers:
 
 - Chrome Version 91.0.4472.114 (Official Build) (64-bit)
 - Safari Version 14.1.1 (16611.2.7.1.4)
@@ -61,10 +61,10 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console has be
 ## Storage
 {: #deploy-k8-storage-firewall}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires persistent storage for each CA, peer, and ordering node that you deploy, in addition to the storage required by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses [dynamic provisioning](https://docs.openshift.com/container-platform/4.7/storage/dynamic-provisioning.html){: external} to allocate storage for each blockchain node that you deploy by using a pre-defined storage class.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires persistent storage for each CA, peer, and ordering node that you deploy, in addition to the storage required by the Fabric Operations Console. The Fabric Operations Console uses [dynamic provisioning](https://docs.openshift.com/container-platform/4.7/storage/dynamic-provisioning.html){: external} to allocate storage for each blockchain node that you deploy by using a pre-defined storage class.
 
 
-Before you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, you must create a storage class with enough backing storage for the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console and the nodes that you create. You can set this storage class to the default storage class of your Kubernetes cluster or create a new class that is used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. If you are using a multizone cluster, then you must configure the default storage class for each zone. After you create the storage class, run the command `kubectl patch storageclass` to set the storage class of the multizone region to be the default storage class.
+Before you deploy the Fabric Operations Console, you must create a storage class with enough backing storage for the Fabric Operations Console and the nodes that you create. You can set this storage class to the default storage class of your Kubernetes cluster or create a new class that is used by the Fabric Operations Console. If you are using a multizone cluster, then you must configure the default storage class for each zone. After you create the storage class, run the command `kubectl patch storageclass` to set the storage class of the multizone region to be the default storage class.
 
 If you prefer not to choose a persistent storage option, the default storage class of your Kubernetes cluster is used.
 {: note}
@@ -1132,7 +1132,7 @@ kubectl -n <NAMESPACE> create rolebinding ibm-hlfsupport-operator-rolebinding --
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #deploy-k8-operator-firewall}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. You can deploy the operator on your cluster by adding a custom resource to your namespace by using the kubectl CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.  
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the Fabric Operations Console. You can deploy the operator on your cluster by adding a custom resource to your namespace by using the kubectl CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.  
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-operator.yaml`.
 
@@ -1263,10 +1263,10 @@ ibm-hlfsupport-operator   1/1     1            1           1m
 ```
 {: codeblock}
 
-## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Deploy the Fabric Operations Console
 {: #deploy-k8-fw-console}
 
-When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster. You can then access the console from your browser. You can deploy only one console per Kubernetes namespace.
+When the operator is running on your namespace, you can apply a custom resource to start the Fabric Operations Console on your cluster. You can then access the console from your browser. You can deploy only one console per Kubernetes namespace.
 
 Save the custom resource definition below as `ibm-hlfsupport-console.yaml` on your local system.
 ```yaml
@@ -1409,7 +1409,7 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 ### Use your own TLS Certificates (Optional)
 {: #deploy-k8-tls-fw}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
+The Fabric Operations Console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
 This step needs to be performed before the console is deployed.
 {: important}

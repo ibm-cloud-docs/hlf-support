@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -29,7 +29,7 @@ When you deploy a node from the console, there are various advanced deployment o
 ## What types of advanced deployment options are available?
 {: #ibm-hlfsupport-console-adv-deployment-options}
 
-The Build a network tutorial is useful for learning how to set up a basic network by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. But each use case has its own customizations that are required for a production network. When you are ready to explore additional configuration settings, this topic describes the optional customizations that are available and the considerations they require. The following table describes the types of customizations you can consider for each node type:
+The Build a network tutorial is useful for learning how to set up a basic network by using the Fabric Operations Console. But each use case has its own customizations that are required for a production network. When you are ready to explore additional configuration settings, this topic describes the optional customizations that are available and the considerations they require. The following table describes the types of customizations you can consider for each node type:
 
 |  | Description | CA | Peer | Ordering node | When to perform |
 |-----|-----|-----|-----|----|----|
@@ -53,7 +53,7 @@ The Build a network tutorial is useful for learning how to set up a basic networ
 ### Allocating resources
 {: #ibm-hlfsupport-console-adv-deployment-allocate-resources}
 
-Because your instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console and your Kubernetes cluster do not communicate directly about the resources that are available, the process for deploying components by using the console must follow this pattern:
+Because your instance of the Fabric Operations Console and your Kubernetes cluster do not communicate directly about the resources that are available, the process for deploying components by using the console must follow this pattern:
 
 1. **Size the deployment that you want to make**. The **Resource allocation** panels for the CA, peer, and ordering node in the console offer default CPU, memory, and storage allocations for each node. You may need to adjust these values according to your use case. If you are unsure, start with default allocations and adjust them as you understand your needs. Similarly, the **Resource reallocation** panel displays the existing resource allocations. For a sense of how much storage and compute you will need in your cluster, refer to the chart after step 3 that contains the current defaults for the peer, orderer, and CA:
 2. **Check whether you have enough resources in your Kubernetes cluster**.  If you do not have enough space in your cluster to deploy or resize resources, you need to increase the size of your cluster. Check the documentation of your cloud provider to learn how to scale clusters. If you have enough space in your cluster, you can continue with step 3.
@@ -139,7 +139,7 @@ For information about creating highly available CAs through the use of replica s
 ### Customizing a CA configuration
 {: #ibm-hlfsupport-console-adv-deployment-ca-customization}
 
-In addition to the CA settings that are provided in the console when you provision a CA, you have the option to override some of the settings. If you are familiar with the Hyperledger Fabric CA server, these settings are configured in the [`fabric-ca-server-config.yaml`](https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/serverconfig.html) file when a CA is deployed. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console configures these fields for you with default settings. Therefore, many of these fields are not exposed by the console. But the console also includes a panel where you can edit a `JSON` to override a set of these parameters before a CA is deployed.
+In addition to the CA settings that are provided in the console when you provision a CA, you have the option to override some of the settings. If you are familiar with the Hyperledger Fabric CA server, these settings are configured in the [`fabric-ca-server-config.yaml`](https://hyperledger-fabric-ca.readthedocs.io/en/release-1.4/serverconfig.html) file when a CA is deployed. The Fabric Operations Console configures these fields for you with default settings. Therefore, many of these fields are not exposed by the console. But the console also includes a panel where you can edit a `JSON` to override a set of these parameters before a CA is deployed.
 
 #### Why would I want to override a CA configuration?
 {: #ibm-hlfsupport-console-adv-deployment-ca-customization-why}
@@ -626,7 +626,7 @@ For more details on the resource allocation panel in the console see [Allocating
 ### Customizing a peer configuration
 {: #ibm-hlfsupport-console-adv-deployment-peer-create-json}
 
-In addition to the peer settings that are provided in the console when you provision a peer, you have the extra option to override some of the peer settings. If you are familiar with Hyperledger Fabric, these settings are configured in the peer configuration `core.yaml` file when a peer is deployed. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console configures these fields for you using default settings and many of these fields are not exposed by the console. But the console also includes a panel where you can provide a `JSON` to override a set of these parameters before a peer is deployed. You can find the peer configuration `JSON` and an example of how to use the configuration override to customize your deployment in the sections below.
+In addition to the peer settings that are provided in the console when you provision a peer, you have the extra option to override some of the peer settings. If you are familiar with Hyperledger Fabric, these settings are configured in the peer configuration `core.yaml` file when a peer is deployed. The Fabric Operations Console configures these fields for you using default settings and many of these fields are not exposed by the console. But the console also includes a panel where you can provide a `JSON` to override a set of these parameters before a peer is deployed. You can find the peer configuration `JSON` and an example of how to use the configuration override to customize your deployment in the sections below.
 
 #### Why would I want to override a peer configuration?
 {: #ibm-hlfsupport-console-adv-deployment-peer-customization-why}
@@ -980,7 +980,7 @@ For more details on the resource allocation panel in the console see [Allocating
 ### Customizing an ordering service configuration
 {: #ibm-hlfsupport-console-adv-deployment-orderer-create-json}
 
-In addition to the ordering node settings that are provided in the console when you provision an ordering node, you have the option to override some of the default settings. If you are familiar with Hyperledger Fabric, these settings are configured in the `orderer.yaml` file when an ordering node is deployed. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console configures these fields for you using default settings so many of these fields are not exposed by the console. You can find the orderer configuration `JSON` and an example of how to use the configuration override to customize your deployment in the sections below.
+In addition to the ordering node settings that are provided in the console when you provision an ordering node, you have the option to override some of the default settings. If you are familiar with Hyperledger Fabric, these settings are configured in the `orderer.yaml` file when an ordering node is deployed. The Fabric Operations Console configures these fields for you using default settings so many of these fields are not exposed by the console. You can find the orderer configuration `JSON` and an example of how to use the configuration override to customize your deployment in the sections below.
 
 #### Why would I want to override an ordering service configuration?
 {: #ibm-hlfsupport-console-adv-deployment-orderer-customization-why}
@@ -1162,7 +1162,7 @@ Now that you have gathered all the necessary certificates, you are ready to crea
 8. In the **Certificate** field, upload the file that contains the **Peer or ordering service admin identity certificate**.
 9. In the **Private key** field, upload the file that contains the **Peer or ordering service admin identity private key**.
 10. Review the information on the Summary page and click **Add peer** or **Add ordering service**.
-11. After you have created the peer or ordering node, you can upload the orderer admin identity to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. On the **Wallet** tab, click **Add identity**:
+11. After you have created the peer or ordering node, you can upload the orderer admin identity to the Fabric Operations Console. On the **Wallet** tab, click **Add identity**:
     - In the **Name** field, enter an identity name that is used for your reference only.
     - In the **Certificate** field, upload a file that contains the admin identity's signing certificate (in base64 or PEM format).
     - In the **Private Key** field, upload a file that contains the admin identity's private key (in base64 or PEM format).  
@@ -1301,7 +1301,7 @@ After you create the `JSON` file with all of the certificates for the ordering n
 6. Select the **Organization MSP** definition that you imported.
 7. On the next panel, you have the opportunity to configure resource allocation for the nodes. The selections that you make here are applied to all five ordering nodes. If you want to learn more about how to allocate resources to your node, see this topic on [Allocating resources](#ibm-hlfsupport-console-adv-deployment-allocate-resources).
 8. Review the summary and click **Add ordering service**.
-9. After you have created the ordering service, you can upload the orderer admin identity to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. On the **Wallet** tab, click **Add identity**:
+9. After you have created the ordering service, you can upload the orderer admin identity to the Fabric Operations Console. On the **Wallet** tab, click **Add identity**:
     - In the **Name** field, enter an identity name that is used for your reference only.
     - In the **Certificate** field, upload a file that contains the admin identity's signing certificate (in base64 or PEM format).
     - In the **Private Key** field, upload a file that contains the admin identity's private key (in base64 or PEM format).  

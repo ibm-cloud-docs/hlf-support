@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -34,7 +34,7 @@ After you review the instructions in this topic on how to use the APIs, you can 
 ## Prerequisites
 {: #ibm-hlfsupport-v2-apis-prereq}
 
-The APIs target your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to authenticate calls and communicate with your nodes. Therefore you must deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console before you can start using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console APIs. If you have not yet deployed the console on your cluster, see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
+The APIs target your Fabric Operations Console to authenticate calls and communicate with your nodes. Therefore you must deploy the Fabric Operations Console before you can start using the Fabric Operations Console APIs. If you have not yet deployed the console on your cluster, see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
 
 To use the APIs, you will need to gather the following information:
 
@@ -288,7 +288,7 @@ You can also use the APIs to import and then operate nodes that reside in other 
 ## Limitations
 {: #ibm-hlfsupport-v2-apis-limitations}
 
-You can only import CA, peer, and ordering nodes that are exported from other {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric consoles running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.18 - v1.21 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
+You can only import CA, peer, and ordering nodes that are exported from other Fabric Operations Consoles running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.18 - v1.21 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
 
 ## Building a network by using APIs
 {: #ibm-hlfsupport-v2-apis-build-with-apis}
@@ -310,7 +310,7 @@ You can use APIs to create blockchain components in your instance of the {{site.
     - You also need to [register an organization administrator](#ibm-hlfsupport-v2-apis-config-register-admin) and then [generate certificates for the admin](#ibm-hlfsupport-v2-apis-config-enroll-admin) inside an MSP folder. You do not have to complete this step if you have already registered your admin identity.
     - [Register the new component with your TLS CA](#ibm-hlfsupport-v2-apis-config-register-component-tls).
 
-    You can also complete these steps by using your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. For more information,  see [Creating and managing identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities).
+    You can also complete these steps by using your Fabric Operations Console. For more information,  see [Creating and managing identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities).
 
 3. [Create an MSP definition for your organization](#ibm-hlfsupport-v2-apis-msp) by calling [`POST /ak/api/v2/components/msp`](/apidocs/blockchain?#import-an-msp).
 
@@ -320,7 +320,7 @@ You can use APIs to create blockchain components in your instance of the {{site.
 
 6. Create a peer by calling [`POST /ak/api/v2/kubernetes/components/peer`](/apidocs/blockchain#create-a-peer).
 
-7. If you want to use the console to operate your blockchain components, you must import your administrator identity into your console wallet. Use the wallet tab to import the certificate and private key of your node admin into the console and create an identity. You then need to use the console to associate this identity with the components you created. For more information, see [Importing an admin identity into the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#ibm-hlfsupport-v2-apis-admin-console).
+7. If you want to use the console to operate your blockchain components, you must import your administrator identity into your console wallet. Use the wallet tab to import the certificate and private key of your node admin into the console and create an identity. You then need to use the console to associate this identity with the components you created. For more information, see [Importing an admin identity into the Fabric Operations Console](#ibm-hlfsupport-v2-apis-admin-console).
 
 8. After you deploy your network, you can use the Fabric SDKs, the Peer CLI, or the console UI to create channels and deploy smart contracts. If you need to programmatically create a channel, you must provide the consortium name. For {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, the consortium name must be set to `SampleConsortium`.
 
@@ -343,13 +343,13 @@ If you are using a multizone cluster, you can use the APIs to deploy a blockchai
 1. Find the zones where your worker nodes are located by using your Kubernetes cluster CLI. If you are using OpenShift Container Platform, after you connect to your cluster by using the CLI, use the command `oc get nodes --show-labels` to get the full list of nodes and zones of your cluster. You will be to find the zone that each worker node is located after `failure-domain.beta.kubernetes.io/zone` field under the `LABELS` column.
 
 
-2. To create a node within a specific zone, provide the zone name to the [Create an ordering service](/apidocs/blockchain#create-an-ordering-service) or [Create a peer](/apidocs/blockchain#create-a-peer) API calls by using the zone field of the request body. The anti-affinity policy of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console will automatically deploy your component to different worker nodes within each zone based on the resources available.
+2. To create a node within a specific zone, provide the zone name to the [Create an ordering service](/apidocs/blockchain#create-an-ordering-service) or [Create a peer](/apidocs/blockchain#create-a-peer) API calls by using the zone field of the request body. The anti-affinity policy of the Fabric Operations Console will automatically deploy your component to different worker nodes within each zone based on the resources available.
 
 
 ## Creating a node with a custom configuration
 {: #ibm-hlfsupport-v2-apis-custom}
 
-If you are using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs to deploy a CA, peer, or ordering node, you have the option of customizing the node configuration by using a configuration override JSON string. The nodes that are deployed by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Console and APIs are configured with the default Fabric values that are provided in the  `fabric-ca-server-config.yaml`, `orderer.yaml`, and `core.yaml` files. You can customize your node settings by providing a configuration override JSON to the APIs that create or update your nodes. You can use the configuration override to deploy a High Availability CA or use a Hardware Security Module (HSM) while using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs. For more information about the configuration override, High Availability CAs, or HSMs, see [Advanced deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment).
+If you are using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs to deploy a CA, peer, or ordering node, you have the option of customizing the node configuration by using a configuration override JSON string. The nodes that are deployed by the Fabric Operations Console and APIs are configured with the default Fabric values that are provided in the  `fabric-ca-server-config.yaml`, `orderer.yaml`, and `core.yaml` files. You can customize your node settings by providing a configuration override JSON to the APIs that create or update your nodes. You can use the configuration override to deploy a High Availability CA or use a Hardware Security Module (HSM) while using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs. For more information about the configuration override, High Availability CAs, or HSMs, see [Advanced deployment options](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment).
 
 ### Example: Creating a custom Certificate Authority
 
@@ -557,7 +557,7 @@ curl -X POST "https://{API-Endpoint}/ak/api/v2/kubernetes/components/fabric-peer
 ## Import a network by using APIs
 {: #ibm-hlfsupport-v2-apis-import-with-apis}
 
-You can also use the APIs to import {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components that are created by using the APIs or the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console into another service instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+You can also use the APIs to import {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components that are created by using the APIs or the Fabric Operations Console into another service instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 1. Import a CA by calling [`POST /ak/api/v2/components/ca`](/apidocs/blockchain#import-a-ca).
 
@@ -572,7 +572,7 @@ You can also use the APIs to import {{site.data.keyword.IBM_notm}} Support for H
 
 4. Import a peer by calling [`POST /ak/api/v2/components/peer`](/apidocs/blockchain#import-a-peer).
 
-5. If you plan to use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to operate your blockchain components, you must import your component administrator identities into your console wallet. For more information, see [Importing an admin identity into the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console](#ibm-hlfsupport-v2-apis-admin-console).
+5. If you plan to use the Fabric Operations Console to operate your blockchain components, you must import your component administrator identities into your console wallet. For more information, see [Importing an admin identity into the Fabric Operations Console](#ibm-hlfsupport-v2-apis-admin-console).
 
 6. After you deploy your network, you can use the Fabric SDKs, the Peer CLI, or the console UI to create channels and deploy smart contracts. If you need to programmatically create a channel, you must provide the consortium name. For {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, the consortium name must be set to `SampleConsortium`.
 
@@ -633,7 +633,7 @@ You can use the Fabric CA client to operate your CAs. Run the following Fabric C
     ```
     {: codeblock}
 
-5. Retrieve the TLS certificate of your CA to be used by the Fabric CA client. If you are using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, open the CA and click **Settings**, and look for the certificate in base64 format in the **TLS Certificate** field. If your are using the APIs, you can call [`GET /ak/api/v2/components`](/apidocs/blockchain#get-all-components) and find the CA TLS certificate in the `"PEM"` field. If you created the CA by using the `Create a Fabric CA` API, you can also find the TLS certificate in the response body.
+5. Retrieve the TLS certificate of your CA to be used by the Fabric CA client. If you are using the Fabric Operations Console, open the CA and click **Settings**, and look for the certificate in base64 format in the **TLS Certificate** field. If your are using the APIs, you can call [`GET /ak/api/v2/components`](/apidocs/blockchain#get-all-components) and find the CA TLS certificate in the `"PEM"` field. If you created the CA by using the `Create a Fabric CA` API, you can also find the TLS certificate in the response body.
 
     You need to convert the certificate from base64 into PEM format to use it to communicate with your CA. Insert the base64 encoded string of the TLS certificate into command below. Ensure that you are in your `$HOME/fabric-ca-client` directory.
 
@@ -665,7 +665,7 @@ A **CA admin** identity was automatically registered for you when you created yo
     ```
     {: codeblock}
 
-    The `<enroll_id>`and `<enroll_password>` in the command are the `enroll_id` and `enroll_secret` you specified when you created the CA. Use the **Certificate Authority Endpoint URL** from your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console or the `"ca_url"` returned by your API call as the value for `<ca_url_with_port>`. Leave off the `http://` at the beginning. The `<ca_name>` is the **CA Name** from your console, or the `"ca_name"` returned by the APIs.
+    The `<enroll_id>`and `<enroll_password>` in the command are the `enroll_id` and `enroll_secret` you specified when you created the CA. Use the **Certificate Authority Endpoint URL** from your Fabric Operations Console or the `"ca_url"` returned by your API call as the value for `<ca_url_with_port>`. Leave off the `http://` at the beginning. The `<ca_name>` is the **CA Name** from your console, or the `"ca_name"` returned by the APIs.
 
     The `<ca_tls_cert_path>` is the full path your CA TLS cert.
 
@@ -1117,7 +1117,7 @@ Copy this entire file into a text editor where you can edit it and save it to yo
 
 First, we need to provide the connection information of your CA on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. You can use the console UI or the APIs to get the necessary information about your CA.
 
-**If you are using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console:**
+**If you are using the Fabric Operations Console:**
 Open the CA in your console and click **Settings**, then the **Export** button to export the CA information to a JSON file. You can use the values from this file to complete your configuration file.
 
 **If your are using the APIs:**
@@ -1268,10 +1268,10 @@ After you completed all the steps above, your updated configuration file might l
 
 You can leave the other fields blank. After you complete this file, you can pass this file as the `config` field to the request body of the `Create an ordering service` or `Create a peer` API.
 
-### Importing an admin identity into the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+### Importing an admin identity into the Fabric Operations Console
 {: #ibm-hlfsupport-v2-apis-admin-console}
 
-If you want to use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to operate your blockchain components, you must import your administrator identity into your console wallet. Open the wallet panel in your console. Click the **Add identity** button on the overview screen. Clicking this button opens up a side panel that allows you to add an identity's signing certificate and private key directly to the console.
+If you want to use the Fabric Operations Console to operate your blockchain components, you must import your administrator identity into your console wallet. Open the wallet panel in your console. Click the **Add identity** button on the overview screen. Clicking this button opens up a side panel that allows you to add an identity's signing certificate and private key directly to the console.
 - **Name:** Enter a display name for the identity that is used for your reference only.
 - **Certificate:** Upload your admin's signing certificate. If you followed the instructions above, you can find this key in the `$HOME/fabric-ca-client/peer-admin/msp/signcerts/` folder.
 - **Private Key:** Upload your admins private key. If you followed the instructions above, you can find this key in the `$HOME/fabric-ca-client/peer-admin/msp/keystore/` folder.

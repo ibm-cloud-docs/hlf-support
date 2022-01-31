@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: import nodes, another console, import a CA, import a peer, import admin identities, import an ordering service node
 
@@ -19,7 +19,7 @@ subcollection: hlf-support
 
 
 
-The console includes the option to import nodes that were created in another {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.
+The console includes the option to import nodes that were created in another Fabric Operations Console.
 {: shortdesc}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.
@@ -47,7 +47,7 @@ As you will see below, there are two ways to export and import components and id
 
 While importing nodes provides the ability to perform many of the actions that can be performed on the console where a node or identity was created, there are a few limitations on the ability to administer imported components:
 
-- All nodes to be imported must have been deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console or [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs](https://cloud.ibm.com/apidocs/blockchain){: external}.
+- All nodes to be imported must have been deployed by using the Fabric Operations Console or [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs](https://cloud.ibm.com/apidocs/blockchain){: external}.
 - You cannot patch nodes that have been imported into the console.
 - You cannot delete nodes that you imported into the console from the cluster where they were deployed. You can only remove the node from the console it was imported to.
 - You cannot override the settings of an imported node by using the **Edit configuration** button to update the `JSON`.
@@ -57,7 +57,7 @@ While importing nodes provides the ability to perform many of the actions that c
 ## Exporting and importing in bulk
 {: #ibm-hlfsupport-console-import-bulk-export-import}
 
-In cases where users want to export and import all of the peers, CAs, ordering services, MSPs, and identities at once, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console now allows for the bulk management of data as a ZIP file that contains the JSON representing the various nodes, MSPs, and identities. To export or import data in bulk, navigate to the **Settings** tab in the left hand navigation. You will see a section called **Bulk data management** with two buttons below it. The **Export** button will open a panel on the right, where you have several options of what to export. The **Import** button also opens a panel where you can select the ZIP from your local file system.
+In cases where users want to export and import all of the peers, CAs, ordering services, MSPs, and identities at once, the Fabric Operations Console now allows for the bulk management of data as a ZIP file that contains the JSON representing the various nodes, MSPs, and identities. To export or import data in bulk, navigate to the **Settings** tab in the left hand navigation. You will see a section called **Bulk data management** with two buttons below it. The **Export** button will open a panel on the right, where you have several options of what to export. The **Import** button also opens a panel where you can select the ZIP from your local file system.
 
 While exporting and importing components in bulk is highly convenient for some use cases, there are important considerations to keep in mind:
 
@@ -172,7 +172,7 @@ A CA node is the blockchain component that issues certificates to all network en
 
 After you import a CA, you can use it to register and enroll users or create organization definitions exactly as you would with any other CA.
 
-To import a CA to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console and operate it, the network operator must have already exported the CA from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric where it was deployed. Importing a CA allows you to register new users and [enroll identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-enroll).
+To import a CA to the Fabric Operations Console and operate it, the network operator must have already exported the CA from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric where it was deployed. Importing a CA allows you to register new users and [enroll identities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-identities#ibm-hlfsupport-console-identities-enroll).
 
 ### Before you begin
 {: #ibm-hlfsupport-console-import-ca-before-you-begin}

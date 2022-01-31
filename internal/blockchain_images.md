@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 keywords: IBM Support for Hyperledger Fabric, images, multicloud
 
@@ -44,12 +44,12 @@ See the [My Support](https://www.ibm.com/support/pages/node/1072956){: external}
 ## Considerations and limitations
 {: #blockchain-images-considerations}
 
-The images do not include the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console or operator. This offering is meant for experienced Fabric users with existing deployments. If you are still exploring Hyperledger Fabric, you can get started with [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks#ibm-hlfsupport-v2-deploy-iks).
+The images do not include the Fabric Operations Console or operator. This offering is meant for experienced Fabric users with existing deployments. If you are still exploring Hyperledger Fabric, you can get started with [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}](/docs/blockchain?topic=blockchain-ibm-hlfsupport-v2-deploy-iks#ibm-hlfsupport-v2-deploy-iks).
 {: important}
 
 - {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric provides support for Hyperledger Fabric only if you purchase {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and deploy the commercial distribution of Hyperledger Fabric images that comes with it. You cannot purchase support for the Hyperledger Fabric Docker images that are provided by the Hyperledger community.
 - {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric does not support images that have been altered.
-- You cannot use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to deploy or operate these images. But, if you download the image for the gRPC web proxy and connect the proxy to node that you deploy, you can import the node into an existing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. After you import a node into the console, you can operate that node alongside nodes that were deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+- You cannot use the Fabric Operations Console to deploy or operate these images. But, if you download the image for the gRPC web proxy and connect the proxy to node that you deploy, you can import the node into an existing Fabric Operations Console. After you import a node into the console, you can operate that node alongside nodes that were deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 ## License and pricing
 {: #blockchain-images-license}
@@ -170,7 +170,7 @@ In addition to using the Fabric tools, you can also use the tools that are provi
 ### Configuring the gRPC web proxy (optional)
 {: #getting-started-proxy}
 
-If you want to manage your nodes using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, you can deploy an instance of the gRPC web proxy and then connect it to a node that you deployed with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images. You can then import the node into a console that was deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 or {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. You need to deploy a separate web proxy for each node.
+If you want to manage your nodes using the Fabric Operations Console, you can deploy an instance of the gRPC web proxy and then connect it to a node that you deployed with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images. You can then import the node into a console that was deployed by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 or {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. You need to deploy a separate web proxy for each node.
 
 To deploy the proxy, you need to set the following environment variables inside the container.
 ```
@@ -396,7 +396,7 @@ When the CA is deployed, you can use the Fabric CA client or the Fabric SDKs to 
 ### Deploying the gRPC web proxy
 {: #example-proxy}
 
-After we deploy a network, we can use the gRPC web proxy to import a peer or ordering node into an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. Assuming that you downloaded the gRPC web proxy image, you can use the instructions below to connect a web proxy `peer0.org1.example.com`.
+After we deploy a network, we can use the gRPC web proxy to import a peer or ordering node into an instance of the Fabric Operations Console. Assuming that you downloaded the gRPC web proxy image, you can use the instructions below to connect a web proxy `peer0.org1.example.com`.
 
 1. You need to enable the operations service for the peer. This will allow the console to check if the peer or ordering node is healthy before it connects to the node. To enable the operations service for `peer0.org1.example.com`, add the following environment variables to the to the `peer0.org1.example.com` section of `docker-composer-base.yaml`:
     ```
@@ -556,7 +556,7 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     {: codeblock}
 
     Use the following values to complete the file:
-    - `"name"`: The display name for the peer in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.
+    - `"name"`: The display name for the peer in the Fabric Operations Console.
     - `"grpcwp_url"`: The external address of the web proxy that you selected using the `EXTERNAL_ADDRESS` variable.
     - `"api_url"`: The public address of the node used by your client applications and is specified in the `BACKEND_ADDRESS` variable.
     - `"operations_url"`: The URL and port that was opened for the operations service. We used the `CORE_OPERATIONS_LISTENADDRESS` variable to specify that the operations service will use port `9443` in step one. As a result, the console can use the address `https://peer0.org1.example.com:9443` to check the health of our peer.
@@ -584,9 +584,9 @@ After we deploy a network, we can use the gRPC web proxy to import a peer or ord
     ```
     {: codeblock}
 
-You can now view the node from a console by importing the ``peer0.org1.json`` file into an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console deployed on {{site.data.keyword.cloud_notm}} or your own cluster using {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0. In order for the console to access your nodes, the URL of the web proxy, the peer, and the operations URL needs be externally accessible.
+You can now view the node from a console by importing the ``peer0.org1.json`` file into an Fabric Operations Console deployed on {{site.data.keyword.cloud_notm}} or your own cluster using {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0. In order for the console to access your nodes, the URL of the web proxy, the peer, and the operations URL needs be externally accessible.
 
-You need to complete these steps for each node that you want to import into an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.
+You need to complete these steps for each node that you want to import into an instance of the Fabric Operations Console.
 
 
 ## Interoperability

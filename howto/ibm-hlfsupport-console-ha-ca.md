@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: high availability, CA, PostgreSQL, replica sets
 
@@ -18,7 +18,7 @@ subcollection: hlf-support
 {: #ibm-hlfsupport-console-build-ha-ca}
 
 
-Because redundancy is required to achieve high availability (HA) networks, you can use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to configure a CA for high availability.
+Because redundancy is required to achieve high availability (HA) networks, you can use the Fabric Operations Console to configure a CA for high availability.
 {: shortdesc}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.
@@ -153,7 +153,7 @@ Save this information to a JSON file on your local system so that is can be prov
 ## Creating an HA CA
 {: #ibm-hlfsupport-console-build-ha-ca-create}
 
-Create a new CA by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.
+Create a new CA by using the Fabric Operations Console.
 
 1. Navigate to the **Nodes** tab on the left and click **Add Certificate Authority**.
 2. Make sure that the option to **Create** a Certificate Authority is selected. Then click **Next**.

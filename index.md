@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, multicloud
 
@@ -21,7 +21,7 @@ subcollection: hlf-support
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is a support offering that also provides entitlement to IBM certified Hyperledger Fabric images as well as certified images of the Fabric Operations Console and Kubernetes Operator.  These images allow you to deploy blockchain components on many platforms including open source Kubernetes, distributions such as Rancher, OpenShift Container Platform. For details of what is supported, see [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). This offering is ideal for the customers who want to deploy their components, store their data, or run their workloads on their own infrastructure or across public and private clouds for security, risk mitigation, preference, or compliance reasons. Clients can build, operate, and grow their blockchain networks with an offering that can be used from development through production.
 {: shortdesc}
 
-After provisioning the IBM Operator and Fabric Operations Console, use the console or {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs to build a consortium of organizations to easily transact on the same network, regardless of each client's cloud preference. By installing the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, users can create components in their clusters and connect them to components deployed on other clusters, forming a distributed, multi-organizational blockchain network.
+After provisioning the IBM Operator and Fabric Operations Console, use the console or {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs to build a consortium of organizations to easily transact on the same network, regardless of each client's cloud preference. By installing the Fabric Operations Console, users can create components in their clusters and connect them to components deployed on other clusters, forming a distributed, multi-organizational blockchain network.
 
 Currently, support is not available for environments that were not deployed using the IBM Operator and are not being managed using the certified Fabric Operations Console.  This is because the operator provides a tested and stable deployment and also automates many ongoing tasks.  In addition the Fabric Operations Console makes ongoing management, configuration, and support much easier.
 
@@ -85,7 +85,7 @@ Are you a developer? Check out the [**{{site.data.keyword.IBM_notm}} Blockchain 
 ## Step one: Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #get-started-console-ocp-step-two-deploy-console}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster and manage the deployment and your blockchain nodes. A cluster administrator can use your entitlement key to deploy the platform on any Kubernetes Cluster
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. A cluster administrator can use your entitlement key to deploy the platform on any Kubernetes Cluster
 
 -  If you are deploying the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on the OpenShift Container Platform, you can deploy the platform by using the steps in [Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on the OpenShift Container Platform](/docs/hlf-support?topic=hlf-support-deploy-ocp). Or, if you prefer to deploy from the Red Hat Marketplace see [Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from Red Hat Marketplace](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm).
 

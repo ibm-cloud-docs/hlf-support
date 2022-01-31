@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: IBM Support for Hyperledger Fabric, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -26,7 +26,7 @@ After you install the console on your cluster, you can use the console to add or
 ## Managing users from the console
 {: #console-icp-manage-users}
 
-The user who provisions the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console is considered the console administrator. The administrator can then add and grant other users access to the console from the **Users** tab. Every user that accesses the console must be assigned an access policy with a user role defined. The policy determines what actions the user can perform within the console. By default, the console administrator is given the **Manager** role for the console. Other users can be assigned with **Manager**, **Writer**, or **Reader** roles when a console manager adds them to the console. Note that the users can also be managed with [APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-users-apis)
+The user who provisions the Fabric Operations Console is considered the console administrator. The administrator can then add and grant other users access to the console from the **Users** tab. Every user that accesses the console must be assigned an access policy with a user role defined. The policy determines what actions the user can perform within the console. By default, the console administrator is given the **Manager** role for the console. Other users can be assigned with **Manager**, **Writer**, or **Reader** roles when a console manager adds them to the console. Note that the users can also be managed with [APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-users-apis)
 
 ### Role to permission mapping
 {: #console-icp-manage-role-mapping}
@@ -347,7 +347,7 @@ See the Fabric topic on [Logging Control](https://hyperledger-fabric.readthedocs
 ## Viewing your logs
 {: #icp-console-manage-logs}
 
-When you use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, you might need to view logs to debug an issue.
+When you use the Fabric Operations Console, you might need to view logs to debug an issue.
 
 ### Viewing your console logs
 {: #console-icp-manage-console-logs}

@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
+keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, multicloud
 
 subcollection: hlf-support
 
@@ -22,7 +22,7 @@ subcollection: hlf-support
 # Getting started
 {: #deploy-ocp-getting-started}
 
-Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster and manage the deployment and your blockchain nodes. After the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. After the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
 If you prefer to automate the installation of the service, check out the [Ansible Playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp) that can be used to complete all of these steps for you.
@@ -31,7 +31,7 @@ If you prefer to automate the installation of the service, check out the [Ansibl
 ## Resources required
 {: #deploy-ocp-resources-required}
 
-Ensure that your OpenShift cluster has sufficient resources for the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
+Ensure that your OpenShift cluster has sufficient resources for the Fabric Operations Console and for the blockchain nodes that you create. The amount of resources that are required can vary depending on your infrastructure, network design, and performance requirements. To help you deploy a cluster of the appropriate size, the default CPU, memory, and storage requirements for each component type are provided in this table. Your actual resource allocations are visible in your blockchain console when you deploy a node and can be adjusted at deployment time or after deployment according to your business needs.
 
 The resources for the CA, peer, and ordering nodes need to be multiplied by the number of these nodes that you require. The operator and console resources are per blockchain deployment. For example, if you deployed development, staging, and test networks in a single cluster, you need to have enough resources for three instances of the operator and console, one for each blockchain deployment. On the other hand, the webhook resources are per OpenShift cluster, only one instance is required, regardless of the number of blockchain networks in the cluster.
 
@@ -55,7 +55,7 @@ If you are deploying the OpenShift platform on {{site.data.keyword.cloud_notm}},
 
 ## Browsers
 {: #deploy-ocp-browsers}
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console has been successfully tested on the following browsers:
+The Fabric Operations Console has been successfully tested on the following browsers:
 
 - Chrome Version 91.0.4472.114 (Official Build) (64-bit)
 - Safari Version 14.1.1 (16611.2.7.1.4)
@@ -63,14 +63,14 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console has be
 ## Storage
 {: #deploy-ocp-storage}
 
-In addition to a small amount of storage (10 GB) required by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, persistent storage is required for each CA, peer, and ordering node that you deploy. Because blockchain components do not use the Kubernetes node local storage, network-attached remote storage is required so that blockchain nodes can fail over to a different Kubernetes worker node in the event of a node outage.  And because you cannot change your storage type after deploying peer, CA, or ordering nodes, you need to decide the type of persistent storage that you want to use _before_ you deploy any blockchain nodes.
+In addition to a small amount of storage (10 GB) required by the Fabric Operations Console, persistent storage is required for each CA, peer, and ordering node that you deploy. Because blockchain components do not use the Kubernetes node local storage, network-attached remote storage is required so that blockchain nodes can fail over to a different Kubernetes worker node in the event of a node outage.  And because you cannot change your storage type after deploying peer, CA, or ordering nodes, you need to decide the type of persistent storage that you want to use _before_ you deploy any blockchain nodes.
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses dynamic provisioning to allocate storage for each blockchain node that you deploy by using a pre-defined storage class. You can choose your persistent storage from the available Kubernetes storage options.
+The Fabric Operations Console uses dynamic provisioning to allocate storage for each blockchain node that you deploy by using a pre-defined storage class. You can choose your persistent storage from the available Kubernetes storage options.
 
 If the storage includes support for the `volumeBindingMode: WaitForFirstCustomer` setting, you should configure it to delay volume binding until the pod is scheduled. Read more in the [Kubernetes Storage Classes documentation](https://kubernetes.io/docs/concepts/storage/storage-classes/#volume-binding-mode){: external}.
 {: tip}
 
-Before you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you must create a storage class with enough backing storage for the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console and the nodes that you create. You can set this storage class to use the default storage class of your Kubernetes cluster or create a new class that is used by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. If you are using a multizone cluster in {{site.data.keyword.cloud_notm}} and you change the default storage class definition, then you must configure the default storage class for each zone.  
+Before you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you must create a storage class with enough backing storage for the Fabric Operations Console and the nodes that you create. You can set this storage class to use the default storage class of your Kubernetes cluster or create a new class that is used by the Fabric Operations Console. If you are using a multizone cluster in {{site.data.keyword.cloud_notm}} and you change the default storage class definition, then you must configure the default storage class for each zone.  
 After you create the storage class, run the following command to set the storage class of the multizone region to be the default storage class:
 ```
 kubectl patch storageclass

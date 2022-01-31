@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-13"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -18,7 +18,7 @@ subcollection: hlf-support
 {: #ibm-hlfsupport-console-app}
 
 
-After you install smart contracts and deploy your nodes, you can use client applications to transact with other members of your network. Applications can invoke the business logic that is contained in smart contracts to create, transfer, or update assets on the blockchain ledger. Use this tutorial to learn how to use client applications to interact with networks that you manage from {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.
+After you install smart contracts and deploy your nodes, you can use client applications to transact with other members of your network. Applications can invoke the business logic that is contained in smart contracts to create, transfer, or update assets on the blockchain ledger. Use this tutorial to learn how to use client applications to interact with networks that you manage from Fabric Operations Console.
 {: shortdesc}
 
 **Target audience:** This topic is designed for application developers who are interested in learning more about how to create a client application that interacts with a blockchain network.
@@ -27,7 +27,7 @@ After you install smart contracts and deploy your nodes, you can use client appl
 {: #ibm-hlfsupport-console-app-learning-resources}
 
 Developing an application might require coordination between two distinct users of your network, the network operator and the application developer:
-- **The network operator** is the administrator who uses the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to deploy the nodes of your organization and installs the smart contracts on your network.
+- **The network operator** is the administrator who uses the Fabric Operations Console to deploy the nodes of your organization and installs the smart contracts on your network.
 - **The application developer** builds the client application that is consumed by users. The developer uses the [Hyperledger Fabric SDKs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/getting_started.html#hyperledger-fabric-sdks){: external} to invoke transactions written in the smart contracts.
 
 If you are the **network operator**, you will need to complete the following steps before the application developer can interact with your network:
@@ -44,7 +44,7 @@ If you are the **application developer**, use the information that is provided b
 2. Configure a connection by using the Fabric SDK gateway and enable [service discovery](/docs/hlf-support?topic=hlf-support-glossary#glossary-sd).
 3. Use the connection profile, channel name, smart contract name, and application keys to invoke the smart contract.  
 
-The connection profile that you downloaded from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console can be used to connect to your network by using the Node.js (JavaScript and TypeScript), Java, and Go Fabric SDKs.
+The connection profile that you downloaded from the Fabric Operations Console can be used to connect to your network by using the Node.js (JavaScript and TypeScript), Java, and Go Fabric SDKs.
 {: note}
 
 The application developer can use two programming models to interact with the network, either the High-Level Programming Model APIs or the Low-Level Fabric SDK APIs.
@@ -189,7 +189,7 @@ The list of channels that the selected peers have joined is also provided for yo
 
 You can then download the connection profile to your local file system and use it with your client application to generate certificates and invoke smart contracts.
 
-The connection profile that is downloaded from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console can only be used to connect to your network by using the Node.js (JavaScript and TypeScript) and Java Fabric SDKs.
+The connection profile that is downloaded from the Fabric Operations Console can only be used to connect to your network by using the Node.js (JavaScript and TypeScript) and Java Fabric SDKs.
 {: note}
 
 The generated connection profile only supports Fabric CAs. If you manually built your organization MSP with certificates from an external CA, the connection profile will not include any information in the "certificateAuthorities": section.
@@ -276,7 +276,7 @@ Once the network operator provides the enroll ID and secret of the application i
 
     The SDK will create and store your certificates inside the `wallet/user1/` directory that is created by the command. This directory is the file system wallet that is used submit future transactions.
 
-The wallets that are used by the Fabric SDKs are different from the wallet in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. The identities that are stored in your console wallet cannot be directly used by the SDK.
+The wallets that are used by the Fabric SDKs are different from the wallet in the Fabric Operations Console. The identities that are stored in your console wallet cannot be directly used by the SDK.
 {: note}
 
 ## Invoking a smart contract by using the SDK
@@ -430,7 +430,7 @@ You can use the [{{site.data.keyword.IBM_notm}} Blockchain Platform VS code exte
 ### Step three: Generate certificates for your wallet
 {: #ibm-hlfsupport-console-app-commercial-paper-step-three-generate-certificates}
 
-Applications need to sign the requests they send to Fabric components. If the components do not recognize the organizations submitting the transactions, the transactions are rejected and return with an error. The commercial paper sample creates a file system wallet that stores your certificates and signs your transactions. For more information about how applications use wallets, see the [wallet](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/wallet.html){: external} topic in the Fabric Documentation. The wallets that are used by the Fabric SDKs are different from the wallet in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. The identities that are stored in your console wallet cannot be directly used by the SDK.
+Applications need to sign the requests they send to Fabric components. If the components do not recognize the organizations submitting the transactions, the transactions are rejected and return with an error. The commercial paper sample creates a file system wallet that stores your certificates and signs your transactions. For more information about how applications use wallets, see the [wallet](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/wallet.html){: external} topic in the Fabric Documentation. The wallets that are used by the Fabric SDKs are different from the wallet in the Fabric Operations Console. The identities that are stored in your console wallet cannot be directly used by the SDK.
 
 The original sample uses the `addToWallet.js` file to create a file system wallet using certificates from the fabric samples folder. We are going to create a new file that uses the SDK to generate a client-side certificate and store them directly inside a new wallet.
 

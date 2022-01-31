@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: security, encryption, storage, tls, iam, roles, keys, multicloud
 
@@ -20,7 +20,7 @@ subcollection: hlf-support
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric provides a scalable, highly reliable platform that helps customers deploy applications and data quickly and securely. This document provides information about securing your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service instance, where the blockchain console runs, and best practices for securing the  Kubernetes cluster where the blockchain nodes are deployed.
 {: shortdesc}
 
-## Security on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Security on the Fabric Operations Console
 {: #ibm-hlfsupport-security-ibm-hlfsupport}
 
 **Audience:** Tasks in this section are typically performed by **blockchain network operators**.  
@@ -56,7 +56,7 @@ If you are using a client application to send requests to the console, either vi
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network is based on trusted identities. Customers use the Certificate Authorities (CAs) in the console to generate the identities and associated certificates that are required by all members to transact on the network. The generated public and private keys are `ECDSA` with Curve `P256`. These keys are stored in the browser when they are added to the member's blockchain wallet so that the console can use them to manage blockchain components. However, it is recommended that customers export these keys and import them into their own key management system in case they clear their browser cache or switch browsers. Customers are responsible for the storage, backup, and disaster recovery of all keys that they export.
 
-Because these public and private key pairs are essential to how the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric functions, **key management** is a critical aspect of security. If a private key is compromised or lost, hostile actors might be able to access your data and functionality. Although you use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to generate the certificates and private keys, they are not _permanently_ stored by the browser or the cloud database. Public and private keys are temporarily stored in the browser and added to the member's wallet so that the console can use the private key to digitally sign transactions. Customers are ultimately responsible for exporting the keys and managing their storage, backup, and disaster recovery.
+Because these public and private key pairs are essential to how the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric functions, **key management** is a critical aspect of security. If a private key is compromised or lost, hostile actors might be able to access your data and functionality. Although you use the Fabric Operations Console to generate the certificates and private keys, they are not _permanently_ stored by the browser or the cloud database. Public and private keys are temporarily stored in the browser and added to the member's wallet so that the console can use the private key to digitally sign transactions. Customers are ultimately responsible for exporting the keys and managing their storage, backup, and disaster recovery.
 
 If a private key is lost and cannot be recovered, you will need to generate a new private key by registering and enrolling a new identity with your Certificate Authority. You should also then remove and replace your signCert in any components or organizations where you had used the lost or corrupted identity. See [Updating an organization MSP definition](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-organizations#ibm-hlfsupport-console-govern-update-msp) for detailed steps.
 
@@ -103,7 +103,7 @@ In order to use the blockchain [APIs](https://cloud.ibm.com/apidocs/blockchain){
 
 **Audience:** Tasks in this section are typically performed by **Kubernetes infrastructure managers**.
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console allows you to deploy and manage nodes on a Kubernetes cluster that you operate. The previous section addressed the security of the console. The following sections detail the best practices you can use to secure your Kubernetes cluster and the nodes of your network:
+The Fabric Operations Console allows you to deploy and manage nodes on a Kubernetes cluster that you operate. The previous section addressed the security of the console. The following sections detail the best practices you can use to secure your Kubernetes cluster and the nodes of your network:
 
 - [Kubernetes cluster security](#ibm-hlfsupport-security-Kubernetes-security)
 - [Network security](#ibm-hlfsupport-security-Kubernetes-network)

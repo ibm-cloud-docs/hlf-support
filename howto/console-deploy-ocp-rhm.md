@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-20"
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
+keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
 subcollection: hlf-support
 
@@ -21,7 +21,7 @@ subcollection: hlf-support
 # Deploy from Red Hat Marketplace
 {: #deploy-ocp-rhm}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto a Kubernetes cluster on OpenShift Container Platform 4.6+. This operator deploys instances of the certificate authority (CA), peer, ordering nodes and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console that uses to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto a Kubernetes cluster on OpenShift Container Platform 4.6+. This operator deploys instances of the certificate authority (CA), peer, ordering nodes and the Fabric Operations Console that uses to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
 {: shortdesc}
 
 ## What is the Red Hat Marketplace?
@@ -47,7 +47,7 @@ To learn more about the Marketplace see the [Red Hat documentation](https://mark
 - You are responsible for the management of health monitoring, logging, and resource usage of your blockchain components.
 - IBM Support for Hyperledger Fabric is not supported on OpenShift Online.
 - Mutual TLS is not supported between your applications and your blockchain nodes.
-- You cannot use the extended support release(EMC Symmetrix for R) version of Firefox to log in to the IBM Support for Hyperledger Fabric console.
+- You cannot use the extended support release(EMC Symmetrix for R) version of Firefox to log in to the Fabric Operations Console.
 
 ## Before you begin
 {: #deploy-ocp-rhm-prerequisites}
@@ -167,7 +167,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 
 10. Click **Create** to finish your setup.
 
-## Step three: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Step three: Deploy the Fabric Operations Console
 {: #deploy-ocp-rhm-console}
 
 There is one instance available listed under "Provided APIs":
@@ -175,15 +175,15 @@ There is one instance available listed under "Provided APIs":
 
 ![IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace](../images/rhm-console.png "IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace"){: caption="Figure 5. IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace" caption-side="bottom"}
 
-- **IBM Support for Hyperledger Fabric Console** - The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console UI, or "console", is an award-winning user interface for building your blockchain network.
+- **Fabric Operations Console** - The Fabric Operations Console UI, or "console", is an award-winning user interface for building your blockchain network.
 
-All customers need to deploy an instance of the **IBM Support for Hyperledger Fabric Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
+All customers need to deploy an instance of the **Fabric Operations Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
 
 You should use the console to deploy Certificate Authorities (CAs), peers, and ordering nodes.
 {: important}
 
-Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 6. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
+Click **Create Instance** on the **Fabric Operations Console** tile.
+![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the Fabric Operations Console tile"){: caption="Figure 6. Click Create Instance on the Fabric Operations Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}
@@ -323,7 +323,7 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 ### Use your own TLS Certificates (Optional)
 {: #console-deploy-ocp-use-your-own-tls-certificates-optional}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
+The Fabric Operations Console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
 This step needs to be performed before the console is deployed.
 {: important}
