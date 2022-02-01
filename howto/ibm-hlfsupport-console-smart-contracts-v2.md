@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-01"
 
 keywords: smart contract, private data, private data collection, anchor peer, implicit collections
 
@@ -139,7 +139,7 @@ After you have updated your smart contract, use [v2](/docs/hlf-support?topic=hlf
 The Fabric Operations Console manages the *deployment* of smart contracts rather than development. If you are interested in developing smart contracts, you can get started with tutorials provided by the Hyperledger Fabric community and tooling provided by {{site.data.keyword.IBM_notm}}.
 
 - To learn how smart contracts can be used to conduct transactions among multiple parties, see the [Developing applications topic](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html){: external} in the Hyperledger Fabric documentation.
-- When you are ready to start building smart contracts, use the IBM Developer Tooling, by downloading the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) locally, or use [Red Hat CodeReady Workspaces](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-crw) in the cloud to package your smart contract.  New to the VS Code extension? Check out [Developing smart contracts with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tools](/docs/hlf-support?topic=hlf-support-develop-vscode) to get started using the extension to create smart contracts that run on the network and clients applications to send transactions.
+- When you are ready to start building smart contracts, use the IBM Developer Tooling, by downloading the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) locally. New to the VS Code extension? Check out [Developing smart contracts with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tools](/docs/hlf-support?topic=hlf-support-develop-vscode) to get started using the extension to create smart contracts that run on the network and clients applications to send transactions.
 - For a quick tutorial on developing smart contracts, see [Develop a smart contract with the {{site.data.keyword.IBM_notm}} Blockchain Platform VS Code extension](https://developer.ibm.com/tutorials/ibm-blockchain-platform-vscode-smart-contract/){: external}.
 - For guidance on how to leverage the smart contract lifecycle to satisfy a wider set of business use cases, see [Writing powerful smart contracts](/docs/hlf-support?topic=hlf-support-write-powerful-smart-contracts).
 - For a more in-depth end-to-end tutorial about using an application to interact with smart contracts, see [Hyperledger Fabric Commercial Paper tutorial](https://hyperledger-fabric.readthedocs.io/en/release-2.2/tutorial/commercial_paper.html){: external}.
