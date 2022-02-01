@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-13"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: smart contract, private data, private data collection, anchor peer, implicit collections
 
@@ -24,8 +24,6 @@ subcollection: hlf-support
 
 While the terms "smart contract" and "chaincode" are often used interchangeably, "smart contracts" refers to the business logic that governs transactions and access to its data, while "chaincode" refers to the larger infrastructure of packages and other code that encompasses a smart contract.
 {: important}
-
-If you prefer to continue to use the legacy smart contract deployment process, see [Deploy a smart contract using Fabric v1.4](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14).
 
 Instead of a single organization administrator making decisions for all organizations about when a smart contract is updated, what it contains, and where it runs, Fabric v2.0 introduced a new distributed process to manage the lifecycle of a smart contract that allows for decentralizing the governance of smart contracts on a channel. The process for installing, proposing, and updating a smart contract is known as the "lifecycle" of a smart contract. This lifecycle is necessarily ongoing, as it encompasses changes to the smart contract itself as well as updates to a channel, as for example when a new member starts using the smart contract, and is managed through a combination of processes inside and outside the console.
 
@@ -51,7 +49,7 @@ For more information about advanced channel options, which includes setting the 
 As a reminder, to leverage the smart contract lifecycle process, the peers on the channel must be running a Fabric v2.x image. The Fabric level of a peer is visible in the console by clicking a peer node to open it.
 ![Peer version](../images/peer-version.png "How to find the Fabric version of the peer"){: caption="Figure 1. How to find the Fabric version of the peer" caption-side="bottom"}
 
-If your peer is running a Fabric v1.4.x image, you cannot use this tutorial to manage your smart contract. Instead, see the [Deploy a smart contract using Fabric v1.4](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14) tutorial for instructions on how to deploy the smart contract on the channel or upgrade the peer to use a Fabric v2.x image.
+
 
 ### Update MSPs in consortium to add organization-level endorsement policy
 {: #ibm-hlfsupport-console-smart-contracts-v2-update-consortium}
@@ -81,10 +79,7 @@ Because only peer admin identities are allowed to install a smart contract on a 
 ## Limitations
 {: #ibm-hlfsupport-console-smart-contracts-v2-limitations}
 
-### Can I continue to use the Fabric SDK to deploy my smart contracts?
-{: #ibm-hlfsupport-console-smart-contracts-v2-sdk}
 
-If your client applications are using the Fabric v1.4 SDK to deploy smart contracts, those functions will no longer work when the peers are running on a channel with the Fabric 2.0 application capability enabled. In this case, you can only use the Fabric v1.4 or v2.x SDKs with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to submit transactions or queries against smart contracts. The **SDKs cannot be used to submit administrative transactions such as installing a smart contract, proposing a smart contract definition, approving it, or committing it to a channel.** Instead, customers can use the console UI, the [Fabric CLI](https://hyperledger-fabric.readthedocs.io/en/release-2.2/commands/peerlifecycle.html), or [Ansible playbooks](/docs/hlf-support?topic=hlf-support-ansible-build) to perform these administrative tasks.
 
 ### What happens to my existing smart contracts?
 {: #ibm-hlfsupport-console-smart-contracts-v2-existing-sc}
@@ -141,7 +136,7 @@ After you have updated your smart contract, use [v2](/docs/hlf-support?topic=hlf
 ## Step one: Write and package your smart contract
 {: #ibm-hlfsupport-console-smart-contracts-v2-pkg}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console manages the *deployment* of smart contracts rather than development. If you are interested in developing smart contracts, you can get started with tutorials provided by the Hyperledger Fabric community and tooling provided by {{site.data.keyword.IBM_notm}}.
+The Fabric Operations Console manages the *deployment* of smart contracts rather than development. If you are interested in developing smart contracts, you can get started with tutorials provided by the Hyperledger Fabric community and tooling provided by {{site.data.keyword.IBM_notm}}.
 
 - To learn how smart contracts can be used to conduct transactions among multiple parties, see the [Developing applications topic](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html){: external} in the Hyperledger Fabric documentation.
 - When you are ready to start building smart contracts, use the IBM Developer Tooling, by downloading the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=IBMBlockchain.ibm-blockchain-platform) locally, or use [Red Hat CodeReady Workspaces](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-crw) in the cloud to package your smart contract.  New to the VS Code extension? Check out [Developing smart contracts with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tools](/docs/hlf-support?topic=hlf-support-develop-vscode) to get started using the extension to create smart contracts that run on the network and clients applications to send transactions.

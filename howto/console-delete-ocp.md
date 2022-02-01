@@ -1,10 +1,10 @@
 ---
 
     copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters
+keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
 subcollection: hlf-support
 
@@ -135,7 +135,7 @@ You can use the OpenShift CLI to remove the {{site.data.keyword.IBM_notm}} Suppo
     ```
     {: codeblock}
 
-## Step Three: Delete the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Step Three: Delete the Fabric Operations Console
 {: #Removing-ocp-step-three}
 
 After you remove the operator, you can then delete the console without it being restarted. When you are logged in to your cluster and are operating from your project, you can delete the console by issuing the following command:

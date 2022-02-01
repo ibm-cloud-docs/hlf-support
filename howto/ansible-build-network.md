@@ -1,8 +1,8 @@
 ---
 
     copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -40,7 +40,7 @@ Before using the playbook, you need to complete the following steps:
 
 After you deploy an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric service instance, you need to gather the connection information for the console.If your cluster is running in a Red Hat OpenShift or Kubernetes cluster that is not in {{site.data.keyword.cloud_notm}}, you need to perform the following steps:
 
-1. **Determine the URL of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.**
+1. **Determine the URL of your Fabric Operations Console.**
     The URL is of the format `https://<NAMESPACE>-ibpconsole-console.<DOMAIN>` where:
 
     - `<NAMESPACE>` is the name of the namespace that you created for your cluster. If you are running OpenShift Container Platform, it is the name of your project.
@@ -51,7 +51,7 @@ After you deploy an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabri
     https://blockchain-project-ibpconsole-console.xyz.abc.com
 
     ```
-2. (Optional) Get an [API key](#x8051010){: term} and `secret` that you can use to access your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. If you want to skip getting an API key and secret, you can also use your console **username** and **password** instead of an API key and secret, although that would not be recommended in a production setting.
+2. (Optional) Get an [API key](#x8051010){: term} and `secret` that you can use to access your Fabric Operations Console. If you want to skip getting an API key and secret, you can also use your console **username** and **password** instead of an API key and secret, although that would not be recommended in a production setting.
 
     If you prefer to use an API `key` and `secret`, then you need to use the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric REST APIs](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#console-icp-manage-api-key) to generate them. Save the value of the `"api_key"` and `"api_secret"` to be used in step three.
 
@@ -78,7 +78,7 @@ After you clone the Ansible collection to your local system, open the `ansible-c
 
 The first thing that you notice is that the playbook `.yml` files are numbered. Because the playbooks build on each other, the numbers help you understand the order that they should be run. When you want to change some of the configuration properties, you can edit the `.yml` files and insert your own custom values, for example, if you want to customize a node name or use a different enrollment ID. Each playbook includes either a **role** or a **task**. A role includes a set of tasks that in turn call the associated [modules](https://ibm-blockchain.github.io/ansible-collection/modules.html) that submit the requests to your cluster.
 
-The next thing to notice is the set of variable files `ordering-org-vars.yml` (Ordering Org), `org1-vars.yml` (Org1), and `org2-vars.yml` (Org2) that define the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console connection details for each organization. These variable files are used by the playbook when you run it. This means that before you run a playbook, if it uses a variable file, you need to customize the associated variable file with the connection information that you gathered in the previous step. When a playbook requires a variables file, it is included in the playbook .yml file.
+The next thing to notice is the set of variable files `ordering-org-vars.yml` (Ordering Org), `org1-vars.yml` (Org1), and `org2-vars.yml` (Org2) that define the Fabric Operations Console connection details for each organization. These variable files are used by the playbook when you run it. This means that before you run a playbook, if it uses a variable file, you need to customize the associated variable file with the connection information that you gathered in the previous step. When a playbook requires a variables file, it is included in the playbook .yml file.
 
 The variable files include the following four fields that define your connection information to your console:
 ```
@@ -91,7 +91,7 @@ api_secret: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 You need to replace the fields with the following values:
 
-- `api_endpoint` - Set this value to the URL of your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.
+- `api_endpoint` - Set this value to the URL of your Fabric Operations Console.
 - `api_authtype` - This value must be set to `basic`.
 - `api_key` - Set this value to the value of your console username or API key.
 - `api_secret` - Set this value to the value of your console password or API secret.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: organizations, MSPs, create an MSP, MSP JSON file, consortium, system channel, remove an organization, multicloud
 
@@ -17,11 +17,11 @@ subcollection: hlf-support
 {: #ibm-hlfsupport-console-organizations}
 
 
-You can use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to create a formal organization definition that is known as a Membership Services Provider (MSP). Your organization's MSP definition allows other members of the blockchain consortium to verify the identity of your nodes and applications. Your MSP definition also contains your organization's admin certificates.
+You can use the Fabric Operations Console to create a formal organization definition that is known as a Membership Services Provider (MSP). Your organization's MSP definition allows other members of the blockchain consortium to verify the identity of your nodes and applications. Your MSP definition also contains your organization's admin certificates.
 
 You can also use the console to manage which organizations are members of your channel. The administrator of the ordering service can use the organizations tab to add members to the blockchain [consortium](/docs/hlf-support?topic=hlf-support-glossary#glossary-consortium). Members of the channel can then use the console to add members to new or existing channels.
 
-![{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console organizations tab](../images/console_organizations_tab.png "{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console organizations tab"){: caption="Figure 1. You can use the organizations panel to create, import, and manage organization MSP definitions" caption-side="bottom"}
+![Fabric Operations Console organizations tab](../images/console_organizations_tab.png "Fabric Operations Console organizations tab"){: caption="Figure 1. You can use the organizations panel to create, import, and manage organization MSP definitions" caption-side="bottom"}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.
 
@@ -95,7 +95,7 @@ The list of channels that the selected peers have joined is also provided for yo
 
 You can then download the connection profile to your local file system and use it with your client application to generate certificates and invoke smart contracts.
 
-The connection profile that is downloaded from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console can only be used to connect to your network by using the Node.js (JavaScript and TypeScript) and Java Fabric SDKs.
+The connection profile that is downloaded from the Fabric Operations Console can only be used to connect to your network by using the Node.js (JavaScript and TypeScript) and Java Fabric SDKs.
 {: note}
 
 The generated connection profile only supports Fabric CAs. If you manually built your organization MSP with certificates from an external CA, the connection profile will not include any information in the "certificateAuthorities": section.

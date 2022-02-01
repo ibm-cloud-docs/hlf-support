@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-13"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: smart contract, private data, private data collection, anchor peer, instantiation, install smart contract
 
@@ -33,7 +33,7 @@ After a smart contract is installed on the peers, a single network member instan
 - **Only one network member needs to instantiate a smart contract.**
 - **If a peer with a smart contract installed joins a channel where the same smart contract version has already been instantiated, the smart contract container starts automatically.**  
 
-In this tutorial, we go through the steps to use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to manage the deployment of smart contracts on your network:
+In this tutorial, we go through the steps to use the Fabric Operations Console to manage the deployment of smart contracts on your network:
 
 - [Write and package your smart contract](#ibm-hlfsupport-console-smart-contracts-write-package).
 - [Install smart contracts on your peers](#ibm-hlfsupport-console-smart-contracts-install).
@@ -46,7 +46,7 @@ In this tutorial, we go through the steps to use the {{site.data.keyword.IBM_not
 
 Before you can install a smart contract, ensure that you have the following things ready.
 
-- You must either [build a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network) or [join a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network) by using your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.
+- You must either [build a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network) or [join a network](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network) by using your Fabric Operations Console.
 - Because smart contracts are installed onto peers, ensure that you [add peers](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-peer-org1) to your console.
 - Smart contracts are instantiated on a channel. Therefore, you must [create a channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-create-channel) or [join a channel](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-join-peer-org2) by using your console.
 - The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric supports smart contracts written in JavaScript, TypeScript, Java, and Go. When you are allocating resources to your peer node, it is important to note that JavaScript and TypeScript smart contracts require more resources than contracts written in Go.
@@ -55,7 +55,7 @@ Before you can install a smart contract, ensure that you have the following thin
 ## Step one: Write and package your smart contract
 {: #ibm-hlfsupport-console-smart-contracts-write-package}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console manages the *deployment* of smart contracts rather than development. If you are interested in developing smart contracts, you can get started using tutorials provided by the Hyperledger Fabric community and tooling provided by {{site.data.keyword.IBM_notm}}.
+The Fabric Operations Console manages the *deployment* of smart contracts rather than development. If you are interested in developing smart contracts, you can get started using tutorials provided by the Hyperledger Fabric community and tooling provided by {{site.data.keyword.IBM_notm}}.
 
 - To learn how smart contracts can be used to conduct transactions among multiple parties, see the [Developing applications topic](https://hyperledger-fabric.readthedocs.io/en/release-1.4/developapps/developing_applications.html){: external} in the Hyperledger Fabric documentation.
 - When you are ready to start building smart contracts, you can use the [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Visual Studio code extension](/docs/hlf-support?topic=hlf-support-develop-vscode) to start building your own smart contract project. You can also use that extension to [connect directly to your network from Visual Studio Code](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode-connecting-ibp) and explore the inline tutorials.
@@ -227,7 +227,7 @@ The list of channels that the selected peers have joined is also provided for yo
 
 You can then download the connection profile to your local file system and use it with your client application to generate certificates and invoke smart contracts.
 
-The connection profile that is downloaded from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console can only be used to connect to your network by using the Node.js (JavaScript and TypeScript) and Java Fabric SDKs.
+The connection profile that is downloaded from the Fabric Operations Console can only be used to connect to your network by using the Node.js (JavaScript and TypeScript) and Java Fabric SDKs.
 {: note}
 
 The generated connection profile only supports Fabric CAs. If you manually built your organization MSP with certificates from an external CA, the connection profile will not include any information in the "certificateAuthorities": section.

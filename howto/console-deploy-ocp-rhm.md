@@ -1,10 +1,10 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
+keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
 subcollection: hlf-support
 
@@ -21,7 +21,7 @@ subcollection: hlf-support
 # Deploy from Red Hat Marketplace
 {: #deploy-ocp-rhm}
 
-The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 operator onto a Kubernetes cluster on OpenShift Container Platform 4.6+. This operator deploys instances of the certificate authority (CA), peer, ordering nodes and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console that uses to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
+The Red Hat Marketplace can be used to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator onto a Kubernetes cluster on OpenShift Container Platform 4.6+. This operator deploys instances of the certificate authority (CA), peer, ordering nodes and the Fabric Operations Console that uses to manage the blockchain components on your network. This deployment option is available for OpenShift clusters that are running in {{site.data.keyword.cloud_notm}} or your cloud.
 {: shortdesc}
 
 ## What is the Red Hat Marketplace?
@@ -43,12 +43,11 @@ To learn more about the Marketplace see the [Red Hat documentation](https://mark
 
 - This deployment option is not available on OpenShift Container Platform on LinuxONE.
 
-- IBM Support for Hyperledger Fabric 1.0.0 is supported on Red Hat OpenShift 4.6+.
+- IBM Support for Hyperledger Fabric is supported on Red Hat OpenShift 4.6+.
 - You are responsible for the management of health monitoring, logging, and resource usage of your blockchain components.
 - IBM Support for Hyperledger Fabric is not supported on OpenShift Online.
 - Mutual TLS is not supported between your applications and your blockchain nodes.
-- You cannot use the extended support release(EMC Symmetrix for R) version of Firefox to log in to the IBM Support for Hyperledger Fabric console.
-
+- You cannot use the extended support release(EMC Symmetrix for R) version of Firefox to log in to the Fabric Operations Console.
 
 ## Before you begin
 {: #deploy-ocp-rhm-prerequisites}
@@ -62,7 +61,7 @@ You must have the cluster administrator role to install the operators from the R
 4. When prompted `Would you like to go back to the Red Hat Marketplace now? [Y/n]`, type `Y` to retrieve the <wintitle>Red Hat Marketplace</wintitle> page in your browser.
 5. Click **My software** > **Visit the Marketplace**.
 6. In the search bar, type **blockchain** to load the blockchain tile. Select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric**.
-7. Click **Purchase** or **Free trial** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with the Red Hat Marketplace.
+7. Click **Purchase** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with Red Hat Marketplace. When selecting a namespace for operator installation, **All namespaces on the cluster** is selected by default&mdash;**you must change this default selection to a specific namespace in the cluster** to make operator and Fabric components run in a dedicated namespace. ![Install the operator in the openshift-operators namespace](../images/allnamespace-install-operator.png "Install the operator in the openshift-operators namespace"){: caption="Figure 1. Install the operator in the openshift-operators namespace" caption-side="bottom"} The Console and Fabric components can be installed in any namespace. ![Console and Fabric components can be installed in any namespace](../images/allnamespace-installed-operators.png "Console and Fabric components can be installed in any namespace"){: caption="Figure 2. Console and Fabric components can be installed in any namespace" caption-side="bottom"} Next, update the Security Context Constraint command settings to use the Fabric and Console namespaces. ![Update Security Context Constraint command settings to use the Fabric and Console namespaces.](../images/allnamespace-ibp-consoles.png "Update Security Context Constraint command settings to use the Fabric and Console namespaces."){: caption="Figure 3. Update Security Context Constraint command settings to use the Fabric and Console namespaces." caption-side="bottom"}
 8. If your OpenShift cluster is behind a firewall, see [Deploy from Red Hat Marketplace (airgap installation)](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm-fw).
 9. Continue to [Step one: Apply the Security Context Constraint](#deploy-ocp-rhm-scc).
 
@@ -140,7 +139,7 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 4. Click the **YAML** tab.
 5. In the YAML tab, you see the YAML code as follows. Right-click to **copy only** the last two sets of codes. Those are the secret data and the secret data handling type.
 
-    ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 1. Pull-secret YAML Sample" caption-side="bottom"}
+    ![Pull-secret YAML](../images/pull-secret.png){: caption="Figure 4. Pull-secret YAML Sample" caption-side="bottom"}
 
 6. After you copied the two sets of codes, go to the left navigation, click **Secrets**. Then, use the **Create** drop down from the upper right of the page to switch to **From YAML**.
 7. Paste your two sets of codes under the existing YAML code.
@@ -168,23 +167,23 @@ To apply the image pull secrets, go to the **OpenShift Container Platform**.
 
 10. Click **Create** to finish your setup.
 
-## Step three: Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Step three: Deploy the Fabric Operations Console
 {: #deploy-ocp-rhm-console}
 
 There is one instance available listed under "Provided APIs":
 
 
-![IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace](../images/rhm-console.png "IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace"){: caption="Figure 1. IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace" caption-side="bottom"}
+![IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace](../images/rhm-console.png "IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace"){: caption="Figure 5. IBM Support for Hyperledger Fabric instance available in Red Hat Marketplace" caption-side="bottom"}
 
-- **IBM Support for Hyperledger Fabric Console** - The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console UI, or "console", is an award-winning user interface for building your blockchain network.
+- **Fabric Operations Console** - The Fabric Operations Console UI, or "console", is an award-winning user interface for building your blockchain network.
 
-All customers need to deploy an instance of the **IBM Support for Hyperledger Fabric Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
+All customers need to deploy an instance of the **Fabric Operations Console** to simplify the deployment and management of their blockchain networks. The console itself is free. You are only billed for the blockchain nodes that you create by using the console.
 
 You should use the console to deploy Certificate Authorities (CAs), peers, and ordering nodes.
 {: important}
 
-Click **Create Instance** on the **IBM Support for Hyperledger Fabric Console** tile.
-![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the IBM Support for Hyperledger Fabric Console tile"){: caption="Figure 2. Click Create Instance on the IBM Support for Hyperledger Fabric Console tile" caption-side="bottom"}
+Click **Create Instance** on the **Fabric Operations Console** tile.
+![Blockchain instances available in Red Hat Marketplace](../images/rhm-create-ibpconsole.png "Create instance on the Fabric Operations Console tile"){: caption="Figure 6. Click Create Instance on the Fabric Operations Console tile" caption-side="bottom"}
 
 The YAML view shows a sample **console** specification of parameters that you need to customize. The spec is abbreviated to _only the required parameters_.  Be aware that some fields can show up differently based on your configuration. Before you install the console, you should also review the Advanced deployment options in the next section in case any of the other options are relevant to your configuration. For example, if you are deploying your console on a multizone cluster, you need to configure that before you install the console.
 {: important}
@@ -324,7 +323,7 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 ### Use your own TLS Certificates (Optional)
 {: #console-deploy-ocp-use-your-own-tls-certificates-optional}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
+The Fabric Operations Console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
 This step needs to be performed before the console is deployed.
 {: important}
@@ -453,7 +452,7 @@ In your browser, you can see the console login screen:
 Ensure that you are not using the ESR version of Firefox. If you are, switch to another browser such as Chrome and log in.
 {: important}
 
-The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 documentation.
+The administrator who provisions the console can grant access to other users and restrict the actions they can perform. For more information, see [Managing users from the console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage-users){: external} in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation.
 
 ## Removing your deployment
 {: #console-deploy-ocp-rhm-remove-deployment}
@@ -523,6 +522,3 @@ You can also use the CLI to find the available storage classes for your namespac
 kubectl get storageclasses
 ```
 {: codeblock}
-
-
-

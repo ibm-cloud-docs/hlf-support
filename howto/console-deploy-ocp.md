@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-06"
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, IBM Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters, multicloud
+keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, multicloud
 
 subcollection: hlf-support
 
@@ -14,10 +14,10 @@ subcollection: hlf-support
 
 
 
-# Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 manually
+# Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric manually
 {: #deploy-ocp}
 
-You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster and manage the deployment and your blockchain nodes. After the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric onto a Kubernetes cluster that is running on OpenShift Container Platform. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://www.openshift.com/learn/topics/operators){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. After the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
 ## Get your entitlement key
@@ -398,7 +398,7 @@ service/ibm-hlfsupport-webhook created
     ```
     {: codeblock}
 
-* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -1118,7 +1118,7 @@ clusterrole.rbac.authorization.k8s.io/blockchain-project added: "system:servicea
 ## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator
 {: #deploy-ocp-operator}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. You can deploy the operator on your cluster by adding a custom resource to your project by using the OpenShift CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.   
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses an operator to install the Fabric Operations Console. You can deploy the operator on your cluster by adding a custom resource to your project by using the OpenShift CLI. The custom resource pulls the operator image from the Docker registry and starts it on your cluster.   
 
 Copy the following text to a file on your local system and save the file as `ibm-hlfsupport-operator.yaml`.
 ```yaml
@@ -1247,10 +1247,10 @@ ibm-hlfsupport-operator   1/1       1            1           46s
 ```
 {: codeblock}
 
-## Deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console
+## Deploy the Fabric Operations Console
 {: #deploy-ocp-console}
 
-When the operator is running on your namespace, you can apply a custom resource to start the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster. You can then access the console from your browser. Note that you can deploy only one console per OpenShift project.
+When the operator is running on your namespace, you can apply a custom resource to start the Fabric Operations Console on your cluster. You can then access the console from your browser. Note that you can deploy only one console per OpenShift project.
 
 Save the custom resource definition below as `ibm-hlfsupport-console.yaml` on your local system. If you changed the name of the entitlement key secret, then you need to edit the field of `name: cp-pull-secret`.
 ```yaml
@@ -1414,7 +1414,7 @@ Unlike the resource allocation, you cannot add zones to a running network. If yo
 ### Use your own TLS Certificates (Optional)
 {: #console-deploy-ocp-use-your-own-tls-certificates-optional}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
+The Fabric Operations Console uses TLS certificates to secure the communication between the console and your blockchain nodes and between the console and your browser. You have the option of creating your own TLS certificates and providing them to the console by using a Kubernetes secret. If you skip this step, the console creates its own self-signed TLS certificates during deployment.
 
 This step needs to be performed before the console is deployed.
 {: important}

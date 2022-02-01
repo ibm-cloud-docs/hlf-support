@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -64,4 +64,4 @@ Added support for Fabric 2.2.4 and CA 1.5.2.
 ## 15 Sep 2021
 {: #15-09-2021}
 
-Initial release for {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
+Initial release for {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.

@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -14,10 +14,10 @@ subcollection: hlf-support
 
 
 
-# About {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0
+# About {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #console-ocp-about}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 leverages Hyperledger Fabric v2.2.3 and supports deployment on multiple Kubernetes distributions.
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric leverages Hyperledger Fabric v2.2.3 and supports deployment on multiple Kubernetes distributions.
 {: shortdesc}
 
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is based on Hyperledger Fabric v2.2.3 and is {{site.data.keyword.IBM_notm}}'s commercial distribution of Hyperledger Fabric. A key benefit of the platform is that {{site.data.keyword.IBM_notm}} tests the open source code for security vulnerabilities daily and provides 24x7x365 support with SLAs appropriate for production environments.
@@ -66,7 +66,7 @@ Because you only pay for the compute you use, it’s painless to transition from
 
 The world is moving too fast to keep doing things the old way. Go to cloud dot IBM dot com today and check out the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
-## What {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 offers
+## What {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric offers
 {: #console-ocp-about-offers}
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric provides a flexible management platform that runs on Kubernetes. The offering includes an award-winning management console that allows you to easily deploy blockchain components, build a multicloud blockchain network, and perform network management and maintenance.
@@ -94,8 +94,8 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
 - **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
-- **Run Anywhere**. Thanks to the **unified codebase** of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, it is possible to run your components on any Kubernetes v1.18 - v1.21 container platform on x86_64 or s390x.
-- **Unified operation**. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
+- **Run Anywhere**. Thanks to the **unified codebase** of the Fabric Operations Console, it is possible to run your components on any Kubernetes v1.18 - v1.21 container platform on x86_64 or s390x.
+- **Unified operation**. The Fabric Operations Console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Elimination of Docker-in-Docker for smart contracts** allows smart contract pods to be run more securely, without peers needing privileged access.
 - **Manage access** of the users who can administer or monitor your nodes.
@@ -115,12 +115,12 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 ## Supported Environments and Components
 {: #console-ocp-about-prerequisites}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0, for Fabric 2.2.3 or higher, covers the following [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, for Fabric 2.2.3 or higher, covers the following [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
 
 ### Kubernetes Support
 {: #kubernetes-support-shfv1}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 supports Fabric 2.2.3 or higher. It can be deployed with the Kubernetes distributions on the following platforms:
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric supports Fabric 2.2.3 or higher. It can be deployed with the Kubernetes distributions on the following platforms:
 
 | Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|
@@ -136,7 +136,7 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 ### Fabric Component Support
 {: #fabric-component-support-shfv1}
 
-The following {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 support levels are provided for Hyperledger  Fabric 2.2.3 or higher:
+The following {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric support levels are provided for Hyperledger  Fabric 2.2.3 or higher:
 
 Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console provide Hyperledger Fabric 1.0.0 clients with a verified production setup, simplified management and support, and verified security patches.
 {: important}
@@ -160,7 +160,7 @@ Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Ope
 ## License and pricing
 {: #console-ocp-about-license}
 
-Your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 entitlement includes both the full platform and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images.
+Your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric entitlement includes both the full platform and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images.
 
 The entitlement does not include a Kubernetes distribution. You must procure that separately.
 {: note}
@@ -178,17 +178,16 @@ For more information, see [Pricing](/docs/hlf-support?topic=hlf-support-ibm-hlfs
 - Persistent storage is required. Host-local storage volumes are not supported.
 - You must have the cluster admin role in order to deploy the product.
 - The console creates nodes based on the Hyperledger Fabric v2.2.3 node images.
-- You can deploy only one {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console per Kubernetes namespace or OpenShift project. If you plan to create multiple blockchain networks, for example to create different environments for development, staging, and production, you should create a unique project or namespace for each environment.
+- You can deploy only one Fabric Operations Console per Kubernetes namespace or OpenShift project. If you plan to create multiple blockchain networks, for example to create different environments for development, staging, and production, you should create a unique project or namespace for each environment.
 - {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is not supported on OpenShift Online.
-- OpenShift customers can preview the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric at no charge for 30 days when you select the free trial version available from the Red Hat Marketplace.
 
-## Installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0
+## Installing {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #console-ocp-about-install}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console on your cluster and manage the deployment of your nodes. When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric license from Passport Advantage Online, you receive a token that provides access to {{site.data.keyword.IBM_notm}} Entitlement registry. You can use your token with the commands and files that are provided in the installation guide to automatically download the Docker images and start the operator and console on your cluster. When you are ready to get started, see [Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on the OpenShift Container Platform](/docs/hlf-support?topic=hlf-support-deploy-ocp). If you are deploying the platform on other Kubernetes distributions, see [Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on Kubernetes](/docs/hlf-support?topic=hlf-support-deploy-k8).
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment of your nodes. When you purchase the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric license from Passport Advantage Online, you receive a token that provides access to {{site.data.keyword.IBM_notm}} Entitlement registry. You can use your token with the commands and files that are provided in the installation guide to automatically download the Docker images and start the operator and console on your cluster. When you are ready to get started, see [Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on the OpenShift Container Platform](/docs/hlf-support?topic=hlf-support-deploy-ocp). If you are deploying the platform on other Kubernetes distributions, see [Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on Kubernetes](/docs/hlf-support?topic=hlf-support-deploy-k8).
 
 
-It is also possible to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall, without having access to the public internet. For more information, see [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on the OpenShift Container Platform behind a firewall](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall). Otherwise, for other Kubernetes distributions see [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on Kubernetes behind a firewall](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall).
+It is also possible to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall, without having access to the public internet. For more information, see [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on the OpenShift Container Platform behind a firewall](/docs/hlf-support?topic=hlf-support-deploy-ocp-firewall). Otherwise, for other Kubernetes distributions see [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on Kubernetes behind a firewall](/docs/hlf-support?topic=hlf-support-deploy-k8-firewall).
 
 **Looking for a way to script the deployment of the service?** Check out the [Ansible playbooks](/docs/hlf-support?topic=hlf-support-ansible), a powerful tool for scripting the deployment of components in your blockchain network.
 
@@ -205,6 +204,4 @@ For more information about how to get support on {{site.data.keyword.IBM_notm}} 
 ## Next steps
 {: #console-ocp-about-next-steps}
 
-When you are ready to learn how to deploy an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your Kubernetes cluster see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
-
-
+When you are ready to learn how to deploy an instance of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric to your Kubernetes cluster see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).

@@ -2,9 +2,9 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-11"
+lastupdated: "2022-01-31"
 
-keywords: OpenShift, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console, deploy, resource requirements, storage, parameters
+keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
 subcollection: hlf-support
 
@@ -16,7 +16,7 @@ subcollection: hlf-support
 # Upgrading your console and components
 {: #upgrade-ocp}
 
-You can upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric without disrupting a running network. Because the platform is deployed by using a Kubernetes operator, you can pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images from the {{site.data.keyword.IBM_notm}} Entitlement registry without having to reinstall the platform. You can use these instructions to upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0.
+You can upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric without disrupting a running network. Because the platform is deployed by using a Kubernetes operator, you can pull the latest {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images from the {{site.data.keyword.IBM_notm}} Entitlement registry without having to reinstall the platform. You can use these instructions to upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 {: shortdesc}
 
 ## {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric overview
@@ -26,7 +26,7 @@ The table provides an overview of the current and past releases.
 
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 15 Sep 2021| **Console and tools** <ul><li>1.0.0-20220111</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20220111</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20220111</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
+| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 15 Sep 2021| **Console and tools** <ul><li>1.0.0-20220111</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20220111</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20220111</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
 
 **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 3.11</ul> |
 {: caption="Table 1. {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric versions" caption-side="bottom"}
@@ -35,11 +35,11 @@ The table provides an overview of the current and past releases.
 {: #upgrade-ocp-before}
 
 The upgrade process that you follow depends on the version of the platform that you are upgrading from v1.0.0
-- [Upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](#upgrade-ocp-steps-100)
+- [Upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](#upgrade-ocp-steps-100)
 
 
 Or, if you are upgrading from behind a firewall
-- [Upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](#upgrade-ocp-firewall)
+- [Upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](#upgrade-ocp-firewall)
 
 After you upgrade the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator, the operator will automatically upgrade the console that is deployed on your OpenShift project. You can then use the upgraded console to upgrade your blockchain nodes.
 
@@ -54,13 +54,13 @@ It is a best practice to upgrade your SDK to the latest version as part of a gen
 ## Platform limitations
 {: #upgrade-ocp-platform}
 
-If your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is running on OpenShift Container Platform 3.11, you cannot upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 unless you first upgrade your OpenShift cluster from 3.11 to 4.7. For more information, see [Upgrading your migrationn](https://docs.openshift.com/container-platform/4.7/migration-toolkit-for-containers/installing-mtc.html).
+If your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is running on OpenShift Container Platform 3.11, you cannot upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric unless you first upgrade your OpenShift cluster from 3.11 to 4.7. For more information, see [Upgrading your migrationn](https://docs.openshift.com/container-platform/4.7/migration-toolkit-for-containers/installing-mtc.html).
 
 
-## Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0
+## Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #upgrade-ocp-steps-100}
 
-When you upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0  you need to update the webhook, the custom resource definitions (CRDs), the ClusterRole, and the operator using the following steps. **These same steps can be followed even if your deployment is behind a firewall.**
+When you upgrade to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric  you need to update the webhook, the custom resource definitions (CRDs), the ClusterRole, and the operator using the following steps. **These same steps can be followed even if your deployment is behind a firewall.**
 
 1. [Update webhook image.](#upgrade-ocp-steps-100-webhook)
 2. [Update the CRDs.](#upgrade-ocp-steps-100-crds) 
@@ -92,7 +92,7 @@ If you are running the platform on LinuxONE, replace `-amd64` with `-s390x`.
     ```
     {: codeblock}
 
-* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -679,7 +679,7 @@ To use the 2.x smart contract lifecycle, an organization must have an endorsemen
 
 The best practice to add this endorsement policy to the MSP is to delete the MSP from the system channel and then re-add the MSP. The console detects the fact that the MSP does not contain the endorsement policy and automatically adds it. Note that this action can only be completed by an ordering service administrator. You do not need to delete and re-add the MSPs in the configuration of any application channels that have already been created. For these MSPs, the endorsement policy is added as part of the process of deploying the smart contract.
 
-## Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0
+## Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #upgrade-ocp-steps-21x}
 
 To upgrade your network, you need to [retrieve your entitlement key](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-entitlement-key) from the My {{site.data.keyword.IBM_notm}} Dashboard, and you should have already [created a Kubernetes secret](/docs/hlf-support?topic=hlf-support-deploy-ocp#deploy-ocp-docker-registry-secret) to store the key on your OpenShift project. If the Entitlement key secret was removed from your cluster, or if your key is expired, then you need to download another key and create a new secret.  
@@ -1019,7 +1019,7 @@ service/ibm-hlfsupport-webhook created
     ```
     {: codeblock}
 
-* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml
@@ -1644,7 +1644,7 @@ To use the 2.x smart contract lifecycle, an organization must have an endorsemen
 
 The best practice to add this endorsement policy to the MSP is to delete the MSP from the system channel and then re-add the MSP. The console detects the fact that the MSP does not contain the endorsement policy and automatically adds it. Note that this action can only be completed by an ordering service administrator. You do not need to delete and re-add the MSPs in the configuration of any application channels that have already been created. For these MSPs, the endorsement policy is added as part of the process of deploying the smart contract.
 
-## Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 from behind a firewall
+## Upgrade to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric from behind a firewall
 {: #upgrade-ocp-firewall}
 
 If you deployed the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall, without access to the external internet, you can upgrade your network by using the following steps:
@@ -2032,7 +2032,7 @@ service/ibm-hlfsupport-webhook created
     ```
     {: codeblock}
 
-* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
+* When you deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric you need to apply the following four CRDs for the CA, peer, orderer, and console. Run the following four commands to apply or update each CRD.
 
 Run this command to update the CA CRD:   
 ```yaml

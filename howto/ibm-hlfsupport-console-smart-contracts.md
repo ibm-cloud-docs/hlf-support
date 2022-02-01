@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: smart contract, private data, private data collection, anchor peer, multicloud
 
@@ -37,7 +37,7 @@ You can use the steps in these tutorials to build a network with multiple organi
 Tutorial for a v2.x configured channel:
 - <img src="../images/2-x_Pill.png" alt="version 2.x" width="30" style="width:30px; border-style: none"/> [Channel application capabilities and peer Fabric images are 2.x](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2)
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 only supports v2.2.3 Fabric images.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric only supports v2.2.3 Fabric images.
 {: important}
 
 

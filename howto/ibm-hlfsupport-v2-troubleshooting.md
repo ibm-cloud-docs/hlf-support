@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
@@ -21,7 +21,7 @@ content-type: troubleshoot
 General problems can occur when you use the console to manage nodes, channels, or smart contracts. In many cases, you can recover from these problems by following a few simple steps.
 {: shortdesc}
 
-This topic describes common issues that can occur when you use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console.  
+This topic describes common issues that can occur when you use the Fabric Operations Console.  
 
 **Issues during Deployment**
 - [My deployment fails when I to try to apply the security and access policies to my namespace](#ibm-hlfsupport-v2-troubleshooting-deployment-policies)
@@ -64,7 +64,7 @@ This topic describes common issues that can occur when you use the {{site.data.k
 {: #ibm-hlfsupport-v2-troubleshooting-deployment-policies}
 {: troubleshoot}
 
-When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the Security Context Constraint, ClusterRole, or ClusterRoleBinding to my namespace, I encounter one of the following errors.
+When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and apply the Security Context Constraint, ClusterRole, or ClusterRoleBinding to my namespace, I encounter one of the following errors.
 
 When I apply the file, I receive a user forbidden error:
 {: tsSymptoms}
@@ -91,7 +91,7 @@ This error happens when a problem exists with the indents in your YAML file. Ref
 {: #ibm-hlfsupport-v2-troubleshooting-deployment-cr}
 {: troubleshoot}
 
-When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 and apply the custom resource definition of the operator or the console, I encounter one of the following errors:
+When I try to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and apply the custom resource definition of the operator or the console, I encounter one of the following errors:
 
 When I apply the custom resource file, I receive an image pull or image pull back-off error:
 {: tsSymptoms}
@@ -513,7 +513,7 @@ Failed to initialize local MSP: admin 0 is invalid [The identity does not contai
 Sometimes a node can fail to deploy, for example, due to lack of resources in your Kubernetes cluster. After you understand the cause of the node deployment failure, you need to clean up the failed node in your cluster.
 {: tsSymptoms}
 
-Do not attempt to use Kubernetes commands to remove the node. Instead, it is extremely important that you use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console or the APIs to remove the failed node to ensure that the associated metadata and storage are also cleaned up.
+Do not attempt to use Kubernetes commands to remove the node. Instead, it is extremely important that you use the Fabric Operations Console or the APIs to remove the failed node to ensure that the associated metadata and storage are also cleaned up.
 {: tsResolve}
 
 ## How can I view my smart contract container logs?

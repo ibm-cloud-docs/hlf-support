@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-01-31"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, ordering service, blockchain network, multicloud
 
@@ -17,14 +17,14 @@ subcollection: hlf-support
 # Build a network
 {: #ibm-hlfsupport-console-build-network}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is a blockchain-as-a-service offering that enables you to develop, deploy, and operate blockchain applications and networks. You can learn more about blockchain components and how they work together by visiting the [Blockchain component overview](/docs/hlf-support?topic=hlf-support-blockchain-component-overview#blockchain-component-overview). This tutorial is the first part in the [sample network tutorial series](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-sample-tutorial) and describes how to use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to build a fully functional network on Kubernetes cluster deployed into the cloud infrastructure of your choice.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is a blockchain-as-a-service offering that enables you to develop, deploy, and operate blockchain applications and networks. You can learn more about blockchain components and how they work together by visiting the [Blockchain component overview](/docs/hlf-support?topic=hlf-support-blockchain-component-overview#blockchain-component-overview). This tutorial is the first part in the [sample network tutorial series](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-network#ibm-hlfsupport-console-build-network-sample-tutorial) and describes how to use the Fabric Operations Console to build a fully functional network on Kubernetes cluster deployed into the cloud infrastructure of your choice.
 {: shortdesc}
 
 **Target audience:** This topic is designed for network operators who are responsible for creating, monitoring, and managing the blockchain network.
 
 
 
-If you have not already deployed your {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to a Kubernetes cluster, see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
+If you have not already deployed your Fabric Operations Console to a Kubernetes cluster, see [Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-get-started-console-ocp).
 
 You need to pay close attention to the resources at your disposal when you choose to deploy nodes and create channels. It is your responsibility to manage your Kubernetes cluster and deploy additional resources if necessary. For more information about component sizings and how the console interacts with your Kubernetes cluster, see [Allocating resources](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources).
 
@@ -34,7 +34,7 @@ You need to pay close attention to the resources at your disposal when you choos
 ## Sample network tutorial series
 {: #ibm-hlfsupport-console-build-network-sample-tutorial}
 
-This three-part tutorial series guides you through the process of creating and interconnecting a relatively simple, multi-node Hyperledger Fabric network by using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console to deploy a network into your Kubernetes cluster and deploy a smart contract.
+This three-part tutorial series guides you through the process of creating and interconnecting a relatively simple, multi-node Hyperledger Fabric network by using the Fabric Operations Console to deploy a network into your Kubernetes cluster and deploy a smart contract.
 
 
 * **Build a network tutorial** This tutorial guides you through the process of hosting a network by creating two organizations, one for your peer and another for your ordering service, and a channel. Use this tutorial if you want to form a blockchain consortium by creating an ordering service and adding organizations.
@@ -94,7 +94,7 @@ Watch the following video to learn about the process to create the peer's organi
 {: #video-transcript-peer}
 {: notoc}
 
-Hello everyone, and welcome to this demonstration of how to create a peer using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. I’ll be following the process from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation, which you can see here. At the end of this tutorial, you will have created this structure, representing the components related to org1. In our next video, we’ll create an ordering service. And after that, a channel, to complete the infrastructure of our network.
+Hello everyone, and welcome to this demonstration of how to create a peer using the Fabric Operations Console. I’ll be following the process from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation, which you can see here. At the end of this tutorial, you will have created this structure, representing the components related to org1. In our next video, we’ll create an ordering service. And after that, a channel, to complete the infrastructure of our network.
 
 In this video, we’ll be using recommended values for the various fields in the UI. These are the same values you’ll find in the docs, which are cataloged in tables for the various tasks. These values are not mandatory, but if you’re using the console for the first time, we do recommended them. In cases where you have to reenter a value, for example an enroll ID and secret, which are not stored in the console, you will be able to refer to the tables in the documentation to remember what you entered. If you do choose different values, make sure to write them down somewhere.
 
@@ -138,7 +138,7 @@ To create the CA that will issue certificates for your first organization, perfo
 2. In this tutorial, we're creating nodes, as opposed to importing them, so make sure the option to **Create a Certificate Authority** is selected. Then click **Next**.
 3. Use the side panel to give your CA a **display name**. Our recommended value for this CA is `Org1 CA`. Then give your CA admin credentials by specifying a **CA administrator enroll ID** of `admin` and a secret of `adminpw`. Again, these are **recommended values**.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA) 
+    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA)
     * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
     * [Deployment zone selection](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
     * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
@@ -233,7 +233,7 @@ Now that we have created the peer's CA and used it to **register** identities fo
     {: important}
 
 7. On the **Review MSP information** panel, make sure you have entered the correct information. When you are satisfied, click **Create MSP definition**.
-8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations the channels you join.
+8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations in the channels you join.
 
 **Task: Create the peer organization MSP**
 
@@ -332,7 +332,7 @@ Watch the following video to learn about the process to create the ordering serv
 {: #video-transcript-orderer}
 {: notoc}
 
-Hello everyone, and welcome to this demonstration of how to create an ordering service using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. if you watched our other video on how to create a peer, much of this flow will seem similar to you. You still have to create a Certificate Authority first, use it to create identities and an organization, and then finally use those identities to create the ordering service itself. Once again, this information and more is present in our series of tutorials taking you through a full end to end where you create all of the nodes and identities, create a channel, join a channel, and deploy a smart contract. By the end of this video you'll have a configuration that looks like THIS, only without the channel, which we’ll create in our next demonstration.
+Hello everyone, and welcome to this demonstration of how to create an ordering service using the Fabric Operations Console. if you watched our other video on how to create a peer, much of this flow will seem similar to you. You still have to create a Certificate Authority first, use it to create identities and an organization, and then finally use those identities to create the ordering service itself. Once again, this information and more is present in our series of tutorials taking you through a full end to end where you create all of the nodes and identities, create a channel, join a channel, and deploy a smart contract. By the end of this video you'll have a configuration that looks like THIS, only without the channel, which we’ll create in our next demonstration.
 
 So let's go ahead and add that CA. We're creating a CA so we can click next here. As we did with the peer, we need to give this CA a display name. And as before, you can use whatever values you want, but we’ll call it the Ordering Service CA. We’ll give an admin identity of admin and a secret of adminpw for our CA admin. Although this identity has the same id and secret as the Org1 CA admin, it is not the same identity because it is not the same CA. Note the resource allocation box. If you leave this box unselected, your CA will be deployed with default resources. If you want to know what those resources are, for example to check against the resources available in your cluster, click the box and then next. If you’re comfortable with the default allocation, click next. You’ll be taken to the summary screen which will show the values for the CA you are creating. Once again, accept these defaults for now and click next. You’ll be taken to the summary screen that will show you the values you just entered. If these seem right to you, click Add Certificate Authority.
 
@@ -380,7 +380,7 @@ The process for creating a CA for an ordering service is identical to creating i
 2. In this tutorial, we're creating nodes, as opposed to importing them, so make sure the option to **Create a Certificate Authority**  is selected. Then click **Next**
 3. Give this CA a unique display name, `Ordering Service CA`. You're free to reuse the **CA administrator enroll ID** of `admin` and a secret of `adminpw`. As this is a different CA, this identity is distinct from the CA admin identity for created for the `Org1 CA`, even though the ID and secret are identical.
 4. The **Advanced deployment options** can be safely ignored for purposes of this tutorial. For more information about these options, see the links below.
-    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA) 
+    * [Database and replica sets](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-build-ha-ca#ibm-hlfsupport-console-build-ha-ca-create) (Creating an HA CA)
     * [Multizone Kubernetes cluster](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-ha#ibm-hlfsupport-console-ha-multi-zone) (Multizone HA) This option is only visible when your cluster is configured with multiple zones.
     * [Hardware Security Module (HSM)](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm)
     * [Resource allocation](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-allocate-resources)
@@ -458,7 +458,7 @@ Create your ordering service organization MSP definition and specify the admin i
     {: important}
 
 7. Click **Create MSP definition**.
-8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations the channels you join.
+8. After the MSP has been created, click on the tile representing it. Then **download** the MSP to your local filesystem. You will need to send this MSP to all of the organizations in the channels you join.
 
 **Task: Create the ordering service organization MSP definition**
 
@@ -535,7 +535,7 @@ Watch the following video to learn how to add a peer organization to the consort
 {: #video-transcript-channel}
 {: notoc}
 
-Hello again, and welcome to this demonstration of how to create a channel using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. If you've watched our videos on creating a peer and an ordering service, you should have a deployment that looks similar to this one, with one peer org, two CAs and an ordering service.
+Hello again, and welcome to this demonstration of how to create a channel using the Fabric Operations Console. If you've watched our videos on creating a peer and an ordering service, you should have a deployment that looks similar to this one, with one peer org, two CAs and an ordering service.
 
 As with our previous videos, the steps we'll be going through today are from our Build a network tutorial in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation. This tutorial will complete the structure you see here, with Org1, which we created in our first video, creating a channel run on our ordering service, which we created in our second video.
 
@@ -557,7 +557,7 @@ After you have joined the channel you can inspect it. You’ll see the block hei
 
 To initiate a channel update, click the update button. This will allow you to edit many of the fields you specified when creating the channel, and to perform important tasks like adding channel members. The advanced configuration tab allows you to edit features like capability levels and ordering service consenters that were not edited during channel create. Note that some of these options will require the approval of an ordering service organization.
 
-So now that we have created a channel and joined a peer to it, we can install a smart contract. We can add other members to our channel. We have everything we need to start transacting using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. Thank you for watching, and happy block chaining.
+So now that we have created a channel and joined a peer to it, we can install a smart contract. We can add other members to our channel. We have everything we need to start transacting using the Fabric Operations Console. Thank you for watching, and happy block chaining.
 
 ### Add the organization to the consortium
 {: #ibm-hlfsupport-console-build-network-add-org-consortium}
@@ -575,7 +575,7 @@ After the Ordering service tile has the green status indicator you can proceed w
 
 When this process is complete, it is possible for `Org1` to create or join a channel hosted on your `Ordering Service`.
 
-In this tutorial, we can easily access the `Org1 MSP` because both the peer organization and the ordering service organization were created in the same console. In a production scenario, the MSP definitions of other organization would be created by different network operators in their own cluster using their own {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric console. In those cases, when the organization wants to join your consortium, the organization MSP definition of the organization will need to be sent to your console in an out of band operation. Additionally, you will need to export your ordering service and send it to them so they can import it into their console and join a peer to the channel (if they are added to the consortium, they will also be able to create a new channel). This process is described in the Join a network tutorial under [Exporting your organization information](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-add-org2-remote).
+In this tutorial, we can easily access the `Org1 MSP` because both the peer organization and the ordering service organization were created in the same console. In a production scenario, the MSP definitions of other organization would be created by different network operators in their own cluster using their own Fabric Operations Console. In those cases, when the organization wants to join your consortium, the organization MSP definition of the organization will need to be sent to your console in an out of band operation. Additionally, you will need to export your ordering service and send it to them so they can import it into their console and join a peer to the channel (if they are added to the consortium, they will also be able to create a new channel). This process is described in the Join a network tutorial under [Exporting your organization information](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-add-org2-remote).
 
 ## Step four: Create a channel
 {: #ibm-hlfsupport-console-build-network-create-channel}
@@ -657,5 +657,3 @@ After you have created and joined your peer to a channel, you have a basic, thou
 - After your smart contract has been installed, proposed, approved, and then committed, you can [submit transactions using your client application](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app).
 
 You can also create another peer organization by using the [Join a network tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-join-network#ibm-hlfsupport-console-join-network-structure). You can add the second organization to your channel to simulate a distributed network, with two peers that share a single channel ledger.
-
-
