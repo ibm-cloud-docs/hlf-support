@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-02"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
@@ -23,7 +23,7 @@ subcollection: hlf-support
 Use the built-in Kubernetes features along with {{site.data.keyword.blockchainfull}} Platform component deployment strategies to make your blockchain networks more highly available and protect your network from downtime when a failure occurs in your cluster.
 {: shortdesc}
 
-**Target audience:** This topic is designed for architects and system administrators who are responsible for planning and configuring {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 on a Kubernetes cluster.
+**Target audience:** This topic is designed for architects and system administrators who are responsible for planning and configuring {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on a Kubernetes cluster.
 
 High availability is a core discipline in an IT infrastructure to keep your apps up and running, even after a partial or full site failure. The main purpose of high availability is to eliminate potential points of failures in an IT infrastructure. For example, you can prepare for the failure of one system by adding redundancy and setting up failover mechanisms.
 
@@ -141,7 +141,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployer attem
 
 **Multizone clusters with multiple worker nodes and anti-affinity**:
 
-Think of a zone as a data center. A zone failure affects all physical compute hosts and NFS storage. Failures include power, cooling, networking, or storage outages, and natural disasters, like flooding, earthquakes, and hurricanes. To protect against a zone failure, you must have clusters in at least two different zones that are load balanced by an external load balancer. 
+Think of a zone as a data center. A zone failure affects all physical compute hosts and NFS storage. Failures include power, cooling, networking, or storage outages, and natural disasters, like flooding, earthquakes, and hurricanes. To protect against a zone failure, you must have clusters in at least two different zones that are load balanced by an external load balancer.
 
 A single zone is sufficient for a development and test environment if you can tolerate a zone outage. Therefore, to leverage the HA benefits of multiple zones,  when you provision your cluster, ensure that multiple zones are selected. Two zones are better than one, but three are recommended for HA to increase the likelihood that the two additional zones can absorb the workload of any single zone failure.  When redundant peers from the same organization and channel, and ordering nodes, are spread across multiple zones, a failure in any one zone should not affect the ability of the network to process transactions because the workload will shift to the blockchain nodes in the other zones.
 

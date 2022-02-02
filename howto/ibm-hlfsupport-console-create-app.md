@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-02"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -54,7 +54,7 @@ The application developer can use two programming models to interact with the ne
 
 A simplified _application_ and _smart contract_ programming model, known as the `fabric-network` API, was introduced, and is now the recommended way to develop applications. The new model reduces the number of steps and amount of code that is required to submit a transaction and is supported for applications that are written in **Node.js**, **Java**, and **Go**. The Fabric High-Level Programming Model APIs include the **High-level Fabric Gateway SDKs** for writing client applications and the **High-Level Fabric contract APIs** for writing smart contracts. This tutorial focuses on using the **High-level Fabric Gateway SDKs**.  
 
-{{site.data.keyword.IBM_notm}} recommends and supports the High-level Fabric Gateway SDKs that allow client applications to interact with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric networks. These SDKs, available for Node, Java, and Go, allow a client application to invoke smart contracts for the purpose of submitting transactions and evaluating queries. It is recommended that administrative tasks, such as creating channels, deploying smart contracts, are done by using the console, APIs, or Ansible scripts.  
+High-level Fabric Gateway SDKs allow client applications to interact with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric networks. These SDKs, available for Node, Java, and Go, allow a client application to invoke smart contracts for the purpose of submitting transactions and evaluating queries. It is recommended that administrative tasks, such as creating channels, deploying smart contracts, are done by using the console, APIs, or Ansible scripts.  
 
 The SDKs use the concept of a "Gateway" object to represent the connection of a single identity (user) to a blockchain network. For performance reasons, applications need to keep a gateway object instance in scope for as long as it is required, and can use it to submit multiple transactions across different smart contracts and network channels. If an application needs to handle multiple user identities, then a separate gateway object instance should be maintained for each identity.
 {: important}
