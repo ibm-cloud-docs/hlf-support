@@ -69,14 +69,14 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-operator:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-init:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-init:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-console:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-console:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-grpcweb:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-deployer:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-deployer:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-fluentd:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-couchdb:3.1.1-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.2-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ca:1.5.2-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-operator:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-init:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-init:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-console:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-console:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-grpcweb:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-deployer:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-deployer:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-fluentd:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:3.1.1-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-couchdb:3.1.1-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.2-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ca:1.5.2-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-chaincode-launcher:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
@@ -85,8 +85,8 @@ skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.4-30211116 docker://<
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.4-30211116 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:2.2.4-30211116 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-crdwebhook:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20220111 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-enroller:1.0.0-20220111 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-crdwebhook:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:1.0.0-20220208 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-enroller:1.0.0-20220208 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
