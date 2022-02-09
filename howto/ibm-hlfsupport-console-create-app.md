@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-09"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -52,7 +52,7 @@ The application developer can use two programming models to interact with the ne
 ### High-Level Programming Model APIs
 {: #ibm-hlfsupport-console-app-high-level}
 
-A simplified _application_ and _smart contract_ programming model, known as the `fabric-network` API, was introduced, and is now the recommended way to develop applications. The new model reduces the number of steps and amount of code that is required to submit a transaction and is supported for applications that are written in **Node.js**, **Java**, and **Go**. The Fabric High-Level Programming Model APIs include the **High-level Fabric Gateway SDKs** for writing client applications and the **High-Level Fabric contract APIs** for writing smart contracts. This tutorial focuses on using the **High-level Fabric Gateway SDKs**.  
+A simplified _application_ and _smart contract_ programming model, known as the `fabric-network` API, was introduced, and is now the recommended way to develop applications. The new model reduces the number of steps and amount of code required for applications written in **Node.js**, **Java**, and **Go**. The Fabric High-Level Programming Model APIs include the **High-level Fabric Gateway SDKs** for writing client applications and the **High-Level Fabric contract APIs** for writing smart contracts. This tutorial focuses on using the **High-level Fabric Gateway SDKs**.  
 
 High-level Fabric Gateway SDKs allow client applications to interact with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric networks. These SDKs, available for Node, Java, and Go, allow a client application to invoke smart contracts for the purpose of submitting transactions and evaluating queries. It is recommended that administrative tasks, such as creating channels, deploying smart contracts, are done by using the console, APIs, or Ansible scripts.  
 
@@ -67,7 +67,7 @@ Refer to the SDK documentation for each language for details:
 
 For best practices and examples of how to use the SDKs see the Fabric [Asset Transfer Sample](https://github.com/hyperledger/fabric-samples/tree/master/asset-transfer-basic){: external}     
 
-Client applications can leverage the capabilities of the Go SDK, but currently only the high-level programming model in the [gateway package](https://pkg.go.dev/github.com/hyperledger/fabric-sdk-go/pkg/gateway){: external} is supported. Direct usage of the rest of the Go SDK is not yet supported.
+Currently only the high-level programming model in the [gateway package](https://pkg.go.dev/github.com/hyperledger/fabric-sdk-go/pkg/gateway){: external} is supported.
 {: note}
 
 If you want to take advantage of the High-Level Fabric contract-APIs, you can also use this tutorial to complete the following actions on an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network:
@@ -298,7 +298,7 @@ After you generate the application signing certificate and private key and store
       try {
 
         // Parse the connection profile. This would be the path to the file downloaded
-        // from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operational console.
+        // from the console.
         const ccpPath = path.resolve(__dirname, 'connection.json');
         const ccp = JSON.parse(fs.readFileSync(ccpPath, 'utf8'));
 
