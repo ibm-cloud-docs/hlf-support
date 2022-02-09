@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-02-01"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, multicloud
 
@@ -62,7 +62,7 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 ### Developer Tools
 {: #get-started-console-ocp-dev-tools}
 
-Are you a developer? Check out the [**{{site.data.keyword.IBM_notm}} Blockchain Platform Developer Tools**](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode), a free IDE that provides an explorer and commands accessible from the command palette for developing smart contracts quickly. Install it locally or run it from the cloud using Red Hat CodeReady Workspaces.
+Are you a developer? Check out the [**{{site.data.keyword.IBM_notm}} Blockchain Platform Developer Tools**](/docs/hlf-support?topic=hlf-support-develop-vscode#develop-vscode), a free IDE that provides an explorer and commands accessible from the command palette for developing smart contracts quickly. Install it locally.
 
 ### {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images
 {: #get-started-console-ocp-images}
