@@ -442,53 +442,50 @@ Use your console to [download your connection profile](#ibm-hlfsupport-console-a
 mv $HOME/<path_to_creds>/connection.json ../gateway/connection.json
 ```
 
-
 Save the following code block as `enrollUser.js` in the ``/magnetocorp/application`` directory:
 
-{: codeblock}
+```javascript
+'use strict';
 
-    ```javascript
-    'use strict';
+const FabricCAServices = require('fabric-ca-client');
+const { FileSystemWallet, X509WalletMixin } = require('fabric-network');
+const fs = require('fs');
+const path = require('path');
 
-    const FabricCAServices = require('fabric-ca-client');
-    const { FileSystemWallet, X509WalletMixin } = require('fabric-network');
-    const fs = require('fs');
-    const path = require('path');
+const ccpPath = path.resolve(__dirname, '../gateway/connection.json');
+const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
+const ccp = JSON.parse(ccpJSON);
 
-    const ccpPath = path.resolve(__dirname, '../gateway/connection.json');
-    const ccpJSON = fs.readFileSync(ccpPath, 'utf8');
-    const ccp = JSON.parse(ccpJSON);
+async function main() {
+  try {
 
-    async function main() {
-      try {
+      // Create a new CA client for interacting with the CA.
+      const caURL = ccp.certificateAuthorities['<CA_Name>'].url;
+      const ca = new FabricCAServices(caURL);
 
-          // Create a new CA client for interacting with the CA.
-          const caURL = ccp.certificateAuthorities['<CA_Name>'].url;
-          const ca = new FabricCAServices(caURL);
+      // Create a new file system based wallet for managing identities.
+      const wallet = new FileSystemWallet('../identity/user/isabella/wallet');
 
-          // Create a new file system based wallet for managing identities.
-          const wallet = new FileSystemWallet('../identity/user/isabella/wallet');
-
-          // Check to see if we've already enrolled the admin user.
-          const userExists = await wallet.exists('user1');
-          if (userExists) {
-          console.log('An identity for "user1" already exists in the wallet');
-          return;
-        }
-
-          // Enroll the admin user, and import the new identity into the wallet.
-          const enrollment = await ca.enroll({ enrollmentID: '<app_enroll_id>', enrollmentSecret: '<app_enroll_secret>' });
-          const identity = X509WalletMixin.createIdentity('<msp_id>', enrollment.certificate, enrollment.key.toBytes());
-          await wallet.import('user1', identity);
-        console.log('Successfully enrolled client "user1" and imported it into the wallet');
-
-        } catch (error) {
-          console.error(`Failed to enroll "user1": ${error}`);
-          process.exit(1);
-        }
+      // Check to see if we've already enrolled the admin user.
+      const userExists = await wallet.exists('user1');
+      if (userExists) {
+      console.log('An identity for "user1" already exists in the wallet');
+      return;
     }
-    main();
-    ```
+
+      // Enroll the admin user, and import the new identity into the wallet.
+      const enrollment = await ca.enroll({ enrollmentID: '<app_enroll_id>', enrollmentSecret: '<app_enroll_secret>' });
+      const identity = X509WalletMixin.createIdentity('<msp_id>', enrollment.certificate, enrollment.key.toBytes());
+      await wallet.import('user1', identity);
+      console.log('Successfully enrolled client "user1" and imported it into the wallet');
+
+      } catch (error) {
+      console.error(`Failed to enroll "user1": ${error}`);
+      process.exit(1);
+    }
+}
+main();
+```
 {: codeblock}
 
 Take a moment to study how this file works before we edit it. First, `enrollUser.js` imports the `FileSystemWallet` and `X509WalletMixin` classes from the `fabric-network` library.
