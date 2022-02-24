@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-02-24"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -136,16 +136,17 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 ### Fabric Component Support
 {: #fabric-component-support-shfv1}
 
-The following {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric support levels are provided for Hyperledger  Fabric 2.2.3 or higher:
+The following support levels are provided for Hyperledger Fabric v2.2.2 and v2.2.4, and
+Fabric CA v1.5.0 and v1.5.2.
 
-Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console provide Hyperledger Fabric clients with a verified production setup, simplified management and support, and verified security patches.
+Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console **are required for support** and provide Hyperledger Fabric clients with a verified production setup, simplified management and support, and verified security patches.
 {: important}
 
 | Fabric Component | Support Level |
 |----|----|
-| IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images including IBM fix support for [supported Hyperledger Fabric versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). |
+| IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images include IBM fix support for [supported Hyperledger Fabric versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). |
 | Supported Environments | Recent [Kubernetes and OpenShift versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites) on IBM Cloud, third-party Cloud or local installations. |
-| Hyperledger Fabric without IBMs Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources) |
+| Hyperledger Fabric without IBM Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources) |
 | Hyperledger Fabric Labs Support | Fabric Operations Console via Certified Image and deployed by Kubernetes Operator is  supported. |
 | Hyperledger Fabric Open Source Projects - [IBM Blockchain GitHub](https://github.com/ibm-blockchain) | Not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). | 
 | Hyperledger Fabric SDK and CLI | Basic connectivity diagnostics is supported. Code support and SDK API usage and tuning are not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). |
