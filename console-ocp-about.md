@@ -17,10 +17,10 @@ subcollection: hlf-support
 # About {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #console-ocp-about}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric leverages Hyperledger Fabric v2.2.2, v2.2.4, and supports deployment on multiple Kubernetes distributions.
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric leverages Hyperledger Fabric v2.2.2, or v2.2.4, and supports deployment on multiple Kubernetes distributions.
 {: shortdesc}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is based on Hyperledger Fabric v2.2.2, v2.2.4, and is {{site.data.keyword.IBM_notm}}'s commercial distribution of Hyperledger Fabric. A key benefit of the platform is that {{site.data.keyword.IBM_notm}} tests the open source code for security vulnerabilities daily and provides 24x7x365 support with SLAs appropriate for production environments.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is based on Hyperledger Fabric v2.2.2, or v2.2.4, and is {{site.data.keyword.IBM_notm}}'s commercial distribution of Hyperledger Fabric. A key benefit of the platform is that {{site.data.keyword.IBM_notm}} tests the open source code for security vulnerabilities daily and provides 24x7x365 support with SLAs appropriate for production environments.
 
 Watch the following video for an introduction to blockchain and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric:
 
@@ -79,6 +79,9 @@ Includes the operator, management console, peer, CA, ordering node, and smart co
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the following key features:
 
+Hyperledger Fabric documentation is specific to the Fabric version. When using the Fabric documentation links below, select the version for your environment: [version 2.2.2](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external} - [v2.2.4](https://hyperledger-fabric.readthedocs.io/en/release-2.2/){: external}
+{: note}
+
 **BUILD ---- Integrated developer experience**
 - **Deploy easily**. Use Ansible Playbooks or the Red Hat Marketplace to deploy networks quicker than ever before.
 - **Easily code** your [smart contracts](#x8888420){: term} in Node.js, Golang, Java, or JavaScript. Use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tools to easily develop smart contracts locally. Leverage **SDK integration** with the console, and learn from our rich tutorials and samples.
@@ -90,6 +93,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
     - [Fabric Node OUs](https://hyperledger-fabric.readthedocs.io/en/release-2.2/membership/membership.html#node-ou-roles-and-msps){: external}
     - [Service discovery](https://hyperledger-fabric.readthedocs.io/en/release-2.2/discovery-overview.html){: external}, allowing you to dynamically discover and update how your application interacts with your network.
     - [Channel access control lists](https://hyperledger-fabric.readthedocs.io/en/release-2.2/access_control.html){: external} that allow you additional control of the governance of your channels and smart contracts.
+
 
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
