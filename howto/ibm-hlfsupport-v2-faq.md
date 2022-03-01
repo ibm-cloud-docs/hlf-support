@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-03-01"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -80,7 +80,7 @@ Refer to the following table for information on which version of Fabric is used 
 
 | {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric | Hyperledger Fabric |
 |----------------------------------------------------| -------------------|
-| 1.0.0 | v2.2.3 |
+| 1.0.0 | v2.2.4 and v2.2.5 |
 
 ## Where can a customer deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and how will {{site.data.keyword.IBM_notm}} support those deployment environments?
 {: #ibm-hlfsupport-v2-faq-sw-support}
