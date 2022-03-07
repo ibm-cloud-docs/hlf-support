@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-03-07"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -95,7 +95,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
 - **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
-- **Run Anywhere**. Thanks to the **unified codebase** of the Fabric Operations Console, it is possible to run your components on any Kubernetes v1.18 - v1.21 container platform on x86_64 or s390x.
+- **Run Anywhere**. Thanks to the **unified codebase** of the Fabric Operations Console, it is possible to run your components on any Kubernetes v1.18 - v1.22 container platform on x86_64 or s390x.
 - **Unified operation**. The Fabric Operations Console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Elimination of Docker-in-Docker for smart contracts** allows smart contract pods to be run more securely, without peers needing privileged access.
@@ -125,10 +125,10 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 
 | Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|
-| OpenShift Container Platform | 4.6, 4.7, 4.8 |  x86_64 | 4.6, 4.7, 4.8 |
-| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.6, 4.7 | x86_64 | 4.6, 4.7 |
-| OpenShift Container Platform on LinuxONE | 4.6, 4.7, 4.8 | s390x |4.6, 4.7, 4.8 |
-| Kubernetes | v1.18 - v1.21 | x86_64 | v1.18 - v1.21 |
+| OpenShift Container Platform | 4.6, 4.7, 4.8 |  x86_64 | 4.6, 4.7, 4.8, 4.9 |
+| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.6, 4.7, 4.9 | x86_64 | 4.6, 4.7, 4.9 |
+| OpenShift Container Platform on LinuxONE | 4.6, 4.7, 4.8 | s390x | 4.6, 4.7, 4.8 |
+| Kubernetes | v1.18 - v1.22 | x86_64 | v1.18 - v1.22 |
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
 If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/hlf-support?topic=hlf-support-deploy-k8#console-deploy-k8-considerations).
