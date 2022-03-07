@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-11-11"
+  years: 2022
+lastupdated: "2022-03-07"
 
 keywords: intermediate CA, root CA, parent server, Certificate Authority, multicloud
 

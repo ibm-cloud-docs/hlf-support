@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-10-20"
+  years: 2022
+lastupdated: "2022-03-07"
 
 keywords: {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, terms, Fabric, Raft, CouchDB, consortium
 
