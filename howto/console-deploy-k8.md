@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-08"
+lastupdated: "2022-03-08"
 
 keywords: IBM Support for Hyperledger Fabric, deploy, resource requirements, storage, parameters, multicloud
 
@@ -17,11 +17,11 @@ subcollection: hlf-support
 # Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #deploy-k8}
 
-You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on any x86_64 Kubernetes cluster running at v1.18 - v1.21 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on any x86_64 Kubernetes cluster running at v1.19 - v1.23 or on s390x on OpenShift Container Platform running LinuxONE. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 {: shortdesc}
 
 Kubernetes cluster does not download and update the latest version of {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric automatically. To get the latest update, you need to create a new cluster and a new service instance.
-{: note} 
+{: note}
 
 ## Resources required
 {: #deploy-k8-resources-required}
@@ -322,7 +322,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220208-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220308-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1178,7 +1178,7 @@ spec:
         - name: cp-pull-secret
       containers:
         - name: ibm-hlfsupport-operator
-          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220208-amd64
+          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220308-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1696,7 +1696,4 @@ containers:
 Confirm that `- --ingress-class=nginx` and `- --enable-ssl-passthrough=true`.
 
 This result indicates that you have successfully enabled SSL passthrough and that the associated ingress class is named `nginx`, which is what the software version of the platform requires in order for it to be able to be installed on a {{site.data.keyword.containerlong_notm}} cluster. Verify that all pods are running before you attempt to [install](/docs/hlf-support?topic=hlf-support-deploy-k8#deploy-k8-login) the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
-
-
-
 

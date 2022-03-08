@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-03-08"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -288,7 +288,7 @@ You can also use the APIs to import and then operate nodes that reside in other 
 ## Limitations
 {: #ibm-hlfsupport-v2-apis-limitations}
 
-You can only import CA, peer, and ordering nodes that are exported from other Fabric Operations Consoles running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.18 - v1.21 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
+You can only import CA, peer, and ordering nodes that are exported from other Fabric Operations Consoles running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.19 - v1.23 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
 
 ## Building a network by using APIs
 {: #ibm-hlfsupport-v2-apis-build-with-apis}
@@ -1277,5 +1277,3 @@ If you want to use the Fabric Operations Console to operate your blockchain comp
 - **Private Key:** Upload your admins private key. If you followed the instructions above, you can find this key in the `$HOME/fabric-ca-client/peer-admin/msp/keystore/` folder.
 
 After you import your admin identity, you can associate this identity with the components that you create. You can then use the console to operate your network.
-
-

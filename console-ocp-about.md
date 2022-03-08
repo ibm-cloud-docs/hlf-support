@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-02"
+lastupdated: "2022-03-08"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -17,10 +17,10 @@ subcollection: hlf-support
 # About {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #console-ocp-about}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric leverages Hyperledger Fabric v2.2.3 and supports deployment on multiple Kubernetes distributions.
+The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric enables a consortium of organizations to easily build and join a blockchain network [on-prem](#x4561212){: term}, or on any private, public, or hybrid multicloud that uses Kubernetes. Customers can deploy their nodes on the cloud platform of their choice and connect to any {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network, whether it is deployed on your own Kubernetes cluster or with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric for {{site.data.keyword.cloud_notm}}. {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric leverages Hyperledger Fabric v2.2.4 or v2.2.5 and supports deployment on multiple Kubernetes distributions.
 {: shortdesc}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is based on Hyperledger Fabric v2.2.3 and is {{site.data.keyword.IBM_notm}}'s commercial distribution of Hyperledger Fabric. A key benefit of the platform is that {{site.data.keyword.IBM_notm}} tests the open source code for security vulnerabilities daily and provides 24x7x365 support with SLAs appropriate for production environments.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is based on Hyperledger Fabric v2.2.4 or v2.2.5 and is the IBM  commercial distribution of Hyperledger Fabric. A key benefit of the platform is that {{site.data.keyword.IBM_notm}} tests the open source code for security vulnerabilities daily and provides 24x7x365 support with SLAs appropriate for production environments.
 
 Watch the following video for an introduction to blockchain and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric:
 
@@ -83,7 +83,7 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
 - **Deploy easily**. Use Ansible Playbooks or the Red Hat Marketplace to deploy networks quicker than ever before.
 - **Easily code** your [smart contracts](#x8888420){: term} in Node.js, Golang, Java, or JavaScript. Use the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric Developer Tools to easily develop smart contracts locally. Leverage **SDK integration** with the console, and learn from our rich tutorials and samples.
 - **Simplified DevOps** allows you to move from development to test to production in a single environment by scaling up your Kubernetes resources to add more components.
-- **Up-to-date Fabric key features**. Choose which version of Hyperledger Fabric you want to use when deploying peers or ordering nodes. Leverage the latest features of Hyperledger Fabric v2.2.3:
+- **Up-to-date Fabric key features**. Choose which version of Hyperledger Fabric you want to use when deploying peers or ordering nodes. Leverage the latest features of Hyperledger Fabric v2.2.4 or v2.2.5:
     - [Smart contract lifecycle](https://hyperledger-fabric.readthedocs.io/en/release-2.2/chaincode_lifecycle.html){: external}
     - [Raft ordering service](https://hyperledger-fabric.readthedocs.io/en/release-2.2/orderer/ordering_service.html#raft){: external}
     - [Private data collections](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2-private-data) that provide increased data privacy by ensuring that ledger data is shared to only authorized peers via the gossip protocol.
@@ -91,10 +91,11 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric includes the f
     - [Service discovery](https://hyperledger-fabric.readthedocs.io/en/release-2.2/discovery-overview.html){: external}, allowing you to dynamically discover and update how your application interacts with your network.
     - [Channel access control lists](https://hyperledger-fabric.readthedocs.io/en/release-2.2/access_control.html){: external} that allow you additional control of the governance of your channels and smart contracts.
 
+
 **OPERATE --- Total control of your deployments**
 - **Host or join a network**. Deploy peers that are hosted in your cluster to multiple channels on multiple clouds, or invite other organizations to join your consortium or channels while the organizations manage their nodes independently across infrastructures.
 - **Maintain complete control of your identities**. Store and manage the keys that are used to administer your nodes. Optionally, use a [Hardware Security Module (HSM)](#x6704988){: term} to generate and store the private key of your nodes.
-- **Run Anywhere**. Thanks to the **unified codebase** of the Fabric Operations Console, it is possible to run your components on any Kubernetes v1.18 - v1.21 container platform on x86_64 or s390x.
+- **Run Anywhere**. Thanks to the **unified codebase** of the Fabric Operations Console, it is possible to run your components on any Kubernetes v1.19 - v1.23 container platform on x86_64 or s390x.
 - **Unified operation**. The Fabric Operations Console allows you to deploy and manage all of your organizations and nodes in **one console**. You can also add or remove members from a blockchain consortium, create and join channels, and deploy smart contracts from your console.
 - **Dynamic signature collection** that allows better control over collaborative governance over channel configurations.
 - **Elimination of Docker-in-Docker for smart contracts** allows smart contract pods to be run more securely, without peers needing privileged access.
@@ -115,19 +116,19 @@ Have questions and want to speak to an {{site.data.keyword.IBM_notm}} Support fo
 ## Supported Environments and Components
 {: #console-ocp-about-prerequisites}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, for Fabric 2.2.3 or higher, covers the following [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, for Fabric 2.2.4 and 2.2.5, covers the following [Kubernetes](#kubernetes-support-shfv1) environments and [Fabric](#fabric-component-support-shfv1) components:
 
 ### Kubernetes Support
 {: #kubernetes-support-shfv1}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric supports Fabric 2.2.3 or higher. It can be deployed with the Kubernetes distributions on the following platforms:
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric supports Fabric v2.2.4 and v2.2.5. It can be deployed with the Kubernetes distributions on the following platforms:
 
 | Kubernetes distribution | Version | Hardware |  Tested configuration|
 |----|----|----|-----|
-| OpenShift Container Platform | 4.6, 4.7, 4.8 |  x86_64 | 4.6, 4.7, 4.8 |
-| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.6, 4.7 | x86_64 | 4.6, 4.7 |
-| OpenShift Container Platform on LinuxONE | 4.6, 4.7, 4.8 | s390x |4.6, 4.7, 4.8 |
-| Kubernetes | v1.18 - v1.21 | x86_64 | v1.18 - v1.21 |
+| OpenShift Container Platform | 4.6, 4.7, 4.8, 4.9 |  x86_64 | 4.6, 4.7, 4.8, 4.9 |
+| OpenShift Container Platform on {{site.data.keyword.cloud_notm}} | 4.6, 4.7, 4.9 | x86_64 | 4.6, 4.7, 4.9 |
+| OpenShift Container Platform on LinuxONE | 4.6, 4.7, 4.8 | s390x | 4.6, 4.7, 4.8 |
+| Kubernetes | v1.19 - v1.23 | x86_64 | v1.19 - v1.23 |
 {: caption="Table 1. Supported platforms" caption-side="bottom"}
 
 If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Amazon Elastic Kubernetes Service, or Google Kubernetes Engine, then you need to set up the NGINX Ingress controller and it needs to be running in [SSL passthrough mode](https://kubernetes.github.io/ingress-nginx/user-guide/tls/#ssl-passthrough){: external}. For more information, see [Considerations when using Kubernetes distributions](/docs/hlf-support?topic=hlf-support-deploy-k8#console-deploy-k8-considerations).
@@ -136,16 +137,17 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 ### Fabric Component Support
 {: #fabric-component-support-shfv1}
 
-The following {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric support levels are provided for Hyperledger  Fabric 2.2.3 or higher:
+The following support levels are provided for Hyperledger Fabric v2.2.4 and v2.2.5, and
+Fabric CA v1.5.0 and v1.5.2.
 
-Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console provide Hyperledger Fabric clients with a verified production setup, simplified management and support, and verified security patches.
+Using IBM Certified Fabric Images, Kubernetes Operator, and Certified Fabric Operations Console **are required for support** and provide Hyperledger Fabric clients with a verified production setup, simplified management and support, and verified security patches.
 {: important}
 
 | Fabric Component | Support Level |
 |----|----|
-| IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images including IBM fix support for [supported Hyperledger Fabric versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites). |
+| IBM Certified Fabric images deployed using Kubernetes Operator and managed via the Certified Fabric Operations Console image. | All Certified Fabric images include IBM fix support for supported Hyperledger Fabric versions. |
 | Supported Environments | Recent [Kubernetes and OpenShift versions](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites) on IBM Cloud, third-party Cloud or local installations. |
-| Hyperledger Fabric without IBMs Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources) |
+| Hyperledger Fabric **without** IBM Certified Images, Kubernetes Operator or Certified Fabric Operations Console image. | Not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources) |
 | Hyperledger Fabric Labs Support | Fabric Operations Console via Certified Image and deployed by Kubernetes Operator is  supported. |
 | Hyperledger Fabric Open Source Projects - [IBM Blockchain GitHub](https://github.com/ibm-blockchain) | Not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). | 
 | Hyperledger Fabric SDK and CLI | Basic connectivity diagnostics is supported. Code support and SDK API usage and tuning are not included in the support offering - [community support only](/docs/hlf-support?topic=hlf-support-blockchain-support#blockchain-support-resources). |
@@ -177,7 +179,7 @@ For more information, see [Pricing](/docs/hlf-support?topic=hlf-support-ibm-hlfs
 - Users of this offering must manage their own security and infrastructure. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric does not provision or provide those services.
 - Persistent storage is required. Host-local storage volumes are not supported.
 - You must have the cluster admin role in order to deploy the product.
-- The console creates nodes based on the Hyperledger Fabric v2.2.3 node images.
+- The console creates nodes based on the Hyperledger Fabric v2.x.x node images.
 - You can deploy only one Fabric Operations Console per Kubernetes namespace or OpenShift project. If you plan to create multiple blockchain networks, for example to create different environments for development, staging, and production, you should create a unique project or namespace for each environment.
 - {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is not supported on OpenShift Online.
 

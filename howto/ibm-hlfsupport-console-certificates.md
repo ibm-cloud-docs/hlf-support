@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2021
-lastupdated: "2021-12-06"
+  years: 2022
+lastupdated: "2022-03-07"
 
 keywords: admin certificate, Node OU, admin identity, expiration
 
