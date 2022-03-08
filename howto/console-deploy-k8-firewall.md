@@ -2,7 +2,7 @@
 
     copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-03-08"
 
 keywords: Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -20,7 +20,7 @@ subcollection: hlf-support
 You can use these instructions to deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall without internet connectivity. If you are deploying the platform on a cluster with access to the external internet, use the main instructions for [Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-deploy-k8).
 {: shortdesc}
 
-You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on any x86_64 Kubernetes cluster running at v1.18 - v1.22. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
+You can use the following instructions to deploy the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on any x86_64 Kubernetes cluster running at v1.19 - v1.23. Use these instructions if you are using open source Kubernetes or distributions such as Rancher. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric uses a [Kubernetes Operator](https://kubernetes.io/docs/concepts/extend-kubernetes/operator/){: external} to install the Fabric Operations Console on your cluster and manage the deployment and your blockchain nodes. When the Fabric Operations Console is running on your cluster, you can use the console to create blockchain nodes and operate a multicloud blockchain network.
 
 ## Need to Know
 
