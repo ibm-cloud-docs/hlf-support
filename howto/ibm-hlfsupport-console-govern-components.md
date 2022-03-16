@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-19"
+lastupdated: "2022-03-16"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -89,9 +89,6 @@ However, if you are not taking regular backups, it is recommended that you minim
 
 If you are upgrading both peer and ordering node binaries, it is a best practice to upgrade the ordering nodes first, as ensuring that the ordering nodes (and by extension, the ordering service) is functioning correctly is more important to the health of your network as a whole than the functioning of any particular peer.
 {: tip}
-
-Do not attempt to upgrade {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric nodes directly from Hyperledger Fabric 1.4.x to the latest version. Instead, add a new peer with the latest version of Fabric (2.2.x) installed. This Fabric installation is done by {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, but can take hours or days depending on the size of the database to be built. The new Fabric Gateway transaction lifecycle is available in 2.2.4, but a node upgrade from 1.4.x is not required&mdash;the legacy 1.4.x  transaction lifecycle remains supported. See the [Fabric documentation on upgrading](https://hyperledger-fabric.readthedocs.io/en/release-2.2/upgrade_to_newest_version.html#upgrading-to-2-2-from-the-1-4-x-long-term-support-release){: external} for more information.
-{: important}
 
 The process for upgrading a node is relatively straightforward. First, make sure you are using the console where the node was created. You cannot use the console to update imported nodes. When a node upgrade is available, **Upgrade available** is visible on the node tile.
 
