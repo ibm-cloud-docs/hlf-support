@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-03-18"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -85,7 +85,7 @@ The **Resource allocation** panel in the console provides default values for the
 After you have deployed the node, you need to **monitor the resource consumption of the node**. Configure a monitoring tool such as [{{site.data.keyword.mon_full_notm}}](/docs/blockchain?topic=blockchain-ibm-hlfsupport-monitoring) to observe the nodes and ensure that adequate resources are available to the node containers when processing transactions.
 {: important}
 
-All of the containers that are associated with a node have **CPU** and **memory**, while certain containers that are associated with the peer, ordering node, and CA also have **storage**. For more information about storage, see [storage](/docs/hlf-support?topic=hlf-support-deploy-ocp-getting-started#deploy-ocp-storage). 
+All of the containers that are associated with a node have **CPU** and **memory**, while certain containers that are associated with the peer, ordering node, and CA also have **storage**. For more information about storage, see [storage](/docs/hlf-support?topic=hlf-support-deploy-ocp-getting-started#deploy-ocp-storage).
 
 You are responsible for monitoring your CPU, memory, and storage consumption in your cluster. If you do happen to request more resources for a blockchain node than are available, the node will not start. However, existing nodes will not be affected. For information about how to increase the CPU, memory, and storage, consult the documentation of your cloud provider.
 {: note}
@@ -590,7 +590,7 @@ If your Kubernetes cluster is configured across multiple zones, when you deploy 
 
 If you are deploying a redundant node (that is, another peer when you already have one), it is a best practice to deploy this node into a different zone. You can determine the zone that the other node was deployed to by opening the tile of the node and looking under the Node location. Alternatively, you can use the APIs to deploy a peer or orderer to a specific zone. For more information on how to do this with the APIs, see [Creating a node within a specific zone](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-zone).
 
-If **multizone-capable storage** is configured for your Kubernetes cluster, when a zone failure occurs, the nodes can come up in another zone with their associated storage intact, ensuring high availability of the node. In order to leverage this capability with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you need to configure your cluster to use **SDS (Portworx)** storage. And when you deploy a peer, select the advanced deployment option labeled **Deployment zone selection** and then select **Across all zones**. 
+If **multizone-capable storage** is configured for your Kubernetes cluster, when a zone failure occurs, the nodes can come up in another zone with their associated storage intact, ensuring high availability of the node. In order to leverage this capability with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you need to configure your cluster to use **SDS (Portworx)** storage. And when you deploy a peer, select the advanced deployment option labeled **Deployment zone selection** and then select **Across all zones**.
 
 ### Sizing a peer during creation
 {: #ibm-hlfsupport-console-adv-deployment-peers-sizing-creation}
@@ -952,7 +952,7 @@ If your Kubernetes cluster is configured across multiple zones, when you deploy 
 
 For a five node ordering service, these nodes will be distributed into multiple zones by default, depending on the relative space available in each zone. You also have the ability to distribute a five node ordering service yourself by clearing the default option to have the zones that are chosen for you and distributing these nodes into the zones you have available. You can check which zone a node was deployed to by opening the tile of the node and looking under the Node location. Alternatively, you can use the APIs to deploy an ordering node to a specific zone. For more information on how to do this with the APIs, see [Creating a node within a specific zone](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-v2-apis#ibm-hlfsupport-v2-apis-zone).
 
-If **multizone-capable storage** is configured for your Kubernetes cluster when a zone failure occurs, the nodes can come up in another zone, with their associated storage intact, ensuring high availability of the node. In order to leverage this capability with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you need to configure your cluster to use **SDS (Portworx)** storage. And when you deploy an ordering service or an ordering node, select the advanced deployment option labeled **Deployment zone selection** and then select **Across all zones**. 
+If **multizone-capable storage** is configured for your Kubernetes cluster when a zone failure occurs, the nodes can come up in another zone, with their associated storage intact, ensuring high availability of the node. In order to leverage this capability with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, you need to configure your cluster to use **SDS (Portworx)** storage. And when you deploy an ordering service or an ordering node, select the advanced deployment option labeled **Deployment zone selection** and then select **Across all zones**.
 
 ### Sizing an ordering node during creation
 {: #ibm-hlfsupport-console-adv-deployment-orderer-sizing-creation}
@@ -1319,7 +1319,7 @@ You have gathered all of your peer or ordering service certificates from your th
 ## Configuring a node to use a Hardware Security Module (HSM)
 {: #ibm-hlfsupport-console-adv-deployment-cfg-hsm}
 
-Key management is a critical aspect of managing a blockchain network. Because private keys are not stored by the platform, users are responsible for downloading and securing the private key of their node identities. In a production network, when a higher level of security is required for private keys, an HSM is an optional hardware appliance that performs cryptographic operations and provides the capability to ensure that the private keys never leave the HSM. Currently, Hyperledger Fabric supports HSM devices that implement the [PKCS #11 standard](http://docs.oasis-open.org/pkcs11/pkcs11-base/v2.40/os/pkcs11-base-v2.40-os.html){: external}.  PKCS #11 is a cryptographic standard for secure operations, generation, and storage of keys.
+Key management is a critical aspect of managing a blockchain network. Because private keys are not stored by the platform, users are responsible for downloading and securing the private key of their node identities. In a production network, when a higher level of security is required for private keys, an HSM is an optional hardware appliance that performs cryptographic operations and provides the capability to ensure that the private keys never leave the HSM.
 
 ### What capability does HSM add to my blockchain node?
 {: #ibm-hlfsupport-console-adv-deployment-cfg-hsm-capability}
@@ -1339,13 +1339,13 @@ When a CA, peer, or ordering node is configured to use an HSM, their private key
 Configuring a node to use HSM is a two-part process:
 1. **Configure an HSM**. There are two options to configure an HSM. For either option, record the value of the HSM `partition` and `PIN` to be used in the subsequent steps.
     - Utilize the HSM appliance that is available in [{{site.data.keyword.cloud_notm}}](https://cloud.ibm.com/catalog/infrastructure/hardware-security-module){: external}
-    - Configure your own HSM by building an HSM  client image. 
+    - Configure your own HSM by building an HSM  client image.
 2. **Configure the node to use HSM**. From the APIs or the console, when you deploy a peer, CA, or ordering node, you can select the advanced option to use an HSM.
 
 ### Before you begin
 {: #ibm-hlfsupport-console-adv-deployment-hsm-before}
 
-- The Kubernetes CLI is required to configure the HSM.  See [Install and Set Up kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} or if your cluster is running on OpenShift see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} for instructions. 
+- The Kubernetes CLI is required to configure the HSM.  See [Install and Set Up kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} or if your cluster is running on OpenShift see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} for instructions.
 - You need access to a container registry, such as Docker or the [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).
 <staging-zHSM>
 
@@ -1360,12 +1360,6 @@ Configuring a node to use HSM is a two-part process:
     - Step four: Push the Docker image to your container registry
     - Step five: Create a Kubernetes secret `hsmcrypto`
     - Step six: Create the HSM configmap `ibm-hlfsupport-hsm-config`
-
-The use of a PKCS #11 proxy has been deprecated in favor of building an HSM client image which is simpler to configure and provides better overall performance. The following steps outline how to build and publish an HSM client image.
-{: note}
-
-It is not possible to migrate an existing node, that uses HSM with a PKCS #11 proxy, to use the HSM client image. To take advantage of the HSM client image, you need to deploy a new CA, peer, or ordering node.
-{: note}
 
 #### Step one: (Optional) Build an HSM daemon image
 {: #ibm-hlfsupport-console-adv-deployment-hsm-daemon}
@@ -1543,7 +1537,7 @@ LunaSA Client = {
 {: codeblock}
 
 #### Step three: Build the HSM client image
-{: #ibm-hlfsupport-console-adv-deployment-hsm-client-docker} 
+{: #ibm-hlfsupport-console-adv-deployment-hsm-client-docker}
 
 The HSM client image can be built with a Docker file similar to the following:
 
@@ -1859,26 +1853,18 @@ Before attempting these steps you should have:
 - Created a partition and PIN for the slot.
 - Deployed the HSM client image or the HSM proxy for your organization.
 
-When a node is configured with HSM, a temporary Kubernetes job is started to run this HSM "enrollment" process. Before configuring a node to use HSM, ensure that you have enough resources in your cluster to support this job that takes approximately 0.1CPU and 100Mi memory.
+When a node is configured with HSM, a temporary Kubernetes job is started to run this HSM "enrollment" process. Before configuring a node to use HSM, ensure that you have enough resources in your cluster to support this job that takes approximately 0.1CPU and 100M memory.
 {: important}
 
 Then you are ready to deploy a new CA, peer, or ordering node that uses the HSM.
 
-When you deploy a new node from the console, ensure that you select the advanced deployment option **Hardware security module (HSM)**. 
+When you deploy a new node from the console, ensure that you select the advanced deployment option **Hardware security module (HSM)**.
 
 If you published an HSM client image and created the HSM configmap, the **Use HSM client image** toggle is visible. When it is on, you can enter the following values:
 
 - **HSM label** - Enter the name of the HSM partition to be used for this node.
 - **HSM PIN** - Enter the PIN for the HSM slot.  
 
-If you prefer to use an HSM that was configured with a PKCS #11 proxy, or did not create the HSM configmap, an additional field is required:
-- **HSM proxy endpoint** -Enter the URL for the PKCS #11 proxy that begins with `tcp://` and includes the `CLUSTER-IP` address and `PORT`. For example, `tcp://172.21.106.217:2345`.
-
 Lastly, on the CA **Summary** panel, you can override the default HSM configuration, for example if you want to customize which crypto library implementation to use. Click **Edit configuration JSON (Advanced)** on the **Summary** panel to view the `JSON`. Scroll down to the `BCCSP (Blockchain Crypto Service Provider) section` where you can modify the crypto library settings.
 
-Because the HSM implementation currently only supports HSMs that implement the PKCS #11 standard, you cannot modify the `bccsp.default` that is set to `PKCS11`.
-{: note}
-
 When the node is deployed, a private key for the specified node enroll ID and secret is generated by the HSM and stored securely in the appliance.
-
-
