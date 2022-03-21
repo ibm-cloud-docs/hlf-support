@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-18"
+lastupdated: "2022-03-21"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -1319,7 +1319,7 @@ You have gathered all of your peer or ordering service certificates from your th
 ## Configuring a node to use a Hardware Security Module (HSM)
 {: #ibm-hlfsupport-console-adv-deployment-cfg-hsm}
 
-Key management is a critical aspect of managing a blockchain network. Because private keys are not stored by the platform, users are responsible for downloading and securing the private key of their node identities. In a production network, when a higher level of security is required for private keys, an HSM is an optional hardware appliance that performs cryptographic operations and provides the capability to ensure that the private keys never leave the HSM.
+Key management is a critical aspect of managing a blockchain network. Because private keys are not stored by the platform, users are responsible for downloading and securing the private key of their node identities. In a production network, when a higher level of security is required for private keys, an HSM is an optional hardware appliance that performs cryptographic operations and provides the capability to ensure that the private keys never leave the HSM. Currently, Hyperledger Fabric supports HSM devices that implement the [PKCS #11 standard](http://docs.oasis-open.org/pkcs11/pkcs11-base/v2.40/os/pkcs11-base-v2.40-os.html){: external}. PKCS #11 is a cryptographic standard for secure operations, generation, and storage of keys.
 
 ### What capability does HSM add to my blockchain node?
 {: #ibm-hlfsupport-console-adv-deployment-cfg-hsm-capability}
