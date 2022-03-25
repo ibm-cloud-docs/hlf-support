@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-03-25"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -59,16 +59,25 @@ You must have the cluster administrator role to install the operators from the R
 2. Browse to the [Red Hat Marketplace](https://marketplace.redhat.com/en-us){: external} and log in or create a new account.
 3. Follow the [instructions](https://marketplace.redhat.com/en-us/documentation/clusters#register-openshift-cluster-with-red-hat-marketplace) to register your OpenShift cluster with the Red Hat Marketplace.
 4. When prompted `Would you like to go back to the Red Hat Marketplace now? [Y/n]`, type `Y` to retrieve the <wintitle>Red Hat Marketplace</wintitle> page in your browser.
-5. Click **My software** > **Visit the Marketplace**.
-6. In the search bar, type **blockchain** to load the blockchain tile. Select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric**.
-7. Click **Purchase** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with Red Hat Marketplace. When selecting a namespace for operator installation, **All namespaces on the cluster** is selected by default&mdash;**you must change this default selection to a specific namespace in the cluster** to make operator and Fabric components run in a dedicated namespace. ![Install the operator in the openshift-operators namespace](../images/allnamespace-install-operator.png "Install the operator in the openshift-operators namespace"){: caption="Figure 1. Install the operator in the openshift-operators namespace" caption-side="bottom"} The Console and Fabric components can be installed in any namespace. ![Console and Fabric components can be installed in any namespace](../images/allnamespace-installed-operators.png "Console and Fabric components can be installed in any namespace"){: caption="Figure 2. Console and Fabric components can be installed in any namespace" caption-side="bottom"} Next, update the Security Context Constraint command settings to use the Fabric and Console namespaces. ![Update Security Context Constraint command settings to use the Fabric and Console namespaces.](../images/allnamespace-ibp-consoles.png "Update Security Context Constraint command settings to use the Fabric and Console namespaces."){: caption="Figure 3. Update Security Context Constraint command settings to use the Fabric and Console namespaces." caption-side="bottom"}
-8. If your OpenShift cluster is behind a firewall, see [Deploy from Red Hat Marketplace (airgap installation)](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm-fw).
-9. Continue to [Step one: Apply the Security Context Constraint](#deploy-ocp-rhm-scc).
 
-## Step one: Apply the Security Context Constraint
+## Step one: Create a namespace
+{: #deploy-ocp-rhm-can}
+
+From your OpenShift console, select **Administration** >> **Namespaces** from the left navigation:
+
+![Admin-namespaces](../images/admin-namespaces.png){: caption="Figure 1. Administration namespaces menu selection" caption-side="bottom"}
+
+On the **Namespaces** page, click  **Create Namespace** on the top right. Create a namespace for the deployment of operator and other blockchain components:
+
+![Create-namespace](../images/create-namespace.png){: caption="Figure 2. Create namespace interface" caption-side="bottom"}
+
+## Step two: Apply the Security Context Constraint (SCC)
 {: #deploy-ocp-rhm-scc}
 
-The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to your project. The `ibm-hlfsupport-scc.yaml` file is provided here for you to copy and edit to define the security policies for your project. Before attempting this step, you should be logged in to the `oc` CLI.   
+If you want to use the **All namespace on the cluster** option while installing the operator, this step of applying the SCC must also be applied to the **openshift-operators** namespace.
+{: note}
+
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric requires specific security and access policies to be added to your project. The `ibm-hlfsupport-scc.yaml` file is provided here for you to copy and edit to define the security policies for your project. Before attempting this step, you should be logged in to the `oc` CLI.   
 
 Copy and save the following security context constraint object to your local system as `ibm-hlfsupport-scc.yaml`. Edit the file and replace `<PROJECT_NAME>` with the name of your project.
 
@@ -128,7 +137,17 @@ scc "blockchain-project" added to: ["system:serviceaccounts:blockchain-project"]
 ```
 {: codeblock}
 
-## Step two: Apply the image pull secrets
+## Step three: Install the operator
+{: #deploy-ocp-rhm-operator}
+
+Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator as follows:
+
+1. Click **My software** > **Visit the Marketplace**.
+2. In the search bar, type **blockchain** to load the blockchain tile. Select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric**.
+3. Click **Purchase** to get started. From the **Purchase complete** page, click **Install now**. This installs the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator into your cluster. Note that during the installation process you are required to select which OpenShift project to deploy the operator to from the **Namespace scope** drop-down. After the operator is installed, your cluster connects back to Red Hat Marketplace and then becomes a target cluster for installing and managing the operator from Red Hat Marketplace. You can deploy the operator multiple times across different clusters as long as they have registered with Red Hat Marketplace. When selecting a namespace for operator installation, **All namespaces on the cluster** is selected by default&mdash;**you must change this default selection to a specific namespace in the cluster** to make operator and Fabric components run in a dedicated namespace. ![Install the operator in the openshift-operators namespace](../images/allnamespace-install-operator.png "Install the operator in the openshift-operators namespace"){: caption="Figure 1. Install the operator in the openshift-operators namespace" caption-side="bottom"} The Console and Fabric components can be installed in any namespace. ![Console and Fabric components can be installed in any namespace](../images/allnamespace-installed-operators.png "Console and Fabric components can be installed in any namespace"){: caption="Figure 2. Console and Fabric components can be installed in any namespace" caption-side="bottom"} Next, update the Security Context Constraint command settings to use the Fabric and Console namespaces. ![Update Security Context Constraint command settings to use the Fabric and Console namespaces.](../images/allnamespace-ibp-consoles.png "Update Security Context Constraint command settings to use the Fabric and Console namespaces."){: caption="Figure 3. Update Security Context Constraint command settings to use the Fabric and Console namespaces." caption-side="bottom"}
+4. If your OpenShift cluster is behind a firewall, see [Deploy from Red Hat Marketplace (airgap installation)](/docs/hlf-support?topic=hlf-support-deploy-ocp-rhm-fw).
+
+## Step four: Apply the image pull secrets
 {: #deploy-ocp-rhm-secrets}
 
 To apply the image pull secrets, go to the **OpenShift Container Platform**.
