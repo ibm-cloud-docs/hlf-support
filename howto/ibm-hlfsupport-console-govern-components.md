@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-16"
+lastupdated: "2022-03-29"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -45,19 +45,16 @@ Tools such as [{{site.data.keyword.mon_full_notm}}](https://www.ibm.com/cloud/cl
 
 While it takes less effort to deploy enough resources to your Kubernetes cluster from the start and therefore be able deploy and expand resources without having to increase the resources in your cluster, the bigger the deployment, the more it will cost. Users need to consider their options carefully and recognize the tradeoffs that they are making regardless of the option that they choose.
 
-
-
-
 You can scale your cluster by monitoring your nodes and following the instructions available from your cloud provider to add more nodes, larger nodes, or increasing the size of the nodes, depending on the options available in your cloud provider. The method you will use to increase storage will depend on the storage class you chose for your cluster. Note that if you are about to exhaust the storage on your peer or ordering node, you might need to deploy a new peer or ordering node with more storage and let it sync via your other components on the same channels.
-
 
 Note that you do not need to adjust the CPU, memory, or storage for your smart contract pods. These pods will automatically use as many resources as they need to function efficiently. In cases where your smart contracts are struggling because of insufficient resources, you will have to address this at the cluster level.
 {: tip}
 
-
-
 ## Upgrading to a new version of Fabric
 {: #ibm-hlfsupport-console-govern-components-upgrade}
+
+Support for Hyperledger Fabric **v1.4 is now deprecated**, and support for Fabric v1.4 will be removed from {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on March 31, 2023. Users should therefore upgrade to Fabric v2.2 as soon as possible. Your applications may require changes as a result of upgrading to v2.2, so please plan for appropriate testing. Note that Fabric v1.4 has not been supported by the Hyperledger community since April of 2021. In addition, Fabric v1.4 uses Golang v1.14, which is no longer receiving security updates from the Golang community.
+{: important}
 
 While some new versions of Fabric are released where only the Fabric version of nodes must be upgraded in order to get the latest Fabric features, some new Fabric versions contain new channel capabilities that must also be updated.
 
