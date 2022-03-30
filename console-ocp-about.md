@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-03-30"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -137,7 +137,7 @@ If you are running on Azure Kubernetes Service, Amazon Web Services, Rancher, Am
 ### Fabric Component Support
 {: #fabric-component-support-shfv1}
 
-Support for Hyperledger Fabric **v1.4 is now deprecated**, and support for Fabric v1.4 will be removed from {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on March 31, 2023. Users should therefore [upgrade to Fabric v2.2](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components-upgrade) as soon as possible. Your applications may require changes as a result of upgrading to v2.2, so please plan for appropriate testing. Note that Fabric v1.4 has not been supported by the Hyperledger community since April of 2021. In addition, Fabric v1.4 uses Golang v1.14, which is no longer receiving security updates from the Golang community.
+Support for Hyperledger Fabric **v1.4 is now deprecated**, and support for Fabric v1.4 will be removed from {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on March 31, 2023. Users should therefore [upgrade to Fabric v2.2](/docs/hlf-support?topic=hlf-support-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade) as soon as possible. Your applications may require changes as a result of upgrading to v2.2, so please plan for appropriate testing. Note that Fabric v1.4 has not been supported by the Hyperledger community since April of 2021. In addition, Fabric v1.4 uses Golang v1.14, which is no longer receiving security updates from the Golang community.
 {: important}
 
 The following support levels are provided for Hyperledger Fabric v2.2.4 and v2.2.5, and
