@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-31"
 
 keywords: IBM Support for Hyperledger Fabric, deploy, resource requirements, storage, parameters, multicloud
 
@@ -322,7 +322,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220308-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220405-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
