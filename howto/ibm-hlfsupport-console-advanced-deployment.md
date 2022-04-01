@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-21"
+lastupdated: "2022-04-01"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -1347,162 +1346,7 @@ Configuring a node to use HSM is a two-part process:
 
 - The Kubernetes CLI is required to configure the HSM.  See [Install and Set Up kubectl CLI](https://kubernetes.io/docs/tasks/tools/install-kubectl/){: external} or if your cluster is running on OpenShift see [Getting started with the CLI](https://docs.openshift.com/container-platform/4.7/cli_reference/openshift_cli/getting-started-cli.html){: external} for instructions.
 - You need access to a container registry, such as Docker or the [{{site.data.keyword.registrylong_notm}}](/docs/Registry?topic=Registry-getting-started).
-<staging-zHSM>
 
-### Part one: Configure an HSM
-{: #ibm-hlfsupport-console-adv-deployment-configure-hsm}
-
-- **Option 1: Use {{site.data.keyword.cloud_notm}} HSM**. If you plan to use {{site.data.keyword.cloud_notm}} HSM, see this [tutorial](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto) for an example of how to configure {{site.data.keyword.cloud_notm}} HSM 6.0 with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. After that is completed you can move on to [Part two: Configure the node to use HSM](#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node).
-- **Option 2: Configure your own HSM by building an HSM client image**. Use these steps to generate an image that is consumable by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator.
-    - Step one: (Optional) Build an HSM daemon image
-    - Step two: Modify the HSM client configuration
-    - Step three: Build the HSM client image
-    - Step four: Push the Docker image to your container registry
-    - Step five: Create a Kubernetes secret `hsmcrypto`
-    - Step six: Create the HSM configmap `ibm-hlfsupport-hsm-config`
-
-#### Step one: (Optional) Build an HSM daemon image
-{: #ibm-hlfsupport-console-adv-deployment-hsm-daemon}
-
-If a daemon is used to communicate with your HSM, for example if you are using openCryptoki on Z, follow these instructions to configure the daemon to work with the peer, CA, and ordering nodes. Then, when a node is deployed, it is configured with an HSM client (configured in the following steps) that communicates with its own instance of the daemon that submits the requests to read and write the encrypted keys to the HSM device. If you plan to use this approach, you need to build the daemon image.
-
-An example of a Docker file image for an openCryptoki daemon would be:
-
-```
-FROM s390x/ubuntu:20.04 as builder
-RUN apt-get update \
-    && apt-get -y install \
-    libtool \
-    libssl-dev \
-    libseccomp-dev \
-    libgflags-dev \
-    libgtest-dev \
-    libltdl7 \
-    curl \
-    procps
-RUN apt-get -y update \
-    && apt-get -y install opencryptoki
-RUN curl --silent -O http://public.dhe.ibm.com/security/cryptocards/pciecc3/EP11/3.0.1/libep11_3.0.1-1_s390x.deb \
-    && dpkg -i libep11_3.0.1-1_s390x.deb
-FROM registry.access.redhat.com/ubi8/ubi
-RUN groupadd -g 1000 pkcs11
-RUN useradd -u 1000 -g pkcs11 -G pkcs11 -s /bin/bash pkcs11
-RUN mkdir /hsm
-##1: copy opencryptoki config files
-COPY --from=builder /etc/opencryptoki /hsm/etc.opencryptoki
-##2: copy all dlls (pkcs11 interface dll, and token type dlls) installed by opencryptoki
-COPY --from=builder /usr/lib/s390x-linux-gnu/opencryptoki /hsm/opencryptoki
-##3: copy ep11 host part library
-COPY --from=builder /usr/lib/libep11.so.3.0.1 /hsm/opencryptoki/stdll/libep11.so.3.0.1
-##4: copy slot manager
-COPY --from=builder /usr/sbin/pkcsconf /hsm/usr.sbin.pkcsconf
-##5: copy slot manager daemon
-COPY --from=builder /usr/sbin/pkcsslotd /hsm/usr.sbin.pkcsslotd
-##6: copy ep11 token storage
-COPY --from=builder /var/lib/opencryptoki /hsm/var.lib.opencryptoki
-##7: copy pidof from builder
-COPY --from=builder /usr/bin/pidof /hsm/pidof
-WORKDIR /hsm
-COPY entrypoint.sh /hsm/entrypoint.sh
-RUN chmod 777 entrypoint.sh
-ENTRYPOINT ["./entrypoint.sh"]
-```
-{: codeblock}
-
-The image must contain the "entrypoint script" that performs any initialization that is required and launches the daemon. The contents of the script will vary by HSM vendor.
-
-A sample entrypoint script for openCryptoki zHSM is provided here for your reference:
-
-```sh
-#!/bin/bash -ux
-mkdir -p /etc/opencryptoki
-mkdir -p /usr/sbin
-mkdir -p /var/lib/opencryptoki
-cp /hsm/etc.opencryptoki/* /etc/opencryptoki/
-cp /hsm/usr.sbin.pkcsconf /usr/sbin/pkcsconf
-cp -rf /hsm/var.lib.opencryptoki/* /var/lib/opencryptoki/
-ln /hsm/opencryptoki/stdll/libep11.so.3.0.1 /hsm/opencryptoki/stdll/libep11.so.3
-ln /hsm/opencryptoki/stdll/libep11.so.3.0.1 /hsm/opencryptoki/stdll/libep11.so
-ln /hsm/opencryptoki/libopencryptoki.so.0.0.0 /hsm/opencryptoki/stdll/libopencryptoki.so.0
-ln /hsm/opencryptoki/libopencryptoki.so.0.0.0 /hsm/opencryptoki/stdll/libopencryptoki.so
-
-# copy files required by HSM to volume
-cp -r /hsm/opencryptoki/stdll/* /stdll/
-
-export LD_LIBRARY_PATH=/hsm/opencryptoki/stdll/
-export OPENCRYPTOKI_TRACE_LEVEL=5
-# launch the opencryptoki slot manager daemon
-echo "pkcsslotd"
-
-# pkcsslotd
-/hsm/usr.sbin.pkcsslotd
-
-# checking the slots information
-echo "pkcsconf -t"
-pkcsconf -t
-# config ep11 slot
-SLOT_NO=${EP11_SLOT_NO:-4}
-SLOT_TOKEN_LABEL=${EP11_SLOT_TOKEN_LABEL:-"CEX6P"}
-SLOT_SO_PIN=${EP11_SLOT_SO_PIN:-"98765432"}
-SLOT_USER_PIN=${EP11_SLOT_USER_PIN:-"98765432"}
-EXISTED_LABEL=$(pkcsconf -t | grep -w ${SLOT_TOKEN_LABEL})
-if [ -z "$EXISTED_LABEL" ]
-then
-    echo "initialized slot: "${SLOT_NO}
-    printf "87654321\n${SLOT_TOKEN_LABEL}\n" | pkcsconf -I -c ${SLOT_NO}
-    printf "87654321\n${SLOT_SO_PIN}\n${SLOT_SO_PIN}\n" | pkcsconf -P -c ${SLOT_NO}
-    printf "${SLOT_SO_PIN}\n${SLOT_USER_PIN}\n${SLOT_USER_PIN}\n" | pkcsconf -u -c ${SLOT_NO}
-    echo "The slot[${SLOT_NO}] initialized!"
-else
-    echo "The slot already initialized!"
-fi
-
-# Determine the process id
-set +x
-touch /shared/daemon-launched
-while true;
-do
-    pid=$(pidof /hsm/usr.sbin.pkcsslotd)
-    if [ -z $pid ]; then
-        echo "pkcsslotd not running"
-        break
-    fi
-    sleep 10
-done
-```
-{: codeblock}
-
-The entrypoint script performs multiple functions:
-
-- **Copy files required by HSM to volume:** The script is responsible for copying any files that are needed by the HSM client to a volume. For example, the openCryptoki implementation for zHSM requires a set of token-specific libraries. These files need to be provided to the HSM client and are required to be mounted on to the CA, peer, and ordering node containers. The following line shows how to copy the files to a mount path (see section 2) from the zHSM entrypoint script:
-
-    ```sh
-    cp -r /hsm/opencryptoki/stdll/* /stdll/
-    ```
-    {: codeblock}
-
-- **Determine the process id:** The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator requires that the following snippet is included at the end of the entrypoint script. The contents of `pid=$(pidof /hsm/usr.sbin.pkcsslotd)` in the following snippet from the script is vendor-specific and needs to be adjusted to determine the process id of the running daemon.
-
-    ```sh
-    # Determine the process id
-    set +x
-    touch /shared/daemon-launched
-    while true;
-    do
-        pid=$(pidof /hsm/usr.sbin.pkcsslotd)
-        if [ -z $pid ]; then
-            echo "pkcsslotd not running"
-            break
-        fi
-        sleep 10
-    done
-    ```
-    {: codeblock}
-
-- **Start the daemon:** The daemon needs to be started from a location that is not a mountpath (see section 2). In the preceding example, the zHSM is launched from location `/hsm/usr.sbin.pkcsslotd`, which is not a defined mountpath.
-
-You are now ready to build the HSM Client image as described in the next steps.
-</staging-zHSM>
 
 #### Step two: Modify the HSM client configuration
 {: #ibm-hlfsupport-console-adv-deployment-hsm-client-cfg}
@@ -1663,18 +1507,7 @@ metadata:
 {: #ibm-hlfsupport-console-adv-deployment-hsm-configmap}
 
 
-<staging-zHSM>
 
-Because the console needs to know the configuration settings to use for your HSM, you need to create a Kubernetes [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/){: external} to store these values. The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator uses the HSM configuration passed in this configmap to get the details about the HSM client image, such as what image pull secret to use, and the folder mounts that are required. Based on the information provided, when a CA, peer, or ordering node is deployed with HSM enabled, the operator mounts required the files for the HSM client image.
-
-There are two options for creating the HSM configmap:
-- Option 1: If you are **not** using a daemon with your HSM, follow [Configure the operator to work with an HSM that does not use a daemon](#no-daemon-configmap).
-- Option 2: If you are using a deamon with your HSM, follow [Configure the operator to work with an HSM daemon](#daemon-configmap).
-
-**Option 1: Configure the operator to work with an HSM that does not use a daemon**
-{: #no-daemon-configmap}
-
-</staging-zHSM>
 
 Copy the following text and save it to a file named `ibm-hlfsupport-hsm-config.yaml`:
 
@@ -1756,82 +1589,7 @@ mountpaths:
 In this example, the first `mountpath` contains four configuration files (cafile.pem, cert.pem, key.pem, server.pem) and the `hsmcrypto` secret, and all of them are mounted to the mountpath `/hsm`. The actual name of the mountpath is `hsmcrypto`, and it contains an exact mapping of the key value pair to the Kubernetes secret and the location to mount it to. For example, `cafile.pem` is read from the path `cafile.pem` in the hsmcrypto mountpath using the `hsmcrypto` secret and mounted to `/hsm/cafile.pem`.  
 
 A second mountpath is included for the HSM `/etc/Chrystoki.conf` file. Because the HSM requires its config file in the `/etc` folder, which is a system directory, we need to use the `subpath` parameter to avoid replacing the entire `/etc` directory. If the subpath is not used, the entire `/etc` directory is replaced with the volume being mounted.  
-<staging-zHSM>
 
-You have completed the HSM configuration for your blockchain network. Now when you deploy a new CA, peer, or ordering node, you can configure it to use the HSM that you have configured here. See [Part two: Configuring a CA, peer, or ordering node to use the HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node) for details.
-
-**Option 2: Configure the operator to work with an HSM daemon**  
-{: #daemon-configmap}
-
-If you configured an HSM daemon, the following sample configuration shows how to configure the openCryptoki zHSM on the operator. You need to customize the settings according to your daemon.   
-
-Copy the following text and save it to a file named `ibm-hlfsupport-hsm-config.yaml`:
-
-```yaml
-daemon:
-  image: us.icr.io/ibm-hlfsupport-temp/ibm-hlfsupport-zdaemon:zhsm-s390x
-  auth:
-    imagePullSecret: regcred
-  securityContext:
-    privileged: false
-    allowPrivilegedEscalation: false
-    runAsNonRoot: false
-    runAsUser: 0
-library:
-  filepath: /hsm/opencryptoki/libopencryptoki.so.0.0.0
-  image: us.icr.io/ibm-hlfsupport-temp/ibm-hlfsupport-zdaemon:zhsm-s390x
-  auth:
-    imagePullSecret: regcred
-envs:
-  - name: LD_LIBRARY_PATH
-    value: /stdll
-mountpaths:
-  - mountpath: /usr/sbin/pkcsslotd
-    name: pkcsslotd
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /var/run
-    name: varrun
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /var/lib/opencryptoki
-    name: tokeninfo
-    usePVC: true
-  - mountpath: /etc/opencryptoki
-    name: opencryptoki-config
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /var/lock/opencryptoki
-    name: lock
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /stdll
-    name: stdll
-    volumeSource:
-      emptyDir:
-        medium: Memory
-type: hsm
-version: v1
-```
-{: codeblock}
-
-- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well. **Important:** If an image pull secret is not required, set this value to `""`. If you would like to override the default values for the daemon container's `securityContext`, specify the desired values in the config. If you would like to override the default values for the daemon container's `resources`, you can include the following in the `daemon:` section and specify the desired value:
-```yaml
-resources:
-    limits:
-      cex.s390.ibm.com/ibp: 1
-```
-{: codeblock}
-
-- In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto#ibm-hlfsupport-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
-
-- In the `envs:` section, provide the list of environment variables that are required to configure the HSM.
-
-- In the `mountpaths:` section, provide all the necessary artifacts such as config, shared object libraries, shared memory, etc. that are needed to communicate with the HSM daemon. These settings are vendor-specific as it is your responsibility to know what directories or files need to be mounted. When the CA, peer, and ordering nodes are deployed, these mountpaths will be mounted on to their containers along with the HSM client. Most of these mountpaths can be of type `Memory`, however, if there are files that need to persist, then set `usePVC: true`. When set, the operator stores the files in the mountpath in a persistent medium, by leveraging the PVCs of the CA, peer, and ordering node as the persistent medium.</staging-zHSM>
 
 Run the following command to create the configmap named `ibm-hlfsupport-hsm-config` in your cluster namespace or project:
 ```

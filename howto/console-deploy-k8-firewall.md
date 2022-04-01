@@ -2,7 +2,7 @@
 
     copyright:
   years: 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall
@@ -1109,6 +1108,7 @@ roleRef:
   kind: ClusterRole
   name: <NAMESPACE>
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1242,6 +1242,7 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
+
 ```
 {: codeblock}
 
@@ -1382,6 +1383,7 @@ spec:
         memory: 200Mi
   usetags: true
   version: 1.0.0
+
 ```
 {: codeblock}
 
@@ -1453,6 +1455,7 @@ spec:
       size: 10Gi
   usetags: true
   tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
+
 ```
 {: codeblock}
 

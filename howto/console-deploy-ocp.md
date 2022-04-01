@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-31"
+lastupdated: "2022-04-01"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric manually
@@ -835,6 +834,7 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
+
 ```
 {: codeblock}
 
@@ -1053,6 +1053,7 @@ rules:
   - watch
   - delete
   - deletecollection
+
 ```
 {: codeblock}
 
@@ -1096,6 +1097,7 @@ roleRef:
   kind: ClusterRole
   name: <PROJECT_NAME>
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1224,6 +1226,7 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
+
 ```
 {: codeblock}
 
@@ -1382,6 +1385,7 @@ spec:
         memory: 200Mi
   usetags: true
   version: 1.0.0
+
 ```
 {: codeblock}
 
