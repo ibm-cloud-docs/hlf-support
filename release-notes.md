@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-04-05"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -14,12 +14,21 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Release notes
 {: #release-notes}
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric built on Hyperledger Fabric v2.2.3 - [v2.2.5](https://github.com/hyperledger/fabric/releases/tag/v2.2.5).
 {: shortdesc}
+
+## 05 Apr 2022
+{: #05-04-2022}
+
+**Certificate Authority (CA) patch 1.5.2-8, Peer and ordering node patch 2.2.5-3.**
+
+Miscellaneous bug fixes and security patches.
+
+Severity: medium
+
 
 ## 08 Mar 2022
 {: #08-03-2022}
