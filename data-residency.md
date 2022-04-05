@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-04-01"
 
 keywords: IBM Support for Hyperledger Fabric, Data residency, world state, channels, multicloud
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 

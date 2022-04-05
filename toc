@@ -76,7 +76,7 @@ Blockchain HLF Support
 		howto/console-delete-k8.md
 
 	{: .topicgroup}
-	Using the IBM Support for Hyperledger Fabric
+	Using IBM Support for Hyperledger Fabric
 		howto/console-ocp-manage.md
 		howto/ibm-hlfsupport-console-advanced-deployment.md
 		howto/ibm-hlfsupport-console-advanced-channel.md

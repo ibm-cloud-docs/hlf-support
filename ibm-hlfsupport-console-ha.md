@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-04-01"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -58,7 +57,7 @@ Finally, your peer redundancy strategy needs to take into account your smart con
 ### Ordering service considerations
 {: #ibm-hlfsupport-console-ha-ordering-service}
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 is built upon Hyperledger Fabric <blockchain-sw-252 hlf>v2.2.4 and v2.2.5</blockchain-sw-252 hlf> that includes the Raft [ordering service](#x9826021){: term}. Raft is a crash fault tolerant (CFT) ordering service based on an implementation of [Raft protocol](https://raft.github.io/raft.pdf){: external}. By design, Raft ordering nodes automatically synchronize data between them using Raft-based consensus. In {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, an organization network operator can choose to stand up either a single node Raft-based orderer, with no HA, or five orderers in a single region or across multiple regions that are automatically configured for HA via Raft.
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric 1.0.0 is built upon Hyperledger Fabric v2.2.4 and v2.2.5 that includes the Raft [ordering service](#x9826021){: term}. Raft is a crash fault tolerant (CFT) ordering service based on an implementation of [Raft protocol](https://raft.github.io/raft.pdf){: external}. By design, Raft ordering nodes automatically synchronize data between them using Raft-based consensus. In {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, an organization network operator can choose to stand up either a single node Raft-based orderer, with no HA, or five orderers in a single region or across multiple regions that are automatically configured for HA via Raft.
 
 
 ### Certificate Authority (CA) considerations

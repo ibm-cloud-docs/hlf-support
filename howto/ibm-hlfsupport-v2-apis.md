@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-03-21"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -288,7 +288,7 @@ You can also use the APIs to import and then operate nodes that reside in other 
 ## Limitations
 {: #ibm-hlfsupport-v2-apis-limitations}
 
-You can only import CA, peer, and ordering nodes that are exported from other Fabric Operations Consoles running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.19 - v1.23 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
+You can only import CA, peer, and ordering nodes that are exported from other instances of Fabric Operations Console running on {{site.data.keyword.cloud_notm}}, OpenShift Container Platform, Red Hat Open Kubernetes Distribution, or any Kubernetes v1.19 - v1.23 container platform on x86_64. The platform is also supported on LinuxONE (s390x) using OpenShift Container Platform.
 
 ## Building a network by using APIs
 {: #ibm-hlfsupport-v2-apis-build-with-apis}
@@ -498,9 +498,10 @@ https://<API endpoint>/ak/api/v2/kubernetes/components/fabric-ca \
 
 ### Deploy a node that uses an HSM
 
-{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric allows you to deploy CA, peer, or orderer nodes that use an HSM to store their private key. To use an HSM with your blockchain network, you need to first set up an HSM on {{site.data.keyword.cloud_notm}} or in your own environment. You then need to set up a PKCS #11 proxy that allows your nodes to communicate with your HSM. You can then create a node with the private key that is stored in an HSM partition by providing the HSM endpoint along with the slot key and pin before the node is deployed. For more information, see [Configuring a node to use an HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm).
+{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric allows you to deploy CA, peer, or orderer nodes that use an HSM to store their private key. To use an HSM with your blockchain network, you need to first set up an HSM on {{site.data.keyword.cloud_notm}} or in your own environment. You can then create a node with the private key that is stored in an HSM partition by providing the HSM endpoint along with the slot key and pin before the node is deployed. For more information, see [Configuring a node to use an HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm).
 
-If you are using the APIs to deploy a node, you need to provide the HSM endpoint to the HSM field of the API call. You also need to use the config override to provide the label and pin of the HSM slot that you will use and select `"PKCS11"` as the default crypto service provider. As an example The following API call deploys a peer node with an HSM.
+If you are using the APIs to deploy a node, you need to provide the HSM endpoint to the HSM field of the API call. You also need to use the config override to provide the label and pin of the HSM slot that you will use and select `"PKCS11"` as the default crypto service provider. As an example, the following API call deploys a peer node with an HSM:
+
 ```
 curl -X POST "https://{API-Endpoint}/ak/api/v2/kubernetes/components/fabric-peer" \
 -H "Content-Type: application/json" \

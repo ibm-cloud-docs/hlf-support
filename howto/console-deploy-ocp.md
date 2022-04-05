@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-02"
+lastupdated: "2022-04-01"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Deploy {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric manually
@@ -288,7 +287,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220308-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220405-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -835,6 +834,7 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
+
 ```
 {: codeblock}
 
@@ -1053,6 +1053,7 @@ rules:
   - watch
   - delete
   - deletecollection
+
 ```
 {: codeblock}
 
@@ -1096,6 +1097,7 @@ roleRef:
   kind: ClusterRole
   name: <PROJECT_NAME>
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1176,7 +1178,7 @@ spec:
         - name: cp-pull-secret
       containers:
         - name: ibm-hlfsupport-operator
-          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220308-amd64
+          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220405-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1224,6 +1226,7 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
+
 ```
 {: codeblock}
 
@@ -1382,6 +1385,7 @@ spec:
         memory: 200Mi
   usetags: true
   version: 1.0.0
+
 ```
 {: codeblock}
 

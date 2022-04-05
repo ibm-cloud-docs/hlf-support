@@ -2,7 +2,7 @@
 
  copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-04-01"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy,
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Getting started with Ansible playbooks on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #ansible}

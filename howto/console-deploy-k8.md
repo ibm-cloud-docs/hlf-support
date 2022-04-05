@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-08"
+lastupdated: "2022-04-01"
 
 keywords: IBM Support for Hyperledger Fabric, deploy, resource requirements, storage, parameters, multicloud
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
@@ -322,7 +321,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220308-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220405-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -856,6 +855,7 @@ spec:
   - FOWNER
   volumes:
   - '*'
+
 ```
 {: codeblock}
 
@@ -1094,6 +1094,7 @@ roleRef:
   kind: ClusterRole
   name: <NAMESPACE>
   apiGroup: rbac.authorization.k8s.io
+
 ```
 {: codeblock}
 
@@ -1178,7 +1179,7 @@ spec:
         - name: cp-pull-secret
       containers:
         - name: ibm-hlfsupport-operator
-          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220308-amd64
+          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220405-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1226,6 +1227,7 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
+
 ```
 {: codeblock}
 
@@ -1367,6 +1369,7 @@ spec:
         memory: 200Mi
   usetags: true
   version: 1.0.0
+
 ```
 {: codeblock}
 
@@ -1445,6 +1448,7 @@ spec:
       size: 10Gi
   usetags: true
   tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
+
 ```
 {: codeblock}
 

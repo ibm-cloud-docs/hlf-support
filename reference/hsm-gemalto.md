@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-04-01"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # IBM Cloud Hardware Security Module (HSM)
@@ -55,10 +54,6 @@ Because only the private keys of node identities are secured in the HSM, when yo
 
 - [Part Four: Build a Docker image](#ibm-hlfsupport-hsm-gemalto-part-four)  
 
-    You have two options:
-    - **(Recommended)** Build an HSM Client image
-    - **(Deprecated)** Build a PKCS #11 proxy image and deploy it to your Kubernetes cluster
-
     This process requires [Docker](https://docs.docker.com/install/){: external} to be installed on the machine where the HSM client is running and that you are familiar with the process for building Docker images. It also presumes you are comfortable with using the Kubernetes CLI to administer your Kubernetes cluster.
 
     When the entire HSM configuration is complete, it resembles the following diagram:
@@ -68,12 +63,6 @@ Because only the private keys of node identities are secured in the HSM, when yo
 ![HSM configured with an HSM client image](../images/hsm_2proxy.png "HSM configured with an HSM client image"){: caption="Figure 1. An example configuration of an HSM configured with an HSM client image." caption-side="bottom"}
 
 The steps in this topic focus specifically on the creation of the Cloud HSM and the HSM Client in the diagram.  When you deploy a CA, peer, or ordering node to use the HSM, you need to provide the label and PIN of the HSM partition. This configuration assumes you enabled HSM on your Kubernetes cluster when you deployed the service.  
-
-**(Deprecated) HSM configured with a PKCS #11 proxy**  
-
-![HSM configured with a PKCS #11 proxy](../images/hsm_1proxy.png "HSM configured with a PKCS #11 proxy"){: caption="Figure 2. An example configuration of an HSM configured with a PKCS #11 proxy." caption-side="bottom"}  
-
-When you choose to deploy the PKCS #11 proxy and configure a node with HSM, you need to provide the PKCS #11 proxy endpoint URL, along with the label and PIN of the HSM partition. It is the combination of the PKCS #11 proxy and the HSM client that allows the node to store and retrieve the node private key from the HSM.
 
 ### Part One: Set up the HSM device and HSM client
 {: #ibm-hlfsupport-hsm-gemalto-part-one}
@@ -230,10 +219,10 @@ In this section you will get the HSM server certificate and create the HSM clien
 ### Part Four: Build a Docker image
 {: #ibm-hlfsupport-hsm-gemalto-part-four}
 
-There are two ways to configure HSM on your blockchain network. The use of a **PKCS #11 proxy** has been deprecated in favor of building an **HSM client image** which is simpler to configure and provides better overall performance. Both processes are supported, however if you are configuring a new HSM, it is recommended that you build the HSM client image. Both sets of instructions are provided, starting with **Build an HSM client image**. If you still prefer to use a PKCS #11 proxy, you can refer to those [instructions](/docs/blockchain?topic=blockchain-ibm-hlfsupport-hsm-build-pkcs11-proxy-ic) instead. If you are currently using the **PKCS #11 proxy** and want to try out the **HSM client image**, it is possible to have both HSM configurations running on the platform at the same time. However, when you deploy a new node you have to choose which HSM implementation you want to use.
+Configure HSM on your blockchain network by building an **HSM client image**.
 
 #### Build an HSM client image
-{: #ibm-hlfsupport-console-adv-deployment-hsm-client} 
+{: #ibm-hlfsupport-console-adv-deployment-hsm-client}
 
 Next we build a Docker file that contains the HSM client image. These instructions assume that you have successfully configured your HSM appliance and HSM client. Use these steps to generate an image that is consumable by the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator.
 
@@ -402,14 +391,7 @@ metadata:
 
 
 
-<staging-zHSM>
 
-Because the console needs to know the configuration settings to use for your HSM, you need to create a Kubernetes [configmap](https://kubernetes.io/docs/concepts/configuration/configmap/){: external} to store these values. The configMap settings depend on whether you configured a daemon for your HSM or not. In that case, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator uses the HSM configuration passed in this configmap to get the details about the HSM client image, such as what image pull secret to use, and the folder mounts that are required. Based on the information provided, when a CA, peer, or ordering node is deployed with HSM enabled, the operator mounts required the files for the HSM client image. If you are using a daemon with your HSM, skip ahead to [Configure the operator to work with an HSM daemon](#daemon-configmap).
-
-**Configure the operator to work with an HSM that does not use a daemon**
-{: #x86-configmap}
-
-</staging-zHSM>
 
 Copy the following text and save it to a file named `ibm-hlfsupport-hsm-config.yaml`:
 
@@ -498,83 +480,7 @@ mountpaths:
 In this example, the first `mountpath` contains four configuration files (cafile.pem, cert.pem, key.pem, server.pem) and the `hsmcrypto` secret, and all of them are mounted to the mountpath `/hsm`. The actual name of the mountpath is `hsmcrypto`, and it contains an exact mapping of the key value pair to the Kubernetes secret and the location to mount it to. For example, `cafile.pem` is read from the path `cafile.pem` in the hsmcrypto mountpath using the `hsmcrypto` secret and mounted to `/hsm/cafile.pem`.  
 
 A second mountpath is included for the HSM `/etc/Chrystoki.conf` file. Because the HSM requires its config file in the `/etc` folder, which is a system directory, we need to use the `subpath` parameter to avoid replacing the entire `/etc` directory. If the subpath is not used, the entire `/etc` directory is replaced with the volume being mounted.  
-<staging-zHSM>
 
-You have completed the HSM configuration for your blockchain network. Now when you deploy a new CA, peer, or ordering node, you can configure it to use the HSM that you have configured here. See [Configuring a CA, peer, or ordering node to use the HSM](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node) for details.
-
-**Configure the operator to work with an HSM daemon**  
-{: #daemon-configmap}
-
-If you configured an HSM daemon, the following sample configuration shows how to configure the openCryptoki zHSM on the operator. You need to customize the settings according to your daemon.   
-
-Copy the following text and save it to a file named `ibm-hlfsupport-hsm-config.yaml`:
-
-```yaml
-daemon:
-  image: us.icr.io/ibm-hlfsupport-temp/ibm-hlfsupport-zdaemon:zhsm-s390x
-  auth:
-    imagePullSecret: regcred
-  securityContext:
-    privileged: false
-    allowPrivilegedEscalation: false
-    runAsNonRoot: false
-    runAsUser: 0
-library:
-  filepath: /hsm/opencryptoki/libopencryptoki.so.0.0.0
-  image: us.icr.io/ibm-hlfsupport-temp/ibm-hlfsupport-zdaemon:zhsm-s390x
-  auth:
-    imagePullSecret: regcred
-envs:
-  - name: LD_LIBRARY_PATH
-    value: /stdll
-mountpaths:
-  - mountpath: /usr/sbin/pkcsslotd
-    name: pkcsslotd
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /var/run
-    name: varrun
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /var/lib/opencryptoki
-    name: tokeninfo
-    usePVC: true
-  - mountpath: /etc/opencryptoki
-    name: opencryptoki-config
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /var/lock/opencryptoki
-    name: lock
-    volumeSource:
-      emptyDir:
-        medium: Memory
-  - mountpath: /stdll
-    name: stdll
-    volumeSource:
-      emptyDir:
-        medium: Memory
-type: hsm
-version: v1
-```
-{: codeblock}
-
-- In the `daemon:` section, provide the URL of the HSM daemon image that you created. If the image is not hosted publicly, then you need to create the appropriate pull secret and specify it here as well. **Important:** If an image pull secret is not required, set this value to `""`. If you would like to override the default values for the daemon container's `securityContext`, specify the desired values in the config. If you would like to override the default values for the daemon container's `resources`, you can include the following in the `daemon:` section and specify the desired value:
-
-```yaml
-resources:
-    limits:
-      cex.s390.ibm.com/ibp: 1
-```
-{: codeblock}
-
-- In the `library:` section, provide the URL of the HSM client image that you created in [step two](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-hsm-gemalto#ibm-hlfsupport-hsm-gemalto-part-four-docker). This is the client that the CA, peer, and ordering node will use to talk to the HSM daemon. The `filepath:` is the location of the shared object library in the image. If the image is not hosted publicly then the user must create the appropriate pull secret and specify it as well.
-
-- In the `envs:` section, provide the list of environment variables that are required to configure the HSM.
-
-- In the `mountpaths:` section, provide all the necessary artifacts such as config, shared object libraries, shared memory, etc. that are needed to communicate with the HSM daemon. These settings are vendor-specific as it is your responsibility to know what directories or files need to be mounted. When the CA, peer, and ordering nodes are deployed, these mountpaths will be mounted on to their containers along with the HSM client. Most of these mountpaths can be of type `Memory`, however, if there are files that need to persist, then set `usePVC: true`. When set, the operator stores the files in the mountpath in a persistent medium, by leveraging the PVCs of the CA, peer, and ordering node as the persistent medium.</staging-zHSM>
 
 Run the following command to create the configmap named `ibm-hlfsupport-hsm-config` in your cluster namespace or project:
 ```
@@ -592,9 +498,9 @@ configmap/ibm-hlfsupport-hsm-config created
 ### What's next
 {: #ibm-hlfsupport-hsm-gemalto-next-steps}
 
-After you have used these instructions to configure your {{site.data.keyword.cloud_notm}} HSM and build the  **HSM client image** or **PKCS #11 proxy**, you are ready to configure your blockchain nodes to use the HSM. When you create a CA, peer, or ordering node, select the [HSM Advanced deployment option](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node) to configure the node to use this HSM.
+After you have used these instructions to configure your {{site.data.keyword.cloud_notm}} HSM and build the  **HSM client image**, you are ready to configure your blockchain nodes to use the HSM. When you create a CA, peer, or ordering node, select the [HSM Advanced deployment option](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-adv-deployment#ibm-hlfsupport-console-adv-deployment-cfg-hsm-node) to configure the node to use this HSM.
 
-When a node is configured with HSM, a temporary Kubernetes job is started to run this HSM "enrollment" process. Before configuring a node to use HSM, ensure that you have enough resources in your cluster to support this job that takes approximately 0.1CPU and 100Mi memory.
+When a node is configured with HSM, a temporary Kubernetes job is started to run this HSM "enrollment" process. Before configuring a node to use HSM, ensure that you have enough resources in your cluster to support this job that takes approximately 0.1CPU and 100M memory.
 {: important}
 
 On the **HSM configuration** panel, the **Use HSM client image** toggle is visible. When it is on, you can enter the following values:
@@ -602,12 +508,4 @@ On the **HSM configuration** panel, the **Use HSM client image** toggle is visib
 - **HSM label** - Enter the name of the HSM partition to be used for this node.
 - **HSM PIN** - Enter the PIN for the HSM slot.  
 
-If you prefer to use an HSM that was configured with a PKCS #11 proxy instead, slide the **Use HSM client image** toggle to **off**. One additional field becomes visible:
-- **HSM proxy endpoint** -Enter the URL for the PKCS #11 proxy that begins with `tcp://` and includes the `CLUSTER-IP` address and `PORT`. For example, `tcp://172.21.106.217:2345`.
-
 When the node is deployed, a private key for the specified node enroll ID and secret is generated by the HSM and stored securely in the appliance.
-
-## Using multiple partitions
-{: #ibm-hlfsupport-hsm-gemalto-multiple-partitions}
-
-If your HSM has multiple partitions, only one PKCS #11 proxy is required to communicate with the HSM.
