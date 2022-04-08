@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-29"
+lastupdated: "2022-04-08"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Upgrading and deleting deployed nodes
@@ -52,9 +51,6 @@ Note that you do not need to adjust the CPU, memory, or storage for your smart c
 
 ## Upgrading to a new version of Fabric
 {: #ibm-hlfsupport-console-govern-components-upgrade}
-
-Support for Hyperledger Fabric **v1.4 is now deprecated**, and support for Fabric v1.4 will be removed from {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric on March 31, 2023. Users should therefore upgrade to Fabric v2.2 as soon as possible. Your applications may require changes as a result of upgrading to v2.2, so please plan for appropriate testing. Note that Fabric v1.4 has not been supported by the Hyperledger community since April of 2021. In addition, Fabric v1.4 uses Golang v1.14, which is no longer receiving security updates from the Golang community.
-{: important}
 
 While some new versions of Fabric are released where only the Fabric version of nodes must be upgraded in order to get the latest Fabric features, some new Fabric versions contain new channel capabilities that must also be updated.
 
