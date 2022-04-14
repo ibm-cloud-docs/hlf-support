@@ -1,8 +1,8 @@
 ---
 
-    copyright:
+copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-04-14"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Building an {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network using Ansible playbooks
 {: #ansible-build}
@@ -250,5 +249,3 @@ Using the wallet identities from the preceding table, you can now follow the ste
 {: #ansible-build-summary}
 
 Congratulations. You have used the Ansible playbooks to configure {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric components on your cluster. You know how to run a playbook individually and have some sample shell scripts that show how to run the playbooks together to build a reproducible network and tear it back down. You can explore further by building your own playbooks that call the Ansible [modules](https://ibm-blockchain.github.io/ansible-collection/modules.html){: external} or build your own custom scripts according to your network use case.
-
-
