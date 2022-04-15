@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-15"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
@@ -207,3 +207,4 @@ If you are using CA replica sets and your PostgreSQL database resides in {{site.
 {: #ibm-hlfsupport-console-ha-stop-nodes}
 
 For information about backing up your components and how to recover corrupted components or networks, see [Backing up and restoring components and networks](/docs/blockchain?topic=blockchain-backup-restore).
+
