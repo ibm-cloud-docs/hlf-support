@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Creating applications
 {: #ibm-hlfsupport-console-app}
 

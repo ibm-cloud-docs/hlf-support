@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Deploy a smart contract
 {: #ibm-hlfsupport-console-smart-contracts}
 

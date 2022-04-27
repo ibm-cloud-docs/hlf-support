@@ -16,7 +16,6 @@ subcollection: hlf-support
 
 
 
-
 # Creating an intermediate Certificate Authority (CA)
 {: #ibm-hlfsupport-ica}
 {: help}

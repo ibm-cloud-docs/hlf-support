@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Building a high availability Certificate Authority (CA)
 {: #ibm-hlfsupport-console-build-ha-ca}
 

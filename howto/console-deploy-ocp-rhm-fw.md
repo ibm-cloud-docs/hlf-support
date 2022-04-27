@@ -15,7 +15,6 @@ subcollection: hlf-support
 
 
 
-
 # Deploy from Red Hat Marketplace (airgap installation)
 {: #deploy-ocp-rhm-fw}
 

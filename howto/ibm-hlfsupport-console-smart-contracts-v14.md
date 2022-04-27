@@ -14,7 +14,6 @@ subcollection: hlf-support
 
 
 
-
 # Deploy a smart contract using Fabric v1.4 (Legacy)
 {: #ibm-hlfsupport-console-smart-contracts-v14}
 <img src="../images/1-4_Pill.png" alt="version 1.4" width="30" style="width:30px; border-style: none"/> Learn how to create and package a smart contract, how to install the smart contract on a peer running a Fabric 1.4 image, and how to instantiate the smart contract on a channel using application capability 1.x.

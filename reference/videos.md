@@ -12,7 +12,6 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 {:table:.aria-labeledby="caption"}
 
 

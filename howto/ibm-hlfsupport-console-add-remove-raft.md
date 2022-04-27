@@ -16,7 +16,6 @@ subcollection: hlf-support
 
 
 
-
 # Adding and removing ordering service nodes
 {: #ibm-hlfsupport-console-add-remove-orderer}
 

@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Deploy the service from an Ansible playbook
 {: #ansible-install-ibp}
 

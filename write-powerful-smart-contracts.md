@@ -16,7 +16,6 @@ subcollection: hlf-support
 
 
 
-
 # Writing powerful smart contracts
 {: #write-powerful-smart-contracts}
 

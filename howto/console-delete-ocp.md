@@ -14,7 +14,6 @@ subcollection: hlf-support
 
 
 
-
 # Removing your deployment
 {: #Removing-ocp}
 

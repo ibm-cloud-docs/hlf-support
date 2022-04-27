@@ -14,7 +14,6 @@ subcollection: hlf-support
 
 
 
-
 # Advanced channel deployment and management
 {: #ibm-hlfsupport-console-govern}
 
