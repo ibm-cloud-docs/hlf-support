@@ -1365,7 +1365,6 @@ spec:
         memory: 200Mi
   usetags: true
   version: 1.0.0
-
 ```
 {: codeblock}
 
