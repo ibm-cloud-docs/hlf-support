@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -392,7 +392,6 @@ spec:
             requests:
               cpu: 0.1
               memory: "100Mi"
-
 ```
 {: codeblock}
 

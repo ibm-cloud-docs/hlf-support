@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-27"
+lastupdated: "2022-04-29"
 
 keywords: IBM Support for Hyperledger Fabric, deploy, resource requirements, storage, parameters, multicloud
 
@@ -366,7 +366,6 @@ spec:
             requests:
               cpu: 0.1
               memory: "100Mi"
-
 ```
 {: codeblock}
 
