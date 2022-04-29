@@ -852,7 +852,6 @@ spec:
   - FOWNER
   volumes:
   - '*'
-
 ```
 {: codeblock}
 
