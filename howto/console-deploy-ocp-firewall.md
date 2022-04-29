@@ -1284,7 +1284,6 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
-
 ```
 {: codeblock}
 
