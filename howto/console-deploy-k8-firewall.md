@@ -312,7 +312,6 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
-
 ```
 {: codeblock}
 

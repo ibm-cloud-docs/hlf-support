@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-29"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -116,7 +116,6 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
-
 ```
 {: codeblock}
 
