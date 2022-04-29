@@ -370,7 +370,6 @@ spec:
       protocol: TCP
   selector:
     app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-
 ```
 {: codeblock}
 
