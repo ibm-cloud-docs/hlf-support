@@ -1467,7 +1467,6 @@ spec:
       size: 10Gi
   usetags: true
   tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
-
 ```
 {: codeblock}
 
