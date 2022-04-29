@@ -1110,7 +1110,6 @@ rules:
   - watch
   - delete
   - deletecollection
-
 ```
 {: codeblock}
 

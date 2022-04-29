@@ -615,7 +615,6 @@ rules:
   - watch
   - delete
   - deletecollection
-
 ```
 {: codeblock}
 
@@ -1540,7 +1539,6 @@ rules:
   - watch
   - delete
   - deletecollection
-
 ```
 {: codeblock}
 
@@ -2560,7 +2558,6 @@ rules:
   - watch
   - delete
   - deletecollection
-
 ```
 {: codeblock}
 
