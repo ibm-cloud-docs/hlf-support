@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-26"
+lastupdated: "2022-05-02"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -24,6 +24,8 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 {: #05-03-2022}
 
 **Certificate Authority (CA) patch 1.5.3.1, Peer and ordering node patch 2.4.3-1.**
+
+{{site.data.keyword.blockchainfull}} Platform v2.5.3 release updates listed in [What's new](https://test.cloud.ibm.com/docs/blockchain-sw-253?topic=blockchain-sw-253-release-notes-sw-253) for May 03, 2022.
 
 Miscellaneous bug fixes and security patches.
 
