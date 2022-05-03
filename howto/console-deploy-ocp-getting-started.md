@@ -18,7 +18,6 @@ subcollection: hlf-support
 
 
 
-
 # Getting started
 {: #deploy-ocp-getting-started}
 

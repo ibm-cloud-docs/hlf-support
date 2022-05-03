@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-15"
 
 keywords: blockchain components, ca, certificate authorities, peer, ordering service, orderer, channel, smart contract, applications, multicloud
 
@@ -99,3 +99,4 @@ For a look at how applications interact with a network based on Fabric, check ou
 **Figure 1** depicts an example of a deployed blockchain network that consists of four organizations, Org A, Org B, Org C, and Org D. Each organization has their own Certificate Authority that is responsible for distributing cryptographic identity material. There is also an ordering service with five Raft nodes that defines policies and network participants. Channel X includes all four organizations, but Channel Y is restricted to Org C and Org D.  Lastly, client applications in possession of a properly signed x509 certificate can send calls to their associated peers on the network.
 
 ![Blockchain Network](images/blockchain_network_2-01.svg "Example blockchain network"){: caption="Figure 1. An example blockchain network with four members that leverage channels to isolate data" caption-side="bottom"}
+

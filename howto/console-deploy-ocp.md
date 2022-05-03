@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-29"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -157,7 +157,6 @@ roleRef:
   kind: Role
   name: webhook
   apiGroup: rbac.authorization.k8s.io
-
 ```
 {: codeblock}
 
@@ -216,7 +215,6 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
-
 ```
 {: codeblock}
 
@@ -332,7 +330,6 @@ spec:
             requests:
               cpu: 0.1
               memory: "100Mi"
-
 ```
 {: codeblock}
 
@@ -372,7 +369,6 @@ spec:
       protocol: TCP
   selector:
     app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-
 ```
 {: codeblock}
 
@@ -834,7 +830,6 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
-
 ```
 {: codeblock}
 
@@ -1053,7 +1048,6 @@ rules:
   - watch
   - delete
   - deletecollection
-
 ```
 {: codeblock}
 
@@ -1097,7 +1091,6 @@ roleRef:
   kind: ClusterRole
   name: <PROJECT_NAME>
   apiGroup: rbac.authorization.k8s.io
-
 ```
 {: codeblock}
 
@@ -1226,7 +1219,6 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
-
 ```
 {: codeblock}
 
@@ -1385,7 +1377,6 @@ spec:
         memory: 200Mi
   usetags: true
   version: 1.0.0
-
 ```
 {: codeblock}
 

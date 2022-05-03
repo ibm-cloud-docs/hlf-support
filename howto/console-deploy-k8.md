@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-29"
 
 keywords: IBM Support for Hyperledger Fabric, deploy, resource requirements, storage, parameters, multicloud
 
@@ -191,7 +191,6 @@ roleRef:
   kind: Role
   name: webhook
   apiGroup: rbac.authorization.k8s.io
-
 ```
 {: codeblock}
 
@@ -250,7 +249,6 @@ users:
 - system:serviceaccounts:<PROJECT_NAME>
 volumes:
 - "*"
-
 ```
 {: codeblock}
 
@@ -366,7 +364,6 @@ spec:
             requests:
               cpu: 0.1
               memory: "100Mi"
-
 ```
 {: codeblock}
 
@@ -406,7 +403,6 @@ spec:
       protocol: TCP
   selector:
     app.kubernetes.io/instance: "ibm-hlfsupport-webhook"
-
 ```
 {: codeblock}
 
@@ -855,7 +851,6 @@ spec:
   - FOWNER
   volumes:
   - '*'
-
 ```
 {: codeblock}
 
@@ -1094,7 +1089,6 @@ roleRef:
   kind: ClusterRole
   name: <NAMESPACE>
   apiGroup: rbac.authorization.k8s.io
-
 ```
 {: codeblock}
 
@@ -1227,7 +1221,6 @@ spec:
             limits:
               cpu: 100m
               memory: 200Mi
-
 ```
 {: codeblock}
 
@@ -1369,7 +1362,6 @@ spec:
         memory: 200Mi
   usetags: true
   version: 1.0.0
-
 ```
 {: codeblock}
 
@@ -1448,7 +1440,6 @@ spec:
       size: 10Gi
   usetags: true
   tlsSecretName: "<CONSOLE_TLS_SECRET_NAME>"
-
 ```
 {: codeblock}
 

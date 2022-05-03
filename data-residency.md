@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-01"
+lastupdated: "2022-04-15"
 
 keywords: IBM Support for Hyperledger Fabric, Data residency, world state, channels, multicloud
 
@@ -128,3 +128,4 @@ Therefore, to preserve data residency, the end user's browser and the Kubernetes
 For a deeper understanding of the flow of data on the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric network, refer to the [Fabric documentation on transaction flow](https://hyperledger-fabric.readthedocs.io/en/release-2.2/txflow.html){: external}.
 
 You can get more information about Private data collections and Zero Knowledge Proof in the white paper about [Private and confidential transactions with Hyperledger Fabric](https://developer.ibm.com/tutorials/cl-blockchain-private-confidential-transactions-hyperledger-fabric-zero-knowledge-proof/){: external}.
+

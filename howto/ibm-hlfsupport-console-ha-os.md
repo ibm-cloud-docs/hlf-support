@@ -22,7 +22,6 @@ completion-time: 45m
 
 
 
-
 # Setting up multiregion High Availability (HA) deployments for the ordering service
 {: #ibm-hlfsupport-console-hadr-mr-os}
 {: toc-content-type="tutorial"}

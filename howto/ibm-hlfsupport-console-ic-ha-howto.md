@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Setting up multiregion High Availability (HA) deployments for peers
 {: #ibm-hlfsupport-console-hadr-mr}
 

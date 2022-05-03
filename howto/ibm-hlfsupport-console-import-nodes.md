@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Importing nodes, MSPs, and identities
 {: #ibm-hlfsupport-console-import-nodes}
 

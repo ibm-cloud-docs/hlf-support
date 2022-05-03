@@ -74,6 +74,7 @@ Blockchain HLF Support
 		howto/console-deploy-k8.md
 		howto/console-deploy-k8-firewall.md
 		howto/console-delete-k8.md
+		howto/console-fixpack.md
 
 	{: .topicgroup}
 	Using IBM Support for Hyperledger Fabric

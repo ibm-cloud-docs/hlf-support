@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-04-14"
 
 keywords: IBM Support for Hyperledger Fabric, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -441,21 +440,6 @@ kubectl  logs -f chaincode-execution-0a8fb504-78e2-4d50-a614-e95fb7e7c8f4 -n na0
 
 ```
 
-<br><br>
-
-<img src="../images/1-4_Pill.png" alt="version 1.4" width="30" style="width:30px; border-style: none"/> **Hyperledger Fabric v1.4 peer image**  
-
-If your peer is based on the Fabric v1.4 image, you can run the following kubectl command to view the smart contract container logs.
-
-```
-kubectl  logs -f <PEER_POD> -c chaincode-logs -n <NAMESPACE>
-```
-{: codeblock}
-
-Replace
-- `<PEER_POD>` with the name of the peer pod where the smart contract is running. Use the command `kubectl get po` to get the list of running pods.
-- `<NAMESPACE>` with the name of the cluster namespace or OpenShift project.
-
 ## Upgrading your nodes
 {: #ibm-hlfsupport-console-manage-patch}
 
@@ -465,5 +449,3 @@ The best practice is to apply upgrades to one node at a time. While the upgrade 
 {: note}
 
 For information about how to upgrade a node, check out [Upgrading to the latest version of Fabric](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade).
-
-

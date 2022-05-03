@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs
 {: #ibm-hlfsupport-v2-apis}
 

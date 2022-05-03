@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-01"
+lastupdated: "2022-04-14"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -12,7 +12,6 @@ content-type: faq
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # FAQs
@@ -136,8 +135,6 @@ Depending on the contents of a Fabric release and {{site.data.keyword.IBM_notm}}
 1. Upgrade nodes to the latest Fabric versions. Note that nodes are always backward compatible with earlier versions and earlier capabilities. For more information about upgrading nodes, see [Upgrading to a new version of Fabric](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade).
 2. Update channels with any new channel capabilities. If you update capabilities to a capability level (such as 2.0) before upgrading nodes to the Fabric version corresponding to a capability, the node may crash. For more information, see [Capabilities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-capabilities).
 
-If you are moving from v1.4.x to v2.x, you may have to update your smart contracts to conform to new smart contract lifecycle. For more information, see [Upgrading to a new version of Fabric](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2#ibm-hlfsupport-console-smart-contracts-v2).
-{: tip}
 
 ## What database do the peers use for their ledger?
 {: #ibm-hlfsupport-v2-faq-v2-ibm-hlfsupport-Overview-1-3}

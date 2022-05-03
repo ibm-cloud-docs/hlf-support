@@ -14,7 +14,6 @@ subcollection: hlf-support
 
 
 
-
 # Creating and managing identities
 {: #ibm-hlfsupport-console-identities}
 

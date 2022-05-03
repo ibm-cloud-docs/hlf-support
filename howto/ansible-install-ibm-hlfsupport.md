@@ -1,8 +1,8 @@
 ---
 
-    copyright:
+copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-04-14"
 
 keywords: ansible playbooks, docker image, blockchain network, APIs, ansible galaxy
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 # Deploy the service from an Ansible playbook
 {: #ansible-install-ibp}

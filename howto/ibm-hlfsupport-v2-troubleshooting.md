@@ -13,7 +13,6 @@ content-type: troubleshoot
 
 {{site.data.keyword.attribute-definition-list}}
 
-
 # Troubleshooting
 {: #ibm-hlfsupport-v2-troubleshooting}
 

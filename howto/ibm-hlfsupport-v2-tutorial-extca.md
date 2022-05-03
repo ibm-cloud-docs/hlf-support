@@ -21,7 +21,6 @@ completion-time: 30m
 
 
 
-
 # Using certificates from an external Certificate Authority
 {: #ibm-hlfsupport-tutorial-extca}
 {: toc-content-type="tutorial"}

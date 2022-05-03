@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-04-14"
 
 keywords: admin certificate, Node OU, admin identity, expiration
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 
@@ -306,15 +305,11 @@ In order to update the application channel, you need to have the channel member 
 ### Considerations for a single node ordering service
 {: #cert-mgmt-manual-renewal-os1}
 
-If you are using a single-node ordering service and need to renew the ordering node TLS certificate, additional steps are required. The **Re-enroll** button for the ordering node TLS certificate is only visible when the node is running a Fabric version greater than or equal to v1.4.9, or in the case of a Fabric v2.x node, the version must be greater than or equal to v2.2.1. Likewise, the **Enroll** button is only visible when the Fabric version is greater than v1.4.9 or in the case of a Fabric v2.x image, it must be greater than v2.2.1.
+If you are using a single-node ordering service and need to renew the ordering node TLS certificate, additional steps are required.
 
-- **Ordering node TLS certificate not expired -** If the ordering node TLS certificate has not expired, you should upgrade the Fabric v1.4.x node to 1.4.9 or Fabric v2.x node to 2.2.1.  Then use the reenroll button which is now visible in the console and follow the normal steps to [Renew ordering node enrollment and TLS certificates](#cert-mgmt-enroll-tls-ordering-node).
-
-To avoid problems, do not mix Fabric v1.4 and v2.x nodes in your Raft cluster. All ordering nodes should be running v1.4.x or all should be running v2.x.
-{: important}
+- **Ordering node TLS certificate not expired -** Use the reenroll button which is now visible in the console and follow the normal steps to [Renew ordering node enrollment and TLS certificates](#cert-mgmt-enroll-tls-ordering-node).
 
 - **Ordering node TLS certificate expired -** If the ordering node TLS certificate has expired then the **Enroll** button is blocked. Open a support ticket to address the problem.
-
 
 
 ## Renew MSP Admin certificate

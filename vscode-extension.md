@@ -15,7 +15,6 @@ subcollection: hlf-support
 
 
 
-
 # Developing smart contracts with {{site.data.keyword.IBM_notm}} Blockchain Platform Developer Tools
 {: #develop-vscode}
 

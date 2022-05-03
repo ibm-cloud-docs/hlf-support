@@ -14,7 +14,6 @@ subcollection: hlf-support
 
 
 
-
 # Pricing
 {: #ibm-hlfsupport-sw-pricing}
 

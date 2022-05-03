@@ -13,7 +13,6 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
-
 # Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #get-started-console-ocp}
 
