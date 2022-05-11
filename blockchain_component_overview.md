@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-15"
+lastupdated: "2022-05-11"
 
 keywords: blockchain components, ca, certificate authorities, peer, ordering service, orderer, channel, smart contract, applications, multicloud
 
@@ -91,7 +91,7 @@ For more information about smart contracts, see [Smart contracts](https://hyperl
 
 Client applications in a Fabric-based network like {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric leverage underlying infrastructures such as APIs, SDKs, and smart contracts to allow client interactions (invokes and queries) at a higher level of abstraction.
 
-For a look at how applications interact with a network based on Fabric, check out the [Developing Applications](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html){: external} topic in the Hyperledger Fabric documentation. You can also view the [creating applications](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app) topic to learn how to connect your applications to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+For a look at how applications interact with a network based on Fabric, check out the [Developing Applications](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html){: external} topic in the Hyperledger Fabric documentation. You can also view the [developing applications](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-app#ibm-hlfsupport-console-app) topic to learn how to connect your applications to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
 
 ## An example network
 {: #blockchain-component-overview-example-network}
@@ -99,4 +99,3 @@ For a look at how applications interact with a network based on Fabric, check ou
 **Figure 1** depicts an example of a deployed blockchain network that consists of four organizations, Org A, Org B, Org C, and Org D. Each organization has their own Certificate Authority that is responsible for distributing cryptographic identity material. There is also an ordering service with five Raft nodes that defines policies and network participants. Channel X includes all four organizations, but Channel Y is restricted to Org C and Org D.  Lastly, client applications in possession of a properly signed x509 certificate can send calls to their associated peers on the network.
 
 ![Blockchain Network](images/blockchain_network_2-01.svg "Example blockchain network"){: caption="Figure 1. An example blockchain network with four members that leverage channels to isolate data" caption-side="bottom"}
-
