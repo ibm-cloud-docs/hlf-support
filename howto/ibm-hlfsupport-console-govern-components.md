@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-05-11"
 
 keywords: network components, Kubernetes, OpenShift, allocate resources, batch timeout, reallocate resources, LevelDB, CouchDB, ordering nodes, ordering, add and remove, governance
 
@@ -49,26 +49,44 @@ You can scale your cluster by monitoring your nodes and following the instructio
 Note that you do not need to adjust the CPU, memory, or storage for your smart contract pods. These pods will automatically use as many resources as they need to function efficiently. In cases where your smart contracts are struggling because of insufficient resources, you will have to address this at the cluster level.
 {: tip}
 
+### Upgrading nodes from Fabric v1.4 to v2.4
+{: #ibm-hlf-support-console-govern-components-upgrade-v14-v24}
+
+Upgrading {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric nodes directly from Hyperledger Fabric 1.4.x to the latest Fabric version is possible, but deploying a new Fabric 2.2.x peer instead of upgrading is recommended. Fabric installation is done by {{site.data.keyword.blockchainfull_notm}} Platform, but can take hours or days depending on the size of the database to be built. See the [Fabric documentation on upgrading](https://hyperledger-fabric.readthedocs.io/en/release-2.2/upgrade_to_newest_version.html#upgrading-to-2-2-from-the-1-4-x-long-term-support-release){: external} for more information.
+{: important}
+
+If your Fabric v1.4 nodes use Node.js chaincode, use the following sequence to upgrade these nodes from Fabric v1.4 to v2.4:
+
+1. Deploy new peers with Fabric v2.2
+2. Update the Node.js chaincode on these peers to 2.4 shim
+3. Install and instantiate the new chaincode
+4. Upgrade the peers from Fabric v2.2 to v2.4.
+
 ## Upgrading to a new version of Fabric
 {: #ibm-hlfsupport-console-govern-components-upgrade}
 
-While some new versions of Fabric are released where only the Fabric version of nodes must be upgraded in order to get the latest Fabric features, some new Fabric versions contain new channel capabilities that must also be updated.
+Support for Hyperledger Fabric **v1.4 is now deprecated**, and support for Fabric v1.4 will be removed from  {{site.data.keyword.blockchainfull_notm}} Platform on March 31, 2023. Users should therefore upgrade to Fabric v2.2 as soon as possible. Your applications may  require changes as a result of upgrading to v2.2, so please plan for appropriate testing.
+Note that Fabric v1.4 has not been supported by the Hyperledger community since April of 2021. In addition, Fabric v1.4 uses Golang v1.14, which is no longer receiving security updates from the Golang community.
+{: important}
+
+While some new versions of Fabric only require updating the Fabric version on nodes, some include new channel capabilities that must also be updated.
 
 In these cases, the process of "updating to the latest" release is, at a high level, a two step process:
 
-1. Upgrade the Fabric version of all nodes.
-2. Update the channels to the new capability levels. For information about how to edit channels to use the latest capabilities, check out [Capabilities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern#ibm-hlfsupport-console-govern-capabilities).
+1. Upgrade the Fabric version on all nodes.
+2. Update the channels to the new capability levels. For information about how to update channels, see [Capabilities](/docs/hlf-support?topic=hlf-support-ibp-console-govern#ibp-console-govern-capabilities).
 
 You must upgrade nodes before you update the channels. If a node attempts to read a configuration block containing a capability level it does not understand (which is true in cases where the capability is a higher level than the node version), the node will crash **on all channels**. The node must then be upgraded to the appropriate Fabric version before it can be used again.
 {: important}
 
-At a high level, the process of upgrading a node involves two main steps:
+The process of upgrading a node involves two main steps:
 
 1. Backing up the persistent volumes associated with the node. These backups ensure that in the case of an upgrade failure in which the peer pod is corrupted that the node can be re-deployed using the ledger. For more information, see [Backup considerations for each node type](/docs/hlf-support?topic=hlf-support-backup-restore#backup-restore-node-considerations).
 2. Upgrading the Fabric versions of the nodes one at a time (also known as a "rolling upgrade").
 
 It may also be necessary to update SDKs and smart contracts before you can take advantage of the latest Fabric features. For more information, check out [Step three: Update SDKs and smart contracts](#ibm-hlfsupport-console-govern-components-upgrade-step-three).
 {: tip}
+
 
 ### Step one: Back up your ledger (optional)
 {: #ibm-hlfsupport-console-govern-components-upgrade-step-one-ledger}
