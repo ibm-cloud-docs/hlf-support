@@ -22,7 +22,7 @@ After you install smart contracts and deploy your nodes, you can use client appl
 **Target audience:** This topic is designed for application developers who are interested in developing client apps in Node.js, Go, or Java.
 
 # Using the v2.4 Fabric Gateway peer service
-{: #ibm-hlfsupport-console-app-gateway-peer-service}
+{: #ibm-hlfsupport-console-gateway-peer}
 
 {{site.data.keyword.blockchainfull_notm}} Platform v2.5.3 adds support for the v2.4 Hyperledger Fabric Gateway peer service, which introduces an updated model for developing applications. The v2.4 gateway peer model relocates node connection and transaction processing requirements from the client application to the v2.4 peer nodes. The [v2.4 Fabric Gateway](https://hyperledger-fabric.readthedocs.io/en/release-2.4/gateway.html) method therefore enables developers to focus on business solutions, without having to code gateway connection or transaction processing logic in client applications, as is required for earlier releases.
 
@@ -68,7 +68,7 @@ Click the Organization MSP tile for the organization that your client applicatio
 ## Legacy model of developing applications
 {: #ibm-hlfsupport-console-app-learning-resources}
 
-This section describes the legacy model of developing applications, which was designed for Hyperledger Fabric v2.2 and earlier. Refer to the previous section on [using the v2.4 Fabric Gateway peer service](#hlf-support-console-app-gateway-peer-service}) for details on developing new applications for Fabric v2.4.
+This section describes the legacy model of developing applications, which was designed for Hyperledger Fabric v2.2 and earlier. Refer to the previous section on [using the v2.4 Fabric Gateway peer service](#hlf-support-console-app-gateway-peer-service) for details on developing new applications for Fabric v2.4.
 {: important}
 
 Developing an application might require coordination between two distinct users of your network, the network operator and the application developer:
