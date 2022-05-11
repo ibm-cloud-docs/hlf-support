@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-05-11"
 
 keywords: admin certificate, Node OU, admin identity, expiration
 
@@ -52,7 +52,7 @@ Because the certificate renewal process is different for peers and ordering node
 ## Node OU support
 {: #cert-mgmt-nodeou}
 
-When you register a user with the CA, you need to select a user **Type** of `client`, `peer`, `orderer`, or `admin`, that is used to confer a "role" onto the identity. Roles are referred to as **Organizational Units (OU)** inside a certificate and MSPs can be configured to recognize these roles. The `admin` and `orderer` types were added to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric when Fabric v1.4.3 was included and contains support for **Node OUs** in MSPs and channels.
+When you register a user with the CA, you need to select a user **Type** of `client`, `peer`, `orderer`, or `admin`, that is used to confer a "role" onto the identity. Roles are referred to as **Organizational Units (OU)** inside a certificate and MSPs can be configured to recognize these roles.
 
 This new capability means that when the MSP admin identity is enrolled during MSP creation, the generated signed certificate includes the admin type as an OU inside the certificate. This admin designation means that the signed cert of the identity does not need to be included in the MSP defining the organization. You can learn more about the benefits of Node OUs in the Fabric documentation on the [Membership Service Provider](https://hyperledger-fabric.readthedocs.io/en/release-2.2/membership/membership.html#node-ou-roles-and-msps){: external}.  
 
@@ -60,8 +60,6 @@ Because this functionality was not yet available when the {{site.data.keyword.IB
 
 If your certificates have already expired, you are not able to complete these steps, but should come back and do this after you renew the certificates.
 {: note}
-
-**Pre-requisite:** Before you can take advantage of Node OU support, ensure that your CAs are at Fabric v1.4.3 or higher. Open the CA tile to view the Fabric version. If the CA is not at v1.4.3 or higher, you should [upgrade](/docs/blockchain?topic=blockchain-ibm-hlfsupport-console-manage-console#ibm-hlfsupport-console-manage-patch) it now.
 
 ![View CA Fabric version](../images/ca-fabric-version.png "View CA Fabric version"){: caption="Figure 2. View CA Fabric version" caption-side="bottom"}
 

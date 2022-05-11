@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-05-11"
 
 keywords: network components, Kubernetes, batch timeout, channel update, channels, governance, channel configuration, access control
 
@@ -149,7 +149,7 @@ Note that after a peer is removed from a channel, it might still show as being j
 For a thorough look at what capabilities are how they work, check out [Channel capabilities](https://hyperledger-fabric.readthedocs.io/en/release-2.2/capabilities_concept.html){: external}.
 {: tip}
 
-The capability levels of a channel and the Fabric versions in the nodes on that channel must be coordinated in order for nodes and channels to function properly. That is because both nodes and capabilities work together to ensure that transactions are handled deterministically (that is, that all of the nodes process a transaction the same way). While the Fabric versions of a node are compatible with lower levels of capabilities, capabilities cannot be processed by lower levels of nodes. If a v1.4.x node attempts to read a configuration block containing a v2.x capability, the node will crash. For this reason, the console will attempt to ascertain the nodes that will be affected by a capability update and either warn you (or stop you) from updating a capability if it will cause a node to crash. More on this later.
+The capability levels of a channel and the Fabric versions in the nodes on that channel must be coordinated in order for nodes and channels to function properly. That is because both nodes and capabilities work together to ensure that transactions are handled deterministically (that is, that all of the nodes process a transaction the same way).
 
 Because of this, all of the nodes in a channel must be at least at the level of the capabilities relevant to the node. Therefore, if the organizations in your channel want to "move to v2.0", this is in practice a three step process:
 
@@ -199,12 +199,9 @@ The following table shows the compatibility levels of peer image versions with t
 
 | | Channel application capability 1.4 |  Channel application capability 2.x |
 |-| -----------------------------------|-------------------------------------|
-| **Peer image 1.4.x** | ![Checkmark icon](../../icons/checkmark-icon.svg) Uses legacy smart contract deployment flow and requires smart contract in .cds file format. |  Not possible |
 | **Peer image 2.x** | ![Checkmark icon](../../icons/checkmark-icon.svg) Uses legacy smart contract deployment flow and requires smart contract in .cds file format.  | ![Checkmark icon](../../icons/checkmark-icon.svg) Uses Fabric 2.x smart contract lifecycle and requires smart contract in .tgz file format. |
 {: caption="Table 1. Peer image version vs. channel application capability level" caption-side="bottom"}
 
-- A peer that runs a Fabric 1.4.x image can join a channel that is configured with application capability 1.4.x. But that peer cannot join a channel that is configured with application capability 2.x.
-- If a channel application capability level is upgraded to 2.x before the peer 1.4.x image is upgraded to 2.x, the peer stops functioning and needs to be upgraded to the 2.x image.
 - It is possible for a peer that is running a 2.x image to join a channel with application capability 1.4 and another channel with application capability 2.x at the same time. But smart contracts on the peer in `.cds` format use the [legacy smart contract deployment](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v14) process where they have to be instantiated on the channel with `application` capability 1.4. Smart contracts on the peer in `tar.gz` format follow  the [Fabric 2.x smart contract lifecycle](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-smart-contracts-v2) process on the channel with `application` capability 2.x.
 
 Like the orderer and channel capabilities, the application capability level can be edited through a channel configuration update. The orderer capability can also be specified during the creation of a channel, but will require the approval of the ordering service.
@@ -241,5 +238,3 @@ Set the **Timeout** value to the amount of time, in seconds, to wait after the f
 
 When you modify these parameters, you do not affect the behavior of existing channels on the orderer; rather, any changes you make to the orderer configuration apply only to new channels you create on this orderer.
 {: important}
-
-
