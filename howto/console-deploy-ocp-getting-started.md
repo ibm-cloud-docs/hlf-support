@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-05-12"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -56,8 +56,9 @@ If you are deploying the OpenShift platform on {{site.data.keyword.cloud_notm}},
 {: #deploy-ocp-browsers}
 The Fabric Operations Console has been successfully tested on the following browsers:
 
-- Chrome Version 91.0.4472.114 (Official Build) (64-bit)
-- Safari Version 14.1.1 (16611.2.7.1.4)
+- Chrome Version 100.0.4896.127 (Official Build) (x86_64)
+- Safari Version 15.4 (16613.1.17.1.13, 16613)
+- Firefox 99.0.1 (64-bit)
 
 ## Storage
 {: #deploy-ocp-storage}
@@ -119,6 +120,5 @@ The storages listed above are maintained by respective providers and it is not r
 {: #deploy-ocp-choose}
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be deployed in four different ways depending on your business goals. Red Hat customers may prefer to deploy the service directly from the Red Hat Marketplace to their OpenShift cluster in the cloud or on-prem. If you prefer to step through the process manually, you can deploy it to your cloud or on-prem  behind a firewall. Finally, an Ansible playbook is available to automate the deployment of the service to your OpenShift cluster.
-
 
 

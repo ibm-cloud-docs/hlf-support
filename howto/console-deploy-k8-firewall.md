@@ -2,7 +2,7 @@
 
     copyright:
   years: 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-12"
 
 keywords: Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -54,8 +54,9 @@ Note that when smart contracts are installed on peers that run a Fabric v2.x ima
 {: #deploy-k8-browsers-firewall}
 The Fabric Operations Console has been successfully tested on the following browsers:
 
-- Chrome Version 91.0.4472.114 (Official Build) (64-bit)
-- Safari Version 14.1.1 (16611.2.7.1.4)
+- Chrome Version 100.0.4896.127 (Official Build) (x86_64)
+- Safari Version 15.4 (16613.1.17.1.13, 16613)
+- Firefox 99.0.1 (64-bit)
 
 ## Storage
 {: #deploy-k8-storage-firewall}
