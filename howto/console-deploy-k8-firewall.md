@@ -1,8 +1,8 @@
 ---
 
-    copyright:
+copyright:
   years: 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-05-13"
 
 keywords: Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
