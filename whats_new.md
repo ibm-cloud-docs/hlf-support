@@ -24,10 +24,8 @@ subcollection: hlf-support
 - [Hyperledger Fabric v2.4.3](https://github.com/hyperledger/fabric/releases/tag/v2.4.3) support.
 - [Fabric Gateway peer service](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-app#hlf-support-console-app-gateway-peer-service) support.
 - Kubernetes Operator will now perform a rolling restart of Hyperledger Fabric pods when updating configuration to help avoid downtime.
-- Hyperledger Fabric [v1.4 support was deprecated](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlf-support-govern-components-upgrade) from {{site.data.keyword.blockchainfull_notm}} Platform Software and SaaS on March 31, 2022. Support will be removed on March 31, 2023.
+- Hyperledger Fabric [v1.4 support was deprecated](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade) from {{site.data.keyword.blockchainfull_notm}} Platform Software and SaaS on March 31, 2022. Support will be removed on March 31, 2023. 
 - Updated [Supported Platforms](/docs/hlf-support?topic=hlf-support-console-ocp-about#console-ocp-about-prerequisites), including support for [OpenShift Container Platform (OCP) 4.10](https://access.redhat.com/support/policy/updates/openshift#dates).
-
-ibm-hlfsupport-console-govern-components-upgrade
 
 
 ## September 15, 2021
