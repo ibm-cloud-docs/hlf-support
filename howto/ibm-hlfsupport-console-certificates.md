@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-16"
 
 keywords: admin certificate, Node OU, admin identity, expiration
 
@@ -25,6 +25,8 @@ subcollection: hlf-support
 **Target audience:** This advanced topic is designed for system administrators or operators who are responsible for registering users, enrolling identities, and administering ordering services or channels. You should be familiar with Membership Service Providers (MSPs) and how they are created.
 
 {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric manages most of the certificate operations without users needing to handle their certificates. However, there are times when you need to manage the certificates that allow you to communicate with the network, such as developing applications or renewing certificates before they expire. This topic is a short guide to your Certificate Authority, and the underlying certificate infrastructure. This information can help you understand the certificates that you will be working with and the tasks you are responsible for.
+
+For details on Hyperledger Fabric certificates, including certificate names, types, and locations, see the  [Certificates Management Guide](https://hyperledger-fabric.readthedocs.io/en/latest/certs_management.html).
 
 ## Certificate Authorities (CAs)
 {: #cert-mgmt-network-ca}
