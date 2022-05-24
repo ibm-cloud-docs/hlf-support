@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-05-24"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -31,7 +31,6 @@ Hyperledger Fabric v2.4 adds support for the Fabric Gateway peer service, which 
 
 **To develop new applications**, using the latest v2.4 Hyperledger Fabric Gateway peer service and API are recommended, as documented in [Running a Fabric Application](https://hyperledger-fabric.readthedocs.io/en/release-2.4/write_first_app.html). However, **existing applications** developed for earlier versions of Fabric require no migration to run on v2.4. In addition, the prior supported [Hyperledger Fabric v2.2](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html) (and earlier) development methods, using the legacy SDKs (both high-level and low-level programming models), remain supported for new applications.
 
-If you are using Node.js chaincode, refer to [Upgrading nodes from Fabric v1.4 to v2.4](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade) before upgrading a peer from Fabric v1.4 to v2.4.
 
 Although legacy applications will continue to run on Fabric v2.4, upgrading development methods to use the v2.4 Fabric Gateway API, as soon as possible, is recommended.
 {: important}
@@ -44,7 +43,7 @@ For details on developing new applications for Hyperledger Fabric v2.4 networks,
 ### Connecting to the Fabric Gateway peer service
 {: #ibm-hlfsupport-console-app-connecting-fabric-gateway}
 
-A client application that uses the v2.4 Fabric Gateway peer service needs to specify the connection profile for the target peer. The recommended method for retrieving peer connection information is to download the connection profile for your organization, which contains the peer endpoint URL, and the TLS Root CA certificate in `pem` format, required for the client application to connect.
+A client application that uses the v2.4 Fabric Gateway peer service needs to specify the connection details for the target peer. The recommended method for retrieving peer connection information is to download the connection profile for your organization, which contains the peer endpoint URL, and the TLS Root CA certificate in `pem` format, required for the client application to connect.
 
 **Attention:** The peer endpoint URL in the downloaded connection profile starts with `grpcs://`, which is not recognized as part of the endpoint URL. The endpoint URL is therefore the `url` field in the peer connection profile, with the `grpcs://` prefix removed. Peer node details in the organization connection profile will look similar to the following example:
 
