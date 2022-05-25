@@ -143,7 +143,7 @@ Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operat
 
 1. Click **My software** > **Visit the Marketplace**.
 2. In the search bar, type **blockchain** to load the blockchain tile. Select **{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric**.
-3. Install the operator as follows:  
+3. Complete steps a-d to install the operator:  
    a. Click **Install operator**:  
    ![Click Install operator](../images/install-operator-1.png "Install the operator"){: caption="Figure 1. Click Install operator" caption-side="bottom"}
    b. Select clusters to install the operator on:
