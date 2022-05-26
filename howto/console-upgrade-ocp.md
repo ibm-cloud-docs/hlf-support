@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-29"
+lastupdated: "2022-05-26"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
@@ -906,7 +906,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220405-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220601-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
@@ -1924,7 +1924,7 @@ spec:
         fsGroup: 2000
       containers:
         - name: "ibm-hlfsupport-webhook"
-          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220405-amd64"
+          image: "cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220601-amd64"
           imagePullPolicy: Always
           securityContext:
             privileged: false
