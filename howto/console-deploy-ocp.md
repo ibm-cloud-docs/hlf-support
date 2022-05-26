@@ -1171,7 +1171,7 @@ spec:
         - name: cp-pull-secret
       containers:
         - name: ibm-hlfsupport-operator
-          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220405-amd64
+          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220601-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
@@ -1179,8 +1179,8 @@ spec:
             privileged: false
             allowPrivilegeEscalation: false
             readOnlyRootFilesystem: false
-            runAsNonRoot: false
-            runAsUser: 1001
+            runAsNonRoot: true
+            runAsUser: 7051
             capabilities:
               drop:
                 - ALL
