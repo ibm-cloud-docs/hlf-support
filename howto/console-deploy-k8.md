@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-26"
+lastupdated: "2022-05-27"
 
 keywords: IBM Support for Hyperledger Fabric, deploy, resource requirements, storage, parameters, multicloud
 
@@ -1530,7 +1530,7 @@ When you access your console, you can view the **nodes** tab of your console UI.
 
 To learn how to manage the users that can access the console, view the logs of your console and your blockchain components, see [Administering your console](/docs/hlf-support?topic=hlf-support-console-icp-manage#console-icp-manage).  
 
-Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibm-hlfsupport) that can be used to complete all of the steps  in this topic for you.
+Ready to automate the entire deployment process? Check out the [Ansible Playbook](/docs/hlf-support?topic=hlf-support-ansible-install-ibp) that can be used to complete all of the steps  in this topic for you.
 
 ## Considerations when using Kubernetes distributions
 {: #console-deploy-k8-considerations}
