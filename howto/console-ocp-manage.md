@@ -101,7 +101,7 @@ For all of APIs provided by the console, you need to add a `-k` or ``--insecure`
 | **Request body fields** | |
 | <ul><li><code>roles</code></li><li><code>description</code></li></ul>| <ul><li><code>["reader", "writer", "manager"]</code> At least one value is required </li><li><code>string</code> optional</li></ul>|
 | **Response body fields** | |
-| <ul><li><code>api_key</code></li><li><code>description</code></li><li><code>roles</code></li></ul>| <ul><li><code>string</code></li><li><code>string</code> Save: the key is not stored</li><li><code>["<role>"]</code></li></ul>|
+| <ul><li><code>api_key</code></li><li><code>description</code></li><li><code>roles</code></li></ul>| <ul><li><code>string</code></li><li><code>string</code> Save: the key is not stored</li><li><code>["&lt;role&gt;"]</code></li></ul>|
 | Authorization required | manager |
 
 #### Example curl request: Create API key
@@ -130,7 +130,7 @@ Once you have created an API key and secret, you can use the APIs to view or rem
 |-------------|-----------|
 | Path | GET `<API_endpoint>`/ak/api/v2/permissions/keys |
 | **Response body fields** | |
-| <ul><li><code>api_key</code></li><li><code>roles</code></li><li><code>ts_created</code></li><li><code>description</code></li></ul>| <ul><li><code>string</code></li><li><code>["<role>"]</code></li><li><code>number</code> UNIX time stamp in milliseconds</li><li><code>string</code></li></ul>|
+| <ul><li><code>api_key</code></li><li><code>roles</code></li><li><code>ts_created</code></li><li><code>description</code></li></ul>| <ul><li><code>string</code></li><li><code>["&lt;role&gt;"]</code></li><li><code>number</code> UNIX time stamp in milliseconds</li><li><code>string</code></li></ul>|
 | Authorization required | reader |
 
 #### Example curl request: view API keys
@@ -180,7 +180,7 @@ You can also use the APIs to list, add, or remove users who can log in to the co
 |-------------|-----------|
 | Path | GET `<API_endpoint>`/ak/api/v2/permissions/users |
 | **Response body fields** | |
-| <ul><li><code>uuids</code></li><li><code>email</code></li><li><code>roles</code></li><li><code>created</code></li></ul>| <ul><li><code>string</code> user ID</li><li><code>string</code> email address</li><li><code>["<role>"]</code></li><li><code>number</code> UNIX time stamp in milliseconds</li></ul>|
+| <ul><li><code>uuids</code></li><li><code>email</code></li><li><code>roles</code></li><li><code>created</code></li></ul>| <ul><li><code>string</code> user ID</li><li><code>string</code> email address</li><li><code>["&lt;role&gt;"]</code></li><li><code>number</code> UNIX time stamp in milliseconds</li></ul>|
 | Authorization required | reader |
 
 #### Example curl request: list users
