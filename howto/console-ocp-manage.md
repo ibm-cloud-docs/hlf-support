@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-05-27"
 
 keywords: IBM Support for Hyperledger Fabric, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -443,7 +443,7 @@ kubectl  logs -f chaincode-execution-0a8fb504-78e2-4d50-a614-e95fb7e7c8f4 -n na0
 ## Upgrading your nodes
 {: #ibm-hlfsupport-console-manage-patch}
 
-The underlying {{site.data.keyword.IBM_notm}} Hyperledger Fabric Docker images for the peer, CA, and ordering nodes might need to be updated over time, for example, with security updates or to a new Fabric point release. The **Upgrade available** text on a node tile is the indicator that such a patch is available and can be installed on the node whenever you are ready. Unless otherwise noted in the [Release notes](/docs/hlf-support?topic=hlf-support-release-notes-saas-20), these upgrades are optional, but recommended. You cannot upgrade nodes that have been imported into the console.
+The underlying {{site.data.keyword.IBM_notm}} Hyperledger Fabric Docker images for the peer, CA, and ordering nodes might need to be updated over time, for example, with security updates or to a new Fabric point release. The **Upgrade available** text on a node tile is the indicator that such a patch is available and can be installed on the node whenever you are ready. Unless otherwise noted in the [Release notes](/docs/hlf-support?topic=hlf-support-release-notes), these upgrades are optional, but recommended. You cannot upgrade nodes that have been imported into the console.
 
 The best practice is to apply upgrades to one node at a time. While the upgrade is being applied, the node is unavailable to process requests or transactions. Therefore, to avoid any disruption of service, whenever possible you should ensure another node of the same type is available to process requests. Upgrading a node takes about a minute to complete and when the update is complete, the node is ready to process requests.
 {: note}
