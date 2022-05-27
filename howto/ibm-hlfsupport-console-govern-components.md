@@ -74,7 +74,7 @@ While some new versions of Fabric only require updating the Fabric version on no
 In these cases, the process of "updating to the latest" release is, at a high level, a two step process:
 
 1. Upgrade the Fabric version on all nodes.
-2. Update the channels to the new capability levels. For information about how to update channels, see [Capabilities](/docs/hlf-support?topic=hlf-support-ibp-console-govern#ibm-hlfsupport-console-govern-capabilities).
+2. Update the channels to the new capability levels. For information about how to update channels, see [Capabilities](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-capabilities).
 
 You must upgrade nodes before you update the channels. If a node attempts to read a configuration block containing a capability level it does not understand (which is true in cases where the capability is a higher level than the node version), the node will crash **on all channels**. The node must then be upgraded to the appropriate Fabric version before it can be used again.
 {: important}
