@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-05-24"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -24,16 +24,15 @@ After you install smart contracts and deploy your nodes, you can use client appl
 # Using the v2.4 Fabric Gateway peer service
 {: #ibm-hlfsupport-console-gateway-peer}
 
-{{site.data.keyword.blockchainfull_notm}} Platform v2.5.3 adds support for the v2.4 Hyperledger Fabric Gateway peer service, which introduces an updated model for developing applications. The v2.4 gateway peer model relocates node connection and transaction processing requirements from the client application to the v2.4 peer nodes. The [v2.4 Fabric Gateway](https://hyperledger-fabric.readthedocs.io/en/release-2.4/gateway.html) method therefore enables developers to focus on business solutions, without having to code gateway connection or transaction processing logic in client applications, as is required for earlier releases.
+Hyperledger Fabric v2.4 adds support for the Fabric Gateway peer service, which introduces an updated model for developing applications. The Fabric Gateway peer service relocates node connection and transaction processing requirements from the client application to the v2.4 peer nodes. The [v2.4 Fabric Gateway](https://hyperledger-fabric.readthedocs.io/en/release-2.4/gateway.html) therefore enables developers to focus on business solutions, without having to code gateway connection or transaction processing logic in client applications, as is required for earlier programming models.
 
 ### Supported app development methods in Fabric v2.4
 {: #ibm-hlfsupport-ibp-console-app-dev-methods-v24}
 
-**To develop new applications** for {{site.data.keyword.blockchainfull_notm}} Platform v2.5.3, using the latest v2.4 Hyperledger Fabric Gateway peer service and API are recommended, as documented in [Running a Fabric Application](https://hyperledger-fabric.readthedocs.io/en/release-2.4/write_first_app.html). However, **for existing applications** developed for {{site.data.keyword.blockchainfull_notm}} Platform v2.5.2 and earlier, no migration is required&mdash; your existing applications will continue to run on v2.5.3. In addition, the prior [Hyperledger Fabric v2.2](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html) (and earlier) development methods, using the legacy SDKs (both high-level and low-level programming models), remain supported for new applications in {{site.data.keyword.blockchainfull_notm}} Platform v2.5.3 and Fabric v2.4.
+**To develop new applications**, using the latest v2.4 Hyperledger Fabric Gateway peer service and API are recommended, as documented in [Running a Fabric Application](https://hyperledger-fabric.readthedocs.io/en/release-2.4/write_first_app.html). However, **existing applications** developed for earlier versions of Fabric require no migration to run on v2.4. In addition, the prior supported [Hyperledger Fabric v2.2](https://hyperledger-fabric.readthedocs.io/en/release-2.2/developapps/developing_applications.html) (and earlier) development methods, using the legacy SDKs (both high-level and low-level programming models), remain supported for new applications.
 
-If you are using Node.js chaincode, refer to [Upgrading nodes from Fabric v1.4 to v2.4](/docs/hlf-support?topic=hlf-support-ibm-hlfsupport-console-govern-components#ibm-hlfsupport-console-govern-components-upgrade) before upgrading a peer from Fabric v1.4 to v2.4.
 
-Although legacy applications will continue to run on v2.5.3, upgrading development methods to use the v2.4 Fabric Gateway API as soon as possible is recommended.
+Although legacy applications will continue to run on Fabric v2.4, upgrading development methods to use the v2.4 Fabric Gateway API, as soon as possible, is recommended.
 {: important}
 
 ### Fabric Peer Gateway documentation
@@ -44,7 +43,7 @@ For details on developing new applications for Hyperledger Fabric v2.4 networks,
 ### Connecting to the Fabric Gateway peer service
 {: #ibm-hlfsupport-console-app-connecting-fabric-gateway}
 
-A client application that uses the v2.4 Fabric Gateway peer service needs to specify the connection profile for the target peer. The recommended method for retrieving peer connection information is to download the connection profile for your organization, which contains the peer endpoint URL, and the TLS Root CA certificate in `pem` format, required for the client application to connect.
+A client application that uses the v2.4 Fabric Gateway peer service needs to specify the connection details for the target peer. The recommended method for retrieving peer connection information is to download the connection profile for your organization, which contains the peer endpoint URL, and the TLS Root CA certificate in `pem` format, required for the client application to connect.
 
 **Attention:** The peer endpoint URL in the downloaded connection profile starts with `grpcs://`, which is not recognized as part of the endpoint URL. The endpoint URL is therefore the `url` field in the peer connection profile, with the `grpcs://` prefix removed. Peer node details in the organization connection profile will look similar to the following example:
 
@@ -60,10 +59,9 @@ DAQH/MB0GA1UdDgQWBBRDV6AdNnpIEGO9\n7mbUM5bk4U0/yTAKBggqhkjOPQQDAgNHADBEAiAxjAM3z
            }
 ```
 
+Click the **Organization MSP** tile for the organization that your client application interacts with. Click **Create connection profile** to open a side panel where you can build and download your connection profile.
 
-Click the Organization MSP tile for the organization that your client application interacts with. Click Create connection profile to open a side panel where you can build and download your connection profile.
-
-**Attention:** The remainder of this page describes the Fabric v2.2 and earlier methods for developing applications, which remain supported in {{site.data.keyword.blockchainfull_notm}} Platform v2.5.3 and Fabric v2.4. ({{site.data.keyword.blockchainfull_notm}} Platform does not support Hyperledger Fabric v2.3). The Fabric v2.2 and earlier development methods are described as the high-level programming model and SDKs and its predecessor, the low-level programming model.
+**Attention:** The remainder of this page describes the Fabric v2.2 and earlier methods for developing applications, which remain supported in Fabric v2.4.  does not support Hyperledger Fabric v2.3). The Fabric v2.2 and earlier development methods are described as the high-level programming model and SDKs and its predecessor, the low-level programming model.
 
 ## Legacy model of developing applications
 {: #ibm-hlfsupport-console-app-learning-resources}

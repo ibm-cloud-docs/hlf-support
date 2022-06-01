@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-05-27"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel, multicloud
 
@@ -303,7 +303,7 @@ Complete the following steps to **import** the ordering service into your consol
 
 Your peer can now be joined to `channel1`.
 
-1. If you are not already there, navigate to the **Channels** tab in the left navigation. <issue-3619>There will not be any channel tiles visible yet. </issue-3619>
+1. If you are not already there, navigate to the **Channels** tab in the left navigation. 
 2. Click the **Join channel** button to launch the side panels.
 3. Select `Ordering Service` and click **Next**.
 4. Enter `channel1` and click **Next**.
