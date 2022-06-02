@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-01"
+lastupdated: "2022-06-02"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -23,7 +23,7 @@ Use these release notes to learn about the latest changes to {{site.data.keyword
 ## 01 June 2022
 {: #06-01-2022}
 
-**Certificate Authority (CA) patch 1.5.3.2, Peer and ordering node patch 1.4.12-13, 2.2.5-5, 2.4.3-2.**
+**Certificate Authority (CA) patch 1.5.3.2, Peer and ordering node patch 2.2.5-5, 2.4.3-2.**
 
 Miscellaneous bug fixes and security patches.
 
@@ -33,7 +33,7 @@ Severity: medium
 ## 03 May 2022
 {: #05-03-2022}
 
-**Certificate Authority (CA) patch 1.5.3.1, Peer and ordering node patch 2.4.3-1.**
+**Certificate Authority (CA) patch 1.5.3.1, Peer and ordering node patch 2.2.5-4, 2.4.3-1.**
 
 {{site.data.keyword.blockchainfull}} Platform v2.5.3 [release updates](/docs/hlf-support?topic=hlf-support-whats-new#whats-new) for May 03, 2022.
 
