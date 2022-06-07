@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-25"
+lastupdated: "2022-06-07"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, Red Hat Marketplace, subscription, operators
 
@@ -147,10 +147,10 @@ Install the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operat
    a. Click **Install operator**:  
    ![Click Install operator](../images/install-operator-1.png "Install the operator"){: caption="Figure 1. Click Install operator" caption-side="bottom"}
    b. Select clusters to install the operator on:
-   ![Select clusters](../images/install-operator-2.png "Select clusters"){: caption="Figure 2. Select clusters to install the operator on" caption-side="bottom"}
+   ![Select clusters](../images/install-operator-4-2.png "Select clusters"){: caption="Figure 2. Select clusters to install the operator on" caption-side="bottom"}
    ![Selected clusters](../images/install-operator-3.png "Selected clusters"){: caption="Figure 3. Selected clusters" caption-side="bottom"}
    c. Select the **Namespace scope** and click **Install**:
-   ![Select namespace scope](../images/install-operator-4.png "Select the namespace scope"){: caption="Figure 4. Select the namespace scope" caption-side="bottom"}
+   ![Select namespace scope](../images/install-operator-2-4.png "Select the namespace scope"){: caption="Figure 4. Select the namespace scope" caption-side="bottom"}
    ![Selected namespace scope](../images/install-operator-5.png "Selected namespace scope"){: caption="Figure 5. Selected namespace scope" caption-side="bottom"}
    d. The operator will install:
    ![Installing operator](../images/install-operator-6.png "Installing the operator"){: caption="Figure 6. Installing operator" caption-side="bottom"}
