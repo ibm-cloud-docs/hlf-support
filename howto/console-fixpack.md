@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-13"
+lastupdated: "2022-06-09"
 
 keywords: Kubernetes, Fabric Operations Console, deploy, resource requirements, storage, parameters, fix pack, multicloud
 
@@ -14,10 +14,10 @@ subcollection: hlf-support
 
 
 
-# Installing the 1.0.0 fix pack
+# Installing the fix pack
 {: #install-fixpack}
 
-Use these instructions if you have already installed or upgraded to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and want to apply the latest 1.0.0 fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous 1.0.0 fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.
+Use these instructions if you have already installed or upgraded to the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric and want to apply the latest fix pack. This fix pack is cumulative, which means that it includes all of the fixes from previous fixpacks. It contains important bug fixes and should be applied to your network as soon as possible.
 {: shortdesc}
 
 You can install the fix pack by updating the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric deployment on your Kubernetes cluster to pull the latest images from the {{site.data.keyword.IBM_notm}} entitlement registry. You can apply the fix pack by using the following steps:
@@ -26,7 +26,7 @@ You can install the fix pack by updating the {{site.data.keyword.IBM_notm}} Supp
 1. [Update the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric operator](#install-fixpack-operator)
 1. [Update your blockchain nodes](#install-fixpack-nodes)
 
-You can use these steps if you deployed the platform on the OpenShift Container Platform, open source Kubernetes, or distributions such as Rancher.  If you have multiple networks deployed on your cluster, you will need to repeat steps 2-3 to update each 1.0.0 network because they run on separate namespaces. If you experience any problems, see the instructions for [rolling back the fix pack installation](#install-fixpack-rollback).  If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Installing the 1.0.0 fix pack behind a firewall](#install-fixpack-firewall). You can install the fix pack without disrupting a running network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the process.
+You can use these steps if you deployed the platform on the OpenShift Container Platform, open source Kubernetes, or distributions such as Rancher. If you have multiple networks deployed on your cluster, you will need to repeat steps 2-3 to update each network because they run on separate namespaces. If you experience any problems, see the instructions for [rolling back the fix pack installation](#install-fixpack-rollback). If you deployed your network behind a firewall, without access to the external internet, see the separate set of instructions for [Installing the fix pack behind a firewall](#install-fixpack-firewall). You can install the fix pack without disrupting a running network. However, you cannot use the console to deploy new nodes, deploy smart contracts, or create new channels during the process.
 
 ## What this fix pack contains
 {: #install-fixpack-contents}
