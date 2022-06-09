@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-20-04"
+lastupdated: "2022-06-09"
 
 keywords: tutorials, how-to, learn
 
@@ -76,4 +76,4 @@ processing for key generation, encryption, decryption, and key storage on IBM Su
 
 Use the [Ansible playbooks](howto-ansible-playbooks.md) tutorials to learn about [getting started with Ansible playbooks](ansible.md), 
 [deploying the service from an Ansible playbook](howto/ansible-install-ibp.md), and 
-[building an IBM Blockchain Platform network using Ansible playbooks](ansible-build-network.md) on IBM Support for Hyperledger Fabric.
+[building an IBM Support for Hyperledger Fabric network using Ansible playbooks](howto/ansible-build-network.md) on IBM Support for Hyperledger Fabric.
