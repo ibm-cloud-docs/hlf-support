@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-06-10"
 
 keywords: tutorials, how-to, deploy smart contracts
 
@@ -22,7 +22,7 @@ subcollection: hlf-support
 
 
 # Deploying smart contracts
-{: #ibp-tutorials-deploying-smart-contracts}
+{: #hlf-support-tutorials-deploying-smart-contracts}
 
 Use the IBM Support for Hyperledger Fabric deploying smart contracts tutorials to get hands-on experience configuring, developing, and 
 deploying smart contracts (in chaincode) on {{site.data.keyword.blockchainfull_notm}} networks.
