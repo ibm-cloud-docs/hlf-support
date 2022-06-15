@@ -1234,7 +1234,7 @@ spec:
         - name: cp-pull-secret
       containers:
         - name: ibm-hlfsupport-operator
-          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220601-amd64
+          image: cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220622-amd64
           command:
             - ibp-operator
           imagePullPolicy: Always
