@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-02"
+lastupdated: "2022-06-19"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -17,7 +17,7 @@ subcollection: hlf-support
 # Release notes
 {: #release-notes}
 
-Use these release notes to learn about the latest changes to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric built on Hyperledger Fabric v2.2.3 - [v2.2.5](https://github.com/hyperledger/fabric/releases/tag/v2.2.5).
+Use these release notes to learn about the latest changes to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric built on Hyperledger Fabric [v2.2.5](https://github.com/hyperledger/fabric/releases/tag/v2.2.5) or [v2.4.3](https://github.com/hyperledger/fabric/releases/tag/v2.4.3).
 {: shortdesc}
 
 ## 01 June 2022
