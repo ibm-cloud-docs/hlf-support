@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-24"
+lastupdated: "2022-06-21"
 
 keywords: client application, Commercial Paper, SDK, wallet, generate a certificate, generate a private key, fabric gateway, APIs, smart contract
 
@@ -21,7 +21,7 @@ After you install smart contracts and deploy your nodes, you can use client appl
 
 **Target audience:** This topic is designed for application developers who are interested in developing client apps in Node.js, Go, or Java.
 
-# Using the v2.4 Fabric Gateway peer service
+## Using the v2.4 Fabric Gateway peer service
 {: #ibm-hlfsupport-console-gateway-peer}
 
 Hyperledger Fabric v2.4 adds support for the Fabric Gateway peer service, which introduces an updated model for developing applications. The Fabric Gateway peer service relocates node connection and transaction processing requirements from the client application to the v2.4 peer nodes. The [v2.4 Fabric Gateway](https://hyperledger-fabric.readthedocs.io/en/release-2.4/gateway.html) therefore enables developers to focus on business solutions, without having to code gateway connection or transaction processing logic in client applications, as is required for earlier programming models.
