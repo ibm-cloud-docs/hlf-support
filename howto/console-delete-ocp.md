@@ -1,8 +1,8 @@
 ---
 
-    copyright:
+copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-06-21"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
@@ -11,7 +11,6 @@ subcollection: hlf-support
 ---
 
 {{site.data.keyword.attribute-definition-list}}
-
 
 
 # Removing your deployment
