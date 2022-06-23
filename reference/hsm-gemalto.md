@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-15"
+lastupdated: "2022-06-10"
 
 keywords: HSM, Gemalto, IBM Cloud
 
@@ -18,7 +18,7 @@ subcollection: hlf-support
 {: help}
 {: support}
 
-{{site.data.keyword.cloud_notm}} includes an [HSM](#x6704988){: term} service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.blockchainfull}} Platform.
+IBM Cloud includes an [HSM](#x6704988){: term} service that provides cryptographic processing for key generation, encryption, decryption, and key storage. This document describes how to use that service with the {{site.data.keyword.blockchainfull}} Platform.
 {: shortdesc}
 
 While this tutorial focuses specifically on using {{site.data.keyword.cloud_notm}} HSM, you can learn more about the overall configuration process for using any HSM that supports PCKS #11 with the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, see

@@ -2,15 +2,17 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-06-21"
 
-keywords: {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, terms, Fabric, Raft, CouchDB, consortium
+
+keywords: terms, definitions, glossary
 
 subcollection: hlf-support
 
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
 
 
 # Glossary
