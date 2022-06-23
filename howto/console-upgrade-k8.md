@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-06-23"
 
 keywords: Kubernetes, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
@@ -27,8 +27,8 @@ The table provides an overview of the current and past releases.
 
 | Version | Release date | Image tags | New features |
 |----|----|----|----|
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-05-03-2022) | 03 May 2022 | **Console and tools** <ul><li>1.0.3-20220601</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20220601</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20220601</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
-| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 15 Sep 2021| **Console and tools** <ul><li>1.0.0-20220601</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20220601</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20220601</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
+| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-05-03-2022) | 03 May 2022 | **Console and tools** <ul><li>1.0.3-20220503</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20220601</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20220601</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
+| [{{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric](/docs/hlf-support?topic=hlf-support-whats-new#whats-new-03-29-2021) | 15 Sep 2021| **Console and tools** <ul><li>1.0.0-20220622</li><li>1.0.0-20210915-amd64</li></ul> **Fabric nodes** <ul><li>2.2.3-20220601</li><li>2.2.3-20210915</li></ul> **CouchDB** <ul><li>2.2.3-20220601</li> <li>2.2.3-20210915</li></ul> | **Fabric Version Upgrade** <ul><li>Fabric version 2.2.3</li></ul> **Improvements to the Console UI** <ul><li>Support for Fabric v2.2.3 Lifecycle.</li></ul> |
 
 **Additional platforms** <ul><li>Platform can be deployed on the OpenShift Container Platform 3.11</ul> |
 {: caption="Table 1. {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric versions" caption-side="bottom"}
@@ -73,7 +73,7 @@ You need to repeat steps 3-6 for each network that that runs in a separate names
 Log in to your cluster and run the following command to update the webhook image in the `ibm-hlfsupport-infra` namespace or project:
 
 ```
-kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfsupport-webhook="cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220601-amd64"
+kubectl set image deploy/ibm-hlfsupport-webhook -n ibm-hlfsupport-infra ibm-hlfsupport-webhook="cp.icr.io/cp/ibm-hlfsupport-crdwebhook:1.0.0-20220622-amd64"
 ```
 {: codeblock}
 
@@ -642,7 +642,7 @@ Wait a few minutes for the console to stop. While the console is stopped you are
 
 Run the following command to upgrade the operator. Replace `<NAMESPACE>` with the Kubernetes namespace for the platform.
 ```
-kubectl set image deploy/ibm-hlfsupport-operator -n <NAMESPACE> ibm-hlfsupport-operator="cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220601-amd64"
+kubectl set image deploy/ibm-hlfsupport-operator -n <NAMESPACE> ibm-hlfsupport-operator="cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220622-amd64"
 ```
 {: codeblock}
 
@@ -1576,7 +1576,7 @@ kubectl get deployment ibm-hlfsupport-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image. You can find the name and tag of the latest operator image below:
 ```
-cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220601-amd64
+cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220622-amd64
 ```
 {: codeblock}
 
@@ -1693,33 +1693,41 @@ The following commands only work with a Docker container registry. Depending on 
 {: note}
 
 ```
-skopeo copy docker://cp.icr.io/cp/ibp-operator:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-operator:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-init:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-init:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-console:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-console:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-grpcweb:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-grpcweb:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-deployer:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-deployer:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-fluentd:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-fluentd:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-couchdb:2.3.1-20220601 docker://<LOCAL_REGISTRY>/ibp-couchdb:2.3.1-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp- docker://<LOCAL_REGISTRY>/ibp- -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-peer:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-orderer:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ca:1.5.2-20220601 docker://<LOCAL_REGISTRY>/ibp-ca:1.5.2-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-dind:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-dind:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-utilities:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-peer:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-peer:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-orderer:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-orderer:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-chaincode-launcher:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-chaincode-launcher:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-utilities:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-utilities:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-ccenv:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-goenv:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-nodeenv:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:2.2.5-20220601 docker://<LOCAL_REGISTRY>/ibp-javaenv:2.2.5-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-crdwebhook:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-crdwebhook:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-ccenv:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-ccenv:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-goenv:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-goenv:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-nodeenv:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-nodeenv:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-javaenv:1.4.12-20220601 docker://<LOCAL_REGISTRY>/ibp-javaenv:1.4.12-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
-skopeo copy docker://cp.icr.io/cp/ibp-enroller:2.5.3-20220601 docker://<LOCAL_REGISTRY>/ibp-enroller:2.5.3-20220601 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-operator:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-operator:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-init:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-init:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-console:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-console:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-grpcweb:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-grpcweb:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-deployer:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-deployer:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-fluentd:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-fluentd:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-couchdb:2.3.1-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-couchdb:2.3.1-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport- docker://<LOCAL_REGISTRY>/ibm-hlfsupport- -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ca:1.5.2-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ca:1.5.2-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-dind:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-dind:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-utilities:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-chaincode-launcher:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-utilities:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ccenv:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.2.5-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:2.2.5-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-peer:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-peer:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-orderer:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-orderer:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-chaincode-launcher:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-chaincode-launcher:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-utilities:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-utilities:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ccenv:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:2.4.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:2.4.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-crdwebhook:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-crdwebhook:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-ccenv:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-ccenv:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-goenv:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-goenv:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-nodeenv:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-nodeenv:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-javaenv:1.4.12-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-javaenv:1.4.12-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
+skopeo copy docker://cp.icr.io/cp/ibm-hlfsupport-enroller:2.5.3-20220622 docker://<LOCAL_REGISTRY>/ibm-hlfsupport-enroller:2.5.3-20220622 -q --src-creds cp:<ENTITLEMENT_KEY> --dest-creds <LOCAL_REGISTRY_USER>:<LOCAL_REGISTRY_PASSWORD> --all
 ```
 {: codeblock}
 
@@ -2599,7 +2607,7 @@ kubectl get deployment ibm-hlfsupport-operator -o yaml > operator.yaml
 
 Open `operator.yaml` in a text editor and save a new copy of the file as `operator-upgrade.yaml`. You need to update the `image:` field with the updated version of the operator image:
 ```yaml
-cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220601-amd64
+cp.icr.io/cp/ibm-hlfsupport-operator:1.0.0-20220622-amd64
 ```
 {: codeblock}
 
