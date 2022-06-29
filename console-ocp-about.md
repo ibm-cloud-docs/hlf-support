@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-19"
+lastupdated: "2022-06-29"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -23,7 +23,8 @@ The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric enables a cons
 
 Watch the following video for an introduction to blockchain and the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric:
 
-![Key concepts video](https://www.youtube.com/embed/AvQa1W38J4I){: video output="iframe" data-script="#video-transcript-key-concepts" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+<p><object width="608" height="405" data="https://www.youtube.com/embed/AvQa1W38J4I?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
+
 
 ## Video script
 {: #video-transcript-key-concepts}
