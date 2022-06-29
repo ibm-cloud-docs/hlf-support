@@ -325,7 +325,7 @@ However, just as with the peer, before we can create an ordering service, we nee
 
 Watch the following video to learn about the process to create the ordering service's organization and the ordering service (for video tutorials on how how to create a peer and a channel, see [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
 
-![Deployment tutorial series: orderer](https://www.youtube.com/embed/lapmfN_tucg){: video output="iframe" data-script="#video-transcript-orderer" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+<p><object width="608" height="405" data="https://www.youtube.com/embed/lapmfN_tucg?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
 ### Video script
 {: #video-transcript-orderer}
@@ -528,12 +528,11 @@ Because only ordering service admins can add peer organizations to the consortiu
 
 Watch the following video to learn how to add a peer organization to the consortium, create the channel, and join a peer to the channel. For video tutorials on how how to create a peer and an ordering service, see [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
 
-![Deployment tutorial series: create a channel](https://www.youtube.com/embed/iFAl66ee-Qs){: video output="iframe" data-script="#video-transcript-channel" id="youtubeplayer" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen}
+<p><object width="608" height="405" data="https://www.youtube.com/embed//iFAl66ee-Qs?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
-### Video script
-{: #video-transcript-channel}
-{: notoc}
-
+<details>
+<summary>Video transcript</summary>
+<p>
 Hello again, and welcome to this demonstration of how to create a channel using the Fabric Operations Console. If you've watched our videos on creating a peer and an ordering service, you should have a deployment that looks similar to this one, with one peer org, two CAs and an ordering service.
 
 As with our previous videos, the steps we'll be going through today are from our Build a network tutorial in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation. This tutorial will complete the structure you see here, with Org1, which we created in our first video, creating a channel run on our ordering service, which we created in our second video.
@@ -557,6 +556,8 @@ After you have joined the channel you can inspect it. You’ll see the block hei
 To initiate a channel update, click the update button. This will allow you to edit many of the fields you specified when creating the channel, and to perform important tasks like adding channel members. The advanced configuration tab allows you to edit features like capability levels and ordering service consenters that were not edited during channel create. Note that some of these options will require the approval of an ordering service organization.
 
 So now that we have created a channel and joined a peer to it, we can install a smart contract. We can add other members to our channel. We have everything we need to start transacting using the Fabric Operations Console. Thank you for watching, and happy block chaining.
+</p>
+</details>
 
 ### Add the organization to the consortium
 {: #ibm-hlfsupport-console-build-network-add-org-consortium}
