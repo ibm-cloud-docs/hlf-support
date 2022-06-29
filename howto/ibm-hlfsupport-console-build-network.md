@@ -85,9 +85,9 @@ For each organization that you want to create with the console, you should deplo
 
 In this tutorial, we create two organizations, one which will own a peer and another which will own an ordering service. Each organization needs a CA to issue its certificates, therefore we need to create **two CAs**. For the purpose of this tutorial, **we will create only one CA at a time**.
 
-Watch the following video to learn about the process to create the peer's organization and the peer (for video tutorials on how how to create an ordering service and a channel, see [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
+Watch the following video to learn how to add a peer organization to the consortium, create the channel, and join a peer to the channel. For video tutorials on how how to create a peer and an ordering service, see [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
 
-<p><object width="608" height="405" data="https://www.youtube.com/embed/PAC0PPPFxLE?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
+<p><object width="608" height="405" data="https://www.youtube.com/embed//iFAl66ee-Qs?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
 ### Video script
 {: #video-transcript-peer}
@@ -323,14 +323,14 @@ You have the option between creating a one node ordering service (sufficient for
 
 However, just as with the peer, before we can create an ordering service, we need to create a CA to supply the identities and the MSP of our ordering service organization.
 
-Watch the following video to learn about the process to create the ordering service's organization and the ordering service (for video tutorials on how how to create a peer and a channel, see [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
+Watch the following video to learn about the process to create the ordering service's organization and the ordering service. For video tutorials on how how to create a peer and a channel, see the [video series.](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
 
 <p><object width="608" height="405" data="https://www.youtube.com/embed/lapmfN_tucg?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
-### Video script
-{: #video-transcript-orderer}
-{: notoc}
 
+<details>
+<summary>Video transcript</summary>
+<p>
 Hello everyone, and welcome to this demonstration of how to create an ordering service using the Fabric Operations Console. if you watched our other video on how to create a peer, much of this flow will seem similar to you. You still have to create a Certificate Authority first, use it to create identities and an organization, and then finally use those identities to create the ordering service itself. Once again, this information and more is present in our series of tutorials taking you through a full end to end where you create all of the nodes and identities, create a channel, join a channel, and deploy a smart contract. By the end of this video you'll have a configuration that looks like THIS, only without the channel, which we’ll create in our next demonstration.
 
 So let's go ahead and add that CA. We're creating a CA so we can click next here. As we did with the peer, we need to give this CA a display name. And as before, you can use whatever values you want, but we’ll call it the Ordering Service CA. We’ll give an admin identity of admin and a secret of adminpw for our CA admin. Although this identity has the same id and secret as the Org1 CA admin, it is not the same identity because it is not the same CA. Note the resource allocation box. If you leave this box unselected, your CA will be deployed with default resources. If you want to know what those resources are, for example to check against the resources available in your cluster, click the box and then next. If you’re comfortable with the default allocation, click next. You’ll be taken to the summary screen which will show the values for the CA you are creating. Once again, accept these defaults for now and click next. You’ll be taken to the summary screen that will show you the values you just entered. If these seem right to you, click Add Certificate Authority.
@@ -356,6 +356,12 @@ Now let’s give the ordering node identity that we registered, os1 and the secr
 On the next panel, review the summary to make sure these values are what you expect. Because we choose not to customize our resource allocation, pay particular attention to this section, as it represents the total amount of resources needed for this deployment. If you want to take a closer look at these values, go back and click the resource allocation box. A panel will come up showing these resources and the containers they are linked to. You can see the resources I have available in my cluster, which has three nodes with 4 CPUs and 16 gigs of RAM in a single zone. Based on the resources set to be allocation for my peer, I have enough space for this ordering service. When you are ready, click Add ordering service on the summary screen. It can take several minutes to create a ordering service. Check your Kubernetes cluster to monitor the status of your deployment. When the ordering service has finished deploying, you’ll see the gray box turn green.
 
 You should now have two CAs, a peer, and an ordering service, all the components you need to create a channel, which you can learn about in our next video. Until then, thank you for watching and happy block chaining.
+</p>
+</details>
+
+
+
+
 
 ### Ordering in the console
 {: #ibm-hlfsupport-console-build-network-ordering-console}
