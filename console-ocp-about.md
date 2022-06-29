@@ -25,11 +25,9 @@ Watch the following video for an introduction to blockchain and the {{site.data.
 
 <p><object width="608" height="405" data="https://www.youtube.com/embed/AvQa1W38J4I?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
-
-## Video script
-{: #video-transcript-key-concepts}
-{: notoc}
-
+<details>
+<summary>Video transcript</summary>
+<p>
 By now you’ve probably heard of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, the leading permissioned enterprise blockchain solution in the world. But what is a permissioned blockchain? And what is the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric? The modern world is interwoven and interactive place.
 
 But under the surface it’s still following some pretty old rules.
@@ -65,6 +63,8 @@ How many peers, which host ledgers and have smart contracts installed on them, s
 Because you only pay for the compute you use, it’s painless to transition from pilot programs to full production networks using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. The IBM Garage is here to help assist you in finding the right configuration for every use case.
 
 The world is moving too fast to keep doing things the old way. Go to cloud dot IBM dot com today and check out the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
+</p>
+</details>
 
 ## What {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric offers
 {: #console-ocp-about-offers}
