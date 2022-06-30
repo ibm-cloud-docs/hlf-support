@@ -1,0 +1,1835 @@
+#IBM Cloud conref equivalent file to cloudoeconrefs.dita
+
+#//Do not translate - Begin
+
+keyword:
+  Bluemix:
+     IBM Cloud&reg;
+  Bluemix_short:
+     IBM Cloud&reg;
+  Bluemix_notm:
+    IBM Cloud
+  IBM:
+    IBM&reg;
+  IBM_notm:
+    IBM
+  cloud:
+     IBM Cloud&reg;
+  cloud_notm:
+     IBM Cloud
+  BluSoftlayer_full:
+    IBM Cloud&reg;
+  BluSoftlayer:
+    IBM Cloud&reg;
+  BluSoftlayer_notm:
+    IBM Cloud
+#Service names
+#//AAA
+  acme:
+    Acme services
+  cloudaccesstrailshort:
+    Activity Tracker
+  cloudaccesstraillong:
+    IBM Cloud&reg; Activity Tracker
+  cloudaccesstraillong_notm:
+    IBM Cloud Activity Tracker
+  cloudaccesstrailfull:
+    IBM Cloud&reg; Activity Tracker
+  cloudaccesstrailfull_notm:
+    IBM Cloud Activity Tracker
+  at_full:
+    IBM Cloud&reg; Activity Tracker
+  at_full_notm:
+    IBM Cloud Activity Tracker
+  at_short:
+    Activity Tracker
+  atracker_full: 
+    IBM Cloud&reg; Activity Tracker
+  atracker_full_notm: 
+    IBM Cloud Activity Tracker
+  atracker_short: 
+    Activity Tracker
+  activedeployshort:
+    Active Deploy
+  activedeploylong:
+    IBM&reg; Active Deploy
+  activedeploylong_notm:
+    IBM Active Deploy
+  activedeployfull:
+    IBM&reg; Active Deploy for IBM Cloud&reg;
+  activedeployfull_notm:
+    IBM Active Deploy for IBM Cloud
+  amashort_old:
+    Advanced Mobile Access
+  amafull_old:
+    IBM&reg; Advanced Mobile Access for IBM Cloud&reg;
+  aios_full:
+    IBM&reg; Watson OpenScale
+  aios_full_notm:
+    IBM Watson OpenScale
+  aios_short:
+    Watson OpenScale
+  wos4d_full:
+    IBM&reg; Watson OpenScale for IBM Cloud Pak&reg; for Data
+  wos4d_notm:
+    IBM Watson OpenScale for IBM Cloud Pak for Data
+  alchemyapishort:
+    AlchemyAPI
+  alchemyapifull:
+    IBM&reg; AlchemyAPI for IBM Cloud&reg;
+  alchemydatanewsshort:
+    AlchemyData News
+  alchemydatanewsfull:
+    IBM&reg; AlchemyData News
+  alchemylanguageshort:
+    AlchemyLanguage
+  alchemylanguagefull:
+    IBM&reg; AlchemyLanguage
+  alchemyvisionshort:
+    AlchemyVision
+  alchemyvisionfull:
+    IBM&reg; AlchemyVision
+  alertnotificationshort:
+    Alert Notification
+  alertnotificationlong:
+    IBM&reg; Alert Notification
+  alertnotificationfull:
+    IBM&reg; Alert Notification
+  altadbshort:
+    AltaDB
+  altadbfull:
+    IBM&reg; AltaDB for IBM Cloud&reg;
+  alb_full:
+    Application Load Balancer for VPC
+  hadoopst:
+    Analytics for Apache Hadoop
+  hadoop:
+   IBM&reg; Analytics for Apache Hadoop for IBM Cloud&reg;
+  sparks:
+    Analytics for Apache Spark
+  sparkl:
+    IBM&reg; Analytics for Apache Spark for IBM Cloud&reg;
+  iae_short:
+    Analytics Engine
+  iae_full:
+    IBM&reg; Analytics Engine
+  iae_full_notm:
+    IBM Analytics Engine
+  apiconnect_short:
+    API Connect
+  apiconnect_long:
+    IBM&reg; API Connect
+  apiconnect_full:
+    IBM&reg; API Connect for IBM Cloud&reg;
+  apigw_short:
+    API Gateway
+  apigw_full:
+    IBM Cloud&reg; API Gateway
+  apigw_full_notm:
+    IBM Cloud API Gateway
+  APIHarmony:
+    API Harmony
+  APIHarmonyfull:
+    IBM&reg; API Harmony for IBM Cloud&reg;
+  APIM:
+    API Management
+  APIMfull:
+    IBM&reg; API Management for IBM Cloud&reg;
+  appconfig_full:
+    IBM Cloud&reg; App Configuration
+  appconfig_notm:
+    IBM Cloud App Configuration
+  appconfig_short:
+    App Configuration
+  appconserviceshort:
+    IBM&reg; App Connect
+  appconservicefull:
+    IBM&reg; App Connect in IBM Cloud&reg;
+  appconnect_notm:
+    App Connect
+  Appdomainname:
+    AppDomainName
+  appid_short:
+    App ID
+  appid_short_notm:
+    App ID
+  appid_full:
+    IBM Cloud&reg; App ID
+  appid_full_notm:
+    IBM Cloud App ID
+  appid_long:
+    IBM Cloud&reg; App ID
+  appid_long_notm:
+    IBM Cloud App ID
+  appnav_long:
+     IBM&reg; Application Navigator
+  appnav:
+     Application Navigator
+  engage_short:
+    App Launch
+  engage_full:
+    IBM&reg; App Launch for IBM Cloud Services
+  engage_full_notm:
+    IBM App Launch for IBM Cloud Services
+  appsecshort:
+    Application Security Manager
+  appsecfull:
+    IBM&reg; Application Security Manager for IBM Cloud&reg;
+  appseccloudshort:
+    Application Security on Cloud
+  appseccloudfull:
+    IBM&reg; Application Security on Cloud for IBM Cloud&reg;
+  appserveroncloud_short:
+    Application Server on Cloud
+  appserveroncloud_full:
+    IBM&reg; Application Server on Cloud for IBM Cloud&reg;
+  userreg:
+    App User Registry
+  userregfull:
+    IBM&reg; App User Registry for IBM Cloud&reg;
+  APS_DA:
+    AppScan&reg; Dynamic Analyzer
+  APS_DA_full:
+    IBM&reg; AppScan&reg; Dynamic Analyzer for IBM Cloud&reg;
+  APS_MA:
+    AppScan&reg; Mobile Analyzer
+  APS_MA_full:
+    IBM&reg; AppScan&reg; Mobile Analyzer for IBM Cloud&reg;
+  autoscaling:
+    Auto-Scaling
+  autoscalingfull:
+    IBM&reg; Auto-Scaling for IBM Cloud&reg;
+  autoscalingfull_notm:
+    IBM Auto-Scaling for IBM Cloud
+  prf_hubshort:
+    Availability Monitoring
+  prf_hublong:
+    IBM Cloud&reg; Availability Monitoring
+#//BBB
+  backup_full:
+    IBM Cloud&reg; Backup
+  backup_notm:
+    IBM Cloud Backup
+  baremetal_short:
+    Bare Metal Servers
+  baremetal_long:
+    IBM Cloud&reg; Bare Metal Servers
+  BluBareMetServers:
+    IBM Cloud&reg; Bare Metal Servers
+  BluBareMetServers_full:
+    IBM Cloud&reg; Bare Metal Servers
+  baremetal_short_sing:
+    Bare Metal Server
+  baremetal_long_sing:
+    IBM Cloud&reg; Bare Metal Server
+  bigicloudst:
+    BigInsights&reg;
+  ibist:
+    BigInsights&reg;
+  bigicloud:
+    IBM&reg; BigInsights&reg; for Apache Hadoop for IBM Cloud&reg;
+  blockchain:
+    Blockchain
+  blockchainfull_notm:
+    IBM Blockchain
+  blockchainfull:
+    IBM&reg; Blockchain
+  blockstorageshort:
+    Block Storage
+  blockstoragefull:
+    IBM Cloud&reg; Block Storage
+  Bluemix_dedicated:
+    IBM Cloud&reg; Dedicated
+  Bluemix_dedicated_notm:
+    IBM Cloud Dedicated
+  slportal:
+    IBM Cloud infrastructure customer portal
+  slportal_full:
+    IBM Cloud&reg; infrastructure customer portal
+  slportal_short:
+    customer portal
+  Bluemix_local:
+    Bluemix&reg; Local
+  Bluemix_local_notm:
+    Bluemix Local
+  Bluemix_live:
+    IBM Cloud&reg; Live Sync
+  Bluemix_live_notm:
+    IBM Cloud Live Sync
+  bm_is_short:
+    Bare Metal Servers for VPC
+  bm_is_full:
+    IBM Cloud&reg; Bare Metal Servers for Virtual Private Cloud
+  bm_is_full_notm:
+    IBM Cloud Bare Metal Servers for Virtual Private Cloud
+  rules_short:
+    Business Rules
+  rules:
+    IBM&reg; Business Rules for IBM Cloud&reg;
+#//CCC
+  cilive:
+    Cast Iron&reg; Live
+  cvad_full:
+    Citrix Virtual Apps and Desktops for IBM Cloud&reg;
+  cvad_full_notm:
+    Citrix Virtual Apps and Desktops for IBM Cloud
+  cvad_short:
+    Citrix Virtual Apps and Desktops
+  castironlivefull:
+    IBM&reg; Cast Iron&reg; Live for IBM Cloud&reg;
+  cdn_short:
+    IBM Cloud&reg; CDN
+  clm_short:
+    CLM Services
+  clmtp_short:
+    CLM Track and Plan
+  clmtp_full:
+    IBM&reg; CLM Track and Plan for IBM Cloud&reg;
+  ibmcf_full:
+    IBM&reg; Cloud Foundry
+  ibmcf_notm:
+    IBM Cloud Foundry
+  codeenginefull:
+    IBM Cloud&reg; Code Engine
+  codeenginefull_notm:
+    IBM Cloud Code Engine
+  codeengineshort:
+    Code Engine
+  contentminer:
+    Content Miner
+  dynamdashbemb_full:
+    IBM&reg; Cognos Dashboard Embedded
+  dynamdashbemb_notm:
+    IBM Cognos Dashboard Embedded
+  dynamdashbemb_short:
+    Cognos Dashboard Embedded
+  CAMshort:
+    Cloud Automation Manager
+  CAMlong:
+    IBM&reg; Cloud Automation Manager in IBM Cloud&reg;
+  cloudcerts_short:
+    Certificate Manager
+  cloudcerts_long:
+    IBM Cloud&reg; Certificate Manager
+  cloudcerts_long_notm:
+    IBM Cloud Certificate Manager
+  cloudcerts_full:
+    IBM Cloud&reg; Certificate Manager
+  cloudcerts_full_notm:
+    IBM Cloud Certificate Manager
+  CloudDataCent:
+    IBM Cloud&reg; Data Center
+  CloudDataCents:
+    IBM Cloud&reg; Data Centers
+  CloudDataCent_notm:
+    IBM Cloud Data Center
+  CloudDataCents_notm:
+    IBM Cloud Data Centers
+  cloudint:
+    Cloud Integration
+  cloudintegrationfull:
+    IBM&reg; Cloud Integration for IBM Cloud&reg;
+  cis_full:
+    IBM Cloud&reg; Internet Services
+  cis_full_notm:
+    IBM Cloud Internet Services
+  cis_short:
+    Cloud Internet Services (CIS)
+  cis_short_notm:
+    CIS
+  cognosanalytics_short:
+    Cognos Analytics
+  cognosanalytics_full:
+    IBM Cognos Analytics for IBM Cloud&reg;
+  cognosanalytics_full_notm:
+    IBM Cognos Analytics for IBM Cloud
+  dns_notm:
+    DNS Forward Zones
+  domain_notm:
+    IBM Cloud Domains
+  iamshort:
+    Cloud Identity and Access Management
+  iamlong:
+    IBM Cloud&reg; Identity and Access Management
+  loganalysisshort:
+    Log Analysis
+  loganalysisshort_notm:
+    Log Analysis
+  loganalysislong:
+    IBM Cloud&reg; Log Analysis
+  loganalysislong_notm:
+    IBM Cloud Log Analysis
+  loganalysisfull:
+    IBM Cloud&reg; Log Analysis
+  loganalysisfull_notm:
+    IBM Cloud Log Analysis
+  vpx_full_reg:
+    Citrix&reg; Netscaler VPX
+  vpx:
+    VPX
+  vpx_full:
+    Citrix Netscaler VPX
+  la_full:
+    IBM&reg; Log Analysis
+  la_full_notm:
+    IBM Log Analysis
+  la_short:
+    Log Analysis
+  cosdimshort:
+    Cloud Object Storage Dedicated IBM&reg; Managed
+  cosdimshort_notm:
+    Cloud Object Storage Dedicated IBM Managed
+  cosdimlong:
+    IBM Cloud&reg; Object Storage Dedicated IBM&reg; Managed
+  cosdimfull:
+    IBM Cloud&reg; Object Storage Dedicated IBM&reg; Managed
+  cloudoe:
+    Cloud Operating Environment
+  cloudant:
+    IBM Cloudant
+  cloudant_short_notm:
+    IBM Cloudant
+  cloudantfull:
+    IBM&reg; Cloudant&reg; for IBM Cloud&reg;
+  cloudant_localfull:
+    IBM&reg; Cloudant&reg; Local
+  cloudant_local_notm:
+    IBM Cloudant Local
+  clm_full:
+    IBM&reg; Collaborative Lifecycle Management Services for IBM Cloud&reg;
+  composeEnterprise:
+    Compose Enterprise
+  composeEnterprise_full:
+    IBM&reg; Compose Enterprise
+  composeEnterprise_full_notm:
+    IBM Compose Enterprise
+  composeForElasticsearch:
+    Compose for Elasticsearch
+  composeForElasticsearch_full:
+    IBM&reg; Compose for Elasticsearch for IBM Cloud&reg;
+  composeForEtcd:
+    Compose for etcd
+  composeForEtcd_full:
+    IBM&reg; Compose for etcd for IBM Cloud&reg;
+  composeForJanusGraph:
+    Compose for JanusGraph
+  composeForJanusGraph_full:
+    IBM&reg; Compose for JanusGraph for IBM Cloud&reg;
+  composeForMongoDB:
+    Compose for MongoDB
+  composeForMongoDB_full:
+    IBM&reg; Compose for MongoDB for IBM Cloud&reg;
+  composeForMySQL:
+    Compose for MySQL
+  composeForMySQL_full:
+    IBM&reg; Compose for MySQL for IBM Cloud&reg;
+  composeForPostgreSQL:
+    Compose for PostgreSQL
+  composeForPostgreSQL_full:
+    IBM&reg; Compose for PostgreSQL for IBM Cloud&reg;
+  composeForRabbitMQ:
+    Compose for RabbitMQ
+  composeForRabbitMQ_full:
+    IBM&reg; Compose for RabbitMQ for IBM Cloud&reg;
+  composeForRedis:
+    Compose for Redis
+  composeForRedis_full:
+    IBM&reg; Compose for Redis for IBM Cloud&reg;
+  composeForRethinkDB:
+    Compose for RethinkDB
+  composeForRethinkDB_full:
+    IBM&reg; Compose for RethinkDB for IBM Cloud&reg;
+  composeForScyllaDB:
+    Compose for ScyllaDB
+  composeForScyllaDB_full:
+    IBM&reg; Compose for ScyllaDB for IBM Cloud&reg;
+  ConnectCompose:
+    Connect &amp; Compose
+  ConnectComposefull:
+    IBM&reg; Connect &amp; Compose for IBM Cloud&reg;
+  conceptexpansionshort:
+    Concept Expansion
+  conceptinsightsshort:
+    Concept Insights
+  cp4-automation_short:
+    Cloud Pak for Automation
+  cp4-automation_full:
+    IBM Cloud Pak&reg; for Automation
+  cp4-automation_notm:
+    IBM Cloud Pak for Automation
+  cpd_short:
+    Cloud Pak for Data
+  cpd_full:
+    IBM Cloud Pak&reg; for Data
+  cpd_full_notm:
+    IBM Cloud Pak for Data
+  cp4mcm_full:
+    IBM Cloud Pak&reg; for Multicloud Management
+  cp4mcm_full_notm:
+    IBM Cloud Pak for Multicloud Management
+  icp4i_full:
+    IBM Cloud Pak&reg; for Integration
+  icp4i_full_notm:
+    IBM Cloud Pak for Integration
+  cp4waiops_full:
+    IBM Cloud Pak&reg; for Watson AIOps
+  cp4waiops_full_notm:
+    IBM Cloud Pak for Watson AIOps
+  cp4waiops_short_notm:
+    Cloud Pak for Watson AIOps
+  compliance_full:
+    IBM Cloud&reg; Security and Compliance Center
+  compliance_long:
+    IBM Cloud Security and Compliance Center
+  compliance_short:
+    Security and Compliance Center
+  registryshort:
+    Container Registry
+  registryshort_notm:
+    Container Registry
+  registrylong:
+    IBM Cloud&reg; Container Registry
+  registrylong_notm:
+    IBM Cloud Container Registry
+  registryfull:
+    IBM Cloud&reg; Container Registry
+  registryfull_notm:
+    IBM Cloud Container Registry
+  containershort:
+    Kubernetes Service
+  containershort_notm:
+    Kubernetes Service
+  containerlong:
+    IBM Cloud&reg; Kubernetes Service
+  containerlong_notm:
+    IBM Cloud Kubernetes Service
+  containerfull:
+    IBM Cloud&reg; Kubernetes Service
+  containerfull_notm:
+    IBM Cloud Kubernetes Service
+  cdn_full:
+    IBM&reg; Content Delivery Network
+  iotmapinsights_short:
+    Context Mapping
+  contdelivery_short:
+    Continuous Delivery
+  contdelivery_full:
+    IBM Cloud&reg; Continuous Delivery
+  deliverypipelinelong:
+    IBM&reg; Continuous Delivery Pipeline for IBM Cloud&reg;
+  uccr_short:
+    Continuous Release
+  uccr_full:
+    IBM Cloud&reg; Continuous Release
+  customer_insight_insurance_short:
+    Customer Insight for Insurance
+  customimageclassifier:
+    Customized Image Classifier
+  cloud-shell_full:
+    IBM&reg; Cloud Shell
+  cloud-shell_notm:
+    IBM Cloud Shell
+  cloud-shell_short:
+    Cloud Shell
+#//DDD
+  dashdbshort:
+    Db2&reg; Warehouse on Cloud
+  dashdbshort_notm:
+    Db2 Warehouse on Cloud
+  dashdblong:
+    IBM&reg; Db2&reg; Warehouse on Cloud
+  dashdblong_notm:
+    IBM Db2 Warehouse on Cloud
+  databases-for-cassandra:
+    Databases for DataStax
+  databases-for-cassandra_full:
+    IBM Cloud&reg; Databases for DataStax
+  databases-for-cassandra_full_notm:
+    IBM Cloud Databases for DataStax
+  databases-for-elasticsearch:
+    Databases for Elasticsearch
+  databases-for-elasticsearch_full:
+    IBM Cloud&reg; Databases for Elasticsearch
+  databases-for-elasticsearch_full_notm:
+    IBM Cloud Databases for Elasticsearch
+  databases-for-enterprisedb:
+    Databases for EnterpriseDB
+  databases-for-enterprisedb_full:
+    IBM Cloud&reg; Databases for EnterpriseDB
+  databases-for-enterprisedb_full_notm:
+    IBM Cloud Databases for EnterpriseDB
+  databases-for-etcd:
+    Databases for etcd
+  databases-for-etcd_full:
+    IBM Cloud&reg; Databases for etcd
+  databases-for-etcd_full_notm:
+    IBM Cloud Databases for etcd
+  databases-for-mongodb:
+    Databases for MongoDB
+  databases-for-mongodb_full:
+    IBM Cloud&reg; Databases for MongoDB
+  databases-for-mongodb_full_notm:
+    IBM Cloud Databases for MongoDB
+  databases-for-mysql:
+    Databases for MySQL
+  databases-for-mysql_full:
+    IBM Cloud&reg; Databases for MySQL
+  databases-for-mysql_fullnotm:
+    Databases for MySQL
+  databases-for-postgresql:
+    Databases for PostgreSQL
+  databases-for-postgresql_full:
+    IBM Cloud&reg; Databases for PostgreSQL
+  databases-for-postgresql_full_notm:
+    IBM Cloud Databases for PostgreSQL
+  databases-for-redis:
+    Databases for Redis
+  databases-for-redis_full:
+    IBM Cloud&reg; Databases for Redis
+  databases-for-redis_full_notm:
+    IBM Cloud Databases for Redis
+  databases-for:
+    Cloud Databases
+  datacshort:
+    Data Cache
+  datacfull:
+    IBM&reg; Data Cache for IBM Cloud&reg;
+  datareplication_full:
+    IBM&reg; Data Replication on Cloud
+  datareplication_full_notm: 
+    IBM Data Replication on Cloud
+  datareplication_short: 
+    Data Replication
+  datashield_full:
+    IBM Cloud&reg; Data Shield
+  datashield_full_notm:
+    IBM Cloud Data Shield
+  datashield_short:
+    IBM Cloud Data Shield
+  dataworks_short:
+    IBM&reg; Data Connect
+  dataworks_full:
+    IBM Cloud&reg; Data Connect
+  datastagefull:
+    IBM&reg; DataStage
+  datastageshort:
+    DataStage
+  Db2_on_Cloud_short:
+    Db2 on Cloud
+  Db2_on_Cloud_long:
+    IBM&reg; Db2&reg; on Cloud
+  Db2_on_Cloud_long_notm:
+    IBM Db2 on Cloud
+  DB2OnCloud_short:
+    Db2&reg; Hosted
+  DB2OnCloud_full:
+    IBM&reg; Db2&reg; Hosted
+  Db2Hosted_notm:
+    Db2 Hosted
+  Db2Hosted_short:
+    Db2&reg; Hosted
+  Db2Hosted_full:
+    IBM&reg; Db2&reg; Hosted
+  dcp_long:
+    IBM Watson&trade; Assistant Discovery Extension for IBM Cloud Private
+  dcp_short:
+    Watson Assistant Discovery Extension
+  deepsentimine:
+    Deep Sentiment Mining
+  decision_short:
+    Decision Optimization
+  decision_full:
+    IBM&reg; Decision Optimization for IBM Cloud&reg;
+  ghe_dedicated_short:
+    Dedicated GitHub Enterprise
+  deliverypipeline:
+    Delivery Pipeline
+  dev_console_full:
+    IBM Cloud&reg; App Service
+  dev_console_full_notm:
+    IBM Cloud App Service
+  dev_console:
+    App Service
+  dev_cli_long:
+    IBM Cloud&reg; Developer Tools
+  dev_cli_notm:
+    IBM Cloud Developer Tools
+  dev_cli_short:
+    Developer Tools
+  dl_full:
+    IBM Cloud&reg; Direct Link
+  dl_full_notm:
+    IBM Cloud Direct Link
+  dl_short:
+    Direct Link
+  dlc_full:
+    IBM Cloud&reg; Direct Link on Classic
+  dlc_full_notm:
+    IBM Cloud Direct Link on Classic
+  dlc_short:
+    Direct Link on Classic
+  dns_full:
+    IBM Cloud&reg; DNS Services
+  dns_full_notm:
+    IBM Cloud DNS Services
+  dns_short:
+    DNS Services
+  DRA_short:
+    DevOps Insights
+  DRA_full:
+    IBM Cloud&reg; DevOps Insights
+  jazzhub_short:
+    DevOps Services
+  jazzhub:
+    IBM Cloud&reg; DevOps Services
+  jazzhub_title:
+    IBM Cloud&reg; DevOps Services
+  dialogshort:
+    Dialog
+  DigitalTranscodinglong:
+    IBM Cloud&reg; Digital Transcoding
+  DigitalTranscodinglong_notm:
+    IBM Cloud Digital Transcoding
+  DigitalTranscodingshort:
+    Digital Transcoding
+  discovery-data_long:
+    IBM Watson&trade; Discovery for IBM Cloud Pak&reg; for Data
+  discovery-data_short:
+    Discovery for Cloud Pak for Data
+  BluDirectLink:
+    IBM Cloud&reg; Direct Link
+  documentconversionshort:
+    Document Conversion
+  docgen_short:
+    Document Generation
+  docgen_full:
+    IBM&reg; Document Generation for IBM Cloud&reg;
+  domainname:
+    DomainName
+  iotdriverinsights_short:
+    Driver Behavior
+  dsfm_full:
+    IBM&reg; Data Store for Memcache&reg;
+  dsfm_full_notm:
+    IBM Data Store for Memcache
+  dsfm_short_notm:
+    Data Store for Memcache
+  DSX_local:
+    DSX Local
+  DSX_desktop:
+    DSX Desktop
+  DSX_full_local:
+    IBM&reg; Data Science Experience Local
+  DSX_full_desktop:
+    IBM&reg; Data Science Experience Desktop
+  dv_short:
+    Data Virtualization
+  dv_full:
+    IBM&reg; Data Virtualization
+  dv_full_notm:
+    IBM Data Virtualization
+#//EEE
+  eclipsetoolsfull:
+    IBM&reg; Eclipse Tools for IBM Cloud&reg;
+  imqs:
+    Elastic MQ
+  creshort:
+    Embeddable Reporting
+  crefull:
+    IBM&reg; Embeddable Reporting for IBM Cloud&reg;
+  emotionanalysisshort:
+    Emotion Analysis
+  iees_short:
+    Entity Enrichment Service
+  iees_full:
+    IBM Entity Enrichment Service
+  evtmgt_short:
+    Cloud Event Management
+  evtmgt_full:
+    IBM Cloud&reg; Event Management
+  en_full: 
+    IBM Cloud&reg; Event Notifications
+  en_full_notm: 
+    IBM Cloud Event Notifications
+  en_short: 
+    Event Notifications
+#//FFF
+  featuretogglesshort:
+    Feature Toggles
+  featuretoggleslong:
+    IBM&reg; Feature Toggles
+  featuretogglesfull:
+    IBM&reg; Feature Toggles for IBM Cloud&reg;
+  filestorage_short:
+    File Storage
+  filestorage_full:
+    IBM Cloud&reg; File Storage
+  filestorage_full_notm:
+    IBM Cloud File Storage
+  filestorage_vpc_short:
+    File Storage for VPC
+  filestorage_vpc_full:
+    IBM Cloud&reg; File Storage for VPC
+  filestorage_vpc_full_notm:
+    IBM Cloud File Storage for VPC
+  filesync:
+    File Sync plugin service
+  BluFirewall:
+    IBM&reg; Cloud Firewall
+  cfee_full:
+    IBM&reg; Cloud Foundry Enterprise Environment
+  cfee_full_notm:
+    IBM Cloud Foundry Enterprise Environment
+  cfee_short:
+    CFEE
+  fsa1_full_reg:
+    Fortigate&reg; Security Appliance 1 Gbps
+  fsa1_full:
+    Fortigate Security Appliance 1 Gbps
+  fsa10_full_reg:
+    Fortigate&reg; Security Appliance 10 Gbps
+  fsa10_full:
+    Fortigate Security Appliance 10 Gbps
+  fsa:
+    FSA
+#//GGG
+  game:
+    Gamification
+  gamefull:
+    IBM&reg; Gamification for IBM Cloud&reg;
+  gt_short:
+    GT
+  gt_long:
+    IBM&reg; Cloud GT
+  geospatialshort_Geospatial:
+    Geospatial Analytics
+  geospatialfull:
+    IBM&reg; Geospatial Analytics for IBM Cloud&reg;
+  githosting:
+    Git hosting
+  gitrepos:
+    Git Repos and Issue Tracking
+  ghe_short:
+    GitHub Enterprise
+  ghe_long:
+    IBM Cloud&reg; Dedicated for GitHub Enterprise
+  globalizationshort:
+    Globalization
+  globalizationfull:
+    IBM&reg; Globalization
+  GlobalizationPipeline_short:
+    Globalization Pipeline
+  GlobalizationPipeline_full:
+    IBM&reg; Globalization Pipeline
+  graphshort:
+    IBM&reg; Graph
+  graphfull:
+    IBM&reg; Graph
+#//HHH
+  hardfire:
+    Hardware Firewall
+  hardfire_d:
+    Hardware Firewall (Dedicated)
+  CHSTSshort:
+    Cloud High-Speed Transfer Service
+  CHSTSfull:
+    IBM&reg; Cloud High-Speed Transfer Service
+  CHSTSfull_notm:
+    IBM Cloud High-Speed Transfer Service
+  hybriddb:
+    Hybrid Database
+  ihsdbaas_full:
+    Hyper Protect DBaaS
+  ihsdbaas_mongodb_full:
+    Hyper Protect DBaaS for MongoDB
+  ihsdbaas_postgresql_full:
+    Hyper Protect DBaaS for PostgreSQL
+  hscontainers:
+    Hyper Protect Containers
+  hscrypto:
+    Hyper Protect Crypto Services
+  hsplatform:
+    Hyper Protect Developer Starter Kits
+  hpvs:
+    Hyper Protect Virtual Servers
+  hpc-cluster_short:
+    HPC Cluster
+  hpc-cluster_full:
+    IBM Cloud&reg; HPC Cluster
+#//III
+  ibmcloudgov_full:
+    IBM Cloud&reg; for Government
+  ibmcloudgov_full_notm:
+    IBM Cloud for Government
+  icpa:
+     IBM Cloud Pak for Applications
+  icpa_rm:
+     IBM Cloud Pak&reg; for Applications
+  icpa_short:
+     Cloud Pak for Applications
+  icp4dfull:
+    IBM Cloud Pak&reg; for Data
+  icp4dfull_notm:
+    IBM Cloud Pak for Data
+  icpvt4d_notm:
+    IBM Cloud Private for Data
+  icpvt4d:
+    IBM&reg; Cloud Private for Data
+  ibm_cloud_sap:
+    IBM Cloud&reg; for SAP
+  mf-starter-image:
+    ibm-mobilefirst-starter
+  identitymixershort:
+    Identity Mixer
+  identitymixerfull:
+    IBM&reg; Identity Mixer for IBM Cloud&reg;
+  IOCloud_short:
+    Informix&reg; on Cloud
+  IOCloud_full:
+    IBM&reg; Informix&reg; on Cloud for IBM Cloud&reg;
+  IntegrationTestingshort:
+    Integration Testing
+  IntegrationTestingfull:
+    IBM&reg; Integration Testing for IBM Cloud&reg;
+  interactivemaps_short:
+    Interactive Maps
+  interactivemaps_long:
+    Interactive Maps for IBM Cloud&reg;
+  iot4auto_short:
+    IoT for Automotive
+  iot4auto_full:
+    IBM&reg; IoT for Automotive
+  iotelectronics_full:
+    IBM&reg; IoT for Electronics
+  iotinsurance_short:
+    IoT for Insurance
+  iotinsurance_full:
+    IBM&reg; IoT for Insurance
+  iotrtinsights_short:
+    IoT Real-Time Insights
+  twittershort:
+    Insights for Twitter
+  twitterfull:
+    IBM&reg; Insights for Twitter
+  iotelectronics:
+    IoT for Electronics
+#//JJJ
+  jsondb:
+    JSONDB
+#//KKK
+  kabanero:
+     Kabanero&trade;
+  kabanero_notm:
+     Kabanero
+  ke:
+     Accelerators for Teams
+  ke_notm:
+     Accelerators for Teams
+  keymanagementserviceshort:
+    Key Protect
+  keymanagementservicelong:
+    IBM&reg; Key Protect
+  keymanagementservicelong_notm:
+    IBM Key Protect
+  keymanagementservicefull:
+    IBM&reg; Key Protect for IBM Cloud&reg;
+  keymanagementservicefull_notm:
+    IBM Key Protect for IBM Cloud
+#//LLL
+  languageidentificationshort:
+    Language Identification
+  wtsfull:
+    IBM&reg; Language Translator
+  dwl_short:
+    Lift
+  dwl_full:
+    IBM Cloud&reg; Lift
+  loadbalancer_short:
+    Load Balancer
+  loadbalancer_full:
+    IBM Cloud&reg; Load Balancer
+  BluLocSys:
+    IBM Cloud&reg; Local System
+  BluLocSys_full:
+    IBM Cloud&reg; Local System
+  mobilelocation:
+    Location
+#//MMM
+  mandbserv_full:
+    IBM Cloud&reg; Managed Database Server
+  mandbserv_notm:
+    IBM Cloud Managed Database Server
+  mfd_full:
+    IBM&reg; Managed Financial Data API
+  mfd_full_notm:
+    IBM Managed Financial Data API
+  mfd_short:
+    Managed Financial Data
+  mfd_marketplace_full:
+    IBM&reg; Managed Financial Data
+  mfd_marketplace_full_notm:
+    IBM Managed Financial Data
+  mfd_marketplace_short:
+    Managed Financial Data
+  mdm-oc_full:
+    Master Data Management
+  mdm-oc_full_notm:
+    Master Data Management
+  mdmcloudfull:
+    IBM&reg; Master Data Management on Cloud&reg;
+  mdms_full:
+    IBM Cloud&reg; Mass Data Migration
+  mdms_full_notm:
+    IBM Cloud Mass Data Migration
+  mdms_short:
+    Mass Data Migration
+  mapreduce:
+    MapReduce
+  mobilemam_short:
+    MAS
+  eventhubshort:
+    Message Connect
+  eventhubfull:
+    IBM&reg; Message Connect for IBM Cloud&reg;
+  messagehub:
+    Event Streams
+  messagehub_full:
+    IBM&reg; Event Streams for IBM Cloud&reg;
+  messages-for-rabbitmq:
+    Messages for RabbitMQ
+  messages-for-rabbitmq_full:
+    IBM Cloud&reg; Messages for RabbitMQ
+  messages-for-rabbitmq_full_notm:
+    IBM Cloud Messages for RabbitMQ
+  incubator:
+    Message Hub Incubator
+  incubator_full:
+    IBM&reg; Message Hub Incubator for IBM Cloud&reg;
+  messageresonanceshort:
+    Message Resonance
+  mmc_short:
+    Mobile Message Connect
+  mobileanalytics_short:
+    Mobile Analytics
+  mobileanalytics_full:
+    IBM&reg; Mobile Analytics for IBM Cloud&reg;
+  APS_MAiOS:
+    Mobile Analyzer for iOS
+  APS_MAiOS_full:
+    IBM&reg; Mobile Analyzer for iOS for IBM Cloud&reg;
+  mobileappbuilder_short:
+    Mobile App Builder
+  mobileappbuilder_full:
+    IBM&reg; Mobile App Builder for IBM Cloud&reg;
+  macm_short:
+    Mobile Application Content Manager
+  macm_long:
+      IBM&reg; Mobile Application Content Manager for IBM Cloud&reg;
+  mobilemam:
+    Mobile Application Security
+  masfull:
+    IBM&reg; Mobile Application Security for IBM Cloud&reg;
+  amashort:
+    Mobile Client Access
+  amafull:
+    IBM&reg; Mobile Client Access for IBM Cloud&reg;
+  mobilestarter:
+    Mobile Cloud
+  mobilecloud:
+    Mobile Cloud
+  mobilecloudfull:
+    IBM&reg; Mobile Cloud for IBM Cloud&reg;
+  mobilesdk:
+    Mobile Cloud Services SDK
+  mobiledata:
+    Mobile Data
+  mobiledatafull:
+    IBM&reg; Mobile Data for IBM Cloud&reg;
+  mobilefirst:
+    MobileFirst&trade;
+  mobilefirst_notm:
+    MobileFirst
+  mfp_oc_short:
+    MobileFirst&trade; Operations Console
+  mfp_oc_short_notm:
+    MobileFirst Operations Console
+  mfp_cli_long:
+    IBM&reg; MobileFirst&trade; Platform Command Line Interface
+  mfp_cli_long_notm:
+    IBM MobileFirst Platform Command Line Interface
+  mfp_dr_long:
+    IBM&reg; MobileFirst&trade; Platform Device Runtime
+  mfp_dr_long_notm:
+    IBM MobileFirst Platform Device Runtime
+  mfp_full:
+    IBM&reg; MobileFirst&trade; Platform Foundation
+  mfp_full_notm:
+    IBM MobileFirst Platform Foundation
+  mf-starter-image_full:
+    IBM&reg; MobileFirst&trade; Platform Foundation Getting Started Image V7.1
+  mfp_oc_long:
+    IBM&reg; MobileFirst&trade; Platform Operations Console
+  mfp_oc_long_notm:
+    IBM MobileFirst Platform Operations Console
+  mfserver_long:
+    IBM&reg; MobileFirst&trade; Platform Server
+  mfserver_long_notm:
+    IBM MobileFirst Platform Server
+  mfserver_short:
+    MobileFirst&trade; Server
+  mfserver_short_notm:
+    MobileFirst Server
+  mobilefirstbp:
+    IBM&reg; MobileFirst&trade; Services
+  mobilefoundation_short:
+    Mobile Foundation
+  mobilefoundation_long:
+    IBM&reg; Mobile Foundation for IBM Cloud&reg;
+  monitoringshort:
+    Monitoring
+  monitoringshort_notm:
+    Monitoring
+  monitoringlong:
+    IBM Cloud&reg; Monitoring
+  monitoringlong_notm:
+    IBM Cloud Monitoring
+  monitoringfull:
+    IBM Cloud&reg; Monitoring
+  monitoringfull_notm:
+    IBM Cloud Monitoring
+  mon_full:
+    IBM Cloud&reg; Monitoring
+  mon_full_notm:
+    IBM Cloud Monitoring
+  mon_short:
+    Monitoring
+  mqa:
+    Mobile Quality Assurance
+  mqafull:
+    IBM&reg; Mobile Quality Assurance for IBM Cloud&reg;
+  mobilemediasocialint:
+    Mobile Social Media Integration
+  mongodb:
+    MongoDB
+  manda:
+    Monitoring and Analytics
+  mq_short:
+    MQ on Cloud
+  mq_full:
+    IBM MQ on Cloud
+  mql:
+    MQ Light
+  mqlfull:
+    IBM&reg; MQ Light for IBM Cloud&reg;
+  mcko_full:
+    IBM&reg; Multicloud Key Orchestrator
+  mcko_full_notm:
+    IBM Multicloud Key Orchestrator
+  mcko_short:
+    Multicloud Key Orchestrator
+  mysql:
+    MySQL
+#//NNN
+  namedentityrecog:
+    Named Entity Recognition
+  nlclassifiershort:
+    Natural Language Classifier
+  nlushort:
+    Natural Language Understanding
+  netezza_full:
+    IBM&reg; Netezza&reg; Performance Server for IBM Cloud Pak&reg; for Data as a Service
+  netezza_full_notm:
+    IBM Netezza Performance Server for IBM Cloud Pak for Data as a Service
+  netezza_short:
+    Netezza Performance Server
+  nlb_full:
+    Network Load Balancer for VPC
+  networksecuritygroups_short:
+    Network Security Groups
+  networksecuritygroups_full:
+    IBM&reg; Network Security Groups
+  nfvlong:
+    IBM Cloud&reg; Network Functions Virtualization
+  nfvlong_notm:
+    IBM Cloud Network Functions Virtualization
+  nfvshort:
+    Network Functions Virtualization
+#//OOO
+  cos_full:
+    IBM Cloud&reg; Object Storage
+  cos_full_notm:
+    IBM Cloud Object Storage
+  cos_short:
+    Object Storage
+  objectstorageshort:
+    Object Storage
+  objectstoragefull:
+    IBM&reg; Object Storage for IBM Cloud&reg;
+  openpages_full:
+    IBM OpenPages&reg; with Watson&trade; as a Service
+  openpages_full_notm:
+    IBM OpenPages with Watson as a Service
+  openpages_short:
+    IBM OpenPages
+  openshiftlong:
+    Red Hat&reg; OpenShift&reg; on IBM Cloud&reg;
+  openshiftlong_notm:
+    Red Hat OpenShift on IBM Cloud
+  openshiftshort:
+    OpenShift
+  openwhisk_short:
+    Cloud Functions
+  openwhisk:
+    IBM Cloud&reg; Functions
+  iobp_full:
+    IBM&reg; Open Banking Platform
+  iobp_full_notm:
+    IBM Open Banking Platform
+  iobp_short:
+    Open Banking Platform
+  ioa_short:
+    Operations Analytics
+  ioa_full:
+    IBM&reg; Operations Analytics
+#//PPP
+  PEshort:
+    Pattern Engine
+  PElong:
+    IBM Cloud&reg; Pattern Engine
+  personalityinsightsshort:
+    Personality Insights
+  planninganalytics_short:
+    Planning Analytics with Watson
+  planninganalytics_full:
+    IBM Planning Analytics with Watson for IBM Cloud&reg;
+  planninganalytics_full_notm:
+    IBM Planning Analytics with Watson for IBM Cloud
+  framework-fs_full:
+    IBM Cloud Framework for Financial Services&trade;
+  framework-fs_notm:
+   IBM Cloud Framework for Financial Services
+  portfolio_optimization_short:
+    Portfolio Optimization
+  postgresql:
+    PostgreSQL
+  powerSysFull:
+    IBM&reg; Power Systems&trade; Virtual Server
+  powerSysShort:
+    Power Systems&trade; Virtual Server
+  powerSys_notm:
+    Power Systems Virtual Server
+  predmarketscenario_full:
+    Predictive Market Scenarios
+  predmarketscenario_short:
+    Predictive Market Scenarios
+  presenceinsightsshort:
+    Presence Insights
+  presenceinsightsfull:
+    IBM&reg; Presence Insights
+  BluOpenStackDed:
+    IBM&reg; Cloud Private Cloud
+  BluOpenStackDed_full:
+    IBM&reg; Cloud Private Cloud
+  BluOpenStackLoc:
+    IBM&reg; Cloud Private Cloud Local
+  BluOpenStackLoc_full:
+    IBM&reg; Cloud Private Cloud Local
+  private_network_peering_full:
+    IBM&reg; Cloud Private Network Peering
+  icpfull:
+    IBM&reg; Cloud Private
+  icpfull_notm:
+    IBM Cloud Private
+  probmatchshort:
+    Probabilistic Match
+  probmatchfull:
+    IBM&reg; Probabilistic Match for IBM Cloud&reg;
+  product-insights_short:
+    Product Insights
+  product-insights_full:
+    IBM Cloud&reg; Product Insights
+  HybridConnect_short:
+    Product Insights
+  HybridConnect_full:
+    IBM Cloud&reg; Product Insights
+  mobilepush:
+    Push
+  pushfull:
+    IBM&reg; Push for IBM Cloud&reg;
+  mobilepushshort:
+    Push Notifications
+  mobilepushfull:
+    IBM&reg; Push Notifications for IBM Cloud&reg;
+#//QQQ
+  quantum_long:
+    IBM&reg; Quantum Services
+  quantum_long_notm:
+    IBM Quantum Services
+  quantum_short:
+    Quantum Services
+  questionandanswershort:
+    Question and Answer
+#//RRR
+  rapidApps:
+    Rapid Apps
+  rapidAppsFull:
+    IBM&reg; Rapid Apps for IBM Cloud&reg;
+  rabbitmq:
+    RabbitMQ
+  real_time_payments_short:
+    Real-Time Payments
+  real_time_payments_full:
+    Real-Time Payments
+  redis:
+    Redis
+  redhat_full:
+    Red Hat&reg;
+  redhat_notm:
+    Red Hat
+  relationshipextractionshort:
+    Relationship Extraction
+  retrieveandrankshort:
+    Retrieve and Rank
+  retrieveandrankfull:
+    IBM&reg; Retrieve and Rank
+  runbook_short:
+    Runbook Automation
+  runbook_full:
+    IBM&reg; Runbook Automation
+  runtime_liberty_full:
+    IBM&reg; Liberty for Java&trade; for IBM Cloud&reg;
+  runtime_liberty_short:
+    Liberty for Java&trade;
+  runtime_liberty_notm:
+    Liberty for Java
+  runtime_nodejs_notm:
+    SDK for Node.js
+  runtime_swift_full:
+    IBM Cloud&reg; Runtime for Swift
+  runtime_swift_short:
+    Runtime for Swift
+  runtime_dotnet_full:
+    ASP.NET Core for IBM Cloud&reg;
+  runtime_dotnet_short:
+    ASP.NET Core
+  runtime_nodejs_full:
+    IBM&reg; SDK for Node.js for IBM Cloud&reg;
+  runtime_nodejs_short:
+    SDK for Node.js&trade;
+#//SSS
+  bpshort:
+    Schematics
+  bplong:
+    IBM Cloud&reg; Schematics
+  bplong_notm:
+    IBM Cloud Schematics
+  bpfull:
+    IBM Cloud&reg; Schematics
+  bpfull_notm:
+    IBM Cloud Schematics
+  satellitelong:
+    IBM Cloud Satellite&reg;
+  satellitelong_notm:
+    IBM Cloud Satellite
+  satelliteshort:
+    Satellite
+  searchshort:
+    Search
+  secrets-manager_full:
+    IBM Cloud&reg; Secrets Manager
+  secrets-manager_full_notm:
+    IBM Cloud Secrets Manager
+  secrets-manager_short:
+    Secrets Manager
+  SecureGateway:
+    Secure Gateway
+  SecureGatewayfull:
+    IBM&reg; Secure Gateway for IBM Cloud&reg;
+  security-advisor_short:
+    Security Advisor
+  security-advisor_long:
+    IBM Cloud&reg; Security Advisor
+  security-advisor_long_notm:
+    IBM Cloud Security Advisor
+  security-advisor_full:
+    IBM Cloud&reg; Security Advisor
+  security-advisor_full_notm:
+    IBM Cloud Security Advisor
+  security-groups_full_reg:
+    IBM Cloud&reg; Security Groups
+  security-groups_full:
+    IBM Cloud Security Groups
+  security-groups:
+    Security Groups
+  security-group:
+    security group
+  SendGrid:
+    SendGrid
+  SendGridfull:
+    SendGrid
+  servicediscoveryshort:
+    Service Discovery
+  servicediscoverylong:
+    IBM&reg; Service Discovery
+  servicediscoveryfull:
+    IBM&reg; Service Discovery for IBM Cloud&reg;
+  serviceproxyshort:
+    Service Proxy
+  serviceproxylong:
+    IBM&reg; Service Proxy
+  serviceproxyfull:
+    IBM&reg; Service Proxy for IBM Cloud&reg;
+  ServiceVirtualizationshort:
+    Service Virtualization
+  ServiceVirtualiztionfull:
+    IBM&reg; Service Virtualization for IBM Cloud&reg;
+  sescashort:
+    Session Cache
+  sescafull:
+    IBM&reg; Session Cache for IBM Cloud&reg;
+  ssoshort:
+    Single Sign On
+  ssofull:
+    IBM&reg; Single Sign On
+  slapi_full:
+    SoftLayer&reg; Application Programming Interface
+  slapi_short:
+    SoftLayer API
+  sldn_full:
+    SoftLayer&reg; Development Network
+  speechrecog:
+    Speech Recognition
+  spectrum_full:
+    IBM&reg; Spectrum LSF
+  spectrum_full_notm:
+    IBM Spectrum LSF
+  spectrum_short:
+    Spectrum LSF
+  speechtotextshort:
+    Speech to Text
+  speechtotextfull:
+    IBM Watson&trade; Speech to Text
+  speechtotextdatafull:
+    IBM Watson&trade; Speech to Text
+  texttospeechdatafull:
+    IBM Watson&trade; Text to Speech
+  sqldb:
+    SQL Database
+  sqldbfull:
+    IBM&reg; SQL Database for IBM Cloud&reg;
+  sqlquery_full:
+    IBM Cloud&reg; SQL Query
+  sqlquery_short:
+    SQL Query
+  sqlquery_notm:
+    IBM Cloud SQL Query
+  staticanalyzershort:
+    Static Analyzer
+  staticanalyzerfull:
+    IBM&reg; Static Analyzer for IBM Cloud&reg;
+  streaminganalyticsshort:
+    Streaming Analytics
+  streaminganalyticsfull:
+    IBM&reg; Streaming Analytics for IBM Cloud&reg;
+  streamsshort:
+    IBM&reg; Streams
+  streamsfull:
+    IBM&reg; Streams
+  sysdigsecure_full_notm: 
+    Sysdig Secure on IBM Cloud
+  sysdigsecure_full: 
+    Sysdig Secure on IBM Cloud&reg;
+#/TTT
+  ta:
+     IBM Cloud&trade; Transformation Advisor
+  ta_short:
+     Transformation Advisor
+  terraform-provider_full:
+    IBM Cloud&reg; Provider Plug-in for Terraform
+  terraform-provider_full_notm:
+    IBM Cloud Provider Plug-in for Terraform
+  texttospeechshort:
+    Text to Speech
+  texttospeechfull:
+    IBM Watson&trade; Text to Speech
+  tg_full:
+    IBM Cloud&reg; Transit Gateway
+  tg_full_notm:
+    IBM Cloud Transit Gateway
+  tg_short:
+    Transit Gateway
+  times:
+    Time Series Database
+  timesfull:
+    IBM&reg; Time Series Database for IBM Cloud&reg;
+  trackplan:
+    Track &amp; Plan
+  tp_short:
+    Track and Plan
+  trackplanlong:
+    IBM&reg; Track &amp; Plan for IBM Cloud&reg;
+  tp_full:
+    IBM&reg; Track and Plan for IBM Cloud&reg;
+  tradeoffanalyticsshort:
+    Tradeoff Analytics
+  toneanalyzershort:
+    Tone Analyzer
+#/UUU
+  uko_full_notm:
+    Unified Key Orchestrator
+#/VVV
+  vpn_full:
+    Virtual Private Network (VPN) for VPC
+  vpn_vpc_full:
+    Virtual Private Network (VPN) for VPC
+  vpn_vpc_short:
+    VPN for VPC
+  virtualmachinesshort:
+    Virtual Servers
+  virtualmachineslong:
+    IBM&reg; Virtual Servers
+  virtualmachinesfull:
+    IBM&reg; Virtual Servers for IBM Cloud&reg;
+  BluVirtServers:
+    IBM Cloud&reg; Virtual Servers
+  BluVirtServers_full:
+    IBM Cloud&reg; Virtual Servers
+  BluVirtServers_short:
+    Virtual Servers
+  vsi_is_full:
+    IBM Cloud&reg; Virtual Servers for Virtual Private Cloud
+  vsi_is_short:
+    Virtual Servers for VPC
+  block_storage_is_full:
+    IBM&reg; Cloud Block Storage for Virtual Private Cloud
+  block_storage_is_short:
+    Block Storage for VPC
+  vpc_full:
+    IBM Cloud&reg; Virtual Private Cloud
+  vpc_short:
+    IBM Cloud VPC
+  visualinsightsshort:
+    Visual Insights
+  visualrecognitionshort:
+    Visual Recognition
+  visualizationrenderingshort:
+    Visualization Rendering
+  vmwaresolutions_short:
+    IBM Cloud for VMware Solutions
+  vmwaresolutions_full:
+    IBM Cloud&reg; for VMware Solutions
+  vmwaresolutions_full_notm:
+    IBM Cloud for VMware Solutions
+  vpn_short:
+    IBM&reg; VPN
+  BluVPN:
+    IBM Cloud&reg; VPN
+  vpe_full:
+    Virtual Private Endpoint (VPE) for VPC
+  vpe_short:
+    VPE for VPC
+  fl_full:
+    Flow Logs for VPC
+#//Watson
+  ibmwatson:
+    IBM Watson&trade;
+  ibmwatson_notm:
+    IBM Watson
+  watson:
+    Watson
+  client_insight_wealth:
+    IBM Watson&trade; Client Insight for Wealth Management
+  client_insight_wealth_notm:
+    IBM Watson Client Insight for Wealth Management
+  client_insight_wealth_short:
+    Client Insight for Wealth
+  cncfull:
+    IBM Watson&trade; Compare and Comply
+  cncfullnotm:
+    IBM Watson Compare and Comply
+  cncshort:
+    Compare and Comply
+  conceptexpansionfull:
+    IBM Watson&trade; Concept Expansion
+  conceptinsightsfull:
+    IBM Watson&trade; Concept Insights for IBM Cloud&reg;
+  watsoncontent_full:
+    IBM Watson&trade; Content
+  watsoncontent_full_notm:
+    IBM Watson Content
+  watsoncontent_short:
+    Watson&trade; Content
+  watsoncontent_short_notm:
+    Watson Content
+  conversationshort:
+    Watson Assistant
+  conversationfull:
+    IBM Watson&trade; Assistant
+  watsondatakits_full:
+    IBM Watson&trade; Data Kits
+  watsondatakits_full_notm:
+    IBM Watson Data Kits
+  watsondatakits_short:
+    Watson&trade; Data Kits
+  watsondatakits_short_notm:
+    Watson Data Kits
+  dialogfull:
+    IBM Watson&trade; Dialog for IBM Cloud&reg;
+  discoveryshort:
+    Discovery
+  discoveryfull:
+    IBM Watson&trade; Discovery
+  discoverynewsshort:
+    Discovery News
+  discoverynewsfull:
+    IBM Watson&trade; Discovery News
+  documentconversionfull:
+    IBM Watson&trade; Document Conversion
+  emotionanalysisfull:
+    IBM Watson&trade; Emotion Analysis for IBM Cloud&reg;
+  hisinstranalshort:
+    Historical Instrument Analytics
+  instranalshort:
+    Instrument Analytics
+  investportshort:
+    Investment Portfolio
+  iotmapinsights_full:
+    IBM Watson&trade; IoT Context Mapping
+  iotdriverinsights_full:
+    IBM Watson&trade; IoT Driver Behavior
+  iot_short:
+    Watson&trade; IoT Platform
+  iot_short_notm:
+    Watson IoT Platform
+  iot_full:
+    IBM Watson&trade; IoT Platform
+  iotrtinsights_full:
+    IBM Watson&trade; IoT Platform Analytics Real-Time Insights
+  knowledgestudiofull:
+    IBM Watson&trade; Knowledge Studio
+  knowledgestudioshort:
+    Knowledge Studio
+  languageidentificationfull:
+    IBM Watson&trade; Language Identification
+  wts:
+    Language Translator
+  languagetranslationshort:
+    Language Translator
+  languagetranslationfull:
+    IBM Watson&trade; Language Translator
+  languagetranslatorshort:
+    Language Translator
+  languagetranslatorfull:
+    IBM Watson&trade; Language Translator
+  pm_short:
+    Machine Learning
+  pm_full:
+    IBM Watson&trade; Machine Learning
+  machinetranslationshort:
+    Machine Translator
+  machinetranslationfull:
+    IBM Watson&trade; Machine Translator
+  messageresonancefull:
+    IBM Watson&trade; Message Resonance
+  usermodelshort:
+    User Modeling
+  nlclassifierfull:
+    IBM Watson&trade; Natural Language Classifier
+  nlufull:
+    IBM Watson&trade; Natural Language Understanding
+  personalityinsightsfull:
+    IBM Watson&trade; Personality Insights
+  questionandanswerfull:
+    IBM Watson&trade; Question and Answer
+  relationshipextractionfull:
+    IBM Watson&trade; Relationship Extraction
+  searchfull:
+    IBM Watson&trade; Search
+  simhistinstruanalshort:
+    Simulated Historical Instrument Analytics
+  siminstruanalshort:
+    Simulated Instrument Analytics
+  sia_full:
+    IBM&reg; Simulated Instrument Analytics API
+  sia_full_notm:
+    IBM Simulated Instrument Analytics API
+  DSX_short:
+    Watson&trade; Studio
+  DSX_full:
+    IBM Watson&trade; Studio
+  DSX:
+    Watson Studio
+  tradeoffanalyticsfull:
+    IBM Watson&trade; Tradeoff Analytics
+  toneanalyzerfull:
+    IBM Watson&trade; Tone Analyzer
+  usermodelfull:
+    IBM Watson&trade; User Modeling
+  iva_full:
+    IBM&reg; Voice Agent with Watson&trade;
+  iva_full_notm:
+    IBM Voice Agent with Watson
+  iva_short:
+    Voice Agent with Watson
+  virtualagentshort:
+    Virtual Agent
+  virtualagentfull:
+    IBM Watson&trade; Virtual Agent
+  visualinsightsfull:
+    IBM Watson&trade; Visual Insights for IBM Cloud&reg;
+  visualrecognitionfull:
+    IBM Watson&trade; Visual Recognition
+  visualizationrenderingfull:
+    IBM Watson&trade; Visualization Rendering
+  vpc-plus-migration:
+    VPC+ Cloud Migration
+  vra:
+    Virtual Router Appliance
+  vra_full:
+    IBM Cloud&reg; Virtual Router Appliance
+  vsrx:
+    vSRX
+  vsrx_full:
+    IBM Cloud&reg; Juniper vSRX
+#//WWW
+  wanclouds:
+    VPC+ by Wanclouds
+  wearablefitness:
+    Wearable Fitness
+  weather_short:
+    Weather Company Data
+  weatherfull:
+    Weather Company Data for IBM Cloud&reg;
+  webide:
+    Web IDE
+  web_ide_short:
+    web IDE
+  web_ide:
+    web IDE in &lt;jazzhub&gt;
+  wh-acd_full:
+    IBM Watson&trade; Annotator for Clinical Data
+  wh-acd_full_notm:
+    IBM Watson Annotator for Clinical Data
+  wh-acd_short:
+    Annotator for Clinical Data
+  wh-iml_full:
+    IBM Watson&trade; Insights for Medical Literature
+  wh-iml_full_notm:
+    IBM Watson Insights for Medical Literature
+  wh-iml_short:
+    Insights for Medical Literature
+  appserver_short:
+    WebSphere Application Server
+  appserver_full:
+    IBM&reg; WebSphere Application Server for IBM Cloud&reg;
+  appserver_notm:
+    IBM WebSphere Application Server for IBM Cloud
+  was4vsi:
+    IBM&reg; WebSphere&reg; Application Server
+  was4vsi_notm:
+    IBM WebSphere Application Server
+  was4vsi_short:
+    WebSphere Application Server
+  workflowfull:
+    IBM&reg; Workflow for IBM Cloud&reg;
+  workflow:
+    Workflow
+  workloadscheduler:
+    Workload Scheduler
+  workloadschedulerfull:
+    IBM&reg; Workload Scheduler
+#//XXX
+  xpagesruntime_short:
+    XPages
+  xpagesruntime_long:
+    IBM&reg; XPages for IBM Cloud&reg;
+  xpagesservice_short:
+    XPages NoSQL Database
+  xpagesservice_long:
+    IBM&reg; XPages NoSQL Database for IBM Cloud&reg;
+  xpagesboilerplate_short:
+    XPages Web Starter
+  xpagesboilerplate_long:
+    IBM&reg; XPages Web Starter
+#//ZZZ
+  zosserviceshort:
+    z/OS&reg; as a Service
+  zosservicefull:
+    IBM&reg; z/OS&reg; as a Service for IBM Cloud&reg;
+#Runtime names
+  sinatra:
+    Ruby Sinatra
+#//Do not translate - End
+#//Translatable terms - Start
+  ibmid:
+    IBMid
+#Refers to user ID for IBM.com
+  avatar:
+    Avatar
+#Refers to "user" or "profile" icon that initially looks like a person but can be customized with a profile picture
+  category:
+    category area
+#Refers to display associated with tabs on IBM Cloud dashboard such as Cloud Foundry Applications, Open Whisk, Containers, and Virtual Servers
+#//Translatable terms - End
+#//Common IBM Cloud-related links - Start
+  pricing_sheet:
+    "[Pricing Sheet](https://www.ibm.com/cloud/pricing/)"
+  prereqs:
+    "[IBM Cloud Prerequisites](https://console.bluemix.net/docs/overview/prereqs.html)"
+#//Common IBM Cloud-related links - End
+#// Attribute definition list - start
+  attribute-definition-list: |
+    {:android: data-hd-operatingsystem="android"}
+    {:api: .ph data-hd-interface="api"}
+    {:audio: .audio}
+    {:authenticated-content: .authenticated-content}
+    {:beta: .beta}
+    {:c#: .ph data-hd-programlang="c#"}
+    {:cli: .ph data-hd-interface="cli"}
+    {:codeblock: .codeblock}
+    {:curl: .ph data-hd-programlang="curl"}
+    {:deprecated: .deprecated}
+    {:dotnet-standard: .ph data-hd-programlang="dotnet-standard"}
+    {:experimental: .experimental}
+    {:external: target="_blank" .external}
+    {:faq: data-hd-content-type="faq"}
+    {:generic: data-hd-programlang="generic"}
+    {:go: .ph data-hd-programlang="go"}
+    {:help: data-hd-content-type="help"}
+    {:here: .ph data-hd-vposition="here"}
+    {:hide-dashboard: .hide-dashboard}
+    {:hide-in-docs: .hide-in-docs}
+    {:important: .important}
+    {:ios: data-hd-operatingsystem="ios"}
+    {:java: .ph data-hd-programlang="java"}
+    {:javascript: .ph data-hd-programlang="javascript"}
+    {:middle: .ph data-hd-position="middle"}
+    {:node: .ph data-hd-programlang="node"}
+    {:note: .note}
+    {:objectc: .ph data-hd-programlang="Objective C"}
+    {:php: .ph data-hd-programlang="PHP"}
+    {:pre: .pre}
+    {:preview: .preview}
+    {:python: .ph data-hd-programlang="python"}
+    {:release-note: data-hd-content-type="release-note"}
+    {:right: .ph data-hd-position="right"}
+    {:row-headers: .row-headers}
+    {:ruby: .ph data-hd-programlang="ruby"}
+    {:screen: .screen}
+    {:shortdesc: .shortdesc}
+    {:step: data-tutorial-type="step"}
+    {:support: data-reuse="support"}
+    {:swift: .ph data-hd-programlang="swift"}
+    {:term: .term}
+    {:terraform: .ph data-hd-interface="terraform"}
+    {:tip: .tip}
+    {:troubleshoot: data-hd-content-type="troubleshoot"}
+    {:tsCauses: .tsCauses}
+    {:tsResolve: .tsResolve}
+    {:tsSymptoms: .tsSymptoms}
+    {:tutorial: data-hd-content-type="tutorial"}
+    {:ui: .ph data-hd-interface="ui"}
+    {:unity: .ph data-hd-programlang="unity"}
+    {:vbnet: .ph data-hd-programlang="vb.net"}
+    {:video: .video}
+#// Attribute definition list - end
