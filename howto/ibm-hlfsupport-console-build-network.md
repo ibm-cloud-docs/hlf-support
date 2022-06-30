@@ -85,13 +85,12 @@ For each organization that you want to create with the console, you should deplo
 
 In this tutorial, we create two organizations, one which will own a peer and another which will own an ordering service. Each organization needs a CA to issue its certificates, therefore we need to create **two CAs**. For the purpose of this tutorial, **we will create only one CA at a time**.
 
-Watch the following video to learn how to add a peer organization to the consortium, create the channel, and join a peer to the channel. For video tutorials on how how to create a peer and an ordering service, see [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
+Watch the following video to learn how to add a peer organization to the consortium, create the channel, and join a peer to the channel. For video tutorials on how how to create a peer and an ordering service, see the [video series](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
 
 <p><object width="608" height="405" data="https://www.youtube.com/embed//iFAl66ee-Qs?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
 <details>
 <summary>Video transcript</summary>
-<p>&nbsp;
 <p>
 Hello everyone, and welcome to this demonstration of how to create a peer using the Fabric Operations Console. I’ll be following the process from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation, which you can see here. At the end of this tutorial, you will have created this structure, representing the components related to org1. In our next video, we’ll create an ordering service. And after that, a channel, to complete the infrastructure of our network.
 <p>
@@ -122,7 +121,7 @@ Then, associate an identity --- this defines who the admin of the peer will be. 
 On the next panel, review the summary to make sure these values are what you expect. Because we choose not to customize our resource allocation, pay particular attention to this section, as it represents the total amount of resources needed for this deployment. If you want to take a closer look at these values, go back and click the resource allocation box. A panel will come up showing these resources and the containers they are linked to. You can see the resources I have available in my cluster, which has three nodes with 4 CPUs and 16 gigs of RAM in a single zone. Based on the resources set to be allocated for my peer, I have enough space. When you are ready, click Add peer on the summary screen. It can take several minutes to create a peer. Check your Kubernetes cluster to monitor the status of your deployment. When the peer has finished deploying, you’ll see the gray box turn green. And that’s all there is to it.
 <p>
 We created a CA. We created an identity for the peer and for the admin. Then we created the definition of org1 and used all of that information to create the peer. And now that we have a peer we have everything we need to join a channel or join a network. If you want to host a channel, check out our next video, which will show you how to create an ordering service. So thank you for watching this video, and happy block chaining. 
-<p>&nbsp;
+<p>
 </details>
 
 ### Creating your peer organization's CA
@@ -325,12 +324,11 @@ However, just as with the peer, before we can create an ordering service, we nee
 
 Watch the following video to learn about the process to create the ordering service's organization and the ordering service. For video tutorials on how how to create a peer and a channel, see the [video series.](https://developer.ibm.com/series/ibm-blockchain-platform-console-video-series/){: external}:
 
-<p><object width="608" height="405" data="https://www.youtube.com/embed/lapmfN_tucg?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
-
+<p><object width="608" height="405" data="https://www.youtube.com/embed/lapmfN_tucg?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/>
+<br><br>
 
 <details>
 <summary>Video transcript</summary>
-<p>&nbsp;
 <p>
 Hello everyone, and welcome to this demonstration of how to create an ordering service using the Fabric Operations Console. if you watched our other video on how to create a peer, much of this flow will seem similar to you. You still have to create a Certificate Authority first, use it to create identities and an organization, and then finally use those identities to create the ordering service itself. Once again, this information and more is present in our series of tutorials taking you through a full end to end where you create all of the nodes and identities, create a channel, join a channel, and deploy a smart contract. By the end of this video you'll have a configuration that looks like THIS, only without the channel, which we’ll create in our next demonstration.
 <p>
@@ -357,7 +355,6 @@ Now let’s give the ordering node identity that we registered, os1 and the secr
 On the next panel, review the summary to make sure these values are what you expect. Because we choose not to customize our resource allocation, pay particular attention to this section, as it represents the total amount of resources needed for this deployment. If you want to take a closer look at these values, go back and click the resource allocation box. A panel will come up showing these resources and the containers they are linked to. You can see the resources I have available in my cluster, which has three nodes with 4 CPUs and 16 gigs of RAM in a single zone. Based on the resources set to be allocation for my peer, I have enough space for this ordering service. When you are ready, click Add ordering service on the summary screen. It can take several minutes to create a ordering service. Check your Kubernetes cluster to monitor the status of your deployment. When the ordering service has finished deploying, you’ll see the gray box turn green.
 <p>
 You should now have two CAs, a peer, and an ordering service, all the components you need to create a channel, which you can learn about in our next video. Until then, thank you for watching and happy block chaining.
-<p>&nbsp;
 </details>
 
 
@@ -537,11 +534,12 @@ Watch the following video to learn how to add a peer organization to the consort
 
 <details>
 <summary>Video transcript</summary>
-<p>&nbsp;
 <p>
 Hello again, and welcome to this demonstration of how to create a channel using the Fabric Operations Console. If you've watched our videos on creating a peer and an ordering service, you should have a deployment that looks similar to this one, with one peer org, two CAs and an ordering service.
+</p>
 <p>
 As with our previous videos, the steps we'll be going through today are from our Build a network tutorial in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation. This tutorial will complete the structure you see here, with Org1, which we created in our first video, creating a channel run on our ordering service, which we created in our second video.
+</p>
 <p>
 If you don't know what channels are, they're the place where transactions involving assets happen in the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. And because channels can be created with a subset of the members of a network, channels are also a powerful tool to enable privacy. Only the members of a channel will know about that channel and have access to its ledger, enabling the related business partners who form networks a space to execute deals that only they know about. Whatever the reason, the process for creating a channel is the same.
 <p>
