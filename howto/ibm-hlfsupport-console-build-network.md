@@ -89,41 +89,41 @@ Watch the following video to learn how to add a peer organization to the consort
 
 <p><object width="608" height="405" data="https://www.youtube.com/embed//iFAl66ee-Qs?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
-### Video script
-{: #video-transcript-peer}
-{: notoc}
-
+<details>
+<summary>Video transcript</summary>
+<p>&nbsp;
+<p>
 Hello everyone, and welcome to this demonstration of how to create a peer using the Fabric Operations Console. I’ll be following the process from the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric documentation, which you can see here. At the end of this tutorial, you will have created this structure, representing the components related to org1. In our next video, we’ll create an ordering service. And after that, a channel, to complete the infrastructure of our network.
-
+<p>
 In this video, we’ll be using recommended values for the various fields in the UI. These are the same values you’ll find in the docs, which are cataloged in tables for the various tasks. These values are not mandatory, but if you’re using the console for the first time, we do recommended them. In cases where you have to reenter a value, for example an enroll ID and secret, which are not stored in the console, you will be able to refer to the tables in the documentation to remember what you entered. If you do choose different values, make sure to write them down somewhere.
-
+<p>
 Alright, so let’s get started creating that peer. If you're unfamiliar with Hyperledger Fabric, which the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is based on, you might not realize you have to create a Certificate Authority before you create a peer. This is because before we can create a peer, we have to create some identities. These identities allow a network entity, whether it’s an admin or a node, to sign its actions using a certificate. Those certificates are issued by a Certificate Authority, also known as a CA. Therefore, our first step in creating a peer is to create a CA and use it to register identities for the peer admin and for the peer itself. After which we’ll need to create a definition for org1.
-
+<p>
 To do that, click on Add certificate authority. We’re going to be creating a CA here, not importing one. Then, give this CA a display name. Because it's going to be associated with org1, we'll call it org1 CA. Next we’ll give an enroll ID and secret for the user who will be the admin of the CA itself: admin and adminpw. Note the resource allocation box. If you leave this box deselected, your CA will be deployed with default resources. If you want to know what those resources are, for example to check against the resources available in your cluster, click the box and then next. If you’re comfortable with the default allocation, click next. You’ll be taken to the summary screen which will show the values for the CA you are creating.
-
+<p>
 If these seem right to you, click Add Certificate Authority. The process of deploying a CA can take a few minutes.
-
+<p>
 To check on the status of your deployments, make sure to refer to your Kubernetes dashboard. If the box on a node does not turn green, or turns gray at some point, you can check on its status by making sure you’re in the correct resource group and clicking on your deployments. The Kubernetes dashboard is also how you will extend resources in your cluster, as needed. When the CA is ready, you’ll see the gray box turn green, indicating that the CA has been deployed.
-
+<p>
 But before we can use the CA to register identities for org 1, we need to enroll an admin for this CA. Which we can do by clicking on the CA and clicking on associate identity. From there, enter the enroll ID and secret you used when creating the CA: admin and adminpw. Then give this identity the name Org1 CA Admin. Then click associate identity. If you click over to your wallet, you can see that the CA Admin is there, indicating it has been enrolled successfully. The CA is now ready to be used to register and enroll identities.
-
+<p>
 We’ll start by registering the admin of org1. Because it will be an admin, use an enroll ID of org1admin and a secret of org1adminpw. Then give it a type of admin. Do not use the peer or orderer type. Use the default affiliation for now, and ignore the enrollments and attributes. If you want to learn about affiliations and enrollments and attributes you can read about them in our documentation. Now that the admin identity of org1 has been registered we need to register the identity for the peer itself. Remember that nodes have identities just as admins and users do. So we'll use peer1 and peer1pw as the enroll id and secret of the peer. This is a peer so we need to use the “peer” type, again using default affiliations and ignoring enrollments and attributes.
-
+<p>
 So now that we have registered the two identities we can create the definition of org1, which is represented by an MSP. We do that through the Organizations tab. Click create. We’ll use an msp display name of Org1 MSP and an mspid of org1msp. Then specify org1 CA. You’ll see some values in the fields below. They’re the enroll ID and secret you entered when creating the admin of the CA. You don't want to use them as the admin of org1 as well. You want to create separate identities for the admins of your components. In this case that means using the identity you registered to be the admin of org1, org1admin and org1adminpw, and giving this identity the name Org1 MSP Admin. Then click generate. This will enroll the identity and put it in your wallet. Then export it. A JSON representing the Org1 Admin will be downloaded to your system. Make sure you always export your identities and MSPs as they’re only stored in the browser. If you switch to a different browser or a different machine, you won’t be able operate your components without uploading the admin of that component. When that is done, we can create this MSP definition. After which, we check our wallet and see that the Org1 Admin is there.
-
+<p>
 Now we can create the peer. Let’s give this peer a display name of Peer Org1. Again this is a display name for the UI. If you do not check any of the boxes below, default values for the various options will remain selected. To inspect these values, for example the default resources that will be allocated to the peer, click the box. You will also have a chance to review these values on the summary screen. For now, accept the defaults by leaving these boxes deselected.
-
+<p>
 In the next panel, make sure Org1 CA is selected.
-
+<p>
 Now we want to use the peer identity that we registered, peer1 and peer1pw. Then select the org1msp, as this peer will be associated with org 1. You can ignore this CSR hostname for now. That's only if you want to use a specific domain name for your peer. Next, select which Fabric version image you want to use to deploy this peer. I will select the highest version available here. Keep in mind that 2.x peers will have a lower resource allocation than 1.4.x peers because starting in Fabric version 2, smart contracts are deployed into their own pods by the smart contract launcher. Because Fabric v2.x peers do not have a "shim" (the external dependencies that allowed smart contracts to run on earlier versions of Fabric), you will have to vendor the shim and then repackage any smart contracts written in Golang (go) that you installed on peers deployed using the 1.4.x Fabric image. Without this vendoring and repackaging, the go smart contract will not run on a peer using a Fabric 2.x image. You will not need to do this for smart contracts written in Java or Node.js, nor for smart contracts written and packaged using the 2.0 package. Note also that you will not be able to enable any v2 capabilities on any channels for the time being.
-
-
-
+<p>
 Then, associate an identity --- this defines who the admin of the peer will be. In this case we're going to be using the same admin for the org as for the peer, Org1 MSP Admin. While you can create a separate admin for the peer, it’s perfectly fine to use the same identity that’s the admin of your organization.
-
+<p>
 On the next panel, review the summary to make sure these values are what you expect. Because we choose not to customize our resource allocation, pay particular attention to this section, as it represents the total amount of resources needed for this deployment. If you want to take a closer look at these values, go back and click the resource allocation box. A panel will come up showing these resources and the containers they are linked to. You can see the resources I have available in my cluster, which has three nodes with 4 CPUs and 16 gigs of RAM in a single zone. Based on the resources set to be allocated for my peer, I have enough space. When you are ready, click Add peer on the summary screen. It can take several minutes to create a peer. Check your Kubernetes cluster to monitor the status of your deployment. When the peer has finished deploying, you’ll see the gray box turn green. And that’s all there is to it.
-
+<p>
 We created a CA. We created an identity for the peer and for the admin. Then we created the definition of org1 and used all of that information to create the peer. And now that we have a peer we have everything we need to join a channel or join a network. If you want to host a channel, check out our next video, which will show you how to create an ordering service. So thank you for watching this video, and happy block chaining. 
+<p>&nbsp;
+</details>
 
 ### Creating your peer organization's CA
 {: #ibm-hlfsupport-console-build-network-create-CA-org1CA}
@@ -330,37 +330,35 @@ Watch the following video to learn about the process to create the ordering serv
 
 <details>
 <summary>Video transcript</summary>
+<p>&nbsp;
 <p>
 Hello everyone, and welcome to this demonstration of how to create an ordering service using the Fabric Operations Console. if you watched our other video on how to create a peer, much of this flow will seem similar to you. You still have to create a Certificate Authority first, use it to create identities and an organization, and then finally use those identities to create the ordering service itself. Once again, this information and more is present in our series of tutorials taking you through a full end to end where you create all of the nodes and identities, create a channel, join a channel, and deploy a smart contract. By the end of this video you'll have a configuration that looks like THIS, only without the channel, which we’ll create in our next demonstration.
-
+<p>
 So let's go ahead and add that CA. We're creating a CA so we can click next here. As we did with the peer, we need to give this CA a display name. And as before, you can use whatever values you want, but we’ll call it the Ordering Service CA. We’ll give an admin identity of admin and a secret of adminpw for our CA admin. Although this identity has the same id and secret as the Org1 CA admin, it is not the same identity because it is not the same CA. Note the resource allocation box. If you leave this box unselected, your CA will be deployed with default resources. If you want to know what those resources are, for example to check against the resources available in your cluster, click the box and then next. If you’re comfortable with the default allocation, click next. You’ll be taken to the summary screen which will show the values for the CA you are creating. Once again, accept these defaults for now and click next. You’ll be taken to the summary screen that will show you the values you just entered. If these seem right to you, click Add Certificate Authority.
-
+<p>
 We talked in our previous video about the gray box. When it’s green, the CA can be used. But before we can use the CA to register identities for our ordering service organization, we need to enroll an admin for this CA. Which we can do by clicking on the CA and clicking on associate identity. From there, enter the enroll ID and secret you used when creating the CA: admin and adminpw. Then give this identity the name Ordering Service CA Admin. Then click associate identity. If you click over to your wallet, you can see that the CA Admin is there, indicating it has been enrolled successfully. The CA is now ready to be used to register and enroll identities.
-
+<p>
 As with the peer, we need to register two identities, one for the ordering service admin and one for the ordering service nodes.
-
+<p>
 First up will be the ordering service admin. We'll give it an enroll id of OSadmin and a secret of OSadminpw. This is an admin so we use the admin type, not the peer, orderer, or client type. As before, use the default affiliations and ignore the enrollments and attributes.
-
+<p>
 Now we can register the identity of our ordering node. In this tutorial, we’ll create a single node Raft ordering service. This configuration is not considered ideal for production because it is not highly available, but it is sufficient to get started. We’ll use an enroll id of OS1 and a secret of OS1pw. As this is an ordering node, use the orderer type, and once again use the default affiliations and attributes.
-
+<p>
 Now that we have the CA and have used it to register identities we can create the definition of the ordering service organization, which we do by clicking the Organizations tab and then create MSP definition. The display name for this msp will be called Ordering Service MSP, while the MSP ID will be osmsp. Our CA here is the ordering service CA, not the Org1 CA. Then give the enroll id and secret of the admin of your ordering service organization, OSadmin and OSadminpw. Do not use any default value that might be here. Then give this identity the name Ordering Service MSP Admin. Then click generate. That will create the identity. And then export it to your machine. Then click create the MSP definition. You should see the Ordering Service MSP. And if you look in your wallet you should now see the Ordering Service MSP Admin identity we just created.
-
+<p>
 Now that we have the msp and the identities that we need we can go back and create our ordering service. Click the add orderer tile and specify that you’re creating an ordering service. On the next panel, give this ordering service the name Ordering Service. If you intend your network to be used for testing and development, you can choose one node here. Keep in mind however that a single node ordering service is not crash fault tolerant, which means that during a maintenance cycle or upgrade, you will not be able to commit transactions on a channel hosted on that ordering service. If your network is meant for production, choose the five node option, which uses the Raft protocol, as this ordering service is both crash fault tolerant and able to handle the loss of two nodes and not lose function.
-
+<p>
 As we have done for our CAs and our peer, we will use the default resource allocation. In the summary screen, we will be able to inspect the resources this ordering service needs to be deployed and check it against the resources available in our cluster.
-
+<p>
 On the next screen, make sure that you specify the ordering service ca, not the Org1 ca, and that you give the enroll id of your ordering service node, OS1 and OS1pw. Then, select the Ordering Service MSP from the MSP drop down and ignore the TLS CSR hostname.
-
+<p>
 Now let’s give the ordering node identity that we registered, os1 and the secret, os1pw. Then select the Ordering Service MSP. As we did with the peer, we can ignore the CSR Hostname. Next, select which Fabric version image you want to use to deploy this ordering service. As we did with the peer, I will select the highest version here, as it contains the latest fixes and improvements. It will also set me up well when we enable v2 capabilities, which are currently not available.
-
+<p>
 On the next panel, review the summary to make sure these values are what you expect. Because we choose not to customize our resource allocation, pay particular attention to this section, as it represents the total amount of resources needed for this deployment. If you want to take a closer look at these values, go back and click the resource allocation box. A panel will come up showing these resources and the containers they are linked to. You can see the resources I have available in my cluster, which has three nodes with 4 CPUs and 16 gigs of RAM in a single zone. Based on the resources set to be allocation for my peer, I have enough space for this ordering service. When you are ready, click Add ordering service on the summary screen. It can take several minutes to create a ordering service. Check your Kubernetes cluster to monitor the status of your deployment. When the ordering service has finished deploying, you’ll see the gray box turn green.
-
+<p>
 You should now have two CAs, a peer, and an ordering service, all the components you need to create a channel, which you can learn about in our next video. Until then, thank you for watching and happy block chaining.
-</p>
+<p>&nbsp;
 </details>
-
-
-
 
 
 ### Ordering in the console
@@ -539,6 +537,7 @@ Watch the following video to learn how to add a peer organization to the consort
 
 <details>
 <summary>Video transcript</summary>
+<p>&nbsp;
 <p>
 Hello again, and welcome to this demonstration of how to create a channel using the Fabric Operations Console. If you've watched our videos on creating a peer and an ordering service, you should have a deployment that looks similar to this one, with one peer org, two CAs and an ordering service.
 <p>
@@ -563,6 +562,7 @@ After you have joined the channel you can inspect it. You’ll see the block hei
 To initiate a channel update, click the update button. This will allow you to edit many of the fields you specified when creating the channel, and to perform important tasks like adding channel members. The advanced configuration tab allows you to edit features like capability levels and ordering service consenters that were not edited during channel create. Note that some of these options will require the approval of an ordering service organization.
 <p>
 So now that we have created a channel and joined a peer to it, we can install a smart contract. We can add other members to our channel. We have everything we need to start transacting using the Fabric Operations Console. Thank you for watching, and happy block chaining.
+<p>&nbsp;
 </details>
 
 
