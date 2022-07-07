@@ -37,7 +37,7 @@ for planning, configuring, and developing applications for {{site.data.keyword.b
 Use the [getting started](tutorials-getting-started.md) tutorials to investigate how to [build a network](howto/ibm-hlfsupport-console-build-network.md) 
 and [join a network](howto/ibm-hlfsupport-console-join-network.md) on IBM Support for Hyperledger Fabric.
 
-You can also watch the [video series](videos.md) to learn how to deploy a peer, deploy an ordering service, 
+You can also watch the [video series](reference/videos.md) to learn how to deploy a peer, deploy an ordering service, 
 and create and join a channel. 
 
 
