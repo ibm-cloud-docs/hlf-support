@@ -49,7 +49,7 @@
     * [Deploying IBM Support for Hyperledger Fabric behind a firewall](howto/console-deploy-k8-firewall.md)
     * [Upgrading your console and components](howto/console-upgrade-k8.md)
     * [Installing the fix pack](howto/console-fixpack.md)
-  * [Using IBM Support for Hyperledger Fabric](howto-using-ibm-hlfsupport-console.md)
+  * [Using the IBM Support for Hyperledger Fabric console](howto-using-ibm-hlfsupport-console.md)
     * [Administering your console](howto/console-ocp-manage.md)
     * [Advanced deployment options](howto/ibm-hlfsupport-console-advanced-deployment.md)
     * [Advanced channel deployment and management](howto/ibm-hlfsupport-console-advanced-channel.md)
