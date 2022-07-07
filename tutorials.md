@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-20-04"
+lastupdated: "2022-07-07"
 
 keywords: tutorials, how-to, learn
 
@@ -34,10 +34,10 @@ for planning, configuring, and developing applications for {{site.data.keyword.b
 ## Getting started 
 {: #hlf-support-tutorials-getting-started}
 
-Use the [getting started](tutorials-getting-started.md) tutorials to investigate how to [build a network](ibp-console-build-network.md) 
-and [join a network](ibp-console-join-network.md) on IBM Support for Hyperledger Fabric.
+Use the [getting started](tutorials-getting-started.md) tutorials to investigate how to [build a network](howto/ibm-hlfsupport-console-build-network.md) 
+and [join a network](howto/ibm-hlfsupport-console-join-network.md) on IBM Support for Hyperledger Fabric.
 
-You can also watch the [video series](reference/videos.md) to learn how to deploy a peer, deploy an ordering service, 
+You can also watch the [video series](videos.md) to learn how to deploy a peer, deploy an ordering service, 
 and create and join a channel. 
 
 
