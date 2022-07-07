@@ -25,7 +25,7 @@
     * [Deploy a smart contract](howto/ibm-hlfsupport-console-smart-contracts.md)
     * [Deploy smart contracts on Fabric v2.x](howto/ibm-hlfsupport-console-smart-contracts-v2.md)
     * [Deploy smart contracts on Fabric v1.4](howto/ibm-hlfsupport-console-smart-contracts-v14.md)
-  * [Creating applications](howto/ibm-hlfsupport-console-create-app.md)
+  * [Developing applications](howto/ibm-hlfsupport-console-create-app.md)
   * [Certificate Authority options](tutorials-certificate-authority-options.md)
     * [Creating an intermediate Certificate Authority](ibm-hlfsupport-console-int-ca.md)
     * [Using certificates from an external Certificate Authority](howto/ibm-hlfsupport-v2-tutorial-extca.md)
