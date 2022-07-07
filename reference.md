@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-05"
+lastupdated: "2022-07-07"
 
 keywords: tutorials, how-to, learn, reference
 
@@ -37,7 +37,5 @@ The following reference topics are available for IBM Support for Hyperledger Fab
 * [Kubernetes](reference/k8s.md)
 * [IBM Developer](https://developer.ibm.com/technologies/blockchain/)
 * [Tracking license consumption](reference/metering.md)
-* [HSM PKCS #11 proxy](reference/hsm-pkcs11.md) 
-* [IBM Cloud HSM PKCS #11 proxy](reference/hsm-pkcs11-ic.md)
 * [Glossary](glossary.md)
 
