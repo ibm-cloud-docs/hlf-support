@@ -31,9 +31,9 @@ Use the IBM Blockchain Platform how-tos to complete common tasks for building an
 for planning, configuring, and developing applications for IBM Support for Hyperledger Fabric.
 
 Review the procedures for [deploying IBM Support for Hyperledger Fabric](howto/console-deploy-k8.md) and 
-[deploying IBM Support for Hyperledger Fabric](howto/console-deploy-k8-firewall.md) on Kubernetes.
+[deploying IBM Support for Hyperledger Fabric behind a firewall](howto/console-deploy-k8-firewall.md) on Kubernetes.
 
-For existing installations on Kubernetes, details on [removing your deployment](howto/console-delete-k8.md) are provided.
+For existing installations on Kubernetes, details on [installing the fixpack](howto/console-fixpack.md) and [removing your deployment](howto/console-delete-k8.md) are provided.
 
 
 
