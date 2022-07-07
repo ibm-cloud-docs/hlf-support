@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-29"
+lastupdated: "2022-07-07"
 
 keywords: tutorials, how-to, Certificate Authority, CA
 
@@ -31,6 +31,6 @@ intermediate and external Certificate Authorities on an IBM Support for Hyperled
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
 for planning, configuring, and managing Certificate Authorities for IBM Support for Hyperledger Fabric.
 
-Use the Certificate Authority options tutorials to learn about [creating an intermediate Certificate Authority](howto/ibp-hlfsupport-console-int-ca.md) and 
-[using certificates from an external Certificate Authority](howto/ibp-hlfsupport-v2-tutorial-extca.md) on IBM Support for Hyperledger Fabric.
+Use the Certificate Authority options tutorials to learn about [creating an intermediate Certificate Authority](ibm-hlfsupport-console-int-ca.md) and 
+[using certificates from an external Certificate Authority](ibm-hlfsupport-v2-tutorial-extca.md) on IBM Support for Hyperledger Fabric.
 
