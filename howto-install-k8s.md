@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-07-07"
 
 keywords: tutorials, how-to, learn
 
@@ -33,8 +33,7 @@ for planning, configuring, and developing applications for IBM Support for Hyper
 Review the procedures for [deploying IBM Support for Hyperledger Fabric](howto/console-deploy-k8.md) and 
 [deploying IBM Support for Hyperledger Fabric](howto/console-deploy-k8-firewall.md) on Kubernetes.
 
-For existing installations on Kubernetes, details on [upgrading your console and components](howto/console-upgrade-k8.md) and 
-[removing your deployment](howto/console-delete-k8.md) are provided.
+For existing installations on Kubernetes, details on [removing your deployment](howto/console-delete-k8.md) are provided.
 
 
 
