@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-07"
 
 keywords: tutorials, how-to, deploy smart contracts
 
@@ -32,5 +32,5 @@ deploying smart contracts (in chaincode) on {{site.data.keyword.blockchainfull_n
 for planning, configuring, and developing smart contracts in chaincode for IBM Support for Hyperledger Fabric networks.
 
 Use the deploying smart contracts tutorials to get an overview of smart contracts and chaincode, and to learn how to deploy a smart contract on 
-Hyperledger [Fabric v2.x](ibm-hlfsupport-console-smart-contracts-v2.md) or [Fabric v1.4](ibm-hlfsupport-console-smart-contracts-v14.md) (deprecated).
+Hyperledger [Fabric v2.x](howto/ibm-hlfsupport-console-smart-contracts-v2.md) or [Fabric v1.4](howto/ibm-hlfsupport-console-smart-contracts-v14.md) (deprecated).
 
