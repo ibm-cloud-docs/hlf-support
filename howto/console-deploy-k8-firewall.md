@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-07"
 
 keywords: Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -10,7 +10,7 @@ subcollection: hlf-support
 
 ---
 
-[{METADATA_ATTRIBUTES}
+{{site.data.keyword.attribute-definition-list}}
 
 # Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall
 {: #deploy-k8-firewall}
