@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-07-07"
 
 keywords: tutorials, how-to, learn
 
@@ -33,5 +33,4 @@ for planning, configuring, and installing IBM Support for Hyperledger Fabric.
 Review the following options detailed steps for deploying IBM Support for Hyperledger Fabric on OpenShift Container Platform: 
 
 - [Deployment options](howto-deployment-options.md)
-- [Upgrading your console and components](howto/console-upgrade-ocp.md)
 - [Removing your deployment](howto/console-delete-ocp.md).
