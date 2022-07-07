@@ -32,5 +32,5 @@ intermediate and external Certificate Authorities on an IBM Support for Hyperled
 for planning, configuring, and managing Certificate Authorities for IBM Support for Hyperledger Fabric.
 
 Use the Certificate Authority options tutorials to learn about [creating an intermediate Certificate Authority](ibm-hlfsupport-console-int-ca.md) and 
-[using certificates from an external Certificate Authority](ibm-hlfsupport-v2-tutorial-extca.md) on IBM Support for Hyperledger Fabric.
+[using certificates from an external Certificate Authority](howto/ibm-hlfsupport-v2-tutorial-extca.md) on IBM Support for Hyperledger Fabric.
 
