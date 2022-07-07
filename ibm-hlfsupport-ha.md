@@ -31,4 +31,4 @@ Use IBM Support for Hyperledger Fabric High Availability to maximize resource av
 planning and configuring IBM Support for Hyperledger Fabric on a Kubernetes cluster.
 
 Use the High Availability (HA) topics to learn [about High Availability](ibm-hlfsupport-console-ha.md) and for details on 
-[setting up multiregion High Availability deployments for peers](ibm-hlfsupport-console-ic-ha-howto.md), [setting up multiregion High Availability deployments for the ordering service](ibm-hlfsupport-console-ha-os.md), and [building a High Availability Certificate Authority](ibm-hlfsupport-console-ha-ca.md).
+[setting up multiregion High Availability deployments for peers](howto/ibm-hlfsupport-console-ic-ha-howto.md), [setting up multiregion High Availability deployments for the ordering service](howto/ibm-hlfsupport-console-ha-os.md), and [building a High Availability Certificate Authority](howto/ibm-hlfsupport-console-ha-ca.md).
