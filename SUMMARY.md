@@ -20,6 +20,7 @@
   * [Getting started](tutorials-getting-started.md)
     * [Build a network](howto/ibm-hlfsupport-console-build-network.md)
     * [Join a network](howto/ibm-hlfsupport-console-join-network.md)
+    * [Video series](reference/videos.md)
   * [Deploying smart contracts](tutorials-deploying-smart-contracts.md)
     * [Configure smart contracts](howto/ibm-hlfsupport-console-smart-contracts.md)
     * [Deploy smart contracts on Fabric v2.x](howto/ibm-hlfsupport-console-smart-contracts-v2.md)
