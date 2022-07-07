@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-07-07"
 
 keywords: tutorials, how-to, learn
 
@@ -54,8 +54,7 @@ For existing installations on Kubernetes, details on [upgrading your console and
 ## Installing the fix pack
 {: #install-fixpack}
 
-Review the procedures for [installing the 2.5.2 fix pack](howto/console-deploy-k8.md) on an OpenShift or  
-Kubernetes {{site.data.keyword.blockchainfull_notm}} installation.
+Review the procedures for [installing the fix pack](howto/console-fixpack.md) on an OpenShift or Kubernetes {{site.data.keyword.blockchainfull_notm}} installation.
 
 
 ## Using the IBM Support for Hyperledger Fabric images
