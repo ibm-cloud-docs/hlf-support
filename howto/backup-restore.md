@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-07-08"
 
 keywords: network components, IBM Cloud Kubernetes Service, backup, restore, disaster, peer, orderer, ordering node, LevelDB, CouchDB
 
@@ -15,6 +15,11 @@ subcollection: hlf-support
 
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/backup-restore.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/backup-restore.html){: external}. Update your bookmarks.
+{: important}
 
 # Backing up and restoring components and networks
 {: #backup-restore}

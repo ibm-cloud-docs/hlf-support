@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2019-06-18"
+lastupdated: "2022-07-08"
 
 keywords: Hyperledger Fabric, confidential channels, Membership Service Provider, Linux Foundation, SDKs, modular architecture, permissioned network
 
@@ -16,6 +16,11 @@ subcollection: hlf-fabric
 {:screen: .screen}
 {:pre: .pre}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/reference/v10_fabric.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/reference/v10_fabric.html){: external}. Update your bookmarks.
+{: important}
 
 # Hyperledger Fabric
 {: #hyperledger-fabric}

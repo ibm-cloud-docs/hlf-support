@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-23"
+lastupdated: "2022-07-08"
 
 keywords: IBM Support for Hyperledger Fabric, images, multicloud
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/internal/blockchain_images.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/internal/blockchain_images.html){: external}. Update your bookmarks.
+{: important}
 
 # Using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric images
 {: #blockchain-images}

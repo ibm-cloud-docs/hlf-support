@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-07-08"
 
 keywords: deployment, advanced, CouchDB, LevelDB, external CA, HSM, resource allocation
 
@@ -14,6 +14,11 @@ subcollection: hlf-support
 
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-advanced-deployment.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-advanced-deployment.html){: external}. Update your bookmarks.
+{: important}
 
 # Advanced deployment options
 {: #ibm-hlfsupport-console-adv-deployment}

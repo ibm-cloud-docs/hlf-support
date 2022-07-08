@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-27"
+lastupdated: "2022-07-08"
 
 keywords: APIs, build a network, authentication, service credentials, API key, API endpoint, IAM access token, Fabric CA client, import a network, generate certificates
 
@@ -12,6 +12,11 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-v2-apis.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-v2-apis.html){: external}. Update your bookmarks.
+{: important}
 
 # Using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric APIs
 {: #ibm-hlfsupport-v2-apis}

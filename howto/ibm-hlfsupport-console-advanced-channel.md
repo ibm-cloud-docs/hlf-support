@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-07-08"
 
 keywords: network components, Kubernetes, batch timeout, channel update, channels, governance, channel configuration, access control
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-advanced-channel.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-advanced-channel.html){: external}. Update your bookmarks.
+{: important}
 
 # Advanced channel deployment and management
 {: #ibm-hlfsupport-console-govern}

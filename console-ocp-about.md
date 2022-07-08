@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-06"
+lastupdated: "2022-07-08"
 
 keywords: IBM Support for Hyperledger Fabric, system requirements, Kubernetes, behind a firewall, azure, multicloud
 
@@ -12,6 +12,11 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/console-ocp-about.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/console-ocp-about.html){: external}. Update your bookmarks.
+{: important}
 
 # About {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #console-ocp-about}
@@ -25,46 +30,7 @@ Watch the following video for an introduction to blockchain and the {{site.data.
 
 <p><object width="608" height="405" data="https://www.youtube.com/embed/AvQa1W38J4I?iframeembed=true&amp;playerId=kaltura_player&amp;entry_id=0_s1wchnbg&amp;flashvars[akamaiHD.loadingPolicy]=preInitialize&amp;flashvars[akamaiHD.asyncInit]=true&amp;flashvars[twoPhaseManifest]=true&amp;flashvars[streamerType]=hdnetworkmanifest&amp;flashvars[localizationCode]=en&amp;flashvars[leadWithHTML5]=true&amp;flashvars[sideBarContainer.plugin]=true&amp;flashvars[sideBarContainer.position]=left&amp;flashvars[sideBarContainer.clickToClose]=true&amp;flashvars[chapters.plugin]=true&amp;flashvars[chapters.layout]=vertical&amp;flashvars[chapters.thumbnailRotator]=false&amp;flashvars[streamSelector.plugin]=true&amp;flashvars[EmbedPlayer.SpinnerTarget]=videoHolder&amp;flashvars[dualScreen.plugin]=true&amp;flashvars[Kaltura.addCrossoriginToIframe]=true&amp;&amp;wid=1_1ogb4fz9" outputclass="iframe"/></p>
 
-<details>
-<summary>Video transcript</summary>
-<p>
-By now you’ve probably heard of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, the leading permissioned enterprise blockchain solution in the world. But what is a permissioned blockchain? And what is the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric? The modern world is interwoven and interactive place.
-<p>
-But under the surface it’s still following some pretty old rules.
-<p>
-Jerry here on the left uses a different record keeping system than Door2Door Logistics on the right, which means they have to spend a lot of time figuring out what the truth is before they can make a deal.
-<p>
-This process is not just slow, it’s vulnerable. A successful hack or other problem can mean records are lost forever. As a result, businesses sacrifice efficiency for security and lock their records away.
-<p>
-But what if businesses shared their records, and shared the burden of protecting them? What if Jerry’s Modern Fabrics and Door2Door Logistics and their business partners never had to spend time arguing over who’s right because every time an asset moves from one to the other everyone’s records updated at the same time? And what if those records, once written, could never been changed?
-<p>
-This network, leveraging what’s called Distributed Ledger Technology, already exists. It’s an open blockchain network like Bitcoin. But there’s a problem. Businesses don’t necessarily want the records of their transactions shared with everyone, especially in a network like Bitcoin where users are unknown. In some industries, it’s actually illegal to share data that way.
-<p>
-What Jerry’s Modern Fabrics and Door2Door Logistics need is a permissioned blockchain like {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, where businesses can form networks with known, established partners and still take advantage of the robustness and efficiency of blockchains. But this too creates a problem. Who owns this network? Who runs it? The answer is: no one does.
-<p>
-Once an IBM Blockchain network has been established, its rules and practices are managed collectively, mimicking the kind of consensus process that governs the way transactions themselves are approved and written to the ledgers in the network.
-<p>
-But the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric doesn’t just stop with permissions and identities, users also have the ability to create channels where a few members of a network can get together and transact privately.
-<p>
-Additionally, private data collections can be established, which allows a few channel members to share certain transactions just with each other, without needing a whole separate channel.
-<p>
-Because components are hosted in clusters that are owned and controlled by users, the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric is naturally compliant with data residency rules.
-<p>
-All of these processes are managed through an award winning UI we call the console, which, along with custom APIs, makes the powerful open-source Hyperledger Fabric blockchain painless to use.
-<p>
-The console integrates seamlessly with the rest of the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric suite, including a powerful VS Code extension which allows users to create and test smart contracts and applications and then package and install them on production networks.
-<p>
-Because the console can run on both IBM Cloud and any cloud supported by Red Hat’s Open Shift, the console can run nearly everywhere and consoles in different clouds can connect to each other and to nodes deployed on Hyperledger Fabric.
-<p>
-But how many CAs, which create identities and define organizations, do I need?
-<p>
-How many peers, which host ledgers and have smart contracts installed on them, should I deploy on a channel to make sure I have no downtime?
-<p>
-Because you only pay for the compute you use, it’s painless to transition from pilot programs to full production networks using the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric. The IBM Garage is here to help assist you in finding the right configuration for every use case.
-<p>
-The world is moving too fast to keep doing things the old way. Go to cloud dot IBM dot com today and check out the {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric.
-<p>
-</details>
+
 
 ## What {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric offers
 {: #console-ocp-about-offers}

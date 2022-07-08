@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-03-07"
+lastupdated: "2022-07-08"
 
 keywords: metering, licensing service, license consumption, license tracking
 
@@ -16,6 +16,11 @@ subcollection: hlf-support
 {:table:.aria-labeledby="caption"}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/reference/metering.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/reference/metering.html){: external}. Update your bookmarks.
+{: important}
 
 # Tracking license consumption
 {: #metering}

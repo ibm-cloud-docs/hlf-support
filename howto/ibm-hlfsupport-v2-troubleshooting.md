@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-07-08"
 
 keywords: troubleshooting, debug, why, what does this mean, how can I, when I
 
@@ -12,6 +12,11 @@ content-type: troubleshoot
 ---
 
 {{site.data.keyword.attribute-definition-list}}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-v2-troubleshooting.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-v2-troubleshooting.html){: external}. Update your bookmarks.
+{: important}
 
 # Troubleshooting
 {: #ibm-hlfsupport-v2-troubleshooting}

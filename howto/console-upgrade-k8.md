@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-08"
 
 keywords: Kubernetes, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-upgrade-k8.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-upgrade-k8.html){: external}. Update your bookmarks.
+{: important}
 
 # Upgrading your console and components
 {: #upgrade-k8}

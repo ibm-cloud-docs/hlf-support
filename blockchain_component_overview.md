@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-11"
+lastupdated: "2022-07-08"
 
 keywords: blockchain components, ca, certificate authorities, peer, ordering service, orderer, channel, smart contract, applications, multicloud
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/blockchain_component_overview.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/blockchain_component_overview.html){: external}. Update your bookmarks.
+{: important}
 
 # Blockchain component overview
 {: #blockchain-component-overview}

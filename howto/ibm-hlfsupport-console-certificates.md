@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-16"
+lastupdated: "2022-07-08"
 
 keywords: admin certificate, Node OU, admin identity, expiration
 
@@ -15,6 +15,11 @@ subcollection: hlf-support
 
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-certificates.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-certificates.html){: external}. Update your bookmarks.
+{: important}
 
 # Managing certificates
 {: #cert-mgmt}

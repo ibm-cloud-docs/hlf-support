@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-07-08"
 
 keywords: Kubernetes, IBM Cloud Private, OCP, OpenShift Container Platform, {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric, multicloud
 
@@ -12,6 +12,11 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/index.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/index.html){: external}. Update your bookmarks.
+{: important}
 
 # Getting started with {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric
 {: #get-started-console-ocp}

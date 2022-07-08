@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-15"
+lastupdated: "2022-07-08"
 
 keywords: IBM Support for Hyperledger Fabric, Data residency, world state, channels, multicloud
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/data-residency.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/data-residency.html){: external}. Update your bookmarks.
+{: important}
 
 # Data residency
 {: #console-icp-about-data-residency}

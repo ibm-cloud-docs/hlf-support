@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-07-08"
 
 keywords: smart contract, lifecycle, package, definition
 
@@ -15,6 +15,11 @@ subcollection: hlf-support
 
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/write-powerful-smart-contracts.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/write-powerful-smart-contracts.html){: external}. Update your bookmarks.
+{: important}
 
 # Writing powerful smart contracts
 {: #write-powerful-smart-contracts}

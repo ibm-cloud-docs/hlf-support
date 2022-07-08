@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-07-08"
 
 
 keywords: terms, definitions, glossary
@@ -14,6 +14,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/glossary.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/glossary.html){: external}. Update your bookmarks.
+{: important}
 
 # Glossary
 {: #glossary}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-02-01"
+lastupdated: "2022-07-08"
 
 keywords: smart contract, private data, private data collection, anchor peer, implicit collections
 
@@ -15,6 +15,11 @@ subcollection: hlf-support
 
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-smart-contracts-v2.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-smart-contracts-v2.html){: external}. Update your bookmarks.
+{: important}
 
 # Deploy a smart contract using Fabric v2.x
 {: #ibm-hlfsupport-console-smart-contracts-v2}

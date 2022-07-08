@@ -2,7 +2,7 @@
 
 copyright:
   years:  2022
-lastupdated: "2022-04-15"
+lastupdated: "2022-07-08"
 
 keywords: high availability, HA, failures, zone failure, region failure, component failure, worker node failure, multicloud
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/ibm-hlfsupport-console-ha.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/ibm-hlfsupport-console-ha.html){: external}. Update your bookmarks.
+{: important}
 
 # High availability (HA)
 {: #ibm-hlfsupport-console-ha}

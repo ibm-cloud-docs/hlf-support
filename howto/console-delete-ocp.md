@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-21"
+lastupdated: "2022-07-08"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters
 
@@ -12,6 +12,11 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-delete-ocp.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-delete-ocp.html){: external}. Update your bookmarks.
+{: important}
 
 # Removing your deployment
 {: #Removing-ocp}

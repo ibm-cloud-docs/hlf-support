@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-07"
+lastupdated: "2022-07-08"
 
 keywords: tutorials, how-to, deploy smart contracts
 
@@ -20,6 +20,11 @@ subcollection: hlf-support
 {:term: .term}
 {:pre: .pre}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/tutorials-deploying-smart-contracts.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/tutorials-deploying-smart-contracts.html){: external}. Update your bookmarks.
+{: important}
 
 # Deploying smart contracts
 {: #hlf-support-tutorials-deploying-smart-contracts}

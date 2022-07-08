@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-07-08"
 
 keywords: HA, highly availability, multiregion
 
@@ -12,6 +12,11 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-ic-ha-howto.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-ic-ha-howto.html){: external}. Update your bookmarks.
+{: important}
 
 # Setting up multiregion High Availability (HA) deployments for peers
 {: #ibm-hlfsupport-console-hadr-mr}

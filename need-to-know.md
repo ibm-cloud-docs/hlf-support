@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017, 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-08"
 
 
 keywords: IBM Blockchain offerings, Linux Foundation, Hyperledger Fabric, open source, community contribution
@@ -13,6 +13,11 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/need-to-know.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/need-to-know.html){: external}. Update your bookmarks.
+{: important}
 
 # Disclaimer
 {: #disclaimer}
