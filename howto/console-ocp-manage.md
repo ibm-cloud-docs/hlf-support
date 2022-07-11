@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-27"
+lastupdated: "2022-07-08"
 
 keywords: IBM Support for Hyperledger Fabric, administrate, add user, remove user, password, APIs, authentication, view logs
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-ocp-manage.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-ocp-manage.html){: external}. Update your bookmarks.
+{: important}
 
 # Administering your console
 {: #console-icp-manage}

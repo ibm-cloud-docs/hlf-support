@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-12"
+lastupdated: "2022-07-08"
 
 keywords: OpenShift, Fabric Operations Console, deploy, resource requirements, storage, parameters, multicloud
 
@@ -17,6 +17,11 @@ subcollection: hlf-support
 
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-deploy-ocp-getting-started.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-deploy-ocp-getting-started.html){: external}. Update your bookmarks.
+{: important}
 
 # Getting started
 {: #deploy-ocp-getting-started}
@@ -120,5 +125,3 @@ The storages listed above are maintained by respective providers and it is not r
 {: #deploy-ocp-choose}
 
 The {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric can be deployed in four different ways depending on your business goals. Red Hat customers may prefer to deploy the service directly from the Red Hat Marketplace to their OpenShift cluster in the cloud or on-prem. If you prefer to step through the process manually, you can deploy it to your cloud or on-prem  behind a firewall. Finally, an Ansible playbook is available to automate the deployment of the service to your OpenShift cluster.
-
-

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-15"
+lastupdated: "2022-07-08"
 
 keywords: tutorials, how-to, deploy smart contracts
 
@@ -21,6 +21,11 @@ subcollection: hlf-support
 {:pre: .pre}
 
 
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/tutorials-deploying-smart-contracts.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/tutorials-deploying-smart-contracts.html){: external}. Update your bookmarks.
+{: important}
+
 # Deploying smart contracts
 {: #hlf-support-tutorials-deploying-smart-contracts}
 
@@ -29,8 +34,7 @@ deploying smart contracts (in chaincode) on {{site.data.keyword.blockchainfull_n
 {: shortdesc}
 
 **Target audience:** This topic is designed for architects, system administrators, and developers who are responsible 
-for planning, configuring, and developing smart contracts in chaincode for {{site.data.keyword.blockchainfull_notm}} 2.5.2 networks.
+for planning, configuring, and developing smart contracts in chaincode for IBM Support for Hyperledger Fabric networks.
 
-Use the deploying smart contracts tutorials to get an overview of smart contracts and chaincode, and to learn how to deploy a smart contract on 
-Hyperledger [Fabric v2.x](ibp-console-smart-contracts-v2.md) or [Fabric v1.4](ibp-console-smart-contracts-v14.md) (deprecated).
+Use the [deploy a smart contract tutorial](howto/ibm-hlfsupport-console-smart-contracts.md) to get an overview of smart contracts and chaincode, and to learn how to deploy a smart contract on Hyperledger [Fabric v2.x](howto/ibm-hlfsupport-console-smart-contracts-v2.md) or [Fabric v1.4](howto/ibm-hlfsupport-console-smart-contracts-v14.md) (deprecated).
 

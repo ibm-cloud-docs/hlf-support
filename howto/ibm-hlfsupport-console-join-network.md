@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-05-27"
+lastupdated: "2022-07-08"
 
 keywords: getting started tutorials, create a CA, enroll, register, create an MSP, wallet, create a peer, create ordering service, Raft, join a network, system channel, multicloud
 
@@ -11,6 +11,11 @@ subcollection: hlf-support
 ---
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-join-network.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-join-network.html){: external}. Update your bookmarks.
+{: important}
 
 # Join a network
 {: #ibm-hlfsupport-console-join-network}

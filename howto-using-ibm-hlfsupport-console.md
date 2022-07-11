@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-08"
 
 keywords: tutorials, how-to, learn
 
@@ -20,6 +20,11 @@ subcollection: hlf-support
 {:term: .term}
 {:pre: .pre}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto-using-ibm-hlfsupport-console.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto-using-ibm-hlfsupport-console.html){: external}. Update your bookmarks.
+{: important}
 
 # Using the IBM Support for Hyperledger Fabric console
 {: #ibp-howto-using-ibp-console}

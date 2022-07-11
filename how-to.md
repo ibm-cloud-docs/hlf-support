@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-22-04"
+lastupdated: "2022-07-08"
 
 keywords: tutorials, how-to, learn
 
@@ -20,6 +20,11 @@ subcollection: hlf-support
 {:term: .term}
 {:pre: .pre}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/how-to.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/how-to.html){: external}. Update your bookmarks.
+{: important}
 
 # How to
 {: #hlf-support-how-to}
@@ -54,8 +59,7 @@ For existing installations on Kubernetes, details on [upgrading your console and
 ## Installing the fix pack
 {: #install-fixpack}
 
-Review the procedures for [installing the 2.5.2 fix pack](howto/console-deploy-k8.md) on an OpenShift or  
-Kubernetes {{site.data.keyword.blockchainfull_notm}} installation.
+Review the procedures for [installing the fix pack](howto/console-fixpack.md) on an OpenShift or Kubernetes {{site.data.keyword.blockchainfull_notm}} installation.
 
 
 ## Using the IBM Support for Hyperledger Fabric images

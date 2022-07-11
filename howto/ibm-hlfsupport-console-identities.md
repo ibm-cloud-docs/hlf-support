@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-07-08"
 
 keywords: create identities, manage identities, Certificate Authorities, register, enroll, TLS CA, wallet, certificate expiration, delete user
 
@@ -13,6 +13,11 @@ subcollection: hlf-support
 {{site.data.keyword.attribute-definition-list}}
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-identities.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-identities.html){: external}. Update your bookmarks.
+{: important}
 
 # Creating and managing identities
 {: #ibm-hlfsupport-console-identities}

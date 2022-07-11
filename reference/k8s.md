@@ -2,7 +2,7 @@
 
 copyright:
   years: 2019, 2022
-lastupdated: "2019-08-30"
+lastupdated: "2022-07-08"
 
 subcollection: hlf-support
 
@@ -16,6 +16,11 @@ subcollection: hlf-support
 {:important: .important}
 {:tip: .tip}
 {:pre: .pre}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/reference/k8s.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/reference/k8s.html){: external}. Update your bookmarks.
+{: important}
 
 # Kubernetes
 {: #k8s-overview}
@@ -48,14 +53,4 @@ The following diagram explains the architecture of Kubernetes. For more explanat
 
     The smallest and simplest Kubernetes object. A Pod represents a set of running containers on your cluster. A Pod is typically set up to run a single primary container. It can also run optional sidecar containers that add supplementary features like logging. Pods are commonly managed by a Deployment. For more information, see the [Kubernetes Pod section](https://kubernetes.io/docs/concepts/workloads/pods/pod/){: external} in the Kubernetes documentation.
 
-<blockchain>
-## {{site.data.keyword.cloud_notm}} Kubernetes Service
-{: #k8s-overview-iks}
 
-{{site.data.keyword.cloud_notm}} Kubernetes Service delivers powerful tools by combining Docker containers, the Kubernetes technology, an intuitive user experience, and built-in security and isolation to automate the deployment, operation, scaling, and monitoring of containerized apps in a cluster of compute hosts. You can use the {{site.data.keyword.cloud_notm}} Kubernetes Service to deploy clusters using open source Kubernetes and the OpenShift Container Platform.
-
-For more information about {{site.data.keyword.cloud_notm}} Kubernetes Service, see the following topics in {{site.data.keyword.cloud_notm}} Kubernetes Service documentation:
-- [Understanding the IBM Cloud Kubernetes Service](/docs/containers?topic=containers-iks-overview#service-concepts){: external}
-- [Why {{site.data.keyword.cloud_notm}} Kubernetes Service](/docs/containers?topic=containers-cs_ov#cs_ov){: external}
-- [Defining your Kubernetes strategy](/docs/containers?topic=containers-strategy#strategy){: external}
-</blockchain>

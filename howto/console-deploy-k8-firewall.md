@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-05"
+lastupdated: "2022-07-08"
 
 keywords: Fabric Operations Console, deploy, resource requirements, storage, parameters, firewall, on-premises, air-gapped, on-prem, multicloud, on-prem
 
@@ -10,7 +10,12 @@ subcollection: hlf-support
 
 ---
 
-[{METADATA_ATTRIBUTES}
+{{site.data.keyword.attribute-definition-list}}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-deploy-k8-firewall.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/console-deploy-k8-firewall.html){: external}. Update your bookmarks.
+{: important}
 
 # Deploying {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric behind a firewall
 {: #deploy-k8-firewall}

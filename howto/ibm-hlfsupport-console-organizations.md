@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-07-08"
 
 keywords: organizations, MSPs, create an MSP, MSP JSON file, consortium, system channel, remove an organization, multicloud
 
@@ -12,6 +12,11 @@ subcollection: hlf-support
 
 
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-organizations.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-console-organizations.html){: external}. Update your bookmarks.
+{: important}
 
 # Managing organizations
 {: #ibm-hlfsupport-console-organizations}

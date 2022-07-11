@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-04-14"
+lastupdated: "2022-07-08"
 
 keywords: FAQs, can I, upgrade, what version, peer ledger database, supported languages, why do I, regions, multicloud
 
@@ -13,6 +13,11 @@ content-type: faq
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-v2-faq.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/howto/ibm-hlfsupport-v2-faq.html){: external}. Update your bookmarks.
+{: important}
 
 # FAQs
 {: #ibm-hlfsupport-v2-faq}

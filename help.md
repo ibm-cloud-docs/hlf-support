@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-06-09"
+lastupdated: "2022-07-08"
 
 keywords: tutorials, how-to, learn, help
 
@@ -19,6 +19,11 @@ subcollection: hlf-support
 {:tip: .tip}
 {:term: .term}
 {:pre: .pre}
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/help.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/help.html){: external}. Update your bookmarks.
+{: important}
 
 # Help
 {: #ibm=hlfsupport-help}

@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-01-31"
+lastupdated: "2022-07-08"
 
 keywords: IBM Support for Hyperledger Fabric, support case, Hyperledger Fabric Community, Cloud tickets, dWAnswers, multicloud
 
@@ -12,6 +12,11 @@ subcollection: hlf-support
 
 {{site.data.keyword.attribute-definition-list}}
 
+
+
+
+Documentation for this on-prem product has been moved from IBM Cloud to IBM Documentation at [https://www.ibm.com/docs/en/SSGWM34_1.0.0/ibmblockchain_support.html](https://www.ibm.com/docs/en/SSGWM34_1.0.0/ibmblockchain_support.html){: external}. Update your bookmarks.
+{: important}
 
 # Getting support
 {: #blockchain-support}
