@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-08"
+lastupdated: "2022-07-20"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -24,6 +24,16 @@ Documentation for this on-prem product has been moved from IBM Cloud to IBM Docu
 
 Use these release notes to learn about the latest changes to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric built on Hyperledger Fabric [v2.2.5](https://github.com/hyperledger/fabric/releases/tag/v2.2.5) or [v2.4.3](https://github.com/hyperledger/fabric/releases/tag/v2.4.3).
 {: shortdesc}
+
+## 19 July 2022
+{: #07-19-2022}
+
+**Certificate Authority (CA) patch 1.5.5-1, Peer and ordering node patch 2.2.7-1, 2.4.5-1.**
+
+Miscellaneous bug fixes and security patches.
+
+Severity: medium
+
 
 ## 22 June 2022
 {: #06-22-2022}
