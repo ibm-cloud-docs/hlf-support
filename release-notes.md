@@ -2,7 +2,7 @@
 
 copyright:
   years: 2022
-lastupdated: "2022-07-20"
+lastupdated: "2022-07-21"
 
 
 keywords: release note, latest changes, Hyperledger Fabric, multicloud
@@ -22,7 +22,7 @@ Documentation for this on-prem product has been moved from IBM Cloud to IBM Docu
 # Release notes
 {: #release-notes}
 
-Use these release notes to learn about the latest changes to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric built on Hyperledger Fabric [v2.2.5](https://github.com/hyperledger/fabric/releases/tag/v2.2.5) or [v2.4.3](https://github.com/hyperledger/fabric/releases/tag/v2.4.3).
+Use these release notes to learn about the latest changes to {{site.data.keyword.IBM_notm}} Support for Hyperledger Fabric built on Hyperledger Fabric [v2.2.7](https://github.com/hyperledger/fabric/releases/tag/v2.2.7) and [v2.4.5](https://github.com/hyperledger/fabric/releases/tag/v2.4.5).
 {: shortdesc}
 
 ## 19 July 2022
